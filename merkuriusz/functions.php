@@ -9,12 +9,13 @@ if( !is_admin() ){
 	
 	wp_enqueue_script( "jQ", get_template_directory_uri() . "/js/jquery.js" );
 	wp_enqueue_script( "boostrap", get_template_directory_uri() . "/js/bootstrap.min.js" );
-	wp_enqueue_script( "main", get_template_directory_uri() . "/js/main.js" );
 	wp_enqueue_script( "TweenLite", get_template_directory_uri() . "/js/TweenLite.min.js" );
 	wp_enqueue_script( "CSSPlugin", get_template_directory_uri() . "/js/CSSPlugin.min.js" );
 	wp_enqueue_script( "ScrollToPlugin", get_template_directory_uri() . "/js/ScrollToPlugin.min.js" );
 	wp_enqueue_script( "gmap3", get_template_directory_uri() . "/js/gmap3.min.js" );
 	wp_enqueue_script( "mapa", get_template_directory_uri() . "/js/mapa.js" );
+	wp_enqueue_script( "touchSwipe", get_template_directory_uri() . "/js/jquery.touchSwipe.min.js" );
+	wp_enqueue_script( "main", get_template_directory_uri() . "/js/main.js" );
 }
 
 function genSibPage(){
