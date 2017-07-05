@@ -301,7 +301,9 @@ input:focus, textarea:focus {
 
 /* SIDEBAR */
 .sidebar-intro {
-	padding: 30px 10.81%;
+	padding: 30px;
+	margin-bottom: 30px;
+	height: 400px;
 	border: 1px solid #E7E7E7;
 }
 .sidebar-intro h2 {
@@ -1814,4 +1816,13 @@ a.inner_catalog_btn:hover {
 	max-height: 36px;
 	width: auto;
 	max-width: 100%;
+}
+
+/* INNE */
+.home-top-right{
+	height: 400px;
+}
+
+.home-top-right > .slider{
+	height: 100%;
 }

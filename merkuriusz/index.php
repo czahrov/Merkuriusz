@@ -1,7 +1,7 @@
 <?php
 	get_header();
 ?>
-<body>
+<body id='home'>
 	
 	<div class="intro-bar">
 		<div class="inner-intro-bar container">
@@ -54,18 +54,7 @@
 		<!-- SIDEBAR -->
 		<div class="container">
 			<div class="col-md-4">
-				<div class="sidebar-intro background-white">
-					<h2>Lokalizator<br>kluczy</h2>
-					<p>Urządzenie współpracuje z aplikacjami na Androida i iOS(iPhone). Wystarczy, że pobierzesz aplikację iTracking dostępną w Sklepie Play lub Apple Store i już możesz zacząć konfigurację swojego lokalizatora</p>
-					<a class="btn side-btn">O produkcie
-					</a>
-					<div class="pager-box ">
-						<div class="pager-ball pager-ball-active"></div>
-						<div class="pager-ball"></div>
-						<div class="pager-ball"></div>
-					</div>
-				</div>
-				<div class="white-space-30"></div>
+				
 
 		<!-- SIDEBAR NAVIGATION -->
 				<div class="sidebar-navigation background-white">
@@ -208,7 +197,18 @@
 		<div class="col-md-8 padding-zero">
 			
 <!-- SLAJDER -->
-			<div class="col-md-12">
+			<div class="sidebar-intro background-white col-md-6">
+				<h2>Lokalizator<br>kluczy</h2>
+				<p>Urządzenie współpracuje z aplikacjami na Androida i iOS(iPhone). Wystarczy, że pobierzesz aplikację iTracking dostępną w Sklepie Play lub Apple Store i już możesz zacząć konfigurację swojego lokalizatora</p>
+				<a class="btn side-btn">O produkcie
+				</a>
+				<div class="pager-box ">
+					<div class="pager-ball pager-ball-active"></div>
+					<div class="pager-ball"></div>
+					<div class="pager-ball"></div>
+				</div>
+			</div>
+			<div class="col-md-6 home-top-right">
 				<div class="slider"></div>
 			</div>
 			<div class="clearfix"></div>
