@@ -1,0 +1,38 @@
+﻿#ignoruj pliki ini
+*.ini
+
+# ignoruj plik testowy
+test.php
+
+# ignoruj pliki graficzne
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+*.ps
+
+# ignoruj pliki pdf
+*.pdf
+
+# ignoruj archiwa
+*.zip
+*.rar
+*.7z
+
+# ignoruj arkusze biurowe
+*.xls
+*.xlsx
+*.doc
+*.docx
+*.gdoc
+*.gxls
+
+# ignoruj pliki xml
+*.xml
+
+# ignoruj pliki z podkatalogów
+nppBackup/
+img/
+pdf/
+fonts/
