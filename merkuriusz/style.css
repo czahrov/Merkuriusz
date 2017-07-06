@@ -14,6 +14,7 @@ Version: 4.7.5
 * {
 	padding: 0;
 	margin: 0;
+	cursor: default;
 }
 body, html {
 	font-family: 'Montserrat-Regular';
@@ -820,17 +821,21 @@ a.advert_btn:hover {
 /* PARTNERS */
 .partner-container {
 	position: relative;
+	display: flex;
 	height: 76px;
 	border: 1px solid #E7E7E7;
 }
 .partner-arrow-box {
 	width: 43px;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+	position: relative;
 	background-color: #ECF0F1;
-	cursor: pointer;
 	height: 100%;
+	flex-shrink: 0;
+}
+.partner-arrow-box,
+.partner-arrow-box *
+{
+	cursor: pointer;
 }
 .partner-left {
 	border-right: 1px solid #E7E7E7;
@@ -842,15 +847,15 @@ a.advert_btn:hover {
 .partner-wrapper {
 	display: flex;
 	flex-direction: row;
-	flex-shrink: 0;
-	justify-content: center;
+	flex-shrink: 1;
 	height: 100%;
-	margin: 0 40px;
+	margin: 0;
 	overflow: hidden;
 }
 .partner-icon-box {
 	height: 100%;
-	padding: 20px 15px 10px 15px;
+	padding: 10px 0;
+	margin: 0 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
