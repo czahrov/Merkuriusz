@@ -15,15 +15,15 @@ $(function(){
 	// kategorie
 	(function( items ){
 		items
+		.children( '.head' )
 		.click(function( e ){
-			e.stopPropagation();
-			
 			$(this)
+			.parent()
 			.toggleClass('open');
 			
 		});
 		
-	})( $('.sidebar-navigation li') );
+	})( $('ul.menu > li') );
 	
 
 	/* POP UP */
