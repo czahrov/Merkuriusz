@@ -5,7 +5,9 @@ if( !is_admin() ){
 	wp_enqueue_style( "boostrap", get_template_directory_uri() . "/css/bootstrap.css", array() );
 	wp_enqueue_style( "fonts", get_template_directory_uri() . "/css/fonts.css", array() );
 	wp_enqueue_style( "font-awesome", get_template_directory_uri() . "/css/font-awesome.min.css", array() );
+	wp_enqueue_style( "facepalm", get_template_directory_uri() . "/css/facepalm.min.css", array() );
 	wp_enqueue_style( "style", get_template_directory_uri() . "/style.css", array() );
+	wp_enqueue_style( "style_dawid", get_template_directory_uri() . "/css/override.css", array() );
 	
 	wp_enqueue_script( "jQ", get_template_directory_uri() . "/js/jquery.js" );
 	wp_enqueue_script( "boostrap", get_template_directory_uri() . "/js/bootstrap.min.js" );

@@ -53,142 +53,228 @@
 		
 		<!-- SIDEBAR -->
 		<div class="container">
-			<div class="col-md-4">
+			<div class="col-md-4" id='sidebar'>
 				
 
 		<!-- SIDEBAR NAVIGATION -->
 				<div class="sidebar-navigation background-white">
-					
-				<ul>
-					<li class="roll-menu"><a id="gadgets-link">
-						Gadżety reklamowe
-						<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-						</a>
-						<ul class="dropdown-category gadget-dropdwon">
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/pisemnicze.png)">
-							Materiały Piśmiennicze
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-				
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/biuro.png)">Biuro
-									<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-					
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/torby.png)">Torby, plecaki
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/parasole.png)">Parasole i peleryny
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/breloki.png)">Breloki
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/do_picia.png)">Do picia
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/wypoczynek.png)">Wypoczynek
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/narzedzia.png)">Narzędzia
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/dom.png)">Dom
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/uroda.png)">Uroda
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/szkola.png)">Rozrywka i szkoła
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/eco.png)">Eco gadżet
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/odblaski.png)">Odblaski
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/medyczne.png)">Medyczne
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/transport.png)">Transport
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/tekstylia.png)">Tekstylia
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/swiateczne.png)">Świąteczne
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>	
-							<li><a class="piktogram" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/piktogramy/upominkowe.png)">Opakowania upominkowe
-							<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a></li>
+				<ul class='menu'>
+					<li class='item flex flex-column'>
+						<div class='head flex flex-items-center'>
+							<div class='title uppercase bold'>
+								gadżety reklamowe
+							</div>
+							<span class='icon fa fa-angle-right'></span>
+						</div>
+						<ul class='sub flex flex-column'>
+						<?php
+							$reklamowe = array(
+								'Materiały Piśmiennicze' => array(
+									'img' => 'pisemnicze.png',
+									
+								),
+								'Biuro' => array(
+									'img' => 'biuro.png',
+									
+								),
+								'Torby, plecaki' => array(
+									'img' => 'torby.png',
+									
+								),
+								'Parasole i peleryny' => array(
+									'img' => 'parasole.png',
+									
+								),
+								'Do picia' => array(
+									'img' => 'do_picia.png',
+									
+								),
+								'Narzędzia' => array(
+									'img' => 'narzedzia.png',
+									
+								),
+								'Dom' => array(
+									'img' => 'dom.png',
+									
+								),
+								'Uroda' => array(
+									'img' => 'uroda.png',
+									
+								),
+								'Rozrywka i szkoła' => array(
+									'img' => 'szkola.png',
+									
+								),
+								'Eco gadżet' => array(
+									'img' => 'eco.png',
+									
+								),
+								'Medyczne' => array(
+									'img' => 'medyczne.png',
+									
+								),
+								'Transport' => array(
+									'img' => 'transport.png',
+									
+								),
+								'Tekstylia' => array(
+									'img' => 'tekstylia.png',
+									
+								),
+								'Świąteczne' => array(
+									'img' => 'swiateczne.png',
+									
+								),
+								'Opakowania upominkowe' => array(
+									'img' => 'upominkowe.png',
+									
+								),
+								
+							);
 							
-						</ul>
-
-					</li>
-					<li><a class="roll-menu" id="fofcio">
-						Fofcio promo toys
-						<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-					</a></li>
-					<li><a class="roll-menu" id="elektronics">
-						Elektronika
-						<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-					</a></li>
-					<li class='open'><a class="roll-menu" id="vip-colection">
-						Kolekcja Vip
-						<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-					</a>
-						<ul class="vip-dropdwon dropdown-category">
-							<li><a>
-								Vip Collections
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i></a>
+							foreach( $reklamowe as $name => $item ):
+						?>
+							<li class='item flex'>
+								<div class='head grow flex flex-items-center'>
+									<img class='pikto' src='<?php echo get_template_directory_uri(); ?>/img/piktogramy/<?php echo $item['img']; ?>'>
+									<div class='title'>
+										<?php echo $name; ?>
+									</div>
+									<span class='icon fa fa-angle-double-right'></span>
+								</div>
+								
 							</li>
-							<li><a>
-								Vip Skóra
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							<li><a>	
-								Viktorniox
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							<li><a>
-								Vine Club
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							<li><a>
-								Vip Piśmiennicze
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							
-							<!-- LOGOTYPY -->
-							<li><a class="logo_type logo_type9">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ikony/feather.png">
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							<li><a class="logo_type logo_type10">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ikony/pen3.png">
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							<li><a class="logo_type logo_type5">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/ikony/wallet.png">
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							<li><a class="logo_type logo_type6">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ikony/pen1.png">
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							
-							<li><a class="logo_type logo_type1">
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-								<li><a class="logo_type logo_type2">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ikony/U.png">
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-								<li><a class="logo_type logo_type3">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ikony/suitcase.png">
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							<li><a class="logo_type logo_type4">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ikony/inkwell.png">
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							<li><a class="logo_type logo_type8">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ikony/pen2.png">
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
-							<li><a class="logo_type logo_type7">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ikony/cap.png">
-								<i class="fa fa-angle-right roll-arrow" aria-hidden="true"></i>
-							</a></li>
+						<?php endforeach; ?>
 							
 						</ul>
+						
 					</li>
+					<li class='item fofcio flex flex-column'>
+						<div class='head flex flex-items-center'>
+							<div class='title uppercase bold'>
+								fofcio promo toys
+							</div>
+							<span class='icon fa fa-angle-right'></span>
+						</div>
+					</li>
+					<li class='item elektronika flex flex-column'>
+						<div class='head flex flex-items-center'>
+							<div class='title uppercase bold'>
+								elektronika
+							</div>
+							<span class='icon fa fa-angle-right'></span>
+						</div>
+					</li>
+					<li class='item vip open flex flex-column'>
+						<div class='head flex flex-items-center flex-justify-between'>
+							<div class='title uppercase bold'>
+								kolekcja vip
+							</div>
+							<span class='icon fa fa-angle-right'></span>
+						</div>
+						<ul class='sub flex flex-column'>
+						<?php
+							$vip = array(
+								'collection' => array(
+									'title' => 'vip collection',
+									
+								),
+								'skóra' => array(
+									'title' => 'vip skóra',
+									
+								),
+								'viktronix' => array(
+									'title' => 'viktronix',
+									
+								),
+								'vine' => array(
+									'title' => 'vine club',
+									
+								),
+								'piśmiennicze' => array(
+									'title' => 'vip piśmiennicze',
+									
+								),
+								'parker' => array(
+									'pikto' => 'feather.png',
+									'logo' => 'Parker_logo.png',
+									
+								),
+								'waterman' => array(
+									'pikto' => 'pen3.png',
+									'logo' => 'waterman_logo.png',
+									
+								),
+								'ferraghini' => array(
+									'pikto' => 'wallet.png',
+									'logo' => 'ferraghini.png',
+									
+								),
+								'marktwain' => array(
+									'pikto' => 'pen1.png',
+									'logo' => 'marktwain.svg',
+									
+								),
+								'schwarzwolf' => array(
+									'logo' => 'schwarzwolf.png',
+									
+								),
+								'ungaro' => array(
+									'pikto' => 'U.png',
+									'logo' => 'ungaro.png',
+									
+								),
+								'herlitz' => array(
+									'pikto' => 'suitcase.png',
+									'logo' => 'Herlitz_logo.svg',
+									
+								),
+								'pelikan' => array(
+									'pikto' => 'inkwell.png',
+									'logo' => 'pelikan-logo.png',
+									
+								),
+								'diplomat' => array(
+									'pikto' => 'pen2.png',
+									'logo' => 'diplomat.svg',
+									
+								),
+								'cofee' => array(
+									'pikto' => 'cap.png',
+									'logo' => 'coFee.svg',
+									
+								),
+								
+							);
+							
+							foreach( $vip as $item ):
+						?>
+							<li class='item flex'>
+								<div class='head grow flex flex-items-center'>
+									<?php if( !empty( $item['pikto'] ) ): ?>
+									<img class='pikto' src='<?php printf( "%s/img/ikony/%s", get_template_directory_uri(), $item['pikto'] ); ?>'>
+									<?php endif; ?>
+									<?php if( !empty( $item['title'] ) ): ?>
+									<div class='title bold uppercase'>
+										<?php echo $item['title']; ?>
+									</div>
+									<?php elseif( !empty( $item['logo'] ) ): ?>
+									<div class='logotyp flex grow bgimg contain flex-self-stretch' style='background-image: url(<?php printf( "%s/img/logotypy/%s", get_template_directory_uri(), $item['logo']  ); ?>);'></div>
+									<?php endif; ?>
+									<span class='icon fa fa-angle-double-right'></span>
+								</div>
+								
+							</li>
+						<?php endforeach; ?>
+							
+						</ul>
+						
+					</li>
+					
 				</ul>
-
+				
 			</div>
+			
 		</div>
 
 

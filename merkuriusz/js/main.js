@@ -16,6 +16,8 @@ $(function(){
 	(function( items ){
 		items
 		.click(function( e ){
+			e.stopPropagation();
+			
 			$(this)
 			.toggleClass('open');
 			
@@ -252,7 +254,7 @@ $(function(){
 	/* slider partnerów */
 	(function( slider, arrows, viewbox, items ){
 		var current = 0;
-		var delay = 2500;
+		var delay = 2000;
 		var num = items.length;
 		var itrv;
 		
@@ -290,7 +292,7 @@ $(function(){
 				
 				TweenLite.to(
 					viewbox,
-					1,
+					1.5,
 					{
 						scrollTo:{
 							x: items.eq( current ).position().left - viewbox.position().left + viewbox.prop( 'scrollLeft' ),

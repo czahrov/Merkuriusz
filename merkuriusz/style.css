@@ -1822,12 +1822,3 @@ a.inner_catalog_btn:hover {
 	width: auto;
 	max-width: 100%;
 }
-
-/* INNE */
-.home-top-right{
-	height: 400px;
-}
-
-.home-top-right > .slider{
-	height: 100%;
-}

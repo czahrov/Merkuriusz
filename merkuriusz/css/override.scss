@@ -1,0 +1,230 @@
+// PALETA
+$color_ramka: #e7e7e7;
+$color_fofcio: #D10990;
+$color_elektronika: #1f9DF1;
+$color_vip: #1d1d1d;
+$color_menu_hover: #2A96F8;
+
+
+// STYLE
+.bold{
+	font-family: 'Montserrat-Bold';
+	
+}
+
+.title{
+	font-size: 14px;
+	
+}
+
+#home{
+	.home-top-right{
+		height: 400px;
+	}
+	
+	.home-top-right > .slider{
+		height: 100%;
+	}
+	
+	ul.menu{
+		border-style: solid;
+		border-width: 1px;
+		border-color: #e7e7e7;
+		
+		.item{
+			position: relative;
+			background-color: #fff;
+			
+			& > .pikto{
+				margin-right: 10px;
+				
+			}
+			
+			& > .head{
+				padding-left: 40px;
+				padding-right: 40px;
+				min-height: 60px;
+				
+				& > .pikto{
+					margin-right: 10px;
+					
+				}
+				
+				& > .title{
+					margin-right: auto;
+					
+				}
+				
+				& > .logotyp{
+					margin: 5px 10px 5px 0;
+					background-position: left;
+					
+				}
+				
+			}
+			
+			.sub{
+				padding-left: 10px;
+				
+				& > .item{
+					border-top: solid 1px $color_ramka;
+					
+					&:hover{
+						margin-left: 10px;
+						
+						& > .head{
+							padding-left: 30px;
+							
+						}
+						
+					}
+					
+					& > .head{
+						min-height: 40px;
+						
+					}
+					
+				}
+				
+			}
+			
+			& > .icon{
+				transition: transform .3s linear;
+				
+			}
+			
+			&:not(.open) > .sub
+			{
+				display: none;
+			}
+			
+			&.open > .head > .icon{
+				transform: rotate(90deg);
+				
+			}
+			
+			&.fofcio{
+				color: #fff;
+				background-color: $color_fofcio;
+			}
+			
+			&.elektronika{
+				color: #fff;
+				background-color: $color_elektronika;
+			}
+			
+			&.vip{
+				color: #fff;
+				background-color: $color_vip;
+				
+				& > .sub{
+					color: #000;
+					
+				}
+				
+			}
+			
+		}
+		
+		& *{
+			cursor: pointer;
+			
+		}
+		
+	}
+	
+}
+
+/*
+#home .home-top-right{
+	height: 400px;
+}
+
+#home .home-top-right > .slider{
+	height: 100%;
+}
+
+.bold{
+	font-family: 'Montserrat-Bold';
+	
+}
+
+.title{
+	font-size: 14px;
+	
+}
+
+#home ul.menu
+{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #e7e7e7;
+}
+
+#home ul.menu *
+{
+	cursor: pointer;
+	
+}
+
+#home ul.menu .item
+{
+	position: relative;
+	background-color: #fff;
+	
+}
+
+#home ul.menu .item > .pikto
+{
+	margin-right: 10px;
+	
+}
+
+#home ul.menu .item > .head
+{
+	padding: 0 40px;
+	min-height: 60px;
+	
+}
+
+#home ul.menu .item > .sub
+{
+	padding-left: 10px;
+}
+
+#home ul.menu .item > .icon
+{
+	transition: transform .3s linear;
+	
+}
+
+#home ul.menu .item:not(.open) > .sub
+{
+	display: none;
+}
+
+#home ul.menu .item.open > .head > .icon
+{
+	transform: rotate(90deg);
+	
+}
+
+#home ul.menu .item.fofcio
+{
+	color: #fff;
+	background-color: #D10990;
+}
+
+#home ul.menu .item.elektronika
+{
+	color: #fff;
+	background-color: #1f9DF1;
+}
+
+#home ul.menu .item.vip
+{
+	color: #fff;
+	background-color: #1d1d1d;
+}
+
+*/
