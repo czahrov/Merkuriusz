@@ -113,11 +113,23 @@ $color_pagin_niebieski: rgb(38,155,255);
 			&.fofcio{
 				color: #fff;
 				background-color: $color_fofcio;
+				
+				& > .sub{
+					color: black;
+					
+				}
+				
 			}
 			
 			&.elektronika{
 				color: #fff;
 				background-color: $color_elektronika;
+				
+				& > .sub{
+					color: black;
+					
+				}
+				
 			}
 			
 			&.vip{

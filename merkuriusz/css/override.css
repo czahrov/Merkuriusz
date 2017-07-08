@@ -50,9 +50,13 @@
     #home ul.menu .item.fofcio {
       color: #fff;
       background-color: #D10990; }
+      #home ul.menu .item.fofcio > .sub {
+        color: black; }
     #home ul.menu .item.elektronika {
       color: #fff;
       background-color: #1f9DF1; }
+      #home ul.menu .item.elektronika > .sub {
+        color: black; }
     #home ul.menu .item.vip {
       color: #fff;
       background-color: #1d1d1d; }

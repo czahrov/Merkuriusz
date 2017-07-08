@@ -1,6 +1,4 @@
 <div class="col-md-4" id='sidebar'>
-
-
 	<!-- SIDEBAR NAVIGATION -->
 	<div class="sidebar-navigation background-white">
 		<ul class='menu'>
@@ -85,6 +83,35 @@
 					</div>
 					<span class='icon fa fa-angle-right'></span>
 				</div>
+				<ul class='sub flex flex-column'>
+					<?php
+					$fofcio = array(
+						'Opcja 1'=> array(
+							'img' => 'pisemnicze.png',
+						),
+						'Opcja 2' => array(
+							'img' => 'biuro.png',
+						),
+						'Opcja 3' => array(
+							'img' => 'torby.png',
+						),
+						
+					);
+					
+					foreach( $fofcio as $name => $item ): ?>
+					<li class='item flex'>
+						<div class='head grow flex flex-items-center'>
+							<img class='pikto' src='<?php printf( "%s/img/piktogramy/%s", get_template_directory_uri(), $item['img'] ); ?>'>
+							<div class='title'>
+								<?php echo $name; ?>
+							</div>
+							<span class='icon fa fa-angle-double-right'></span>
+						</div>
+
+					</li>
+					<?php endforeach; ?>
+
+				</ul>
 			</li>
 			<li class='item elektronika flex flex-column'>
 				<div class='head flex flex-items-center'>
@@ -93,6 +120,35 @@
 					</div>
 					<span class='icon fa fa-angle-right'></span>
 				</div>
+				<ul class='sub flex flex-column'>
+					<?php
+					$elektronika = array(
+						'Opcja 1'=> array(
+							'img' => 'pisemnicze.png',
+						),
+						'Opcja 2' => array(
+							'img' => 'biuro.png',
+						),
+						'Opcja 3' => array(
+							'img' => 'torby.png',
+						),
+						
+					);
+					
+					foreach( $elektronika as $name => $item ): ?>
+					<li class='item flex'>
+						<div class='head grow flex flex-items-center'>
+							<img class='pikto' src='<?php printf( "%s/img/piktogramy/%s", get_template_directory_uri(), $item['img'] ); ?>'>
+							<div class='title'>
+								<?php echo $name; ?>
+							</div>
+							<span class='icon fa fa-angle-double-right'></span>
+						</div>
+
+					</li>
+					<?php endforeach; ?>
+
+				</ul>
 			</li>
 			<li class='item vip open flex flex-column'>
 				<div class='head flex flex-items-center flex-justify-between'>
