@@ -1,12 +1,18 @@
 // PALETA
-$color_ramka: #e7e7e7;
+$color_ramka_szara: #e7e7e7;
 $color_fofcio: #D10990;
 $color_elektronika: #1f9DF1;
 $color_vip: #1d1d1d;
 $color_menu_hover: #2A96F8;
+$color_pagin_niebieski: rgb(38,155,255);
 
 
 // STYLE
+.semibold{
+	font-family: 'Montserrat-SemiBold';
+	
+}
+
 .bold{
 	font-family: 'Montserrat-Bold';
 	
@@ -18,6 +24,7 @@ $color_menu_hover: #2A96F8;
 }
 
 #home{
+	
 	.home-top-right{
 		height: 400px;
 	}
@@ -67,7 +74,7 @@ $color_menu_hover: #2A96F8;
 				padding-left: 10px;
 				
 				& > .item{
-					border-top: solid 1px $color_ramka;
+					border-top: solid 1px $color_ramka_szara;
 					
 					&:hover{
 						margin-left: 10px;
@@ -133,98 +140,107 @@ $color_menu_hover: #2A96F8;
 		
 	}
 	
-}
-
-/*
-#home .home-top-right{
-	height: 400px;
-}
-
-#home .home-top-right > .slider{
-	height: 100%;
-}
-
-.bold{
-	font-family: 'Montserrat-Bold';
+	.top-slider{
+		margin-bottom: 30px;
+		padding: 0 15px;
+		min-height: 430px;
+		
+		& > .text{
+			background-color: #fff;
+			border: solid 1px $color_ramka_szara;
+			overflow: hidden;
+			
+			a{
+				text-decoration: none;
+				color: initial;
+				
+			}
+			
+			& > .view{
+				
+				& > .item{
+					padding: 30px 40px;
+					
+					&:not(.active){
+						display:none;
+						
+					}
+					
+					& > .title{
+						margin-bottom: 24px;
+						font-size: 18px;
+						
+					}
+					
+					& > .content{
+						line-height: 1.5em;
+						font-size: 14px;
+						
+					}
+					
+					& > .button{
+						margin-top: auto;
+						min-width: 130px;
+						padding: 15px 20px;
+						border: solid 2px #000;
+						line-height: 0;
+						font-size: 12px;
+						text-align: center;
+						
+						
+					}
+					
+				}
+			
+			}
+			
+			& > .pagin{
+				padding: 0 0 30px 40px;
+				
+				& > .item{
+					margin-right: 4px;
+					width: 18px;
+					height: 18px;
+					background-color: $color_pagin_niebieski;
+					border-style: solid;
+					border-width: 3px;
+					border-color: #fff;
+					border-radius: 50%;
+					transition-property: background, border;
+					transition: .3s linear;
+					
+					&.active{
+						border-color: $color_pagin_niebieski;
+						background-color: #fff;
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		& > .imgs{
+			margin-left: 30px;
+			
+			& > .view{
+				background-color: #fff;
+				border: solid 1px $color_ramka_szara;
+				overflow: hidden;
+				
+				& > .item{
+					
+					&:not(.active){
+						display: none;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
 	
 }
-
-.title{
-	font-size: 14px;
-	
-}
-
-#home ul.menu
-{
-	border-style: solid;
-	border-width: 1px;
-	border-color: #e7e7e7;
-}
-
-#home ul.menu *
-{
-	cursor: pointer;
-	
-}
-
-#home ul.menu .item
-{
-	position: relative;
-	background-color: #fff;
-	
-}
-
-#home ul.menu .item > .pikto
-{
-	margin-right: 10px;
-	
-}
-
-#home ul.menu .item > .head
-{
-	padding: 0 40px;
-	min-height: 60px;
-	
-}
-
-#home ul.menu .item > .sub
-{
-	padding-left: 10px;
-}
-
-#home ul.menu .item > .icon
-{
-	transition: transform .3s linear;
-	
-}
-
-#home ul.menu .item:not(.open) > .sub
-{
-	display: none;
-}
-
-#home ul.menu .item.open > .head > .icon
-{
-	transform: rotate(90deg);
-	
-}
-
-#home ul.menu .item.fofcio
-{
-	color: #fff;
-	background-color: #D10990;
-}
-
-#home ul.menu .item.elektronika
-{
-	color: #fff;
-	background-color: #1f9DF1;
-}
-
-#home ul.menu .item.vip
-{
-	color: #fff;
-	background-color: #1d1d1d;
-}
-
-*/
