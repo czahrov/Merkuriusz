@@ -1,130 +1,4 @@
 $(function(){
-	
-	// slider główny na home
-	(function( slider, teksty, paginacja, obrazy ){
-		var current = 0;
-		var itrv = null;
-		var delay = 2.5;
-		var duration = 1;
-		var num = teksty.length;
-		
-		slider
-		.on({
-			set: function( e ){
-				if( current < 0 ) current += num;
-				
-				current %= num;
-				
-				paginacja
-				.eq( current )
-				.addClass( 'active' )
-				.siblings()
-				.removeClass( 'active' );
-				
-				teksty
-				.eq( current )
-				.addClass( 'active' )
-				.siblings()
-				.removeClass( 'active' );
-				
-				
-				obrazy
-				.eq( current )
-				.addClass( 'active' )
-				.siblings()
-				.removeClass( 'active' );
-				
-				TweenLite.fromTo(
-					obrazy.filter( '.active' ),
-					duration,
-					{
-						opacity: 0,
-						
-					},
-					{
-						opacity: 1,
-						ease: Power2.easeInOut,
-						
-					}
-				);
-				
-			},
-			next: function( e ){
-				current++;
-				slider.triggerHandler( 'set' );
-				
-			},
-			prev: function( e ){
-				current--;
-				slider.triggerHandler( 'set' );
-				
-			},
-			stop: function( e ){
-				window.clearInterval( itrv );
-				itrv = null;
-				
-			},
-			start: function( e ){
-				if( itrv === null ){
-					itrv = window.setInterval(function(){
-						slider.triggerHandler( 'next' );
-						
-					},delay * 1000 );
-					
-				}
-				
-			},
-			mouseenter: function( e ){
-				slider.triggerHandler( 'stop' );
-				
-			},
-			mouseleave: function( e ){
-				slider.triggerHandler( 'start' );
-				
-			},
-			
-		})
-		.swipe({
-			swipeLeft: function( e ){
-				slider.triggerHandler( 'next' );
-				
-			},
-			swipeRight: function( e ){
-				slider.triggerHandler( 'prev' );
-				
-			},
-			
-		});
-		
-		paginacja.click(function( e ){
-			slider.triggerHandler( 'stop' );
-			current = $(this).index();
-			slider.triggerHandler( 'set' );
-			
-		});
-		
-		slider.triggerHandler( 'start' );
-		
-	})
-	( $( '#home .top-slider' ), $( '#home .top-slider > .text > .view > .item' ), $( '#home .top-slider > .text > .pagin > .item' ), $( '#home .top-slider > .imgs > .view > .item' ) );
-	
-	// kategorie
-	(function( items ){
-		items
-		.children( '.head' )
-		.click(function( e ){
-			$(this)
-			.parent()
-			.toggleClass( 'open' )
-			.siblings()
-			.removeClass( 'open') ;
-			
-		});
-		
-	})
-	( $('ul.menu > li') );
-	
-
 	/* POP UP */
 	$(document).ready(function () {
      $(".pop-up-clothes.clothes").click(function () {
@@ -253,6 +127,131 @@ TweenLite.to(
 
 
 $(function(){
+	// slider główny na home
+	(function( slider, teksty, paginacja, obrazy ){
+		var current = 0;
+		var itrv = null;
+		var delay = 2.5;
+		var duration = 1;
+		var num = teksty.length;
+		
+		slider
+		.on({
+			set: function( e ){
+				if( current < 0 ) current += num;
+				
+				current %= num;
+				
+				paginacja
+				.eq( current )
+				.addClass( 'active' )
+				.siblings()
+				.removeClass( 'active' );
+				
+				teksty
+				.eq( current )
+				.addClass( 'active' )
+				.siblings()
+				.removeClass( 'active' );
+				
+				
+				obrazy
+				.eq( current )
+				.addClass( 'active' )
+				.siblings()
+				.removeClass( 'active' );
+				
+				TweenLite.fromTo(
+					obrazy.filter( '.active' ),
+					duration,
+					{
+						opacity: 0,
+						
+					},
+					{
+						opacity: 1,
+						ease: Power2.easeInOut,
+						
+					}
+				);
+				
+			},
+			next: function( e ){
+				current++;
+				slider.triggerHandler( 'set' );
+				
+			},
+			prev: function( e ){
+				current--;
+				slider.triggerHandler( 'set' );
+				
+			},
+			stop: function( e ){
+				window.clearInterval( itrv );
+				itrv = null;
+				
+			},
+			start: function( e ){
+				if( itrv === null ){
+					itrv = window.setInterval(function(){
+						slider.triggerHandler( 'next' );
+						
+					},delay * 1000 );
+					
+				}
+				
+			},
+			mouseenter: function( e ){
+				slider.triggerHandler( 'stop' );
+				
+			},
+			mouseleave: function( e ){
+				slider.triggerHandler( 'start' );
+				
+			},
+			
+		})
+		.swipe({
+			swipeLeft: function( e ){
+				slider.triggerHandler( 'next' );
+				
+			},
+			swipeRight: function( e ){
+				slider.triggerHandler( 'prev' );
+				
+			},
+			
+		});
+		
+		paginacja.click(function( e ){
+			slider.triggerHandler( 'stop' );
+			current = $(this).index();
+			slider.triggerHandler( 'set' );
+			
+		});
+		
+		slider.triggerHandler( 'start' );
+		
+	})
+	( $( '#home .top-slider' ), $( '#home .top-slider > .text > .view > .item' ), $( '#home .top-slider > .text > .pagin > .item' ), $( '#home .top-slider > .imgs > .view > .item' ) );
+	
+	// kategorie
+	(function( items ){
+		items
+		.children( '.head' )
+		.click(function( e ){
+			$(this)
+			.parent()
+			.toggleClass( 'open' )
+			.siblings()
+			.removeClass( 'open') ;
+			
+		});
+		
+	})
+	( $('ul.menu > li') );
+	
+	
 	/* slider katalogu pdf'ów */
 	(function( slider, arrows, viewbox, items ){
 		var current = 0;
@@ -355,8 +354,10 @@ $(function(){
 	/* slider partnerów */
 	(function( slider, arrows, viewbox, items ){
 		var current = 0;
-		var delay = 2000;
+		var delay = 3000;
 		var num = items.length;
+		var mdown = false;
+		var mdata = {};
 		var itrv;
 		
 		slider
@@ -372,44 +373,29 @@ $(function(){
 				
 			},
 			set: function( e ){
-				var scrollLeft = Math.ceil( viewbox.prop( 'scrollLeft' ) );
+				//var scrollLeft = Math.ceil( viewbox.prop( 'scrollLeft' ) );
 				var scrollWidth = Math.floor( viewbox.prop( 'scrollWidth' ) );
 				var width = Math.floor( viewbox.width() );
+				var max = Math.floor( scrollWidth / ( width * 0.5 ) );
 				
-				if( scrollLeft >= scrollWidth - width ){
-					current = 0;
-				}
+				current %= max;
 				
 				if( current < 0 ){
-					var t = num - 1;
-					while( items.eq( t ).position().left - viewbox.position().left > scrollWidth - width ){
-						t--;
-						
-					}
-					
-					current = t;
+					current = max - 1;
 					
 				}
 				
-				current  %= num;
-				
-				/*
-				console.log({
-					current: current,
-					position: scrollLeft,
-					max: viewbox.prop( 'scrollWidth' ) - width,
-					
-				});
-				*/
+				//console.log( [current, max, scrollWidth, width] );
 				
 				TweenLite.to(
 					viewbox,
 					1.5,
 					{
 						scrollTo:{
-							x: items.eq( current ).position().left - viewbox.position().left + viewbox.prop( 'scrollLeft' ),
+							x: Math.round( width * 0.5 * current ),
 							
 						},
+						ease: Power2.easeOut,
 						
 					}
 				);
