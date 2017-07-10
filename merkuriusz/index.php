@@ -17,7 +17,6 @@
 				'img' => sprintf( "%s/img/slajder.jpg", get_template_directory_uri() ),
 				'link' => array(
 					'url' => '#',
-					'text' => 'O produkcie',
 					
 				),
 				
@@ -28,7 +27,6 @@
 				'img' => 'http://placeimg.com/300/300/tech',
 				'link' => array(
 					'url' => '#',
-					'text' => 'lorem ipsum link',
 					
 				),
 				
@@ -39,7 +37,6 @@
 				'img' => 'http://placeimg.com/350/350/tech',
 				'link' => array(
 					'url' => '#',
-					'text' => 'lorem ipsum inny link',
 					
 				),
 				
@@ -61,7 +58,7 @@
 						<?php echo $item['content']; ?>
 					</div>
 					<a class='button semibold uppercase flex-self-start' href='<?php echo $item['link']['url'] ?>'>
-						<?php echo $item['link']['text'] ?>
+						O produkcie
 					</a>
 					
 				</div>

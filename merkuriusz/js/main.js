@@ -280,13 +280,15 @@ $(function(){
 			},
 			set: function( e ){
 				if( current < 0 ){
-					current = num - inview() + 1;
+					current = num - inview();
 					
 				}
 				else{
 					current %= ( num - inview() + 1 );
 					
 				}
+				
+				//console.log( current );
 				
 				TweenLite.to(
 					viewbox,
