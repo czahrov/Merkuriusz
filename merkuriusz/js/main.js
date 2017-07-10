@@ -370,13 +370,17 @@ $(function(){
 				
 			},
 			set: function( e ){
-				if( viewbox.prop( 'scrollLeft' ) >= viewbox.prop( 'scrollWidth' ) - viewbox.width() ){
+				var scrollLeft = Math.ceil( viewbox.prop( 'scrollLeft' ) );
+				var scrollWidth = Math.floor( viewbox.prop( 'scrollWidth' ) );
+				var width = Math.floor( viewbox.width() );
+				
+				if( scrollLeft >= scrollWidth - width ){
 					current = 0;
 				}
 				
 				if( current < 0 ){
 					var t = num - 1;
-					while( items.eq( t ).position().left - viewbox.position().left > viewbox.prop( 'scrollWidth' ) - viewbox.width() ){
+					while( items.eq( t ).position().left - viewbox.position().left > scrollWidth - width ){
 						t--;
 						
 					}
@@ -387,7 +391,14 @@ $(function(){
 				
 				current  %= num;
 				
-				//console.info( current );
+				/*
+				console.log({
+					current: current,
+					position: scrollLeft,
+					max: viewbox.prop( 'scrollWidth' ) - width,
+					
+				});
+				*/
 				
 				TweenLite.to(
 					viewbox,
