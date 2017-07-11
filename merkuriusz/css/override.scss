@@ -5,9 +5,22 @@ $color_elektronika: #1f9DF1;
 $color_vip: #1d1d1d;
 $color_menu_hover: #2A96F8;
 $color_pagin_niebieski: rgb(38,155,255);
+$color_pagin_szary: #D3D3D3;
 
 
 // STYLE
+a{
+	display: inline-block;
+	
+	&, &:hover, &:focus{
+		text-decoration: none;
+		color: inherit;
+		outline: none;
+		
+	}
+	
+}
+
 .semibold{
 	font-family: 'Montserrat-SemiBold';
 	
@@ -23,6 +36,125 @@ $color_pagin_niebieski: rgb(38,155,255);
 	
 }
 
+ul.menu{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #e7e7e7;
+	
+	.item{
+		position: relative;
+		background-color: #fff;
+		
+		& > .pikto{
+			margin-right: 10px;
+			
+		}
+		
+		& > .head{
+			padding-left: 40px;
+			padding-right: 40px;
+			min-height: 60px;
+			
+			& > .pikto{
+				margin-right: 10px;
+				
+			}
+			
+			& > .title{
+				margin-right: auto;
+				
+			}
+			
+			& > .logotyp{
+				margin: 5px 10px 5px 0;
+				background-position: left;
+				
+			}
+			
+		}
+		
+		.sub{
+			padding-left: 10px;
+			
+			& > .item{
+				border-top: solid 1px $color_ramka_szara;
+				
+				&:hover{
+					margin-left: 10px;
+					
+					& > .head{
+						padding-left: 30px;
+						
+					}
+					
+				}
+				
+				& > .head{
+					min-height: 40px;
+					
+				}
+				
+			}
+			
+		}
+		
+		& > .icon{
+			transition: transform .3s linear;
+			
+		}
+		
+		&:not(.open) > .sub
+		{
+			display: none;
+		}
+		
+		&.open > .head > .icon{
+			transform: rotate(90deg);
+			
+		}
+		
+		&.fofcio{
+			color: #fff;
+			background-color: $color_fofcio;
+			
+			& > .sub{
+				color: black;
+				
+			}
+			
+		}
+		
+		&.elektronika{
+			color: #fff;
+			background-color: $color_elektronika;
+			
+			& > .sub{
+				color: black;
+				
+			}
+			
+		}
+		
+		&.vip{
+			color: #fff;
+			background-color: $color_vip;
+			
+			& > .sub{
+				color: #000;
+				
+			}
+			
+		}
+		
+	}
+	
+	& *{
+		cursor: pointer;
+		
+	}
+	
+}
+
 #home{
 	
 	.home-top-right{
@@ -31,125 +163,6 @@ $color_pagin_niebieski: rgb(38,155,255);
 	
 	.home-top-right > .slider{
 		height: 100%;
-	}
-	
-	ul.menu{
-		border-style: solid;
-		border-width: 1px;
-		border-color: #e7e7e7;
-		
-		.item{
-			position: relative;
-			background-color: #fff;
-			
-			& > .pikto{
-				margin-right: 10px;
-				
-			}
-			
-			& > .head{
-				padding-left: 40px;
-				padding-right: 40px;
-				min-height: 60px;
-				
-				& > .pikto{
-					margin-right: 10px;
-					
-				}
-				
-				& > .title{
-					margin-right: auto;
-					
-				}
-				
-				& > .logotyp{
-					margin: 5px 10px 5px 0;
-					background-position: left;
-					
-				}
-				
-			}
-			
-			.sub{
-				padding-left: 10px;
-				
-				& > .item{
-					border-top: solid 1px $color_ramka_szara;
-					
-					&:hover{
-						margin-left: 10px;
-						
-						& > .head{
-							padding-left: 30px;
-							
-						}
-						
-					}
-					
-					& > .head{
-						min-height: 40px;
-						
-					}
-					
-				}
-				
-			}
-			
-			& > .icon{
-				transition: transform .3s linear;
-				
-			}
-			
-			&:not(.open) > .sub
-			{
-				display: none;
-			}
-			
-			&.open > .head > .icon{
-				transform: rotate(90deg);
-				
-			}
-			
-			&.fofcio{
-				color: #fff;
-				background-color: $color_fofcio;
-				
-				& > .sub{
-					color: black;
-					
-				}
-				
-			}
-			
-			&.elektronika{
-				color: #fff;
-				background-color: $color_elektronika;
-				
-				& > .sub{
-					color: black;
-					
-				}
-				
-			}
-			
-			&.vip{
-				color: #fff;
-				background-color: $color_vip;
-				
-				& > .sub{
-					color: #000;
-					
-				}
-				
-			}
-			
-		}
-		
-		& *{
-			cursor: pointer;
-			
-		}
-		
 	}
 	
 	.top-slider{
@@ -249,6 +262,119 @@ $color_pagin_niebieski: rgb(38,155,255);
 					}
 					
 				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+#kategoria{
+	
+	#grid{
+		background-color: #fff;
+		
+		.switcher{
+			
+			& > a{
+				margin-left: 10px;
+				width: 34px;
+				height: 34px;
+				color: #000;
+				background-color: $color_pagin_szary;
+				transition-property: color, background;
+				transition: .3s linear;
+				
+				&.active, &:hover{
+					color: #fff;
+					background-color: $color_pagin_niebieski;
+					
+				}
+				
+			}
+			
+		}
+		
+		& > .top{
+			margin-bottom: 30px;
+			padding: 0 20px;
+			height: 60px;
+			border: solid 1px $color_ramka_szara;
+			
+			& > .breadc{
+				
+			}
+			
+		}
+		
+		& > .kafelki{
+			margin: 0 -10px 30px;
+			
+			& > .item{
+				margin: 10px;
+				width: 164px;
+				border: solid 1px $color_ramka_szara;
+				
+				& > .img{
+					padding: 10px;
+					height: 150px;
+					background-clip: content-box;
+					border-bottom: solid 1px $color_ramka_szara;
+					
+				}
+				
+				& > .title{
+					padding: 10px;
+					border-bottom: solid 1px $color_ramka_szara;
+					
+				}
+				
+				& > .code{
+					padding: 10px;
+					
+				}
+				
+			}
+			
+		}
+		
+		& > .pagin{
+			margin-bottom: 30px;
+			height: 60px;
+			border: solid 1px $color_ramka_szara;
+			
+			& > .next, & > .prev{
+					height: 100%;
+				
+				& > a{
+					height: 100%;
+						background-color: #fff;
+					transition: background .3s linear;
+					
+					&:hover{
+					background-color: $color_ramka_szara;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		& > .bot{
+			margin-bottom: 30px;
+			padding: 20px;
+			height: 60px;
+			border: solid 1px $color_ramka_szara;
+			
+			& > .num{
+				
+			}
+			
+			& > .switcher{
 				
 			}
 			

@@ -61,7 +61,7 @@
 					);
 					
 					foreach( $reklamowe as $name => $item ): ?>
-					<li class='item flex'>
+					<a class='item flex' href='<?php echo home_url( 'kategoria?cat=kategoria,podkategoria' ); ?>'>
 						<div class='head grow flex flex-items-center'>
 							<img class='pikto' src='<?php printf( "%s/img/piktogramy/%s", get_template_directory_uri(), $item['img'] ); ?>'>
 							<div class='title'>
@@ -70,7 +70,7 @@
 							<span class='icon fa fa-angle-double-right'></span>
 						</div>
 
-					</li>
+					</a>
 					<?php endforeach; ?>
 
 				</ul>
@@ -99,7 +99,7 @@
 					);
 					
 					foreach( $fofcio as $name => $item ): ?>
-					<li class='item flex'>
+					<a class='item flex'>
 						<div class='head grow flex flex-items-center'>
 							<img class='pikto' src='<?php printf( "%s/img/piktogramy/%s", get_template_directory_uri(), $item['img'] ); ?>'>
 							<div class='title'>
@@ -108,7 +108,7 @@
 							<span class='icon fa fa-angle-double-right'></span>
 						</div>
 
-					</li>
+					</a>
 					<?php endforeach; ?>
 
 				</ul>
@@ -136,7 +136,7 @@
 					);
 					
 					foreach( $elektronika as $name => $item ): ?>
-					<li class='item flex'>
+					<a class='item flex'>
 						<div class='head grow flex flex-items-center'>
 							<img class='pikto' src='<?php printf( "%s/img/piktogramy/%s", get_template_directory_uri(), $item['img'] ); ?>'>
 							<div class='title'>
@@ -145,7 +145,7 @@
 							<span class='icon fa fa-angle-double-right'></span>
 						</div>
 
-					</li>
+					</a>
 					<?php endforeach; ?>
 
 				</ul>
@@ -218,7 +218,7 @@
 						);
 					
 					foreach( $vip as $item ): ?>
-					<li class='item flex'>
+					<a class='item flex'>
 						<div class='head grow flex flex-items-center'>
 							<?php if( !empty( $item[ 'pikto'] ) ): ?>
 							<img class='pikto' src='<?php printf( "%s/img/ikony/%s", get_template_directory_uri(), $item['pikto'] ); ?>'>
@@ -233,7 +233,7 @@
 							<span class='icon fa fa-angle-double-right'></span>
 						</div>
 
-					</li>
+					</a>
 					<?php endforeach; ?>
 
 				</ul>

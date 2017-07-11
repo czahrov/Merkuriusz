@@ -1,3 +1,10 @@
+<?php
+	if( session_id() === "" ){
+		session_start();
+		
+	}
+	
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>

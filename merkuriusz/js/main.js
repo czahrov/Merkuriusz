@@ -349,7 +349,7 @@ $(function(){
 		slider.triggerHandler( 'start' );
 		
 	})
-	( $( '#home .catalog-slider-wrapper' ), $( '#home .catalog-slider-wrapper > .catalog-arrow-box' ), $( '#home .catalog-slider-wrapper > .catalog-container' ), $( '#home .catalog-slider-wrapper > .catalog-container > .catalog-element' ) );
+	( $( '.catalog-slider-wrapper' ), $( '.catalog-slider-wrapper > .catalog-arrow-box' ), $( '.catalog-slider-wrapper > .catalog-container' ), $( '.catalog-slider-wrapper > .catalog-container > .catalog-element' ) );
 	
 	/* slider partnerów */
 	(function( slider, arrows, viewbox, items ){
@@ -447,6 +447,6 @@ $(function(){
 		slider.triggerHandler( 'start' );
 		
 	})
-	( $( '#home .partner-slider' ), $( '#home .partner-slider > .partner-arrow-box' ), $( '#home .partner-slider > .partner-wrapper' ), $( '#home .partner-slider > .partner-wrapper > .partner-icon-box' ) );
+	( $( '.partner-slider' ), $( '.partner-slider > .partner-arrow-box' ), $( '.partner-slider > .partner-wrapper' ), $( '.partner-slider > .partner-wrapper > .partner-icon-box' ) );
 	
 });

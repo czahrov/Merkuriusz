@@ -1,3 +1,10 @@
+a {
+  display: inline-block; }
+  a, a:hover, a:focus {
+    text-decoration: none;
+    color: inherit;
+    outline: none; }
+
 .semibold {
   font-family: 'Montserrat-SemiBold'; }
 
@@ -7,63 +14,64 @@
 .title {
   font-size: 14px; }
 
+ul.menu {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e7e7e7; }
+  ul.menu .item {
+    position: relative;
+    background-color: #fff; }
+    ul.menu .item > .pikto {
+      margin-right: 10px; }
+    ul.menu .item > .head {
+      padding-left: 40px;
+      padding-right: 40px;
+      min-height: 60px; }
+      ul.menu .item > .head > .pikto {
+        margin-right: 10px; }
+      ul.menu .item > .head > .title {
+        margin-right: auto; }
+      ul.menu .item > .head > .logotyp {
+        margin: 5px 10px 5px 0;
+        background-position: left; }
+    ul.menu .item .sub {
+      padding-left: 10px; }
+      ul.menu .item .sub > .item {
+        border-top: solid 1px #e7e7e7; }
+        ul.menu .item .sub > .item:hover {
+          margin-left: 10px; }
+          ul.menu .item .sub > .item:hover > .head {
+            padding-left: 30px; }
+        ul.menu .item .sub > .item > .head {
+          min-height: 40px; }
+    ul.menu .item > .icon {
+      transition: transform .3s linear; }
+    ul.menu .item:not(.open) > .sub {
+      display: none; }
+    ul.menu .item.open > .head > .icon {
+      transform: rotate(90deg); }
+    ul.menu .item.fofcio {
+      color: #fff;
+      background-color: #D10990; }
+      ul.menu .item.fofcio > .sub {
+        color: black; }
+    ul.menu .item.elektronika {
+      color: #fff;
+      background-color: #1f9DF1; }
+      ul.menu .item.elektronika > .sub {
+        color: black; }
+    ul.menu .item.vip {
+      color: #fff;
+      background-color: #1d1d1d; }
+      ul.menu .item.vip > .sub {
+        color: #000; }
+  ul.menu * {
+    cursor: pointer; }
+
 #home .home-top-right {
   height: 400px; }
 #home .home-top-right > .slider {
   height: 100%; }
-#home ul.menu {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #e7e7e7; }
-  #home ul.menu .item {
-    position: relative;
-    background-color: #fff; }
-    #home ul.menu .item > .pikto {
-      margin-right: 10px; }
-    #home ul.menu .item > .head {
-      padding-left: 40px;
-      padding-right: 40px;
-      min-height: 60px; }
-      #home ul.menu .item > .head > .pikto {
-        margin-right: 10px; }
-      #home ul.menu .item > .head > .title {
-        margin-right: auto; }
-      #home ul.menu .item > .head > .logotyp {
-        margin: 5px 10px 5px 0;
-        background-position: left; }
-    #home ul.menu .item .sub {
-      padding-left: 10px; }
-      #home ul.menu .item .sub > .item {
-        border-top: solid 1px #e7e7e7; }
-        #home ul.menu .item .sub > .item:hover {
-          margin-left: 10px; }
-          #home ul.menu .item .sub > .item:hover > .head {
-            padding-left: 30px; }
-        #home ul.menu .item .sub > .item > .head {
-          min-height: 40px; }
-    #home ul.menu .item > .icon {
-      transition: transform .3s linear; }
-    #home ul.menu .item:not(.open) > .sub {
-      display: none; }
-    #home ul.menu .item.open > .head > .icon {
-      transform: rotate(90deg); }
-    #home ul.menu .item.fofcio {
-      color: #fff;
-      background-color: #D10990; }
-      #home ul.menu .item.fofcio > .sub {
-        color: black; }
-    #home ul.menu .item.elektronika {
-      color: #fff;
-      background-color: #1f9DF1; }
-      #home ul.menu .item.elektronika > .sub {
-        color: black; }
-    #home ul.menu .item.vip {
-      color: #fff;
-      background-color: #1d1d1d; }
-      #home ul.menu .item.vip > .sub {
-        color: #000; }
-  #home ul.menu * {
-    cursor: pointer; }
 #home .top-slider {
   margin-bottom: 30px;
   padding: 0 15px;
@@ -118,3 +126,55 @@
       overflow: hidden; }
       #home .top-slider > .imgs > .view > .item:not(.active) {
         display: none; }
+
+#kategoria #grid {
+  background-color: #fff; }
+  #kategoria #grid .switcher > a {
+    margin-left: 10px;
+    width: 34px;
+    height: 34px;
+    color: #000;
+    background-color: #D3D3D3;
+    transition-property: color, background;
+    transition: .3s linear; }
+    #kategoria #grid .switcher > a.active, #kategoria #grid .switcher > a:hover {
+      color: #fff;
+      background-color: #269bff; }
+  #kategoria #grid > .top {
+    margin-bottom: 30px;
+    padding: 0 20px;
+    height: 60px;
+    border: solid 1px #e7e7e7; }
+  #kategoria #grid > .kafelki {
+    margin: 0 -10px 30px; }
+    #kategoria #grid > .kafelki > .item {
+      margin: 10px;
+      width: 164px;
+      border: solid 1px #e7e7e7; }
+      #kategoria #grid > .kafelki > .item > .img {
+        padding: 10px;
+        height: 150px;
+        background-clip: content-box;
+        border-bottom: solid 1px #e7e7e7; }
+      #kategoria #grid > .kafelki > .item > .title {
+        padding: 10px;
+        border-bottom: solid 1px #e7e7e7; }
+      #kategoria #grid > .kafelki > .item > .code {
+        padding: 10px; }
+  #kategoria #grid > .pagin {
+    margin-bottom: 30px;
+    height: 60px;
+    border: solid 1px #e7e7e7; }
+    #kategoria #grid > .pagin > .next, #kategoria #grid > .pagin > .prev {
+      height: 100%; }
+      #kategoria #grid > .pagin > .next > a, #kategoria #grid > .pagin > .prev > a {
+        height: 100%;
+        background-color: #fff;
+        transition: background .3s linear; }
+        #kategoria #grid > .pagin > .next > a:hover, #kategoria #grid > .pagin > .prev > a:hover {
+          background-color: #e7e7e7; }
+  #kategoria #grid > .bot {
+    margin-bottom: 30px;
+    padding: 20px;
+    height: 60px;
+    border: solid 1px #e7e7e7; }
