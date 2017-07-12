@@ -156,6 +156,63 @@ add_action( 'kategoria_pagin_prev', function( $arg ){
 	
 } );
 
+add_action( 'gen_menu', function( $arg ){
+	if( !is_array( $arg ) ) return false;
+	if( !empty( $_GET['cat'] ) ){
+		$query = explode( ",", $_GET['cat'] );
+	}
+	else{
+		$query = array( "", "" );
+		
+	}
+	
+	echo "<ul class='menu'>";
+	foreach( $arg as $cat_name => $cat_data ){
+		$cat_slug = apply_filters( 'stdName', $cat_name );
+		$cat_active = $query[0] === $cat_slug?( 'active' ):( '' );
+		
+		printf( "<li class='item flex flex-column %s %s' item-slug='%s'>
+				<div class='head flex flex-items-center'>
+					<div class='title uppercase bold'>
+						%s
+					</div>
+					<span class='icon fa fa-angle-right'></span>
+				</div>
+				<ul class='sub flex flex-column'>",
+		$cat_data['class'], $cat_active, $cat_slug, $cat_name );
+				
+		foreach( $cat_data['items'] as $item ){
+			$item_slug = apply_filters( 'stdName', $item['title'] );
+			$item_active = $query[1] === $item_slug?( 'active' ):( '' );
+			
+			printf( "<a class='item flex %s %s' href='%s' item-slug='%s'>",
+			$item['class'], $item_active, home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) ), $item_slug );
+			
+				echo "<div class='head grow flex flex-items-center'>";
+					if( !empty( $item['pikto'] ) ){
+						printf( "<img class='pikto' src='%s/img/piktogramy/%s'>", get_template_directory_uri(), $item['pikto'] );
+					}
+					if( !empty( $item['title'] ) && empty( $item['logo'] ) ){
+						printf( "<div class='title'>%s</div>", $item['title'] );
+					}
+					if( !empty( $item['logo'] ) ){
+						printf( "<div class='logotyp flex grow bgimg contain flex-self-stretch' style='background-image: url(%s/img/logotypy/%s);'></div>", get_template_directory_uri(), $item['logo'] );
+					}
+					
+					echo "<span class='icon fa fa-angle-double-right'></span>";
+					
+				echo "</div>";
+			
+			echo "</a>";
+		}
+			
+		echo "</ul>";
+		
+	}
+	echo "</ul>";
+	
+} );
+
 add_filter( 'stdName', function( $arg ){
 	$find = explode( ",", " ,Ą,Ę,Ż,Ź,Ó,Ł,Ć,Ń,Ś,ą,ę,ż,ź,ó,ł,ć,ń,ś" );
 	$replace = explode( ",", "_,a,e,z,z,o,l,c,n,s,a,e,z,z,o,l,c,n,s" );
@@ -163,5 +220,4 @@ add_filter( 'stdName', function( $arg ){
 	return str_replace( $find, $replace, strtolower( strip_tags( (string)$arg ) ) );
 	
 } );
-
 

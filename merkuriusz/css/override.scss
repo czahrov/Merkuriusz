@@ -6,6 +6,7 @@ $color_vip: #1d1d1d;
 $color_menu_hover: #2A96F8;
 $color_pagin_niebieski: rgb(38,155,255);
 $color_pagin_szary: #D3D3D3;
+$color_menu_active: #0af;
 
 
 // STYLE
@@ -51,8 +52,8 @@ ul.menu{
 		}
 		
 		& > .head{
-			padding-left: 40px;
-			padding-right: 40px;
+			padding-left: 20px;
+			padding-right: 20px;
 			min-height: 60px;
 			
 			& > .pikto{
@@ -83,7 +84,7 @@ ul.menu{
 					margin-left: 10px;
 					
 					& > .head{
-						padding-left: 30px;
+						padding-left: 10px;
 						
 					}
 					

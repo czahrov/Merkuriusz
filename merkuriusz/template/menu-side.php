@@ -1,245 +1,191 @@
 <div class="col-md-4" id='sidebar'>
 	<!-- SIDEBAR NAVIGATION -->
 	<div class="sidebar-navigation background-white">
-		<ul class='menu'>
-			<li class='item flex flex-column'>
-				<div class='head flex flex-items-center'>
-					<div class='title uppercase bold'>
-						gadżety reklamowe
-					</div>
-					<span class='icon fa fa-angle-right'></span>
-				</div>
-				<ul class='sub flex flex-column'>
-					<?php
-					$reklamowe = array(
-						'Materiały Piśmiennicze'=> array(
-							'img' => 'pisemnicze.png',
+		<?php
+			do_action( 'gen_menu', array(
+				'gadżety reklamowe' => array(
+					'class' => 'reklamowe',
+					'items' => array(
+						array(
+							'title' => 'Materiały Piśmiennicze',
+							'pikto' => 'pisemnicze.png'
 						),
-						'Biuro' => array(
-							'img' => 'biuro.png',
+						array(
+							'title' => 'Biuro',
+							'pikto' => 'biuro.png'
 						),
-						'Torby, plecaki' => array(
-							'img' => 'torby.png',
+						array(
+							'title' => 'Torby i plecaki',
+							'pikto' => 'torby.png'
 						),
-						'Parasole i peleryny' => array(
-							'img' => 'parasole.png',
+						array(
+							'title' => 'Parasole i peleryny',
+							'pikto' => 'parasole.png'
 						),
-						'Do picia' => array(
-							'img' => 'do_picia.png',
+						array(
+							'title' => 'Do picia',
+							'pikto' => 'do_picia.png'
 						),
-						'Narzędzia' => array(
-							'img' => 'narzedzia.png',
+						array(
+							'title' => 'Narzędzia',
+							'pikto' => 'narzedzia.png'
 						),
-						'Dom' => array(
-							'img' => 'dom.png',
+						array(
+							'title' => 'Dom',
+							'pikto' => 'dom.png'
 						),
-						'Uroda' => array(
-							'img' => 'uroda.png',
+						array(
+							'title' => 'Uroda',
+							'pikto' => 'uroda.png'
 						),
-						'Rozrywka i szkoła' => array(
-							'img' => 'szkola.png',
+						array(
+							'title' => 'Rozrywka i szkoła',
+							'pikto' => 'szkola.png'
 						),
-						'Eco gadżet' => array(
-							'img' => 'eco.png',
+						array(
+							'title' => 'Eco gadżet',
+							'pikto' => 'eco.png'
 						),
-						'Medyczne' => array(
-							'img' => 'medyczne.png',
+						array(
+							'title' => 'Medyczne',
+							'pikto' => 'medyczne.png'
 						),
-						'Transport' => array(
-							'img' => 'transport.png',
+						array(
+							'title' => 'Transport',
+							'pikto' => 'transport.png'
 						),
-						'Tekstylia' => array(
-							'img' => 'tekstylia.png',
+						array(
+							'title' => 'Tekstylia',
+							'pikto' => 'tekstylia.png'
 						),
-						'Świąteczne' => array(
-							'img' => 'swiateczne.png',
+						array(
+							'title' => 'Świąteczne',
+							'pikto' => 'swiateczne.png'
 						),
-						'Opakowania upominkowe' => array(
-							'img' => 'upominkowe.png',
-						),
-						
-					);
-					
-					foreach( $reklamowe as $name => $item ): ?>
-					<a class='item flex' href='<?php echo home_url( 'kategoria?cat=kategoria,podkategoria' ); ?>'>
-						<div class='head grow flex flex-items-center'>
-							<img class='pikto' src='<?php printf( "%s/img/piktogramy/%s", get_template_directory_uri(), $item['img'] ); ?>'>
-							<div class='title'>
-								<?php echo $name; ?>
-							</div>
-							<span class='icon fa fa-angle-double-right'></span>
-						</div>
-
-					</a>
-					<?php endforeach; ?>
-
-				</ul>
-
-			</li>
-			<li class='item fofcio flex flex-column'>
-				<div class='head flex flex-items-center'>
-					<div class='title uppercase bold'>
-						fofcio promo toys
-					</div>
-					<span class='icon fa fa-angle-right'></span>
-				</div>
-				<ul class='sub flex flex-column'>
-					<?php
-					$fofcio = array(
-						'Opcja 1'=> array(
-							'img' => 'pisemnicze.png',
-						),
-						'Opcja 2' => array(
-							'img' => 'biuro.png',
-						),
-						'Opcja 3' => array(
-							'img' => 'torby.png',
+						array(
+							'title' => 'Opakowania upominkowe',
+							'pikto' => 'upominkowe.png'
 						),
 						
-					);
-					
-					foreach( $fofcio as $name => $item ): ?>
-					<a class='item flex'>
-						<div class='head grow flex flex-items-center'>
-							<img class='pikto' src='<?php printf( "%s/img/piktogramy/%s", get_template_directory_uri(), $item['img'] ); ?>'>
-							<div class='title'>
-								<?php echo $name; ?>
-							</div>
-							<span class='icon fa fa-angle-double-right'></span>
-						</div>
-
-					</a>
-					<?php endforeach; ?>
-
-				</ul>
-			</li>
-			<li class='item elektronika flex flex-column'>
-				<div class='head flex flex-items-center'>
-					<div class='title uppercase bold'>
-						elektronika
-					</div>
-					<span class='icon fa fa-angle-right'></span>
-				</div>
-				<ul class='sub flex flex-column'>
-					<?php
-					$elektronika = array(
-						'Opcja 1'=> array(
-							'img' => 'pisemnicze.png',
+					),
+				),
+				'fofcio promo toys' => array(
+					'class' => 'fofcio',
+					'items' => array(
+						array(
+							'title' => 'Opcja 1',
+							'pikto' => 'pisemnicze.png'
 						),
-						'Opcja 2' => array(
-							'img' => 'biuro.png',
+						array(
+							'title' => 'Opcja 2',
+							'pikto' => 'biuro.png'
 						),
-						'Opcja 3' => array(
-							'img' => 'torby.png',
+						array(
+							'title' => 'Opcja 3',
+							'pikto' => 'torby.png'
 						),
 						
-					);
-					
-					foreach( $elektronika as $name => $item ): ?>
-					<a class='item flex'>
-						<div class='head grow flex flex-items-center'>
-							<img class='pikto' src='<?php printf( "%s/img/piktogramy/%s", get_template_directory_uri(), $item['img'] ); ?>'>
-							<div class='title'>
-								<?php echo $name; ?>
-							</div>
-							<span class='icon fa fa-angle-double-right'></span>
-						</div>
-
-					</a>
-					<?php endforeach; ?>
-
-				</ul>
-			</li>
-			<li class='item vip open flex flex-column'>
-				<div class='head flex flex-items-center flex-justify-between'>
-					<div class='title uppercase bold'>
-						kolekcja vip
-					</div>
-					<span class='icon fa fa-angle-right'></span>
-				</div>
-				<ul class='sub flex flex-column'>
-					<?php
-						$vip = array(
-							'collection'=> array( 
-								'title' => 'vip collection',
-							 ),
-							'skóra' => array( 
-								'title' => 'vip skóra',
-							 ),
-							'viktronix' => array( 
-								'title' => 'viktronix',
-							 ),
-							'vine' => array( 
-								'title' => 'vine club',
-							 ),
-							'piśmiennicze' => array( 
-								'title' => 'vip piśmiennicze',
-							 ),
-							'parker' => array( 
-								'pikto' => 'feather.png', 
-								'logo' => 'Parker_logo.png',
-							 ),
-							'waterman' => array( 
-								'pikto' => 'pen3.png', 
-								'logo' => 'waterman_logo.png',
-							 ),
-							'ferraghini' => array( 
-								'pikto' => 'wallet.png', 
-								'logo' => 'ferraghini.png',
-							 ),
-							'marktwain' => array( 
-								'pikto' => 'pen1.png', 
-								'logo' => 'marktwain.svg',
-							 ),
-							'schwarzwolf' => array( 
-								'logo' => 'schwarzwolf.png',
-							 ),
-							'ungaro' => array( 
-								'pikto' => 'U.png', 
-								'logo' => 'ungaro.png',
-							 ),
-							'herlitz' => array( 
-								'pikto' => 'suitcase.png', 
-								'logo' => 'Herlitz_logo.svg',
-							 ),
-							'pelikan' => array( 
-								'pikto' => 'inkwell.png', 
-								'logo' => 'pelikan-logo.png',
-							 ),
-							'diplomat' => array( 
-								'pikto' => 'pen2.png', 
-								'logo' => 'diplomat.svg',
-							 ),
-							'cofee' => array( 
-								'pikto' => 'cap.png', 
-								'logo' => 'coFee.svg',
-							),
-							
-						);
-					
-					foreach( $vip as $item ): ?>
-					<a class='item flex'>
-						<div class='head grow flex flex-items-center'>
-							<?php if( !empty( $item[ 'pikto'] ) ): ?>
-							<img class='pikto' src='<?php printf( "%s/img/ikony/%s", get_template_directory_uri(), $item['pikto'] ); ?>'>
-							<?php endif; ?>
-							<?php if( !empty( $item[ 'title'] ) ): ?>
-							<div class='title bold uppercase'>
-								<?php echo $item[ 'title']; ?>
-							</div>
-							<?php elseif( !empty( $item[ 'logo'] ) ): ?>
-							<div class='logotyp flex grow bgimg contain flex-self-stretch' style='background-image: url(<?php printf( "%s/img/logotypy/%s", get_template_directory_uri(), $item['logo']  ); ?>);'></div>
-							<?php endif; ?>
-							<span class='icon fa fa-angle-double-right'></span>
-						</div>
-
-					</a>
-					<?php endforeach; ?>
-
-				</ul>
-
-			</li>
-
-		</ul>
+					),
+				),
+				'elektronika' => array(
+					'class' => 'elektronika',
+					'items' => array(
+						array(
+							'title' => 'Opcja 1',
+							'pikto' => 'pisemnicze.png'
+						),
+						array(
+							'title' => 'Opcja 2',
+							'pikto' => 'biuro.png'
+						),
+						array(
+							'title' => 'Opcja 3',
+							'pikto' => 'torby.png'
+						),
+						
+					),
+				),
+				'kolekcja vip' => array(
+					'class' => 'vip open',
+					'items' => array(
+						array(
+							'title' => 'vip collection',
+							'class' => 'bold uppercase',
+						),
+						array(
+							'title' => 'vip skóra',
+							'class' => 'bold uppercase',
+						),
+						array(
+							'title' => 'viktronix',
+							'class' => 'bold uppercase',
+						),
+						array(
+							'title' => 'vine club',
+							'class' => 'bold uppercase',
+						),
+						array(
+							'title' => 'vip piśmiennicze',
+							'class' => 'bold uppercase',
+						),
+						array(
+							'title' => 'parker',
+							'pikto' => 'feather.png',
+							'logo' => 'Parker_logo.png',
+						),
+						array(
+							'title' => 'waterman',
+							'pikto' => 'pen3.png',
+							'logo' => 'waterman_logo.png',
+						),
+						array(
+							'title' => 'ferraghini',
+							'pikto' => 'wallet.png',
+							'logo' => 'ferraghini.png',
+						),
+						array(
+							'title' => 'marktwain',
+							'pikto' => 'pen1.png',
+							'logo' => 'marktwain.svg',
+						),
+						array(
+							'title' => 'schwarzwolf',
+							'logo' => 'schwarzwolf.png',
+						),
+						array(
+							'title' => 'ungaro',
+							'pikto' => 'U.png',
+							'logo' => 'ungaro.png',
+						),
+						array(
+							'title' => 'herlitz',
+							'pikto' => 'suitcase.png',
+							'logo' => 'Herlitz_logo.svg',
+						),
+						array(
+							'title' => 'pelikan',
+							'pikto' => 'inkwell.png',
+							'logo' => 'pelikan-logo.png',
+						),
+						array(
+							'title' => 'diplomat',
+							'pikto' => 'pen2.png',
+							'logo' => 'diplomat.svg',
+						),
+						array(
+							'title' => 'coFee',
+							'pikto' => 'cap.png',
+							'logo' => 'coFee.svg',
+						),
+						
+					),
+				),
+				
+			) );
+			
+			
+		?>
+		
 	</div>
+	
 </div>

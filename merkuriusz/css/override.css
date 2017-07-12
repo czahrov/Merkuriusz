@@ -24,8 +24,8 @@ ul.menu {
     ul.menu .item > .pikto {
       margin-right: 10px; }
     ul.menu .item > .head {
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
       min-height: 60px; }
       ul.menu .item > .head > .pikto {
         margin-right: 10px; }
@@ -41,7 +41,7 @@ ul.menu {
         ul.menu .item .sub > .item:hover {
           margin-left: 10px; }
           ul.menu .item .sub > .item:hover > .head {
-            padding-left: 30px; }
+            padding-left: 10px; }
         ul.menu .item .sub > .item > .head {
           min-height: 40px; }
     ul.menu .item > .icon {
