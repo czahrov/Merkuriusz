@@ -144,7 +144,7 @@
 							'logo' => 'ferraghini.png',
 						),
 						array(
-							'title' => 'marktwain',
+							'title' => 'mark twain',
 							'pikto' => 'pen1.png',
 							'logo' => 'marktwain.svg',
 						),

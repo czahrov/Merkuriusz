@@ -18,6 +18,10 @@ ul.menu {
   border-style: solid;
   border-width: 1px;
   border-color: #e7e7e7; }
+  ul.menu > .item.active > .head {
+    box-shadow: 0 0 2px 0 #0af inset; }
+  ul.menu > .item.active > .sub > .item.active > .head > .title {
+    color: #0af; }
   ul.menu .item {
     position: relative;
     background-color: #fff; }

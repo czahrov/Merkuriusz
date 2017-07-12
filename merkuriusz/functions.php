@@ -18,6 +18,7 @@ if( !is_admin() ){
 	wp_enqueue_script( "mapa", get_template_directory_uri() . "/js/mapa.js" );
 	wp_enqueue_script( "touchSwipe", get_template_directory_uri() . "/js/jquery.touchSwipe.min.js" );
 	wp_enqueue_script( "main", get_template_directory_uri() . "/js/main.js" );
+	wp_enqueue_script( "facepalm", get_template_directory_uri() . "/js/facepalm.js" );
 }
 
 function genSibPage(){
@@ -171,7 +172,7 @@ add_action( 'gen_menu', function( $arg ){
 		$cat_slug = apply_filters( 'stdName', $cat_name );
 		$cat_active = $query[0] === $cat_slug?( 'active' ):( '' );
 		
-		printf( "<li class='item flex flex-column %s %s' item-slug='%s'>
+		printf( "<li class='item flex flex-column %s %s' item-slug='%s' item-title='%s'>
 				<div class='head flex flex-items-center'>
 					<div class='title uppercase bold'>
 						%s
@@ -179,14 +180,14 @@ add_action( 'gen_menu', function( $arg ){
 					<span class='icon fa fa-angle-right'></span>
 				</div>
 				<ul class='sub flex flex-column'>",
-		$cat_data['class'], $cat_active, $cat_slug, $cat_name );
+		$cat_data['class'], $cat_active, $cat_slug, $cat_name, $cat_name );
 				
 		foreach( $cat_data['items'] as $item ){
 			$item_slug = apply_filters( 'stdName', $item['title'] );
 			$item_active = $query[1] === $item_slug?( 'active' ):( '' );
 			
-			printf( "<a class='item flex %s %s' href='%s' item-slug='%s'>",
-			$item['class'], $item_active, home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) ), $item_slug );
+			printf( "<a class='item flex %s %s' href='%s' item-slug='%s' item-title='%s'>",
+			$item['class'], $item_active, home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) ), $item_slug, $item['title'] );
 			
 				echo "<div class='head grow flex flex-items-center'>";
 					if( !empty( $item['pikto'] ) ){

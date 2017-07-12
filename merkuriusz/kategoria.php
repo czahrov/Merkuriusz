@@ -14,9 +14,7 @@
 	<?php get_template_part( "template/menu", "side" ); ?>
 	<div id='grid' class='col-md-8'>
 		<div class='top flex flex-items-center flex-justify-between'>
-			<div class='breadc'>
-				<?php do_action( 'breadcrumb' ); ?>
-			</div>
+			<div class='breadc uppercase'></div>
 			<div class='switcher flex flex-items-center'>
 				<?php do_action( 'num_switcher' ); ?>
 			</div>

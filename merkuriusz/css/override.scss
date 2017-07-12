@@ -42,6 +42,24 @@ ul.menu{
 	border-width: 1px;
 	border-color: #e7e7e7;
 	
+	& > .item.active{
+		
+		& > .head{
+			box-shadow: 0 0 2px 0 $color_menu_active inset;
+			
+		}
+		
+		& > .sub{
+			
+			& > .item.active > .head > .title{
+				color: $color_menu_active;
+				
+			}
+			
+		}
+		
+	}
+	
 	.item{
 		position: relative;
 		background-color: #fff;
