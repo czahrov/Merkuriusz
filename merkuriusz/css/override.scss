@@ -44,8 +44,8 @@ ul.menu{
 	
 	& > .item.active{
 		
-		& > .head{
-			box-shadow: 0 0 2px 0 $color_menu_active inset;
+		&.reklamowe > .head{
+			box-shadow: 0 0 0 2px $color_menu_active inset;
 			
 		}
 		
@@ -296,6 +296,7 @@ ul.menu{
 		background-color: #fff;
 		
 		.switcher{
+			min-height: 60px;
 			
 			& > a{
 				margin-left: 10px;
@@ -319,10 +320,10 @@ ul.menu{
 		& > .top{
 			margin-bottom: 30px;
 			padding: 0 20px;
-			height: 60px;
 			border: solid 1px $color_ramka_szara;
 			
 			& > .breadc{
+				min-height: 60px;
 				
 			}
 			
@@ -332,26 +333,30 @@ ul.menu{
 			margin: 0 -10px 30px;
 			
 			& > .item{
-				margin: 10px;
-				width: 164px;
-				border: solid 1px $color_ramka_szara;
+				//width: 164px;
 				
-				& > .img{
-					padding: 10px;
-					height: 150px;
-					background-clip: content-box;
-					border-bottom: solid 1px $color_ramka_szara;
+				& > .wrapper{
+					margin: 10px;
+					border: solid 1px $color_ramka_szara;
 					
-				}
-				
-				& > .title{
-					padding: 10px;
-					border-bottom: solid 1px $color_ramka_szara;
+					& > .img{
+						padding: 10px;
+						height: 150px;
+						background-clip: content-box;
+						border-bottom: solid 1px $color_ramka_szara;
+						
+					}
 					
-				}
-				
-				& > .code{
-					padding: 10px;
+					& > .title{
+						padding: 10px;
+						border-bottom: solid 1px $color_ramka_szara;
+						
+					}
+					
+					& > .code{
+						padding: 10px;
+						
+					}					
 					
 				}
 				
@@ -385,11 +390,11 @@ ul.menu{
 		
 		& > .bot{
 			margin-bottom: 30px;
-			padding: 20px;
-			height: 60px;
+			padding: 0 20px;
 			border: solid 1px $color_ramka_szara;
 			
 			& > .num{
+				min-height: 60px;
 				
 			}
 			

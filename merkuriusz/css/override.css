@@ -18,8 +18,8 @@ ul.menu {
   border-style: solid;
   border-width: 1px;
   border-color: #e7e7e7; }
-  ul.menu > .item.active > .head {
-    box-shadow: 0 0 2px 0 #0af inset; }
+  ul.menu > .item.active.reklamowe > .head {
+    box-shadow: 0 0 0 2px #0af inset; }
   ul.menu > .item.active > .sub > .item.active > .head > .title {
     color: #0af; }
   ul.menu .item {
@@ -133,37 +133,39 @@ ul.menu {
 
 #kategoria #grid {
   background-color: #fff; }
-  #kategoria #grid .switcher > a {
-    margin-left: 10px;
-    width: 34px;
-    height: 34px;
-    color: #000;
-    background-color: #D3D3D3;
-    transition-property: color, background;
-    transition: .3s linear; }
-    #kategoria #grid .switcher > a.active, #kategoria #grid .switcher > a:hover {
-      color: #fff;
-      background-color: #269bff; }
+  #kategoria #grid .switcher {
+    min-height: 60px; }
+    #kategoria #grid .switcher > a {
+      margin-left: 10px;
+      width: 34px;
+      height: 34px;
+      color: #000;
+      background-color: #D3D3D3;
+      transition-property: color, background;
+      transition: .3s linear; }
+      #kategoria #grid .switcher > a.active, #kategoria #grid .switcher > a:hover {
+        color: #fff;
+        background-color: #269bff; }
   #kategoria #grid > .top {
     margin-bottom: 30px;
     padding: 0 20px;
-    height: 60px;
     border: solid 1px #e7e7e7; }
+    #kategoria #grid > .top > .breadc {
+      min-height: 60px; }
   #kategoria #grid > .kafelki {
     margin: 0 -10px 30px; }
-    #kategoria #grid > .kafelki > .item {
+    #kategoria #grid > .kafelki > .item > .wrapper {
       margin: 10px;
-      width: 164px;
       border: solid 1px #e7e7e7; }
-      #kategoria #grid > .kafelki > .item > .img {
+      #kategoria #grid > .kafelki > .item > .wrapper > .img {
         padding: 10px;
         height: 150px;
         background-clip: content-box;
         border-bottom: solid 1px #e7e7e7; }
-      #kategoria #grid > .kafelki > .item > .title {
+      #kategoria #grid > .kafelki > .item > .wrapper > .title {
         padding: 10px;
         border-bottom: solid 1px #e7e7e7; }
-      #kategoria #grid > .kafelki > .item > .code {
+      #kategoria #grid > .kafelki > .item > .wrapper > .code {
         padding: 10px; }
   #kategoria #grid > .pagin {
     margin-bottom: 30px;
@@ -179,6 +181,7 @@ ul.menu {
           background-color: #e7e7e7; }
   #kategoria #grid > .bot {
     margin-bottom: 30px;
-    padding: 20px;
-    height: 60px;
+    padding: 0 20px;
     border: solid 1px #e7e7e7; }
+    #kategoria #grid > .bot > .num {
+      min-height: 60px; }

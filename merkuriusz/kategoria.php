@@ -13,9 +13,9 @@
 <div class='container'>
 	<?php get_template_part( "template/menu", "side" ); ?>
 	<div id='grid' class='col-md-8'>
-		<div class='top flex flex-items-center flex-justify-between'>
-			<div class='breadc uppercase'></div>
-			<div class='switcher flex flex-items-center'>
+		<div class='top flex flex-wrap flex-items-center flex-justify-between'>
+			<div class='breadc uppercase base1 base0-mm flex flex-items-center flex-justify-center'></div>
+			<div class='switcher base1 base0-mm flex flex-items-center flex-justify-center'>
 				<?php do_action( 'num_switcher' ); ?>
 			</div>
 			
@@ -31,11 +31,11 @@
 			<?php do_action( 'kategoria_pagin_prev' ); ?>
 			<?php do_action( 'kategoria_pagin_next' ); ?>
 		</div>
-		<div class='bot flex flex-items-center flex-justify-between'>
-			<div class='num'>
+		<div class='bot flex flex-wrap flex-items-center flex-justify-between'>
+			<div class='num base1 base0-mm flex flex-items-center flex-justify-center'>
 				<?php do_action( 'number' ); ?>
 			</div>
-			<div class='switcher flex flex-items-center'>
+			<div class='switcher base1 base0-mm flex flex-items-center flex-justify-center'>
 				<?php do_action( 'num_switcher' ); ?>
 			</div>
 		</div>

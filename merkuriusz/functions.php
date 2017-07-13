@@ -21,6 +21,8 @@ if( !is_admin() ){
 	wp_enqueue_script( "facepalm", get_template_directory_uri() . "/js/facepalm.js" );
 }
 
+// funkcje
+
 function genSibPage(){
 	$current = get_post();
 	$root = get_post( $current->post_parent );
@@ -53,6 +55,31 @@ function search_by_cat(){
     }
 }
 
+function config( $var = null, $val = null ){
+	if( $var !== null ){
+		// getter
+		if( $val === null ){
+			if( !empty( $_SESSION['config'][ $var ] ) ){
+				return $_SESSION['config'][ $var ];
+				
+			}
+			else return false;
+			
+		}
+		// setter
+		else{
+			$_SESSION['config'][ $var ] = $val;
+			return true;
+			
+		}
+		
+	}
+	else return $_SESSION['config'];
+	
+}
+
+// action hook
+
 add_action( 'pre_get_posts', 'search_by_cat' );
 
 add_action( 'breadcrumb', function( $arg ){
@@ -70,11 +97,26 @@ add_action( 'breadcrumb', function( $arg ){
 add_action( 'num_switcher', function( $arg ){
 	$query = $_SERVER[ 'QUERY_STRING' ];
 	parse_str( $query, $args );
-	$num = (int)$_SESSION['num'];
+	
+	$arr = array( 20, 40, 100 );
+	
+	if( array_key_exists( 'num', $args ) ){
+		$num = (int)$args[ 'num' ];
+		
+	}
+	elseif( config( 'num' ) !== false ){
+		$num = (int)config( 'num' );
+		
+	}
+	else{
+		$num = (int)$arr[0];
+		
+	}
+	
+	config( 'num', $num );
 	
 	echo "Na stronie:";
 	
-	$arr = array( 20, 40, 100 );
 	foreach( $arr as $item ){
 		$active = $item === $num?( ' active' ):( '' );
 		$t = $args;
@@ -94,11 +136,13 @@ add_action( 'kafelki_kategoria', function( $arg ){
 		
 	);
 	
-	for( $i=0; $i<20; $i++ ){
-		printf( "<div class='item flex flex-column'>
-						<div class='img bgimg full' style='background-image:url(%s);'></div>
-						<div class='title bold'>%s</div>
-						<div class='code'>Kod produktu: <span class='bold'>%s</span></div>
+	for( $i=0; $i< config('num'); $i++ ){
+		printf( "<div class='item base1 base2-ms base3-mm base4-ml flex'>
+						<div class='wrapper flex flex-column'>
+							<div class='img bgimg full' style='background-image:url(%s);'></div>
+							<div class='title bold'>%s</div>
+							<div class='code'>Kod produktu: <span class='bold'>%s</span></div>
+						</div>
 					</div>",
 		$data['img'], $data['title'], $data['code'] );
 		
@@ -213,6 +257,8 @@ add_action( 'gen_menu', function( $arg ){
 	echo "</ul>";
 	
 } );
+
+// filter hook
 
 add_filter( 'stdName', function( $arg ){
 	$find = explode( ",", " ,Ą,Ę,Ż,Ź,Ó,Ł,Ć,Ń,Ś,ą,ę,ż,ź,ó,ł,ć,ń,ś" );
