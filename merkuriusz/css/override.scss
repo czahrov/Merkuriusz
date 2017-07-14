@@ -7,6 +7,7 @@ $color_menu_hover: #2A96F8;
 $color_pagin_niebieski: rgb(38,155,255);
 $color_pagin_szary: #D3D3D3;
 $color_menu_active: #0af;
+$color_single_title: #2a96f8;
 
 
 // STYLE
@@ -290,26 +291,92 @@ ul.menu{
 	
 }
 
-#kategoria{
+#grid{
+	background-color: #fff;
 	
-	#grid{
-		background-color: #fff;
+	.switcher{
+		min-height: 60px;
 		
-		.switcher{
+		& > a{
+			margin-left: 10px;
+			width: 34px;
+			height: 34px;
+			color: #000;
+			background-color: $color_pagin_szary;
+			transition-property: color, background;
+			transition: .3s linear;
+			
+			&.active, &:hover{
+				color: #fff;
+				background-color: $color_pagin_niebieski;
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .top{
+		margin-bottom: 30px;
+		padding: 0 20px;
+		border: solid 1px $color_ramka_szara;
+		
+		& > .breadc{
 			min-height: 60px;
 			
-			& > a{
-				margin-left: 10px;
-				width: 34px;
-				height: 34px;
-				color: #000;
-				background-color: $color_pagin_szary;
-				transition-property: color, background;
-				transition: .3s linear;
+		}
+		
+	}
+	
+	& > .kafelki{
+		margin: 0 -10px 30px;
+		
+		& > .item{
+			
+			& > .wrapper{
+				margin: 10px;
+				border: solid 1px $color_ramka_szara;
 				
-				&.active, &:hover{
-					color: #fff;
-					background-color: $color_pagin_niebieski;
+				& > .img{
+					padding: 10px;
+					height: 150px;
+					background-clip: content-box;
+					border-bottom: solid 1px $color_ramka_szara;
+					
+				}
+				
+				& > .title{
+					padding: 10px;
+					border-bottom: solid 1px $color_ramka_szara;
+					
+				}
+				
+				& > .code{
+					padding: 10px;
+					
+				}					
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .pagin{
+		margin-bottom: 30px;
+		height: 60px;
+		border: solid 1px $color_ramka_szara;
+		
+		& > .next, & > .prev{
+				height: 100%;
+			
+			& > a{
+				height: 100%;
+					background-color: #fff;
+				transition: background .3s linear;
+				
+				&:hover{
+				background-color: $color_ramka_szara;
 					
 				}
 				
@@ -317,44 +384,85 @@ ul.menu{
 			
 		}
 		
-		& > .top{
-			margin-bottom: 30px;
-			padding: 0 20px;
-			border: solid 1px $color_ramka_szara;
-			
-			& > .breadc{
-				min-height: 60px;
-				
-			}
+	}
+	
+	& > .bot{
+		margin-bottom: 30px;
+		padding: 0 20px;
+		border: solid 1px $color_ramka_szara;
+		
+		& > .num{
+			min-height: 60px;
 			
 		}
 		
-		& > .kafelki{
-			margin: 0 -10px 30px;
+		& > .switcher{
 			
-			& > .item{
-				//width: 164px;
+		}
+		
+	}
+	
+}
+
+#kategoria{
+	
+}
+
+#single{
+	
+	#grid{
+		
+		& > .mid{
+			margin: 0 -6px 30px;
+			
+			& > .pic{
+				padding: 0 6px;
 				
-				& > .wrapper{
-					margin: 10px;
+				& > .large{
+					position: relative;
+					padding: 5px;
+					height: 320px;
+					background-clip: content-box;
+					background-image: url( https://placeimg.com/300/300/tech );
 					border: solid 1px $color_ramka_szara;
 					
-					& > .img{
-						padding: 10px;
-						height: 150px;
+					& > .icon{
+						position: absolute;
+						right: 20px;
+						bottom: 20px;
+						font-size: 20px;
+						text-shadow: 0 0 3px #fff;
+						
+					}
+					
+				}
+				
+				& > .mini{
+					border: solid 1px $color_ramka_szara;
+					
+					& > .item{
+						padding: 5px;
+						height: 100px;
 						background-clip: content-box;
-						border-bottom: solid 1px $color_ramka_szara;
+						background-image: url( https://placeimg.com/100/100/tech );
 						
 					}
 					
-					& > .title{
-						padding: 10px;
-						border-bottom: solid 1px $color_ramka_szara;
-						
-					}
+				}
+				
+				& > .download{
+					margin-top: 12px;
 					
-					& > .code{
-						padding: 10px;
+					& > a{
+						padding: 0 30px;
+						height: 40px;
+						border: solid 1px $color_ramka_szara;
+						
+						& > .bold{
+							margin-left: 10px;
+							cursor: inherit;
+							
+						}
 						
 					}					
 					
@@ -362,43 +470,91 @@ ul.menu{
 				
 			}
 			
-		}
-		
-		& > .pagin{
-			margin-bottom: 30px;
-			height: 60px;
-			border: solid 1px $color_ramka_szara;
-			
-			& > .next, & > .prev{
-					height: 100%;
+			& > .dane{
+				padding: 0 6px;
 				
-				& > a{
-					height: 100%;
-						background-color: #fff;
-					transition: background .3s linear;
+				.title{
+					height: 40px;
+					background-color: $color_single_title;
+					padding: 0 30px;
+					color: #fff;
 					
-					&:hover{
-					background-color: $color_ramka_szara;
+				}
+				
+				.box{
+					padding: 15px 30px;
+					border: solid 1px $color_ramka_szara;
+					
+					& > .line{
+						
+						margin: 10px 0;
+						
+						& > .key{
+							
+							padding-right: 10px;
+							
+						}
+						
+						&.desc > .key {
+							padding-bottom: 10px;
+							
+						}
 						
 					}
 					
 				}
 				
-			}
-			
-		}
-		
-		& > .bot{
-			margin-bottom: 30px;
-			padding: 0 20px;
-			border: solid 1px $color_ramka_szara;
-			
-			& > .num{
-				min-height: 60px;
+				& > .seg{
+					margin-bottom: 12px;
+					
+				}
 				
-			}
-			
-			& > .switcher{
+				& > .main{
+					
+					& > .box {
+						
+						padding: 5px 30px;
+						
+					}
+					
+				}
+				
+				& > .spec{
+					
+				}
+				
+				& > .marking{
+					
+					& > .box{
+						padding: 0;
+						border: none;
+						
+						.key, .val{
+							padding: 0 30px;
+							height: 40px;
+							border: solid 1px $color_ramka_szara;
+							
+						}
+						
+						
+						& > .line{
+							margin: 0;
+							
+							&.area{
+								
+								
+							}
+							
+						}
+						
+						
+					}
+					
+				}
+				
+				& > .multi{
+					
+				}
 				
 			}
 			
@@ -407,3 +563,4 @@ ul.menu{
 	}
 	
 }
+

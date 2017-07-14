@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Kategoria
+	Template Name: Produkt - kategoria
 */
 	get_header();
 	

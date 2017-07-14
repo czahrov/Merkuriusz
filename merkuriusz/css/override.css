@@ -131,11 +131,11 @@ ul.menu {
       #home .top-slider > .imgs > .view > .item:not(.active) {
         display: none; }
 
-#kategoria #grid {
+#grid {
   background-color: #fff; }
-  #kategoria #grid .switcher {
+  #grid .switcher {
     min-height: 60px; }
-    #kategoria #grid .switcher > a {
+    #grid .switcher > a {
       margin-left: 10px;
       width: 34px;
       height: 34px;
@@ -143,45 +143,108 @@ ul.menu {
       background-color: #D3D3D3;
       transition-property: color, background;
       transition: .3s linear; }
-      #kategoria #grid .switcher > a.active, #kategoria #grid .switcher > a:hover {
+      #grid .switcher > a.active, #grid .switcher > a:hover {
         color: #fff;
         background-color: #269bff; }
-  #kategoria #grid > .top {
+  #grid > .top {
     margin-bottom: 30px;
     padding: 0 20px;
     border: solid 1px #e7e7e7; }
-    #kategoria #grid > .top > .breadc {
+    #grid > .top > .breadc {
       min-height: 60px; }
-  #kategoria #grid > .kafelki {
+  #grid > .kafelki {
     margin: 0 -10px 30px; }
-    #kategoria #grid > .kafelki > .item > .wrapper {
+    #grid > .kafelki > .item > .wrapper {
       margin: 10px;
       border: solid 1px #e7e7e7; }
-      #kategoria #grid > .kafelki > .item > .wrapper > .img {
+      #grid > .kafelki > .item > .wrapper > .img {
         padding: 10px;
         height: 150px;
         background-clip: content-box;
         border-bottom: solid 1px #e7e7e7; }
-      #kategoria #grid > .kafelki > .item > .wrapper > .title {
+      #grid > .kafelki > .item > .wrapper > .title {
         padding: 10px;
         border-bottom: solid 1px #e7e7e7; }
-      #kategoria #grid > .kafelki > .item > .wrapper > .code {
+      #grid > .kafelki > .item > .wrapper > .code {
         padding: 10px; }
-  #kategoria #grid > .pagin {
+  #grid > .pagin {
     margin-bottom: 30px;
     height: 60px;
     border: solid 1px #e7e7e7; }
-    #kategoria #grid > .pagin > .next, #kategoria #grid > .pagin > .prev {
+    #grid > .pagin > .next, #grid > .pagin > .prev {
       height: 100%; }
-      #kategoria #grid > .pagin > .next > a, #kategoria #grid > .pagin > .prev > a {
+      #grid > .pagin > .next > a, #grid > .pagin > .prev > a {
         height: 100%;
         background-color: #fff;
         transition: background .3s linear; }
-        #kategoria #grid > .pagin > .next > a:hover, #kategoria #grid > .pagin > .prev > a:hover {
+        #grid > .pagin > .next > a:hover, #grid > .pagin > .prev > a:hover {
           background-color: #e7e7e7; }
-  #kategoria #grid > .bot {
+  #grid > .bot {
     margin-bottom: 30px;
     padding: 0 20px;
     border: solid 1px #e7e7e7; }
-    #kategoria #grid > .bot > .num {
+    #grid > .bot > .num {
       min-height: 60px; }
+
+#single #grid > .mid {
+  margin: 0 -6px 30px; }
+  #single #grid > .mid > .pic {
+    padding: 0 6px; }
+    #single #grid > .mid > .pic > .large {
+      position: relative;
+      padding: 5px;
+      height: 320px;
+      background-clip: content-box;
+      background-image: url(https://placeimg.com/300/300/tech);
+      border: solid 1px #e7e7e7; }
+      #single #grid > .mid > .pic > .large > .icon {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        font-size: 20px;
+        text-shadow: 0 0 3px #fff; }
+    #single #grid > .mid > .pic > .mini {
+      border: solid 1px #e7e7e7; }
+      #single #grid > .mid > .pic > .mini > .item {
+        padding: 5px;
+        height: 100px;
+        background-clip: content-box;
+        background-image: url(https://placeimg.com/100/100/tech); }
+    #single #grid > .mid > .pic > .download {
+      margin-top: 12px; }
+      #single #grid > .mid > .pic > .download > a {
+        padding: 0 30px;
+        height: 40px;
+        border: solid 1px #e7e7e7; }
+        #single #grid > .mid > .pic > .download > a > .bold {
+          margin-left: 10px;
+          cursor: inherit; }
+  #single #grid > .mid > .dane {
+    padding: 0 6px; }
+    #single #grid > .mid > .dane .title {
+      height: 40px;
+      background-color: #2a96f8;
+      padding: 0 30px;
+      color: #fff; }
+    #single #grid > .mid > .dane .box {
+      padding: 15px 30px;
+      border: solid 1px #e7e7e7; }
+      #single #grid > .mid > .dane .box > .line {
+        margin: 10px 0; }
+        #single #grid > .mid > .dane .box > .line > .key {
+          padding-right: 10px; }
+        #single #grid > .mid > .dane .box > .line.desc > .key {
+          padding-bottom: 10px; }
+    #single #grid > .mid > .dane > .seg {
+      margin-bottom: 12px; }
+    #single #grid > .mid > .dane > .main > .box {
+      padding: 5px 30px; }
+    #single #grid > .mid > .dane > .marking > .box {
+      padding: 0;
+      border: none; }
+      #single #grid > .mid > .dane > .marking > .box .key, #single #grid > .mid > .dane > .marking > .box .val {
+        padding: 0 30px;
+        height: 40px;
+        border: solid 1px #e7e7e7; }
+      #single #grid > .mid > .dane > .marking > .box > .line {
+        margin: 0; }

@@ -140,11 +140,15 @@ add_action( 'kafelki_kategoria', function( $arg ){
 		printf( "<div class='item base1 base2-ms base3-mm base4-ml flex'>
 						<div class='wrapper flex flex-column'>
 							<div class='img bgimg full' style='background-image:url(%s);'></div>
-							<div class='title bold'>%s</div>
+							<div class='title bold'>
+								<a href='%s'>
+									%s
+								</a>
+							</div>
 							<div class='code'>Kod produktu: <span class='bold'>%s</span></div>
 						</div>
 					</div>",
-		$data['img'], $data['title'], $data['code'] );
+		$data['img'], home_url( "produkt?cat={$_GET['cat']}&code={$data['code']}" ), $data['title'], $data['code'] );
 		
 	}
 	
