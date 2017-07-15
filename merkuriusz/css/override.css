@@ -39,7 +39,8 @@ ul.menu {
         margin: 5px 10px 5px 0;
         background-position: left; }
     ul.menu .item .sub {
-      padding-left: 10px; }
+      padding-left: 10px;
+      color: #000; }
       ul.menu .item .sub > .item {
         border-top: solid 1px #e7e7e7; }
         ul.menu .item .sub > .item:hover {
@@ -57,18 +58,15 @@ ul.menu {
     ul.menu .item.fofcio {
       color: #fff;
       background-color: #D10990; }
-      ul.menu .item.fofcio > .sub {
-        color: black; }
+    ul.menu .item.axpol {
+      color: #fff;
+      background-color: #83C23F; }
     ul.menu .item.elektronika {
       color: #fff;
       background-color: #1f9DF1; }
-      ul.menu .item.elektronika > .sub {
-        color: black; }
     ul.menu .item.vip {
       color: #fff;
       background-color: #1d1d1d; }
-      ul.menu .item.vip > .sub {
-        color: #000; }
   ul.menu * {
     cursor: pointer; }
 

@@ -3,6 +3,8 @@ $color_ramka_szara: #e7e7e7;
 $color_fofcio: #D10990;
 $color_elektronika: #1f9DF1;
 $color_vip: #1d1d1d;
+$color_axpol: #83C23F;
+
 $color_menu_hover: #2A96F8;
 $color_pagin_niebieski: rgb(38,155,255);
 $color_pagin_szary: #D3D3D3;
@@ -95,6 +97,7 @@ ul.menu{
 		
 		.sub{
 			padding-left: 10px;
+			color: #000;
 			
 			& > .item{
 				border-top: solid 1px $color_ramka_szara;
@@ -137,10 +140,11 @@ ul.menu{
 			color: #fff;
 			background-color: $color_fofcio;
 			
-			& > .sub{
-				color: black;
-				
-			}
+		}
+		
+		&.axpol{
+			color: #fff;
+			background-color: $color_axpol;
 			
 		}
 		
@@ -148,21 +152,11 @@ ul.menu{
 			color: #fff;
 			background-color: $color_elektronika;
 			
-			& > .sub{
-				color: black;
-				
-			}
-			
 		}
 		
 		&.vip{
 			color: #fff;
 			background-color: $color_vip;
-			
-			& > .sub{
-				color: #000;
-				
-			}
 			
 		}
 		

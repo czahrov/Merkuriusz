@@ -87,6 +87,24 @@
 						
 					),
 				),
+				'katalog axpol' => array(
+					'class' => 'axpol',
+					'items' => array(
+						array(
+							'title' => 'Opcja 1',
+							'pikto' => 'pisemnicze.png'
+						),
+						array(
+							'title' => 'Opcja 2',
+							'pikto' => 'biuro.png'
+						),
+						array(
+							'title' => 'Opcja 3',
+							'pikto' => 'torby.png'
+						),
+						
+					),
+				),
 				'elektronika' => array(
 					'class' => 'elektronika',
 					'items' => array(
