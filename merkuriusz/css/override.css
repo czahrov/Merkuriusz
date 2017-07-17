@@ -156,10 +156,18 @@ ul.menu {
       margin: 10px;
       border: solid 1px #e7e7e7; }
       #grid > .kafelki > .item > .wrapper > .img {
+        position: relative;
         padding: 10px;
         height: 150px;
         background-clip: content-box;
+        background-origin: content-box;
         border-bottom: solid 1px #e7e7e7; }
+        #grid > .kafelki > .item > .wrapper > .img > a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0; }
       #grid > .kafelki > .item > .wrapper > .title {
         padding: 10px;
         border-bottom: solid 1px #e7e7e7; }
@@ -193,7 +201,6 @@ ul.menu {
       padding: 5px;
       height: 320px;
       background-clip: content-box;
-      background-image: url(https://placeimg.com/300/300/tech);
       border: solid 1px #e7e7e7; }
       #single #grid > .mid > .pic > .large > .icon {
         position: absolute;
@@ -202,6 +209,7 @@ ul.menu {
         font-size: 20px;
         text-shadow: 0 0 3px #fff; }
     #single #grid > .mid > .pic > .mini {
+      overflow: hidden;
       border: solid 1px #e7e7e7; }
       #single #grid > .mid > .pic > .mini > .item {
         padding: 5px;
@@ -233,6 +241,13 @@ ul.menu {
           padding-right: 10px; }
         #single #grid > .mid > .dane .box > .line.desc > .key {
           padding-bottom: 10px; }
+        #single #grid > .mid > .dane .box > .line.method > .val {
+          position: relative; }
+          #single #grid > .mid > .dane .box > .line.method > .val > .icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%); }
     #single #grid > .mid > .dane > .seg {
       margin-bottom: 12px; }
     #single #grid > .mid > .dane > .main > .box {

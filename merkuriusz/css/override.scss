@@ -332,10 +332,21 @@ ul.menu{
 				border: solid 1px $color_ramka_szara;
 				
 				& > .img{
+					position: relative;
 					padding: 10px;
 					height: 150px;
 					background-clip: content-box;
+					background-origin: content-box;
 					border-bottom: solid 1px $color_ramka_szara;
+					
+					& > a{
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						
+					}
 					
 				}
 				
@@ -417,7 +428,6 @@ ul.menu{
 					padding: 5px;
 					height: 320px;
 					background-clip: content-box;
-					background-image: url( https://placeimg.com/300/300/tech );
 					border: solid 1px $color_ramka_szara;
 					
 					& > .icon{
@@ -432,6 +442,7 @@ ul.menu{
 				}
 				
 				& > .mini{
+					overflow: hidden;
 					border: solid 1px $color_ramka_szara;
 					
 					& > .item{
@@ -491,6 +502,19 @@ ul.menu{
 						
 						&.desc > .key {
 							padding-bottom: 10px;
+							
+						}
+						
+						&.method > .val{
+							position: relative;
+							
+							& > .icon{
+								position: absolute;
+								top: 50%;
+								right: 10px;
+								transform: translateY(-50%);
+								
+							}
 							
 						}
 						

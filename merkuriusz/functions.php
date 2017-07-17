@@ -78,6 +78,11 @@ function config( $var = null, $val = null ){
 	
 }
 
+// sprawdza czy strona została otworzona poprzez AJAXa
+function isAjax(){
+	return $_SERVER["HTTP_X_REQUESTED_WITH"] === "XMLHttpRequest";
+}
+
 // action hook
 
 add_action( 'pre_get_posts', 'search_by_cat' );
@@ -98,7 +103,8 @@ add_action( 'num_switcher', function( $arg ){
 	$query = $_SERVER[ 'QUERY_STRING' ];
 	parse_str( $query, $args );
 	
-	$arr = array( 20, 40, 100 );
+	//$arr = array( 20, 40, 100 );
+	$arr = array( 12,24,48,96 );
 	
 	if( array_key_exists( 'num', $args ) ){
 		$num = (int)$args[ 'num' ];
@@ -120,6 +126,7 @@ add_action( 'num_switcher', function( $arg ){
 	foreach( $arr as $item ){
 		$active = $item === $num?( ' active' ):( '' );
 		$t = $args;
+		$t[ 'strona' ] = 1;
 		$t[ 'num' ] = $item;
 		$url = http_build_query( $t );
 		printf( "<a class='flex flex-items-center flex-justify-center%s' href='?%s'>%s</a>", $active, $url, $item );
@@ -129,35 +136,87 @@ add_action( 'num_switcher', function( $arg ){
 } );
 
 add_action( 'kafelki_kategoria', function( $arg ){
-	$data = array(
-		'img' => 'https://placeimg.com/200/200/tech',
-		'title' => 'Drewniany parasol automatyczny NANCY, jasnozielony',
-		'code' => '513129',
-		
-	);
-	
-	for( $i=0; $i< config('num'); $i++ ){
-		printf( "<div class='item base1 base2-ms base3-mm base4-ml flex'>
-						<div class='wrapper flex flex-column'>
-							<div class='img bgimg full' style='background-image:url(%s);'></div>
-							<div class='title bold'>
-								<a href='%s'>
-									%s
-								</a>
+	/*
+	Array(
+		[ID] => V2560-03
+		[NAME] => Wizytownik
+		[DSCR] => Wizytownik, etui na karty kredytowe, 7 przegródek
+		[IMG] => Array(
+			[0] => http://axpol.com.pl/files/fotob/V2560_03_A.jpg
+			[1] => http://axpol.com.pl/files/foto_add_big/V2560_03_B.jpg
+			[2] => http://axpol.com.pl/files/foto_add_big/V2560_A.jpg
+		)
+
+		[CAT] => Array(
+			[VOYAGER 2017] => Array(
+					[BIURO] => Array(
+							[wizytowniki] => Array(
+							)
+
+					)
+
+			)
+
+			[BIURO] => Array(
+			)
+
+		)
+
+		[DIM] => 11 x 7,5 x 2,1 cm
+		[MARK] => Array(
+				[60x40 (item underside)] => Array(
+						[0] => T2
+						[1] => L2
+					)
+
+			)
+
+		[INSTOCK] => 0
+	)
+	*/
+	$num = config( 'num' );
+	$page = config( 'strona' );
+	$pagin = array_chunk( $arg, $num );
+	if( !empty( $pagin[ $page ] ) ){
+		foreach( $pagin[ $page ] as $item ){
+			printf( "<div class='item base1 base2-ms base3-mm base4-ds flex'>
+							<div class='wrapper grow flex flex-column'>
+								<div class='img bgimg contain' style='background-image:url(%s);'>
+									<a href='%s'></a>
+								</div>
+								<div class='title bold'>
+									<a href='%s'>
+										%s
+									</a>
+								</div>
+								<div class='code'>Kod produktu: <span class='bold'>%s</span></div>
 							</div>
-							<div class='code'>Kod produktu: <span class='bold'>%s</span></div>
-						</div>
-					</div>",
-		$data['img'], home_url( "produkt?cat={$_GET['cat']}&code={$data['code']}" ), $data['title'], $data['code'] );
+						</div>",
+				$item['IMG'][0], 
+				home_url( "produkt?cat={$_GET['cat']}&code={$item['ID']}" ), 
+				home_url( "produkt?cat={$_GET['cat']}&code={$item['ID']}" ), 
+				$item['NAME'], 
+				$item['ID'] );
+			
+		}
+		
+	}
+	else{
+		printf( "<div class='%s'>%s</div>",
+			'noitems',
+			'Brak produktów w tej kategorii'
+		);
 		
 	}
 	
 } );
 
 add_action( 'number', function( $arg ){
-	$total = 149;
-	$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $_GET['num'] )?( (int)$_GET['num'] ):( 20 ) );
-	$strona = !empty( $_GET['strona'] )?( (int)$_GET['strona'] ):( 1 );
+	$total = $arg;
+	//$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $_GET['num'] )?( (int)$_GET['num'] ):( 20 ) );
+	$perpage = config( 'num' );
+	//$strona = !empty( $_GET['strona'] )?( (int)$_GET['strona'] ):( 1 );
+	$strona = config( 'strona' );
 	
 	printf( "Produktów %u-%u / %u",
 		1 + ( $strona - 1) * $perpage,
@@ -171,7 +230,7 @@ add_action( 'kategoria_pagin_next', function( $arg ){
 	$query = $_SERVER[ 'QUERY_STRING' ];
 	parse_str( $query, $args );
 	
-	$total = 149;
+	$total = $arg;
 	$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $args['num'] )?( (int)$args['num'] ):( 20 ) );
 	$strona = !empty( $args['strona'] )?( (int)$args['strona'] ):( 1 );
 	
@@ -190,7 +249,7 @@ add_action( 'kategoria_pagin_prev', function( $arg ){
 	$query = $_SERVER[ 'QUERY_STRING' ];
 	parse_str( $query, $args );
 	
-	$total = 149;
+	$total = $arg;
 	$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $args['num'] )?( (int)$args['num'] ):( 20 ) );
 	$strona = !empty( $args['strona'] )?( (int)$args['strona'] ):( 1 );
 	
@@ -262,6 +321,337 @@ add_action( 'gen_menu', function( $arg ){
 	
 } );
 
+add_action( 'single-picture', function( $arg ){
+	/*
+	<div class='pic base2 flex flex-column'>
+				<div class='large bgimg full' style='background-image: url( https://placeimg.com/300/300/tech );'>
+					<div class='icon'>
+						<span class='fa fa-search-plus'></span>
+					</div>
+					
+				</div>
+				<div class='mini flex'>
+					<div class='item bgimg full base0 grow pointer'></div>
+					<div class='item bgimg full base0 grow pointer'></div>
+					<div class='item bgimg full base0 grow pointer'></div>
+					
+				</div>
+				<div class='download'>
+					<a class='flex flex-items-center'>
+						do pobrania:
+						<span class='bold'>
+							7699.pdf [38.2kB]
+						</span>
+						
+					</a>
+				</div>
+				
+			</div>
+	*/
+	
+	echo "<div class='pic base2 flex flex-column'>";
+		printf( "<div class='large bgimg full' style='background-image: url( %s );'>
+					<div class='icon'>
+						<span class='fa fa-search-plus'></span>
+					</div>
+					
+				</div>",
+		$arg[ 'IMG' ][0]
+	);
+	
+	if( count( $arg[ 'IMG' ] ) > 1 ){
+		echo "<div class='mini flex'>";
+		
+		for( $i=1; $i<count( $arg['IMG'] ); $i++ ){
+			printf( "<div class='item bgimg full base3 no-shrink pointer' style='background-image: url( %s );'></div>", 
+				$arg[ 'IMG' ][ $i ]
+			);
+			
+		}
+		
+		echo "</div>";
+	}
+	
+	echo "<div class='download'>
+					<a class='flex flex-items-center'>
+						do pobrania:
+						<span class='bold'>
+							7699.pdf [38.2kB]
+						</span>
+						
+					</a>
+				</div>";
+	
+	echo "</div>";
+	
+} );
+
+add_action( 'single-dane-main', function( $arg ){
+	echo "<div class='main seg'>
+		<div class='box'>
+			<div class='line code flex flex-items-center'>
+				<div class='key'>
+					Kod produktu:
+				</div>
+				<div class='val bold'>
+					{$arg[ 'ID' ]}
+				</div>
+				
+			</div>
+			<div class='line name flex flex-items-center'>
+				<div class='key'>
+					Nazwa:
+				</div>
+				<div class='val bold'>
+					{$arg[ 'NAME' ]}
+				</div>
+				
+			</div>
+			<div class='line desc flex flex-column flex-justify-center'>
+				<div class='key'>
+					Opis:
+				</div>
+				<div class='val bold'>
+					{$arg[ 'DSCR' ]}
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>";
+	
+} );
+
+add_action( 'single-dane-specyfikacja', function( $arg ){
+	/*
+	<div class='spec seg'>
+		<div class='title uppercase flex flex-items-center'>
+			specyfikacja
+		</div>
+		<div class='box'>
+			<div class='line dim flex flex-items-center'>
+				<div class='key'>
+					Wymiary:
+				</div>
+				<div class='val bold'>
+					0.5 x 9 cm
+				</div>
+				
+			</div>
+			<div class='line matter flex flex-items-center'>
+				<div class='key'>
+					Materiał:
+				</div>
+				<div class='val bold'>
+					Drewno
+				</div>
+				
+			</div>
+			<div class='line cat flex flex-items-center'>
+				<div class='key'>
+					Strona w katalogu:
+				</div>
+				<div class='val bold'>
+					128
+				</div>
+				
+			</div>
+			<div class='line color flex flex-items-center'>
+				<div class='key'>
+					Kolor:
+				</div>
+				<div class='val bold'>
+					naturalny
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	*/
+	
+	echo "<div class='spec seg'>
+		<div class='title uppercase flex flex-items-center'>
+			specyfikacja
+		</div>
+		<div class='box'>
+			<div class='line dim flex flex-items-center'>
+				<div class='key'>
+					Wymiary:
+				</div>
+				<div class='val bold'>
+					{$arg[ 'DIM' ]}
+				</div>
+				
+			</div>
+			<div class='line matter flex flex-items-center'>
+				<div class='key'>
+					Materiał:
+				</div>
+				<div class='val bold'>
+					???
+				</div>
+				
+			</div>
+			<div class='line cat flex flex-items-center'>
+				<div class='key'>
+					Strona w katalogu:
+				</div>
+				<div class='val bold'>
+					???
+				</div>
+				
+			</div>
+			<div class='line color flex flex-items-center'>
+				<div class='key'>
+					Kolor:
+				</div>
+				<div class='val bold'>
+					???
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>";
+	
+} );
+
+add_action( 'single-dane-znakowanie', function( $arg ){
+	$data = array();
+	
+	if( !empty( $arg[ 'MARK' ] ) ){
+		foreach( $arg[ 'MARK' ] as $size_place => $types ){
+		preg_match( "~^(.+)\s\((.+)\)$~", $size_place, $match );
+		$size = $match[1];
+		$place = $match[2];
+			
+			foreach( $types as $type ){
+				$data[] = array( $size, $place, $type );
+				
+			}
+			
+		}
+		
+	}
+	else return false;
+	
+	echo "<div class='marking seg'>
+					<div class='title uppercase flex flex-items-center'>
+						znakowanie
+					</div>
+					<div class='box flex'>
+						<div class='line area base2 flex flex-column flex-justify-center'>
+							<div class='key flex flex-items-center'>
+								Rozmiar:
+							</div>";
+	foreach( $data as $item ){
+		echo "<div class='val bold flex flex-items-center'>
+					{$item[ 0 ]}
+				</div>";
+	}
+							
+	echo 			"</div>
+						<div class='line place base2 flex flex-column flex-justify-center'>
+							<div class='key flex flex-items-center'>
+								Miejsce:
+							</div>";
+	foreach( $data as $item ){
+		echo "<div class='val bold flex flex-items-center'>
+				{$item[1]}
+			</div>";
+	}
+							
+	echo			"</div>
+						<div class='line method base2 flex flex-column flex-justify-center'>
+							<div class='key flex flex-items-center'>
+								Metoda:
+							</div>";
+	foreach( $data as $item ){
+		echo "<div class='val bold flex flex-items-center'>
+				{$item[2]}
+				<div class='icon fa fa-info'></div>
+			</div>";
+	}
+							
+	echo			"</div>
+						
+					</div>
+					
+				</div>";
+	
+} );
+
+add_action( 'single-dane-multi', function( $arg ){
+	$data = array(
+		'pakowanie' => array(
+			'Pakowanie indywidualne' => '???',
+			'Ilość w kartonie zbiorczym' => '???',
+			'Wymiary kartonu zbiorczego' => '???',
+			'Waga kartonu zbiorczego' => '???',
+			'Ilość w kartonie wewnętrznym' => '???',
+			
+		),
+		'inne' => array(
+			'Pakowanie indywidualne' => '??? ???',
+			'Ilość w kartonie zbiorczym' => '??? ???',
+			'Wymiary kartonu zbiorczego' => '??? ???',
+			'Waga kartonu zbiorczego' => '??? ???',
+			'Ilość w kartonie wewnętrznym' => '??? ???',
+			
+		),
+		
+	);
+	
+	echo "<div class='multi seg'>
+					<div class='flex'>
+						<div class='pakowanie title uppercase base2 pointer flex flex-items-center'>
+							pakowanie
+						</div>
+						<div class='inne title uppercase base2 pointer flex flex-items-center'>
+							inne
+						</div>
+						
+					</div>
+					<div class='box pakowanie'>";
+					foreach( $data['pakowanie'] as $name => $item ){
+						echo "<div class='line flex flex-items-center'>
+									<div class='key base2'>
+										{$name}:
+									</div>
+									<div class='val bold'>
+										{$item}
+									</div>
+									
+								</div>";
+						
+					}
+						
+	echo		"</div>
+					<div class='box inne fp-hide'>";
+					foreach( $data['inne'] as $name => $item ){
+						echo "<div class='line flex flex-items-center'>
+									<div class='key base2'>
+										{$name}:
+									</div>
+									<div class='val bold'>
+										{$item}
+									</div>
+									
+								</div>";
+						
+					}
+						
+	echo		"</div>
+					
+				</div>";
+	
+} );
+
 // filter hook
 
 add_filter( 'stdName', function( $arg ){
@@ -271,4 +661,8 @@ add_filter( 'stdName', function( $arg ){
 	return str_replace( $find, $replace, strtolower( strip_tags( (string)$arg ) ) );
 	
 } );
+
+// XML
+
+require_once __DIR__ . '/php/autoloader.php';
 

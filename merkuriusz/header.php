@@ -3,6 +3,7 @@
 		session_start();
 		
 	}
+	set_time_limit( 300 );
 	
 ?>
 <!DOCTYPE html>

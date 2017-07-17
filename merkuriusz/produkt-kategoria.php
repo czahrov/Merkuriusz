@@ -7,6 +7,21 @@
 	parse_str( $_SERVER[ 'QUERY_STRING' ], $params );
 	$_SESSION = array_merge( $_SESSION, $params );
 	
+	if( !array_key_exists( 'strona', $params ) ){
+		config( 'strona', 1 );
+		
+	}
+	else{
+		config( 'strona', (int)$params['strona'] );
+		
+	}
+	
+	$XM = new XMLMan();
+	$XM->addSupport( new AXPOL() );
+	$XM->init();
+	
+	$XMLData = $XM->getData();
+	
 ?>
 <body id='kategoria'>
 <?php get_template_part( "template/page", "top" ); ?>
@@ -21,19 +36,19 @@
 			
 		</div>
 		<div class='pagin flex flex-items-center'>
-			<?php do_action( 'kategoria_pagin_prev' ); ?>
-			<?php do_action( 'kategoria_pagin_next' ); ?>
+			<?php do_action( 'kategoria_pagin_prev', count( $XMLData['items'] ) ); ?>
+			<?php do_action( 'kategoria_pagin_next', count( $XMLData['items'] ) ); ?>
 		</div>
 		<div class='kafelki flex flex-wrap'>
-			<?php do_action( 'kafelki_kategoria' ); ?>
+			<?php do_action( 'kafelki_kategoria', $XMLData['items'] ); ?>
 		</div>
 		<div class='pagin flex flex-items-center'>
-			<?php do_action( 'kategoria_pagin_prev' ); ?>
-			<?php do_action( 'kategoria_pagin_next' ); ?>
+			<?php do_action( 'kategoria_pagin_prev', count( $XMLData['items'] ) ); ?>
+			<?php do_action( 'kategoria_pagin_next', count( $XMLData['items'] ) ); ?>
 		</div>
 		<div class='bot flex flex-wrap flex-items-center flex-justify-between'>
 			<div class='num base1 base0-mm flex flex-items-center flex-justify-center'>
-				<?php do_action( 'number' ); ?>
+				<?php do_action( 'number', count( $XMLData['items'] ) ); ?>
 			</div>
 			<div class='switcher base1 base0-mm flex flex-items-center flex-justify-center'>
 				<?php do_action( 'num_switcher' ); ?>
