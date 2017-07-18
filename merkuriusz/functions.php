@@ -363,7 +363,7 @@ add_action( 'single-picture', function( $arg ){
 		echo "<div class='mini flex'>";
 		
 		for( $i=1; $i<count( $arg['IMG'] ); $i++ ){
-			printf( "<div class='item bgimg full base3 no-shrink pointer' style='background-image: url( %s );'></div>", 
+			printf( "<div class='item bgimg contain base3 no-shrink pointer' style='background-image: url( %s );'></div>", 
 				$arg[ 'IMG' ][ $i ]
 			);
 			

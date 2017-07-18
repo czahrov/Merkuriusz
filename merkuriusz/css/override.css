@@ -215,7 +215,7 @@ ul.menu {
         padding: 5px;
         height: 100px;
         background-clip: content-box;
-        background-image: url(https://placeimg.com/100/100/tech); }
+        background-origin: content-box; }
     #single #grid > .mid > .pic > .download {
       margin-top: 12px; }
       #single #grid > .mid > .pic > .download > a {
