@@ -83,6 +83,265 @@ function isAjax(){
 	return $_SERVER["HTTP_X_REQUESTED_WITH"] === "XMLHttpRequest";
 }
 
+function markPrice( $type, $num, $repeat = 0 ){
+	/*
+		AXPOL
+			+T1, +T2, +T3, +T4
+			-TF1, -TF2, -TF3, -TF4
+			+TC, -TC1, -TC2
+			-L0, +L1, +L2, +L3, -L4
+			+S1, +S2, -S3, -S4
+			-SL
+			-FC1, -FC2
+			-D
+			-H
+		
+	*/
+	$data = array(
+		'T1' => array(
+			'przygotowanie' => 35.00,
+			'powtórzenie' => 15.00,
+			'pakowanie' => 0.00,
+			'ryczałt' => array(
+				0		=> 65.00,
+			),
+			'price' => array(
+				250		=> 0.21,
+				500		=> 0.18,
+				1000		=> 0.15,
+				2000		=> 0.13,
+				5000		=> 0.10,
+				10000	=> 0.08,
+				20000	=> 0.07,
+				50000	=> 0.06,
+				
+			),
+			
+		),
+		'T2' => array(
+			'przygotowanie' => 35.00,
+			'powtórzenie' => 15.00,
+			'pakowanie' => 0.05,
+			'ryczałt' => array(
+				0		=> 70.00,
+			),
+			'price' => array(
+				100		=> 0.34,
+				250		=> 0.30,
+				500		=> 0.24,
+				1000		=> 0.18,
+				2000		=> 0.16,
+				5000		=> 0.15,
+				10000	=> 0.13,
+				20000	=> 0.12,
+				50000	=> 0.09,
+				
+			),
+			
+		),
+		'T3' => array(
+			'przygotowanie' => 35.00,
+			'powtórzenie' => 15.00,
+			'pakowanie' => 0.08,
+			'ryczałt' => array(
+				0		=> 80.00,
+			),
+			'price' => array(
+				50		=> 0.55,
+				100		=> 0.50,
+				250		=> 0.45,
+				500		=> 0.40,
+				1000		=> 0.35,
+				2000		=> 0.32,
+				5000		=> 0.30,
+				10000	=> 0.28,
+				20000	=> 0.26,
+				50000	=> 0.23,
+				
+			),
+			
+		),
+		'T4' => array(
+			'przygotowanie' => 35.00,
+			'powtórzenie' => 15.00,
+			'pakowanie' => 0.10,
+			'ryczałt' => array(
+				0		=> 90.00,
+			),
+			'price' => array(
+				50		=> 0.90,
+				100		=> 0.80,
+				250		=> 0.75,
+				500		=> 0.70,
+				1000		=> 0.65,
+				2000		=> 0.60,
+				5000		=> 0.55,
+				10000	=> 0.53,
+				20000	=> 0.50,
+				50000	=> 0.45,
+				
+			),
+			
+		),
+		'L1' => array(
+			'przygotowanie' => 15.00,
+			'powtórzenie' => 15.00,
+			'pakowanie' => 0.00,
+			'ryczałt' => array(
+				0		=> 45.00,
+				20	=> 0.00,
+			),
+			'price' => array(
+				20		=> 0.99,
+				50		=> 0.89,
+				100		=> 0.79,
+				250		=> 0.65,
+				500		=> 0.49,
+				1000		=> 0.35,
+				2000		=> 0.29,
+				5000		=> 0.24,
+				10000	=> 0.19,
+				
+			),
+			
+		),
+		'L2' => array(
+			'przygotowanie' => 15.00,
+			'powtórzenie' => 15.00,
+			'pakowanie' => 0.08,
+			'ryczałt' => array(
+				0		=> 55.00,
+				20	=> 0.00,
+			),
+			'price' => array(
+				20		=> 1.45,
+				50		=> 1.29,
+				100		=> 1.19,
+				250		=> 0.99,
+				500		=> 0.79,
+				1000		=> 0.65,
+				2000		=> 0.59,
+				5000		=> 0.45,
+				
+			),
+			
+		),
+		'L3' => array(
+			'przygotowanie' => 15.00,
+			'powtórzenie' => 15.00,
+			'pakowanie' => 0.10,
+			'ryczałt' => array(
+				0		=> 60.00,
+				20	=> 0.00,
+			),
+			'price' => array(
+				20		=> 1.69,
+				50		=> 1.49,
+				100		=> 1.39,
+				250		=> 1.19,
+				500		=> 0.99,
+				1000		=> 0.79,
+				2000		=> 0.69,
+				5000		=> 0.55,
+				
+			),
+			
+		),
+		'S1' => array(
+			'przygotowanie' => 48.00,
+			'powtórzenie' => 28.00,
+			'pakowanie' => 0.10,
+			'ryczałt' => array(
+				0		=> 70.00,
+				50	=> 60.00,
+			),
+			'price' => array(
+				50		=> 1.20,
+				100		=> 1.00,
+				250		=> 0.90,
+				500		=> 0.80,
+				1000		=> 0.70,
+				2000		=> 0.65,
+				5000		=> 0.60,
+				10000	=> 0.55,
+				20000	=> 0.53,
+				50000	=> 0.50,
+				
+			),
+			
+		),
+		'S2' => array(
+			'przygotowanie' => 48.00,
+			'powtórzenie' => 28.00,
+			'pakowanie' => 0.15,
+			'ryczałt' => array(
+				0		=> 80.00,
+				50	=> 70.00,
+			),
+			'price' => array(
+				50		=> 1.55,
+				100		=> 1.40,
+				250		=> 1.20,
+				500		=> 1.15,
+				1000		=> 1.00,
+				2000		=> 0.90,
+				5000		=> 0.75,
+				10000	=> 0.65,
+				20000	=> 0.55,
+				50000	=> 0.53,
+				
+			),
+			
+		),
+		'TC' => array(
+			'przygotowanie' => 48.00,
+			'powtórzenie' => 30.00,
+			'pakowanie' => 0.15,
+			'ryczałt' => array(
+				0		=> 80.00,
+				20	=> 0.00,
+			),
+			'price' => array(
+				20		=> 3.15,
+				50		=> 2.95,
+				100		=> 2.75,
+				250		=> 2.65,
+				500		=> 2.45,
+				1000		=> 2.25,
+				2000		=> 2.15,
+				5000		=> 1.99,
+				
+			),
+			
+		),
+		
+	);
+	
+	if( empty( $data[ $type ] ) ) return false;
+	
+	$item = $data[ $type ];
+	
+	$cena = $item[ 'przygotowanie' ] + $item[ 'powtórzenie' ] * $repeat + $item[ 'pakowanie' ] * $num;
+	
+	reset( $item[ 'ryczałt' ] );
+	$found = null;
+	do{
+		$found = current( $item[ 'ryczałt' ] );
+	}
+	while( next( $item[ 'ryczałt' ] ) !== false && $num > key( $item[ 'ryczałt' ] ) );
+	$cena += (float)$found;
+	
+	reset( $item[ 'price' ] );
+	$found = null;
+	do{
+		$found = current( $item[ 'price' ] );
+	}
+	while( next( $item[ 'price' ] ) !== false && $num > key( $item[ 'price' ] ) );
+	$cena += (float)$found * $num;
+	
+	return $cena;
+}
+
 // action hook
 
 add_action( 'pre_get_posts', 'search_by_cat' );
