@@ -209,13 +209,22 @@ ul.menu {
         font-size: 20px;
         text-shadow: 0 0 3px #fff; }
     #single #grid > .mid > .pic > .mini {
-      overflow: hidden;
+      position: relative;
       border: solid 1px #e7e7e7; }
-      #single #grid > .mid > .pic > .mini > .item {
-        padding: 5px;
-        height: 100px;
-        background-clip: content-box;
-        background-origin: content-box; }
+      #single #grid > .mid > .pic > .mini > .nav {
+        width: 20px;
+        font-size: 30px;
+        color: #fff;
+        background-color: #269bff; }
+        #single #grid > .mid > .pic > .mini > .nav .icon {
+          cursor: inherit; }
+      #single #grid > .mid > .pic > .mini > .view {
+        overflow: hidden; }
+        #single #grid > .mid > .pic > .mini > .view > .item {
+          padding: 5px;
+          height: 100px;
+          background-clip: content-box;
+          background-origin: content-box; }
     #single #grid > .mid > .pic > .download {
       margin-top: 12px; }
       #single #grid > .mid > .pic > .download > a {

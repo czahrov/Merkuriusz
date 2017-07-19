@@ -651,6 +651,77 @@
 			})
 			( $( '#grid .breadc' ), $( 'ul.menu > .item.active' ).attr( 'item-title' ), $( 'ul.menu > .item.active > .sub .item.active' ).attr( 'item-title' ), $( '.main.seg .line.name > .val' ).text() );
 			
+			/* obsługa miniaturek produktu */
+			(function( slider, view, img, large, nav ){
+				var current = 0;
+				
+				var posX = function(){
+					return current * img.first().outerWidth( true );
+					
+				}
+				
+				slider
+				.on({
+					set: function( e ){
+						if( current < 0 ){
+							current += img.length;
+						}
+						
+						current %= ( img.length - 2 );
+						
+						TweenLite.to(
+							view,
+							.5,
+							{
+								scrollTo:{
+									x: posX(),
+									
+								},
+								ease: Power2.easeInOut,
+								onStart: function(){
+									console.info( posX() );
+								},
+								
+							}
+						);
+						
+					},
+					next: function( e ){
+						current++;
+						slider.triggerHandler( 'set' );
+						
+					},
+					prev: function( e ){
+						current--;
+						slider.triggerHandler( 'set' );
+						
+					},
+					
+				});
+				
+				nav.click(function( e ){
+					if( $(this).hasClass( 'next' ) ){
+						slider.triggerHandler( 'next' );
+						
+					}
+					else{
+						slider.triggerHandler( 'prev' );
+						
+					}
+					
+				});
+				
+				img.click(function( e ){
+					var img = $(this).css( 'backgroundImage' );
+					large.css({
+						backgroundImage: img,
+						
+					});
+					
+				});
+				
+			})
+			( $( '#grid .pic > .mini' ), $( '#grid .pic > .mini > .view' ), $( '#grid .pic > .mini > .view > .item' ), $( '#grid .pic > .large' ), $( '#grid .pic > .mini > .nav' ) );
 			
 		},
 		

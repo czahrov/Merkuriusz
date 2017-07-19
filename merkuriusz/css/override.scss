@@ -442,14 +442,32 @@ ul.menu{
 				}
 				
 				& > .mini{
-					overflow: hidden;
+					position: relative;
 					border: solid 1px $color_ramka_szara;
 					
-					& > .item{
-						padding: 5px;
-						height: 100px;
-						background-clip: content-box;
-						background-origin: content-box;
+					& > .nav{
+						width: 20px;
+						font-size: 30px;
+						color: #fff;
+						background-color: $color_pagin_niebieski;
+						
+						.icon{
+							cursor: inherit;
+							
+						}
+						
+					}
+					
+					& > .view{
+						overflow: hidden;
+						
+						& > .item{
+							padding: 5px;
+							height: 100px;
+							background-clip: content-box;
+							background-origin: content-box;
+							
+						}
 						
 					}
 					

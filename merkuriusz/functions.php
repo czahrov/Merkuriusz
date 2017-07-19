@@ -83,7 +83,7 @@ function isAjax(){
 	return $_SERVER["HTTP_X_REQUESTED_WITH"] === "XMLHttpRequest";
 }
 
-function markPrice( $type, $num, $repeat = 0 ){
+function markTypes( $type ){
 	/*
 		AXPOL
 			+T1, +T2, +T3, +T4
@@ -317,9 +317,21 @@ function markPrice( $type, $num, $repeat = 0 ){
 		
 	);
 	
-	if( empty( $data[ $type ] ) ) return false;
+	if( !empty( $data[ $type ] ) ){
+		return $data[ $type ];
+		
+	}
+	else{
+		return false;
+		
+	}
 	
-	$item = $data[ $type ];
+}
+
+function markPrice( $type, $num, $repeat = 0 ){
+	$item = markTypes( $type );
+	
+	if( $item === false ) return false;
 	
 	$cena = $item[ 'przygotowanie' ] + $item[ 'powtórzenie' ] * $repeat + $item[ 'pakowanie' ] * $num;
 	
@@ -608,8 +620,8 @@ add_action( 'single-picture', function( $arg ){
 			</div>
 	*/
 	
-	echo "<div class='pic base2 flex flex-column'>";
-		printf( "<div class='large bgimg full' style='background-image: url( %s );'>
+	echo "<div class='pic base0 grow flex flex-column'>";
+		printf( "<div class='large bgimg contain' style='background-image: url( %s );'>
 					<div class='icon'>
 						<span class='fa fa-search-plus'></span>
 					</div>
@@ -618,18 +630,32 @@ add_action( 'single-picture', function( $arg ){
 		$arg[ 'IMG' ][0]
 	);
 	
-	if( count( $arg[ 'IMG' ] ) > 1 ){
-		echo "<div class='mini flex'>";
-		
-		for( $i=1; $i<count( $arg['IMG'] ); $i++ ){
-			printf( "<div class='item bgimg contain base3 no-shrink pointer' style='background-image: url( %s );'></div>", 
-				$arg[ 'IMG' ][ $i ]
-			);
+	echo "<div class='mini flex'>";
+	
+		if( count( $arg['IMG'] ) > 3 )
+		{
+			echo "<div class='nav prev pointer flex flex-items-center flex-justify-center'><span class='icon fa fa-angle-left'></span></div>";
 			
 		}
+		echo "<div class='view grow flex'>";
+			
+			for( $i=0; $i<count( $arg['IMG'] ); $i++ ){
+				printf( "<div class='item bgimg contain base3 no-shrink pointer' style='background-image: url( %s );'></div>", 
+					$arg[ 'IMG' ][ $i ]
+				);
+				
+			}
 		
 		echo "</div>";
-	}
+		
+		if( count( $arg['IMG'] ) > 3 )
+		{
+			echo "<div class='nav next pointer flex flex-items-center flex-justify-center'><span class='icon fa fa-angle-right'></span></div>";
+			
+		}
+	
+	
+	echo "</div>";
 	
 	echo "<div class='download'>
 					<a class='flex flex-items-center'>

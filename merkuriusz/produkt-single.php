@@ -77,10 +77,10 @@
 			<div class='breadc uppercase base1 base0-mm flex flex-items-center flex-justify-center'></div>
 			
 		</div>
-		<div class='mid flex flex-items-start'>
+		<div class='mid flex flex-wrap flex-items-start'>
 			<?php do_action( 'single-picture', $item ); ?>
 			
-			<div class='dane base2 flex flex-column'>
+			<div class='dane base1 base2-mm flex flex-column'>
 				<?php do_action( 'single-dane-main', $item ); ?>
 				
 				<?php do_action( 'single-dane-specyfikacja', $item ); ?>
