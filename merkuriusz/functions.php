@@ -661,7 +661,7 @@ add_action( 'single-picture', function( $arg ){
 					<a class='flex flex-items-center'>
 						do pobrania:
 						<span class='bold'>
-							7699.pdf [38.2kB]
+							???.pdf [???kB]
 						</span>
 						
 					</a>
@@ -825,45 +825,91 @@ add_action( 'single-dane-znakowanie', function( $arg ){
 	}
 	else return false;
 	
-	echo "<div class='marking seg'>
-					<div class='title uppercase flex flex-items-center'>
-						znakowanie
+	echo "<div class='marking multi seg'>
+					<div class='tabs flex'>
+						<div class='title uppercase pointer base2 flex flex-items-center active'>
+							znakowanie
+						</div>
+						<div class='title uppercase pointer base2 flex flex-items-center'>
+							kalkulator
+						</div>
+						
 					</div>
-					<div class='box flex'>
-						<div class='line area base2 flex flex-column flex-justify-center'>
+					<div class='box znakowanie flex active'>
+						<div class='line check flex flex-column'>
+							<div class='key flex flex-items-center flex-justify-center'>Wybór</div>";
+	foreach( $data as $item ){
+		echo 			"<div class='custom-checkbox pointer flex flex-items-center flex-justify-center' mark-size='{$item[0]}' mark-place='{$item[1]}' mark-type='{$item[2]}'>
+								<span class='icon fa fa-check'></span>
+							</div>";
+	}
+		echo		"</div>
+						<div class='line area base3 flex flex-column flex-justify-center'>
 							<div class='key flex flex-items-center'>
 								Rozmiar:
 							</div>";
 	foreach( $data as $item ){
-		echo "<div class='val bold flex flex-items-center'>
-					{$item[ 0 ]}
-				</div>";
+		echo			"<div class='val bold flex flex-items-center'>
+								{$item[ 0 ]}
+							</div>";
 	}
 							
 	echo 			"</div>
-						<div class='line place base2 flex flex-column flex-justify-center'>
+						<div class='line place base3 flex flex-column flex-justify-center'>
 							<div class='key flex flex-items-center'>
 								Miejsce:
 							</div>";
 	foreach( $data as $item ){
-		echo "<div class='val bold flex flex-items-center'>
-				{$item[1]}
-			</div>";
+		echo 			"<div class='val bold flex flex-items-center'>
+							{$item[1]}
+						</div>";
 	}
 							
 	echo			"</div>
-						<div class='line method base2 flex flex-column flex-justify-center'>
+						<div class='line method base3 flex flex-column flex-justify-center'>
 							<div class='key flex flex-items-center'>
 								Metoda:
 							</div>";
 	foreach( $data as $item ){
-		echo "<div class='val bold flex flex-items-center'>
-				{$item[2]}
-				<div class='icon fa fa-info'></div>
-			</div>";
+		echo 			"<div class='val bold flex flex-items-center'>
+								{$item[2]}
+								<div class='icon fa fa-info'></div>
+							</div>";
 	}
 							
 	echo			"</div>
+						
+					</div>
+					
+					<div class='box kalkulator flex flex-wrap'>
+						<div class='empty base1 flex flex-items-center flex-justify-center'>
+							Nie wybrano żadnego wariantu znakowania!
+						</div>
+						<div class='order base1 flex flex-wrap'>
+							<div class='number base1 flex flex-items-center'>
+								<div class='base2'>
+									Ilość zamawianych produktów:
+								</div>
+								<div class='base2'>
+									<input type='number' step=1 min=1 max=999999>
+								</div>
+							</div>
+							<div class='price base1 flex flex-items-center'>
+								<div class='base2'>
+									Cena znakowania:
+								</div>
+								<div class='base2 bold ajax'>
+									279.34
+								</div>
+							</div>
+							<div class='add base1 flex flex-justify-center'>
+								<div class='btn pointer'>
+									Dodaj do koszyka
+								</div>
+								
+							</div>
+							
+						</div>
 						
 					</div>
 					
@@ -893,8 +939,8 @@ add_action( 'single-dane-multi', function( $arg ){
 	);
 	
 	echo "<div class='multi seg'>
-					<div class='flex'>
-						<div class='pakowanie title uppercase base2 pointer flex flex-items-center'>
+					<div class='flex tabs'>
+						<div class='pakowanie title uppercase base2 pointer flex flex-items-center active'>
 							pakowanie
 						</div>
 						<div class='inne title uppercase base2 pointer flex flex-items-center'>

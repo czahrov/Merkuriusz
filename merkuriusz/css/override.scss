@@ -536,6 +536,28 @@ ul.menu{
 							
 						}
 						
+						&.check{
+							
+							& > .custom-checkbox{
+								padding: 0 5px;
+								height: 40px;
+								border: solid 1px $color_ramka_szara;
+								
+								.icon{
+									padding: 5px;
+									cursor: inherit;
+									
+								}
+								
+								&:not(.selected) .icon{
+									display: none;
+									
+								}
+								
+							}
+							
+						}
+						
 					}
 					
 				}
@@ -565,8 +587,13 @@ ul.menu{
 						padding: 0;
 						border: none;
 						
+						&:not(.active){
+							display: none;
+							
+						}
+						
 						.key, .val{
-							padding: 0 30px;
+							padding: 0 14px;
 							height: 40px;
 							border: solid 1px $color_ramka_szara;
 							
@@ -583,12 +610,67 @@ ul.menu{
 							
 						}
 						
+						&.kalkulator{
+							border: solid 1px $color_ramka_szara;
+							
+							& > .empty{
+								padding: 20px;
+								
+							}
+							
+							& > .order{
+								padding: 10px 20px;
+								
+								& > .number{
+									margin-bottom: 20px;
+									
+									input{
+										width: 100%;
+										height: 100%;
+										border: solid 1px $color_ramka_szara;
+										
+									}
+									
+								}
+								
+								& > .price{
+									margin-bottom: 20px;
+									
+									& > .ajax{
+										font-size: 25px;
+										
+									}
+									
+								}
+								
+								& > .add{
+									
+									& > .btn{
+										color: #fff;
+										background-color: $color_single_title;
+										
+									}
+									
+								}
+								
+							}
+							
+						}
 						
 					}
 					
 				}
 				
 				& > .multi{
+					
+					& > .tabs{
+						
+						& > .title.active{
+							background-color: darken( $color_single_title, 10% );
+							
+						}
+						
+					}
 					
 				}
 				

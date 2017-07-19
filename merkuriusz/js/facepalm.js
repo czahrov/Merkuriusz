@@ -620,9 +620,14 @@
 			
 			if(logger) console.log('page.produkt()');
 			
-			/* przełączanie zakładek */
+			/* przełączanie zakładek - pakowanie / inne */
 			(function( pak, pak_btn, inne, inne_btn ){
 				pak_btn.click(function( e ){
+					$(this)
+					.addClass( 'active' )
+					.siblings()
+					.removeClass( 'active' );
+					
 					pak
 					.removeClass( 'fp-hide' )
 					.siblings( '.box' )
@@ -631,6 +636,11 @@
 				});
 				
 				inne_btn.click(function( e ){
+					$(this)
+					.addClass( 'active' )
+					.siblings()
+					.removeClass( 'active' );
+					
 					inne
 					.removeClass( 'fp-hide' )
 					.siblings( '.box' )
@@ -664,7 +674,7 @@
 				.on({
 					set: function( e ){
 						if( current < 0 ){
-							current += img.length;
+							current = ( img.length - 3 );
 						}
 						
 						current %= ( img.length - 2 );
@@ -678,9 +688,6 @@
 									
 								},
 								ease: Power2.easeInOut,
-								onStart: function(){
-									console.info( posX() );
-								},
 								
 							}
 						);
@@ -694,6 +701,17 @@
 					prev: function( e ){
 						current--;
 						slider.triggerHandler( 'set' );
+						
+					},
+					
+				})
+				.swipe({
+					swipeLeft: function( e ){
+						slider.triggerHandler( 'next' );
+						
+					},
+					swipeRight: function( e ){
+						slider.triggerHandler( 'prev' );
 						
 					},
 					
@@ -722,6 +740,50 @@
 				
 			})
 			( $( '#grid .pic > .mini' ), $( '#grid .pic > .mini > .view' ), $( '#grid .pic > .mini > .view > .item' ), $( '#grid .pic > .large' ), $( '#grid .pic > .mini > .nav' ) );
+			
+			/* zakładki znakowanie / kalkulator */
+			(function( tabs, boxes ){
+				tabs.eq(0).click(function( e ){
+					$(this)
+					.addClass( 'active' )
+					.siblings()
+					.removeClass( 'active' );
+					
+					boxes
+					.filter('.znakowanie')
+					.addClass( 'active' )
+					.siblings( '.box' )
+					.removeClass( 'active' );
+					
+				});
+				
+				tabs.eq(1).click(function( e ){
+					$(this)
+					.addClass( 'active' )
+					.siblings()
+					.removeClass( 'active' );
+					
+					boxes
+					.filter('.kalkulator')
+					.addClass( 'active' )
+					.siblings( '.box' )
+					.removeClass( 'active' );
+					
+				});
+				
+				
+			})
+			( $( '.dane > .marking > .tabs > .title' ), $( '.dane > .marking > .box' ) );
+			
+			/* znakowanie */
+			(function( opcje ){
+				opcje.click(function( e ){
+					$(this).toggleClass( 'selected' );
+					
+				});
+				
+			})
+			( $( '.dane > .marking .custom-checkbox' ) );
 			
 		},
 		

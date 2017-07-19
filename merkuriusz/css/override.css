@@ -257,6 +257,15 @@ ul.menu {
             top: 50%;
             right: 10px;
             transform: translateY(-50%); }
+        #single #grid > .mid > .dane .box > .line.check > .custom-checkbox {
+          padding: 0 5px;
+          height: 40px;
+          border: solid 1px #e7e7e7; }
+          #single #grid > .mid > .dane .box > .line.check > .custom-checkbox .icon {
+            padding: 5px;
+            cursor: inherit; }
+          #single #grid > .mid > .dane .box > .line.check > .custom-checkbox:not(.selected) .icon {
+            display: none; }
     #single #grid > .mid > .dane > .seg {
       margin-bottom: 12px; }
     #single #grid > .mid > .dane > .main > .box {
@@ -264,9 +273,32 @@ ul.menu {
     #single #grid > .mid > .dane > .marking > .box {
       padding: 0;
       border: none; }
+      #single #grid > .mid > .dane > .marking > .box:not(.active) {
+        display: none; }
       #single #grid > .mid > .dane > .marking > .box .key, #single #grid > .mid > .dane > .marking > .box .val {
-        padding: 0 30px;
+        padding: 0 14px;
         height: 40px;
         border: solid 1px #e7e7e7; }
       #single #grid > .mid > .dane > .marking > .box > .line {
         margin: 0; }
+      #single #grid > .mid > .dane > .marking > .box.kalkulator {
+        border: solid 1px #e7e7e7; }
+        #single #grid > .mid > .dane > .marking > .box.kalkulator > .empty {
+          padding: 20px; }
+        #single #grid > .mid > .dane > .marking > .box.kalkulator > .order {
+          padding: 10px 20px; }
+          #single #grid > .mid > .dane > .marking > .box.kalkulator > .order > .number {
+            margin-bottom: 20px; }
+            #single #grid > .mid > .dane > .marking > .box.kalkulator > .order > .number input {
+              width: 100%;
+              height: 100%;
+              border: solid 1px #e7e7e7; }
+          #single #grid > .mid > .dane > .marking > .box.kalkulator > .order > .price {
+            margin-bottom: 20px; }
+            #single #grid > .mid > .dane > .marking > .box.kalkulator > .order > .price > .ajax {
+              font-size: 25px; }
+          #single #grid > .mid > .dane > .marking > .box.kalkulator > .order > .add > .btn {
+            color: #fff;
+            background-color: #2a96f8; }
+    #single #grid > .mid > .dane > .multi > .tabs > .title.active {
+      background-color: #087de7; }
