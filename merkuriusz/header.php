@@ -1,4 +1,10 @@
 <?php
+	$debug = false;
+	if( $debug and $_COOKIE['coin'] !== '1' ){
+		include "wbudowie.php";
+		exit;
+		
+	}
 	if( session_id() === "" ){
 		session_start();
 		

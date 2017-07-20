@@ -328,12 +328,12 @@ function markTypes( $type ){
 	
 }
 
-function markPrice( $type, $num, $repeat = 0 ){
+function markPrice( $type, $num, $repeat = 1 ){
 	$item = markTypes( $type );
 	
 	if( $item === false ) return false;
 	
-	$cena = $item[ 'przygotowanie' ] + $item[ 'powtórzenie' ] * $repeat + $item[ 'pakowanie' ] * $num;
+	$cena = $item[ 'przygotowanie' ] + $item[ 'powtórzenie' ] * ( $repeat - 1 ) + $item[ 'pakowanie' ] * $num;
 	
 	reset( $item[ 'ryczałt' ] );
 	$found = null;
@@ -448,8 +448,8 @@ add_action( 'kafelki_kategoria', function( $arg ){
 	$num = config( 'num' );
 	$page = config( 'strona' );
 	$pagin = array_chunk( $arg, $num );
-	if( !empty( $pagin[ $page ] ) ){
-		foreach( $pagin[ $page ] as $item ){
+	if( !empty( $pagin[ $page - 1 ] ) ){
+		foreach( $pagin[ $page - 1 ] as $item ){
 			printf( "<div class='item base1 base2-ms base3-mm base4-ds flex'>
 							<div class='wrapper grow flex flex-column'>
 								<div class='img bgimg contain' style='background-image:url(%s);'>
@@ -777,16 +777,7 @@ add_action( 'single-dane-specyfikacja', function( $arg ){
 					Materiał:
 				</div>
 				<div class='val bold'>
-					???
-				</div>
-				
-			</div>
-			<div class='line cat flex flex-items-center'>
-				<div class='key'>
-					Strona w katalogu:
-				</div>
-				<div class='val bold'>
-					???
+					{$arg[ 'MATTER' ]}
 				</div>
 				
 			</div>
@@ -795,7 +786,25 @@ add_action( 'single-dane-specyfikacja', function( $arg ){
 					Kolor:
 				</div>
 				<div class='val bold'>
-					???
+					{$arg[ 'COLOR' ]}
+				</div>
+				
+			</div>
+			<div class='line origin flex flex-items-center'>
+				<div class='key'>
+					Kraj pochodzenia:
+				</div>
+				<div class='val bold'>
+					{$arg[ 'COUNTRY' ]}
+				</div>
+				
+			</div>
+			<div class='line cat flex flex-items-center'>
+				<div class='key'>
+					Katalog:
+				</div>
+				<div class='val bold'>
+					{$arg[ 'CATALOG' ]}
 				</div>
 				
 			</div>
@@ -891,7 +900,7 @@ add_action( 'single-dane-znakowanie', function( $arg ){
 									Ilość zamawianych produktów:
 								</div>
 								<div class='base2'>
-									<input type='number' step=1 min=1 max=999999>
+									<input class='user' type='number' step=1 min=1 max=999999>
 								</div>
 							</div>
 							<div class='price base1 flex flex-items-center'>
@@ -899,7 +908,7 @@ add_action( 'single-dane-znakowanie', function( $arg ){
 									Cena znakowania:
 								</div>
 								<div class='base2 bold ajax'>
-									279.34
+									...
 								</div>
 							</div>
 							<div class='add base1 flex flex-justify-center'>
@@ -920,19 +929,15 @@ add_action( 'single-dane-znakowanie', function( $arg ){
 add_action( 'single-dane-multi', function( $arg ){
 	$data = array(
 		'pakowanie' => array(
-			'Pakowanie indywidualne' => '???',
-			'Ilość w kartonie zbiorczym' => '???',
-			'Wymiary kartonu zbiorczego' => '???',
-			'Waga kartonu zbiorczego' => '???',
-			'Ilość w kartonie wewnętrznym' => '???',
+			'Opakowanie jednostkowe' => $arg['PACKAGE']['SINGLE'],
+			'Ilość w kartonie zbiorczym' => $arg['PACKAGE']['TOTAL'],
+			'Wymiary kartonu zbiorczego' => $arg['PACKAGE']['DIM'],
+			'Waga kartonu zbiorczego' => $arg['PACKAGE']['WEIGHT'],
+			'Ilość w kartonie wewnętrznym' => $arg['PACKAGE']['INSIDE'],
 			
 		),
 		'inne' => array(
-			'Pakowanie indywidualne' => '??? ???',
-			'Ilość w kartonie zbiorczym' => '??? ???',
-			'Wymiary kartonu zbiorczego' => '??? ???',
-			'Waga kartonu zbiorczego' => '??? ???',
-			'Ilość w kartonie wewnętrznym' => '??? ???',
+			'Inne' => '???',
 			
 		),
 		

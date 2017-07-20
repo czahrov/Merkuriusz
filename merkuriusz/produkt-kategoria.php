@@ -16,9 +16,7 @@
 		
 	}
 	
-	$XM = new XMLMan();
-	$XM->addSupport( new AXPOL() );
-	$XM->init();
+	require_once "XML.php";
 	
 	$XMLData = $XM->getData();
 	

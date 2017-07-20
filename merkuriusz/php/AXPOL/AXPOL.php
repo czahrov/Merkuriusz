@@ -7,7 +7,7 @@ class AXPOL extends XMLAbstract{
 	// konstruktor
 	public function __construct(){
 		$this->logger( "" . __CLASS__ . " loaded!", __FUNCTION__, __CLASS__ );
-		//$this->_config['refresh'] = 60 * 60 * 24;		// 24h
+		$this->_config['refresh'] = 60 * 30;		// 30m
 		$this->_config['dnd'] = __DIR__ . "/DND";
 		$this->_config['cache'] = __DIR__ . "/CACHE";
 		$this->_config['remote'] = array(
@@ -84,7 +84,6 @@ class AXPOL extends XMLAbstract{
 				for( $i=1; $i<=20; $i++ ){
 					$num = sprintf( "%'02d", $i );
 					if( strlen( $t = (string)$item->{"Foto{$num}"} ) > 0 ){
-						//$img[] = $t;
 						$t2 = $i === 1?( 'fotob' ):( 'foto_add_big' );
 						$img[] = sprintf( "http://axpol.com.pl/files/%s/%s", $t2, $t );
 						
@@ -93,13 +92,13 @@ class AXPOL extends XMLAbstract{
 				}
 				
 				$cat = array();
-				$catalog = (string)$item->Catalog;
+				$catalog = strtolower( (string)$item->Catalog );
 				if( empty( $catalog ) ) $catalog = "Bez katalogu";
 				
-				$cat_name = (string)$item->MainCategoryPL;
+				$cat_name = strtolower( (string)$item->MainCategoryPL );
 				if( empty( $cat_name ) ) $cat_name = "Pozostałe";
 				switch( $cat_name ){
-					case 'DO PISANIA':
+					case 'do pisania':
 						$cat_name = 'materiały piśmiennicze';
 						
 					break;
@@ -107,6 +106,11 @@ class AXPOL extends XMLAbstract{
 				}
 				
 				$subcat_name = (string)$item->SubCategoryPL;
+				
+				if( in_array( $subcat_name, array( 'parasole automatyczne', 'parasole manualne', 'peleryny' ) ) or $cat_name === 'parasole'  ){
+					$cat_name = 'parasole i peleryny';
+					
+				}
 				
 				/* dostosowanie nazwy kategorii pod nazwy z menu na stronie */
 				$cat[ $catalog ] = array();
@@ -117,27 +121,51 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				
-				/*	oryginał
-				if( empty( $subcat_name ) ){
-						$cat[ $catalog ][ $cat_name ] = array();
-					
-				}
-				else{
-					$cat[ $catalog ][ $cat_name ][ $subcat_name ] = array();
-					
-				}
-				*/
-				
-				$ret[] = array(
-					'ID' => (string)$item->CodeERP,
-					'NAME' => (string)$item->TitlePL,
-					'DSCR' => (string)$item->DescriptionPL,
-					'IMG' => $img,
-					'CAT' => $cat,
-					'DIM' => (string)$item->Dimensions,
-					'MARK' => $this->_getMark( (string)$item->CodeERP ),
-					'INSTOCK' => $this->_getStock( (string)$item->CodeERP ),
-					
+				$ret[] = array_merge(
+					array(
+						'ID' => 'brak danych',
+						'NAME' => 'brak danych',
+						'DSCR' => 'brak danych',
+						'IMG' => array(),
+						'CAT' => array(),
+						'DIM' => 'brak danych',
+						'MARK' => array(),
+						'INSTOCK' => 'brak danych',
+						'MATTER' => 'brak danych',
+						'COLOR' => 'brak danych',
+						'COUNTRY' => 'brak danych',
+						'CATALOG' => 'brak danych',
+						'PACKAGE' => array(
+							'SINGLE' => 'brak danych',
+							'TOTAL' => 'brak danych',
+							'DIM' => 'brak danych',
+							'WEIGHT' => 'brak danych',
+							'INSIDE' => 'brak danych',
+							
+						),
+					),
+					array(
+						'ID' => (string)$item->CodeERP,
+						'NAME' => (string)$item->TitlePL,
+						'DSCR' => (string)$item->DescriptionPL,
+						'IMG' => $img,
+						'CAT' => $cat,
+						'DIM' => (string)$item->Dimensions,
+						'MARK' => $this->_getMark( (string)$item->CodeERP ),
+						'INSTOCK' => $this->_getStock( (string)$item->CodeERP ),
+						'MATTER' => (string)$item->MaterialPL,
+						'COLOR' => (string)$item->ColorPL,
+						'COUNTRY' => (string)$item->CountryOfOrigin,
+						'CATALOG' => sprintf( "%s (%s)", (string)$item->Catalog, (string)$item->Page ),
+						'PACKAGE' => array(
+							'SINGLE' => (string)$item->IndividualPacking,
+							'TOTAL' => (string)$item->ExportCtnQty,
+							'DIM' => (string)$item->CtnDimensions,
+							'WEIGHT' => sprintf( "%s kg", (string)$item->CtnWeightKG ),
+							'INSIDE' => (string)$item->InnerCtnQty,
+						),
+						
+					)
 				);
 				
 			}

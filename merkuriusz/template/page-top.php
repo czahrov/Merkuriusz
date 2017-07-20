@@ -10,7 +10,7 @@
 
 	<div class="col-md-5">
 		<div class="logo">
-			<a href="index.html">
+			<a href="<?php echo home_url(); ?>">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/logo_merkuriusz.png" class="logo-src" alt="merkuriusz logo">
 			</a>
 		</div>

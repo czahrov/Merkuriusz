@@ -776,14 +776,98 @@
 			( $( '.dane > .marking > .tabs > .title' ), $( '.dane > .marking > .box' ) );
 			
 			/* znakowanie */
-			(function( opcje ){
-				opcje.click(function( e ){
-					$(this).toggleClass( 'selected' );
+			(function( warianty, znakowanie, kalkulator, cena ){
+				kalkulator
+				.on({
+					test: function( e ){
+						if( warianty.filter( '.selected' ).length > 0 ){
+							kalkulator
+							.children( '.empty' )
+							.hide()
+							.siblings( '.order' )
+							.show();
+							
+						}
+						else{
+							kalkulator
+							.children( '.order' )
+							.hide()
+							.siblings( '.empty' )
+							.show();
+							
+						}
+						
+					},
+					calc: function( e ){
+						cena.text( 'Obliczam...' );
+						var data = {
+							num: kalkulator.find( 'input.user' ).val(),
+							order: {
+								
+							},
+							
+						};
+						
+						warianty.filter( '.selected' ).each(function(){
+							var type = $(this).attr( 'mark-type' )
+							var place = $(this).attr( 'mark-place' )
+							var size = $(this).attr( 'mark-size' )
+							
+							if( typeof data.order[ type ] === 'undefined' ) data.order[ type ] = {};
+							data.order[ type ][ place ] = {};
+							if( typeof data.order[ type ][ place ][ size ] === 'undefined' ) data.order[ type ][ place ][ size ] = true;
+							
+						});
+						
+						
+						$.ajax({
+							type: "POST",
+							url: '../kalkulator',
+							data: data,
+							success: function( data, status, xhr ){
+								console.log( data );
+								var t = data.match( /\[res:(.+)\]/ )[1];
+								console.log({
+									t:t,
+									
+								});
+								cena.text( t );
+								
+							},
+							
+						});
+						
+					},
+					
+				});
+				
+				warianty.click(function( e ){
+					if( $(this).hasClass( 'selected' ) ){
+						$(this).removeClass( 'selected' );
+						
+					}
+					else{
+						$(this)
+						.addClass( 'selected' )
+						.siblings( '.custom-checkbox.selected[mark-place="'+ $(this).attr( 'mark-place' ) +'"]' )
+						.removeClass( 'selected' );
+						
+					}
+					
+					kalkulator.triggerHandler( 'test' );
+					
+					
+				});
+				
+				kalkulator.children( '.order' ).hide();
+				
+				kalkulator.find( 'input.user' ).blur(function( e ){
+					kalkulator.triggerHandler( 'calc' );
 					
 				});
 				
 			})
-			( $( '.dane > .marking .custom-checkbox' ) );
+			( $( '.dane > .marking > .znakowanie .custom-checkbox' ), $( '.dane > .marking > .znakowanie' ), $( '.dane > .marking > .kalkulator' ), $( '.dane > .marking > .kalkulator > .order > .price > .ajax' ) );
 			
 		},
 		

@@ -7,20 +7,12 @@
 	parse_str( $_SERVER[ 'QUERY_STRING' ], $params );
 	$_SESSION = array_merge( $_SESSION, $params );
 	
-	$XM = new XMLMan();
-	$XM->addSupport( new AXPOL() );
-	$XM->addSupport( new ANDA() );
-	$XM->addSupport( new ASGARD() );
-	$XM->addSupport( new MACMA() );
-	$XM->addSupport( new INSPIRION() );
-	$XM->addSupport( new EASYGIFTS() );
-	$XM->addSupport( new PAR() );
-	$XM->init();
+	require_once "XML.php";
 	
 	$XMLData = $XM->getData();
 	
 	echo "<!--";
-	print_r( $XMLData['items'] );
+	//print_r( $XMLData['items'] );
 	echo "-->";
 	
 	$item = $XMLData[ 'items' ][0];
