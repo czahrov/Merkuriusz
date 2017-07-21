@@ -1,6 +1,11 @@
 <?php
+$AXPOL = new AXPOL();
+//$AXPOL->makeCache();
+
 $XM = new XMLMan();
-$XM->addSupport( new AXPOL() );
+$XM->addSupport( $AXPOL );
+
+//$XM->addSupport( new AXPOL() );
 //$XM->addSupport( new PAR() );
 //$XM->addSupport( new INSPIRION() );
 //$XM->addSupport( new ASGARD() );

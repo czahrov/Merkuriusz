@@ -97,24 +97,54 @@ class AXPOL extends XMLAbstract{
 				
 				$cat_name = strtolower( (string)$item->MainCategoryPL );
 				if( empty( $cat_name ) ) $cat_name = "Pozostałe";
-				switch( $cat_name ){
-					case 'do pisania':
-						$cat_name = 'materiały piśmiennicze';
-						
-					break;
-					
-				}
 				
 				$subcat_name = (string)$item->SubCategoryPL;
+				
+				/* === dostosowanie nazwy kategorii pod nazwy z menu na stronie === */
+				
+				if( in_array( $cat_name, array( 'do pisania', 'przybory piśmienne' ) ) ){
+					$cat_name = 'materiały piśmiennicze';
+					
+				}
+				elseif( in_array( $cat_name, array( 'narzędzia i latarki' ) ) ){
+					$cat_name = 'narzędzia';
+					
+				}
+				elseif( in_array( $cat_name, array( 'dom i wnętrze' ) ) ){
+					$cat_name = 'dom';
+					
+				}
+				elseif( in_array( $cat_name, array( 'wypoczynek i plener' ) ) ){
+					$cat_name = 'wypoczynek';
+					
+				}
+				elseif( in_array( $cat_name, array( 'teczki i notatniki' ) ) ){
+					$cat_name = 'biuro';
+					
+				}
 				
 				if( in_array( $subcat_name, array( 'parasole automatyczne', 'parasole manualne', 'peleryny' ) ) or $cat_name === 'parasole'  ){
 					$cat_name = 'parasole i peleryny';
 					
 				}
+				elseif( in_array( $subcat_name, array( 'uroda i pielęgnacja' ) ) ){
+					$cat_name = 'uroda';
+					
+				}
+				elseif( strpos( $subcat_name, 'ekologiczn' ) !== false ){
+					$cat_name = 'eco gadżet';
+					
+				}
+				elseif( in_array( $subcat_name, array( 'świąteczne' ) ) ){
+					$cat_name = 'świąteczne';
+					$subcat_name = '';
+					
+				}
 				
-				/* dostosowanie nazwy kategorii pod nazwy z menu na stronie */
 				$cat[ $catalog ] = array();
 				$cat[ $cat_name ] = array();
+				
+				/* ================== */
 				
 				if( !empty( $subcat_name ) ){
 					$cat[ $subcat_name ] = array();

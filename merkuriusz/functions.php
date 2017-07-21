@@ -491,7 +491,7 @@ add_action( 'number', function( $arg ){
 	
 	printf( "Produktów %u-%u / %u",
 		1 + ( $strona - 1) * $perpage,
-		$strona * $perpage,
+		min( $strona * $perpage, $total ),
 		$total
 	);
 	

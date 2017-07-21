@@ -353,7 +353,7 @@ class XMLAbstract{
 		[] Zapisuje CACHE z produktami dla danych kategorii
 		
 	*/
-	protected function makeCache(){
+	public function makeCache(){
 		// czy istnieje folder cache
 		$cache_url = $this->_config['cache'];
 		if( !file_exists( $cache_url ) ){

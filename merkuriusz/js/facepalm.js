@@ -274,6 +274,19 @@
 			})
 			( $('ul.menu > li') );
 			
+			/* domyślne rozwijanie kategorii VIP */
+			(function(){
+				if( !/cat=/.test( window.location.search ) ){
+					$( 'ul.menu > .item.vip' )
+					.addClass( 'open' )
+					.siblings( '.item' )
+					.removeClass( 'open' );
+					
+				}
+				
+			})
+			();
+			
 			/* slider katalogu pdf'ów */
 			(function( slider, arrows, viewbox, items ){
 				var current = 0;
@@ -825,12 +838,9 @@
 							url: '../kalkulator',
 							data: data,
 							success: function( data, status, xhr ){
-								console.log( data );
+								//console.log( data );
 								var t = data.match( /\[res:(.+)\]/ )[1];
-								console.log({
-									t:t,
-									
-								});
+								//console.log({ t:t });
 								cena.text( t );
 								
 							},

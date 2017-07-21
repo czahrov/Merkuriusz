@@ -7,7 +7,7 @@
 					'class' => 'reklamowe',
 					'items' => array(
 						array(
-							'title' => 'Materiały Piśmiennicze',
+							'title' => 'Materiały piśmiennicze',
 							'pikto' => 'pisemnicze.png'
 						),
 						array(
@@ -47,16 +47,28 @@
 							'pikto' => 'eco.png'
 						),
 						array(
-							'title' => 'Medyczne',
-							'pikto' => 'medyczne.png'
+							'title' => 'Breloki',
+							//'pikto' => 'medyczne.png'
 						),
 						array(
-							'title' => 'Transport',
+							'title' => 'Podróż',
 							'pikto' => 'transport.png'
 						),
 						array(
 							'title' => 'Tekstylia',
 							'pikto' => 'tekstylia.png'
+						),
+						array(
+							'title' => 'Wypoczynek',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Zdrowie i bezpieczeństwo',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Moleskine',
+							//'pikto' => ''
 						),
 						array(
 							'title' => 'Świąteczne',
@@ -91,16 +103,16 @@
 					'class' => 'axpol',
 					'items' => array(
 						array(
-							'title' => 'Opcja 1',
-							'pikto' => 'pisemnicze.png'
+							'title' => 'VOYAGER 2017',
+							//'pikto' => ''
 						),
 						array(
-							'title' => 'Opcja 2',
-							'pikto' => 'biuro.png'
+							'title' => 'VOYAGER WINE CLUB',
+							//'pikto' => ''
 						),
 						array(
-							'title' => 'Opcja 3',
-							'pikto' => 'torby.png'
+							'title' => 'VOYAGER XD 2017',
+							//'pikto' => ''
 						),
 						
 					),
@@ -124,7 +136,7 @@
 					),
 				),
 				'kolekcja vip' => array(
-					'class' => 'vip open',
+					'class' => 'vip',
 					'items' => array(
 						array(
 							'title' => 'vip collection',

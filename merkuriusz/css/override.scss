@@ -369,11 +369,10 @@ ul.menu{
 	
 	& > .pagin{
 		margin-bottom: 30px;
-		height: 60px;
-		border: solid 1px $color_ramka_szara;
 		
 		& > .next, & > .prev{
-				height: 100%;
+				height: 60px;
+				border: solid 1px $color_ramka_szara;
 			
 			& > a{
 				height: 100%;
