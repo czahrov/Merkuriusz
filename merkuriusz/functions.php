@@ -502,10 +502,23 @@ add_action( 'kategoria_pagin_next', function( $arg ){
 	parse_str( $query, $args );
 	
 	$total = $arg;
-	$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $args['num'] )?( (int)$args['num'] ):( 20 ) );
-	$strona = !empty( $args['strona'] )?( (int)$args['strona'] ):( 1 );
+	//$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $args['num'] )?( (int)$args['num'] ):( 20 ) );
+	$perpage = (int)config( 'num' );
+	//$strona = !empty( $args['strona'] )?( (int)$args['strona'] ):( 1 );
+	$strona = (int)config( 'strona' );
 	
-	if( $strona * $perpage < $total ){
+	echo "<!--";
+	print_r(
+		array(
+			'strona' => $strona,
+			'perpage' => $perpage,
+			'total' => $total,
+		)
+		
+	);
+	echo "-->";
+	
+	if( $strona * $perpage <= $total ){
 		$args['strona'] = ++$strona;
 		printf( "<div class='next base2 grow flex flex-items-center flex-justify-center'>
 					<a class='base1 flex flex-items-center flex-justify-center' href='?%s'>Następna strona >></a>
@@ -521,7 +534,8 @@ add_action( 'kategoria_pagin_prev', function( $arg ){
 	parse_str( $query, $args );
 	
 	$total = $arg;
-	$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $args['num'] )?( (int)$args['num'] ):( 20 ) );
+	//$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $args['num'] )?( (int)$args['num'] ):( 20 ) );
+	$perpage = config( 'num' );
 	$strona = !empty( $args['strona'] )?( (int)$args['strona'] ):( 1 );
 	
 	if( $strona > 1 ){
