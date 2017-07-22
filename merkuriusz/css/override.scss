@@ -531,6 +531,7 @@ ul.menu{
 					padding: 5px;
 					height: 320px;
 					background-clip: content-box;
+					background-origin: content-box;
 					border: solid 1px $color_ramka_szara;
 					
 					& > .icon{

@@ -1,5 +1,5 @@
 <?php
-	$develop = true;
+	$develop = false;
 	if( $develop && !isset( $_COOKIE['coin'] ) ){
 		include "wbudowie.php";
 		exit;

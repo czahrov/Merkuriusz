@@ -918,7 +918,6 @@
 				img
 				.on({
 					load: function( e ){
-						console.log( 'loaded!' );
 						popup.triggerHandler( 'ready' );
 						
 					},

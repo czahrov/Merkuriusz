@@ -100,8 +100,13 @@ class AXPOL extends XMLAbstract{
 				
 				$subcat_name = (string)$item->SubCategoryPL;
 				
-				/* === dostosowanie nazwy kategorii pod nazwy z menu na stronie === */
+				/* ========== KATALOGI ========== */
+				if( $catalog === 'voyager wine club' ){
+					$catalog = 'vine club';
+					
+				}
 				
+				/* ========== KATEGORIE ========== */
 				if( in_array( $cat_name, array( 'do pisania', 'przybory piśmienne' ) ) ){
 					$cat_name = 'materiały piśmiennicze';
 					
@@ -122,6 +127,23 @@ class AXPOL extends XMLAbstract{
 					$cat_name = 'biuro';
 					
 				}
+				elseif( $cat_name === 'fofcio promo toys' ){
+					if( $subcat_name === 'inne akcesoria' ){
+						$subcat_name = 'akcesoria';
+						
+					}
+					elseif( $subcat_name === 'inne zwierzątka' ){
+						$subcat_name = 'zwierzątka';
+						
+					}
+					elseif( $subcat_name === 'breloki' ){
+						$subcat_name = 'pluszowe breloki';
+						
+					}
+					
+				}
+				
+				/* ========== PODKATEGORIE ========== */
 				
 				if( in_array( $subcat_name, array( 'parasole automatyczne', 'parasole manualne', 'peleryny' ) ) or $cat_name === 'parasole'  ){
 					$cat_name = 'parasole i peleryny';
@@ -141,10 +163,18 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				
-				$cat[ $catalog ] = array();
-				$cat[ $cat_name ] = array();
+				/* ========== PODKATEGORIE ========== */
+				
+				if( strpos( (string)$item->TitlePL, 'Mauro Conti' ) !== false ){
+					$cat_name = 'vip skóra';
+					$subcat_name = '';
+					
+				}
 				
 				/* ================== */
+				
+				$cat[ $catalog ] = array();
+				$cat[ $cat_name ] = array();
 				
 				if( !empty( $subcat_name ) ){
 					$cat[ $subcat_name ] = array();

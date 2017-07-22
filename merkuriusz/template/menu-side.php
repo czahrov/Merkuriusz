@@ -85,16 +85,32 @@
 					'class' => 'fofcio',
 					'items' => array(
 						array(
-							'title' => 'Opcja 1',
-							'pikto' => 'pisemnicze.png'
+							'title' => 'Misie',
+							//'pikto' => ''
 						),
 						array(
-							'title' => 'Opcja 2',
-							'pikto' => 'biuro.png'
+							'title' => 'Dzikie',
+							//'pikto' => ''
 						),
 						array(
-							'title' => 'Opcja 3',
-							'pikto' => 'torby.png'
+							'title' => 'Domowe',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Boże Narodzenie',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Pluszowe breloki',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Akcesoria',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Zwierzątka',
+							//'pikto' => ''
 						),
 						
 					),
@@ -104,10 +120,6 @@
 					'items' => array(
 						array(
 							'title' => 'VOYAGER 2017',
-							//'pikto' => ''
-						),
-						array(
-							'title' => 'VOYAGER WINE CLUB',
 							//'pikto' => ''
 						),
 						array(
@@ -121,16 +133,60 @@
 					'class' => 'elektronika',
 					'items' => array(
 						array(
-							'title' => 'Opcja 1',
-							'pikto' => 'pisemnicze.png'
+							'title' => 'Zegary i zegarki',
+							//'pikto' => ''
 						),
 						array(
-							'title' => 'Opcja 2',
-							'pikto' => 'biuro.png'
+							'title' => 'Stacje pogodowe',
+							//'pikto' => ''
 						),
 						array(
-							'title' => 'Opcja 3',
-							'pikto' => 'torby.png'
+							'title' => 'Kalkulatory',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Wskaźniki laserowe',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Pamięci USB',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Akcesoria do komputerów',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Huby USB',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Akcesoria do telefonów',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Ładowarki samochodowe',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Słuchawki',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Głośniki',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Ładowarki słoneczne',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Power banki',
+							//'pikto' => ''
+						),
+						array(
+							'title' => 'Inne',
+							//'pikto' => ''
 						),
 						
 					),
