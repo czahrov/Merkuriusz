@@ -879,6 +879,75 @@
 			})
 			( $( '.dane > .marking > .znakowanie .custom-checkbox' ), $( '.dane > .marking > .znakowanie' ), $( '.dane > .marking > .kalkulator' ), $( '.dane > .marking > .kalkulator > .order > .price > .ajax' ) );
 			
+			/* popup produktu */
+			(function( popup, view, close, img, large ){
+				popup
+				.on({
+					open: function( e ){
+						popup
+						.addClass( 'open' );
+						
+					},
+					close: function( e ){
+						popup
+						.removeClass( 'open ready' );
+						
+						img
+						.attr({
+							src: '',
+							
+						});
+						
+					},
+					img: function( e, url ){
+						var match = url.match(/\("(.+)"\)/);
+						img.attr({
+							src: match[1],
+							
+						});
+						
+					},
+					ready: function( e ){
+						popup
+						.addClass( 'ready' );
+						
+					},
+					
+				});
+				
+				img
+				.on({
+					load: function( e ){
+						console.log( 'loaded!' );
+						popup.triggerHandler( 'ready' );
+						
+					},
+					
+				});
+				
+				large
+				.click(function( e ){
+					popup.triggerHandler( 'open' );
+					popup.triggerHandler( 'img', [ large.css( 'background-image' ) ] );
+					
+				});
+				
+				close
+				.add( popup )
+				.click(function( e ){
+					popup.triggerHandler( 'close' );
+					
+				});
+				
+				view
+				.click(function( e ){
+					e.stopPropagation();
+					
+				});
+				
+			})
+			( $( '#single > .popup' ), $( '#single > .popup > .box' ), $( '#single > .popup > .box > .header > .close' ), $( '#single > .popup > .box > .img > img' ), $( '#grid > .mid > .pic > .large' ) );
+			
 		},
 		
 	}

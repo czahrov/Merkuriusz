@@ -507,17 +507,6 @@ add_action( 'kategoria_pagin_next', function( $arg ){
 	//$strona = !empty( $args['strona'] )?( (int)$args['strona'] ):( 1 );
 	$strona = (int)config( 'strona' );
 	
-	echo "<!--";
-	print_r(
-		array(
-			'strona' => $strona,
-			'perpage' => $perpage,
-			'total' => $total,
-		)
-		
-	);
-	echo "-->";
-	
 	if( $strona * $perpage <= $total ){
 		$args['strona'] = ++$strona;
 		printf( "<div class='next base2 grow flex flex-items-center flex-justify-center'>
@@ -535,8 +524,9 @@ add_action( 'kategoria_pagin_prev', function( $arg ){
 	
 	$total = $arg;
 	//$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $args['num'] )?( (int)$args['num'] ):( 20 ) );
-	$perpage = config( 'num' );
-	$strona = !empty( $args['strona'] )?( (int)$args['strona'] ):( 1 );
+	$perpage = (int)config( 'num' );
+	//$strona = !empty( $args['strona'] )?( (int)$args['strona'] ):( 1 );
+	$strona = (int)config( 'strona' );
 	
 	if( $strona > 1 ){
 		$args['strona'] = --$strona;
@@ -607,35 +597,8 @@ add_action( 'gen_menu', function( $arg ){
 } );
 
 add_action( 'single-picture', function( $arg ){
-	/*
-	<div class='pic base2 flex flex-column'>
-				<div class='large bgimg full' style='background-image: url( https://placeimg.com/300/300/tech );'>
-					<div class='icon'>
-						<span class='fa fa-search-plus'></span>
-					</div>
-					
-				</div>
-				<div class='mini flex'>
-					<div class='item bgimg full base0 grow pointer'></div>
-					<div class='item bgimg full base0 grow pointer'></div>
-					<div class='item bgimg full base0 grow pointer'></div>
-					
-				</div>
-				<div class='download'>
-					<a class='flex flex-items-center'>
-						do pobrania:
-						<span class='bold'>
-							7699.pdf [38.2kB]
-						</span>
-						
-					</a>
-				</div>
-				
-			</div>
-	*/
-	
 	echo "<div class='pic base0 grow flex flex-column'>";
-		printf( "<div class='large bgimg contain' style='background-image: url( %s );'>
+		printf( "<div class='large bgimg contain pointer' style='background-image: url( %s );'>
 					<div class='icon'>
 						<span class='fa fa-search-plus'></span>
 					</div>
@@ -644,32 +607,36 @@ add_action( 'single-picture', function( $arg ){
 		$arg[ 'IMG' ][0]
 	);
 	
-	echo "<div class='mini flex'>";
-	
-		if( count( $arg['IMG'] ) > 3 )
-		{
-			echo "<div class='nav prev pointer flex flex-items-center flex-justify-center'><span class='icon fa fa-angle-left'></span></div>";
+	if( count( $arg['IMG'] ) > 1 ){
+		echo "<div class='mini flex'>";
+		
+			if( count( $arg['IMG'] ) > 3 )
+			{
+				echo "<div class='nav prev pointer flex flex-items-center flex-justify-center'><span class='icon fa fa-angle-left'></span></div>";
+				
+			}
+			echo "<div class='view grow flex'>";
+				
+				for( $i=0; $i<count( $arg['IMG'] ); $i++ ){
+					printf( "<div class='item bgimg contain base3 no-shrink pointer' style='background-image: url( %s );'></div>", 
+						$arg[ 'IMG' ][ $i ]
+					);
+					
+				}
 			
-		}
-		echo "<div class='view grow flex'>";
+			echo "</div>";
 			
-			for( $i=0; $i<count( $arg['IMG'] ); $i++ ){
-				printf( "<div class='item bgimg contain base3 no-shrink pointer' style='background-image: url( %s );'></div>", 
-					$arg[ 'IMG' ][ $i ]
-				);
+			if( count( $arg['IMG'] ) > 3 )
+			{
+				echo "<div class='nav next pointer flex flex-items-center flex-justify-center'><span class='icon fa fa-angle-right'></span></div>";
 				
 			}
 		
+		
 		echo "</div>";
 		
-		if( count( $arg['IMG'] ) > 3 )
-		{
-			echo "<div class='nav next pointer flex flex-items-center flex-justify-center'><span class='icon fa fa-angle-right'></span></div>";
-			
-		}
+	}
 	
-	
-	echo "</div>";
 	
 	echo "<div class='download'>
 					<a class='flex flex-items-center'>

@@ -1,138 +1,138 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000317}}
 a {
   display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000320}}
   a, a:hover, a:focus {
     text-decoration: none;
     color: inherit;
     outline: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000329}}
 .semibold {
   font-family: 'Montserrat-SemiBold'; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000334}}
 .bold {
   font-family: 'Montserrat-Bold'; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000339}}
 .title {
   font-size: 14px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000344}}
 ul.menu {
   border-style: solid;
   border-width: 1px;
   border-color: #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000351}}
   ul.menu > .item.active.reklamowe > .head {
     box-shadow: 0 0 0 2px #0af inset; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000358}}
   ul.menu > .item.active > .sub > .item.active > .head > .title {
     color: #0af; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000367}}
   ul.menu .item {
     position: relative;
     background-color: #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000371}}
     ul.menu .item > .pikto {
       margin-right: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000376}}
     ul.menu .item > .head {
       padding-left: 20px;
       padding-right: 20px;
       min-height: 60px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000381}}
       ul.menu .item > .head > .pikto {
         margin-right: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000386}}
       ul.menu .item > .head > .title {
         margin-right: auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000391}}
       ul.menu .item > .head > .logotyp {
         margin: 5px 10px 5px 0;
         background-position: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\0000399}}
     ul.menu .item .sub {
       padding-left: 10px;
       color: #000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003103}}
       ul.menu .item .sub > .item {
         border-top: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003106}}
         ul.menu .item .sub > .item:hover {
           margin-left: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003109}}
           ul.menu .item .sub > .item:hover > .head {
             padding-left: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003116}}
         ul.menu .item .sub > .item > .head {
           min-height: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003125}}
     ul.menu .item > .icon {
       transition: transform .3s linear; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003130}}
     ul.menu .item:not(.open) > .sub {
       display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003135}}
     ul.menu .item.open > .head > .icon {
       transform: rotate(90deg); }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003140}}
     ul.menu .item.fofcio {
       color: #fff;
       background-color: #D10990; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003146}}
     ul.menu .item.axpol {
       color: #fff;
       background-color: #83C23F; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003152}}
     ul.menu .item.elektronika {
       color: #fff;
       background-color: #1f9DF1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003158}}
     ul.menu .item.vip {
       color: #fff;
       background-color: #1d1d1d; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003166}}
   ul.menu * {
     cursor: pointer; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003175}}
 #home .home-top-right {
   height: 400px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003179}}
 #home .home-top-right > .slider {
   height: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003182}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003183}}
 #home .top-slider {
   margin-bottom: 30px;
   padding: 0 15px;
   min-height: 430px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003188}}
   #home .top-slider > .text {
     background-color: #fff;
     border: solid 1px #e7e7e7;
     overflow: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003193}}
     #home .top-slider > .text a {
       text-decoration: none;
       color: initial; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003201}}
     #home .top-slider > .text > .view > .item {
       padding: 30px 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003204}}
       #home .top-slider > .text > .view > .item:not(.active) {
         display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003208}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003209}}
       #home .top-slider > .text > .view > .item > .title {
         margin-bottom: 24px;
         font-size: 18px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003215}}
       #home .top-slider > .text > .view > .item > .content {
         margin-bottom: 24px;
         line-height: 1.5em;
         font-size: 14px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003222}}
       #home .top-slider > .text > .view > .item > .button {
         margin-top: auto;
         min-width: 130px;
@@ -141,10 +141,10 @@ ul.menu {
         line-height: 0;
         font-size: 12px;
         text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003238}}
     #home .top-slider > .text > .pagin {
       padding: 0 0 30px 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003240}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003241}}
       #home .top-slider > .text > .pagin > .item {
         margin-right: 4px;
         width: 18px;
@@ -156,29 +156,29 @@ ul.menu {
         border-radius: 50%;
         transition-property: background, border;
         transition: .3s linear; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003252}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003253}}
         #home .top-slider > .text > .pagin > .item.active {
           border-color: #269bff;
           background-color: #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003263}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003264}}
   #home .top-slider > .imgs {
     margin-left: 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003266}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003267}}
     #home .top-slider > .imgs > .view {
       background-color: #fff;
       border: solid 1px #e7e7e7;
       overflow: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003273}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003274}}
       #home .top-slider > .imgs > .view > .item:not(.active) {
         display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003288}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003289}}
 #grid {
   background-color: #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003291}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003292}}
   #grid .switcher {
     min-height: 60px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003294}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003295}}
     #grid .switcher > a {
       margin-left: 10px;
       width: 34px;
@@ -187,26 +187,26 @@ ul.menu {
       background-color: #D3D3D3;
       transition-property: color, background;
       transition: .3s linear; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003303}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003304}}
       #grid .switcher > a.active, #grid .switcher > a:hover {
         color: #fff;
         background-color: #269bff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003314}}
   #grid > .top {
     margin-bottom: 30px;
     padding: 0 20px;
     border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003319}}
     #grid > .top > .breadc {
       min-height: 60px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003326}}
   #grid > .kafelki {
     margin: 0 -10px 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003331}}
     #grid > .kafelki > .item > .wrapper {
       margin: 10px;
       border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003335}}
       #grid > .kafelki > .item > .wrapper > .img {
         position: relative;
         padding: 10px;
@@ -214,191 +214,259 @@ ul.menu {
         background-clip: content-box;
         background-origin: content-box;
         border-bottom: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003343}}
         #grid > .kafelki > .item > .wrapper > .img > a {
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003354}}
       #grid > .kafelki > .item > .wrapper > .title {
         padding: 10px;
         border-bottom: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003360}}
       #grid > .kafelki > .item > .wrapper > .code {
         padding: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003371}}
   #grid > .pagin {
     margin-bottom: 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003374}}
     #grid > .pagin > .next, #grid > .pagin > .prev {
       height: 60px;
       border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003378}}
       #grid > .pagin > .next > a, #grid > .pagin > .prev > a {
         height: 100%;
         background-color: #fff;
         transition: background .3s linear; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003383}}
         #grid > .pagin > .next > a:hover, #grid > .pagin > .prev > a:hover {
           background-color: #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003394}}
   #grid > .bot {
     margin-bottom: 30px;
     padding: 0 20px;
     border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003399}}
     #grid > .bot > .num {
       min-height: 60px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003419}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003418}}
+#single > .popup {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  width: initial;
+  max-width: initial;
+  height: initial;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: none;
+  z-index: 110; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003434}}
+  #single > .popup:not(.open) {
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003439}}
+  #single > .popup > .box {
+    max-width: 75%;
+    max-height: 75%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003443}}
+    #single > .popup > .box > .header {
+      margin-bottom: 10px;
+      height: 60px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003447}}
+      #single > .popup > .box > .header > .title {
+        padding: 0 20px;
+        margin-right: 10px;
+        font-size: 20px;
+        color: #fff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003455}}
+      #single > .popup > .box > .header > .close {
+        width: 60px;
+        background-color: #2a96f8;
+        opacity: 1;
+        color: #fff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003461}}
+        #single > .popup > .box > .header > .close > .icon {
+          cursor: inherit; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003470}}
+    #single > .popup > .box > .loader {
+      margin: 50px 0;
+      height: 60px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003474}}
+      #single > .popup > .box > .loader > .box {
+        width: 60px;
+        background-color: #fff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003478}}
+        #single > .popup > .box > .loader > .box > .icon {
+          font-size: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003487}}
+    #single > .popup > .box > .img {
+      padding: 10px;
+      background-color: #fff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003491}}
+      #single > .popup > .box > .img > img {
+        max-width: 100%;
+        max-height: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003503}}
+  #single > .popup.ready > .box > .loader {
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003512}}
+  #single > .popup:not(.ready) > .box > .img {
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003523}}
 #single #grid > .mid {
   margin: 0 -6px 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003422}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003526}}
   #single #grid > .mid > .pic {
     padding: 0 6px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003425}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003529}}
     #single #grid > .mid > .pic > .large {
       position: relative;
       padding: 5px;
       height: 320px;
       background-clip: content-box;
       border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003432}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003536}}
       #single #grid > .mid > .pic > .large > .icon {
         position: absolute;
         right: 20px;
         bottom: 20px;
         font-size: 20px;
-        text-shadow: 0 0 3px #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003443}}
+        text-shadow: 0 0 3px #fff;
+        cursor: inherit; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003548}}
     #single #grid > .mid > .pic > .mini {
       position: relative;
       border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003447}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003552}}
       #single #grid > .mid > .pic > .mini > .nav {
         width: 20px;
         font-size: 30px;
         color: #fff;
         background-color: #269bff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003453}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003558}}
         #single #grid > .mid > .pic > .mini > .nav .icon {
           cursor: inherit; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003460}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003565}}
       #single #grid > .mid > .pic > .mini > .view {
         overflow: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003463}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003568}}
         #single #grid > .mid > .pic > .mini > .view > .item {
           padding: 5px;
           height: 100px;
           background-clip: content-box;
           background-origin: content-box; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003475}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003580}}
     #single #grid > .mid > .pic > .download {
       margin-top: 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003478}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003583}}
       #single #grid > .mid > .pic > .download > a {
         padding: 0 30px;
         height: 40px;
         border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003483}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003588}}
         #single #grid > .mid > .pic > .download > a > .bold {
           margin-left: 10px;
           cursor: inherit; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003495}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003600}}
   #single #grid > .mid > .dane {
     padding: 0 6px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003498}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003603}}
     #single #grid > .mid > .dane .title {
       height: 40px;
       background-color: #2a96f8;
       padding: 0 30px;
       color: #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003506}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003611}}
     #single #grid > .mid > .dane .box {
       padding: 15px 30px;
       border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003510}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003615}}
       #single #grid > .mid > .dane .box > .line {
         margin: 10px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003514}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003619}}
         #single #grid > .mid > .dane .box > .line > .key {
           padding-right: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003520}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003625}}
         #single #grid > .mid > .dane .box > .line.desc > .key {
           padding-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003525}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003630}}
         #single #grid > .mid > .dane .box > .line.method > .val {
           position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003528}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003633}}
           #single #grid > .mid > .dane .box > .line.method > .val > .icon {
             position: absolute;
             top: 50%;
             right: 10px;
             transform: translateY(-50%); }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003540}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003645}}
         #single #grid > .mid > .dane .box > .line.check > .custom-checkbox {
           padding: 0 5px;
           height: 40px;
           border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003545}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003650}}
           #single #grid > .mid > .dane .box > .line.check > .custom-checkbox .icon {
             padding: 5px;
             cursor: inherit; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003551}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003656}}
           #single #grid > .mid > .dane .box > .line.check > .custom-checkbox:not(.selected) .icon {
             display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003564}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003669}}
     #single #grid > .mid > .dane > .seg {
       margin-bottom: 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003571}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003676}}
     #single #grid > .mid > .dane > .main > .box {
       padding: 5px 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003585}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003690}}
     #single #grid > .mid > .dane > .marking > .box {
       padding: 0;
       border: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003589}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003694}}
       #single #grid > .mid > .dane > .marking > .box:not(.active) {
         display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003594}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003699}}
       #single #grid > .mid > .dane > .marking > .box .key, #single #grid > .mid > .dane > .marking > .box .val {
         padding: 0 14px;
         height: 40px;
         border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003602}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003707}}
       #single #grid > .mid > .dane > .marking > .box > .line {
         margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003612}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003717}}
       #single #grid > .mid > .dane > .marking > .box.kalkulator {
         border: solid 1px #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003615}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003720}}
         #single #grid > .mid > .dane > .marking > .box.kalkulator > .empty {
           padding: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003620}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003725}}
         #single #grid > .mid > .dane > .marking > .box.kalkulator > .order {
           padding: 10px 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003623}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003728}}
           #single #grid > .mid > .dane > .marking > .box.kalkulator > .order > .number {
             margin-bottom: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003626}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003731}}
             #single #grid > .mid > .dane > .marking > .box.kalkulator > .order > .number input.user {
               padding: 0 10px;
               width: 100%;
               height: 100%;
               border: solid 1px #e7e7e7;
               font-size: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003637}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003742}}
           #single #grid > .mid > .dane > .marking > .box.kalkulator > .order > .price {
             margin-bottom: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003640}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003745}}
             #single #grid > .mid > .dane > .marking > .box.kalkulator > .order > .price > .ajax {
               font-size: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003649}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003754}}
           #single #grid > .mid > .dane > .marking > .box.kalkulator > .order > .add > .btn {
             color: #fff;
             background-color: #2a96f8; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003669}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\(DawidW\)\/Merkuriusz_wp\/themes\/merkuriusz\/css\/override\.scss}line{font-family:\00003774}}
     #single #grid > .mid > .dane > .multi > .tabs > .title.active {
       background-color: #087de7; }

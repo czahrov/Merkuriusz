@@ -11,9 +11,9 @@
 	
 	$XMLData = $XM->getData();
 	
-	echo "<!--";
-	//print_r( $XMLData['items'] );
-	echo "-->";
+	// echo "<!--";
+	// print_r( $XMLData['items'] );
+	// echo "-->";
 	
 	$item = $XMLData[ 'items' ][0];
 	
@@ -61,6 +61,30 @@
 	
 ?>
 <body id='single'>
+<div class='popup pointer flex flex-items-center flex-justify-center'>
+	<div class='box flex flex-column'>
+		<div class='header flex no-shrink flex-self-stretch'>
+			<div class='title base0 grow flex flex-items-center'>
+				<?php echo $item['NAME']; ?>
+			</div>
+			<div class='close flex flex-items-center flex-justify-center'>
+				<span class='icon fa fa-times'></span>
+			</div>
+			
+		</div>
+		<div class='loader flex flex-justify-center'>
+			<div class='box flex flex-items-center flex-justify-center'>
+				<span class='icon fa fa-circle-o-notch fa-spin'></span>
+			</div>
+			
+		</div>
+		<div class='img base0 grow shrink flex flex-items-center flex-justify-center'>
+			<img/>
+		</div>
+		
+	</div>
+	
+</div>
 <?php get_template_part( "template/page", "top" ); ?>
 <div class='container'>
 	<?php get_template_part( "template/menu", "side" ); ?>
