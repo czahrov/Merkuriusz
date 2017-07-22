@@ -162,6 +162,49 @@ class AXPOL extends XMLAbstract{
 					$subcat_name = '';
 					
 				}
+				elseif( $subcat_name === 'inne' ){
+					if( $cat_name === 'breloki' ){
+						$subcat_name = 'inne breloki';
+						
+					}
+					elseif( $cat_name === 'biuro' ){
+						$subcat_name = 'inne art. biurowe';
+						
+					}
+					elseif( $cat_name === 'elektronika' ){
+						$subcat_name = 'inne art. elektroniczne';
+						
+					}
+					elseif( $cat_name === 'dom' ){
+						$subcat_name = 'inne art. domowe';
+						
+					}
+					elseif( $cat_name === 'torby i plecaki' ){
+						$subcat_name = 'pozostałe torby i plecaki';
+						
+					}
+					elseif( $cat_name === 'narzędzia' ){
+						$subcat_name = 'pozostałe narzędzia';
+						
+					}
+					elseif( $cat_name === 'podróż' ){
+						$subcat_name = 'inne art. podróżne';
+						
+					}
+					elseif( $cat_name === 'do picia' ){
+						$subcat_name = 'inne art. do picia';
+						
+					}
+					elseif( $cat_name === 'tekstylia' ){
+						$subcat_name = 'pozostałe tekstylia';
+						
+					}
+					elseif( $cat_name === 'moleskine' ){
+						$subcat_name = 'pozostałe art. moleskine';
+						
+					}
+					
+				}
 				
 				/* ========== PODKATEGORIE ========== */
 				

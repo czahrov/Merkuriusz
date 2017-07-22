@@ -48,7 +48,7 @@
 						),
 						array(
 							'title' => 'Breloki',
-							//'pikto' => 'medyczne.png'
+							//'pikto' => ''
 						),
 						array(
 							'title' => 'Podróż',
@@ -185,7 +185,7 @@
 							//'pikto' => ''
 						),
 						array(
-							'title' => 'Inne',
+							'title' => 'Inne art. elektroniczne',
 							//'pikto' => ''
 						),
 						
