@@ -653,6 +653,10 @@ add_action( 'single-picture', function( $arg ){
 } );
 
 add_action( 'single-dane-main', function( $arg ){
+	$id = apply_filters( 'emptyAttr', $arg[ 'ID' ] );
+	$name = apply_filters( 'emptyAttr', $arg[ 'NAME' ] );
+	$dscr = apply_filters( 'emptyAttr', $arg[ 'DSCR' ] );
+	
 	echo "<div class='main seg'>
 		<div class='box'>
 			<div class='line code flex flex-items-center'>
@@ -660,7 +664,7 @@ add_action( 'single-dane-main', function( $arg ){
 					Kod produktu:
 				</div>
 				<div class='val bold'>
-					{$arg[ 'ID' ]}
+					{$id}
 				</div>
 				
 			</div>
@@ -669,7 +673,7 @@ add_action( 'single-dane-main', function( $arg ){
 					Nazwa:
 				</div>
 				<div class='val bold'>
-					{$arg[ 'NAME' ]}
+					{$name}
 				</div>
 				
 			</div>
@@ -678,7 +682,7 @@ add_action( 'single-dane-main', function( $arg ){
 					Opis:
 				</div>
 				<div class='val bold'>
-					{$arg[ 'DSCR' ]}
+					{$dscr}
 				</div>
 				
 			</div>
@@ -739,6 +743,12 @@ add_action( 'single-dane-specyfikacja', function( $arg ){
 	
 	*/
 	
+	$dim = apply_filters( 'emptyAttr', $arg[ 'DIM' ] );
+	$matter = apply_filters( 'emptyAttr', $arg[ 'MATTER' ] );
+	$color = apply_filters( 'emptyAttr', $arg[ 'COLOR' ] );
+	$country = apply_filters( 'emptyAttr', $arg[ 'COUNTRY' ] );
+	$catalog = apply_filters( 'emptyAttr', $arg[ 'CATALOG' ] );
+	
 	echo "<div class='spec seg'>
 		<div class='title uppercase flex flex-items-center'>
 			specyfikacja
@@ -749,7 +759,7 @@ add_action( 'single-dane-specyfikacja', function( $arg ){
 					Wymiary:
 				</div>
 				<div class='val bold'>
-					{$arg[ 'DIM' ]}
+					{$dim}
 				</div>
 				
 			</div>
@@ -758,7 +768,7 @@ add_action( 'single-dane-specyfikacja', function( $arg ){
 					Materiał:
 				</div>
 				<div class='val bold'>
-					{$arg[ 'MATTER' ]}
+					{$matter}
 				</div>
 				
 			</div>
@@ -767,7 +777,7 @@ add_action( 'single-dane-specyfikacja', function( $arg ){
 					Kolor:
 				</div>
 				<div class='val bold'>
-					{$arg[ 'COLOR' ]}
+					{$color}
 				</div>
 				
 			</div>
@@ -776,7 +786,7 @@ add_action( 'single-dane-specyfikacja', function( $arg ){
 					Kraj pochodzenia:
 				</div>
 				<div class='val bold'>
-					{$arg[ 'COUNTRY' ]}
+					{$country}
 				</div>
 				
 			</div>
@@ -785,7 +795,7 @@ add_action( 'single-dane-specyfikacja', function( $arg ){
 					Katalog:
 				</div>
 				<div class='val bold'>
-					{$arg[ 'CATALOG' ]}
+					{$catalog}
 				</div>
 				
 			</div>
@@ -910,11 +920,11 @@ add_action( 'single-dane-znakowanie', function( $arg ){
 add_action( 'single-dane-multi', function( $arg ){
 	$data = array(
 		'pakowanie' => array(
-			'Opakowanie jednostkowe' => $arg['PACKAGE']['SINGLE'],
-			'Ilość w kartonie zbiorczym' => $arg['PACKAGE']['TOTAL'],
-			'Wymiary kartonu zbiorczego' => $arg['PACKAGE']['DIM'],
-			'Waga kartonu zbiorczego' => $arg['PACKAGE']['WEIGHT'],
-			'Ilość w kartonie wewnętrznym' => $arg['PACKAGE']['INSIDE'],
+			'Opakowanie jednostkowe' => apply_filters( 'emptyAttr', $arg['PACKAGE']['SINGLE'] ),
+			'Ilość w kartonie zbiorczym' => apply_filters( 'emptyAttr', $arg['PACKAGE']['TOTAL'] ),
+			'Wymiary kartonu zbiorczego' => apply_filters( 'emptyAttr', $arg['PACKAGE']['DIM'] ),
+			'Waga kartonu zbiorczego' => apply_filters( 'emptyAttr', $arg['PACKAGE']['WEIGHT'] ),
+			'Ilość w kartonie wewnętrznym' => apply_filters( 'emptyAttr', $arg['PACKAGE']['INSIDE'] ),
 			
 		),
 		'inne' => array(
@@ -976,6 +986,11 @@ add_filter( 'stdName', function( $arg ){
 	$replace = explode( ",", "_,a,e,z,z,o,l,c,n,s,a,e,z,z,o,l,c,n,s" );
 	
 	return str_replace( $find, $replace, strtolower( strip_tags( (string)$arg ) ) );
+	
+} );
+
+add_filter( 'emptyAttr', function( $arg ){
+	return empty( $arg )?'brak danych':$arg;
 	
 } );
 

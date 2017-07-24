@@ -224,6 +224,9 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				
+				preg_match( "/^\d+$/", (string)$item->Page, $match );
+				$page_test = empty($match)?( "{(string)$item->Page}" ):( "strona {(string)$item->Page}" );
+				
 				$ret[] = array_merge(
 					array(
 						'ID' => 'brak danych',
@@ -259,7 +262,7 @@ class AXPOL extends XMLAbstract{
 						'MATTER' => (string)$item->MaterialPL,
 						'COLOR' => (string)$item->ColorPL,
 						'COUNTRY' => (string)$item->CountryOfOrigin,
-						'CATALOG' => sprintf( "%s (%s)", (string)$item->Catalog, (string)$item->Page ),
+						'CATALOG' => sprintf( "%s (%s)", (string)$item->Catalog, $page_test ),
 						'PACKAGE' => array(
 							'SINGLE' => (string)$item->IndividualPacking,
 							'TOTAL' => (string)$item->ExportCtnQty,

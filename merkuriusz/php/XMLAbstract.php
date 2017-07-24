@@ -530,7 +530,7 @@ class XMLAbstract{
 			$content = file_get_contents( $index_url );
 			//if( $content === false ) return false;
 			
-			$this->logger( "Tworzenie tablicy indeksów. Odczyt pliku: $index_url", __FUNCTION__ );
+			$this->logger( "Tworzenie tablicy indeksów. Odczyt pliku: {$index_url}", __FUNCTION__ );
 			$arr = json_decode( $content, true );
 			
 			/*
@@ -555,7 +555,7 @@ class XMLAbstract{
 					$file = $item['file'];
 					$num = $item['num'];
 					
-					$content = file_get_contents( "{$this->_config['cache']}/cat_$file.php" );
+					$content = file_get_contents( "{$this->_config['cache']}/cat_{$file}.php" );
 					$data = json_decode( $content, true );
 					
 					$found[] =  $data[ $num ];
@@ -567,7 +567,7 @@ class XMLAbstract{
 							$file = $item['file'];
 							$num = $item['num'];
 							
-							$content = file_get_contents( "{$this->_config['cache']}/cat_$file.php" );
+							$content = file_get_contents( "{$this->_config['cache']}/cat_{$file}.php" );
 							$data = json_decode( $content, true );
 							
 							$found[] = $data[ $num ];
