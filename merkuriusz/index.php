@@ -112,6 +112,7 @@
 			<!-- second line pictures -->
 			<div class="col-md-6">
 				<div class="main-picture main-picture-powerbank">
+					<a class='over'></a>
 					<div class="main-picture-content">
 						<div class="main-picture-title">Power banki</div>
 						<a class="btn main-picture-btn pop-up-clothes powerbank">Zobacz produkty</a>

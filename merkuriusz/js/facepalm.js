@@ -157,94 +157,12 @@
 				console.log('page.default()');
 			}
 			
-			// SLIDE DOWN
-			(function(){
-				var getPos = function(){
-					return $('#about-section1').position().top;
-				};
-
-				$(".down-slider").click(function () {
-					TweenLite.to(
-						window,
-						1,
-						{
-							scrollTo:{
-								y: getPos(),
-							},
-							
-						}
-					);
-
-				});				
-			})();
-			
-			// FACE SLIDER
+			// FACEBOOK SLIDER
 			(function(){
 				$('#face-slider').hover(
 					function(){ $('#face-slider').stop().animate({"left": "0"}, 1000); },
 					function(){ $('#face-slider').stop().animate({"left": "-302px"}, 1000); }
 				);
-				
-			})();
-			
-			// POPUPy
-			(function(){
-				$(".pop-up-clothes.clothes").click(function () {
-					$(".catalog-popup").fadeIn(300);
-				});
-				
-				$(".popup > .pop-cross").click(function () {
-					$(".cover-popup").fadeOut(300);
-				});
-				
-				$(".pop-up-clothes.movie").click(function () {
-					$(".movie-cover-popup").fadeIn(300);
-					
-				});
-				
-				$(".movie-cover-popup").click(function () {
-					$(this).fadeOut(300);
-				});
-				
-				$(".pop-up-clothes.powerbank").click(function () {
-					$(".powerbank-pop-up").fadeIn(300);   
-				});
-
-				$(".popup > .pop-cross").click(function () {
-					$(".cover-popup").fadeOut(300);
-				});
-				
-				$(".pop-up-clothes.wystawnicze").click(function () {
-					$(".wystawnicze-pop-up").fadeIn(300);
-				});
-
-				$(".popup > .pop-cross").click(function () {
-					$(".cover-popup").fadeOut(300);
-				});
-				
-				$(".pop-up-clothes.odziez-reklamowa").click(function () {
-					$(".odziez-reklamowa-pop-up").fadeIn(300);
-				});
-				
-				$(".popup > .pop-cross").click(function () {
-					$(".cover-popup").fadeOut(300);
-				});
-				
-				$(".pop-up-clothes.dlugopisymetalowe").click(function () {
-					$(".dlugopisymetalowe-pop-up").fadeIn(300);
-				});
-
-				$(".popup > .pop-cross").click(function () {
-					$(".cover-popup").fadeOut(300);
-				});
-				
-				$(".pop-up-clothes.dlugopisyplastikowe").click(function () {
-					$(".dlugopisyplastikowe-pop-up").fadeIn(300);
-				});
-				
-				$(".popup > .pop-cross").click(function () {
-					$(".cover-popup").fadeOut(300);
-				});
 				
 			})();
 			
@@ -607,7 +525,57 @@
 			})
 			( $( '#home .top-slider' ), $( '#home .top-slider > .text > .view > .item' ), $( '#home .top-slider > .text > .pagin > .item' ), $( '#home .top-slider > .imgs > .view > .item' ) );
 			
+			// POPUPy
+			(function(){
+				$(".pop-up-clothes.clothes").click(function () {
+					$(".catalog-popup").fadeIn(300);
+				});
+				
+				$(".popup > .pop-cross").click(function () {
+					$(".cover-popup").fadeOut(300);
+				});
+				
+				$(".pop-up-clothes.movie").click(function () {
+					$(".movie-cover-popup").fadeIn(300);
+					
+				});
+				
+				$(".movie-cover-popup").click(function () {
+					$(this).fadeOut(300);
+				});
+				
+				$(".pop-up-clothes.powerbank").click(function () {
+					$(".powerbank-pop-up").fadeIn(300);   
+				});
+				
+				$(".pop-up-clothes.wystawnicze").click(function () {
+					$(".wystawnicze-pop-up").fadeIn(300);
+				});
+				
+				$(".pop-up-clothes.odziez-reklamowa").click(function () {
+					$(".odziez-reklamowa-pop-up").fadeIn(300);
+				});
+				
+				
+				$(".pop-up-clothes.dlugopisymetalowe").click(function () {
+					$(".dlugopisymetalowe-pop-up").fadeIn(300);
+				});
+				
+				$(".pop-up-clothes.dlugopisyplastikowe").click(function () {
+					$(".dlugopisyplastikowe-pop-up").fadeIn(300);
+				});
+				
+			})();
 			
+			/* powerbanki */
+			(function(){
+				$( '.main-picture-powerbank > .over' )
+				.attr({
+					href: $( 'ul.menu .item[item-slug="power_banki"]' ).attr( 'href' ),
+					
+				})
+				
+			})();
 			
 		},
 		kategoria: function(){
