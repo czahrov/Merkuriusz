@@ -225,7 +225,7 @@ class AXPOL extends XMLAbstract{
 				}
 				
 				preg_match( "/^\d+$/", (string)$item->Page, $match );
-				$page_test = empty($match)?( "{(string)$item->Page}" ):( "strona {(string)$item->Page}" );
+				$page_test = empty($match)?( (string)$item->Page ):( "strona {$item->Page}" );
 				
 				$ret[] = array_merge(
 					array(

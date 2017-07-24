@@ -928,7 +928,7 @@ add_action( 'single-dane-multi', function( $arg ){
 			
 		),
 		'inne' => array(
-			'Inne' => '???',
+			'Inne' => apply_filters( 'emptyAttr', '' ),
 			
 		),
 		
@@ -990,7 +990,7 @@ add_filter( 'stdName', function( $arg ){
 } );
 
 add_filter( 'emptyAttr', function( $arg ){
-	return empty( $arg )?'brak danych':$arg;
+	return empty( $arg )?( "- brak danych -" ):( $arg );
 	
 } );
 

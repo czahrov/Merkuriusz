@@ -768,6 +768,8 @@
 					.siblings( '.box' )
 					.removeClass( 'active' );
 					
+					$( '.dane > .marking > .kalkulator' ).triggerHandler( 'clear' );
+					
 				});
 				
 				tabs.eq(1).click(function( e ){
@@ -846,6 +848,11 @@
 							},
 							
 						});
+						
+					},
+					clear: function( e ){
+						cena.text( '...' );
+						kalkulator.find( '.order input.user' ).val( '' );
 						
 					},
 					
