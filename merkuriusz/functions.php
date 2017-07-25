@@ -541,6 +541,7 @@ add_action( 'kategoria_pagin_prev', function( $arg ){
 
 add_action( 'gen_menu', function( $arg ){
 	if( !is_array( $arg ) ) return false;
+	
 	if( !empty( $_GET['cat'] ) ){
 		$query = explode( ",", $_GET['cat'] );
 	}
@@ -549,11 +550,13 @@ add_action( 'gen_menu', function( $arg ){
 		
 	}
 	
+	// LISTA GŁÓWNA
 	echo "<ul class='menu'>";
 	foreach( $arg as $cat_name => $cat_data ){
 		$cat_slug = apply_filters( 'stdName', $cat_name );
 		$cat_active = $query[0] === $cat_slug?( 'active' ):( '' );
 		
+		// PIERWSZY STOPIEŃ
 		printf( "<li class='item flex flex-column %s %s' item-slug='%s' item-title='%s'>
 				<div class='head flex flex-items-center'>
 					<div class='title uppercase bold'>
@@ -568,8 +571,16 @@ add_action( 'gen_menu', function( $arg ){
 			$item_slug = apply_filters( 'stdName', $item['title'] );
 			$item_active = $query[1] === $item_slug?( 'active' ):( '' );
 			
-			printf( "<a class='item flex %s %s' href='%s' item-slug='%s' item-title='%s'>",
-			$item['class'], $item_active, home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) ), $item_slug, $item['title'] );
+			if( empty( $item['sub'] ) ){
+				printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
+				$item['class'], $item_active, home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) ), $item_slug, $item['title'] );
+				
+			}
+			else{
+				printf( "<div class='item flex flex-column %s %s' item-slug='%s' item-title='%s'>",
+				$item['class'], $item_active, $item_slug, $item['title'] );
+				
+			}
 			
 				echo "<div class='head grow flex flex-items-center'>";
 					if( !empty( $item['pikto'] ) ){
@@ -584,9 +595,49 @@ add_action( 'gen_menu', function( $arg ){
 					
 					echo "<span class='icon fa fa-angle-double-right'></span>";
 					
+				echo "</div>";	
+				
+			// DRUGI STOPIEŃ
+			if( !empty( $item['sub'] ) ){
+				echo "<div class='sub flex flex-column'>";
+					
+					foreach( $item['sub'] as $subitem ){
+						$subitem_slug = apply_filters( 'stdName', $subitem[ 'title' ] );
+						$subitem_active = $query[2] === $subitem_slug;
+						
+						printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
+						$item['class'], $subitem_active, home_url( sprintf( "kategoria?cat=%s,%s,%s", $cat_slug, $item_slug, $subitem_slug ) ), $subitem_slug, $item['title'] );
+					
+							echo "<div class='head grow flex flex-items-center'>";
+								if( !empty( $subitem['pikto'] ) ){
+									printf( "<img class='pikto' src='%s/img/piktogramy/%s'>", get_template_directory_uri(), $subitem['pikto'] );
+								}
+								if( !empty( $subitem['title'] ) && empty( $subitem['logo'] ) ){
+									printf( "<div class='title'>%s</div>", $subitem['title'] );
+								}
+								if( !empty( $subitem['logo'] ) ){
+									printf( "<div class='logotyp flex grow bgimg contain flex-self-stretch' style='background-image: url(%s/img/logotypy/%s);'></div>", get_template_directory_uri(), $subitem['logo'] );
+								}
+								
+								echo "<span class='icon fa fa-angle-double-right'></span>";
+								
+							echo "</div>";
+						
+						echo "</a>";
+						/*
+						*/
+					
+					}
+				
 				echo "</div>";
-			
-			echo "</a>";
+				
+				echo "</div>";
+			}
+			else{
+				echo "</a>";
+				
+			}
+				
 		}
 			
 		echo "</ul>";

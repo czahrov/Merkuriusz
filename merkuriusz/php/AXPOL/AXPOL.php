@@ -142,6 +142,28 @@ class AXPOL extends XMLAbstract{
 					}
 					
 				}
+				elseif( $cat_name === 'breloki' ){
+					if( $subcat_name === 'inne' ){
+						$subcat_name = 'pozostałe breloki';
+						
+					}
+					else{
+						$subcat_name = 'breloki - ' . $subcat_name;
+						
+					}
+					
+				}
+				elseif( $cat_name === 'moleskine' ){
+					if( $subcat_name === 'inne' ){
+						$subcat_name = 'pozostałe art. moleskine';
+						
+					}
+					else{
+						$subcat_name = 'moleskine - ' . $subcat_name;
+						
+					}
+					
+				}
 				
 				/* ========== PODKATEGORIE ========== */
 				
@@ -163,11 +185,7 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				elseif( $subcat_name === 'inne' ){
-					if( $cat_name === 'breloki' ){
-						$subcat_name = 'inne breloki';
-						
-					}
-					elseif( $cat_name === 'biuro' ){
+					if( $cat_name === 'biuro' ){
 						$subcat_name = 'inne art. biurowe';
 						
 					}
@@ -201,6 +219,10 @@ class AXPOL extends XMLAbstract{
 					}
 					elseif( $cat_name === 'moleskine' ){
 						$subcat_name = 'pozostałe art. moleskine';
+						
+					}
+					elseif( $cat_name === 'do picia' ){
+						$subcat_name = 'inne artykuły do picia';
 						
 					}
 					

@@ -46,22 +46,56 @@ ul.menu{
 	border-width: 1px;
 	border-color: #e7e7e7;
 	
-	& > .item.active{
+	& > .item{
 		
-		&.reklamowe > .head{
-			box-shadow: 0 0 0 2px $color_menu_active inset;
+		& > .sub .item{
 			
-		}
-		
-		& > .sub{
+			& > .sub{
+				white-space: nowrap;
+				background-color: silver;
+				
+			}
+				
+			@media(min-width: 992px){
+				& > .sub{
+					position: absolute;
+					top: 0;
+					left: 100%;
+					z-index: 20;
+					
+				}
+				
+			}
 			
-			& > .item.active > .head > .title{
-				color: $color_menu_active;
+			&:not(:hover) > .sub{
+				display: none;
 				
 			}
 			
 		}
 		
+		&.active{
+			
+			&.reklamowe > .head{
+				box-shadow: 0 0 0 2px $color_menu_active inset;
+				
+			}
+			
+			& > .sub{
+				
+				& > .item.active > .head > .title{
+					color: $color_menu_active;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .item:not(.open) > .sub{
+		display: none;
 	}
 	
 	.item{
@@ -85,6 +119,7 @@ ul.menu{
 			
 			& > .title{
 				margin-right: auto;
+				padding-right: 10px;
 				
 			}
 			
@@ -125,11 +160,6 @@ ul.menu{
 		& > .icon{
 			transition: transform .3s linear;
 			
-		}
-		
-		&:not(.open) > .sub
-		{
-			display: none;
 		}
 		
 		&.open > .head > .icon{

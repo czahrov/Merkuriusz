@@ -8,75 +8,465 @@
 					'items' => array(
 						array(
 							'title' => 'Materiały piśmiennicze',
-							'pikto' => 'pisemnicze.png'
+							'pikto' => 'pisemnicze.png',
+							'sub' => array(
+								array(
+									'title' => 'Długopisy ekologiczne',
+								),
+								array(
+									'title' => 'Długopisy metalowe',
+								),
+								array(
+									'title' => 'Długopisy plastikowe',
+								),
+								array(
+									'title' => 'Długopisy wielofunkcyjne',
+								),
+								array(
+									'title' => 'Etui',
+								),
+								array(
+									'title' => 'Ołówki',
+								),
+								array(
+									'title' => 'Pióra kulkowe',
+								),
+								array(
+									'title' => 'Touch peny',
+								),
+								array(
+									'title' => 'Zakreślacze',
+								),
+								array(
+									'title' => 'Zestawy piśmienne',
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Biuro',
-							'pikto' => 'biuro.png'
+							'pikto' => 'biuro.png',
+							'sub' => array(
+								array(
+									'title' => 'Wizytowniki',
+								),
+								array(
+									'title' => 'Akcesoria do elektroniki',
+								),
+								array(
+									'title' => 'Antystresy',
+								),
+								array(
+									'title' => 'Pojemniki na długopisy',
+								),
+								array(
+									'title' => 'Klipy do notatek',
+								),
+								array(
+									'title' => 'Akcesoria biurowe',
+								),
+								array(
+									'title' => 'Inne art. biurowe',
+								),
+								array(
+									'title' => 'Notatniki i notesy',
+								),
+								array(
+									'title' => 'Karteczki samoprzylepne',
+								),
+								array(
+									'title' => 'Zestawy upominkowe',
+								),
+								array(
+									'title' => 'Teczki konferencyjne',
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Torby i plecaki',
-							'pikto' => 'torby.png'
+							'pikto' => 'torby.png',
+							'sub' => array(
+								array(
+									'title' => 'Na laptopa i dokumenty',	
+								),
+								array(
+									'title' => 'Na zakupy',
+								),
+								array(
+									'title' => 'Plecaki',
+								),
+								array(
+									'title' => 'Podróżne i sportowe',
+								),
+								array(
+									'title' => 'Świąteczne',
+								),
+								array(
+									'title' => 'Termoizolacyjne',
+								),
+								array(
+									'title' => 'Torby na ramię',
+								),
+								array(
+									'title' => 'Walizki',
+								),
+								array(
+									'title' => 'Worki ze sznurkiem',
+								),
+								array(
+									'title' => 'Pozostałe torby i plecaki',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'Parasole i peleryny',
-							'pikto' => 'parasole.png'
+							'pikto' => 'parasole.png',
+							
 						),
 						array(
 							'title' => 'Do picia',
-							'pikto' => 'do_picia.png'
+							'pikto' => 'do_picia.png',
+							'sub' => array(
+								array(
+									'title' => 'Butelki',
+								),
+								array(
+									'title' => 'Ceramika',
+								),
+								array(
+									'title' => 'Kubki podróżne',
+								),
+								array(
+									'title' => 'Piersiówki',
+								),
+								array(
+									'title' => 'Termosy',
+								),
+								array(
+									'title' => 'Zestawy',
+								),
+								array(
+									'title' => 'Inne art. do picia',
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Narzędzia',
-							'pikto' => 'narzedzia.png'
+							'pikto' => 'narzedzia.png',
+							'sub' => array(
+								array(
+									'title' => 'Bezpieczeństwo',
+									
+								),
+								array(
+									'title' => 'Latarki',
+									
+								),
+								array(
+									'title' => 'Miarki',
+									
+								),
+								array(
+									'title' => 'Rower',
+									
+								),
+								array(
+									'title' => 'Samochód',
+									
+								),
+								array(
+									'title' => 'Scyzoryki',
+									
+								),
+								array(
+									'title' => 'Śrubokręty',
+									
+								),
+								array(
+									'title' => 'Warsztat',
+									
+								),
+								array(
+									'title' => 'Wielofunkcyjne',
+									
+								),
+								array(
+									'title' => 'Zestawy',
+									
+								),
+								array(
+									'title' => 'Pozostałe narzędzia',
+									
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Dom',
-							'pikto' => 'dom.png'
+							'pikto' => 'dom.png',
+							'sub' => array(
+								array(
+									'title' => 'Apteczki',
+									
+								),
+								array(
+									'title' => 'Dziadki do orzechów',
+									
+								),
+								array(
+									'title' => 'Kuchnia',
+									
+								),
+								array(
+									'title' => 'Łazienka',
+									
+								),
+								array(
+									'title' => 'Oświetlenie',
+									
+								),
+								array(
+									'title' => 'Ramki do zdjęć',
+									
+								),
+								array(
+									'title' => 'Świąteczne',
+									
+								),
+								array(
+									'title' => 'Termometry',
+									
+								),
+								array(
+									'title' => 'Inne art. domowe',
+									
+								),
+								array(
+									'title' => 'Wino: akcesoria',
+									
+								),
+								array(
+									'title' => 'Wino: opakowanie',
+									
+								),
+								array(
+									'title' => 'Wino: zestawy',
+									
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Uroda',
-							'pikto' => 'uroda.png'
+							'pikto' => 'uroda.png',
 						),
 						array(
 							'title' => 'Rozrywka i szkoła',
-							'pikto' => 'szkola.png'
+							'pikto' => 'szkola.png',
+							'sub' => array(
+								array(
+									'title' => 'Gry',
+									
+								),
+								array(
+									'title' => 'Szkoła',
+									
+								),
+								array(
+									'title' => 'Zabawa',
+									
+								),
+								array(
+									'title' => 'Zestawy do malowania',
+									
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Eco gadżet',
-							'pikto' => 'eco.png'
+							'pikto' => 'eco.png',
 						),
 						array(
 							'title' => 'Breloki',
-							//'pikto' => ''
+							//'pikto' => '',
+							'sub' => array(
+								array(
+									'title' => 'Breloki',
+								),
+								array(
+									'title' => 'Breloki - antystres',
+								),
+								array(
+									'title' => 'Breloki - latarki',
+								),
+								array(
+									'title' => 'Breloki - miarki',
+								),
+								array(
+									'title' => 'Breloki - otwieracze do butelek',
+								),
+								array(
+									'title' => 'Breloki - wielofunkcyjne',
+								),
+								array(
+									'title' => 'Pozostałe breloki',
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Podróż',
-							'pikto' => 'transport.png'
+							'pikto' => 'transport.png',
+							'sub' => array(
+								array(
+									'title' => 'Akcesoria do elektroniki',
+								),
+								array(
+									'title' => 'Akcesoria podróżne',
+								),
+								array(
+									'title' => 'Kosmetyczki',
+								),
+								array(
+									'title' => 'Portfele',
+								),
+								array(
+									'title' => 'Saszetki',
+								),
+								array(
+									'title' => 'Inne art. podróżne',
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Tekstylia',
-							'pikto' => 'tekstylia.png'
+							'pikto' => 'tekstylia.png',
+							'sub' => array(
+								array(
+									'title' => 'Czapki z daszkiem',
+									
+								),
+								array(
+									'title' => 'Czapki zimowe',
+									
+								),
+								array(
+									'title' => 'Daszki przeciwsłoneczne',
+									
+								),
+								array(
+									'title' => 'Kapelusze',
+									
+								),
+								array(
+									'title' => 'Odzież',
+									
+								),
+								array(
+									'title' => 'Rękawiczki',
+									
+								),
+								array(
+									'title' => 'Szaliki',
+									
+								),
+								array(
+									'title' => 'Zestawy zimowe',
+									
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Wypoczynek',
-							//'pikto' => ''
+							//'pikto' => '',
+							'sub' => array(
+								array(
+									'title' => 'Grill i piknik',
+								),
+								array(
+									'title' => 'Koce',
+								),
+								array(
+									'title' => 'Lato',
+								),
+								array(
+									'title' => 'Okulary przeciwsłoneczne',
+								),
+								array(
+									'title' => 'Outdoor',
+								),
+								array(
+									'title' => 'Sport',
+								),
+								array(
+									'title' => 'Fidget spinner',
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Zdrowie i bezpieczeństwo',
-							//'pikto' => ''
+							//'pikto' => '',
 						),
 						array(
 							'title' => 'Moleskine',
-							//'pikto' => ''
+							//'pikto' => '',
+							'sub' => array(
+								array(
+									'title' => 'Moleskine - długopisy metalowe',
+								),
+								array(
+									'title' => 'Moleskine - długopisy plastikowe',
+								),
+								array(
+									'title' => 'Moleskine - kalendarze',
+								),
+								array(
+									'title' => 'Moleskine - kalendarze z notatnikiem',
+								),
+								array(
+									'title' => 'Moleskine - ołówki',
+								),
+								array(
+									'title' => 'Moleskine - notatniki',
+								),
+								array(
+									'title' => 'Moleskine - passion journals',
+								),
+								array(
+									'title' => 'Moleskine - zestawy upominkowe',
+								),
+								array(
+									'title' => 'Pozostałe art. Moleskine',
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Świąteczne',
-							'pikto' => 'swiateczne.png'
+							'pikto' => 'swiateczne.png',
+							
 						),
 						array(
 							'title' => 'Opakowania upominkowe',
-							'pikto' => 'upominkowe.png'
+							'pikto' => 'upominkowe.png',
 						),
 						
 					),
@@ -110,20 +500,6 @@
 						),
 						array(
 							'title' => 'Zwierzątka',
-							//'pikto' => ''
-						),
-						
-					),
-				),
-				'katalog axpol' => array(
-					'class' => 'axpol',
-					'items' => array(
-						array(
-							'title' => 'VOYAGER 2017',
-							//'pikto' => ''
-						),
-						array(
-							'title' => 'VOYAGER XD 2017',
 							//'pikto' => ''
 						),
 						
