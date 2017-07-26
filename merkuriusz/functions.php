@@ -542,6 +542,10 @@ add_action( 'kategoria_pagin_prev', function( $arg ){
 add_action( 'gen_menu', function( $arg ){
 	if( !is_array( $arg ) ) return false;
 	
+	// echo "<!--";
+	// print_r( $arg );
+	// echo "-->";
+	
 	if( !empty( $_GET['cat'] ) ){
 		$query = explode( ",", $_GET['cat'] );
 	}
@@ -568,12 +572,18 @@ add_action( 'gen_menu', function( $arg ){
 		$cat_data['class'], $cat_active, $cat_slug, $cat_name, $cat_name );
 				
 		foreach( $cat_data['items'] as $item ){
-			$item_slug = apply_filters( 'stdName', $item['title'] );
+			//$item_slug = apply_filters( 'stdName', $item['title'] );
+			$item_slug = empty( $item[ 'slug' ] )?( apply_filters( 'stdName', $item['title'] ) ):( $item[ 'slug' ] );
 			$item_active = $query[1] === $item_slug?( 'active' ):( '' );
 			
 			if( empty( $item['sub'] ) ){
 				printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
-				$item['class'], $item_active, home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) ), $item_slug, $item['title'] );
+				$item['class'],
+				$item_active,
+				home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) ),
+				$item_slug,
+				$item['title']
+				);
 				
 			}
 			else{
@@ -602,7 +612,8 @@ add_action( 'gen_menu', function( $arg ){
 				echo "<div class='sub flex flex-column'>";
 					
 					foreach( $item['sub'] as $subitem ){
-						$subitem_slug = apply_filters( 'stdName', $subitem[ 'title' ] );
+						//$subitem_slug = apply_filters( 'stdName', $subitem[ 'title' ] );
+						$subitem_slug = empty( $subitem[ 'slug' ] )?( apply_filters( 'stdName', $subitem['title'] ) ):( $subitem[ 'slug' ] );
 						$subitem_active = $query[2] === $subitem_slug;
 						
 						printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
@@ -624,9 +635,7 @@ add_action( 'gen_menu', function( $arg ){
 							echo "</div>";
 						
 						echo "</a>";
-						/*
-						*/
-					
+						
 					}
 				
 				echo "</div>";

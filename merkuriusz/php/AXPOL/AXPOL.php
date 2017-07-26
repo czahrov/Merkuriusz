@@ -128,18 +128,7 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				elseif( $cat_name === 'fofcio promo toys' ){
-					if( $subcat_name === 'inne akcesoria' ){
-						$subcat_name = 'akcesoria';
-						
-					}
-					elseif( $subcat_name === 'inne zwierzątka' ){
-						$subcat_name = 'zwierzątka';
-						
-					}
-					elseif( $subcat_name === 'breloki' ){
-						$subcat_name = 'pluszowe breloki';
-						
-					}
+					$subcat_name = 'fofcio - ' . $subcat_name;
 					
 				}
 				elseif( $cat_name === 'breloki' ){
@@ -222,9 +211,13 @@ class AXPOL extends XMLAbstract{
 						
 					}
 					elseif( $cat_name === 'do picia' ){
-						$subcat_name = 'inne artykuły do picia';
+						$subcat_name = 'inne art. do picia';
 						
 					}
+					
+				}
+				elseif( $subcat_name === 'apteczki' ){
+					$cat_name = "Medyczne";
 					
 				}
 				
@@ -238,7 +231,7 @@ class AXPOL extends XMLAbstract{
 				
 				/* ================== */
 				
-				$cat[ $catalog ] = array();
+				//$cat[ $catalog ] = array();
 				$cat[ $cat_name ] = array();
 				
 				if( !empty( $subcat_name ) ){

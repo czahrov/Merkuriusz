@@ -67,9 +67,6 @@
 									'title' => 'Akcesoria biurowe',
 								),
 								array(
-									'title' => 'Inne art. biurowe',
-								),
-								array(
 									'title' => 'Notatniki i notesy',
 								),
 								array(
@@ -80,6 +77,10 @@
 								),
 								array(
 									'title' => 'Teczki konferencyjne',
+								),
+								array(
+									'title' => 'Inne',
+									'slug' => apply_filters( 'stdName', 'Inne art. biurowe' ),
 								),
 								
 							),
@@ -117,7 +118,8 @@
 									'title' => 'Worki ze sznurkiem',
 								),
 								array(
-									'title' => 'Pozostałe torby i plecaki',
+									'title' => 'Inne',
+									'slug' => apply_filters( 'stdName', 'Pozostałe torby i plecaki' ),
 								),
 								
 							),
@@ -150,7 +152,8 @@
 									'title' => 'Zestawy',
 								),
 								array(
-									'title' => 'Inne art. do picia',
+									'title' => 'Inne',
+									'slug' => apply_filters( 'stdName', 'Inne art. do picia' ),
 								),
 								
 							),
@@ -201,7 +204,8 @@
 									
 								),
 								array(
-									'title' => 'Pozostałe narzędzia',
+									'title' => 'Inne',
+									'slug' => apply_filters( 'stdName', 'Pozostałe narzędzia' ),
 									
 								),
 								
@@ -245,10 +249,6 @@
 									
 								),
 								array(
-									'title' => 'Inne art. domowe',
-									
-								),
-								array(
 									'title' => 'Wino: akcesoria',
 									
 								),
@@ -258,6 +258,11 @@
 								),
 								array(
 									'title' => 'Wino: zestawy',
+									
+								),
+								array(
+									'title' => 'Inne',
+									'slug' => apply_filters( 'stdName', 'Inne art. domowe' ),
 									
 								),
 								
@@ -304,26 +309,35 @@
 									'title' => 'Breloki',
 								),
 								array(
-									'title' => 'Breloki - antystres',
+									'title' => 'Antystres',
+									'slug' => apply_filters( 'stdName', 'Breloki - antystres' ),
 								),
 								array(
-									'title' => 'Breloki - latarki',
+									'title' => 'Latarki',
+									'slug' => apply_filters( 'stdName', 'Breloki - latarki' ),
 								),
 								array(
-									'title' => 'Breloki - miarki',
+									'title' => 'Miarki',
+									'slug' => apply_filters( 'stdName', 'Breloki - miarki' ),
 								),
 								array(
-									'title' => 'Breloki - otwieracze do butelek',
+									'title' => 'Otwieracze do butelek',
+									'slug' => apply_filters( 'stdName', 'Breloki - otwieracze do butelek' ),
 								),
 								array(
-									'title' => 'Breloki - wielofunkcyjne',
+									'title' => 'Wielofunkcyjne',
+									'slug' => apply_filters( 'stdName', 'Breloki - wielofunkcyjne' ),
 								),
 								array(
-									'title' => 'Pozostałe breloki',
+									'title' => 'Inne',
+									'slug' => apply_filters( 'stdName', 'Pozostałe breloki' ),
 								),
 								
 							),
 							
+						),
+						array(
+							'title' => 'Breloki akrylowe',
 						),
 						array(
 							'title' => 'Podróż',
@@ -429,34 +443,51 @@
 							//'pikto' => '',
 							'sub' => array(
 								array(
-									'title' => 'Moleskine - długopisy metalowe',
+									'title' => 'Długopisy metalowe',
+									'slug' => apply_filters( 'stdName', 'Moleskine - długopisy metalowe' ),
 								),
 								array(
-									'title' => 'Moleskine - długopisy plastikowe',
+									'title' => 'Długopisy plastikowe',
+									'slug' => apply_filters( 'stdName', 'Moleskine - długopisy plastikowe' ),
 								),
 								array(
-									'title' => 'Moleskine - kalendarze',
+									'title' => 'Kalendarze',
+									'slug' => apply_filters( 'stdName', 'Moleskine - kalendarze' ),
 								),
 								array(
 									'title' => 'Moleskine - kalendarze z notatnikiem',
+									'slug' => apply_filters( 'stdName', 'Moleskine - kalendarze z notatnikiem' ),
 								),
 								array(
-									'title' => 'Moleskine - ołówki',
+									'title' => 'Ołówki',
+									'slug' => apply_filters( 'stdName', 'Moleskine - ołówki' ),
 								),
 								array(
-									'title' => 'Moleskine - notatniki',
+									'title' => 'Notatniki',
+									'slug' => apply_filters( 'stdName', 'Moleskine - notatniki' ),
 								),
 								array(
-									'title' => 'Moleskine - passion journals',
+									'title' => 'Passion journals',
+									'slug' => apply_filters( 'stdName', 'Moleskine - passion journals' ),
 								),
 								array(
-									'title' => 'Moleskine - zestawy upominkowe',
+									'title' => 'Zestawy upominkowe',
+									'slug' => apply_filters( 'stdName', 'Moleskine - zestawy upominkowe' ),
 								),
 								array(
-									'title' => 'Pozostałe art. Moleskine',
+									'title' => 'Inne',
+									'slug' => apply_filters( 'stdName', 'Pozostałe art. Moleskine' ),
 								),
 								
 							),
+							
+						),
+						array(
+							'title' => 'Medyczne',
+							
+						),
+						array(
+							'title' => 'Odblaski',
 							
 						),
 						array(
@@ -476,30 +507,37 @@
 					'items' => array(
 						array(
 							'title' => 'Misie',
+							'slug' => apply_filters( 'stdName', 'fofcio - Misie' ),
 							//'pikto' => ''
 						),
 						array(
 							'title' => 'Dzikie',
+							'slug' => apply_filters( 'stdName', 'fofcio - Dzikie' ),
 							//'pikto' => ''
 						),
 						array(
 							'title' => 'Domowe',
+							'slug' => apply_filters( 'stdName', 'fofcio - Domowe' ),
 							//'pikto' => ''
 						),
 						array(
 							'title' => 'Boże Narodzenie',
+							'slug' => apply_filters( 'stdName', 'fofcio - Boże Narodzenie' ),
 							//'pikto' => ''
 						),
 						array(
 							'title' => 'Pluszowe breloki',
+							'slug' => apply_filters( 'stdName', 'fofcio - Breloki' ),
 							//'pikto' => ''
 						),
 						array(
 							'title' => 'Akcesoria',
+							'slug' => apply_filters( 'stdName', 'fofcio - Inne akcesoria' ),
 							//'pikto' => ''
 						),
 						array(
-							'title' => 'Zwierzątka',
+							'title' => 'Inne zwierzątka',
+							'slug' => apply_filters( 'stdName', 'fofcio - Inne zwierzątka' ),
 							//'pikto' => ''
 						),
 						
@@ -573,6 +611,7 @@
 						array(
 							'title' => 'vip collection',
 							'class' => 'bold uppercase',
+								
 						),
 						array(
 							'title' => 'vip skóra',
@@ -589,26 +628,39 @@
 						array(
 							'title' => 'vip piśmiennicze',
 							'class' => 'bold uppercase',
-						),
-						array(
-							'title' => 'parker',
-							'pikto' => 'feather.png',
-							'logo' => 'Parker_logo.png',
-						),
-						array(
-							'title' => 'waterman',
-							'pikto' => 'pen3.png',
-							'logo' => 'waterman_logo.png',
+							'sub' => array(
+								array(
+									'title' => 'parker',
+									'pikto' => 'feather.png',
+									'logo' => 'Parker_logo.png',
+								),
+								array(
+									'title' => 'waterman',
+									'pikto' => 'pen3.png',
+									'logo' => 'waterman_logo.png',
+								),
+								array(
+									'title' => 'mark twain',
+									'pikto' => 'pen1.png',
+									'logo' => 'marktwain.svg',
+								),
+								array(
+									'title' => 'pelikan',
+									'pikto' => 'inkwell.png',
+									'logo' => 'pelikan-logo.png',
+								),
+								array(
+									'title' => 'diplomat',
+									'pikto' => 'pen2.png',
+									'logo' => 'diplomat.svg',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'ferraghini',
 							'pikto' => 'wallet.png',
 							'logo' => 'ferraghini.png',
-						),
-						array(
-							'title' => 'mark twain',
-							'pikto' => 'pen1.png',
-							'logo' => 'marktwain.svg',
 						),
 						array(
 							'title' => 'schwarzwolf',
@@ -618,6 +670,66 @@
 							'title' => 'ungaro',
 							'pikto' => 'U.png',
 							'logo' => 'ungaro.png',
+							'sub' => array(
+								array(
+									'title' => 'Zestawy upominkowe',
+								),
+								array(
+									'title' => 'Długopisy',
+								),
+								array(
+									'title' => 'Pióra',
+								),
+								array(
+									'title' => 'Akcesoria',
+								),
+								array(
+									'title' => 'Apaszki i szale',
+								),
+								array(
+									'title' => 'Elektronika',
+								),
+								array(
+									'title' => 'Etui',
+								),
+								array(
+									'title' => 'Etui na wizytówki',
+								),
+								array(
+									'title' => 'Futerały',
+								),
+								array(
+									'title' => 'Notesty i notatniki',
+								),
+								array(
+									'title' => 'Parasolki',
+								),
+								array(
+									'title' => 'Pendrivy',
+								),
+								array(
+									'title' => 'Podróż',
+								),
+								array(
+									'title' => 'Portfele',
+								),
+								array(
+									'title' => 'Przybory do pisania',
+								),
+								array(
+									'title' => 'Teczki',
+								),
+								array(
+									'title' => 'Torby i torebki',
+								),
+								array(
+									'title' => 'Zegarki',
+								),
+								array(
+									'title' => 'Opakowania',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'herlitz',
@@ -625,19 +737,354 @@
 							'logo' => 'Herlitz_logo.svg',
 						),
 						array(
-							'title' => 'pelikan',
-							'pikto' => 'inkwell.png',
-							'logo' => 'pelikan-logo.png',
-						),
-						array(
-							'title' => 'diplomat',
-							'pikto' => 'pen2.png',
-							'logo' => 'diplomat.svg',
-						),
-						array(
 							'title' => 'coFee',
 							'pikto' => 'cap.png',
 							'logo' => 'coFee.svg',
+						),
+						array(
+							'title' => 'Power of Brands',
+							'class' => 'uppercase bold',
+						),
+						array(
+							'title' => 'Cerruti 1881',
+							'class' => 'uppercase bold',
+							'sub' => array(
+								array(
+									'title' => 'Zestawy upominkowe',
+								),
+								array(
+									'title' => 'Długopisy',
+								),
+								array(
+									'title' => 'Pióra',
+								),
+								array(
+									'title' => 'Ołówki',
+								),
+								array(
+									'title' => 'Akcesoria',
+								),
+								array(
+									'title' => 'Elektronika',
+								),
+								array(
+									'title' => 'Etui',
+								),
+								array(
+									'title' => 'Etui na wizytówki',
+								),
+								array(
+									'title' => 'Futerały',
+								),
+								array(
+									'title' => 'Notesty i notatniki',
+								),
+								array(
+									'title' => 'Parasole',
+								),
+								array(
+									'title' => 'Pendrivy',
+								),
+								array(
+									'title' => 'Podróż',
+								),
+								array(
+									'title' => 'Portfele',
+								),
+								array(
+									'title' => 'Przybory do pisania',
+								),
+								array(
+									'title' => 'Teczki',
+								),
+								array(
+									'title' => 'Torby i torebki',
+								),
+								array(
+									'title' => 'Zestawy akcesoriów',
+								),
+								array(
+									'title' => 'Opakowania',
+								),
+								
+							),
+						),
+						array(
+							'title' => 'Cacharel',
+							'class' => 'uppercase bold',
+							'sub' => array(
+								array(
+									'title' => 'Zestawy upominkowe',
+								),
+								array(
+									'title' => 'Długopisy',
+								),
+								array(
+									'title' => 'Pióra',
+								),
+								array(
+									'title' => 'Akcesoria',
+								),
+								array(
+									'title' => 'Apaszki i szale',
+								),
+								array(
+									'title' => 'Elektronika',
+								),
+								array(
+									'title' => 'Etui na wizytówki',
+								),
+								array(
+									'title' => 'Notesty i notatniki',
+								),
+								array(
+									'title' => 'Parasole',
+								),
+								array(
+									'title' => 'Pendrivy',
+								),
+								array(
+									'title' => 'Podróż',
+								),
+								array(
+									'title' => 'Portfele',
+								),
+								array(
+									'title' => 'Przybory do pisania',
+								),
+								array(
+									'title' => 'Teczki',
+								),
+								array(
+									'title' => 'Torby i torebki',
+								),
+								array(
+									'title' => 'Zegarki',
+								),
+								array(
+									'title' => 'Zestawy akcesoriów',
+								),
+								array(
+									'title' => 'Opakowania',
+								),
+								
+							),
+						),
+						array(
+							'title' => 'Nina Ricci',
+							'class' => 'uppercase bold',
+							'sub' => array(
+								array(
+									'title' => 'Zestawy upominkowe',
+								),
+								array(
+									'title' => 'Długopisy',
+								),
+								array(
+									'title' => 'Pióra',
+								),
+								array(
+									'title' => 'Akcesoria',
+								),
+								array(
+									'title' => 'Elektronika',
+								),
+								array(
+									'title' => 'Etui',
+								),
+								array(
+									'title' => 'Etui na wizytówki',
+								),
+								array(
+									'title' => 'Futerały',
+								),
+								array(
+									'title' => 'Notesty i notatniki',
+								),
+								array(
+									'title' => 'Pendrivy',
+								),
+								array(
+									'title' => 'Podróż',
+								),
+								array(
+									'title' => 'Portfele',
+								),
+								array(
+									'title' => 'Przybory do pisania',
+								),
+								array(
+									'title' => 'Teczki',
+								),
+								array(
+									'title' => 'Torby i torebki',
+								),
+								array(
+									'title' => 'Opakowania',
+								),
+								
+							),
+						),
+						array(
+							'title' => 'Jean-Louis Scherrer',
+							'class' => 'uppercase bold',
+							'sub' => array(
+								array(
+									'title' => 'Zestawy upominkowe',
+								),
+								array(
+									'title' => 'Długopisy',
+								),
+								array(
+									'title' => 'Pióra',
+								),
+								array(
+									'title' => 'Akcesoria',
+								),
+								array(
+									'title' => 'Apaszki i szale',
+								),
+								array(
+									'title' => 'Biżuteria',
+								),
+								array(
+									'title' => 'Etui',
+								),
+								array(
+									'title' => 'Etui na wizytówki',
+								),
+								array(
+									'title' => 'Notesty i notatniki',
+								),
+								array(
+									'title' => 'Okulary',
+								),
+								array(
+									'title' => 'Ołówki',
+								),
+								array(
+									'title' => 'Pendrivy',
+								),
+								array(
+									'title' => 'Podróż',
+								),
+								array(
+									'title' => 'Portfele',
+								),
+								array(
+									'title' => 'Przybory do pisania',
+								),
+								array(
+									'title' => 'Teczki',
+								),
+								array(
+									'title' => 'Torby i torebki',
+								),
+								array(
+									'title' => 'Zegarki',
+								),
+								array(
+									'title' => 'Opakowania',
+								),
+								
+							),
+						),
+						array(
+							'title' => 'Christian Lacroix',
+							'class' => 'uppercase bold',
+							'sub' => array(
+								array(
+									'title' => 'Zestawy upominkowe',
+								),
+								array(
+									'title' => 'Długopisy',
+								),
+								array(
+									'title' => 'Pióra',
+								),
+								array(
+									'title' => 'Akcesoria',
+								),
+								array(
+									'title' => 'Apaszki i szale',
+								),
+								array(
+									'title' => 'Biżuteria',
+								),
+								array(
+									'title' => 'Elektronika',
+								),
+								array(
+									'title' => 'Etui',
+								),
+								array(
+									'title' => 'Etui na wizytówki',
+								),
+								array(
+									'title' => 'Futerały',
+								),
+								array(
+									'title' => 'Notesty i notatniki',
+								),
+								array(
+									'title' => 'Okulary',
+								),
+								array(
+									'title' => 'Parasole',
+								),
+								array(
+									'title' => 'Pendrivy',
+								),
+								array(
+									'title' => 'Podróż',
+								),
+								array(
+									'title' => 'Portfele',
+								),
+								array(
+									'title' => 'Przybory do pisania',
+								),
+								array(
+									'title' => 'Teczki',
+								),
+								array(
+									'title' => 'Torby i torebki',
+								),
+								array(
+									'title' => 'Zegarki',
+								),
+								array(
+									'title' => 'Opakowania',
+								),
+								
+							),
+						),
+						
+					),
+				),
+				'vip elektronika' => array(
+					'class' => 'vip_elektronika',
+					'items' => array(
+						array(
+							'title' => 'XLYNE',
+						),
+						array(
+							'title' => 'Creative',
+						),
+						array(
+							'title' => 'Huawei',
+						),
+						array(
+							'title' => 'Plantronics',
+						),
+						array(
+							'title' => 'Silicon Power',
+						),
+						array(
+							'title' => 'Trust',
+						),
+						array(
+							'title' => 'Inne',
 						),
 						
 					),

@@ -1,6 +1,6 @@
 <?php
-	$develop = false;
-	if( $develop && !isset( $_COOKIE['coin'] ) ){
+	// $develop = true;
+	if( $develop === true && !isset( $_COOKIE['coin'] ) ){
 		include "wbudowie.php";
 		exit;
 		

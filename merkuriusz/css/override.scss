@@ -3,7 +3,8 @@ $color_ramka_szara: #e7e7e7;
 $color_fofcio: #D10990;
 $color_elektronika: #1f9DF1;
 $color_vip: #1d1d1d;
-$color_axpol: #83C23F;
+$color_vip_elektronika: #83C23F;
+$color_vip_skora: #733f3c;
 
 $color_menu_hover: #2A96F8;
 $color_pagin_niebieski: rgb(38,155,255);
@@ -52,7 +53,6 @@ ul.menu{
 			
 			& > .sub{
 				white-space: nowrap;
-				background-color: silver;
 				
 			}
 				
@@ -125,6 +125,7 @@ ul.menu{
 			
 			& > .logotyp{
 				margin: 5px 10px 5px 0;
+				min-width: 180px;
 				background-position: left;
 				
 			}
@@ -134,6 +135,7 @@ ul.menu{
 		.sub{
 			padding-left: 10px;
 			color: #000;
+			background-color: silver;
 			
 			& > .item{
 				border-top: solid 1px $color_ramka_szara;
@@ -171,23 +173,38 @@ ul.menu{
 			color: #fff;
 			background-color: $color_fofcio;
 			
-		}
-		
-		&.axpol{
-			color: #fff;
-			background-color: $color_axpol;
+			.sub{
+				background-color: $color_fofcio;
+			}
 			
 		}
-		
 		&.elektronika{
 			color: #fff;
 			background-color: $color_elektronika;
+			
+			.sub{
+				background-color: $color_elektronika;
+			}
 			
 		}
 		
 		&.vip{
 			color: #fff;
 			background-color: $color_vip;
+			
+			.sub{
+				background-color: $color_vip;
+			}
+			
+		}
+		
+		&.vip_elektronika{
+			color: #fff;
+			background-color: $color_vip_elektronika;
+			
+			.sub{
+				background-color: $color_vip_elektronika;
+			}
 			
 		}
 		
