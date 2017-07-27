@@ -547,7 +547,8 @@ add_action( 'gen_menu', function( $arg ){
 	// echo "-->";
 	
 	if( !empty( $_GET['cat'] ) ){
-		$query = explode( ",", $_GET['cat'] );
+		//$query = explode( ",", $_GET['cat'] );
+		$query = explode( "-", $_GET['cat'] );
 	}
 	else{
 		$query = array( "", "" );
@@ -572,15 +573,15 @@ add_action( 'gen_menu', function( $arg ){
 		$cat_data['class'], $cat_active, $cat_slug, $cat_name, $cat_name );
 				
 		foreach( $cat_data['items'] as $item ){
-			//$item_slug = apply_filters( 'stdName', $item['title'] );
-			$item_slug = empty( $item[ 'slug' ] )?( apply_filters( 'stdName', $item['title'] ) ):( $item[ 'slug' ] );
+			$item_slug = apply_filters( 'stdName', $item['title'] );
+			//$item_slug = empty( $item[ 'slug' ] )?( apply_filters( 'stdName', $item['title'] ) ):( $item[ 'slug' ] );
 			$item_active = $query[1] === $item_slug?( 'active' ):( '' );
 			
 			if( empty( $item['sub'] ) ){
 				printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
 				$item['class'],
 				$item_active,
-				home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) ),
+				home_url( sprintf( "kategoria?cat=%s-%s", $cat_slug, $item_slug ) ),
 				$item_slug,
 				$item['title']
 				);
@@ -612,12 +613,17 @@ add_action( 'gen_menu', function( $arg ){
 				echo "<div class='sub flex flex-column'>";
 					
 					foreach( $item['sub'] as $subitem ){
-						//$subitem_slug = apply_filters( 'stdName', $subitem[ 'title' ] );
-						$subitem_slug = empty( $subitem[ 'slug' ] )?( apply_filters( 'stdName', $subitem['title'] ) ):( $subitem[ 'slug' ] );
+						$subitem_slug = apply_filters( 'stdName', $subitem[ 'title' ] );
+						//$subitem_slug = empty( $subitem[ 'slug' ] )?( apply_filters( 'stdName', $subitem['title'] ) ):( $subitem[ 'slug' ] );
 						$subitem_active = $query[2] === $subitem_slug;
 						
 						printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
-						$item['class'], $subitem_active, home_url( sprintf( "kategoria?cat=%s,%s,%s", $cat_slug, $item_slug, $subitem_slug ) ), $subitem_slug, $item['title'] );
+						$item['class'],
+						$subitem_active,
+						home_url( sprintf( "kategoria?cat=%s-%s-%s", $cat_slug, $item_slug, $subitem_slug ) ),
+						$subitem_slug,
+						$item['title']
+						);
 					
 							echo "<div class='head grow flex flex-items-center'>";
 								if( !empty( $subitem['pikto'] ) ){

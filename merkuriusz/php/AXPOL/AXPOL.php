@@ -102,7 +102,7 @@ class AXPOL extends XMLAbstract{
 				
 				/* ========== KATALOGI ========== */
 				if( $catalog === 'voyager wine club' ){
-					$catalog = 'vine club';
+					$cat_name = 'vine club';
 					
 				}
 				
@@ -122,35 +122,51 @@ class AXPOL extends XMLAbstract{
 				elseif( in_array( $cat_name, array( 'wypoczynek i plener' ) ) ){
 					$cat_name = 'wypoczynek';
 					
+					if( in_array( $subcat_name, array( 'grill', 'piknik' ) ) ){
+						$subcat_name = 'grill i piknik';
+						
+					}
+					
 				}
 				elseif( in_array( $cat_name, array( 'teczki i notatniki' ) ) ){
 					$cat_name = 'biuro';
 					
+					if( $subcat_name === 'notatniki' ){
+						$subcat_name = 'Notatniki i notesy';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'przybory piśmienne' ){
+					$cat_name = 'materiały piśmiennicze';
+					
+				}
+				elseif( $cat_name === 'torby i podróż' ){
+					$cat_name = 'podróż';
+					
+				}
+				elseif( $cat_name === 'dom i wnętrze' ){
+					$cat_name = 'dom';
+					
+					if( $subcat_name === 'akcesoria do wina' ){
+						$subcat_name = 'wino: akcesoria';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'elektronika' ){
+					if( $subcat_name === 'huby usb' ){
+						$subcat_name  = 'adaptery i huby usb';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'technologia' ){
+					$cat_name = 'elektronika';
+					
 				}
 				elseif( $cat_name === 'fofcio promo toys' ){
-					$subcat_name = 'fofcio - ' . $subcat_name;
-					
-				}
-				elseif( $cat_name === 'breloki' ){
-					if( $subcat_name === 'inne' ){
-						$subcat_name = 'pozostałe breloki';
-						
-					}
-					else{
-						$subcat_name = 'breloki - ' . $subcat_name;
-						
-					}
-					
-				}
-				elseif( $cat_name === 'moleskine' ){
-					if( $subcat_name === 'inne' ){
-						$subcat_name = 'pozostałe art. moleskine';
-						
-					}
-					else{
-						$subcat_name = 'moleskine - ' . $subcat_name;
-						
-					}
+					$cat_name = "pluszaki i maskotki";
 					
 				}
 				
@@ -173,53 +189,11 @@ class AXPOL extends XMLAbstract{
 					$subcat_name = '';
 					
 				}
-				elseif( $subcat_name === 'inne' ){
-					if( $cat_name === 'biuro' ){
-						$subcat_name = 'inne art. biurowe';
-						
-					}
-					elseif( $cat_name === 'elektronika' ){
-						$subcat_name = 'inne art. elektroniczne';
-						
-					}
-					elseif( $cat_name === 'dom' ){
-						$subcat_name = 'inne art. domowe';
-						
-					}
-					elseif( $cat_name === 'torby i plecaki' ){
-						$subcat_name = 'pozostałe torby i plecaki';
-						
-					}
-					elseif( $cat_name === 'narzędzia' ){
-						$subcat_name = 'pozostałe narzędzia';
-						
-					}
-					elseif( $cat_name === 'podróż' ){
-						$subcat_name = 'inne art. podróżne';
-						
-					}
-					elseif( $cat_name === 'do picia' ){
-						$subcat_name = 'inne art. do picia';
-						
-					}
-					elseif( $cat_name === 'tekstylia' ){
-						$subcat_name = 'pozostałe tekstylia';
-						
-					}
-					elseif( $cat_name === 'moleskine' ){
-						$subcat_name = 'pozostałe art. moleskine';
-						
-					}
-					elseif( $cat_name === 'do picia' ){
-						$subcat_name = 'inne art. do picia';
-						
-					}
-					
-				}
 				elseif( $subcat_name === 'apteczki' ){
 					$cat_name = "Medyczne";
 					
 				}
+				
 				
 				/* ========== PODKATEGORIE ========== */
 				
@@ -235,6 +209,8 @@ class AXPOL extends XMLAbstract{
 				$cat[ $cat_name ] = array();
 				
 				if( !empty( $subcat_name ) ){
+					$subcat_name = $cat_name . "-" . $subcat_name;
+					
 					$cat[ $subcat_name ] = array();
 					
 				}

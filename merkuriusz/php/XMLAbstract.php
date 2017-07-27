@@ -53,7 +53,9 @@ class XMLAbstract{
 	public function init(){
 		// nazwa pliku z produktami danej kategorii, przekazywany przez GET
 		//$item_param = empty( $_GET['cat'] )?( 'root' ):( $this->stdNameCache( $_GET['cat'] ) );
-		$t = end( explode( ",", $_GET['cat'] ) );
+		//$t = end( explode( ",", $_GET['cat'] ) );
+		//$t = $_GET['cat'];
+		$t = implode( '-', array_slice( explode( "-", $_GET['cat'] ), -2 ) );
 		$item_param = empty( $t )?( 'root' ):( $this->stdNameCache( $t ) );
 		$item_url = "{$this->_config['cache']}/cat_{$item_param}.php";
 		$cat_url = "{$this->_config['cache']}/cat.php";

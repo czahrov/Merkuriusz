@@ -80,7 +80,6 @@
 								),
 								array(
 									'title' => 'Inne',
-									'slug' => apply_filters( 'stdName', 'Inne art. biurowe' ),
 								),
 								
 							),
@@ -103,10 +102,10 @@
 									'title' => 'Podróżne i sportowe',
 								),
 								array(
-									'title' => 'Świąteczne',
+									'title' => 'Termoizolacyjne',
 								),
 								array(
-									'title' => 'Termoizolacyjne',
+									'title' => 'Świąteczne',
 								),
 								array(
 									'title' => 'Torby na ramię',
@@ -119,7 +118,6 @@
 								),
 								array(
 									'title' => 'Inne',
-									'slug' => apply_filters( 'stdName', 'Pozostałe torby i plecaki' ),
 								),
 								
 							),
@@ -153,7 +151,6 @@
 								),
 								array(
 									'title' => 'Inne',
-									'slug' => apply_filters( 'stdName', 'Inne art. do picia' ),
 								),
 								
 							),
@@ -165,48 +162,36 @@
 							'sub' => array(
 								array(
 									'title' => 'Bezpieczeństwo',
-									
 								),
 								array(
 									'title' => 'Latarki',
-									
 								),
 								array(
 									'title' => 'Miarki',
-									
 								),
 								array(
 									'title' => 'Rower',
-									
 								),
 								array(
 									'title' => 'Samochód',
-									
 								),
 								array(
 									'title' => 'Scyzoryki',
-									
 								),
 								array(
 									'title' => 'Śrubokręty',
-									
 								),
 								array(
 									'title' => 'Warsztat',
-									
 								),
 								array(
 									'title' => 'Wielofunkcyjne',
-									
 								),
 								array(
 									'title' => 'Zestawy',
-									
 								),
 								array(
 									'title' => 'Inne',
-									'slug' => apply_filters( 'stdName', 'Pozostałe narzędzia' ),
-									
 								),
 								
 							),
@@ -218,52 +203,57 @@
 							'sub' => array(
 								array(
 									'title' => 'Apteczki',
-									
 								),
 								array(
 									'title' => 'Dziadki do orzechów',
-									
 								),
 								array(
 									'title' => 'Kuchnia',
-									
 								),
 								array(
 									'title' => 'Łazienka',
-									
 								),
 								array(
 									'title' => 'Oświetlenie',
-									
 								),
 								array(
 									'title' => 'Ramki do zdjęć',
-									
 								),
 								array(
 									'title' => 'Świąteczne',
-									
 								),
 								array(
 									'title' => 'Termometry',
-									
 								),
 								array(
 									'title' => 'Wino: akcesoria',
-									
 								),
 								array(
 									'title' => 'Wino: opakowanie',
-									
 								),
 								array(
 									'title' => 'Wino: zestawy',
-									
+								),
+								array(
+									'title' => 'Eco',
+								),
+								array(
+									'title' => 'Ogród',
+								),
+								array(
+									'title' => 'Gry',
+								),
+								array(
+									'title' => 'Coolery',
+								),
+								array(
+									'title' => 'Karafki',
+								),
+								array(
+									'title' => 'Wnętrze',
 								),
 								array(
 									'title' => 'Inne',
-									'slug' => apply_filters( 'stdName', 'Inne art. domowe' ),
-									
 								),
 								
 							),
@@ -303,34 +293,27 @@
 						),
 						array(
 							'title' => 'Breloki',
-							//'pikto' => '',
 							'sub' => array(
 								array(
 									'title' => 'Breloki',
 								),
 								array(
-									'title' => 'Antystres',
-									'slug' => apply_filters( 'stdName', 'Breloki - antystres' ),
+									'title' => 'Antystresy',
 								),
 								array(
 									'title' => 'Latarki',
-									'slug' => apply_filters( 'stdName', 'Breloki - latarki' ),
 								),
 								array(
 									'title' => 'Miarki',
-									'slug' => apply_filters( 'stdName', 'Breloki - miarki' ),
 								),
 								array(
 									'title' => 'Otwieracze do butelek',
-									'slug' => apply_filters( 'stdName', 'Breloki - otwieracze do butelek' ),
 								),
 								array(
 									'title' => 'Wielofunkcyjne',
-									'slug' => apply_filters( 'stdName', 'Breloki - wielofunkcyjne' ),
 								),
 								array(
 									'title' => 'Inne',
-									'slug' => apply_filters( 'stdName', 'Pozostałe breloki' ),
 								),
 								
 							),
@@ -359,7 +342,34 @@
 									'title' => 'Saszetki',
 								),
 								array(
-									'title' => 'Inne art. podróżne',
+									'title' => 'Smycze',
+								),
+								array(
+									'title' => 'Torby do recyklingu',
+								),
+								array(
+									'title' => 'Zestawy podróżne',
+								),
+								array(
+									'title' => 'Torby podróżne i sportowe',
+								),
+								array(
+									'title' => 'Walizki',
+								),
+								array(
+									'title' => 'Plecaki',
+								),
+								array(
+									'title' => 'Plecaki na kółkach',
+								),
+								array(
+									'title' => 'Torby na laptopa',
+								),
+								array(
+									'title' => 'Torby na dokumenty',
+								),
+								array(
+									'title' => 'Inne',
 								),
 								
 							),
@@ -401,13 +411,16 @@
 									'title' => 'Zestawy zimowe',
 									
 								),
+								array(
+									'title' => 'Inne',
+									
+								),
 								
 							),
 							
 						),
 						array(
 							'title' => 'Wypoczynek',
-							//'pikto' => '',
 							'sub' => array(
 								array(
 									'title' => 'Grill i piknik',
@@ -430,53 +443,67 @@
 								array(
 									'title' => 'Fidget spinner',
 								),
+								array(
+									'title' => 'Lornetki',
+								),
+								array(
+									'title' => 'Kompasy',
+								),
+								array(
+									'title' => 'Torby termoizolacyjne',
+								),
 								
 							),
 							
 						),
 						array(
 							'title' => 'Zdrowie i bezpieczeństwo',
-							//'pikto' => '',
+							'sub' => array(
+								array(
+									'title' => 'Bezpieczeństwo',
+								),
+								array(
+									'title' => 'Sport',
+								),
+								array(
+									'title' => 'Samochód',
+								),
+								array(
+									'title' => 'Monitory aktywności',
+								),
+								
+							),
+							
 						),
 						array(
 							'title' => 'Moleskine',
-							//'pikto' => '',
 							'sub' => array(
 								array(
 									'title' => 'Długopisy metalowe',
-									'slug' => apply_filters( 'stdName', 'Moleskine - długopisy metalowe' ),
 								),
 								array(
 									'title' => 'Długopisy plastikowe',
-									'slug' => apply_filters( 'stdName', 'Moleskine - długopisy plastikowe' ),
 								),
 								array(
 									'title' => 'Kalendarze',
-									'slug' => apply_filters( 'stdName', 'Moleskine - kalendarze' ),
 								),
 								array(
 									'title' => 'Moleskine - kalendarze z notatnikiem',
-									'slug' => apply_filters( 'stdName', 'Moleskine - kalendarze z notatnikiem' ),
 								),
 								array(
 									'title' => 'Ołówki',
-									'slug' => apply_filters( 'stdName', 'Moleskine - ołówki' ),
 								),
 								array(
 									'title' => 'Notatniki',
-									'slug' => apply_filters( 'stdName', 'Moleskine - notatniki' ),
 								),
 								array(
 									'title' => 'Passion journals',
-									'slug' => apply_filters( 'stdName', 'Moleskine - passion journals' ),
 								),
 								array(
 									'title' => 'Zestawy upominkowe',
-									'slug' => apply_filters( 'stdName', 'Moleskine - zestawy upominkowe' ),
 								),
 								array(
 									'title' => 'Inne',
-									'slug' => apply_filters( 'stdName', 'Pozostałe art. Moleskine' ),
 								),
 								
 							),
@@ -484,16 +511,49 @@
 						),
 						array(
 							'title' => 'Medyczne',
-							
 						),
 						array(
 							'title' => 'Odblaski',
-							
+						),
+						array(
+							'title' => 'Pinsy',
+						),
+						array(
+							'title' => 'Akcesoria do telefonów i tabletów',
+							'sub' => array(
+								array(
+									'title' => 'Akcesoria',
+								),
+								array(
+									'title' => 'Stojaki',
+								),
+								array(
+									'title' => 'Etui i podstawki',
+								),
+								array(
+									'title' => 'Głośniki',
+								),
+								array(
+									'title' => 'Słuchawki',
+								),
+								array(
+									'title' => 'Ładowarki i kable',
+								),
+								array(
+									'title' => 'Ładowarki słoneczne',
+								),
+								array(
+									'title' => 'Power banki',
+								),
+								array(
+									'title' => 'Okulary wirtualnej rzeczywistości',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'Świąteczne',
 							'pikto' => 'swiateczne.png',
-							
 						),
 						array(
 							'title' => 'Opakowania upominkowe',
@@ -502,43 +562,29 @@
 						
 					),
 				),
-				'fofcio promo toys' => array(
+				'pluszaki i maskotki' => array(
 					'class' => 'fofcio',
 					'items' => array(
 						array(
 							'title' => 'Misie',
-							'slug' => apply_filters( 'stdName', 'fofcio - Misie' ),
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Dzikie',
-							'slug' => apply_filters( 'stdName', 'fofcio - Dzikie' ),
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Domowe',
-							'slug' => apply_filters( 'stdName', 'fofcio - Domowe' ),
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Boże Narodzenie',
-							'slug' => apply_filters( 'stdName', 'fofcio - Boże Narodzenie' ),
-							//'pikto' => ''
 						),
 						array(
-							'title' => 'Pluszowe breloki',
-							'slug' => apply_filters( 'stdName', 'fofcio - Breloki' ),
-							//'pikto' => ''
+							'title' => 'Breloki',
 						),
 						array(
-							'title' => 'Akcesoria',
-							'slug' => apply_filters( 'stdName', 'fofcio - Inne akcesoria' ),
-							//'pikto' => ''
+							'title' => 'Inne akcesoria',
 						),
 						array(
 							'title' => 'Inne zwierzątka',
-							'slug' => apply_filters( 'stdName', 'fofcio - Inne zwierzątka' ),
-							//'pikto' => ''
 						),
 						
 					),
@@ -548,59 +594,54 @@
 					'items' => array(
 						array(
 							'title' => 'Zegary i zegarki',
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Stacje pogodowe',
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Kalkulatory',
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Wskaźniki laserowe',
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Pamięci USB',
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Akcesoria do komputerów',
-							//'pikto' => ''
 						),
 						array(
-							'title' => 'Huby USB',
-							//'pikto' => ''
+							'title' => 'Adaptery i huby USB',
 						),
 						array(
 							'title' => 'Akcesoria do telefonów',
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Ładowarki samochodowe',
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Słuchawki',
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Głośniki',
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Ładowarki słoneczne',
-							//'pikto' => ''
 						),
 						array(
 							'title' => 'Power banki',
-							//'pikto' => ''
 						),
 						array(
-							'title' => 'Inne art. elektroniczne',
-							//'pikto' => ''
+							'title' => 'Myszki',
+						),
+						array(
+							'title' => 'Akcesoria',
+						),
+						array(
+							'title' => 'Wskaźniki laserowe',
+						),
+						array(
+							'title' => 'Inne',
 						),
 						
 					),
@@ -618,12 +659,32 @@
 							'class' => 'bold uppercase',
 						),
 						array(
-							'title' => 'viktronix',
-							'class' => 'bold uppercase',
-						),
-						array(
 							'title' => 'vine club',
 							'class' => 'bold uppercase',
+							'sub' => array(
+								array(
+									'title' => 'Akcesoria',
+								),
+								array(
+									'title' => 'Alkohol',
+								),
+								array(
+									'title' => 'Czekolada',
+								),
+								array(
+									'title' => 'Oliwa z oliwek',
+								),
+								array(
+									'title' => 'Opakowania',
+								),
+								array(
+									'title' => 'Wino',
+								),
+								array(
+									'title' => 'Zestawy',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'vip piśmiennicze',
@@ -1088,6 +1149,103 @@
 						),
 						
 					),
+				),
+				'victorinox collection' => array(
+					'class' => 'vip_victorinox',
+					'items' => array(
+						array(
+							'title' => 'Victorinox',
+							'sub' => array(
+								array(
+									'title' => 'Zestawy upominkowe',
+								),
+								array(
+									'title' => 'Scyzoryki',
+								),
+								array(
+									'title' => 'SwissTool',
+								),
+								array(
+									'title' => 'SwissCard',
+								),
+								array(
+									'title' => 'Walizki i torby podróżne',
+								),
+								array(
+									'title' => 'Plecaki',
+								),
+								array(
+									'title' => 'Noże kuchenne',
+								),
+								array(
+									'title' => 'Obieraczki',
+								),
+								array(
+									'title' => 'Etui',
+								),
+								array(
+									'title' => 'Inne',
+								),
+								
+							),
+						),
+						array(
+							'title' => 'Plecaki i torby',
+							'sub' => array(
+								array(
+									'title' => '',
+								),
+								
+							),
+						),
+						array(
+							'title' => 'Akcesoria podróżne',
+							'sub' => array(
+								array(
+									'title' => '',
+								),
+								
+							),
+						),
+						array(
+							'title' => 'Victorinox Delemont Collection',
+							'sub' => array(
+								array(
+									'title' => '',
+								),
+								
+							),
+						),
+						array(
+							'title' => 'WENGER - BESTSELLERY',
+							'sub' => array(
+								array(
+									'title' => '',
+								),
+								
+							),
+						),
+						array(
+							'title' => 'WENGER - bagaże biznesowe i akcesoria podróżne',
+							'sub' => array(
+								array(
+									'title' => '',
+								),
+								
+							),
+						),
+						array(
+							'title' => 'WENGER - zegarki',
+							'sub' => array(
+								array(
+									'title' => '',
+								),
+								
+							),
+						),
+						
+					),
+					
 				),
 				
 			) );

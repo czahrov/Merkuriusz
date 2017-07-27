@@ -1,6 +1,6 @@
 <?php
 $AXPOL = new AXPOL();
-//$AXPOL->makeCache();
+// $AXPOL->makeCache();
 
 $XM = new XMLMan();
 $XM->addSupport( $AXPOL );
