@@ -98,13 +98,13 @@ class AXPOL extends XMLAbstract{
 				$cat_name = strtolower( (string)$item->MainCategoryPL );
 				if( empty( $cat_name ) ) $cat_name = "Pozostałe";
 				
-				$subcat_name = (string)$item->SubCategoryPL;
+				$subcat_name = strtolower( (string)$item->SubCategoryPL );
 				
 				/* ========== KATALOGI ========== */
-				if( $catalog === 'voyager wine club' ){
-					$cat_name = 'vine club';
+				// if( $catalog === 'voyager wine club' ){
+					// $cat_name = 'vine club';
 					
-				}
+				// }
 				
 				/* ========== KATEGORIE ========== */
 				if( in_array( $cat_name, array( 'do pisania', 'przybory piśmienne' ) ) ){
@@ -154,19 +154,16 @@ class AXPOL extends XMLAbstract{
 					}
 					
 				}
-				elseif( $cat_name === 'elektronika' ){
-					if( $subcat_name === 'huby usb' ){
-						$subcat_name  = 'adaptery i huby usb';
-						
-					}
-					
-				}
 				elseif( $cat_name === 'technologia' ){
 					$cat_name = 'elektronika';
 					
 				}
 				elseif( $cat_name === 'fofcio promo toys' ){
 					$cat_name = "pluszaki i maskotki";
+					
+				}
+				elseif( $cat_name === 'voyager wine club' ){
+					$cat_name = "vine club";
 					
 				}
 				
@@ -191,6 +188,10 @@ class AXPOL extends XMLAbstract{
 				}
 				elseif( $subcat_name === 'apteczki' ){
 					$cat_name = "Medyczne";
+					
+				}
+				elseif( $subcat_name === 'huby usb' ){
+					$subcat_name = "adaptery i huby usb";
 					
 				}
 				

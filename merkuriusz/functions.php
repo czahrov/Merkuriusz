@@ -547,8 +547,8 @@ add_action( 'gen_menu', function( $arg ){
 	// echo "-->";
 	
 	if( !empty( $_GET['cat'] ) ){
-		//$query = explode( ",", $_GET['cat'] );
-		$query = explode( "-", $_GET['cat'] );
+		$query = explode( ",", $_GET['cat'] );
+		// $query = explode( "-", $_GET['cat'] );
 	}
 	else{
 		$query = array( "", "" );
@@ -581,7 +581,13 @@ add_action( 'gen_menu', function( $arg ){
 				printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
 				$item['class'],
 				$item_active,
-				home_url( sprintf( "kategoria?cat=%s-%s", $cat_slug, $item_slug ) ),
+				// home_url( sprintf( "kategoria?cat=%s-%s", $cat_slug, $item_slug ) ),
+				// home_url( sprintf( "kategoria?cat=%s,%s,%s-%s", $cat_slug, $item_slug, $cat_slug, $item_slug ) ),
+				$cat_slug === 'gadzety_reklamowe'?(
+					home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) )
+				):(
+					home_url( sprintf( "kategoria?cat=%s,%s,%s-%s", $cat_slug, $item_slug, $cat_slug, $item_slug ) )
+				),
 				$item_slug,
 				$item['title']
 				);
@@ -620,7 +626,8 @@ add_action( 'gen_menu', function( $arg ){
 						printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
 						$item['class'],
 						$subitem_active,
-						home_url( sprintf( "kategoria?cat=%s-%s-%s", $cat_slug, $item_slug, $subitem_slug ) ),
+						// home_url( sprintf( "kategoria?cat=%s-%s-%s", $cat_slug, $item_slug, $subitem_slug ) ),
+						home_url( sprintf( "kategoria?cat=%s,%s,%s-%s", $cat_slug, $item_slug, $item_slug, $subitem_slug ) ),
 						$subitem_slug,
 						$item['title']
 						);
