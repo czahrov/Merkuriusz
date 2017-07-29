@@ -359,6 +359,7 @@ function markPrice( $type, $num, $repeat = 1 ){
 add_action( 'pre_get_posts', 'search_by_cat' );
 
 add_action( 'breadcrumb', function( $arg = '' ){
+	/*
 	$cat = $_GET['cat'];
 	if( empty( $cat ) ) return '';
 	$part = explode( ",", $cat );
@@ -366,7 +367,10 @@ add_action( 'breadcrumb', function( $arg = '' ){
 	$t[] = explode( "-", end( $part ) )[1];
 	if( !empty( $arg ) ) $t[] = $arg;
 	
-	echo implode( " > ", $t );
+	$ret = str_replace( "_", " ", implode( " > ", $t ) );
+	*/
+	
+	echo implode( " > ", $_SESSION[ 'breadc' ] );
 	
 } );
 
@@ -566,7 +570,16 @@ add_action( 'gen_menu', function( $arg ){
 	echo "<ul class='menu'>";
 	foreach( $arg as $cat_name => $cat_data ){
 		$cat_slug = apply_filters( 'stdName', $cat_name );
-		$cat_active = $query[0] === $cat_slug?( 'active' ):( '' );
+		if( $query[0] === $cat_slug ){
+			$cat_active = 'active';
+			$_SESSION[ 'breadc' ] = array( $cat_name );
+			
+		}
+		else{
+			$cat_active = '';
+			
+		}
+		//$cat_active = $query[0] === $cat_slug?( 'active' ):( '' );
 		
 		// PIERWSZY STOPIEŃ
 		printf( "<li class='item flex flex-column %s %s' item-slug='%s' item-title='%s'>
@@ -577,12 +590,26 @@ add_action( 'gen_menu', function( $arg ){
 					<span class='icon fa fa-angle-right'></span>
 				</div>
 				<ul class='sub flex flex-column'>",
-		$cat_data['class'], $cat_active, $cat_slug, $cat_name, $cat_name );
+		$cat_data['class'],
+		$cat_active,
+		$cat_slug,
+		$cat_name,
+		$cat_name
+		);
 				
 		foreach( $cat_data['items'] as $item ){
 			$item_slug = apply_filters( 'stdName', $item['title'] );
 			//$item_slug = empty( $item[ 'slug' ] )?( apply_filters( 'stdName', $item['title'] ) ):( $item[ 'slug' ] );
-			$item_active = $query[1] === $item_slug?( 'active' ):( '' );
+			//$item_active = $query[1] === $item_slug?( 'active' ):( '' );
+			if( $query[1] === $item_slug ){
+				$item_active = 'active';
+				$_SESSION[ 'breadc' ] = array( $cat_name, $item[ 'title' ] );
+				
+			}
+			else{
+				$item_active = '';
+				
+			}
 			
 			if( empty( $item['sub'] ) ){
 				printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
@@ -602,7 +629,11 @@ add_action( 'gen_menu', function( $arg ){
 			}
 			else{
 				printf( "<div class='item flex flex-column %s %s' item-slug='%s' item-title='%s'>",
-				$item['class'], $item_active, $item_slug, $item['title'] );
+				$item['class'],
+				$item_active,
+				$item_slug,
+				$item['title']
+				);
 				
 			}
 			
@@ -629,11 +660,19 @@ add_action( 'gen_menu', function( $arg ){
 						$subitem_slug = apply_filters( 'stdName', $subitem[ 'title' ] );
 						//$subitem_slug = empty( $subitem[ 'slug' ] )?( apply_filters( 'stdName', $subitem['title'] ) ):( $subitem[ 'slug' ] );
 						//$subitem_active = $query[2] === $subitem_slug;
-						$subitem_active = explode( "-", end( $query ) )[1] === $subitem_slug;
+						//$subitem_active = explode( "-", end( $query ) )[1] === $subitem_slug;
+						if( explode( "-", end( $query ) )[1] === $subitem_slug ){
+							$subitem_active = 'active';
+							$_SESSION[ 'breadc' ] = array( $cat_name, $item[ 'title' ], $subitem[ 'title' ] );
+						}
+						else{
+							$subitem_active = '';
+							
+						}
 						
 						printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
 						$item['class'],
-						$subitem_active?( 'active' ):( '' ),
+						$subitem_active,
 						// home_url( sprintf( "kategoria?cat=%s-%s-%s", $cat_slug, $item_slug, $subitem_slug ) ),
 						home_url( sprintf( "kategoria?cat=%s,%s,%s-%s", $cat_slug, $item_slug, $item_slug, $subitem_slug ) ),
 						$subitem_slug,

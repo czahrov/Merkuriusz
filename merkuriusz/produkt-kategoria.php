@@ -27,10 +27,10 @@
 	<?php get_template_part( "template/menu", "side" ); ?>
 	<div id='grid' class='col-md-8'>
 		<div class='top flex flex-wrap flex-items-center flex-justify-between'>
-			<div class='breadc uppercase base1 base0-mm flex flex-items-center flex-justify-center'>
+			<div class='breadc uppercase grow base1 base0-mm flex flex-items-center flex-justify-center flex-justify-start-mm'>
 				<?php do_action( 'breadcrumb' ); ?>
 			</div>
-			<div class='switcher base1 base0-mm flex flex-items-center flex-justify-center'>
+			<div class='switcher grow base1 base0-mm flex flex-items-center flex-justify-center flex-justify-end-mm'>
 				<?php do_action( 'num_switcher' ); ?>
 			</div>
 			
