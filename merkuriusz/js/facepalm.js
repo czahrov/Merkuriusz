@@ -584,6 +584,7 @@
 			
 			if(logger) console.log('page.index()');
 			
+			/*
 			// breadcrumb
 			(function( bread, cat, subcat ){
 				if( cat.length !== '' && subcat.length !== '' ){
@@ -593,6 +594,7 @@
 				
 			})
 			( $( '#grid .breadc' ), $( 'ul.menu > .item.active' ).attr( 'item-title' ), $( 'ul.menu > .item.active > .sub .item.active' ).attr( 'item-title' ) );
+			*/
 			
 		},
 		produkt: function(){
@@ -632,6 +634,7 @@
 			})
 			( $( '.multi.seg > .pakowanie' ), $( '.multi.seg > .flex > .pakowanie' ), $( '.multi.seg > .inne' ), $( '.multi.seg > .flex > .inne' ) );
 			
+			/*
 			// breadcrumb
 			(function( bread, cat, subcat, name ){
 				if( cat.length !== '' && subcat.length !== '' ){
@@ -641,6 +644,7 @@
 				
 			})
 			( $( '#grid .breadc' ), $( 'ul.menu > .item.active' ).attr( 'item-title' ), $( 'ul.menu > .item.active > .sub .item.active' ).attr( 'item-title' ), $( '.main.seg .line.name > .val' ).text() );
+			*/
 			
 			/* obsługa miniaturek produktu */
 			(function( slider, view, img, large, nav ){

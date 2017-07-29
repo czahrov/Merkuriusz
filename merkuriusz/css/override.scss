@@ -84,7 +84,7 @@ ul.menu{
 			
 			& > .sub{
 				
-				& > .item.active > .head > .title{
+				.item.active > .head > .title{
 					color: $color-menu-active;
 					
 				}
@@ -140,9 +140,10 @@ ul.menu{
 			
 			& > .item{
 				border-top: solid 1px $color-ramka-szara;
+				background-clip: content-box;
 				
 				&:hover{
-					margin-left: 10px;
+					padding-left: 10px;
 					
 					& > .head{
 						padding-left: 10px;
@@ -399,6 +400,11 @@ ul.menu{
 	
 	& > .kafelki{
 		margin: 0 -10px 30px;
+		
+		& > .noitems{
+			padding: 0 20px;
+			
+		}
 		
 		& > .item{
 			
@@ -773,7 +779,7 @@ ul.menu{
 						
 						.key, .val{
 							padding: 0 14px;
-							height: 40px;
+							min-height: 40px;
 							border: solid 1px $color-ramka-szara;
 							
 						}

@@ -358,15 +358,15 @@ function markPrice( $type, $num, $repeat = 1 ){
 
 add_action( 'pre_get_posts', 'search_by_cat' );
 
-add_action( 'breadcrumb', function( $arg ){
-	if( !empty( $_GET['cat'] ) ){
-		$cat = explode( ",", $_GET['cat'] );
-		echo implode( " > ", $cat );
-	}
-	else{
-		echo "breadcrumb!";
-		
-	}
+add_action( 'breadcrumb', function( $arg = '' ){
+	$cat = $_GET['cat'];
+	if( empty( $cat ) ) return '';
+	$part = explode( ",", $cat );
+	$t = array_slice( $part, 0, -1 );
+	$t[] = explode( "-", end( $part ) )[1];
+	if( !empty( $arg ) ) $t[] = $arg;
+	
+	echo implode( " > ", $t );
 	
 } );
 
@@ -483,17 +483,24 @@ add_action( 'kafelki_kategoria', function( $arg ){
 } );
 
 add_action( 'number', function( $arg ){
-	$total = $arg;
-	//$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $_GET['num'] )?( (int)$_GET['num'] ):( 20 ) );
-	$perpage = config( 'num' );
-	//$strona = !empty( $_GET['strona'] )?( (int)$_GET['strona'] ):( 1 );
-	$strona = config( 'strona' );
-	
-	printf( "Produktów %u-%u / %u",
-		1 + ( $strona - 1) * $perpage,
-		min( $strona * $perpage, $total ),
-		$total
-	);
+	if( $arg > 0 ){
+		$total = $arg;
+		//$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $_GET['num'] )?( (int)$_GET['num'] ):( 20 ) );
+		$perpage = config( 'num' );
+		//$strona = !empty( $_GET['strona'] )?( (int)$_GET['strona'] ):( 1 );
+		$strona = config( 'strona' );
+		
+		printf( "Produktów %u-%u / %u",
+			1 + ( $strona - 1) * $perpage,
+			min( $strona * $perpage, $total ),
+			$total
+		);
+		
+	}
+	else{
+		echo "- brak produktów -";
+		
+	}
 	
 } );
 
@@ -621,11 +628,12 @@ add_action( 'gen_menu', function( $arg ){
 					foreach( $item['sub'] as $subitem ){
 						$subitem_slug = apply_filters( 'stdName', $subitem[ 'title' ] );
 						//$subitem_slug = empty( $subitem[ 'slug' ] )?( apply_filters( 'stdName', $subitem['title'] ) ):( $subitem[ 'slug' ] );
-						$subitem_active = $query[2] === $subitem_slug;
+						//$subitem_active = $query[2] === $subitem_slug;
+						$subitem_active = explode( "-", end( $query ) )[1] === $subitem_slug;
 						
 						printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
 						$item['class'],
-						$subitem_active,
+						$subitem_active?( 'active' ):( '' ),
 						// home_url( sprintf( "kategoria?cat=%s-%s-%s", $cat_slug, $item_slug, $subitem_slug ) ),
 						home_url( sprintf( "kategoria?cat=%s,%s,%s-%s", $cat_slug, $item_slug, $item_slug, $subitem_slug ) ),
 						$subitem_slug,
@@ -710,7 +718,7 @@ add_action( 'single-picture', function( $arg ){
 		
 	}
 	
-	
+	/*
 	echo "<div class='download'>
 					<a class='flex flex-items-center'>
 						do pobrania:
@@ -720,6 +728,7 @@ add_action( 'single-picture', function( $arg ){
 						
 					</a>
 				</div>";
+	*/
 	
 	echo "</div>";
 	
@@ -917,7 +926,7 @@ add_action( 'single-dane-znakowanie', function( $arg ){
 							</div>";
 	}
 		echo		"</div>
-						<div class='line area base3 flex flex-column flex-justify-center'>
+						<div class='line area base3 flex flex-column flex-justify-start'>
 							<div class='key flex flex-items-center'>
 								Rozmiar:
 							</div>";
@@ -928,7 +937,7 @@ add_action( 'single-dane-znakowanie', function( $arg ){
 	}
 							
 	echo 			"</div>
-						<div class='line place base3 flex flex-column flex-justify-center'>
+						<div class='line place base3 flex flex-column flex-justify-start'>
 							<div class='key flex flex-items-center'>
 								Miejsce:
 							</div>";
@@ -939,7 +948,7 @@ add_action( 'single-dane-znakowanie', function( $arg ){
 	}
 							
 	echo			"</div>
-						<div class='line method base3 flex flex-column flex-justify-center'>
+						<div class='line method base3 flex flex-column flex-justify-start'>
 							<div class='key flex flex-items-center'>
 								Metoda:
 							</div>";
@@ -1055,8 +1064,8 @@ add_action( 'single-dane-multi', function( $arg ){
 // filter hook
 
 add_filter( 'stdName', function( $arg ){
-	$find = explode( ",", " ,Ą,Ę,Ż,Ź,Ó,Ł,Ć,Ń,Ś,ą,ę,ż,ź,ó,ł,ć,ń,ś" );
-	$replace = explode( ",", "_,a,e,z,z,o,l,c,n,s,a,e,z,z,o,l,c,n,s" );
+	$find = explode( "|", " |,|&|?|#|Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
+	$replace = explode( "|", "_|||||a|e|z|z|o|l|c|n|s|a|e|z|z|o|l|c|n|s" );
 	
 	return str_replace( $find, $replace, strtolower( strip_tags( (string)$arg ) ) );
 	
