@@ -566,6 +566,10 @@ add_action( 'gen_menu', function( $arg ){
 		
 	}
 	
+	$icon_arrow = "<span class='icon fa fa-angle-right'></span>";
+	$icon_double_arrow = "<span class='icon fa fa-angle-double-right'></span>";
+	$icon_plus = "<span class='icon'>+</span>";
+	
 	// LISTA GŁÓWNA
 	echo "<ul class='menu'>";
 	foreach( $arg as $cat_name => $cat_data ){
@@ -587,16 +591,17 @@ add_action( 'gen_menu', function( $arg ){
 					<div class='title uppercase bold'>
 						%s
 					</div>
-					<span class='icon fa fa-angle-right'></span>
+					%s
 				</div>
 				<ul class='sub flex flex-column'>",
 		$cat_data['class'],
 		$cat_active,
 		$cat_slug,
 		$cat_name,
-		$cat_name
+		$cat_name,
+		!empty( $cat_data[ 'items' ] )?( $icon_arrow ):( '' )
 		);
-				
+		
 		foreach( $cat_data['items'] as $item ){
 			$item_slug = apply_filters( 'stdName', $item['title'] );
 			//$item_slug = empty( $item[ 'slug' ] )?( apply_filters( 'stdName', $item['title'] ) ):( $item[ 'slug' ] );
@@ -648,7 +653,14 @@ add_action( 'gen_menu', function( $arg ){
 						printf( "<div class='logotyp flex grow bgimg contain flex-self-stretch' style='background-image: url(%s/img/logotypy/%s);'></div>", get_template_directory_uri(), $item['logo'] );
 					}
 					
-					echo "<span class='icon fa fa-angle-double-right'></span>";
+					if( !empty( $item[ 'sub' ] ) ){
+						echo $icon_plus;
+						
+					}
+					else{
+						echo $icon_double_arrow;
+						
+					}
 					
 				echo "</div>";	
 				
@@ -690,7 +702,7 @@ add_action( 'gen_menu', function( $arg ){
 									printf( "<div class='logotyp flex grow bgimg contain flex-self-stretch' style='background-image: url(%s/img/logotypy/%s);'></div>", get_template_directory_uri(), $subitem['logo'] );
 								}
 								
-								echo "<span class='icon fa fa-angle-double-right'></span>";
+								echo $icon_double_arrow;
 								
 							echo "</div>";
 						
@@ -1103,8 +1115,8 @@ add_action( 'single-dane-multi', function( $arg ){
 // filter hook
 
 add_filter( 'stdName', function( $arg ){
-	$find = explode( "|", " |,|&|?|#|Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
-	$replace = explode( "|", "_|||||a|e|z|z|o|l|c|n|s|a|e|z|z|o|l|c|n|s" );
+	$find = explode( "|", " |,|&|?|-|#|Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
+	$replace = explode( "|", "_||||||a|e|z|z|o|l|c|n|s|a|e|z|z|o|l|c|n|s" );
 	
 	return str_replace( $find, $replace, strtolower( strip_tags( (string)$arg ) ) );
 	

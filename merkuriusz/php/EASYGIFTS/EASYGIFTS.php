@@ -29,7 +29,7 @@ class EASYGIFTS extends XMLAbstract {
 		else{
 			$this->logger( "odczyt XML z pliku $file", __FUNCTION__, __CLASS__ );
 			foreach( $this->_XML[ $file ]->product as $product ){
-				foreach( $product->categories->category as $category ){
+				if( $product->categories->count() > 0 ) foreach( $product->categories->category as $category ){
 					//$this->genMenuTree( $category, $ret );
 					
 					//$name = $this->stdNameCache( (string)$category->name );
@@ -52,21 +52,239 @@ class EASYGIFTS extends XMLAbstract {
 	// funkcja rekurencyjna tworząca drzewo podkategorii danej kategorii
 	private function genMenuTree( SimpleXMLElement $category ){
 		$ret = array();
-		$cat_name = $this->stdNameCache( (string)$category->name );
+		// $cat_name = $this->stdNameCache( (string)$category->name );
+		//$cat_name = apply_filters( 'stdName', (string)$category->name );
+		$cat_name = strtolower( (string)$category->name );
 		//$ret[ $cat_name ] = array();
 		
-		foreach( $category->subcategories->subcategory as $subcategory ){
-			$subcat_name = $this->stdNameCache( (string)$subcategory->name );
+		/* ========== KATEGORIA ========== */
 			
-			if( $subcategory->subcategories->count() === 0 ){
-				$ret[$cat_name][ $subcat_name ] = array();
+		if( $cat_name === 'podróże' ){
+			$cat_name = 'podróż';
+			
+		}
+		elseif( $cat_name === 'torby' ){
+			$cat_name = 'torby i plecaki';
+			
+		}
+		elseif( $cat_name === "pendrive'y" ){
+			$cat_name = 'pendrive';
+			
+		}
+		elseif( $cat_name === "elektronika markowa" ){
+			$cat_name = 'vip elektronika';
+			
+		}
+		elseif( $cat_name === "biuro i akcesoria biurowe" ){
+			$cat_name = 'biuro';
+			
+		}
+		elseif( $cat_name === "odpoczynek" ){
+			$cat_name = 'wypoczynek';
+			
+		}
+		elseif( $cat_name === "czas i elektronika" ){
+			$cat_name = 'elektronika';
+			
+		}
+		elseif( $cat_name === "czapki cofee" ){
+			$cat_name = 'cofee';
+			
+		}
+		elseif( strpos( $cat_name, "świąteczn" ) !== false ){
+			$cat_name = 'świąteczne';
+			
+		}
+		
+		
+		$cat_name = apply_filters( 'stdName', $cat_name );
+		
+		/* ==================== */
+		
+		if( $category->subcategories->count() > 0 ){
+			foreach( $category->subcategories->subcategory as $subcategory ){
+				//$subcat_name = $this->stdNameCache( (string)$subcategory->name );
+				//$subcat_name = apply_filters( 'stdName', (string)$subcategory->name );
+				$subcat_name = strtolower( (string)$subcategory->name );
+				
+				/* ========== PODKATEGORIA ========== */
+				
+				if( $subcat_name === 'parasole i parasolki' ){
+					$cat_name = "parasole i peleryny";
+					$subcat_name = "";
+					
+				}
+				elseif( $subcat_name === 'poduszki i koce' ){
+					$cat_name = "wypoczynek";
+					
+				}
+				elseif( $subcat_name === 'pielęgnacja obuwia' ){
+					$cat_name = "dom";
+					
+				}
+				elseif( $subcat_name === 'płaszcze przeciwdeszczowe' ){
+					$cat_name = "Parasole peleryny i płaszcze";
+					$subcat_name = "";
+					
+				}
+				elseif( in_array( $subcat_name, array( 'torby podróżne', 'torby i worki sportowe' ) ) ){
+					$subcat_name = 'Podróżne i sportowe';
+					
+				}
+				elseif( $subcat_name === 'torby na zakupy' ){
+					$subcat_name = 'na zakupy';
+					
+				}
+				elseif( $subcat_name === 'torby na laptopy' ){
+					$subcat_name = 'Na laptopa i dokumenty';
+					
+				}
+				elseif( $subcat_name === 'narzędzie wielofunkcyjne' ){
+					$subcat_name = 'Wielofunkcyjne';
+					
+				}
+				elseif( $subcat_name === 'zestawy narzędzi' ){
+					$subcat_name = 'zestawy';
+					
+				}
+				elseif( strpos( $subcat_name, "pendrive'y " ) !== false ){
+					$subcat_name = str_replace( "pendrive'y ", "", $subcat_name );
+					
+				}
+				elseif( $subcat_name === 'kalkulatory' ){
+					$cat_name = 'elektronika';
+					
+				}
+				elseif( $subcat_name === 'teczki na dokumenty' ){
+					$subcat_name = 'teczki';
+					
+				}
+				elseif( $subcat_name === 'stojaki biurkowe' ){
+					$subcat_name = 'stojaki';
+					
+				}
+				elseif( $subcat_name === 'akcesoria do telefonów' ){
+					$cat_name = 'elektronika';
+					
+				}
+				elseif( $subcat_name === 'zestawy upominkowe (sety)' ){
+					$subcat_name = 'zestawy upominkowe';
+					
+				}
+				elseif( $subcat_name === 'zestawy piśmiennicze' ){
+					$subcat_name = 'zestawy piśmienne';
+					
+				}
+				elseif( $subcat_name === 'eko długopisy' ){
+					$cat_name = 'eco gadżet';
+					$subcat_name = '';
+					
+				}
+				elseif( $subcat_name === 'wskaźniki laserowe' ){
+					$cat_name = 'elektronika';
+					
+				}
+				elseif( $bcat_name === 'wypoczynek' ){
+					if( $subcat_name === 'czapki z daszkiem' ){
+						$cat_name = 'tekstylia';
+						
+					}
+					elseif( $subcat_name === 'kubki termiczne i termosy' ){
+						$cat_name = 'do picia';
+						$subcat_name = 'kubki podróżne';
+						
+					}
+					elseif( $subcat_name === 'akcesoria do grillowania' ){
+						$subcat_name = 'Grill i piknik';
+						
+					}
+					
+				}
+				elseif( $subcat_name === 'pozostałe power banki' ){
+					$subcat_name = 'power banki';
+					
+				}
+				elseif( $cat_name === "dodatki" ){
+					if( $subcat_name === 'portfele' ){
+						$cat_name = 'Podróż';
+						
+					}
+					elseif( in_array( $subcat_name, array( 'breloki metalowe', 'breloki wielofunkcyjne' ) ) ){
+						$cat_name = 'breloki';
+						
+					}
+					elseif( $subcat_name === 'odblaski' ){
+						$cat_name = 'odblaski';
+						
+					}
+					elseif( $subcat_name === 'etui' ){
+						$cat_name = 'materiały piśmiennicze';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'elektronika' && in_array( $subcat_name, array( 'zegary biurkowe', 'zegary ścienne', 'zegarki na rękę' ) ) ){
+					$subcat_name = 'zegary i zegarki';
+					
+				}
+				elseif( $subcat_name === 'kubki i opakowania do kubków' ){
+					$cat_name = 'do picia';
+					$subcat_name = 'kubki';
+					
+				}
+				elseif( $subcat_name === 'akcesoria kuchenne' ){
+					$subcat_name = 'kuchnia';
+					
+				}
+				elseif( $subcat_name === 'akcesoria do wina' ){
+					$cat_name = 'wino';
+					$subcat_name = 'akcesoria';
+					
+				}
+				elseif( $cat_name === 'dyski' ){
+					$subcat_name = str_replace( "dyski ", "", $subcat_name );
+					
+				}
+				elseif( $cat_name === 'świąteczne' ){
+					$subcat_name = '';
+					
+				}
+				elseif( $cat_name === 'mykronoz' ){
+					$cat_name = 'smartwatche';
+					$subcat_name = 'mykronoz';
+					
+				}
+				elseif( $cat_name === 'mobile' ){
+					$cat_name = apply_filters( 'stdName', 'Akcesoria do telefonów i tabletów' );
+					$subcat_name = 'Okulary wirtualnej rzeczywistości';
+					
+				}
+				
+				
+				/* ==================== */
+				
+				if( !empty( $subcat_name ) ){
+					$subcat_name = apply_filters( 'stdName', $subcat_name );
+					$subcat_name = $cat_name . "-" . $subcat_name;
+					$ret[$cat_name][ $subcat_name ] = array();
+					
+				}
+				else{
+					$ret[$cat_name] = array();
+					
+				}
+				
+				if( $subcategory->subcategories->count() > 0 ){
+					//$ret[ $cat_name ][ $subcat_name ] = $this->genMenuTree( $subcategory );
+					$ret[ $cat_name ] = $this->genMenuTree( $subcategory );
+					
+				}
 				
 			}
-			else{
-				//$ret[ $cat_name ][ $subcat_name ] = $this->genMenuTree( $subcategory );
-				$ret[ $cat_name ] = $this->genMenuTree( $subcategory );
-				
-			}
+			
+		}
+		else{
+			$ret[ $cat_name ] = array();
 			
 		}
 		
@@ -93,12 +311,12 @@ class EASYGIFTS extends XMLAbstract {
 			foreach( $this->_XML[ $file ]->product as $item ){
 				
 				$img = array();
-				foreach( $item->images->children() as $image ){
+				if( $item->images->count() > 0 ) foreach( $item->images->children() as $image ){
 					$img[] = (string)$image;
 				}
 				
 				$cat = array();
-				foreach( $item->categories->category as $category ){
+				if( $item->categories->count() > 0 ) foreach( $item->categories->category as $category ){
 					$cat = array_merge_recursive( $cat, $this->genMenuTree( $category ) );
 					
 				}
@@ -113,16 +331,46 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				
-				$ret[] = array(
-					'ID' => (string)$item->baseinfo->code_full,
-					'NAME' => (string)$item->baseinfo->name,
-					'DSCR' => (string)$item->baseinfo->intro,
-					'IMG' => $img,
-					'CAT' => $cat,
-					'DIM' => (string)$item->attributes->size,
-					'MARK' => $mark,
-					'INSTOCK' => $this->getStock( (int)$item->baseinfo->id ),
-					
+				$id = (string)$item->baseinfo->code_full;
+				if( empty( $id ) ) $id = (string)$item->baseinfo->id;
+				
+				$name = (string)$item->baseinfo->name;
+				if( empty( $name ) ) $name = '- brak danych -';
+				
+				$ret[] = array_merge(
+					array(
+						'ID' => 'brak danych',
+						'NAME' => 'brak danych',
+						'DSCR' => 'brak danych',
+						'IMG' => array(),
+						'CAT' => array(),
+						'DIM' => 'brak danych',
+						'MARK' => array(),
+						'INSTOCK' => 'brak danych',
+						'MATTER' => 'brak danych',
+						'COLOR' => 'brak danych',
+						'COUNTRY' => 'brak danych',
+						'CATALOG' => 'brak danych',
+						'PACKAGE' => array(
+							'SINGLE' => 'brak danych',
+							'TOTAL' => 'brak danych',
+							'DIM' => 'brak danych',
+							'WEIGHT' => 'brak danych',
+							'INSIDE' => 'brak danych',
+							
+						),
+					),
+					array(
+						'ID' => $id,
+						'NAME' => $name,
+						'DSCR' => (string)$item->baseinfo->intro,
+						'IMG' => $img,
+						'CAT' => $cat,
+						'DIM' => (string)$item->attributes->size,
+						'MARK' => $mark,
+						'INSTOCK' => $this->getStock( (int)$item->baseinfo->id ),
+						
+					)
 				);
 				
 			}

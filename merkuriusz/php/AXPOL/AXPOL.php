@@ -115,10 +115,6 @@ class AXPOL extends XMLAbstract{
 					$cat_name = 'narzędzia';
 					
 				}
-				elseif( in_array( $cat_name, array( 'dom i wnętrze' ) ) ){
-					$cat_name = 'dom';
-					
-				}
 				elseif( in_array( $cat_name, array( 'wypoczynek i plener' ) ) ){
 					$cat_name = 'wypoczynek';
 					
@@ -148,11 +144,6 @@ class AXPOL extends XMLAbstract{
 				elseif( $cat_name === 'dom i wnętrze' ){
 					$cat_name = 'dom';
 					
-					if( $subcat_name === 'akcesoria do wina' ){
-						$subcat_name = 'wino: akcesoria';
-						
-					}
-					
 				}
 				elseif( $cat_name === 'technologia' ){
 					$cat_name = 'elektronika';
@@ -166,7 +157,6 @@ class AXPOL extends XMLAbstract{
 					$cat_name = "vine club";
 					
 				}
-				
 				/* ========== PODKATEGORIE ========== */
 				
 				if( in_array( $subcat_name, array( 'parasole automatyczne', 'parasole manualne', 'peleryny' ) ) or $cat_name === 'parasole'  ){
@@ -194,7 +184,36 @@ class AXPOL extends XMLAbstract{
 					$subcat_name = "adaptery i huby usb";
 					
 				}
-				
+				elseif( $subcat_name === 'koce' ){
+					$subcat_name = "poduszki i koce";
+					
+				}
+				elseif( $subcat_name === 'akcesoria do komputerów' ){
+					$subcat_name = "akcesoria komputerowe";
+					
+				}
+				elseif( $subcat_name === 'teczki konferencyjne' ){
+					$subcat_name = "teczki";
+					
+				}
+				elseif( $subcat_name === 'power banki' ){
+					$cat_name = 'power banki';
+					
+				}
+				elseif( $subcat_name === 'kubki podróżne' ){
+					$subcat_name = 'kubki';
+					
+				}
+				elseif( strpos( $subcat_name, "wino: " ) !== false ){
+					$cat_name = "Wino";
+					$subcat_name = str_replace( "wino: ", "", $subcat_name );
+					
+				}
+				elseif( $subcat_name === 'akcesoria do telefonów' ){
+					$cat_name = 'Akcesoria do telefonów i tabletów';
+					$subcat_name = 'Akcesoria do telefonów';
+					
+				}
 				
 				/* ========== PODKATEGORIE ========== */
 				

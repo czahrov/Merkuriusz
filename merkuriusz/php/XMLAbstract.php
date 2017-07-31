@@ -25,7 +25,7 @@ class XMLAbstract{
 	// czy dane mogą być odczytane z cache'u
 	protected $_cache_read = true;
 	// wymuszanie powtórnego cacheowania
-	protected $_recache_force = true;
+	protected $_recache_force = false;
 	
 	// konstruktor
 	public function __construct(){
@@ -451,9 +451,9 @@ class XMLAbstract{
 				
 			}
 			
-			echo "<!--BINDER\r\n";
-			//print_r( $arr );
-			echo "-->";
+			// echo "<!--BINDER\r\n";
+			// print_r( $arr );
+			// echo "-->";
 			
 		}
 		

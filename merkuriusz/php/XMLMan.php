@@ -48,11 +48,11 @@ class XMLMan{
 			
 		}
 		
-		echo "<!--DATA\r\n";
+		// echo "<!--DATA\r\n";
 		//print_r( $data );
 		//print_r( $this->_data );
 		//print_r( array_slice( $data['items'], 0, 10 ) );
-		echo "-->";
+		// echo "-->";
 		//$this->printCat( $this->_data['menu'] );
 		//$this->printProducts( $this->_data['items'] );
 		
