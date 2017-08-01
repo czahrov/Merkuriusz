@@ -570,6 +570,8 @@ add_action( 'gen_menu', function( $arg ){
 	$icon_double_arrow = "<span class='icon fa fa-angle-double-right'></span>";
 	$icon_plus = "<span class='icon'>+</span>";
 	
+	$_SESSION[ 'breadc' ] = array();
+	
 	// LISTA GŁÓWNA
 	echo "<ul class='menu'>";
 	foreach( $arg as $cat_name => $cat_data ){

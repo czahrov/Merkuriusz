@@ -5,10 +5,14 @@ $AXPOL = new AXPOL();
 $EASYGIFTS = new EASYGIFTS();
 // $EASYGIFTS->makeCache();
 
+$MACMA = new MACMA();
+// $MACMA->makeCache();
+
 $XM = new XMLMan();
 
 $XM->addSupport( $AXPOL );
 $XM->addSupport( $EASYGIFTS );
+$XM->addSupport( $MACMA );
 
 $XM->init();
 

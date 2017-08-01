@@ -29,17 +29,22 @@ class MACMA extends XMLAbstract{
 		}
 		else{
 			$this->logger( "odczyt XML z pliku $file", __FUNCTION__, __CLASS__ );
-			foreach( $this->_XML[ $file ]->children() as $category ){
-				if( !strlen( (string)$category->name ) ) continue;
-				$cat_name = $this->stdName( (string)$category->name );
+			foreach( $this->_XML[ $file ]->category as $category ){
+				if( strlen( (string)$category->name ) === 0 ) continue;
+				//$cat_name = $this->stdName( (string)$category->name );
+				$cat_name = apply_filters( 'stdName', (string)$category->name );
 				$ret[ $cat_name ] = array();
 				$p =& $ret[ $cat_name ];
 				
-				foreach( $category->subcategories->children() as $subcategory ){
-					if( !strlen( (string)$subcategory->name ) ) continue;
-					$subcat_name = $this->stdName( (string)$subcategory->name );
-					if( !array_key_exists( $subcat_name, $p ) ){
-						$p[ $subcat_name ] = array();
+				if( count( $category->subcategories->category ) > 0 ){
+					foreach( $category->subcategories->category as $subcategory ){
+						if( !strlen( (string)$subcategory->name ) ) continue;
+						//$subcat_name = $this->stdName( (string)$subcategory->name );
+						$subcat_name = apply_filters( 'stdName', (string)$subcategory->name );
+						if( !array_key_exists( $subcat_name, $p ) ){
+							$p[ $subcat_name ] = array();
+							
+						}
 						
 					}
 					
@@ -70,11 +75,169 @@ class MACMA extends XMLAbstract{
 				
 				// generowanie tablicy kategorii i podkategorii
 				$cat = array();
-				foreach( $item->categories->children() as $category ){
-					$cat_name = $this->stdNameCache( (string)$category->name );
-					foreach( $category->subcategories->children() as $subcategory ){
-						$subcat_name = $this->stdNameCache( (string)$subcategory->name );
-						$cat[ $cat_name ][ $subcat_name ] = array();
+				$cat_name = '';
+				$subcat_name = '';
+				
+				if( count( $item->categories->category ) > 0 ){
+					foreach( $item->categories->category as $category ){
+						$cat_name = strtolower( (string)$category->name );
+						/* ============== KATEGORIE ==============  */
+						
+						if( $cat_name === 'długopisy i zestawy piśmienne' ){
+							$cat_name = 'Materiały piśmiennicze';
+							
+						}
+						elseif( $cat_name === 'mark twain' ){
+							$cat_name = 'vip piśmiennicze';
+							$subcat_name = 'mark twain';
+							
+						}
+						elseif( $cat_name === 'artykuły biurowe' ){
+							$cat_name = 'biuro';
+							
+						}
+						elseif( $cat_name === 'elektronika i zegary' ){
+							$cat_name = 'elektronika';
+							
+						}
+						
+						/* ============== //KATEGORIE ==============  */
+						
+						if( count( $category->subcategories->subcategory ) > 0 ){
+							foreach( $category->subcategories->subcategory as $subcategory ){
+								$subcat_name = strtolower( (string)$subcategory->name );
+								/* ============== PODKATEGORIE ==============  */
+								
+								if( $cat_name === 'biuro' ){
+									if( $subcat_name === 'etui na długopisy i wizytówki' ){
+										$subcat_name = 'Etui na wizytówki';
+										
+									}
+									elseif( $subcat_name === 'stojaki biurkowe' ){
+										$subcat_name = 'stojaki';
+										
+									}
+									
+								}
+								elseif( $cat_name === 'elektronika' ){
+									if( $subcat_name === 'akcesoria do telefonów' ){
+										$cat_name = 'Akcesoria do telefonów i tabletów';
+										$subcat_name = 'Akcesoria do telefonów';
+										
+									}
+									elseif( $subcat_name === 'akcesoria do komputerów' ){
+										$subcat_name = 'Akcesoria komputerowe';
+										
+									}
+									elseif( $subcat_name === 'zegarki i smartwatche' ){
+										
+										if( strpos( (string)$item->baseinfo->name, 'zegarek' ) !== false ){
+											$cat_name = 'Zegary i zegarki';
+											$subcat_name = 'zegarki na rękę';
+											
+										}
+										elseif( strpos( (string)$item->baseinfo->name, 'Smart' ) !== false ){
+											$cat_name = 'Smartwatche';
+											$subcat_name = 'Inne';
+											
+										}
+										else{
+											$cat_name = 'Zegary i zegarki';
+											$subcat_name = 'Pozostałe';
+											
+										}
+										
+									}
+									elseif( in_array( $subcat_name, array( 'zegary biurkowe', 'zegary ścienne' ) ) ){
+										$cat_name = 'Zegary i zegarki';
+										
+									}
+									
+									
+								}
+								elseif( $cat_name === 'parasole i płaszcze' ){
+									if( in_array( $subcat_name, array( 'automatyczne', 'manualne' ) ) or strpos( $subcat_name, 'panel' ) !== false ){
+										$cat_name = 'Przeciwdeszczowe';
+										$subcat_name = 'Parasole';
+										
+									}
+									elseif( $subcat_name === 'płaszcze przeciwdeszczowe' ){
+										$cat_name = 'Przeciwdeszczowe';
+										$subcat_name = 'Płaszcze';
+										
+									}
+									elseif( $subcat_name === 'plażowe' ){
+										$cat_name = 'Wypoczynek';
+										$subcat_name = 'Akcesoria plażowe';
+										
+									}
+									else{
+										$cat_name = 'Przeciwdeszczowe';
+										$subcat_name = 'Inne';
+										
+									}
+									
+								}
+								elseif( $cat_name === 'podróże i turystyka' ){
+									$cat_name = 'podróż';
+									
+									if( $subcat_name === 'torby na zakupy' ){
+										$cat_name = 'torby i plecaki';
+										$subcat_name = 'na zakupy';
+										
+									}
+									elseif( $subcat_name === 'torby termiczne' ){
+										$cat_name = 'torby i plecaki';
+										$subcat_name = 'termoizolacyjne';
+										
+									}
+									elseif( $subcat_name === 'portfele i portmonetki' ){
+										$cat_name = 'podróż';
+										
+										if( stripos( (string)$item->baseinfo->name, 'portmonetka' ) !== false ){
+											$subcat_name = 'portmonetki';
+											
+										}
+										else{
+											$subcat_name = 'portfele';
+											
+										}
+										
+									}
+									elseif( in_array( $subcat_name, array( 'torby podróżne', 'torby i worki sportowe', 'torby i worki bawełniane' ) ) ){
+										$cat_name = 'Torby i plecaki';
+										$subcat_name = 'Podróżne i sportowe';
+										
+									}
+									elseif( $subcat_name === 'odblaski' ){
+										$cat_name = 'odblaski';
+										$subcat_name = 'odblaski';
+										
+									}
+									
+								}
+								
+								
+								/* ============== //PODKATEGORIE ==============  */
+								
+							}
+							
+						}
+						
+						$cat_name_slug = apply_filters( 'stdName', $cat_name );
+						
+						if( !empty( $subcat_name ) ){
+							$subcat_name_slug = apply_filters( 'stdName', $subcat_name );
+							$subcat_name_slug = $cat_name_slug . "-" . $subcat_name_slug;
+							
+							$cat[ $cat_name_slug ][ $subcat_name_slug ] = array();
+							
+						}
+						else{
+							$cat[ $cat_name_slug ] = array();
+							
+							
+						}
 						
 					}
 					
@@ -96,18 +259,41 @@ class MACMA extends XMLAbstract{
 					
 				}
 				
-				$ret[] = array(
-					'ID' => (string)$item->baseinfo->code_full,
-					'NAME' => (string)$item->baseinfo->name,
-					'DSCR' => (string)$item->baseinfo->intro[0],
-					'IMG' => $img,
-					'CAT' => $cat,
-					'DIM' => (string)$item->attributes->size,
-					'MARK' => $mark,
-					'INSTOCK' => $this->_getStock( (string)$item->baseinfo->code_full ),
-					
+				$ret[] = array_merge(
+					array(
+						'ID' => 'brak danych',
+						'NAME' => 'brak danych',
+						'DSCR' => 'brak danych',
+						'IMG' => array(),
+						'CAT' => array(),
+						'DIM' => 'brak danych',
+						'MARK' => array(),
+						'INSTOCK' => 'brak danych',
+						'MATTER' => 'brak danych',
+						'COLOR' => 'brak danych',
+						'COUNTRY' => 'brak danych',
+						'CATALOG' => 'brak danych',
+						'PACKAGE' => array(
+							'SINGLE' => 'brak danych',
+							'TOTAL' => 'brak danych',
+							'DIM' => 'brak danych',
+							'WEIGHT' => 'brak danych',
+							'INSIDE' => 'brak danych',
+							
+						),
+					),
+					array(
+						'ID' => (string)$item->baseinfo->code_full,
+						'NAME' => (string)$item->baseinfo->name,
+						'DSCR' => (string)$item->baseinfo->intro[0],
+						'IMG' => $img,
+						'CAT' => $cat,
+						'DIM' => (string)$item->attributes->size,
+						'MARK' => $mark,
+						'INSTOCK' => $this->_getStock( (string)$item->baseinfo->code_full ),
+						
+					)
 				);
-				
 			}
 			
 		}

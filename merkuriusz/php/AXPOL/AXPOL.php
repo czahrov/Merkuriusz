@@ -7,7 +7,7 @@ class AXPOL extends XMLAbstract{
 	// konstruktor
 	public function __construct(){
 		$this->logger( "" . __CLASS__ . " loaded!", __FUNCTION__, __CLASS__ );
-		$this->_config['refresh'] = 60 * 30;		// 30m
+		//$this->_config['refresh'] = 60 * 30;		// 30m
 		$this->_config['dnd'] = __DIR__ . "/DND";
 		$this->_config['cache'] = __DIR__ . "/CACHE";
 		$this->_config['remote'] = array(
@@ -159,8 +159,14 @@ class AXPOL extends XMLAbstract{
 				}
 				/* ========== PODKATEGORIE ========== */
 				
-				if( in_array( $subcat_name, array( 'parasole automatyczne', 'parasole manualne', 'peleryny' ) ) or $cat_name === 'parasole'  ){
-					$cat_name = 'parasole i peleryny';
+				if( in_array( $subcat_name, array( 'parasole automatyczne', 'parasole manualne' ) ) or $cat_name === 'parasole' ){
+					$cat_name = 'przeciwdeszczowe';
+					$subcat_name = 'parasole';
+					
+				}
+				elseif( $subcat_name === 'peleryny'  ){
+					$cat_name = 'przeciwdeszczowe';
+					$subcat_name = 'peleryny';
 					
 				}
 				elseif( in_array( $subcat_name, array( 'uroda i pielęgnacja' ) ) ){
@@ -212,6 +218,27 @@ class AXPOL extends XMLAbstract{
 				elseif( $subcat_name === 'akcesoria do telefonów' ){
 					$cat_name = 'Akcesoria do telefonów i tabletów';
 					$subcat_name = 'Akcesoria do telefonów';
+					
+				}
+				elseif( $subcat_name === 'zegary i zegarki' ){
+					$cat_name = 'Zegary i zegarki';
+					
+					if( strpos( (string)$item->TitlePL, 'ścianę' ) !== false ){
+						$subcat_name = 'zegary ścienne';
+						
+					}
+					elseif( strpos( (string)$item->TitlePL, 'biurko' ) !== false ){
+						$subcat_name = 'zegary biurkowe';
+						
+					}
+					elseif( strpos( (string)$item->TitlePL, 'rękę' ) !== false ){
+						$subcat_name = 'zegarki na rekę';
+						
+					}
+					else{
+						$subcat_name = 'Pozostałe';
+						
+					}
 					
 				}
 				

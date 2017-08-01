@@ -26,6 +26,12 @@
 									'title' => 'Długopisy z touch penem',
 								),
 								array(
+									'title' => 'Pióra wieczne i kulkowe',
+								),
+								array(
+									'title' => 'Kredki i ołówki',
+								),
+								array(
 									'title' => 'Etui',
 								),
 								array(
@@ -39,6 +45,9 @@
 								),
 								array(
 									'title' => 'Zakreślacze',
+								),
+								array(
+									'title' => 'Zakreślacze i flamastry',
 								),
 								array(
 									'title' => 'Zestawy piśmienne',
@@ -132,6 +141,9 @@
 									'title' => 'Walizki',
 								),
 								array(
+									'title' => 'Walizki i torby trolley',
+								),
+								array(
 									'title' => 'Worki ze sznurkiem',
 								),
 								array(
@@ -153,8 +165,27 @@
 							),
 						),
 						array(
-							'title' => 'Parasole, peleryny i płaszcze',
+							//'title' => 'Parasole, peleryny i płaszcze',
+							'title' => 'Przeciwdeszczowe',
 							'pikto' => 'parasole.png',
+							'sub' => array(
+								array(
+									'title' => 'Parasole',
+								),
+								array(
+									'title' => 'Parasolki',
+								),
+								array(
+									'title' => 'Peleryny',
+								),
+								array(
+									'title' => 'Płaszcze',
+								),
+								array(
+									'title' => 'Inne',
+								),
+								
+							),
 							
 						),
 						array(
@@ -416,6 +447,9 @@
 									'title' => 'Portfele',
 								),
 								array(
+									'title' => 'Portmonetki',
+								),
+								array(
 									'title' => 'Saszetki',
 								),
 								array(
@@ -444,6 +478,9 @@
 								),
 								array(
 									'title' => 'Torby na dokumenty',
+								),
+								array(
+									'title' => 'Termosy i bidony',
 								),
 								array(
 									'title' => 'Inne',
@@ -722,6 +759,21 @@
 					'items' => array(
 						array(
 							'title' => 'Zegary i zegarki',
+							'sub' => array(
+								array(
+									'title' => 'Zegary biurkowe',
+								),
+								array(
+									'title' => 'Zegary ścienne',
+								),
+								array(
+									'title' => 'Zegarki na rękę',
+								),
+								array(
+									'title' => 'Pozostałe',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'Stacje pogodowe',
@@ -842,6 +894,9 @@
 								),
 								array(
 									'title'=> 'Import',
+								),
+								array(
+									'title'=> 'Inne',
 								),
 								
 							),

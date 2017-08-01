@@ -34,7 +34,7 @@ class EASYGIFTS extends XMLAbstract {
 					
 					//$name = $this->stdNameCache( (string)$category->name );
 					//$ret[ $name ] = $this->genMenuTree( $category );
-					$ret = array_merge_recursive( $ret, $this->genMenuTree( $category ) );
+					$ret = array_merge_recursive( $ret, $this->genMenuTree( $category, $product ) );
 					
 				}
 				
@@ -50,7 +50,7 @@ class EASYGIFTS extends XMLAbstract {
 	}
 	
 	// funkcja rekurencyjna tworząca drzewo podkategorii danej kategorii
-	private function genMenuTree( SimpleXMLElement $category ){
+	private function genMenuTree( SimpleXMLElement $category, $node ){
 		$ret = array();
 		// $cat_name = $this->stdNameCache( (string)$category->name );
 		//$cat_name = apply_filters( 'stdName', (string)$category->name );
@@ -110,8 +110,21 @@ class EASYGIFTS extends XMLAbstract {
 				/* ========== PODKATEGORIA ========== */
 				
 				if( $subcat_name === 'parasole i parasolki' ){
-					$cat_name = "parasole i peleryny";
-					$subcat_name = "";
+					$cat_name = "Przeciwdeszczowe";
+					
+					if( stripos( (string)$node->baseinfo->name, 'parasolka' ) !== false ){
+						$subcat_name = "parasolki";
+						
+					}
+					elseif( stripos( (string)$node->baseinfo->name, 'parasol' ) !== false ){
+						$subcat_name = "parasole";
+						
+					}
+					else{
+						$subcat_name = "inne";
+						
+					}
+					
 					
 				}
 				elseif( $subcat_name === 'poduszki i koce' ){
@@ -123,8 +136,17 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				elseif( $subcat_name === 'płaszcze przeciwdeszczowe' ){
-					$cat_name = "Parasole peleryny i płaszcze";
-					$subcat_name = "";
+					$cat_name = "Przeciwdeszczowe";
+					
+					if( stripos( (string)$node->baseinfo->name, 'peleryna' ) !== false ){
+						$subcat_name = "Peleryny";
+						
+					}
+					else{
+						$subcat_name = "Płaszcze";
+						
+					}
+					
 					
 				}
 				elseif( in_array( $subcat_name, array( 'torby podróżne', 'torby i worki sportowe' ) ) ){
@@ -224,7 +246,7 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				elseif( $cat_name === 'elektronika' && in_array( $subcat_name, array( 'zegary biurkowe', 'zegary ścienne', 'zegarki na rękę' ) ) ){
-					$subcat_name = 'zegary i zegarki';
+					$cat_name = 'zegary i zegarki';
 					
 				}
 				elseif( $subcat_name === 'kubki i opakowania do kubków' ){
@@ -276,7 +298,7 @@ class EASYGIFTS extends XMLAbstract {
 				
 				if( $subcategory->subcategories->count() > 0 ){
 					//$ret[ $cat_name ][ $subcat_name ] = $this->genMenuTree( $subcategory );
-					$ret[ $cat_name ] = $this->genMenuTree( $subcategory );
+					$ret[ $cat_name ] = $this->genMenuTree( $subcategory, $node );
 					
 				}
 				
@@ -317,7 +339,7 @@ class EASYGIFTS extends XMLAbstract {
 				
 				$cat = array();
 				if( $item->categories->count() > 0 ) foreach( $item->categories->category as $category ){
-					$cat = array_merge_recursive( $cat, $this->genMenuTree( $category ) );
+					$cat = array_merge_recursive( $cat, $this->genMenuTree( $category, $item ) );
 					
 				}
 				
