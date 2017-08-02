@@ -202,6 +202,27 @@
 									'title' => 'Kubki',
 								),
 								array(
+									'title' => 'Kubki ceramiczne',
+								),
+								array(
+									'title' => 'Kubki porcelanowe',
+								),
+								array(
+									'title' => 'Kubki plastikowe',
+								),
+								array(
+									'title' => 'Kubki termiczne',
+								),
+								array(
+									'title' => 'Kubki szklane',
+								),
+								array(
+									'title' => 'Opakowania do kubków',
+								),
+								array(
+									'title' => 'Filiżanki i spodki',
+								),
+								array(
 									'title' => 'Piersiówki',
 								),
 								array(
@@ -226,6 +247,9 @@
 								),
 								array(
 									'title' => 'Latarki',
+								),
+								array(
+									'title' => 'Lampki',
 								),
 								array(
 									'title' => 'Miarki',
@@ -323,6 +347,9 @@
 									'title' => 'Pielęgnacja obuwia',
 								),
 								array(
+									'title' => 'Świece i aromaterapia',
+								),
+								array(
 									'title' => 'Inne',
 								),
 								
@@ -361,7 +388,17 @@
 									'title' => 'Kosmetyki',
 								),
 								array(
-									'title' => 'Zestawy do manicure',
+									'title' => 'Kosmetyki dla kobiet',
+								),
+								array(
+									'title' => 'kosmetyki dla mężczyzn',
+								),
+								array(
+									'title' => 'Kosmetyczki',
+								),
+								array(
+									//'title' => 'Zestawy do manicure',
+									'title' => 'Pielęgnacja dłoni',
 								),
 								array(
 									'title' => 'Artykuły sportowe',
@@ -406,6 +443,12 @@
 									'title' => 'Breloki',
 								),
 								array(
+									'title' => 'Akrylowe',
+								),
+								array(
+									'title' => 'Metalowe',
+								),
+								array(
 									'title' => 'Antystresy',
 								),
 								array(
@@ -426,9 +469,6 @@
 								
 							),
 							
-						),
-						array(
-							'title' => 'Breloki akrylowe',
 						),
 						array(
 							'title' => 'Podróż',
@@ -526,6 +566,46 @@
 									
 								),
 								array(
+									'title' => 'T-shirt',
+									
+								),
+								array(
+									'title' => 'Polo',
+									
+								),
+								array(
+									'title' => 'Bluzy, polary, softshelle',
+									
+								),
+								array(
+									'title' => 'Rozmiar XS',
+									
+								),
+								array(
+									'title' => 'Rozmiar S',
+									
+								),
+								array(
+									'title' => 'Rozmiar M',
+									
+								),
+								array(
+									'title' => 'Rozmiar L',
+									
+								),
+								array(
+									'title' => 'Rozmiar XL',
+									
+								),
+								array(
+									'title' => 'Rozmiar XXL',
+									
+								),
+								array(
+									'title' => 'Torby jassz',
+									
+								),
+								array(
 									'title' => 'Inne',
 									
 								),
@@ -537,16 +617,37 @@
 							'title' => 'Wypoczynek',
 							'sub' => array(
 								array(
-									'title' => 'Grill i piknik',
+									'title' => 'Grill',
 								),
 								array(
-									'title' => 'Poduszki i koce',
+									'title' => 'Piknik',
+								),
+								array(
+									'title' => 'Plecaki i kosze piknikowe',
+								),
+								array(
+									'title' => 'Poduszki',
+								),
+								array(
+									'title' => 'Koce',
+								),
+								array(
+									'title' => 'Leżaki',
+								),
+								array(
+									'title' => 'Materace',
+								),
+								array(
+									'title' => 'Maty',
 								),
 								array(
 									'title' => 'Lato',
 								),
 								array(
 									'title' => 'Okulary przeciwsłoneczne',
+								),
+								array(
+									'title' => 'Okulary i etui do okularów',
 								),
 								array(
 									'title' => 'Outdoor',
@@ -576,14 +677,20 @@
 									'title' => 'Akcesoria rowerowe i odblaski',
 								),
 								array(
-									'title' => 'Plecaki i kosze piknikowe',
-								),
-								array(
 									'title' => 'Lornetki i okulary',
 								),
 								
 							),
 							
+						),
+						array(
+							'title' => 'Sport i rekreacja',
+							'sub' => array(
+								array(
+									'title' => 'Przyrządy do ćwiczeń',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'Zdrowie i bezpieczeństwo',
@@ -634,6 +741,15 @@
 						),
 						array(
 							'title' => 'Pinsy',
+							'sub' => array(
+								array(
+									'title' => 'Metalowe',
+								),
+								array(
+									'title' => 'Pozostałe',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'Import',
@@ -1052,6 +1168,24 @@
 							'title' => 'ferraghini',
 							'pikto' => 'wallet.png',
 							'logo' => 'ferraghini.png',
+							'sub' => array(
+								array(
+									'title' => 'Akcesoria',
+								),
+								array(
+									'title' => 'Art. piśmienne',
+								),
+								array(
+									'title' => 'Podróżne',
+								),
+								array(
+									'title' => 'Zegarki',
+								),
+								array(
+									'title' => 'Szkło',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'schwarzwolf',

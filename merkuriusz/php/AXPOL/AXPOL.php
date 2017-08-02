@@ -118,11 +118,6 @@ class AXPOL extends XMLAbstract{
 				elseif( in_array( $cat_name, array( 'wypoczynek i plener' ) ) ){
 					$cat_name = 'wypoczynek';
 					
-					if( in_array( $subcat_name, array( 'grill', 'piknik' ) ) ){
-						$subcat_name = 'grill i piknik';
-						
-					}
-					
 				}
 				elseif( in_array( $cat_name, array( 'teczki i notatniki' ) ) ){
 					$cat_name = 'biuro';
@@ -237,6 +232,21 @@ class AXPOL extends XMLAbstract{
 					}
 					else{
 						$subcat_name = 'Pozostałe';
+						
+					}
+					
+				}
+				elseif( $subcat_name === 'grill i piknik' ){
+					if( stripos( (string)$item->TitlePL, 'grill' ) !== false ){
+						$subcat_name = 'grill';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'plecak' ) !== false or stripos( (string)$item->TitlePL, 'kosz' ) !== false ){
+						$subcat_name = 'Plecaki i kosze piknikowe';
+						
+					}
+					else{
+						$subcat_name = 'piknik';
 						
 					}
 					

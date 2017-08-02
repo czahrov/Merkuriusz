@@ -130,6 +130,15 @@ class EASYGIFTS extends XMLAbstract {
 				elseif( $subcat_name === 'poduszki i koce' ){
 					$cat_name = "wypoczynek";
 					
+					if( stripos( (string)$node->baseinfo->name, 'koc' ) !== false ){
+						$subcat_name = 'Koce';
+						
+					}
+					else{
+						$subcat_name = 'Poduszki';
+						
+					}
+					
 				}
 				elseif( $subcat_name === 'pielęgnacja obuwia' ){
 					$cat_name = "dom";
@@ -159,6 +168,10 @@ class EASYGIFTS extends XMLAbstract {
 				}
 				elseif( $subcat_name === 'torby na laptopy' ){
 					$subcat_name = 'Na laptopa i dokumenty';
+					
+				}
+				elseif( $subcat_name === 'torby jassz' ){
+					$cat_name = 'tekstylia';
 					
 				}
 				elseif( $subcat_name === 'narzędzie wielofunkcyjne' ){
@@ -279,6 +292,11 @@ class EASYGIFTS extends XMLAbstract {
 				elseif( $cat_name === 'mobile' ){
 					$cat_name = apply_filters( 'stdName', 'Akcesoria do telefonów i tabletów' );
 					$subcat_name = 'Okulary wirtualnej rzeczywistości';
+					
+				}
+				elseif( $subcat_name === 'zestawy do manicure' ){
+					$cat_name = 'uroda';
+					$subcat_name = 'Pielęgnacja dłoni';
 					
 				}
 				

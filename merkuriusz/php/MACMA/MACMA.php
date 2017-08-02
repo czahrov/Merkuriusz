@@ -100,6 +100,26 @@ class MACMA extends XMLAbstract{
 							$cat_name = 'elektronika';
 							
 						}
+						elseif( $cat_name === 'kosmetyki i pielęgnacja' ){
+							$cat_name = 'Uroda';	
+							
+						}
+						elseif( $cat_name === 'dom i wyposażenie wnętrz' ){
+							$cat_name = 'dom';	
+							
+						}
+						elseif( $cat_name === 'latarki i narzędzia' ){
+							$cat_name = 'narzędzia';	
+							
+						}						
+						elseif( $cat_name === 'odzież reklamowa' ){
+							$cat_name = 'tekstylia';
+							
+						}
+						elseif( $cat_name === 'kubki reklamowe' ){
+							$cat_name = 'do picia';
+							
+						}
 						
 						/* ============== //KATEGORIE ==============  */
 						
@@ -214,6 +234,190 @@ class MACMA extends XMLAbstract{
 										$subcat_name = 'odblaski';
 										
 									}
+									
+								}
+								elseif( $cat_name === 'sport i rekreacja' ){
+									if( in_array( $subcat_name, array( 'czapki zimowe', 'czapki z daszkiem' ) ) ){
+										$cat_name = 'Tekstylia';
+										
+									}
+									elseif( $subcat_name === 'gry i zabawy' ){
+										$cat_name = 'wypoczynek';
+										
+									}
+									elseif( $subcat_name === 'koce i leżaki' ){
+										$cat_name = 'wypoczynek';
+										
+										if( stripos( (string)$item->baseinfo->name, 'koc' ) !== false ){
+											$subcat_name = 'Koce';
+											
+										}
+										else{
+											$subcat_name = 'Leżaki';
+											
+										}
+										
+									}
+									elseif( $subcat_name === 'materace i maty' ){
+										$cat_name = 'wypoczynek';
+										
+										if( stripos( (string)$item->baseinfo->name, 'mata' ) !== false ){
+											$subcat_name = 'Maty';
+											
+										}
+										else{
+											$subcat_name = 'Materace';
+											
+										}
+										
+									}
+									elseif( $subcat_name === 'okulary i etui do okularów' ){
+										$cat_name = 'wypoczynek';
+										
+									}
+									elseif( $subcat_name === 'kosze piknikowe i grille' ){
+										$cat_name = 'wypoczynek';
+										
+										if( stripos( (string)$item->baseinfo->name, 'grill' ) !== false ){
+											$subcat_name = 'Grill';
+											
+										}
+										else{
+											$subcat_name = 'Piknik';
+											
+										}
+										
+									}
+									
+								}
+								elseif( $cat_name === 'dom' ){
+									if( $subcat_name === 'akcesoria kuchenne' ){
+										$subcat_name = 'kuchnia';
+										
+									}
+									elseif( $subcat_name === 'akcesoria łazienkowe' ){
+										$subcat_name = 'łazienka';
+										
+									}
+									elseif( $subcat_name === 'wyposażenie wnętrz' ){
+										$subcat_name = 'wnętrze';
+										
+									}
+									
+								}
+								elseif( $cat_name === 'skrzynki i akcesoria barowe' ){
+									if( $subcat_name === 'otwieracze i noże kelnerskie' ){
+										$cat_name = 'wino';
+										$subcat_name = 'akcesoria';
+										
+									}
+									elseif( $subcat_name === 'piersiówki' ){
+										$cat_name = 'do picia';
+										
+									}
+									elseif( $subcat_name === 'skrzynki i zestawy do wina' ){
+										$cat_name = 'wino';
+										
+										if( stripos( (string)$item->baseinfo->name, 'zestaw' ) !== false ){
+											$subcat_name = 'zestawy';
+											
+										}
+										elseif( stripos( (string)$item->baseinfo->name, 'skrzynka' ) !== false ){
+											$subcat_name = 'opakowania';
+											
+										}
+										else{
+											$subcat_name = 'akcesoria';
+											
+										}
+										
+									}
+									
+								}
+								elseif( $cat_name === 'narzędzia' ){
+									if( $subcat_name === 'akcesoria samochodowe' ){
+										$subcat_name = 'samochód';
+										
+									}
+									elseif( $subcat_name === 'latarki i lampki' ){
+										if( stripos( (string)$item->baseinfo->name, 'latark' ) !== false ){
+											$subcat_name = 'latarki';
+											
+										}
+										else{
+											$subcat_name = 'lampki';
+											
+										}
+										
+									}
+									elseif( $subcat_name === 'miarki i taśmy miernicze' ){
+										$subcat_name = 'miarki';
+										
+									}
+									elseif( $subcat_name === 'noże i scyzoryki' ){
+										if( stripos( (string)$item->baseinfo->name, 'scyzoryk' ) !== false ){
+											$subcat_name = 'scyzoryki';
+											
+										}
+										else{
+											$subcat_name = 'noże i nożyki';
+											
+										}
+										
+									}
+									elseif( $subcat_name === 'zapalniczki' ){
+										$cat_name = 'Dodatki';
+										
+									}
+									elseif( $subcat_name === 'narzędzia' ){
+										if( stripos( (string)$item->baseinfo->name, 'wielofunkcyjn' ) !== false or stripos( (string)$item->baseinfo->name, 'multi' ) !== false ){
+											$subcat_name = 'wielofunkcyjne';
+											
+										}
+										elseif( stripos( (string)$item->baseinfo->name, 'rower' ) !== false ){
+											$subcat_name = 'rower';
+											
+										}
+										elseif( stripos( (string)$item->baseinfo->name, 'zestaw' ) !== false ){
+											$subcat_name = 'zestawy';
+											
+										}
+										else{
+											$subcat_name = 'inne';
+											
+										}
+										
+									}
+									
+								}
+								elseif( $cat_name === 'breloki i odznaki' ){
+									if( $subcat_name === 'breloki akrylowe' ){
+										$cat_name = 'breloki';
+										$subcat_name = 'akrylowe';
+										
+									}
+									elseif( $subcat_name === 'breloki metalowe' ){
+										$cat_name = 'breloki';
+										$subcat_name = 'metalowe';
+										
+									}
+									elseif( $subcat_name === 'inne' ){
+										$cat_name = 'breloki';
+										
+									}
+									elseif( $subcat_name === 'odznaki metalowe' ){
+										$cat_name = 'pinsy';
+										$subcat_name = 'metalowe';
+										
+									}
+									
+								}
+								elseif( $cat_name === 'tekstylia' ){
+									//$cat_name = '';
+									
+								}
+								elseif( $cat_name === 'do picia' ){
+									//$cat_name = '';
 									
 								}
 								

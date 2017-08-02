@@ -8,8 +8,8 @@ $EASYGIFTS = new EASYGIFTS();
 $MACMA = new MACMA();
 // $MACMA->makeCache();
 
-$XM = new XMLMan();
 
+$XM = new XMLMan();
 $XM->addSupport( $AXPOL );
 $XM->addSupport( $EASYGIFTS );
 $XM->addSupport( $MACMA );
