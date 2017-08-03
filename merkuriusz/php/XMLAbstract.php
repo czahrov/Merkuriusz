@@ -25,7 +25,7 @@ class XMLAbstract{
 	// czy dane mogą być odczytane z cache'u
 	protected $_cache_read = true;
 	// wymuszanie powtórnego cacheowania
-	protected $_recache_force = true;
+	protected $_recache_force = false;
 	
 	// konstruktor
 	public function __construct(){
@@ -346,11 +346,10 @@ class XMLAbstract{
 		
 	*/
 	protected function stdNameCache( $name ){
-		$find = 			explode( ",", " ,Ą,Ę,Ż,Ź,Ó,Ł,Ć,Ń,Ś,ą,ę,ż,ź,ó,ł,ć,ń,ś,/" );
-		$replace = 	explode( ",", "_,a,e,z,z,o,l,c,n,s,a,e,z,z,o,l,c,n,s,_" );
+		$find = explode( "|", " |,|&|?|-|#|Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
+		$replace = explode( "|", "_||||||a|e|z|z|o|l|c|n|s|a|e|z|z|o|l|c|n|s" );
 		
 		return str_replace( $find, $replace, strtolower( strip_tags( (string)$name ) ) );
-		
 	}
 	
 	/*

@@ -32,7 +32,8 @@ class MACMA extends XMLAbstract{
 			foreach( $this->_XML[ $file ]->category as $category ){
 				if( strlen( (string)$category->name ) === 0 ) continue;
 				//$cat_name = $this->stdName( (string)$category->name );
-				$cat_name = apply_filters( 'stdName', (string)$category->name );
+				//$cat_name = apply_filters( 'stdName', (string)$category->name );
+				$cat_name = $this->stdNameCache( (string)$category->name );
 				$ret[ $cat_name ] = array();
 				$p =& $ret[ $cat_name ];
 				
@@ -40,7 +41,8 @@ class MACMA extends XMLAbstract{
 					foreach( $category->subcategories->category as $subcategory ){
 						if( !strlen( (string)$subcategory->name ) ) continue;
 						//$subcat_name = $this->stdName( (string)$subcategory->name );
-						$subcat_name = apply_filters( 'stdName', (string)$subcategory->name );
+						//$subcat_name = apply_filters( 'stdName', (string)$subcategory->name );
+						$subcat_name = $this->stdNameCache( (string)$subcategory->name );
 						if( !array_key_exists( $subcat_name, $p ) ){
 							$p[ $subcat_name ] = array();
 							
@@ -428,10 +430,12 @@ class MACMA extends XMLAbstract{
 							
 						}
 						
-						$cat_name_slug = apply_filters( 'stdName', $cat_name );
+						//$cat_name_slug = apply_filters( 'stdName', $cat_name );
+						$cat_name_slug = $this->stdNameCache( $cat_name );
 						
 						if( !empty( $subcat_name ) ){
-							$subcat_name_slug = apply_filters( 'stdName', $subcat_name );
+							//$subcat_name_slug = apply_filters( 'stdName', $subcat_name );
+							$subcat_name_slug = $this->stdNameCache( $subcat_name );
 							$subcat_name_slug = $cat_name_slug . "-" . $subcat_name_slug;
 							
 							$cat[ $cat_name_slug ][ $subcat_name_slug ] = array();

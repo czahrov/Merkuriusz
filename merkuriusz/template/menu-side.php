@@ -833,6 +833,9 @@
 							),
 						),
 						array(
+							'title' => 'Smile Hand',
+						),
+						array(
 							'title' => 'Świąteczne',
 							'pikto' => 'swiateczne.png',
 						),
@@ -902,6 +905,39 @@
 						),
 						array(
 							'title' => 'Pamięci USB',
+							'sub' => array(
+								array(
+									'title' => '1GB',
+								),
+								array(
+									'title' => '2GB',
+								),
+								array(
+									'title' => '4GB',
+								),
+								array(
+									'title' => '8GB',
+								),
+								array(
+									'title' => '16GB',
+								),
+								array(
+									'title' => '32GB',
+								),
+								array(
+									'title' => '64GB',
+								),
+								array(
+									'title' => 'Dostępne 2-3 tygodnie',
+								),
+								array(
+									'title' => 'Dostępne 48h',
+								),
+								array(
+									'title' => 'Pozostałe',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'Akcesoria komputerowe',
@@ -937,9 +973,6 @@
 									'title' => 'Ładowarki słoneczne',
 								),
 								array(
-									'title' => 'Power banki',
-								),
-								array(
 									'title' => 'Okulary wirtualnej rzeczywistości',
 								),
 								
@@ -961,13 +994,37 @@
 							'title' => 'Power banki',
 							'sub' => array(
 								array(
-									'title' => 'Power banki',
+									'title' => 'Dostępne 24h',
+								),
+								array(
+									'title' => 'Dostępne 24h-72h',
 								),
 								array(
 									'title' => 'Akcesoria',
 								),
 								array(
-									'title' => 'Power banki dostępne 24h',
+									'title' => 'Pojemność od 500 mAh',
+								),
+								array(
+									'title' => 'Pojemność od 1000 mAh',
+								),
+								array(
+									'title' => 'Pojemność od 2000 mAh',
+								),
+								array(
+									'title' => 'Pojemność od 4000 mAh',
+								),
+								array(
+									'title' => 'Pojemność od 6000 mAh',
+								),
+								array(
+									'title' => 'Pojemność od 8000 mAh',
+								),
+								array(
+									'title' => 'Pojemność od 10000 mAh',
+								),
+								array(
+									'title' => 'Pozostałe',
 								),
 								
 							),

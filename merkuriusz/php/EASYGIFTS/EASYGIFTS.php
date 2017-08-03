@@ -97,7 +97,7 @@ class EASYGIFTS extends XMLAbstract {
 		}
 		
 		
-		$cat_name = apply_filters( 'stdName', $cat_name );
+		$cat_name = $this->stdNameCache( $cat_name );
 		
 		/* ==================== */
 		
@@ -290,7 +290,7 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				elseif( $cat_name === 'mobile' ){
-					$cat_name = apply_filters( 'stdName', 'Akcesoria do telefonów i tabletów' );
+					$cat_name = $this->stdNameCache( 'Akcesoria do telefonów i tabletów' );
 					$subcat_name = 'Okulary wirtualnej rzeczywistości';
 					
 				}
@@ -304,7 +304,7 @@ class EASYGIFTS extends XMLAbstract {
 				/* ==================== */
 				
 				if( !empty( $subcat_name ) ){
-					$subcat_name = apply_filters( 'stdName', $subcat_name );
+					$subcat_name = $this->stdNameCache( $subcat_name );
 					$subcat_name = $cat_name . "-" . $subcat_name;
 					$ret[$cat_name][ $subcat_name ] = array();
 					

@@ -10,9 +10,9 @@ $MACMA = new MACMA();
 
 
 $XM = new XMLMan();
-$XM->addSupport( $AXPOL );
-$XM->addSupport( $EASYGIFTS );
 $XM->addSupport( $MACMA );
+$XM->addSupport( $EASYGIFTS );
+$XM->addSupport( $AXPOL );
 
 $XM->init();
 

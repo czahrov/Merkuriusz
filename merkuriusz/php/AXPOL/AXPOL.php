@@ -197,10 +197,6 @@ class AXPOL extends XMLAbstract{
 					$subcat_name = "teczki";
 					
 				}
-				elseif( $subcat_name === 'power banki' ){
-					$cat_name = 'power banki';
-					
-				}
 				elseif( $subcat_name === 'kubki podróżne' ){
 					$subcat_name = 'kubki';
 					
@@ -247,6 +243,87 @@ class AXPOL extends XMLAbstract{
 					}
 					else{
 						$subcat_name = 'piknik';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'elektronika' ){
+					if( $subcat_name === 'pamięci usb' ){
+						$cat_name = 'pamięci usb';
+					
+						if( stripos( (string)$item->DescriptionPL, ' 1GB' ) !== false ){
+							$subcat_name = '1GB';
+							
+						}
+						elseif( stripos( (string)$item->DescriptionPL, ' 2GB' ) !== false ){
+							$subcat_name = '2GB';
+							
+						}
+						elseif( stripos( (string)$item->DescriptionPL, ' 4GB' ) !== false ){
+							$subcat_name = '4GB';
+							
+						}
+						elseif( stripos( (string)$item->DescriptionPL, ' 8GB' ) !== false ){
+							$subcat_name = '8GB';
+							
+						}
+						elseif( stripos( (string)$item->DescriptionPL, ' 16GB' ) !== false ){
+							$subcat_name = '16GB';
+							
+						}
+						elseif( stripos( (string)$item->DescriptionPL, ' 32GB' ) !== false ){
+							$subcat_name = '32GB';
+							
+						}
+						elseif( stripos( (string)$item->DescriptionPL, ' 64GB' ) !== false ){
+							$subcat_name = '64GB';
+							
+						}
+						else{
+							$subcat_name = 'pozostałe';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'power banki' ){
+						$cat_name = 'power banki';
+						// (string)$item->TitlePL
+						// (string)$item->DescriptionPL
+						
+						$val = null;
+						
+						if( stripos( (string)$item->TitlePL, ' mAh' ) !== false ){
+							preg_match( "@ (\d+) mAh@i", (string)$item->TitlePL, $match );
+							$val = (int)$match[1];
+							
+						}
+						elseif( stripos( (string)$item->DescriptionPL, ' mAh' ) !== false ){
+							preg_match( "@ (\d+) mAh@i", (string)$item->DescriptionPL, $match );
+							$val = (int)$match[1];
+							
+						}
+						
+						if( is_int( $val ) ){
+							$cap = array( 500, 1000, 2000, 4000, 6000, 8000, 10000 );
+							reset( $cap );
+							//while( current( $cap ) < $val && next( $cap ) !== false ){}
+							/* $t = current( $cap );
+							while( $t < $val && next( $cap ) !== false  ){
+								$t = current( $cap );
+								
+							} */
+							$f = current( $cap );
+							foreach( $cap as $t ){
+								if( $val >= $t ) $f = $t;
+								
+							}
+							$subcat_name = "Pojemność od " . $f . " mAh";
+							
+						}
+						else{
+							$subcat_name = 'Pozostałe';
+							
+						}
 						
 					}
 					
