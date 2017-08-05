@@ -68,7 +68,7 @@ class AXPOL extends XMLAbstract{
 	protected function getProducts(){
 		//return array();
 		$this->_getMark();
-		$this->_getStock();
+		//$this->_getStock();
 		$ret = array();
 		$file = "axpol_product_data_PL.xml";		// plik do załadowania
 		if( !array_key_exists( $file, $this->_XML ) or $this->_XML[ $file ] === false ){
@@ -190,7 +190,24 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				elseif( $subcat_name === 'akcesoria do komputerów' ){
-					$subcat_name = "akcesoria komputerowe";
+					//$subcat_name = "akcesoria komputerowe";
+					$cat_name = 'akcesoria komputerowe';
+					
+					if( stripos( (string)$item->TitlePL, ' usb' ) !== false ){
+						$subcat_name = 'Akcesoria USB';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, ' klawiatura' ) !== false ){
+						$subcat_name = 'Klawiatura';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, ' mysz' ) !== false ){
+						$subcat_name = 'Mysz';
+						
+					}
+					else{
+						$subcat_name = 'Pozostałe';
+					}
 					
 				}
 				elseif( $subcat_name === 'teczki konferencyjne' ){
@@ -304,7 +321,7 @@ class AXPOL extends XMLAbstract{
 						}
 						
 						if( is_int( $val ) ){
-							$cap = array( 500, 1000, 2000, 4000, 6000, 8000, 10000 );
+							$cap = array( 0, 500, 1000, 2000, 4000, 6000, 8000, 10000 );
 							reset( $cap );
 							//while( current( $cap ) < $val && next( $cap ) !== false ){}
 							/* $t = current( $cap );
@@ -317,7 +334,14 @@ class AXPOL extends XMLAbstract{
 								if( $val >= $t ) $f = $t;
 								
 							}
-							$subcat_name = "Pojemność od " . $f . " mAh";
+							if( $f > 0 ){
+								$subcat_name = "Pojemność od " . $f . " mAh";
+								
+							}
+							else{
+								$subcat_name = 'Pozostałe';
+								
+							}
 							
 						}
 						else{

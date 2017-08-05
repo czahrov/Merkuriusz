@@ -64,7 +64,7 @@ class MACMA extends XMLAbstract{
 	
 	// funkcja importująca dane o produktach w formie tablicy
 	protected function getProducts(){
-		$this->_getStock();
+		//$this->_getStock();
 		$ret = array();
 		$file = "offer.xml";		// plik do załadowania
 		if( !array_key_exists( $file, $this->_XML ) or $this->_XML[ $file ] === false ){
@@ -86,7 +86,7 @@ class MACMA extends XMLAbstract{
 						/* ============== KATEGORIE ==============  */
 						
 						if( $cat_name === 'długopisy i zestawy piśmienne' ){
-							$cat_name = 'Materiały piśmiennicze';
+							$cat_name = 'materiały piśmiennicze';
 							
 						}
 						elseif( $cat_name === 'mark twain' ){
@@ -122,6 +122,11 @@ class MACMA extends XMLAbstract{
 							$cat_name = 'do picia';
 							
 						}
+						elseif( $cat_name === 'diplomat' ){
+							$cat_name = 'vip piśmiennicze';
+							$subcat_name = 'diplomat';
+							
+						}
 						
 						/* ============== //KATEGORIE ==============  */
 						
@@ -148,7 +153,9 @@ class MACMA extends XMLAbstract{
 										
 									}
 									elseif( $subcat_name === 'akcesoria do komputerów' ){
-										$subcat_name = 'Akcesoria komputerowe';
+										//$subcat_name = 'Akcesoria komputerowe';
+										$cat_name = 'Akcesoria komputerowe';
+										$subcat_name = 'Pozostałe';
 										
 									}
 									elseif( $subcat_name === 'zegarki i smartwatche' ){
@@ -174,7 +181,6 @@ class MACMA extends XMLAbstract{
 										$cat_name = 'Zegary i zegarki';
 										
 									}
-									
 									
 								}
 								elseif( $cat_name === 'parasole i płaszcze' ){
@@ -422,7 +428,53 @@ class MACMA extends XMLAbstract{
 									//$cat_name = '';
 									
 								}
+								elseif( $cat_name === 'ungaro' ){
+									if( $subcat_name === 'apaszki i szaliki' ){
+										$subcat_name = 'apaszki i szale';
+										
+									}
+									elseif( $subcat_name === 'pamięci usb' ){
+										$subcat_name = 'pendrivy';
+										
+									}
+									elseif( $subcat_name === 'portfele i portmonetki' ){
+										if( stripos( (string)$item->baseinfo->name, 'portfel' ) !== false ){
+											$subcat_name = 'portfele';
+											
+										}
+										else{
+											$subcat_name = 'portmonetki';
+											
+										}
+										
+									}
+									elseif( $subcat_name === 'artykuły piśmienne' ){
+										$subcat_name = 'Przybory do pisania';
+										
+									}
+									elseif( $subcat_name === 'notatniki i notesy' ){
+										$subcat_name = 'notesy i notatniki';
+										
+									}
+									
+								}
+								elseif( $cat_name === 'materiały piśmiennicze' ){
+									if( $subcat_name === 'zakreślacze i flamastry' ){
+										if( stripos( (string)$item->baseinfo->name, 'zakreśl' ) !== false ){
+											$subcat_name = 'zakreslacze';
+											
+										}
+										elseif( stripos( (string)$item->baseinfo->name, 'flamast' ) !== false or stripos( (string)$item->baseinfo->name, 'mazak' ) !== false ){
+											$subcat_name = 'flamastry';
+											
+										}
+										
+									}
+									
+								}
 								
+								// 'NAME' => (string)$item->baseinfo->name
+								// 'DSCR' => (string)$item->baseinfo->intro[0]
 								
 								/* ============== //PODKATEGORIE ==============  */
 								

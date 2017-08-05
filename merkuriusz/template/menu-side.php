@@ -17,7 +17,13 @@
 									'title' => 'Długopisy metalowe',
 								),
 								array(
+									'title' => 'Długopisy aluminiowe',
+								),
+								array(
 									'title' => 'Długopisy plastikowe',
+								),
+								array(
+									'title' => 'Długopisy ekskluzywne',
 								),
 								array(
 									'title' => 'Długopisy wielofunkcyjne',
@@ -32,10 +38,13 @@
 									'title' => 'Kredki i ołówki',
 								),
 								array(
-									'title' => 'Etui',
+									'title' => 'Ołówki',
 								),
 								array(
-									'title' => 'Ołówki',
+									'title' => 'Gumki do mazania',
+								),
+								array(
+									'title' => 'Temperówki',
 								),
 								array(
 									'title' => 'Pióra kulkowe',
@@ -47,14 +56,18 @@
 									'title' => 'Zakreślacze',
 								),
 								array(
-									'title' => 'Zakreślacze i flamastry',
+									'title' => 'Flamastry',
 								),
 								array(
 									'title' => 'Zestawy piśmienne',
+								)
+								,array(
+									'title' => 'Etui',
 								),
-								
+								array(
+									'title' => 'Inne',
+								),
 							),
-							
 						),
 						array(
 							'title' => 'Biuro',
@@ -108,9 +121,7 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Torby i plecaki',
@@ -161,7 +172,6 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
 						),
 						array(
@@ -184,9 +194,7 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Do picia',
@@ -217,6 +225,9 @@
 									'title' => 'Kubki szklane',
 								),
 								array(
+									'title' => 'Szklanki',
+								),
+								array(
 									'title' => 'Opakowania do kubków',
 								),
 								array(
@@ -234,9 +245,7 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Narzędzia',
@@ -284,25 +293,29 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Dom',
 							'pikto' => 'dom.png',
 							'sub' => array(
 								array(
-									'title' => 'Apteczki',
-								),
-								array(
-									'title' => 'Dziadki do orzechów',
+									'title' => 'Ogród',
 								),
 								array(
 									'title' => 'Kuchnia',
 								),
 								array(
-									'title' => 'Ceramika',
+									'title' => 'Świece i aromaterapia',
+								),
+								array(
+									'title' => 'Akcesoria kuchenne',
+								),
+								array(
+									'title' => 'Magnesy na lodówkę',
+								),
+								array(
+									'title' => 'Otwieracze do butelek',
 								),
 								array(
 									'title' => 'Pojemniki na żywność',
@@ -311,10 +324,22 @@
 									'title' => 'Pojemniki i młynki do przypraw',
 								),
 								array(
+									'title' => 'Dziadki do orzechów',
+								),
+								array(
+									'title' => 'Ceramika',
+								),
+								array(
 									'title' => 'Łazienka',
 								),
 								array(
 									'title' => 'Oświetlenie',
+								),
+								array(
+									'title' => 'Termometry',
+								),
+								array(
+									'title' => 'Apteczki',
 								),
 								array(
 									'title' => 'Ramki do zdjęć',
@@ -323,13 +348,7 @@
 									'title' => 'Świąteczne',
 								),
 								array(
-									'title' => 'Termometry',
-								),
-								array(
 									'title' => 'Eco',
-								),
-								array(
-									'title' => 'Ogród',
 								),
 								array(
 									'title' => 'Gry',
@@ -347,14 +366,9 @@
 									'title' => 'Pielęgnacja obuwia',
 								),
 								array(
-									'title' => 'Świece i aromaterapia',
-								),
-								array(
 									'title' => 'Inne',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Wino',
@@ -368,7 +382,6 @@
 								array(
 									'title' => 'Zestawy',
 								),
-								
 							),
 						),
 						array(
@@ -397,7 +410,6 @@
 									'title' => 'Kosmetyczki',
 								),
 								array(
-									//'title' => 'Zestawy do manicure',
 									'title' => 'Pielęgnacja dłoni',
 								),
 								array(
@@ -408,6 +420,15 @@
 								),
 								array(
 									'title' => 'Akcesoria kosmetyczne',
+								),
+								array(
+									'title' => 'Ręczniki',
+								),
+								array(
+									'title' => 'Szlafroki',
+								),
+								array(
+									'title' => 'Inne',
 								),
 								
 							),
@@ -428,9 +449,7 @@
 								array(
 									'title' => 'Zestawy do malowania',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Eco gadżet',
@@ -466,9 +485,7 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Podróż',
@@ -525,9 +542,7 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Tekstylia',
@@ -535,83 +550,86 @@
 							'sub' => array(
 								array(
 									'title' => 'Czapki z daszkiem',
-									
 								),
 								array(
 									'title' => 'Czapki zimowe',
-									
 								),
 								array(
 									'title' => 'Daszki przeciwsłoneczne',
-									
 								),
 								array(
 									'title' => 'Kapelusze',
-									
 								),
 								array(
 									'title' => 'Odzież',
-									
 								),
 								array(
 									'title' => 'Rękawiczki',
-									
 								),
 								array(
 									'title' => 'Szaliki',
-									
+								),
+								array(
+									'title' => 'Nauszniki',
+								),
+								array(
+									'title' => 'Ogrzewacz na szyję',
 								),
 								array(
 									'title' => 'Zestawy zimowe',
-									
 								),
 								array(
 									'title' => 'T-shirt',
-									
 								),
 								array(
 									'title' => 'Polo',
-									
 								),
 								array(
 									'title' => 'Bluzy, polary, softshelle',
-									
 								),
 								array(
 									'title' => 'Rozmiar XS',
-									
 								),
 								array(
 									'title' => 'Rozmiar S',
-									
 								),
 								array(
 									'title' => 'Rozmiar M',
-									
 								),
 								array(
 									'title' => 'Rozmiar L',
-									
 								),
 								array(
 									'title' => 'Rozmiar XL',
-									
 								),
 								array(
 									'title' => 'Rozmiar XXL',
-									
 								),
 								array(
 									'title' => 'Torby jassz',
-									
+								),
+								array(
+									'title' => 'Krawaty i apaszki',
+								),
+								array(
+									'title' => 'Paski',
+								),
+								array(
+									'title' => 'Kurtki',
+								),
+								array(
+									'title' => 'Ponczo',
+								),
+								array(
+									'title' => 'Kamizelki',
+								),
+								array(
+									'title' => 'Płaszcze',
 								),
 								array(
 									'title' => 'Inne',
-									
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Wypoczynek',
@@ -679,9 +697,7 @@
 								array(
 									'title' => 'Lornetki i okulary',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Sport i rekreacja',
@@ -689,7 +705,6 @@
 								array(
 									'title' => 'Przyrządy do ćwiczeń',
 								),
-								
 							),
 						),
 						array(
@@ -707,9 +722,7 @@
 								array(
 									'title' => 'Monitory aktywności',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Medyczne',
@@ -735,9 +748,7 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'Pinsy',
@@ -748,7 +759,6 @@
 								array(
 									'title' => 'Pozostałe',
 								),
-								
 							),
 						),
 						array(
@@ -760,7 +770,6 @@
 								array(
 									'title' => 'Pozostałe produkty importowe',
 								),
-								
 							),
 						),
 						array(
@@ -781,7 +790,6 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
 						),
 						array(
@@ -796,7 +804,6 @@
 								array(
 									'title' => 'Stanley',
 								),
-								
 							),
 						),
 						array(
@@ -829,11 +836,13 @@
 								array(
 									'title' => 'Czapki i kapelusze',
 								),
-								
 							),
 						),
 						array(
 							'title' => 'Smile Hand',
+						),
+						array(
+							'title' => 'Biżuteria i akcesoria',
 						),
 						array(
 							'title' => 'Świąteczne',
@@ -843,7 +852,6 @@
 							'title' => 'Opakowania upominkowe',
 							'pikto' => 'upominkowe.png',
 						),
-						
 					),
 				),
 				'pluszaki i maskotki' => array(
@@ -870,7 +878,6 @@
 						array(
 							'title' => 'Inne zwierzątka',
 						),
-						
 					),
 				),
 				'elektronika' => array(
@@ -891,7 +898,6 @@
 								array(
 									'title' => 'Pozostałe',
 								),
-								
 							),
 						),
 						array(
@@ -936,11 +942,28 @@
 								array(
 									'title' => 'Pozostałe',
 								),
-								
 							),
 						),
 						array(
 							'title' => 'Akcesoria komputerowe',
+							'sub' => array(
+								array(	
+									'title' => 'Klawiatura',
+								),
+								array(	
+									'title' => 'Mysz',
+								),
+								array(	
+									'title' => 'Słuchawki',
+								),
+								array(	
+									'title' => 'Akcesoria USB',
+								),
+								array(	
+									'title' => 'Pozostałe',
+								),
+								
+							),
 						),
 						array(
 							'title' => 'Adaptery i huby USB',
@@ -950,7 +973,10 @@
 							'sub' => array(
 								array(
 									'title' => 'Akcesoria do telefonów',
-								),								
+								),
+								array(
+									'title' => 'Akcesoria do tabletów',
+								),
 								array(
 									'title' => 'Akcesoria',
 								),
@@ -975,20 +1001,22 @@
 								array(
 									'title' => 'Okulary wirtualnej rzeczywistości',
 								),
-								
 							),
 						),
 						array(
 							'title' => 'Ładowarki samochodowe',
 						),
 						array(
+							'title' => 'Ładowarki słoneczne',
+						),
+						array(
+							'title' => 'Ładowarki USB',
+						),
+						array(
 							'title' => 'Słuchawki',
 						),
 						array(
 							'title' => 'Głośniki',
-						),
-						array(
-							'title' => 'Ładowarki słoneczne',
 						),
 						array(
 							'title' => 'Power banki',
@@ -1026,7 +1054,6 @@
 								array(
 									'title' => 'Pozostałe',
 								),
-								
 							),
 						),
 						array(
@@ -1056,7 +1083,9 @@
 								array(
 									'title' => 'Dostępne 24h',
 								),
-								
+								array(
+									'title' => 'Pozostałe',
+								),
 							),
 						),
 						array(
@@ -1071,7 +1100,6 @@
 								array(
 									'title'=> 'Inne',
 								),
-								
 							),
 						),
 						array(
@@ -1083,7 +1111,6 @@
 								array(
 									'title' => 'PQI',
 								),
-								
 							),
 						),
 						array(
@@ -1104,13 +1131,11 @@
 								array(
 									'title' => 'BMW',
 								),
-								
 							)
 						),
 						array(
 							'title' => 'Inne',
 						),
-						
 					),
 				),
 				'kolekcja vip' => array(
@@ -1119,11 +1144,25 @@
 						array(
 							'title' => 'vip collection',
 							'class' => 'bold uppercase',
-								
 						),
 						array(
 							'title' => 'vip skóra',
 							'class' => 'bold uppercase',
+						),
+						array(
+							'title' => 'Cool Brands',
+							'class' => 'bold uppercase',
+							'sub' => array(
+								array(
+									'title' => 'André philippe',
+								),
+								array(
+									'title' => 'Alexluca',
+								),
+								array(
+									'title' => 'Antonio miro',
+								),
+							),
 						),
 						array(
 							'title' => 'Moleskine',
@@ -1147,7 +1186,6 @@
 								array(
 									'title' => 'Passion journals',
 								),
-								
 								array(
 									'title' => 'Kalendarze',
 								),
@@ -1157,9 +1195,7 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
-							
 						),
 						array(
 							'title' => 'vine club',
@@ -1186,39 +1222,6 @@
 								array(
 									'title' => 'Zestawy',
 								),
-								
-							),
-						),
-						array(
-							'title' => 'vip piśmiennicze',
-							'class' => 'bold uppercase',
-							'sub' => array(
-								array(
-									'title' => 'parker',
-									'pikto' => 'feather.png',
-									'logo' => 'Parker_logo.png',
-								),
-								array(
-									'title' => 'waterman',
-									'pikto' => 'pen3.png',
-									'logo' => 'waterman_logo.png',
-								),
-								array(
-									'title' => 'mark twain',
-									'pikto' => 'pen1.png',
-									'logo' => 'marktwain.svg',
-								),
-								array(
-									'title' => 'pelikan',
-									'pikto' => 'inkwell.png',
-									'logo' => 'pelikan-logo.png',
-								),
-								array(
-									'title' => 'diplomat',
-									'pikto' => 'pen2.png',
-									'logo' => 'diplomat.svg',
-								),
-								
 							),
 						),
 						array(
@@ -1241,7 +1244,6 @@
 								array(
 									'title' => 'Szkło',
 								),
-								
 							),
 						),
 						array(
@@ -1257,7 +1259,6 @@
 								array(
 									'title' => 'Akcesoria turystyczne',
 								),
-								
 							),
 						),
 						array(
@@ -1273,6 +1274,9 @@
 								),
 								array(
 									'title' => 'Portfele',
+								),
+								array(
+									'title' => 'Portmonetki',
 								),
 								array(
 									'title' => 'Apaszki i szale',
@@ -1319,13 +1323,32 @@
 								array(
 									'title' => 'Podróż',
 								),
-								
+								array(
+									'title' => 'Breloki',
+								),
+								array(
+									'title' => 'Zegarki męskie',
+								),
+								array(
+									'title' => 'Zegarki damskie',
+								),
 							),
 						),
 						array(
 							'title' => 'herlitz',
 							'pikto' => 'suitcase.png',
 							'logo' => 'Herlitz_logo.svg',
+							'sub' => array(
+								array(
+									'title' => 'Artykuły szkolne i biurowe',
+								),
+								array(
+									'title' => 'Artykuły piśmienne',
+								),
+								array(
+									'title' => 'Notatniki i notesy',
+								),
+							),
 						),
 						array(
 							'title' => 'coFee',
@@ -1338,7 +1361,6 @@
 								array(
 									'title' => 'czapki zimowe',
 								),
-								
 							),
 						),
 						array(
@@ -1403,7 +1425,6 @@
 								array(
 									'title' => 'Podróż',
 								),
-								
 							),
 						),
 						array(
@@ -1455,7 +1476,6 @@
 								array(
 									'title' => 'Opakowania',
 								),
-								
 							),
 						),
 						array(
@@ -1510,7 +1530,6 @@
 								array(
 									'title' => 'Futerały',
 								),
-								
 							),
 						),
 						array(
@@ -1562,7 +1581,6 @@
 								array(
 									'title' => 'Biżuteria',
 								),
-								
 							),
 						),
 						array(
@@ -1629,7 +1647,6 @@
 								array(
 									'title' => 'Podróż',
 								),
-								
 							),
 						),
 						array(
@@ -1663,7 +1680,6 @@
 								array(
 									'title' => 'Active viva',
 								),
-								
 							),
 						),
 						array(
@@ -1676,10 +1692,8 @@
 								array(
 									'title' => 'smart cube',
 								),
-								
 							),
 						),
-						
 					),
 				),
 				'vip elektronika' => array(
@@ -1706,7 +1720,50 @@
 						array(
 							'title' => 'Inne',
 						),
-						
+					),
+				),
+				'vip piśmiennicze' => array(
+					'class' => 'vip_pismiennicze',
+					'items' => array(
+						array(
+							'title' => 'parker',
+							'pikto' => 'feather.png',
+							'logo' => 'Parker_logo.png',
+						),
+						array(
+							'title' => 'waterman',
+							'pikto' => 'pen3.png',
+							'logo' => 'waterman_logo.png',
+						),
+						array(
+							'title' => 'mark twain',
+							'pikto' => 'pen1.png',
+							'logo' => 'marktwain.svg',
+						),
+						array(
+							'title' => 'pelikan',
+							'pikto' => 'inkwell.png',
+							'logo' => 'pelikan-logo.png',
+							'sub' => array(
+								array(
+									'title' => 'Artykuły piśmienne',
+								),
+								array(
+									'title' => 'Kredki i zakreślacze',
+								),
+								array(
+									'title' => 'Pióra kulkowe i wieczne',
+								),
+								array(
+									'title' => 'Atramenty',
+								),
+							),
+						),
+						array(
+							'title' => 'diplomat',
+							'pikto' => 'pen2.png',
+							'logo' => 'diplomat.svg',
+						),
 					),
 				),
 				'victorinox collection' => array(
@@ -1745,7 +1802,6 @@
 								array(
 									'title' => 'Inne',
 								),
-								
 							),
 						),
 						array(
@@ -1769,7 +1825,6 @@
 								array(
 									'title' => 'Cigar',
 								),
-								
 							),
 						),
 						array(
@@ -1781,19 +1836,11 @@
 								array(
 									'title' => 'Torby',
 								),
-								
 							),
 						),
-						
 					),
-					
 				),
-				
 			) );
-			
-			
 		?>
-		
 	</div>
-	
 </div>

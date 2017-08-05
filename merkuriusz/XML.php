@@ -1,19 +1,22 @@
 <?php
-$AXPOL = new AXPOL();
+// $AXPOL = new AXPOL();
 // $AXPOL->makeCache();
 
-$EASYGIFTS = new EASYGIFTS();
+// $EASYGIFTS = new EASYGIFTS();
 // $EASYGIFTS->makeCache();
 
-$MACMA = new MACMA();
+// $MACMA = new MACMA();
 // $MACMA->makeCache();
+
+$ANDA = new ANDA();
+// $ANDA->makeCache();
 
 
 $XM = new XMLMan();
-$XM->addSupport( $MACMA );
-$XM->addSupport( $EASYGIFTS );
-$XM->addSupport( $AXPOL );
-
+$XM->addSupport( $ANDA );
+// $XM->addSupport( $MACMA );
+// $XM->addSupport( $EASYGIFTS );
+// $XM->addSupport( $AXPOL );
 $XM->init();
 
 // $XM->addSupport( new AXPOL() );

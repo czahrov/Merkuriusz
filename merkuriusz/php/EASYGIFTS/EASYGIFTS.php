@@ -97,7 +97,7 @@ class EASYGIFTS extends XMLAbstract {
 		}
 		
 		
-		$cat_name = $this->stdNameCache( $cat_name );
+		//$cat_name = $this->stdNameCache( $cat_name );
 		
 		/* ==================== */
 		
@@ -299,24 +299,43 @@ class EASYGIFTS extends XMLAbstract {
 					$subcat_name = 'Pielęgnacja dłoni';
 					
 				}
+				elseif( $cat_name === 'elektronika' ){
+					if( $subcat_name === 'akcesoria komputerowe' ){
+						$cat_name = 'Akcesoria komputerowe';
+						
+						if( stripos( (string)$node->baseinfo->name, 'słuchawk' ) !== false ){
+							$subcat_name = 'Słuchawki';
+							
+						}
+						else{
+							$subcat_name = 'Pozostałe';
+							
+						}
+						
+					}
+					
+				}
 				
 				
 				/* ==================== */
 				
 				if( !empty( $subcat_name ) ){
-					$subcat_name = $this->stdNameCache( $subcat_name );
-					$subcat_name = $cat_name . "-" . $subcat_name;
-					$ret[$cat_name][ $subcat_name ] = array();
+					$cat_name_slug = $this->stdNameCache( $cat_name );
+					$subcat_name_slug = $this->stdNameCache( $subcat_name );
+					$subcat_name_slug = $cat_name_slug . "-" . $subcat_name_slug;
+					$ret[ $cat_name_slug ][ $subcat_name_slug ] = array();
 					
 				}
 				else{
-					$ret[$cat_name] = array();
+					$cat_name_slug = $this->stdNameCache( $cat_name );
+					$ret[ $cat_name_slug ] = array();
 					
 				}
 				
 				if( $subcategory->subcategories->count() > 0 ){
+					$cat_name_slug = $this->stdNameCache( $cat_name );
 					//$ret[ $cat_name ][ $subcat_name ] = $this->genMenuTree( $subcategory );
-					$ret[ $cat_name ] = $this->genMenuTree( $subcategory, $node );
+					$ret[ $cat_name_slug ] = $this->genMenuTree( $subcategory, $node );
 					
 				}
 				
@@ -324,7 +343,8 @@ class EASYGIFTS extends XMLAbstract {
 			
 		}
 		else{
-			$ret[ $cat_name ] = array();
+			$cat_name_slug = $this->stdNameCache( $cat_name );
+			$ret[ $cat_name_slug ] = array();
 			
 		}
 		
