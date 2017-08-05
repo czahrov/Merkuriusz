@@ -578,7 +578,7 @@ add_action( 'gen_menu', function( $arg ){
 		$cat_slug = apply_filters( 'stdName', $cat_name );
 		if( $query[0] === $cat_slug ){
 			$cat_active = 'active';
-			$_SESSION[ 'breadc' ] = array( $cat_name );
+			if( empty( $_SESSION[ 'breadc' ] ) ) $_SESSION[ 'breadc' ] = array( $cat_name );
 			
 		}
 		else{
@@ -610,7 +610,7 @@ add_action( 'gen_menu', function( $arg ){
 			//$item_active = $query[1] === $item_slug?( 'active' ):( '' );
 			if( $query[1] === $item_slug ){
 				$item_active = 'active';
-				$_SESSION[ 'breadc' ] = array( $cat_name, $item[ 'title' ] );
+				if( count( $_SESSION[ 'breadc' ] ) == 1 ) $_SESSION[ 'breadc' ] = array( $cat_name, $item[ 'title' ] );
 				
 			}
 			else{
@@ -677,7 +677,7 @@ add_action( 'gen_menu', function( $arg ){
 						//$subitem_active = explode( "-", end( $query ) )[1] === $subitem_slug;
 						if( explode( "-", end( $query ) )[1] === $subitem_slug ){
 							$subitem_active = 'active';
-							$_SESSION[ 'breadc' ] = array( $cat_name, $item[ 'title' ], $subitem[ 'title' ] );
+							if( count( $_SESSION[ 'breadc' ] ) == 2 ) $_SESSION[ 'breadc' ] = array( $cat_name, $item[ 'title' ], $subitem[ 'title' ] );
 						}
 						else{
 							$subitem_active = '';
