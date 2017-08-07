@@ -352,6 +352,17 @@ class AXPOL extends XMLAbstract{
 					}
 					
 				}
+				elseif( $cat_name === 'dom' ){
+					if( $subcat_name === 'ramki do zdjęć' ){
+						$cat_name = 'biuro';
+						$subcat_name = 'ramki na zdjęcia';
+						
+					}
+					
+				}
+				
+				// 'NAME' => (string)$item->TitlePL,
+				// 'DSCR' => (string)$item->DescriptionPL,
 				
 				/* ========== PODKATEGORIE ========== */
 				

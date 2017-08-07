@@ -219,7 +219,7 @@ class EASYGIFTS extends XMLAbstract {
 					$cat_name = 'elektronika';
 					
 				}
-				elseif( $bcat_name === 'wypoczynek' ){
+				elseif( $cat_name === 'wypoczynek' ){
 					if( $subcat_name === 'czapki z daszkiem' ){
 						$cat_name = 'tekstylia';
 						
@@ -231,6 +231,19 @@ class EASYGIFTS extends XMLAbstract {
 					}
 					elseif( $subcat_name === 'akcesoria do grillowania' ){
 						$subcat_name = 'Grill i piknik';
+						
+					}
+					elseif( $subcat_name === 'lornetki i okulary' ){
+						if( stripos( (string)$node->baseinfo->name, 'okular' ) !== false ){
+							$subcat_name = 'okulary';
+						}
+						elseif( stripos( (string)$node->baseinfo->name, 'lornet' ) !== false ){
+							$subcat_name = 'lornetki';
+						}
+						else{
+							
+							$subcat_name = 'inne';
+						}
 						
 					}
 					
@@ -316,6 +329,8 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				
+				// (string)$node->baseinfo->name
+				// (string)$node->baseinfo->intro
 				
 				/* ==================== */
 				

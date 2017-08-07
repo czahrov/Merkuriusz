@@ -11,6 +11,9 @@
 							'pikto' => 'pisemnicze.png',
 							'sub' => array(
 								array(
+									'title' => 'Długopisy',
+								),
+								array(
 									'title' => 'Długopisy ekologiczne',
 								),
 								array(
@@ -312,6 +315,9 @@
 									'title' => 'Akcesoria kuchenne',
 								),
 								array(
+									'title' => 'Akcesoria do pieczenia',
+								),
+								array(
 									'title' => 'Magnesy na lodówkę',
 								),
 								array(
@@ -466,6 +472,9 @@
 								),
 								array(
 									'title' => 'Metalowe',
+								),
+								array(
+									'title' => 'Plastikowe',
 								),
 								array(
 									'title' => 'Antystresy',
@@ -662,6 +671,9 @@
 									'title' => 'Lato',
 								),
 								array(
+									'title' => 'Kapelusze na lato',
+								),
+								array(
 									'title' => 'Okulary przeciwsłoneczne',
 								),
 								array(
@@ -677,12 +689,6 @@
 									'title' => 'Fidget spinner',
 								),
 								array(
-									'title' => 'Lornetki',
-								),
-								array(
-									'title' => 'Kompasy',
-								),
-								array(
 									'title' => 'Torby termoizolacyjne',
 								),
 								array(
@@ -695,8 +701,21 @@
 									'title' => 'Akcesoria rowerowe i odblaski',
 								),
 								array(
-									'title' => 'Lornetki i okulary',
+									'title' => 'Akcesoria dla psów',
 								),
+								array(
+									'title' => 'Lornetki',
+								),
+								array(
+									'title' => 'Okulary',
+								),
+								array(
+									'title' => 'Kompasy',
+								),
+								array(
+									'title' => 'Inne',
+								),
+								
 							),
 						),
 						array(
@@ -704,6 +723,12 @@
 							'sub' => array(
 								array(
 									'title' => 'Przyrządy do ćwiczeń',
+								),
+								array(
+									'title' => 'Akcesoria sportowe',
+								),
+								array(
+									'title' => 'Akcesoria dla rowerzystów',
 								),
 							),
 						),
@@ -786,6 +811,9 @@
 								),
 								array(
 									'title' => 'Skrobaczki',
+								),
+								array(
+									'title' => 'Opaski',
 								),
 								array(
 									'title' => 'Inne',

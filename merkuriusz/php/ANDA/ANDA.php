@@ -132,6 +132,10 @@ class ANDA extends XMLAbstract{
 						$cat_name = 'dom';
 						
 					}
+					elseif( $cat_name === 'leisure & sport' ){
+						$cat_name = 'wypoczynek';
+						
+					}
 					
 					/* ========== //KATEGORIE ==========  */
 					/* ========== PODKATEGORIE ==========  */
@@ -468,7 +472,7 @@ class ANDA extends XMLAbstract{
 								
 							}
 							else{
-								$subcat_name = 'Inne';
+								$subcat_name = 'długopisy';
 								
 							}
 							
@@ -602,6 +606,529 @@ class ANDA extends XMLAbstract{
 						elseif( $subcat_name === 'dekoracje domowe' ){
 							if( stripos( (string)$item->attributes()->name, 'doniczka' ) !== false ){
 								$subcat_name = 'ogród';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'ramka' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'ramki na zdjęcia';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'wiec' ) !== false or stripos( (string)$item->attributes()->name, 'zapach' ) !== false ){
+								$subcat_name = 'świece i aromaterapia';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'lamp' ) !== false ){
+								$cat_name = 'narzędzia';
+								$subcat_name = 'lampki';
+								
+							}
+							else{
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'fartuchy i akcesoria do pieczenia' ){
+							$subcat_name = 'akcesoria do pieczenia';
+							
+						}
+						
+					}
+					elseif( $cat_name === 'wypoczynek' ){
+						if( $subcat_name === 'akcesoria i gry plażowe' ){
+							if( stripos( (string)$item->attributes()->name, 'piłka' ) !== false or stripos( (string)$item->attributes()->name, 'rakiet' ) !== false or stripos( (string)$item->attributes()->name, 'tenis' ) !== false or stripos( (string)$item->attributes()->name, 'badmin' ) !== false or stripos( (string)$item->attributes()->name, 'frisbee' ) !== false ){
+								$subcat_name = 'gry i zabawy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'okulary' ) !== false ){
+								$subcat_name = 'okulary przeciwsłoneczne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'termoizolacyjn' ) !== false ){
+								$subcat_name = 'torby termoizolacyjne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'kubek' ) !== false ){
+								$cat_name = 'do picia';
+								
+								if(  stripos( (string)$item->attributes()->name, 'ceram' ) !== false ){
+									$subcat_name = 'kubki ceramiczne';
+									
+								}
+								elseif(  stripos( (string)$item->attributes()->name, 'porcelan' ) !== false ){
+									$subcat_name = 'kubki porcelanowe';
+									
+								}
+								elseif(  stripos( (string)$item->attributes()->name, 'plastik' ) !== false ){
+									$subcat_name = 'kubki plastikowe';
+									
+								}
+								elseif(  stripos( (string)$item->attributes()->name, 'termicz' ) !== false ){
+									$subcat_name = 'kubki termiczne';
+									
+								}
+								elseif(  stripos( (string)$item->attributes()->name, 'szkl' ) !== false ){
+									$subcat_name = 'kubki szklane';
+									
+								}
+								else{
+									$subcat_name = 'kubki';
+								}
+								
+							}
+							else{
+								$subcat_name = 'akcesoria plażowe';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'zestawy piknikowe, torby termoizolacyjne' ){
+							if( stripos( (string)$item->attributes()->name, 'term' ) !== false or stripos( (string)$item->attributes()->name, 'chłodz' ) !== false ){
+								$subcat_name = 'torby termoizolacyjne';
+								
+							}
+							else{
+								$subcat_name = 'akcesoria plażowe';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'termosy i kubki' ){
+							$cat_name = 'do picia';
+							
+							if( stripos( (string)$item->attributes()->name, 'kubek' ) !== false ){
+								$cat_name = 'do picia';
+								
+								if( stripos( (string)$item->attributes()->name, 'ceram' ) !== false ){
+									$subcat_name = 'kubki ceramiczne';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'porcelan' ) !== false ){
+									$subcat_name = 'kubki porcelanowe';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'plastik' ) !== false ){
+									$subcat_name = 'kubki plastikowe';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'termicz' ) !== false ){
+									$subcat_name = 'kubki termiczne';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'szklan' ) !== false ){
+									$subcat_name = 'kubki szklane';
+									
+								}
+								else{
+									$subcat_name = 'kubki';
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'termos' ) !== false ){
+								$subcat_name = 'termosy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'piersi' ) !== false ){
+								$subcat_name = 'Piersiówki';
+								
+							}
+							elseif(  stripos( (string)$item->attributes()->name, 'butelk' ) !== false ){
+								$subcat_name = 'butelki';
+								
+							}
+							else{
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'japonki' ){
+							$subcat_name = 'akcesoria plażowe';
+							
+						}
+						elseif( $subcat_name === 'okulary słoneczne' ){
+							$subcat_name = 'okulary przeciwsłoneczne';
+							
+						}
+						elseif( $subcat_name === 'butelki sportowe' ){
+							$cat_name = 'do picia';
+							$subcat_name = 'butelki';
+							
+						}
+						elseif( $subcat_name === 'akcesoria sportowe i na zabawę' ){
+							if( stripos( (string)$item->attributes()->name, 'odblask' ) !== false ){
+								$cat_name = 'odblaski';
+								
+								if( stripos( (string)$item->attributes()->name, 'opaska' ) !== false ){
+									$subcat_name = 'opaski';
+									
+								}
+								else{
+									$subcat_name = 'inne';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'piłka' ) !== false or stripos( (string)$item->attributes()->name, 'tee' ) !== false ){
+								$cat_name = 'wypoczynek';
+								$subcat_name = 'gry i zabawy';
+								
+							}
+							
+						}
+						elseif( stripos( $subcat_name, 'rowerzyst') !== false ){
+							$cat_name = 'sport i rekreacja';
+							$subcat_name = 'akcesoria dla rowerzystów';
+							
+						}
+						elseif( stripos( $subcat_name, 'koce polarowe') !== false ){
+							$subcat_name = 'koce';
+							
+						}
+						elseif( $subcat_name === 'lornetki i kompasy' ){
+							if( stripos( (string)$item->attributes()->name, 'kompas' ) !== false or stripos( (string)$item->description, 'kompas' ) !== false ){
+								$subcat_name = 'kompasy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'bino' ) !== false or stripos( (string)$item->attributes()->name, 'lornet' ) !== false ){
+								$subcat_name = 'lornetki';
+								
+							}
+							else{
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'zestawy do bbq' ){
+							$subcat_name = 'grill';
+							
+						}
+						
+					}
+					elseif( $cat_name === 'be creative' ){
+						if( $subcat_name === 'be creative custom' ){
+							if( stripos( (string)$item->attributes()->name, 'odznaka' ) !== false ){
+								$cat_name = 'pinsy';
+								$subcat_name = 'pozostałe';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'wentylator' ) !== false ){
+								$cat_name = 'wypoczynek';
+								$subcat_name = 'akcesoria plażowe';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'balon' ) !== false or stripos( (string)$item->description, 'balon' ) !== false ){
+								$cat_name = 'wypoczynek';
+								$subcat_name = 'gry i zabawy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'magnes' ) !== false ){
+								$cat_name = 'dom';
+								$subcat_name = 'magnesy na lodówkę';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'zakup' ) !== false ){
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'na zakupy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'brelok' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'breloki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'portfel' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'portfele';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'okular' ) !== false ){
+								$cat_name = 'wypoczynek';
+								$subcat_name = 'okulary';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'japon' ) !== false ){
+								$cat_name = 'wypoczynek';
+								$subcat_name = 'akcesoria plażowe';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'kubek' ) !== false ){
+								$cat_name = 'do picia';
+								
+								if( stripos( (string)$item->attributes()->name, 'termicz' ) !== false ){
+									$subcat_name = 'kubki termiczne';
+									
+								}
+								else{
+									$subcat_name = 'inne';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'wina' ) !== false ){
+								$cat_name = 'wino';
+								$subcat_name = 'opakowania';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'linij' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'linijki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'zawieszka' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'inne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'creaclip' ) !== false ){
+								$cat_name = 'materiały piśmiennicze';
+								$subcat_name = 'długopisy plastikowe';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'be creative print' ){
+							if( stripos( (string)$item->attributes()->name, 'ręcznik' ) !== false ){
+								$cat_name = 'uroda';
+								$subcat_name = 'ręczniki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'smycz' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'smycze';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'zegar' ) !== false ){
+								$cat_name = 'zegary i zegarki';
+								
+								if( stripos( (string)$item->description, 'stół' ) !== false ){
+									$subcat_name = 'zegary biurkowe';
+									
+								}
+								elseif( stripos( (string)$item->description, 'ścienn' ) !== false ){
+									$subcat_name = 'zegary ścienne';
+									
+								}
+								else{
+									$subcat_name = 'pozostałe';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'brelok' ) !== false ){
+								$cat_name = 'breloki';
+								
+								if( stripos( (string)$item->description, 'plastik' ) !== false ){
+									$subcat_name = 'plastikowe';
+									
+								}
+								else{
+									$subcat_name = 'breloki';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'lusterko' ) !== false ){
+								$cat_name = 'uroda';
+								$subcat_name = 'lusterka';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'portfel' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'portfele';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'bidon' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'termosy i bidony';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'magnes' ) !== false ){
+								$cat_name = 'dom';
+								$subcat_name = 'magnesy na lodówkę';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'tabletk' ) !== false ){
+								$cat_name = 'medyczne';
+								$subcat_name = '';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'ramka' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'ramki na zdjęcia';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'przeciwsłoneczne' ) !== false ){
+								$cat_name = 'wypoczynek';
+								$subcat_name = 'okulary przeciwsłoneczne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'okulary' ) !== false ){
+								$cat_name = 'wypoczynek';
+								$subcat_name = 'okulary';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'daszkiem' ) !== false ){
+								$cat_name = 'tekstylia';
+								$subcat_name = 'czapki z daszkiem';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'butelka' ) !== false ){
+								$cat_name = 'do picia';
+								$subcat_name = 'butelki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'słuchawki' ) !== false ){
+								$cat_name = 'elektronika';
+								$subcat_name = 'słuchawki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'kubek' ) !== false ){
+								$cat_name = 'do picia';
+								
+								if( stripos( (string)$item->description, 'ceram' ) !== false ){
+									$subcat_name = 'kubki ceramiczne';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'term' ) !== false ){
+									$subcat_name = 'kubki termiczne';
+									
+								}
+								elseif( stripos( (string)$item->description, 'szkl' ) !== false ){
+									$subcat_name = 'kubki szklane';
+									
+								}
+								else{
+									$subcat_name = 'kubki inne';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'piekar' ) !== false ){
+								$cat_name = 'dom';
+								$subcat_name  = 'akcesoria do pieczenia';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'rysik' ) !== false ){
+								$cat_name = 'akcesoria do telefonów i tabletów';
+								$subcat_name  = 'akcesoria';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'opaska' ) !== false ){
+								$cat_name = 'dodatki';
+								$subcat_name  = 'opaski';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'samochod' ) !== false ){
+								$cat_name = 'narzędzia';
+								$subcat_name  = 'samochód';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'osłona' ) !== false ){
+								$cat_name = 'dodatki';
+								$subcat_name  = 'inne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'czyścik' ) !== false ){
+								$cat_name = 'akcesoria do telefonów i tabletów';
+								$subcat_name  = 'akcesoria';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'frisbee' ) !== false ){
+								$cat_name = 'wypoczynek';
+								$subcat_name  = 'gry i zabawy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'skarbon' ) !== false ){
+								$cat_name = 'dodatki';
+								$subcat_name  = 'skarbonki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'skrob' ) !== false ){
+								$cat_name = 'dodatki';
+								$subcat_name  = 'skrobaczki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'pins' ) !== false or stripos( (string)$item->attributes()->name, 'metal' ) !== false ){
+								$cat_name = 'pinsy';
+								$subcat_name  = 'metalowe';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'pins' ) !== false ){
+								$cat_name = 'pinsy';
+								$subcat_name  = 'metalowe';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'pass' ) !== false or stripos( (string)$item->attributes()->name, 'torebki' ) !== false ){
+								$cat_name = 'dodatki';
+								$subcat_name  = 'inne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'bank' ) !== false ){
+								$val = null;
+						
+								if( stripos( (string)$item->attributes()->name, ' mAh' ) !== false ){
+									preg_match( "@ (\d+) mAh@i", (string)$item->attributes()->name, $match );
+									$val = (int)$match[1];
+									
+								}
+								elseif( stripos( (string)$item->description, ' mAh' ) !== false ){
+									preg_match( "@ (\d+) mAh@i", (string)$item->description, $match );
+									$val = (int)$match[1];
+									
+								}
+								
+								if( is_int( $val ) ){
+									$cap = array( 0, 500, 1000, 2000, 4000, 6000, 8000, 10000 );
+									reset( $cap );
+									
+									$f = current( $cap );
+									foreach( $cap as $t ){
+										if( $val >= $t ) $f = $t;
+										
+									}
+									if( $f > 0 ){
+										$subcat_name = "Pojemność od " . $f . " mAh";
+										
+									}
+									else{
+										$subcat_name = 'Pozostałe';
+										
+									}
+									
+								}
+								else{
+									$subcat_name = 'Pozostałe';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'etui' ) !== false ){
+								$cat_name = 'Akcesoria do telefonów i tabletów';
+								$subcat_name = 'etui i podstawki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'długopis' ) !== false ){
+								$cat_name = 'materiały piśmiennicze';
+								
+								if( stripos(  (string)$item->description, 'plastik' ) !== false ){
+									$subcat_name = 'długopisy plastikowe';
+									
+								}
+								elseif( stripos(  (string)$item->description, 'stojak' ) !== false ){
+									$subcat_name = 'inne';
+									
+								}
+								else{
+									$subcat_name = 'długopisy';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'termos' ) !== false ){
+								$cat_name = 'do picia';
+								$subcat_name = 'termosy';
 								
 							}
 							
