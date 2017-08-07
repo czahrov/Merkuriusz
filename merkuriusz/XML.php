@@ -1,22 +1,22 @@
 <?php
-// $AXPOL = new AXPOL();
-// $AXPOL->makeCache();
+$AXPOL = new AXPOL();
+// if( isset( $_GET[ 'recache' ] ) ) $AXPOL->makeCache();
 
-// $EASYGIFTS = new EASYGIFTS();
-// $EASYGIFTS->makeCache();
+$EASYGIFTS = new EASYGIFTS();
+// if( isset( $_GET[ 'recache' ] ) ) $EASYGIFTS->makeCache();
 
-// $MACMA = new MACMA();
-// $MACMA->makeCache();
+$MACMA = new MACMA();
+// if( isset( $_GET[ 'recache' ] ) ) $MACMA->makeCache();
 
 $ANDA = new ANDA();
-// $ANDA->makeCache();
+// if( isset( $_GET[ 'recache' ] ) ) $ANDA->makeCache();
 
 
 $XM = new XMLMan();
 $XM->addSupport( $ANDA );
-// $XM->addSupport( $MACMA );
-// $XM->addSupport( $EASYGIFTS );
-// $XM->addSupport( $AXPOL );
+$XM->addSupport( $MACMA );
+$XM->addSupport( $EASYGIFTS );
+$XM->addSupport( $AXPOL );
 $XM->init();
 
 // $XM->addSupport( new AXPOL() );
