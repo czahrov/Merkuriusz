@@ -523,7 +523,7 @@
 				slider.triggerHandler( 'start' );
 				
 			})
-			( $( '#home .top-slider' ), $( '#home .top-slider > .text > .view > .item' ), $( '#home .top-slider > .text > .pagin > .item' ), $( '#home .top-slider > .imgs > .view > .item' ) );
+			( $( '#home .top-slider' ), $( '#home .top-slider > .text > .view > .item' ), $( '#home .top-slider > .imgs > .pagin > .item' ), $( '#home .top-slider > .imgs > .view > .item' ) );
 			
 			// POPUPy
 			(function(){
@@ -563,6 +563,14 @@
 				
 				$(".pop-up-clothes.dlugopisyplastikowe").click(function () {
 					$(".dlugopisyplastikowe-pop-up").fadeIn(300);
+				});
+				
+				$(".pop-up-clothes.torby").click(function () {
+					$(".torby-pop-up").fadeIn(300);
+				});
+				
+				$(".pop-up-clothes.torby").click(function () {
+					$(".torby-pop-up").fadeIn(300);
 				});
 				
 			})();

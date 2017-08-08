@@ -107,6 +107,12 @@
 									'title' => 'Teczki',
 								),
 								array(
+									'title' => 'Podkładki',
+								),
+								array(
+									'title' => 'Foldery',
+								),
+								array(
 									'title' => 'Stojaki',
 								),
 								array(
