@@ -566,7 +566,8 @@ li.open > .roll-arrow {
 }
 .main-picture-title {
 	font-size: 16px;
-	padding-bottom: 36px;
+    padding-bottom: 30px;
+    line-height: 1.5;
 }
 .main-picture-btn {
 	width: 142px;
@@ -691,20 +692,16 @@ a.main-picture-btn:active, a.main-picture-btn:focus {
 
 }
 .catalog5 {
-	background-image: url(img/katalogi/katalog_pomponow.jpg);
-
+	background-color: #D7D7D7;
 }
 .catalog6 {
-	background-image: url(img/katalogi/katalog_Malfini_Adler.jpg);
+	background-color: #D7D7D7;
 }
 .catalog7 {
-	background-image: url(img/katalogi/promostars.jpg);
+	background-color: #D7D7D7;
 }
 .catalog8 {
-	background-image: url(img/katalogi/Katalog_Easy_Stand_Roll_up.jpg);
-}
-.catalog9 {
-	background-image: url(img/katalogi/Katalog_Easy_Stand.jpg);
+	background-color: #D7D7D7;
 }
 .catalog_signature {
 	padding: 20px;
@@ -1822,3 +1819,37 @@ a.inner_catalog_btn:hover {
 	width: auto;
 	max-width: 100%;
 }
+
+
+/*NOWE STYLE*/
+
+
+
+#home .imgs > .pagin {
+  position: absolute;
+left: 50%;
+transform: translateX(-50%);
+bottom: 20px;
+z-index: 5;
+padding: 0 0 30px 40px;
+background-color: transparent;
+ }
+
+#home .imgs > .pagin > .item {
+margin-right: 4px;
+width: 18px;
+height: 18px;
+background-color: #269bff;
+border-style: solid;
+border-width: 3px;
+border-color:  #269bff;
+border-radius: 50%;
+transition-property: background, border;
+transition: .3s linear; 
+}
+#home .imgs > .pagin > .item.active {
+  border-color: #269bff;
+  background-color: #fff; 
+  }
+
+

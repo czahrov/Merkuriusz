@@ -45,7 +45,7 @@
 		);
 	?>
 	<div class='top-slider flex'>
-		<div class='text base3 grow flex flex-column'>
+		<div class='text base3 grow flex flex-column' style='display: none;'>
 			<div class='view grow flex'>
 				<?php
 					foreach( $data_slider as $num => $item ):
@@ -64,6 +64,17 @@
 				</div>
 				<?php endforeach; ?>
 			</div>
+	
+			
+		</div>
+		<div class='imgs base3 grow fp-hide flex-mm flex-column' style='margin-left: 0; position: relative;'>
+			<div class='view grow flex'>
+				<?php
+					foreach( $data_slider as $num => $item ):
+				?>
+				<div class='item base1 no-shrink bgimg full<?php if( $num === 0 ) echo " active "; ?>' style='background-image: url(<?php echo $item['img']; ?>);'></div>
+				<?php endforeach; ?>
+			</div>
 			<div class='pagin flex'>
 				<?php
 					foreach( $data_slider as $num => $item ): 
@@ -72,17 +83,6 @@
 				<?php endforeach; ?>
 				
 			</div>
-			
-		</div>
-		<div class='imgs base3 grow fp-hide flex-mm flex-column'>
-			<div class='view grow flex'>
-				<?php
-					foreach( $data_slider as $num => $item ):
-				?>
-				<div class='item base1 no-shrink bgimg full<?php if( $num === 0 ) echo " active "; ?>' style='background-image: url(<?php echo $item['img']; ?>);'></div>
-				<?php endforeach; ?>
-			</div>
-			
 		</div>
 		
 	</div>
@@ -114,7 +114,7 @@
 				<div class="main-picture main-picture-powerbank">
 					<a class='over'></a>
 					<div class="main-picture-content">
-						<div class="main-picture-title">Power banki</div>
+						<div class="main-picture-title"> POWER BANKI, USB , MYSZKI <br>( usb tworzymy modele na zamówienie)</div>
 						<a class="btn main-picture-btn pop-up-clothes powerbank">Zobacz produkty</a>
 					</div>
 				</div>
@@ -292,7 +292,7 @@
 						<div class="inner-catalog-cont">
 							<div class="inner-catalog-title">Katalog easy stand</div>
 							<div class="inner-catalog-text">Coś o katalogu</div>
-							<a class="btn inner_catalog_btn">pokaż pdf</a></div>
+							<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/Easystand-folder-rollupy-2.pdf" class="btn inner_catalog_btn">pokaż pdf</a></div>
 					</div>
 					
 					<div class="inner-catalog-wrapper">
@@ -300,7 +300,7 @@
 						<div class="inner-catalog-cont">
 							<div class="inner-catalog-title">Katalog easy stand</div>
 							<div class="inner-catalog-text">Coś o katalogu</div>
-							<a class="btn inner_catalog_btn">pokaż pdf</a></div>
+							<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/Easystand-folder-popup.pdf" class="btn inner_catalog_btn">pokaż pdf</a></div>
 					</div>
 					
 		

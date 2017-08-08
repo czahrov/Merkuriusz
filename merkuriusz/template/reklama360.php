@@ -5,8 +5,8 @@
 			<div class="advert_icon_holder">
 				<div class="advert_icon_rollup"></div>
 			</div>
-			<div class="advert_title">Systemy Wystawiennicze</div>
-			<div class="advert_text">Projektujemy, drukujemy oraz składamy roll-upy, ścianki wystawiennicze</div>
+			<div class="advert_title">Identyfikacja Wizualna Firm</div>
+			<div class="advert_text"><!--Projektujemy, drukujemy oraz składamy roll-upy, ścianki wystawiennicze--> Systemy wystawiennicze, roll-upy, ścianki, trybunki, flagi, maszty, banery, szyldy i szafki</div>
 			<div class="text-center">
 			<a class="btn advert_btn pop-up-clothes wystawnicze">czytaj więcej <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
 		</div>
