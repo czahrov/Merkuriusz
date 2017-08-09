@@ -107,6 +107,9 @@
 									'title' => 'Teczki',
 								),
 								array(
+									'title' => 'Aktówki',
+								),
+								array(
 									'title' => 'Podkładki',
 								),
 								array(
@@ -480,7 +483,13 @@
 									'title' => 'Metalowe',
 								),
 								array(
+									'title' => 'Aluminiowe',
+								),
+								array(
 									'title' => 'Plastikowe',
+								),
+								array(
+									'title' => 'Drewniane',
 								),
 								array(
 									'title' => 'Antystresy',
@@ -525,6 +534,9 @@
 									'title' => 'Saszetki',
 								),
 								array(
+									'title' => 'Etui na karty',
+								),
+								array(
 									'title' => 'Smycze',
 								),
 								array(
@@ -553,6 +565,9 @@
 								),
 								array(
 									'title' => 'Termosy i bidony',
+								),
+								array(
+									'title' => 'Torebki',
 								),
 								array(
 									'title' => 'Inne',
@@ -1000,7 +1015,10 @@
 							),
 						),
 						array(
-							'title' => 'Adaptery i huby USB',
+							'title' => 'Adaptery',
+						),
+						array(
+							'title' => 'Huby USB',
 						),
 						array(
 							'title' => 'Akcesoria do telefonów i tabletów',

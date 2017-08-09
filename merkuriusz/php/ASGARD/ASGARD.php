@@ -59,16 +59,23 @@ class ASGARD extends XMLAbstract{
 		}
 		else{
 			$this->logger( "odczyt XML z pliku $file", __FUNCTION__, __CLASS__ );
-			foreach( $this->_XML[ $file ]->children() as $sxe ){
+			foreach( $this->_XML[ $file ]->children() as $item ){
+				
+				/* =============== KATEGORIA =============== */
+				
+				/* =============== //KATEGORIA =============== */
+				/* =============== PODKATEGORIA =============== */
+				
+				/* =============== //PODKATEGORIA =============== */
 				
 				$cat = array();
-				$cat[ $this->stdNameCache( (string)$sxe->kategoria ) ][ $this->stdNameCache( (string)$sxe->podkategoria ) ] = array();
+				$cat[ $this->stdNameCache( (string)$item->kategoria ) ][ $this->stdNameCache( (string)$item->podkategoria ) ] = array();
 				
 				$img = array();
-				$img[] = "http://asgard.pl/png/product/" . (string)$sxe->obraz_1;
+				$img[] = "http://asgard.pl/png/product/" . (string)$item->obraz_1;
 				
 				$mark = array();
-				preg_match_all( "~(\w.*?) \((.*?)\)(?: \((.*?)\))?~", (string)$sxe->znakowanie_produktu, $match );
+				preg_match_all( "~(\w.*?) \((.*?)\)(?: \((.*?)\))?~", (string)$item->znakowanie_produktu, $match );
 				for( $i=0; $i<count( $match[0] ); $i++ ){
 					$type = $match[1][ $i ];
 					$size = $match[2][ $i ];
@@ -81,18 +88,42 @@ class ASGARD extends XMLAbstract{
 					
 				}
 				
-				$ret[] = array(
-					'ID' => (int)$sxe->indeks,
-					'NAME' => (string)$sxe->nazwa,
-					'DSCR' => (string)$sxe->opis_produktu,
-					'IMG' => $img,
-					'CAT' => $cat,
-					'DIM' => (string)$sxe->wymiary_produktu,
-					'MARK' => $mark,
-					'INSTOCK' => (int)$sxe->in_stock,
+				$ret[] = array_merge(
+					array(
+						'ID' => 'brak danych',
+						'NAME' => 'brak danych',
+						'DSCR' => 'brak danych',
+						'IMG' => array(),
+						'CAT' => array(),
+						'DIM' => 'brak danych',
+						'MARK' => array(),
+						'INSTOCK' => 'brak danych',
+						'MATTER' => 'brak danych',
+						'COLOR' => 'brak danych',
+						'COUNTRY' => 'brak danych',
+						'CATALOG' => 'brak danych',
+						'PACKAGE' => array(
+							'SINGLE' => 'brak danych',
+							'TOTAL' => 'brak danych',
+							'DIM' => 'brak danych',
+							'WEIGHT' => 'brak danych',
+							'INSIDE' => 'brak danych',
+							
+						),
+					),
+					array(
+						'ID' => (int)$item->indeks,
+						'NAME' => (string)$item->nazwa,
+						'DSCR' => (string)$item->opis_produktu,
+						'IMG' => $img,
+						'CAT' => $cat,
+						'DIM' => (string)$item->wymiary_produktu,
+						'MARK' => $mark,
+						'INSTOCK' => (int)$item->in_stock,
+						
+					)
 					
 				);
-				
 			}
 			
 		}

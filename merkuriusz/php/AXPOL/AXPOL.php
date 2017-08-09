@@ -182,7 +182,7 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				elseif( $subcat_name === 'huby usb' ){
-					$subcat_name = "adaptery i huby usb";
+					$subcat_name = "huby usb";
 					
 				}
 				elseif( $subcat_name === 'koce' ){
@@ -350,6 +350,18 @@ class AXPOL extends XMLAbstract{
 						}
 						
 					}
+					elseif( $subcat_name === 'adaptery i huby usb' ){
+						if( stripos( (string)$item->TitlePL, 'hub' ) !== false ){
+							$subcat_name = 'huby usb';
+							
+						}
+						else{
+							$cat_name = 'xxx';
+							$subcat_name = 'usb';
+							
+						}
+						
+					}
 					
 				}
 				elseif( $cat_name === 'dom' ){
@@ -361,8 +373,8 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				
-				// 'NAME' => (string)$item->TitlePL,
-				// 'DSCR' => (string)$item->DescriptionPL,
+				// (string)$item->TitlePL
+				// (string)$item->DescriptionPL
 				
 				/* ========== PODKATEGORIE ========== */
 				

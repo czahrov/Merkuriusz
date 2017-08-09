@@ -136,6 +136,14 @@ class ANDA extends XMLAbstract{
 						$cat_name = 'wypoczynek';
 						
 					}
+					elseif( $cat_name === 'bags & travel' ){
+						$cat_name = 'torby i plecaki';
+						
+					}
+					elseif( $cat_name === 'keys & tools' ){
+						$cat_name = 'narzędzia';
+						
+					}
 					
 					/* ========== //KATEGORIE ==========  */
 					/* ========== PODKATEGORIE ==========  */
@@ -1010,7 +1018,7 @@ class ANDA extends XMLAbstract{
 								$subcat_name  = 'akcesoria do pieczenia';
 								
 							}
-							elseif( stripos( (string)$item->attributes()->name, 'rysik' ) !== false ){
+							elseif( stripos( (string)$item->attributes()->name, 'rysik' ) !== false or stripos( (string)$item->attributes()->name, 'smart' ) !== false ){
 								$cat_name = 'akcesoria do telefonów i tabletów';
 								$subcat_name  = 'akcesoria';
 								
@@ -1065,7 +1073,7 @@ class ANDA extends XMLAbstract{
 								$subcat_name  = 'inne';
 								
 							}
-							elseif( stripos( (string)$item->attributes()->name, 'bank' ) !== false ){
+							elseif( stripos( (string)$item->attributes()->name, 'bank' ) !== false or stripos( (string)$item->description, 'bank' ) !== false ){
 								$val = null;
 						
 								if( stripos( (string)$item->attributes()->name, ' mAh' ) !== false ){
@@ -1104,7 +1112,7 @@ class ANDA extends XMLAbstract{
 								}
 								
 							}
-							elseif( stripos( (string)$item->attributes()->name, 'etui' ) !== false ){
+							elseif( stripos( (string)$item->attributes()->name, 'etui' ) !== false or stripos( (string)$item->attributes()->name, 'pokrowiec' ) !== false ){
 								$cat_name = 'Akcesoria do telefonów i tabletów';
 								$subcat_name = 'etui i podstawki';
 								
@@ -1131,6 +1139,864 @@ class ANDA extends XMLAbstract{
 								$subcat_name = 'termosy';
 								
 							}
+							elseif( stripos( (string)$item->attributes()->name, 'telefon' ) !== false ){
+								if( stripos( (string)$item->attributes()->name, 'uchwyt' ) !== false ){
+									$cat_name = 'Akcesoria do telefonów i tabletów';
+									$subcat_name = 'Akcesoria do telefonów';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'podkład' ) !== false ){
+								if( stripos( (string)$item->attributes()->name, 'mysz' ) !== false ){
+									$cat_name = 'akcesoria komputerowe';
+									$subcat_name = 'mysz';
+									
+								}
+								else{
+									$cat_name = 'biuro';
+									$subcat_name = 'podkładki';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'wieszak' ) !== false ){
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'inne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'miar' ) !== false ){
+								$cat_name = 'narzędzia';
+								$subcat_name = 'miarki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'ścier' ) !== false or stripos( (string)$item->attributes()->name, 'zakładka' ) !== false or stripos( (string)$item->attributes()->name, 'cukierki' ) !== false ){
+								$cat_name = 'dodatki';
+								$subcat_name = 'inne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'czasomierz' ) !== false or stripos( (string)$item->attributes()->name, 'podstaw' ) !== false or stripos( (string)$item->attributes()->name, 'otwieracz' ) !== false or stripos( (string)$item->attributes()->name, 'czyszcz' ) !== false ){
+								$cat_name = 'dom';
+								$subcat_name = 'akcesoria kuchenne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'torba' ) !== false ){
+								$cat_name = 'torby i plecaki';
+								
+								if( stripos( (string)$item->attributes()->name, 'zakupy' ) !== false ){
+									$subcat_name = 'na zakupy';
+									
+								}
+								else{
+									$subcat_name = 'inne';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'klip' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'klipy do notatek';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'usb' ) !== false or stripos( (string)$item->attributes()->name, 'pendrive' ) !== false ){
+								if( stripos( (string)$item->attributes()->name, 'ładowark' ) !== false ){
+									$cat_name = 'elektronika';
+									$subcat_name = 'ładowarki usb';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'gb' ) !== false or stripos( (string)$item->attributes()->name, 'drive' ) !== false ){
+									$cat_name = 'pamięci usb';
+									$subcat_name = 'pozostałe';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'puzzle' ) !== false or stripos( (string)$item->attributes()->name, 'koszyków' ) !== false or stripos( (string)$item->attributes()->name, 'gra' ) !== false ){
+								$cat_name = 'wypoczynek';
+								$subcat_name = 'gry i zabawy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'bransol' ) !== false or stripos( (string)$item->attributes()->name, 'kolczyk' ) !== false or stripos( (string)$item->attributes()->name, 'pierście' ) !== false ){
+								$cat_name = 'biżuteria i akcesoria';
+								$subcat_name = '';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'krawat' ) !== false or stripos( (string)$item->attributes()->name, 'kapelusz' ) !== false or stripos( (string)$item->attributes()->name, 'pasek' ) !== false or stripos( (string)$item->attributes()->name, 'mankiet' ) !== false ){
+								$cat_name = 'tekstylia';
+								
+								if( stripos( (string)$item->attributes()->name, 'kapelusz' ) !== false ){
+									$subcat_name = 'kapelusze';
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'krawat' ) !== false ){
+									$subcat_name = 'krawaty i apaszki';
+								}
+								else{
+									$subcat_name = 'inne';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'wizytownik' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'wizytowniki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'grzebień' ) !== false ){
+								$cat_name = 'uroda';
+								$subcat_name = 'akcesoria kosmetyczne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'zakreślacz' ) !== false ){
+								$cat_name = 'materiały piśmiennicze';
+								$subcat_name = 'zakreślacze';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'na butelkę' ) !== false ){
+								$cat_name = 'do picia';
+								$subcat_name = 'inne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'czapka' ) !== false ){
+								$cat_name = 'tekstylia';
+								
+								if( stripos( (string)$item->attributes()->name, 'zimow' ) !== false ){
+									$subcat_name = 'czapki zimowe';
+									
+								}
+								else{
+									$subcat_name = 'inne';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'bagaż' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'akcesoria podróżne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'zakład' ) !== false or stripos( (string)$item->description, 'zakład' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'akcesoria biurowe';
+								
+							}
+							else{
+								$cat_name = 'dodatki';
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						
+					}
+					elseif( $cat_name === 'office & business' ){
+						if( $subcat_name === 'smycze' ){
+							$cat_name = 'podróż';
+							
+						}
+						elseif( $subcat_name === 'teczki i podkładki' ){
+							if( stripos( (string)$item->attributes()->name, 'pod' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'podkładki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'teczk' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'teczki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'folder' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'foldery';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'notatnik' ) !== false or stripos( (string)$item->attributes()->name, 'organizer' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'notatniki i notesy';
+								
+							}
+							else{
+								$cat_name = 'biuro';
+								$subcat_name = 'akcesoria biurowe';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'linijki i zakładki' ){
+							if( stripos( (string)$item->attributes()->name, 'linijka' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'linijki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'zakład' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'akcesoria biurowe';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'karte' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'karteczki samoprzylepne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'podstaw' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'podkładki';
+								
+							}
+							else{
+								$cat_name = 'biuro';
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'szmatki do czyszczenia okularów' ){
+							$cat_name = 'dodatki';
+							$subcat_name = 'inne';
+							
+						}
+						elseif( $subcat_name === 'notatniki i spinacze' ){
+							if( stripos( (string)$item->attributes()->name, 'notatnik' ) !== false or stripos( (string)$item->description, 'notatnik' ) !== false or stripos( (string)$item->attributes()->name, 'notes' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'notatniki i notesy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'karte' ) !== false or stripos( (string)$item->description, 'karte' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'karteczki samoprzylepne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'klip' ) !== false or stripos( (string)$item->description, 'klip' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'klipy do notatek';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'notebook' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'notatniki i notesy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'zakład' ) !== false or stripos( (string)$item->attributes()->name, 'taśm' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'akcesoria biurowe';
+								
+							}
+							elseif( stripos( (string)$item->description, 'długopis' ) !== false ){
+								$cat_name = 'materiały piśmiennicze';
+								$subcat_name = 'długopisy';
+								
+							}
+							else{
+								$cat_name = 'dodatki';
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'uchwyty na długopisy' ){
+							$cat_name = 'biuro';
+							$subcat_name = 'pojemniki na długopisy';
+							
+						}
+						elseif( $subcat_name === 'materiały biurowe' ){
+							$cat_name = 'biuro';
+							$subcat_name = 'akcesoria biurowe';
+							
+						}
+						elseif( $subcat_name === 'kalkulatory' ){
+							$cat_name = 'elektronika';
+							$subcat_name = 'kalkulatory';
+							
+						}
+						elseif( $subcat_name === 'produkty szklane pod 3d' ){
+							$cat_name = 'dodatki';
+							$subcat_name = 'inne';
+							
+						}
+						elseif( $subcat_name === 'wizytowniki' ){
+							$cat_name = 'biuro';
+							$subcat_name = 'wizytowniki';
+							
+						}
+						
+						
+					}
+					elseif( $cat_name === 'torby i plecaki' ){
+						if( $subcat_name === 'torby na zakupy' ){
+							$subcat_name = 'na zakupy';
+							
+						}
+						elseif( $subcat_name === 'torby papierowe' ){
+							$subcat_name = 'papierowe';
+							
+						}
+						elseif( $subcat_name === 'portfele i etui na karty' ){
+							if( stripos( (string)$item->attributes()->name, 'portfel' ) !== false or stripos( (string)$item->attributes()->name, 'portofel' ) !== false  or stripos( (string)$item->attributes()->name, 'potfel' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'portfele';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, ' kart' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'etui na karty';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, ' portmon' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'portmonetki';
+								
+							}
+							elseif( stripos( (string)$item->description, ' telefon' ) !== false ){
+								$cat_name = 'akcesoria do telefonów i tabletów';
+								$subcat_name = 'akcesoria do telefonów';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, ' toreb' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'torebki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, ' wizytow' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'wizytowniki';
+								
+							}
+							else{
+								$cat_name = 'biuro';
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'akcesoria podróżne' ){
+							if( stripos( (string)$item->attributes()->name, 'torebka' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'torebki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'bagaż' ) !== false ){
+								$cat_name = 'podróż';
+								$subcat_name = 'akcesoria podróżne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'adapter' ) !== false ){
+								$cat_name = 'elektronika';
+								$subcat_name = 'adaptery';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'wieszak' ) !== false ){
+								$cat_name = 'dodatki';
+								$subcat_name = 'inne';
+								
+							}
+							else{
+								$cat_name = 'podróż';
+								$subcat_name = 'akcesoria podróżne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'torby podróżne, na kółkach i sportowe' ){
+							if( stripos( (string)$item->attributes()->name, 'torebka' ) !== false ){
+								$cat_name = 'podróz';
+								$subcat_name = 'torebki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'torba' ) !== false ){
+								if( stripos( (string)$item->attributes()->name, 'plaż' ) !== false ){
+									$cat_name = 'torby i plecaki';
+									$subcat_name = 'torby plażowe';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'sznur' ) !== false ){
+									$cat_name = 'torby i plecaki';
+									$subcat_name = 'worki ze sznurkiem';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'ramię' ) !== false ){
+									$cat_name = 'torby i plecaki';
+									$subcat_name = 'torby na ramię';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'sport' ) !== false or stripos( (string)$item->description, 'sport' ) !== false or stripos( (string)$item->attributes()->name, 'kółk' ) !== false ){
+									$cat_name = 'podróż';
+									$subcat_name = 'torby podróżne i sportowe';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'zakup' ) !== false ){
+									$cat_name = 'torby i torebki';
+									$subcat_name = 'na zakupy';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'ręcznik' ) !== false or stripos( (string)$item->attributes()->name, 'wodoodpor' ) !== false ){
+									$cat_name = 'wypoczynek';
+									$subcat_name = 'akcesoria plażowe';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'odblask' ) !== false ){
+									$cat_name = 'odblaski';
+									$subcat_name = 'inne';
+									
+								}
+								else{
+									$cat_name = 'torby i plecaki';
+									$subcat_name = 'inne';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'worek' ) !== false or stripos( (string)$item->description, 'żeglar' ) !== false ){
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'worki ze sznurkiem';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'plecak' ) !== false or stripos( (string)$item->attributes()->name, 'pleacak' ) !== false ){
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'plecaki';
+								
+							}
+							else{
+								$cat_name = 'podróż';
+								$subcat_name = 'akcesoria podróżne';
+							}
+							
+						}
+						elseif( $subcat_name === 'plecaki' ){
+							if( stripos( (string)$item->attributes()->name, 'plecak' ) !== false ){
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'plecaki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'worek' ) !== false ){
+								if( stripos( (string)$item->attributes()->name, 'sznur' ) !== false ){
+									$cat_name = 'torby i plecaki';
+									$subcat_name = 'worki ze sznurkiem';
+									
+								}
+								else{
+									$cat_name = 'torby i plecaki';
+									$subcat_name = 'inne';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'termoizolacyjn' ) !== false ){
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'termoizolacyjne';
+								
+							}
+							else{
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'torby na dokumenty, na ramię i na laptopa' ){
+							if( stripos( (string)$item->attributes()->name, 'torba' ) !== false ){
+								if( stripos( (string)$item->attributes()->name, 'laptop' ) !== false or stripos( (string)$item->attributes()->name, 'dokument' ) !== false ){
+									$cat_name = 'torby i plecaki';
+									$subcat_name = 'na laptopa i dokumenty';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'ramię' ) !== false or stripos( (string)$item->description, 'ramię' ) !== false ){
+									$cat_name = 'torby i plecaki';
+									$subcat_name = 'torby na ramię';
+									
+								}
+								else{
+									$cat_name = 'torby i plecaki';
+									$subcat_name = 'inne';
+									
+								}
+							
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'folder' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'foldery';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'teczka' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'teczki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'aktówk' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'aktówki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'plecak' ) !== false ){
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'plecak';
+								
+							}
+							else{
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'torby na plażę' ){
+							if( stripos( (string)$item->attributes()->name, 'plaż' ) !== false ){
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'torby plażowe';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'zakup' ) !== false ){
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'na zakupy';
+								
+							}
+							else{
+								$cat_name = 'torby i plecaki';
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'parasole' ){
+							$cat_name = 'przeciwdeszczowe';
+							
+						}
+						elseif( $subcat_name === 'wieszaki na teczki' ){
+							$cat_name = 'dodatki';
+							$subcat_name = 'inne';
+							
+						}
+						
+					}
+					elseif( $cat_name === 'narzędzia' ){
+						if( $subcat_name === 'breloki' ){
+							if( stripos( (string)$item->description, 'miś' ) !== false ){
+								$cat_name = 'pluszaki i maskotki';
+								$subcat_name = 'breloki';
+								
+							}
+							elseif( stripos( (string)$item->description, 'alumin' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'aluminiowe';
+								
+							}
+							elseif( stripos( (string)$item->description, 'plastik' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'plastikowe';
+								
+							}
+							elseif( stripos( (string)$item->description, 'drewn' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'drewniane';
+								
+							}
+							elseif( stripos( (string)$item->description, 'metal' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'metalowe';
+								
+							}
+							elseif( stripos( (string)$item->description, 'akryl' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'akrylowe';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'antystres' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'antystresy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'sklep' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'breloki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'pojemnik' ) !== false or stripos( (string)$item->attributes()->name, 'usb' ) !== false or stripos( (string)$item->attributes()->name, 'taśm' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'wielofunkcyjne';
+								
+							}
+							elseif( stripos( (string)$item->description, 'metal' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'metalowe';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'odblask' ) !== false ){
+								$cat_name = 'odblaski';
+								$subcat_name = 'breloki';
+								
+							}
+							else{
+								$cat_name = 'breloki';
+								$subcat_name = 'breloki';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'akcesoria samochodowe' ){
+							$subcat_name = 'samochód';
+							
+						}
+						elseif( $subcat_name === 'monety do wózków zakupowych' ){
+							if( stripos( (string)$item->description, 'alumin' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'aluminiowe';
+								
+							}
+							elseif( stripos( (string)$item->description, 'plastik' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'plastikowe';
+								
+							}
+							elseif( stripos( (string)$item->description, 'drewn' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'drewniane';
+								
+							}
+							elseif( stripos( (string)$item->description, 'metal' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'metalowe';
+								
+							}
+							elseif( stripos( (string)$item->description, 'akryl' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'akrylowe';
+								
+							}
+							else{
+								$cat_name = 'breloki';
+								$subcat_name = 'breloki';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'latarki' ){
+							if( stripos( (string)$item->attributes()->name, 'latar' ) !== false or stripos( (string)$item->description, 'latar' ) !== false ){
+								$subcat_name = 'latarki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'lamp' ) !== false or stripos( (string)$item->description, 'lamp' ) !== false ){
+								$subcat_name = 'lampki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'śrubo' ) !== false ){
+								$subcat_name = 'śrubokręty';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'brelok' ) !== false or stripos( (string)$item->description, 'brelok' ) !== false ){
+								if( stripos( (string)$item->description, 'alumin' ) !== false ){
+									$cat_name = 'breloki';
+									$subcat_name = 'aluminiowe';
+									
+								}
+								elseif( stripos( (string)$item->description, 'plastik' ) !== false ){
+									$cat_name = 'breloki';
+									$subcat_name = 'plastikowe';
+									
+								}
+								elseif( stripos( (string)$item->description, 'drewn' ) !== false ){
+									$cat_name = 'breloki';
+									$subcat_name = 'drewniane';
+									
+								}
+								elseif( stripos( (string)$item->description, 'metal' ) !== false ){
+									$cat_name = 'breloki';
+									$subcat_name = 'metalowe';
+									
+								}
+								elseif( stripos( (string)$item->description, 'akryl' ) !== false ){
+									$cat_name = 'breloki';
+									$subcat_name = 'akrylowe';
+									
+								}
+								else{
+									$cat_name = 'breloki';
+									$subcat_name = 'breloki';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->description, 'otwieracz' ) !== false && stripos( (string)$item->description, 'kółk' ) !== false ){
+								$cat_name = 'breloki';
+								$subcat_name = 'otwieracze do butelek';
+								
+							}
+							else{
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'produkty fluoroscencyjne' ){
+							$cat_name = 'odblaski';
+							
+							if( stripos( (string)$item->attributes()->name, 'kamizelka' ) !== false ){
+								$subcat_name = 'kamizelki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'brelok' ) !== false ){
+								$subcat_name = 'breloki';
+								
+							}
+							else{
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'kieszonkowe noże, narzędzia i miarki' ){
+							if( stripos( (string)$item->attributes()->name, 'wielofunk' ) !== false or stripos( (string)$item->description, 'wielofunk' ) !== false ){
+								$subcat_name =  'wielofunkcyjne';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'scyzor' ) !== false ){
+								$subcat_name =  'scyzoryki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'miar' ) !== false or stripos( (string)$item->attributes()->name, 'mier' ) !== false ){
+								$subcat_name =  'miary i miarki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'nóż' ) !== false ){
+								$subcat_name =  'noże i nożyki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'śrubo' ) !== false ){
+								$subcat_name =  'śrubokręty';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'zestaw' ) !== false ){
+								$subcat_name =  'zestawy';
+								
+							}
+							else{
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						
+					}
+					elseif( $cat_name === 'kids & toys' ){
+						if( in_array( $subcat_name, array( 'zabawki i gry', 'jo-jo i magiczne puzzle' ) ) ){
+							if( stripos( (string)$item->attributes()->name, 'koszykówk' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'balony' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'jo-jo' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'yo-yo' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'puzzle' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'puzle' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'baniek' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'zabaw' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'samolot' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'gra' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'grzech' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'poker' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'zmywal' ) !== false ){
+								$cat_name = 'wypoczynek';
+								$subcat_name = 'gry i zabawy';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'skarbon' ) !== false ){
+								$cat_name = 'dodatki';
+								$subcat_name = 'skarbonki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'magnes' ) !== false ){
+								$cat_name = 'dom';
+								$subcat_name = 'magnesy na lodówkę';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'brelok' ) !== false ){
+								if( stripos( (string)$item->description, 'miś' ) !== false ){
+									$cat_name = 'pluszaki i maskotki';
+									$subcat_name = 'breloki';
+									
+								}
+								elseif( stripos( (string)$item->description, 'drewn' ) !== false ){
+									$cat_name = 'breloki';
+									$subcat_name = 'drewniane';
+									
+								}
+								else{
+									$cat_name = 'breloki';
+									$subcat_name = 'breloki';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'misiu' ) !== false or stripos( (string)$item->attributes()->name, 'miś' ) !== false ){
+								$cat_name = 'pluszaki i maskotki';
+								$subcat_name = 'misie';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'plusz' ) !== false ){
+								if( stripos( (string)$item->attributes()->name, 'krowa' ) !== false or stripos( (string)$item->attributes()->name, 'kaczka' ) !== false ){
+									$cat_name = 'pluszaki i maskotki';
+									$subcat_name = 'domowe';
+									
+								}
+								else{
+									$cat_name = 'pluszaki i maskotki';
+									$subcat_name = 'dzikie';
+									
+								}
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'wirtualn' ) !== false ){
+								$cat_name    = 'akcesoria do telefonów i tabletów';
+								$subcat_name = 'okulary wirtualnej rzeczywistości';
+								
+							}
+							else{
+								$cat_name = 'dodatki';
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'linijki i ostrzynki' ){
+							if( stripos( (string)$item->attributes()->name, 'temper' ) !== false or 
+							stripos( (string)$item->description, 'temper' ) !== false or 
+							stripos( (string)$item->attributes()->name, 'ostrzyn' ) !== false ){
+								$cat_name = 'materiały piśmiennicze';
+								$subcat_name = 'temperówki';
+								
+							}
+							elseif( stripos( (string)$item->attributes()->name, 'linij' ) !== false ){
+								$cat_name = 'biuro';
+								$subcat_name = 'linijki';
+								
+							}
+							else{
+								$cat_name = 'dodatki';
+								$subcat_name = 'inne';
+								
+							}
+							
+						}
+						elseif( $subcat_name === 'skarbonki' ){
+							$cat_name = 'dodatki';
+							$subcat_name = 'skarbonki';
+							
+						}
+						
+					}
+					elseif( $cat_name === 'xmas' ){
+						$cat_name = 'świąteczne';
+						$subcat_name =  '';
+						
+					}
+					elseif( $cat_name === 'indywidualny produkt' ){
+						if( stripos( (string)$item->attributes()->name, 'brelok' ) !== false ){
+							$cat_name = 'breloki';
+							$subcat_name = 'breloki';
+							
+						}
+						elseif( stripos( (string)$item->attributes()->name, 'organizer' ) !== false ){
+							$cat_name = 'biuro';
+							$subcat_name = 'notatniki i notesy';
+							
+						}
+						else{
+							$cat_name = 'dodatki';
+							$subcat_name =  'inne';
 							
 						}
 						
