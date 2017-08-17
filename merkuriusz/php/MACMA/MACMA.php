@@ -470,12 +470,23 @@ class MACMA extends XMLAbstract{
 										}
 										
 									}
+									elseif( $subcat_name === 'kredki i ołówki' ){
+										if( stripos( (string)$item->baseinfo->name, 'ołów' ) !== false ){
+											$subcat_name = 'ołówki';
+											
+										}
+										elseif( stripos( (string)$item->baseinfo->name, 'kred' ) !== false ){
+											$subcat_name = 'kredki';
+											
+										}
+										
+									}
 									
 								}
-								
-								// 'NAME' => (string)$item->baseinfo->name
-								// 'DSCR' => (string)$item->baseinfo->intro[0]
-								
+								/* 
+								(string)$item->baseinfo->name
+								(string)$item->baseinfo->intro[0]
+								 */
 								/* ============== //PODKATEGORIE ==============  */
 								
 							}

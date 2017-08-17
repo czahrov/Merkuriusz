@@ -332,8 +332,8 @@ class XMLAbstract{
 		
 	*/
 	protected function stdName( $name ){
-		$find = explode( ",", "Ą,Ę,Ż,Ź,Ó,Ł,Ć,Ń,Ś" );
-		$replace = explode( ",", "ą,ę,ż,ź,ó,ł,ć,ń,ś" );
+		$find = explode( "|", " |Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś" );
+		$replace = explode( "|", "|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
 		
 		return str_replace( $find, $replace, strtolower( strip_tags( (string)$name ) ) );
 		
@@ -346,8 +346,8 @@ class XMLAbstract{
 		
 	*/
 	protected function stdNameCache( $name ){
-		$find = explode( "|", " |,|&|?|-|#|Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
-		$replace = explode( "|", "_||||||a|e|z|z|o|l|c|n|s|a|e|z|z|o|l|c|n|s" );
+		$find = explode( "|", " |/|,|&|?|-|#|Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
+		$replace = explode( "|", "_|||||||a|e|z|z|o|l|c|n|s|a|e|z|z|o|l|c|n|s" );
 		
 		return str_replace( $find, $replace, strtolower( strip_tags( (string)$name ) ) );
 	}

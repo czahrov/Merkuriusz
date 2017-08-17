@@ -16,7 +16,7 @@
 						<?php
 							$post = get_post();
 							$slug = $post->post_name;
-							$cat_blog = get_category_by_slug('blog');
+							$cat_znak = get_category_by_slug('znakowanie_kategorie');
 							$cats = wp_get_post_categories( $post->ID );
 							echo "<!--";
 							echo "-->";
@@ -57,7 +57,7 @@
 		                        <a href="<?php echo home_url('oferta'); ?>" class="<?php if( $slug === 'oferta' ) echo "actived"; ?>">Oferta</a>
 		                    </li>
 		                    <li>
-		                        <a href="<?php echo home_url('znakowanie'); ?>" class="<?php if( $slug === 'znakowanie' ) echo "actived"; ?>">Znakowanie</a>
+		                        <a href="<?php echo home_url('znakowanie'); ?>" class="<?php if( $slug === 'znakowanie' || in_array( $cat_znak->cat_ID, $cats )) echo "actived"; ?>">Znakowanie</a>
 		                    </li>
 							  <li>
 		                        <a href="<?php echo home_url('drukarnia'); ?>" class="<?php if( $slug === 'drukarnia' ) echo "actived"; ?>">Drukarnia</a>
