@@ -24,7 +24,7 @@
 			<div class="popup-content">
 				<div class="sliderpop-container row">
 					<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/lecce-pen-katalog-z-cenami.pdf" target="_blank"><div class="sliderpop-element"><img class="sliderpop-image" src="<?php echo get_template_directory_uri(); ?>/img/dlugopisy/logo-lecce-pen.png"></div></a>
-					<a href="" target="_blank"><div class="sliderpop-element"><img class="sliderpop-image" src="<?php echo get_template_directory_uri(); ?>/img/dlugopisy/viva_pens.jpg"></div></a>
+					<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/katalog-VIVA-classic.pdf" target="_blank"><div class="sliderpop-element"><img class="sliderpop-image" src="<?php echo get_template_directory_uri(); ?>/img/dlugopisy/viva_pens.jpg"></div></a>
 					<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/dream-pen.pdf" target="_blank"><div class="sliderpop-element">Dream Pen</div></a>
 					<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/06/Ritter-Katalog-2017_EXPORT_100dpi.pdf" target="_blank"><div class="sliderpop-element"><img class="sliderpop-image" src="<?php echo get_template_directory_uri(); ?>/img/dlugopisy/ritter_pen.png"></div></a>
 					<a href="" target="_blank"><div class="sliderpop-element"><img class="sliderpop-image" src="<?php echo get_template_directory_uri(); ?>/img/dlugopisy/bic_logo.png"></div></a>
@@ -42,7 +42,7 @@
 			<div class="popup-content">
 				<div class="sliderpop-container row">
 					<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/milenium-katalog-długopisy-metalowe_1-Milenium-2017-1.pdf" target="_blank"><div class="sliderpop-element">Millenium</div></a>
-					<a href="" target="_blank"><div class="sliderpop-element"><img class="sliderpop-image" src="<?php echo get_template_directory_uri(); ?>/img/dlugopisy/viva_pens.jpg"></div></a>
+					<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/katalog-VIVA-prestige.pdf" target="_blank"><div class="sliderpop-element"><img class="sliderpop-image" src="<?php echo get_template_directory_uri(); ?>/img/dlugopisy/viva_pens.jpg"></div></a>
 				</div>
 			</div>
 		</div>

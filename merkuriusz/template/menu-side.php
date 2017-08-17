@@ -38,7 +38,7 @@
 									'title' => 'Pióra wieczne i kulkowe',
 								),
 								array(
-									'title' => 'Kredki i ołówki',
+									'title' => 'Kredki',
 								),
 								array(
 									'title' => 'Ołówki',

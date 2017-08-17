@@ -8,33 +8,7 @@
 <body>
 	   <script src="//maps.google.com/maps/api/js?language=pl&key=AIzaSyBxVNTb4QJSrSuBpEe_3NpRgl_bwlt8kdk"></script>
         
-	<div class="intro-bar">
-		<div class="inner-intro-bar container">
-			<div class="col-md-6 intro-item1">Merkuriusz - Techniki nadruków Tarnów</div>
-			<div class="col-md-6 intro-item2">Masz pytania? Chętnie na nie odpowiemy <span class="big-text">14 662 33 64</span></div>
-		</div>
-	</div>
-
-	<div class="container">
-
-		<div class="col-md-5">
-			<div class="logo">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/logo_merkuriusz.png" class="logo-src" alt="merkuriusz logo">
-			</div>
-		</div>
-		<div class="col-md-7">
-			<div class="input-group">
-                <input type="text" placeholder="Wpisz nazwę lub kod produktu" class="form-control">
-                <span class="input-group-btn">
-                 <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                </span>
-             </div>
-		</div>
-	</div>
-
-<!-- NAVIGATION -->
-		  <?php get_template_part("template/menu"); ?>
-		
+<?php get_template_part( "template/page", "top" ); ?>
 	<!-- GOOGLE MAP -->
 	<div id="map">
 		

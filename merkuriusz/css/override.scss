@@ -1,19 +1,4 @@
-// PALETA
-$color-ramka-szara: #e7e7e7;
-$color-fofcio: #D10990;
-$color-elektronika: #1f9DF1;
-$color-vip: #1d1d1d;
-$color-vip-elektronika: hsl(40, 90%, 40%);
-$color-vip-skora: #733f3c;
-$color-vip-victorinox: #e40b0e;
-
-$color-menu-hover: #2A96F8;
-$color-pagin-niebieski: rgb(38,155,255);
-$color-pagin-szary: #D3D3D3;
-$color-menu-active: #0af;
-$color-single-title: #2a96f8;
-$color-popup-bg: rgba(0,0,0,0.8);
-
+@import 'paleta';
 
 // STYLE
 a{

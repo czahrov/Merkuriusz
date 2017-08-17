@@ -286,7 +286,7 @@
 			<h2 class="popup-title">Systemy wystawnicze</h2>
 			<div class="popup-content popup-catalog-content">
 			
-				<div class="catalog-wrapper">
+				<div class="catalog-wrapper wystawiennicze-wrapper">
 					<div class="inner-catalog-wrapper">
 						<div class="inner-catalog-img" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/katalogi/Katalog_Easy_Stand_Roll_up.jpg)"></div>
 						<div class="inner-catalog-cont">
@@ -308,8 +308,8 @@
 				</div>
 					<div class="col-xs-12">
 						<ul class="pager">
-						  <li><a href="#"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a></li>
-						  <li><a href="#"><i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i></a></li>
+						  <li><a><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a></li>
+						  <li><a><i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
 			</div>
