@@ -1593,9 +1593,14 @@ class ANDA extends XMLAbstract{
 						}
 						elseif( $subcat_name === 'torby na dokumenty, na ramię i na laptopa' ){
 							if( stripos( (string)$item->attributes()->name, 'torba' ) !== false ){
-								if( stripos( (string)$item->attributes()->name, 'laptop' ) !== false or stripos( (string)$item->attributes()->name, 'dokument' ) !== false ){
+								if( stripos( (string)$item->attributes()->name, 'laptop' ) !== false ){
 									$cat_name = 'torby i plecaki';
-									$subcat_name = 'na laptopa i dokumenty';
+									$subcat_name = 'na laptopa';
+									
+								}
+								elseif( stripos( (string)$item->attributes()->name, 'dokument' ) !== false ){
+									$cat_name = 'torby i plecaki';
+									$subcat_name = 'na dokumenty';
 									
 								}
 								elseif( stripos( (string)$item->attributes()->name, 'ramię' ) !== false or stripos( (string)$item->description, 'ramię' ) !== false ){

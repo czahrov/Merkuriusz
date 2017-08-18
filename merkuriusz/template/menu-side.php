@@ -143,6 +143,12 @@
 									'title' => 'Na laptopa i dokumenty',	
 								),
 								array(
+									'title' => 'Na laptopa',	
+								),
+								array(
+									'title' => 'Na dokumenty',	
+								),
+								array(
 									'title' => 'Na zakupy',
 								),
 								array(
@@ -152,7 +158,16 @@
 									'title' => 'Podróżne i sportowe',
 								),
 								array(
+									'title' => 'Podróżne',
+								),
+								array(
+									'title' => 'Sportowe',
+								),
+								array(
 									'title' => 'Termoizolacyjne',
+								),
+								array(
+									'title' => 'Wodoodporne',
 								),
 								array(
 									'title' => 'Świąteczne',
@@ -217,6 +232,9 @@
 								),
 								array(
 									'title' => 'Ceramika',
+								),
+								array(
+									'title' => 'Kieliszki',
 								),
 								array(
 									'title' => 'Kubki',

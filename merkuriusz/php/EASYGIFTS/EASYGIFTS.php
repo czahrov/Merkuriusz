@@ -158,8 +158,26 @@ class EASYGIFTS extends XMLAbstract {
 					
 					
 				}
-				elseif( in_array( $subcat_name, array( 'torby podróżne', 'torby i worki sportowe' ) ) ){
-					$subcat_name = 'Podróżne i sportowe';
+				elseif( $subcat_name === 'torby podróżne' ){
+					if( stripos( (string)$node->baseinfo->name, 'ramię' ) !== false ){
+						$subcat_name = 'na ramię';
+						
+					}
+					else{
+						$subcat_name = 'podróżne';
+						
+					}
+					
+				}
+				elseif( $subcat_name === 'torby i worki sportowe' ){
+					if( stripos( (string)$node->baseinfo->name, 'sport' ) !== false ){
+						$subcat_name = 'sportowe';
+					}
+					else{
+						$cat_name = 'xxx';
+						$subcat_name = '';
+						
+					}
 					
 				}
 				elseif( $subcat_name === 'torby na zakupy' ){
@@ -167,7 +185,7 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				elseif( $subcat_name === 'torby na laptopy' ){
-					$subcat_name = 'Na laptopa i dokumenty';
+					$subcat_name = 'na laptopa';
 					
 				}
 				elseif( $subcat_name === 'torby jassz' ){
@@ -329,9 +347,10 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				
-				// (string)$node->baseinfo->name
-				// (string)$node->baseinfo->intro
-				
+				/* 
+				(string)$node->baseinfo->name
+				(string)$node->baseinfo->intro
+				 */
 				/* ==================== */
 				
 				if( !empty( $subcat_name ) ){

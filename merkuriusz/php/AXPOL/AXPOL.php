@@ -152,8 +152,8 @@ class AXPOL extends XMLAbstract{
 					$cat_name = "vine club";
 					
 				}
-				/* ========== PODKATEGORIE ========== */
 				
+				/* ========== PODKATEGORIE ========== */
 				if( in_array( $subcat_name, array( 'parasole automatyczne', 'parasole manualne' ) ) or $cat_name === 'parasole' ){
 					$cat_name = 'przeciwdeszczowe';
 					$subcat_name = 'parasole';
@@ -168,7 +168,7 @@ class AXPOL extends XMLAbstract{
 					$cat_name = 'uroda';
 					
 				}
-				elseif( strpos( $subcat_name, 'ekologiczn' ) !== false ){
+				elseif( stripos( $subcat_name, 'ekologiczn' ) !== false ){
 					$cat_name = 'eco gadżet';
 					
 				}
@@ -218,7 +218,7 @@ class AXPOL extends XMLAbstract{
 					$subcat_name = 'kubki';
 					
 				}
-				elseif( strpos( $subcat_name, "wino: " ) !== false ){
+				elseif( stripos( $subcat_name, "wino: " ) !== false ){
 					$cat_name = "Wino";
 					$subcat_name = str_replace( "wino: ", "", $subcat_name );
 					
@@ -372,10 +372,85 @@ class AXPOL extends XMLAbstract{
 					}
 					
 				}
+				elseif( $cat_name === 'torby i plecaki' ){
+					if( stripos( (string)$item->TitlePL, 'laptop' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'na laptopa';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'dokument' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'na dokumenty';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'sport' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'sportowe';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'kółk' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'podróżne';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'plecak' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'plecaki';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'sznurk' ) !== false or stripos( (string)$item->TitlePL, 'żeglar' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'worki ze sznurkiem';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'ramię' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'na ramię';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'term' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'termoizolacyjne';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'plaż' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'torby plażowe';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'zakup' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'na zakupy';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'tablet' ) !== false ){
+						$cat_name = 'akcesoria do telefonów i tabletów';
+						$subcat_name = 'akcesoria do tabletów';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'podróż' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'podróżne';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'wodoodporn' ) !== false ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'wodoodporne';
+						
+					}
+					else{
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'inne';
+						
+					}
+					
+				}
 				
-				// (string)$item->TitlePL
-				// (string)$item->DescriptionPL
-				
+				/* 
+				(string)$item->TitlePL
+				(string)$item->DescriptionPL
+				 */
+				 
 				/* ========== PODKATEGORIE ========== */
 				
 				if( strpos( (string)$item->TitlePL, 'Mauro Conti' ) !== false ){

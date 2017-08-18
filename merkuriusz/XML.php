@@ -1,16 +1,13 @@
 <?php
-/*
-$AXPOL = new AXPOL();
-$EASYGIFTS = new EASYGIFTS();
-$MACMA = new MACMA();
-$ANDA = new ANDA();
-*/
-$ASGARD = new ASGARD();
 
-/* 
-$INSPIRION = new INSPIRION();
-$PAR = new PAR();
- */
+// $AXPOL = new AXPOL();
+// $EASYGIFTS = new EASYGIFTS();
+// $MACMA = new MACMA();
+// $ANDA = new ANDA();
+$ASGARD = new ASGARD();
+// $INSPIRION = new INSPIRION();
+// $PAR = new PAR();
+
 if( isset( $_GET[ 'recache' ] ) ){
 	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'axpol' ] ) ) ) && isset( $AXPOL ) ) $AXPOL->makeCache();
 	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'easy' ] ) ) ) && isset( $EASYGIFTS ) ) $EASYGIFTS->makeCache();

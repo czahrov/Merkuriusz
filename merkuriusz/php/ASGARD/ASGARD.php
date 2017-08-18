@@ -637,8 +637,129 @@ class ASGARD extends XMLAbstract{
 						
 					}
 					elseif( $subcat_name === 'plecaki' ){
-						$cat_name = 'xxx';
-						$subcat_name = '';
+						$cat_name = 'torby i plecaki';
+						
+						if( stripos( (string)$item->nazwa, 'laptop' ) !== false ){
+							$subcat_name = 'na laptopa i dokumenty';
+						
+						}
+						else{
+							$subcat_name = 'plecaki';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'akcesoria' ){
+						if( stripos( (string)$item->nazwa, 'ponczo' ) !== false ){
+							$cat_name = 'przeciwdeszczowe';
+							$subcat_name = 'inne';
+						
+						}
+						elseif( stripos( (string)$item->nazwa, 'term' ) !== false ){
+							$cat_name = 'torby i plecaki';
+							$subcat_name = 'termoizolacyjne';
+						
+						}
+						elseif( stripos( (string)$item->nazwa, 'kosmetyczka' ) !== false ){
+							$cat_name = 'uroda';
+							$subcat_name = 'kosmetyczki';
+						
+						}
+						elseif( stripos( (string)$item->nazwa, 'organizer' ) !== false ){
+							$cat_name = 'biuro';
+							$subcat_name = 'notatniki i notesy';
+						
+						}
+						else{
+							$subcat_name = 'inne';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'torby na dokumenty' ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'na dokumenty';
+						
+						
+					}
+					elseif( in_array( $subcat_name, array( 'sportowe', 'sprotowe' ) ) ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'sportowe';
+						
+					}
+					elseif( $subcat_name === 'na zakupy' ){
+						$cat_name = 'torby i plecaki';
+						$subcat_name = 'na zakupy';
+						
+					}
+					elseif( $subcat_name === 'parasole' ){
+						$cat_name = 'przeciwdeszczowe';
+						$subcat_name = 'parasole';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'jedzenie i picie' ){
+					
+					if( in_array( $subcat_name, array( 'piersiówki', 'kubki termiczne', 'kubki metalowe', 'kubki plastikowe', 'termosy' ) ) ){
+						$cat_name = 'do picia';
+						
+					}
+					elseif( in_array( $subcat_name, array( 'bidony', 'termosy' ) ) ){
+						$cat_name = 'podróż';
+						$subcat_name = 'termosy i bidony';
+						
+					}
+					elseif( $subcat_name === 'akcesoria do alkoholi' ){
+						
+						if( stripos( (string)$item->nazwa, ' win' ) !== false ){
+							$cat_name = 'wino';
+							
+							if( stripos( (string)$item->nazwa, 'zestaw' ) !== false ){
+								$subcat_name = 'zestawy';
+								
+							}
+							elseif( stripos( (string)$item->nazwa, 'skrzynka' ) !== false or stripos( (string)$item->nazwa, 'torba' ) !== false ){
+								$subcat_name = 'opakowania';
+								
+							}
+							else{
+								$subcat_name = 'akcesoria';
+							}
+							
+						}
+						elseif( stripos( (string)$item->nazwa, 'kieliszk' ) !== false ){
+							$cat_name = 'do picia';
+							$subcat_name = 'kieliszki';
+						
+						}
+						else{
+							$cat_name = 'do picia';
+							$subcat_name = 'inne';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'kuchenne' ){
+						$cat_name = 'dom';
+						$subcat_name = 'kuchnia';	
+						
+					}
+					elseif( $subcat_name === 'na grill i piknik' ){
+						$cat_name = 'wypoczynek';
+						
+						if( stripos( (string)$item->nazwa, 'grill' ) !== false ){
+							$subcat_name = 'grill';
+						
+						}
+						elseif( stripos( (string)$item->nazwa, 'piknik' ) !== false ){
+							$subcat_name = 'piknik';
+						
+						}
+						else{
+							$subcat_name = 'inne';
+							
+						}
 						
 					}
 					
