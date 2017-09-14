@@ -1,0 +1,128 @@
+#grid{
+	background-color: #fff;
+	
+	.switcher{
+		min-height: 60px;
+		
+		& > a{
+			margin-left: 10px;
+			width: 34px;
+			height: 34px;
+			color: #000;
+			background-color: $color-pagin-szary;
+			transition-property: color, background;
+			transition: .3s linear;
+			
+			&.active, &:hover{
+				color: #fff;
+				background-color: $color-pagin-niebieski;
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .top{
+		margin-bottom: 30px;
+		padding: 0 20px;
+		border: solid 1px $color-ramka-szara;
+		
+		& > .breadc{
+			min-height: 60px;
+			
+		}
+		
+	}
+	
+	& > .kafelki{
+		margin: 0 -10px 30px;
+		
+		& > .noitems{
+			padding: 0 20px;
+			
+		}
+		
+		& > .item{
+			
+			& > .wrapper{
+				margin: 10px;
+				border: solid 1px $color-ramka-szara;
+				
+				& > .img{
+					position: relative;
+					padding: 10px;
+					height: 150px;
+					background-clip: content-box;
+					background-origin: content-box;
+					border-bottom: solid 1px $color-ramka-szara;
+					
+					& > a{
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						
+					}
+					
+				}
+				
+				& > .title{
+					padding: 10px;
+					border-bottom: solid 1px $color-ramka-szara;
+					
+				}
+				
+				& > .code{
+					padding: 10px;
+					
+				}					
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .pagin{
+		margin-bottom: 30px;
+		
+		& > .next, & > .prev{
+				height: 60px;
+				border: solid 1px $color-ramka-szara;
+			
+			& > a{
+				height: 100%;
+					background-color: #fff;
+				transition: background .3s linear;
+				
+				&:hover{
+				background-color: $color-ramka-szara;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .bot{
+		margin-bottom: 30px;
+		padding: 0 20px;
+		border: solid 1px $color-ramka-szara;
+		
+		& > .num{
+			min-height: 60px;
+			
+		}
+		
+		& > .switcher{
+			
+		}
+		
+	}
+	
+}
+

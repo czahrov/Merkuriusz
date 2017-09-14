@@ -333,6 +333,22 @@ function markPrice( $type, $num, $repeat = 1 ){
 	
 	if( $item === false ) return false;
 	
+	$ret = array(
+		'prepare' => array(
+			'formula' => sprintf( "%s x %.2f", 1, $item[ 'przygotowanie' ] ),
+			'total' => sprintf( "%.2f", 1 * $item[ 'przygotowanie' ] ),
+		),
+		'repeat' => array(
+			'formula' => sprintf( "%s x %.2f", $num, $item[ 'powtórzenie' ] ),
+			'total' => sprintf( "%.2f", $num * $item[ 'powtórzenie' ] ),
+		),
+		'packing' => array(
+			'formula' => sprintf( "%s x %.2f", $num, $item[ 'pakowanie' ] ),
+			'total' => sprintf( "%.2f", $num * $item[ 'pakowanie' ] ),
+		),
+		
+	);
+	
 	$cena = $item[ 'przygotowanie' ] + $item[ 'powtórzenie' ] * ( $repeat - 1 ) + $item[ 'pakowanie' ] * $num;
 	
 	reset( $item[ 'ryczałt' ] );
@@ -343,6 +359,11 @@ function markPrice( $type, $num, $repeat = 1 ){
 	while( next( $item[ 'ryczałt' ] ) !== false && $num > key( $item[ 'ryczałt' ] ) );
 	$cena += (float)$found;
 	
+	$ret[ 'added' ] = array(
+		'formula' => sprintf( "%s x %.2f", 1, $found ),
+		'total' => sprintf( "%.2f", $found ),
+	);
+	
 	reset( $item[ 'price' ] );
 	$found = null;
 	do{
@@ -351,7 +372,14 @@ function markPrice( $type, $num, $repeat = 1 ){
 	while( next( $item[ 'price' ] ) !== false && $num > key( $item[ 'price' ] ) );
 	$cena += (float)$found * $num;
 	
-	return $cena;
+	$ret[ 'marking' ] = array(
+		'formula' => sprintf( "%s x %.2f", $num, $found ),
+		'total' => sprintf( "%.2f", $num * $found ),
+	);
+	
+	$ret[ 'total' ] = sprintf( "%.2f", $cena );
+	
+	return $ret;
 }
 
 // action hook

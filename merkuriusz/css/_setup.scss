@@ -1,0 +1,212 @@
+a{
+	display: inline-block;
+	
+	&, &:hover, &:focus{
+		text-decoration: none;
+		color: inherit;
+		outline: none;
+		
+	}
+	
+}
+
+.semibold{
+	font-family: 'Montserrat-SemiBold';
+	
+}
+
+.bold{
+	font-family: 'Montserrat-Bold';
+	
+}
+
+.title{
+	font-size: 14px;
+	
+}
+
+ul.menu{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #e7e7e7;
+	
+	& > .item{
+		
+		& > .sub .item{
+			
+			& > .sub{
+				white-space: nowrap;
+				
+			}
+				
+			@media(min-width: 992px){
+				& > .sub{
+					position: absolute;
+					top: 0;
+					left: 100%;
+					z-index: 20;
+					
+				}
+				
+			}
+			
+			&:not(:hover) > .sub{
+				display: none;
+				
+			}
+			
+		}
+		
+		&.active{
+			
+			&.reklamowe > .head{
+				box-shadow: 0 0 0 2px $color-menu-active inset;
+				
+			}
+			
+			& > .sub{
+				
+				.item.active > .head > .title{
+					color: $color-menu-active;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .item:not(.open) > .sub{
+		display: none;
+	}
+	
+	.item{
+		position: relative;
+		background-color: #fff;
+		
+		& > .pikto{
+			margin-right: 10px;
+			
+		}
+		
+		& > .head{
+			padding-left: 20px;
+			padding-right: 20px;
+			min-height: 60px;
+			
+			& > .pikto{
+				margin-right: 10px;
+				
+			}
+			
+			& > .title{
+				margin-right: auto;
+				padding-right: 10px;
+				
+			}
+			
+			& > .logotyp{
+				margin: 5px 10px 5px 0;
+				min-width: 180px;
+				background-position: left;
+				
+			}
+			
+		}
+		
+		.sub{
+			padding-left: 10px;
+			color: #000;
+			background-color: silver;
+			
+			& > .item{
+				border-top: solid 1px $color-ramka-szara;
+				background-clip: content-box;
+				
+				&:hover{
+					padding-left: 10px;
+					
+					& > .head{
+						padding-left: 10px;
+						
+					}
+					
+				}
+				
+				& > .head{
+					min-height: 40px;
+					
+				}
+				
+			}
+			
+		}
+		
+		& > .icon{
+			transition: transform .3s linear;
+			
+		}
+		
+		&.open > .head > .icon{
+			transform: rotate(90deg);
+			
+		}
+		
+		&.fofcio{
+			color: #fff;
+			background-color: $color-fofcio;
+			
+			.sub{
+				background-color: $color-fofcio;
+			}
+			
+		}
+		&.elektronika{
+			color: #fff;
+			background-color: $color-elektronika;
+			
+			.sub{
+				background-color: $color-elektronika;
+			}
+			
+		}
+		
+		&.vip{
+			color: #fff;
+			background-color: $color-vip;
+			
+			.sub{
+				background-color: $color-vip;
+			}
+			
+		}
+		
+		&.vip_elektronika{
+			color: #fff;
+			background-color: $color-vip-elektronika;
+			
+			.sub{
+				background-color: $color-vip-elektronika;
+			}
+			
+		}
+		
+		&.vip_victorinox{
+			color: #fff;
+			background-color: $color-vip-victorinox;
+			
+			.sub{
+				background-color: $color-vip-victorinox;
+			}
+			
+		}
+		
+	}
+	
+	& *{
+		cursor: pointer;
+		
+	}
+	
+}

@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Kalkulator AJAX
+	Template Name: Kalkulator AJAX old
 */
 
 if( !isAjax() ){

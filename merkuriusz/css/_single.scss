@@ -1,0 +1,411 @@
+#single{
+	
+	& > .popup{
+		position: fixed;
+		padding: 0;
+		margin: 0;
+		width: initial;
+		max-width: initial;
+		height: initial;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transform: none;
+		background-color: $color-popup-bg;
+		border: none;
+		z-index: 110;
+		
+		&:not( .open ){
+			display: none;
+			
+		}
+		
+		& > .box{
+			max-width: 75%;
+			max-height: 75%;
+			
+			& > .header{
+				margin-bottom: 10px;
+				height: 60px;
+				
+				& > .title{
+					padding: 0 20px;
+					margin-right: 10px;
+					font-size: 20px;
+					color: #fff;
+					
+				}
+				
+				& > .close{
+					width: 60px;
+					background-color: $color-single-title;
+					opacity: 1;
+					color: #fff;
+					
+					& > .icon{
+						cursor: inherit;
+						
+					}
+					
+				}
+				
+			}
+			
+			& > .loader{
+				margin: 50px 0;
+				height: 60px;
+				
+				& > .box{
+					width: 60px;
+					background-color: #fff;
+					
+					& > .icon{
+						font-size: 40px;
+						
+					}
+					
+				}
+				
+			}
+			
+			& > .img{
+				padding: 10px;
+				background-color: #fff;
+				
+				& > img{
+					max-width: 100%;
+					max-height: 100%;
+					
+				}
+				
+			}
+			
+		}
+		
+		&.ready > .box{
+			
+			& > .loader{
+				display: none;
+				
+			}
+			
+		}
+		
+		&:not( .ready ) > .box{
+			
+			& > .img{
+				display: none;
+				
+			}
+			
+		}
+		
+	}
+	
+	#grid{
+		
+		& > .mid{
+			
+			& > .head{
+			margin: 0 -6px 30px;
+				
+				& > .pic{
+					padding: 0 6px;
+					
+					& > .large{
+						position: relative;
+						padding: 5px;
+						height: 320px;
+						background-clip: content-box;
+						background-origin: content-box;
+						border: solid 1px $color-ramka-szara;
+						
+						& > .icon{
+							position: absolute;
+							right: 20px;
+							bottom: 20px;
+							font-size: 20px;
+							text-shadow: 0 0 3px #fff;
+							cursor: inherit;
+							
+						}
+						
+					}
+					
+					& > .mini{
+						position: relative;
+						border: solid 1px $color-ramka-szara;
+						
+						& > .nav{
+							width: 20px;
+							font-size: 30px;
+							color: #fff;
+							background-color: $color-pagin-niebieski;
+							
+							.icon{
+								cursor: inherit;
+								
+							}
+							
+						}
+						
+						& > .view{
+							overflow: hidden;
+							
+							& > .item{
+								padding: 5px;
+								height: 100px;
+								background-clip: content-box;
+								background-origin: content-box;
+								
+							}
+							
+						}
+						
+					}
+					
+					& > .download{
+						margin-top: 12px;
+						
+						& > a{
+							padding: 0 30px;
+							height: 40px;
+							border: solid 1px $color-ramka-szara;
+							
+							& > .bold{
+								margin-left: 10px;
+								cursor: inherit;
+								
+							}
+							
+						}					
+						
+					}
+					
+				}
+				
+				& > .info{
+					padding: 0 10px;
+					
+					& > .title{
+						font-size: 22px;
+						line-height: 40px;
+						color: $color-single-title;
+						
+					}
+					
+					& > .code{
+						margin-bottom: 10px;
+						font-size: 14px;
+						line-height: 22px;
+						
+					}
+					
+					& > .content{
+						margin-bottom: 20px;
+						font-size: 16px;
+						
+					}
+					
+					& > .price{
+						height: 67px;
+						padding-left: 17px;
+						border-left: solid 5px $color-single-title;
+						font-size: 22px;
+						
+					}
+					
+				}
+				
+			}
+			
+			& > .body{
+				
+				& > .table{
+					margin-top: 50px;
+					
+					& > .thead{
+						height: 44px;
+						padding: 0 20px;
+						background-color: $color-single-title;
+						border: 1px $color-ramka-szara;
+						border-style: solid solid none solid;
+						font-size: 16px;
+						color: #fff;
+						
+					}
+					
+					& > .tbody{
+						
+						& > .tcell{
+							min-height: 36px;
+							
+							& > .name{
+								padding-left: 20px;
+								font-size: 14px;
+								border: solid 1px $color-ramka-szara;
+								
+							}
+							
+							& > .value{
+								padding-left: 20px;
+								font-size: 14px;
+								border: solid 1px $color-ramka-szara;
+								
+							}
+							
+						}
+						
+					}
+					
+					&.specyfikacja{
+						
+						& > .tbody{
+							
+							& > .tcell{
+								
+								&:nth-child(4n+3),
+								&:nth-child(4n+4){
+									background-color: $color-szary-jasny;
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+					&.kalkulator{
+						
+						& > .tbody{
+							
+							& > .tcell{
+								padding: 0 20px;
+								border: solid 1px $color-ramka-szara;
+								
+								&.dane{
+									padding: 10px 20px;
+									
+									& > .line{
+										margin: 3px 0;
+										min-height: 36px;
+										
+										& > .name{
+											
+										}
+										
+										& > .value{
+											padding: 0 20px;
+											margin-left: 20px;
+											border: solid 1px $color-ramka-szara;
+											background-color: $color-szary-jasny;
+											
+										}
+										
+										&.button{
+											margin-top: 16px;
+											color: #fff;
+											
+											& >.calc{
+												height: 44px;
+												padding: 0 15px;
+												border: solid 1px $color-ramka-szara;
+												background-color: $color-inactive;
+												font-size: 14px;
+												transition: background;
+												
+												&.active{
+													background-color: $color-menu-active;
+													
+												}
+												
+											}
+											
+										}
+										
+									}
+									
+								}
+								
+								&.wynik{
+									padding: 0;
+									border: 0;
+									
+									& > .title{
+										padding: 0 20px;
+										min-height: 32px;
+										background-color: $color-inactive;
+										font-size: 16px;
+										color: #fff;
+										
+									}
+									
+									& > .partial{
+										min-height: 42px;
+										
+										& > .field{
+											padding: 0 20px;
+											font-size: 14px;
+											border: solid 1px $color-ramka-szara;
+											
+											&.name{
+												background-color: $color-szary-jasny;
+												
+											}
+											
+											&.formula::after,
+											&.sum::after{
+												content: ' zł';
+												
+											}
+											
+										}
+										
+									}
+									
+									& > .total{
+										border: none;
+										
+										& > .field{
+											min-height: 42px;
+											font-size: 20px;
+											
+											&.sum{
+												border: solid 1px $color-ramka-szara;
+												
+												& > span{
+													padding: 0 10px;
+													
+													&::after{
+														content: ' zł';
+														
+													}
+													
+												}
+												
+											}
+											
+										}
+										
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+

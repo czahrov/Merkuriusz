@@ -474,6 +474,30 @@ class AXPOL extends XMLAbstract{
 				preg_match( "/^\d+$/", (string)$item->Page, $match );
 				$page_test = empty($match)?( (string)$item->Page ):( "strona {$item->Page}" );
 				
+				$mark_size = array();
+				$mark_types = array();
+				foreach( $this->_getMark( (string)$item->CodeERP ) as $size => $types ){
+					if( !in_array( $size, $mark_size ) ) $mark_size[] = $size;
+					
+					foreach( $types as $type ){
+						if( !in_array( $type, $mark_types ) ) $mark_types[] = $type;
+						
+					}
+					
+				}
+				
+				/* 
+				-Model, 
+				-Marka (producent), 
+				+Rozmiar (wymiary produktu), 
+				+Rodzaj znakowania, 
+				+Wielkość znakowania, 
+				+Materiał, 
+				+Dostępność, 
+				+Kraj pochodzenia, 
+				+Kolor, 
+				+Waga 
+				*/
 				$ret[] = array_merge(
 					array(
 						'ID' => 'brak danych',
@@ -487,15 +511,14 @@ class AXPOL extends XMLAbstract{
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'CATALOG' => 'brak danych',
-						'PACKAGE' => array(
-							'SINGLE' => 'brak danych',
-							'TOTAL' => 'brak danych',
-							'DIM' => 'brak danych',
-							'WEIGHT' => 'brak danych',
-							'INSIDE' => 'brak danych',
-							
-						),
+						'MARKSIZE' => 'brak danych',
+						'MARKTYPE' => 'brak danych',
+						'MARKCOLORS' => 1,
+						'PRICE' => 0,
+						'MODEL' => 'brak danych',
+						'WEIGHT' => 'brak danych',
+						'BRAND' => 'brak danych',
+						
 					),
 					array(
 						'ID' => (string)$item->CodeERP,
@@ -509,14 +532,10 @@ class AXPOL extends XMLAbstract{
 						'MATTER' => (string)$item->MaterialPL,
 						'COLOR' => (string)$item->ColorPL,
 						'COUNTRY' => (string)$item->CountryOfOrigin,
-						'CATALOG' => sprintf( "%s (%s)", (string)$item->Catalog, $page_test ),
-						'PACKAGE' => array(
-							'SINGLE' => (string)$item->IndividualPacking,
-							'TOTAL' => (string)$item->ExportCtnQty,
-							'DIM' => (string)$item->CtnDimensions,
-							'WEIGHT' => sprintf( "%s kg", (string)$item->CtnWeightKG ),
-							'INSIDE' => (string)$item->InnerCtnQty,
-						),
+						'MARKSIZE' => implode( ", ", $mark_size ),
+						'MARKTYPE' => implode( ", ", $mark_types ),
+						'PRICE' => (float)$item->NetPricePLN,
+						'WEIGHT' => sprintf( "%s g", (string)$item->ItemWeightG ),
 						
 					)
 				);

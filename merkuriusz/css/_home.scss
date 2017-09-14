@@ -1,0 +1,131 @@
+#home{
+	
+	.home-top-right{
+		height: 400px;
+	}
+	
+	.home-top-right > .slider{
+		height: 100%;
+	}
+	
+	.top-slider{
+		margin-bottom: 30px;
+		padding: 0 15px;
+		min-height: 430px;
+		
+		& > .text{
+			background-color: #fff;
+			border: solid 1px $color-ramka-szara;
+			overflow: hidden;
+			
+			a{
+				text-decoration: none;
+				color: initial;
+				
+			}
+			
+			& > .view{
+				
+				& > .item{
+					padding: 30px 40px;
+					
+					&:not(.active){
+						display:none;
+						
+					}
+					
+					& > .title{
+						margin-bottom: 24px;
+						font-size: 18px;
+						
+					}
+					
+					& > .content{
+						margin-bottom: 24px;
+						line-height: 1.5em;
+						font-size: 14px;
+						
+					}
+					
+					& > .button{
+						margin-top: auto;
+						min-width: 130px;
+						padding: 15px 20px;
+						border: solid 2px #000;
+						line-height: 0;
+						font-size: 12px;
+						text-align: center;
+						
+						
+					}
+					
+				}
+			
+			}
+			
+			& > .pagin{
+				padding: 0 0 30px 40px;
+				
+				& > .item{
+					margin-right: 4px;
+					width: 18px;
+					height: 18px;
+					background-color: $color-pagin-niebieski;
+					border-style: solid;
+					border-width: 3px;
+					border-color: #fff;
+					border-radius: 50%;
+					transition-property: background, border;
+					transition: .3s linear;
+					
+					&.active{
+						border-color: $color-pagin-niebieski;
+						background-color: #fff;
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		& > .imgs{
+			margin-left: 30px;
+			
+			& > .view{
+				background-color: #fff;
+				border: solid 1px $color-ramka-szara;
+				overflow: hidden;
+				
+				& > .item{
+					
+					&:not(.active){
+						display: none;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	.main-picture-powerbank,
+	.main-picture-odziezreklamowa{
+		position: relative;
+		
+		& > .over{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 10;
+			
+		}
+		
+	}
+	
+}

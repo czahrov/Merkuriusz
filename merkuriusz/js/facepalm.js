@@ -202,8 +202,7 @@
 					
 				}
 				
-			})
-			();
+			})();
 			
 			/* slider katalogu pdf'ów */
 			(function( slider, arrows, viewbox, items ){
@@ -304,9 +303,6 @@
 			})
 			( $( '.catalog-slider-wrapper' ), $( '.catalog-slider-wrapper > .catalog-arrow-box' ), $( '.catalog-slider-wrapper > .catalog-container' ), $( '.catalog-slider-wrapper > .catalog-container > .catalog-element' ) );
 			
-			
-		
-					
 			/* slider wystawiennicze */
 			(function( slider, arrows, viewbox, items ){
 				var current = 0;
@@ -406,13 +402,6 @@
 			})
 			( $( '.popup-content > .wystawiennicze-wrapper' ), $( '.popup-content ul.pager > li' ), $( '.popup-content > .wystawiennicze-wrapper' ), $( '.popup-content > .wystawiennicze-wrapper > .inner-catalog-wrapper' ) );
 			
-			
-			
-			
-			
-			
-			
-			
 			/* slider partnerów */
 			(function( slider, arrows, viewbox, items ){
 				var current = 0;
@@ -510,7 +499,6 @@
 				
 			})
 			( $( '.partner-slider' ), $( '.partner-slider > .partner-arrow-box' ), $( '.partner-slider > .partner-wrapper' ), $( '.partner-slider > .partner-wrapper > .partner-icon-box' ) );
-			
 			
 		},
 		alternate: function(){
@@ -720,49 +708,6 @@
 			
 			if(logger) console.log('page.produkt()');
 			
-			/* przełączanie zakładek - pakowanie / inne */
-			(function( pak, pak_btn, inne, inne_btn ){
-				pak_btn.click(function( e ){
-					$(this)
-					.addClass( 'active' )
-					.siblings()
-					.removeClass( 'active' );
-					
-					pak
-					.removeClass( 'fp-hide' )
-					.siblings( '.box' )
-					.addClass( 'fp-hide' );
-					
-				});
-				
-				inne_btn.click(function( e ){
-					$(this)
-					.addClass( 'active' )
-					.siblings()
-					.removeClass( 'active' );
-					
-					inne
-					.removeClass( 'fp-hide' )
-					.siblings( '.box' )
-					.addClass( 'fp-hide' );
-					
-				});
-				
-			})
-			( $( '.multi.seg > .pakowanie' ), $( '.multi.seg > .flex > .pakowanie' ), $( '.multi.seg > .inne' ), $( '.multi.seg > .flex > .inne' ) );
-			
-			/*
-			// breadcrumb
-			(function( bread, cat, subcat, name ){
-				if( cat.length !== '' && subcat.length !== '' ){
-					
-				}
-				bread.text( [cat, subcat, name].join( ' > ' ) );
-				
-			})
-			( $( '#grid .breadc' ), $( 'ul.menu > .item.active' ).attr( 'item-title' ), $( 'ul.menu > .item.active > .sub .item.active' ).attr( 'item-title' ), $( '.main.seg .line.name > .val' ).text() );
-			*/
-			
 			/* obsługa miniaturek produktu */
 			(function( slider, view, img, large, nav ){
 				var current = 0;
@@ -841,139 +786,11 @@
 				});
 				
 			})
-			( $( '#grid .pic > .mini' ), $( '#grid .pic > .mini > .view' ), $( '#grid .pic > .mini > .view > .item' ), $( '#grid .pic > .large' ), $( '#grid .pic > .mini > .nav' ) );
-			
-			/* zakładki znakowanie / kalkulator */
-			(function( tabs, boxes ){
-				tabs.eq(0).click(function( e ){
-					$(this)
-					.addClass( 'active' )
-					.siblings()
-					.removeClass( 'active' );
-					
-					boxes
-					.filter('.znakowanie')
-					.addClass( 'active' )
-					.siblings( '.box' )
-					.removeClass( 'active' );
-					
-					$( '.dane > .marking > .kalkulator' ).triggerHandler( 'clear' );
-					
-				});
-				
-				tabs.eq(1).click(function( e ){
-					$(this)
-					.addClass( 'active' )
-					.siblings()
-					.removeClass( 'active' );
-					
-					boxes
-					.filter('.kalkulator')
-					.addClass( 'active' )
-					.siblings( '.box' )
-					.removeClass( 'active' );
-					
-				});
-				
-				
-			})
-			( $( '.dane > .marking > .tabs > .title' ), $( '.dane > .marking > .box' ) );
-			
-			/* znakowanie */
-			(function( warianty, znakowanie, kalkulator, cena ){
-				kalkulator
-				.on({
-					test: function( e ){
-						if( warianty.filter( '.selected' ).length > 0 ){
-							kalkulator
-							.children( '.empty' )
-							.hide()
-							.siblings( '.order' )
-							.show();
-							
-						}
-						else{
-							kalkulator
-							.children( '.order' )
-							.hide()
-							.siblings( '.empty' )
-							.show();
-							
-						}
-						
-					},
-					calc: function( e ){
-						cena.text( 'Obliczam...' );
-						var data = {
-							num: kalkulator.find( 'input.user' ).val(),
-							order: {
-								
-							},
-							
-						};
-						
-						warianty.filter( '.selected' ).each(function(){
-							var type = $(this).attr( 'mark-type' )
-							var place = $(this).attr( 'mark-place' )
-							var size = $(this).attr( 'mark-size' )
-							
-							if( typeof data.order[ type ] === 'undefined' ) data.order[ type ] = {};
-							data.order[ type ][ place ] = {};
-							if( typeof data.order[ type ][ place ][ size ] === 'undefined' ) data.order[ type ][ place ][ size ] = true;
-							
-						});
-						
-						
-						$.ajax({
-							type: "POST",
-							url: '../kalkulator',
-							data: data,
-							success: function( data, status, xhr ){
-								//console.log( data );
-								var t = data.match( /\[res:(.+)\]/ )[1];
-								//console.log({ t:t });
-								cena.text( t );
-								
-							},
-							
-						});
-						
-					},
-					clear: function( e ){
-						cena.text( '...' );
-						kalkulator.find( '.order input.user' ).val( '' );
-						
-					},
-					
-				});
-				
-				warianty.click(function( e ){
-					if( $(this).hasClass( 'selected' ) ){
-						$(this).removeClass( 'selected' );
-						
-					}
-					else{
-						$(this)
-						.addClass( 'selected' )
-						.siblings( '.custom-checkbox.selected[mark-place="'+ $(this).attr( 'mark-place' ) +'"]' )
-						.removeClass( 'selected' );
-						
-					}
-					
-					kalkulator.triggerHandler( 'test' );
-					
-					
-				});
-				
-				kalkulator.children( '.order' ).hide();
-				
-				kalkulator.find( 'input.user' ).blur(function( e ){
-					kalkulator.triggerHandler( 'calc' );
-					
-				});
-				
-			})
-			( $( '.dane > .marking > .znakowanie .custom-checkbox' ), $( '.dane > .marking > .znakowanie' ), $( '.dane > .marking > .kalkulator' ), $( '.dane > .marking > .kalkulator > .order > .price > .ajax' ) );
+			( $( '#grid .pic > .mini' ), 
+			$( '#grid .pic > .mini > .view' ), 
+			$( '#grid .pic > .mini > .view > .item' ), 
+			$( '#grid .pic > .large' ), 
+			$( '#grid .pic > .mini > .nav' ) );
 			
 			/* popup produktu */
 			(function( popup, view, close, img, large ){
@@ -1041,7 +858,175 @@
 				});
 				
 			})
-			( $( '#single > .popup' ), $( '#single > .popup > .box' ), $( '#single > .popup > .box > .header > .close' ), $( '#single > .popup > .box > .img > img' ), $( '#grid > .mid > .pic > .large' ) );
+			( $( '#single > .popup' ), 
+			$( '#single > .popup > .box' ), 
+			$( '#single > .popup > .box > .header > .close' ), 
+			$( '#single > .popup > .box > .img > img' ), 
+			$( '#grid .pic > .large' ) );
+			
+			/* kalkulator online */
+			(function( kalkulator, ilosc, typ, kolory, calculate, summary, produkt, marking, prepare, packing, marza, total ){
+				var data_correct = false;
+				
+				kalkulator.on({
+					init: function( e ){
+						summary.hide();
+						kalkulator.triggerHandler( 'wynik', [ 'clear' ] );
+						
+					},
+					test: function( e ){
+						if( /^\d+$/.test( ilosc.val() ) && typ.val() !== null && kolory.val() !== null ){
+							data_correct = true;
+							calculate.addClass( 'active' );
+							
+						}
+						else{
+							data_correct = false;
+							calculate.removeClass( 'active' );
+							
+						}
+						
+					},
+					wynik: function( e, mode ){
+						if( mode === 'open' ){
+							summary.slideDown();
+							
+						}
+						else if( mode === 'close' ){
+							summary.slideUp();
+							
+						}
+						else if( mode === 'clear' ){
+							$.each( [produkt, marking, prepare, packing, marza], function( k, v ){
+								v.formula.text( '-' );
+								v.sum.text( '-' );
+								
+							} );
+							
+							total.text( '-' );
+							
+						}
+						
+					},
+					calculate: function( e ){
+						if( data_correct ){
+							$.ajax({
+								type: 'POST',
+								url: root.bazar.basePath + '/kalkulator',
+								data: {
+									nazwa: produkt_data.NAME,
+									num: parseInt( ilosc.val() ),
+									mark: typ.val(),
+									colors: parseInt( kolory.val() ),
+									price: produkt_data.PRICE,
+									
+								},
+								success: function( data, status ){
+									if( data.trim() !== 'fail' ){
+										try{
+											var resp = JSON.parse( data );
+											console.log( resp );
+											kalkulator.triggerHandler( 'fill', resp );
+											
+										}
+										catch( err ){
+											console.error( err );
+											console.log( data );
+											
+										}
+										
+									}
+									else{
+										
+									}
+									
+								},
+								
+							});
+							
+						}
+						
+					},
+					fill: function( e, data ){
+						produkt.name.text( data.name );
+						produkt.formula.text( data.price.formula );
+						produkt.sum.text( data.price.total );
+						
+						marking.name.text( data.type );
+						marking.formula.text( data.marking.formula );
+						marking.sum.text( data.marking.total );
+						
+						prepare.formula.text( data.prepare.formula );
+						prepare.sum.text( data.prepare.total );
+						
+						packing.formula.text( data.packing.formula );
+						packing.sum.text( data.packing.total );
+						
+						marza.formula.text( data.added.formula );
+						marza.sum.text( data.added.total );
+						
+						total.text( data.total );
+						
+						kalkulator.triggerHandler( 'wynik', [ 'open' ] );
+						
+					},
+					
+				});
+				
+				kalkulator.triggerHandler( 'init' );
+				
+				ilosc
+				.add( typ )
+				.add( kolory )
+				.change( function( e ){
+					kalkulator.triggerHandler( 'wynik', [ 'close' ] );
+					kalkulator.triggerHandler( 'test' );
+					
+				} );
+				
+				calculate.click( function( e ){
+					if( $(this).hasClass( 'active' ) ) kalkulator.triggerHandler( 'calculate' );
+					
+				} );
+				
+			})
+			( $( '.table.kalkulator' ), 
+			$( '.table.kalkulator .tcell.dane > .line.ilosc > input' ), 
+			$( '.table.kalkulator .tcell.dane > .line.typ > select' ), 
+			$( '.table.kalkulator .tcell.dane > .line.kolory > select' ), 
+			$( '.table.kalkulator .tcell.dane > .line.button > .calc' ), 
+			$( '.table.kalkulator .tcell.wynik' ), 
+			{
+				name: $( '.table.kalkulator .tcell.wynik > .partial.product > .field.name' ),
+				formula: $( '.table.kalkulator .tcell.wynik > .partial.product > .field.formula' ),
+				sum: $( '.table.kalkulator .tcell.wynik > .partial.product > .field.sum' ),
+				
+			}, 
+			{
+				name: $( '.table.kalkulator .tcell.wynik > .partial.marking > .field.name' ),
+				formula: $( '.table.kalkulator .tcell.wynik > .partial.marking > .field.formula' ),
+				sum: $( '.table.kalkulator .tcell.wynik > .partial.marking > .field.sum' ),
+				
+			}, 
+			{
+				name: $( '.table.kalkulator .tcell.wynik > .partial.prepare > .field.name' ),
+				formula: $( '.table.kalkulator .tcell.wynik > .partial.prepare > .field.formula' ),
+				sum: $( '.table.kalkulator .tcell.wynik > .partial.prepare > .field.sum' ),
+				
+			}, 
+			{
+				name: $( '.table.kalkulator .tcell.wynik > .partial.packing > .field.name' ),
+				formula: $( '.table.kalkulator .tcell.wynik > .partial.packing > .field.formula' ),
+				sum: $( '.table.kalkulator .tcell.wynik > .partial.packing > .field.sum' ),
+				
+			}, 
+			{
+				name: $( '.table.kalkulator .tcell.wynik > .partial.added > .field.name' ),
+				formula: $( '.table.kalkulator .tcell.wynik > .partial.added > .field.formula' ),
+				sum: $( '.table.kalkulator .tcell.wynik > .partial.added > .field.sum' ),
+				
+			},
+			$( '.table.kalkulator .tcell.wynik > .total  > .sum > span' ) );
 			
 		},
 		
