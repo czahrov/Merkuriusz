@@ -24,7 +24,7 @@
 			array(
 				'title' => 'Lorem ipsum tytuł',
 				'content' => 'Lorem ipsum tekst',
-				'img' => 'http://placeimg.com/300/300/tech',
+				'img' => "http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/slajder.jpg",
 				'link' => array(
 					'url' => '#',
 					
@@ -34,7 +34,7 @@
 			array(
 				'title' => 'Lorem ipsum inny tytuł',
 				'content' => 'Lorem ipsum inny tekst',
-				'img' => 'http://placeimg.com/350/350/tech',
+				'img' => 'http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/slajder.jpg',
 				'link' => array(
 					'url' => '#',
 					
@@ -125,6 +125,17 @@
 					<div class="main-picture-content">
 						<div class="main-picture-title">Odzież reklamowa</div>
 						<a class="btn main-picture-btn pop-up-clothes clothes">Zobacz produkty</a>
+					</div>
+				</div>
+				<div class="white-space-30"></div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="extra-picture extra-picture-extra">
+					<div class="main-picture-content">
+					<div class="extra-picture-hot">HOT</div>
+						<div class="main-picture-title">Kalendarze na rok<span class="extra-title">2018</span></div>
+						<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/kalendarze/" class="btn main-picture-btn">Zobacz prdoukty</a>
 					</div>
 				</div>
 				<div class="white-space-30"></div>

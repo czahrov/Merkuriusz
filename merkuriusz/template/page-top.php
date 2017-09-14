@@ -19,7 +19,7 @@
 		<form class="input-group" id="searchform" method="get" action="<?php echo home_url(); ?>">
 			<input type="text" name="s" id="s" size="15" placeholder="Wpisz nazwę lub kod produktu" class="form-control search_input">
 
-			<?php wp_dropdown_categories( 'show_option_none=Select' ); ?>
+			<?php wp_dropdown_categories( 'show_option_none=Wybierz kategorię' ); ?>
 
 			<!--
 <select class="form-control depart_input">

@@ -1092,7 +1092,7 @@ input,
 button,
 select,
 textarea {
-  font-family: inherit;
+  font-family: 'metropolis-regular';
   font-size: inherit;
   line-height: inherit;
 }
@@ -2556,7 +2556,7 @@ output {
   color: #555;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #ccc;
+  border: 1px solid #E7E7E7;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
@@ -3059,7 +3059,12 @@ fieldset[disabled] a.btn {
 .btn-default {
   color: #333;
   background-color: #fff;
-  border-color: #ccc;
+  border-top: 1px solid #E7E7E7;
+  border-right: 1px solid #E7E7E7;
+  border-bottom: 1px solid #E7E7E7;
+  border-left: 1px solid #E7E7E7;
+  
+
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -3068,9 +3073,9 @@ fieldset[disabled] a.btn {
   border-color: #8c8c8c;
 }
 .btn-default:hover {
-  color: #333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
+  color: #fff;
+  background-color: #2A96F8;
+  border-color: #E7E7E7;
 }
 .btn-default:active,
 .btn-default.active,
@@ -3503,6 +3508,7 @@ tbody.collapse.in {
   display: inline-block;
   width: 0;
   height: 0;
+  margin-top: -6px;
   margin-left: 2px;
   vertical-align: middle;
   border-top: 4px dashed;
