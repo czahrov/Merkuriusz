@@ -306,7 +306,59 @@
 										
 										&.button{
 											margin-top: 16px;
-											color: #fff;
+											
+											& > .status{
+												padding-left: 20px;
+												border: none;
+												
+												& > .text{
+													padding: 0 10px 0 20px;
+													font-size: 16px;
+													
+												}
+												
+												& > .icon{
+													border: none;
+													font-size: 40px;
+													
+													&.ok{
+														color: green;
+														
+													}
+													
+													&.fail{
+														color: red;
+														
+													}
+													
+													&.info{
+														color: darkblue;
+														
+													}
+													
+												}
+												
+												&:not( .ok ) > .icon.ok{
+													display: none;
+													
+												}
+												
+												&:not( .fail ) > .icon.fail{
+													display: none;
+													
+												}
+												
+												&:not( .info ) > .icon.info{
+													display: none;
+													
+												}
+												
+												&:not( .wait ) > .icon.wait{
+													display: none;
+													
+												}
+												
+											}
 											
 											& >.calc{
 												height: 44px;
@@ -314,6 +366,7 @@
 												border: solid 1px $color-ramka-szara;
 												background-color: $color-inactive;
 												font-size: 14px;
+												color: #fff;
 												transition: background;
 												
 												&.active{
@@ -386,6 +439,21 @@
 												}
 												
 											}
+											
+										}
+										
+									}
+									
+									& > .cart{
+										
+										& > div{
+											margin-top: 13px;
+											height: 44px;
+											padding: 0 15px;
+											border: solid 1px $color-ramka-szara;
+											background-color: $color-menu-active;
+											font-size: 14px;
+											color: #fff;
 											
 										}
 										

@@ -535,7 +535,7 @@ class AXPOL extends XMLAbstract{
 						'MARKSIZE' => implode( ", ", $mark_size ),
 						'MARKTYPE' => implode( ", ", $mark_types ),
 						'PRICE' => (float)$item->NetPricePLN,
-						'WEIGHT' => sprintf( "%s g", (string)$item->ItemWeightG ),
+						'WEIGHT' => (float)sprintf( "%s g", (string)$item->ItemWeightG ),
 						
 					)
 				);

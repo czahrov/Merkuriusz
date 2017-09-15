@@ -103,6 +103,9 @@ ul.menu {
   ul.menu * {
     cursor: pointer; }
 
+.pointer, .pointer * {
+  cursor: pointer; }
+
 #grid {
   background-color: #fff; }
   #grid .switcher {
@@ -394,14 +397,37 @@ ul.menu {
           border: solid 1px #e7e7e7;
           background-color: #f7f7f7; }
         #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button {
-          margin-top: 16px;
-          color: #fff; }
+          margin-top: 16px; }
+          #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status {
+            padding-left: 20px;
+            border: none; }
+            #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status > .text {
+              padding: 0 10px 0 20px;
+              font-size: 16px; }
+            #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status > .icon {
+              border: none;
+              font-size: 40px; }
+              #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status > .icon.ok {
+                color: green; }
+              #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status > .icon.fail {
+                color: red; }
+              #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status > .icon.info {
+                color: darkblue; }
+            #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status:not(.ok) > .icon.ok {
+              display: none; }
+            #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status:not(.fail) > .icon.fail {
+              display: none; }
+            #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status:not(.info) > .icon.info {
+              display: none; }
+            #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status:not(.wait) > .icon.wait {
+              display: none; }
           #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .calc {
             height: 44px;
             padding: 0 15px;
             border: solid 1px #e7e7e7;
             background-color: #6a6a6a;
             font-size: 14px;
+            color: #fff;
             -webkit-transition: background;
             transition: background; }
             #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .calc.active {
@@ -436,3 +462,56 @@ ul.menu {
               padding: 0 10px; }
               #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total > .field.sum > span::after {
                 content: ' zł'; }
+      #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .cart > div {
+        margin-top: 13px;
+        height: 44px;
+        padding: 0 15px;
+        border: solid 1px #e7e7e7;
+        background-color: #0af;
+        font-size: 14px;
+        color: #fff; }
+
+.navbar .basket, .navbar .basket:focus, .navbar .basket:hover {
+  color: #fff;
+  outline: none; }
+
+#cart #grid > .mid > .table > .title {
+  padding: 0 20px;
+  height: 44px;
+  background-color: #0af;
+  font-size: 16px;
+  color: #fff; }
+#cart #grid > .mid > .table > .thead {
+  background-color: #e7e7e7;
+  font-size: 16px; }
+  #cart #grid > .mid > .table > .thead > div {
+    padding: 0 20px;
+    height: 44px; }
+#cart #grid > .mid > .table > .tbody > .line > .field {
+  padding: 0 20px;
+  min-height: 40px; }
+  #cart #grid > .mid > .table > .tbody > .line > .field.options > label {
+    width: 20px;
+    height: 20px;
+    border: solid 2px #0af;
+    border-radius: 5px; }
+    #cart #grid > .mid > .table > .tbody > .line > .field.options > label > .icon {
+      opacity: 0;
+      -webkit-transition: opacity .3s linear;
+      transition: opacity .3s linear; }
+  #cart #grid > .mid > .table > .tbody > .line > .field.options > input:checked + label > .icon {
+    opacity: 1; }
+#cart #grid > .mid > .table > .tbody > .line.options {
+  padding: 0 20px;
+  height: 40px;
+  background-color: #e7e7e7; }
+  #cart #grid > .mid > .table > .tbody > .line.options > .buttons > .icon {
+    font-size: 20px; }
+#cart #grid > .mid > .table > .tbody > .line:nth-child(even) {
+  background-color: #f7f7f7; }
+#cart #grid > .mid > .table > .table > .thead {
+  padding: 0 20px;
+  height: 44px;
+  color: #fff;
+  background-color: #0af;
+  font-size: 16px; }

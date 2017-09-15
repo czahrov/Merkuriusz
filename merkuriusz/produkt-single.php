@@ -13,50 +13,62 @@
 	
 	echo "<!--";
 	print_r( $XMLData['items'][0] );
+	// print_r( $_SESSION );
 	echo "-->";
 	
 	$item = $XMLData[ 'items' ][0];
 	
 	/*
-	Array
+	<!--Array
+(
+    [ID] => V1298-03
+    [NAME] => Długopis
+    [DSCR] => Długopis z czarnym gumowym przyciskiem
+    [IMG] => Array
         (
-            [ID] => V1647-03
-            [NAME] => Długopis
-            [DSCR] => Długopis z kolorowym klipem
-            [IMG] => Array
-                (
-                    [0] => http://axpol.com.pl/files/fotob/V1647_03_A.jpg
-                    [1] => http://axpol.com.pl/files/foto_add_big/V1647_03_B.jpg
-                )
-
-            [CAT] => Array
-                (
-                    [VOYAGER 2017] => Array
-                        (
-                        )
-
-                    [materiały piśmiennicze] => Array
-                        (
-                        )
-
-                    [długopisy plastikowe] => Array
-                        (
-                        )
-
-                )
-
-            [DIM] => &#216;1,1 x 14 cm
-            [MARK] => Array
-                (
-                    [6x30 (item barrel)] => Array
-                        (
-                            [0] => T1
-                        )
-
-                )
-
-            [INSTOCK] => 0
+            [0] => http://axpol.com.pl/files/fotob/V1298_03_A.jpg
+            [1] => http://axpol.com.pl/files/foto_add_big/V1298_03_Z.jpg
+            [2] => http://axpol.com.pl/files/foto_add_big/V1298_1.jpg
+            [3] => http://axpol.com.pl/files/foto_add_big/V1298_A.jpg
+            [4] => http://axpol.com.pl/files/foto_add_big/V1298_B.jpg
         )
+
+    [CAT] => Array
+        (
+            [materiały piśmiennicze] => Array
+                (
+                )
+
+            [materiały piśmiennicze-długopisy metalowe] => Array
+                (
+                )
+
+        )
+
+    [DIM] => &#216;1,2 x 14,2 cm
+    [MARK] => Array
+        (
+            [6x55 (item barrel)] => Array
+                (
+                    [0] => T3
+                    [1] => L0
+                )
+
+        )
+
+    [INSTOCK] => 0
+    [MATTER] => metal, EVA
+    [COLOR] => czarny
+    [COUNTRY] => CN
+    [MARKSIZE] => 6x55 (item barrel)
+    [MARKTYPE] => T3, L0
+    [MARKCOLORS] => 1
+    [PRICE] => 2.45
+    [MODEL] => brak danych
+    [WEIGHT] => 11 g
+    [BRAND] => brak danych
+)
+-->
 	*/
 	
 ?>
@@ -130,7 +142,7 @@
 						<div class='tcell flex flex-items-center'>
 							Aby wykonać kalkulację, wypełnij poniższe pola
 						</div>
-						<div class='tcell dane flex flex-wrap'>
+						<form class='tcell dane flex flex-wrap'>
 							<div class='line ilosc base1 flex'>
 								<div class='name bold base4 flex flex-items-center'>
 									Ilość
@@ -144,11 +156,12 @@
 								</div>
 								<select class='value grow'>
 									<option selected disabled value=''>Wybierz metodę znakowania</option>
+									<option value='brak'>Bez znakowania</option>
 									<?php
 										foreach( $item[ 'MARK' ] as $size => $types ):
 											foreach( $types as $type ):
 									?>
-										<option value='<?php echo $type; ?>'><?php printf( "%s, %s", $type, $size ); ?></option>
+										<option value='<?php echo $type; ?>' size='<?php echo $size; ?>'><?php printf( "%s, %s", $type, $size ); ?></option>
 									<?php
 											endforeach;
 										endforeach;
@@ -170,81 +183,42 @@
 								
 							</div>
 							<div class='line button grow flex flex-justify-end'>
-								<div class='calc pointer bold uppercase flex flex-items-center'>
+								<div class='status grow flex flex-items-center flex-justify-start'>
+									<div class='icon wait fa fa-circle-o-notch fa-spin'></div>
+									<div class='icon ok fa fa-check-circle'></div>
+									<div class='icon fail fa fa-times-circle'></div>
+									<div class='icon info fa fa-info-circle'></div>
+									<div class='text'></div>
+									
+								</div>
+								<div class='calc pointer bold uppercase no-shrink flex flex-items-center'>
 									Wykonaj kalkulację
 								</div>
 								
 							</div>
 							
-						</div>
+						</form>
 						<div class='tcell wynik flex flex-wrap'>
 							<div class='title base1 flex flex-items-center'>
 								Wynik Twojej kalkulacji
 							</div>
-							<div class='line base1 partial product flex'>
-								<div class='field name base2 flex flex-items-center'>
-									Produkt
-								</div>
-								<div class='field formula base4 flex flex-items-center flex-justify-center'>
-									100 x 3,43 zł
-								</div>
-								<div class='field sum base4 flex flex-items-center flex-justify-center'>
-									343,00 zł
-								</div>
-								
-							</div>
-							<div class='line base1 partial marking flex'>
-								<div class='field name base2 flex flex-items-center'>
-									Znakowanie
-								</div>
-								<div class='field formula base4 flex flex-items-center flex-justify-center'>
-									100 x 0,40 zł
-								</div>
-								<div class='field sum base4 flex flex-items-center flex-justify-center'>
-									40,00 zł
-								</div>
-								
-							</div>
-							<div class='line base1 partial prepare flex'>
-								<div class='field name base2 flex flex-items-center'>
-									Przygotowanie do znakowania
-								</div>
-								<div class='field formula base4 flex flex-items-center flex-justify-center'>
-									1 x 35.00 zł
-								</div>
-								<div class='field sum base4 flex flex-items-center flex-justify-center'>
-									35.00 zł
-								</div>
-								
-							</div>
-							<div class='line base1 partial packing flex'>
-								<div class='field name base2 flex flex-items-center'>
-									Pakoawnie
-								</div>
-								<div class='field formula base4 flex flex-items-center flex-justify-center'>
-									100 x 0.05 zł
-								</div>
-								<div class='field sum base4 flex flex-items-center flex-justify-center'>
-									5.00 zł
-								</div>
-								
-							</div>
-							<div class='line base1 partial added flex'>
-								<div class='field name base2 flex flex-items-center'>
-									Ryczałt
-								</div>
-								<div class='field formula base4 flex flex-items-center flex-justify-center'>
-									1 x 65.00 zł
-								</div>
-								<div class='field sum base4 flex flex-items-center flex-justify-center'>
-									65.00 zł
-								</div>
+							<div class='line proto hide base1 partial flex'>
+								<div class='field name base2 flex flex-items-center'></div>
+								<div class='field formula base4 flex flex-items-center flex-justify-center'></div>
+								<div class='field sum base4 flex flex-items-center flex-justify-center'></div>
 								
 							</div>
 							<div class='line base1 total flex'>
 								<div class='field fake base2'></div>
 								<div class='field sum bold base2 flex flex-items-center flex-justify-center'>
-									SUMA: <span>488.00 zł</span> + VAT
+									SUMA: <span></span> + VAT
+									
+								</div>
+								
+							</div>
+							<div class='line base1 cart flex flex-justify-end'>
+								<div class='pointer bold flex flex-items-center flex-justify-center'>
+									Dodaj do koszyka
 									
 								</div>
 								
@@ -290,9 +264,6 @@
 				
 				
 			</div>
-			<div class='dane base1 base2-mm flex flex-column'>
-				
-			</div>
 			
 		</div>
 		
@@ -307,6 +278,4 @@
 
 <?php get_template_part( "template/newsletter" ); ?>
 
-<?php
-	get_footer();
-?>
+<?php get_footer(); ?>

@@ -500,6 +500,53 @@
 			})
 			( $( '.partner-slider' ), $( '.partner-slider > .partner-arrow-box' ), $( '.partner-slider > .partner-wrapper' ), $( '.partner-slider > .partner-wrapper > .partner-icon-box' ) );
 			
+			/* przycisk stanu koszyka */
+			(function( basket ){
+				var lock = false;
+				
+				basket.on({
+					update: function( e ){
+						if( !lock ){
+							lock = true;
+							$.ajax({
+								type: 'GET',
+								url: root.bazar.basePath + '/koszyk?status',
+								success: function( data ){
+									try{
+										var resp = JSON.parse( data );
+										if( resp.num > 0 ){
+											basket.children( '.basket-text' ).text( resp.num + ' szt | ' + resp.price + ' zł' );
+											
+										}
+										else{
+											basket.children( '.basket-text' ).text( 'Pusty' );
+											
+										}
+										
+									}
+									catch( err ){
+										console.error( err );
+										console.log( data );
+										
+									}
+									
+								},
+								complete: function(){
+									lock = false;
+									
+								},
+								
+							})
+							
+						}
+						
+					},
+					
+				});
+				
+			})
+			( $( '.navbar .basket' ) );
+			
 		},
 		alternate: function(){
 			var addon = root.addon;
@@ -865,19 +912,45 @@
 			$( '#grid .pic > .large' ) );
 			
 			/* kalkulator online */
-			(function( kalkulator, ilosc, typ, kolory, calculate, summary, produkt, marking, prepare, packing, marza, total ){
+			(function( kalkulator, ilosc, typ, kolory, statusbar, calculate, summary, total, cartBtn ){
+				/* czy wprowadzone dane są poprawne */
 				var data_correct = false;
+				/* czy klient chce zrobić znakowanie produktu */
+				var marking = false;
+				/* blokada pociskania przycisku kalkulacji */
+				var ajax_lock = false;
+				/* blokada pociskania przycisku dodawania do koszyka */
+				var cart_lock = false;
 				
 				kalkulator.on({
 					init: function( e ){
+						/* funkcja inicjująca ustawienia początkowe */
 						summary.hide();
+						kolory.parent().hide();
 						kalkulator.triggerHandler( 'wynik', [ 'clear' ] );
+						kalkulator.triggerHandler( 'notify', [ '', '' ] );
 						
 					},
 					test: function( e ){
-						if( /^\d+$/.test( ilosc.val() ) && typ.val() !== null && kolory.val() !== null ){
-							data_correct = true;
-							calculate.addClass( 'active' );
+						/* funkcja testująca poprawność wprowadzonych danych */
+						var t1 = /^\d+$/.test( ilosc.val() );
+						var t11 = parseInt( ilosc.val() ) > 0;
+						var t2 = typ.val() !== null;
+						var t21 = typ.val() == 'brak';
+						var t3 = kolory.val() !== null;
+						
+						if( t1 && t11 ){
+							if( t21 || ( t2 && t3 ) ){
+								data_correct = true;
+								marking = ( t21 || !t2)?( false ):( true );
+								calculate.addClass( 'active' );
+								
+							}
+							else{
+								data_correct = false;
+								calculate.removeClass( 'active' );
+								
+							}
 							
 						}
 						else{
@@ -897,11 +970,7 @@
 							
 						}
 						else if( mode === 'clear' ){
-							$.each( [produkt, marking, prepare, packing, marza], function( k, v ){
-								v.formula.text( '-' );
-								v.sum.text( '-' );
-								
-							} );
+							summary.find( '.line.partial:not(.proto)' ).remove();
 							
 							total.text( '-' );
 							
@@ -909,7 +978,9 @@
 						
 					},
 					calculate: function( e ){
-						if( data_correct ){
+						if( data_correct && !ajax_lock ){
+							ajax_lock = true;
+							kalkulator.triggerHandler( 'notify', [ 'wait', 'Obliczam...' ] );
 							$.ajax({
 								type: 'POST',
 								url: root.bazar.basePath + '/kalkulator',
@@ -925,20 +996,31 @@
 									if( data.trim() !== 'fail' ){
 										try{
 											var resp = JSON.parse( data );
-											console.log( resp );
+											// console.log( resp );
+											kalkulator.triggerHandler( 'notify', [ 'ok' ] );
 											kalkulator.triggerHandler( 'fill', resp );
 											
 										}
 										catch( err ){
 											console.error( err );
 											console.log( data );
+											kalkulator.triggerHandler( 'notify', [ 'fail', 'Błąd serwera. Proszę spróbować ponownie za chwilę' ] );
 											
 										}
 										
 									}
 									else{
+										kalkulator.triggerHandler( 'notify', [ 'fail', 'Nie można obliczyć ceny. Brak cennika dla wybranego typu znakowania' ] );
 										
 									}
+									
+								},
+								error: function(){
+									kalkulator.triggerHandler( 'notify', [ 'fail', 'Błąd komunikacji z serwerem. Proszę spróbować ponownie za chwilę' ] );
+									
+								},
+								complete: function(){
+									ajax_lock = false;
 									
 								},
 								
@@ -948,26 +1030,101 @@
 						
 					},
 					fill: function( e, data ){
-						produkt.name.text( data.name );
-						produkt.formula.text( data.price.formula );
-						produkt.sum.text( data.price.total );
 						
-						marking.name.text( data.type );
-						marking.formula.text( data.marking.formula );
-						marking.sum.text( data.marking.total );
+						kalkulator.triggerHandler( 'wynik', [ 'clear' ] );
 						
-						prepare.formula.text( data.prepare.formula );
-						prepare.sum.text( data.prepare.total );
+						var proto = summary.find( '.line.proto' );
+						var anchor = summary.find( '.line.total' );
 						
-						packing.formula.text( data.packing.formula );
-						packing.sum.text( data.packing.total );
-						
-						marza.formula.text( data.added.formula );
-						marza.sum.text( data.added.total );
+						$.each( data.lines, function( index, item ){
+							var t = proto.clone().removeClass( 'proto hide' );
+							
+							t.children( '.field.name' ).text( item.title );
+							
+							t.children( '.field.formula' ).text( item.formula );
+							
+							t.children( '.field.sum' ).text( item.total );
+							
+							anchor.before( t );
+							
+						} );
 						
 						total.text( data.total );
 						
 						kalkulator.triggerHandler( 'wynik', [ 'open' ] );
+						
+					},
+					notify: function( e, status, msg ){
+						statusbar.removeClass( 'ok wait fail info' ).addClass( status );
+						
+						statusbar.children( '.text' ).html( '' ).html( msg );
+						
+					},
+					cart: function( e ){
+						if( cart_lock ) return false;
+						cart_lock = true;
+						var genID = function(){
+							return '@' + new Date().getTime();
+							
+						};
+						
+						var myData = {
+							zamowienie: genID(),
+							ID: produkt_data.ID,
+							nazwa: produkt_data.NAME,
+							opis: produkt_data.DSCR,
+							num: parseInt( ilosc.val() ),
+							mark: {
+								type: typ.val(),
+								place: typ.children( 'option:selected' ).attr( 'size' ),
+							},
+							colors: parseInt( kolory.val() ),
+							colorname: produkt_data.COLOR,
+							price: produkt_data.PRICE,
+							
+						}
+						
+						console.log( myData );
+						
+						kalkulator.triggerHandler( 'notify', [ 'wait', 'Dodaję do koszyka...' ] );
+						
+						$.ajax({
+							type: 'POST',
+							url: root.bazar.basePath + '/koszyk',
+							data: myData,
+							success: function( data ){
+								
+								try{
+									var resp = JSON.parse( data );
+									console.log( resp );
+									kalkulator.triggerHandler( 'notify', [ resp.status, resp.msg ] );
+									
+									if( resp.status === 'ok' ){
+										kalkulator.find( '.tcell.dane' ).trigger( 'reset' );
+										kalkulator.triggerHandler( 'wynik', [ 'close' ] );
+										kalkulator.triggerHandler( 'wynik', [ 'clear' ] );
+										$( '.navbar .basket' ).triggerHandler( 'update' );
+										
+									}
+									
+								}
+								catch( err ){
+									console.log( data );
+									kalkulator.triggerHandler( 'notify', [ 'fail', 'Błąd odpowiedzi serwera. Spróbuj ponownie za chwilę' ] );
+									
+								}
+								
+							},
+							error: function(){
+								kalkulator.triggerHandler( 'notify', [ 'fail', 'Błąd komunikacji z serwerem. Proszę spróbować ponownie za chwilę' ] );
+								
+							},
+							complete: function(){
+								cart_lock = false;
+								
+							},
+							
+						});
 						
 					},
 					
@@ -975,12 +1132,25 @@
 				
 				kalkulator.triggerHandler( 'init' );
 				
-				ilosc
-				.add( typ )
-				.add( kolory )
-				.change( function( e ){
+				/* sprawdzanie poprawności danych przy każdej zmianie;
+				zmiana danych po wykaniu kalkulacji zamyka widok podglądu, by użytkownik musiał zrobić kalkulację dla aktualnie ustawionych danych*/
+				ilosc.add( typ ).add( kolory ).change( function( e ){
 					kalkulator.triggerHandler( 'wynik', [ 'close' ] );
+					kalkulator.triggerHandler( 'notify' );
 					kalkulator.triggerHandler( 'test' );
+					
+				} );
+				
+				/* ukrywanie pola z kolorami jeśli nie wybrano typu znakowania, albo gdy wybrano opcję bez znakowania */
+				typ.change( function( e ){
+					if( $(this).val() === 'brak' ){
+						kolory.parent().fadeOut();
+						
+					}
+					else{
+						kolory.parent().fadeIn();
+						
+					}
 					
 				} );
 				
@@ -989,46 +1159,32 @@
 					
 				} );
 				
+				cartBtn.click( function( e ){
+					kalkulator.triggerHandler( 'cart' );
+					
+				} );
+				
 			})
 			( $( '.table.kalkulator' ), 
 			$( '.table.kalkulator .tcell.dane > .line.ilosc > input' ), 
 			$( '.table.kalkulator .tcell.dane > .line.typ > select' ), 
 			$( '.table.kalkulator .tcell.dane > .line.kolory > select' ), 
+			$( '.table.kalkulator .tcell.dane > .line.button > .status' ), 
 			$( '.table.kalkulator .tcell.dane > .line.button > .calc' ), 
 			$( '.table.kalkulator .tcell.wynik' ), 
-			{
-				name: $( '.table.kalkulator .tcell.wynik > .partial.product > .field.name' ),
-				formula: $( '.table.kalkulator .tcell.wynik > .partial.product > .field.formula' ),
-				sum: $( '.table.kalkulator .tcell.wynik > .partial.product > .field.sum' ),
-				
-			}, 
-			{
-				name: $( '.table.kalkulator .tcell.wynik > .partial.marking > .field.name' ),
-				formula: $( '.table.kalkulator .tcell.wynik > .partial.marking > .field.formula' ),
-				sum: $( '.table.kalkulator .tcell.wynik > .partial.marking > .field.sum' ),
-				
-			}, 
-			{
-				name: $( '.table.kalkulator .tcell.wynik > .partial.prepare > .field.name' ),
-				formula: $( '.table.kalkulator .tcell.wynik > .partial.prepare > .field.formula' ),
-				sum: $( '.table.kalkulator .tcell.wynik > .partial.prepare > .field.sum' ),
-				
-			}, 
-			{
-				name: $( '.table.kalkulator .tcell.wynik > .partial.packing > .field.name' ),
-				formula: $( '.table.kalkulator .tcell.wynik > .partial.packing > .field.formula' ),
-				sum: $( '.table.kalkulator .tcell.wynik > .partial.packing > .field.sum' ),
-				
-			}, 
-			{
-				name: $( '.table.kalkulator .tcell.wynik > .partial.added > .field.name' ),
-				formula: $( '.table.kalkulator .tcell.wynik > .partial.added > .field.formula' ),
-				sum: $( '.table.kalkulator .tcell.wynik > .partial.added > .field.sum' ),
-				
-			},
-			$( '.table.kalkulator .tcell.wynik > .total  > .sum > span' ) );
+			$( '.table.kalkulator .tcell.wynik > .total  > .sum > span' ), 
+			$( '.table.kalkulator .tcell.wynik > .line.cart > div' ) );
 			
 		},
+		koszyk: function(){
+			var addon = root.addon;
+			var logger = addon.isLogger();
+			
+			if(logger) console.log('page.koszyk()');
+			
+			
+		},
+		
 		
 	}
 	

@@ -1,0 +1,115 @@
+#cart{
+	
+	#grid{
+		
+		& > .mid{
+			
+			& > .table{
+				
+				& > .title{
+					padding: 0 20px;
+					height: 44px;
+					background-color: $color-menu-active;
+					font-size: 16px;
+					color: #fff;
+					
+				}
+				
+				& > .thead{
+					background-color: $color-ramka-szara;
+					font-size: 16px;
+					
+					& > div{
+						padding: 0 20px;
+						height: 44px;						
+						
+					}
+					
+				}
+				
+				& > .tbody{
+					
+					& > .line{
+						
+						& > .field{
+							padding: 0 20px;
+							min-height: 40px;
+							
+							&.options{
+								
+								& > label{
+									width: 20px;
+									height: 20px;
+									border: solid 2px $color-menu-active;
+									border-radius: 5px;
+									
+									& > .icon{
+										opacity: 0;
+										transition: opacity .3s linear;
+										
+									}
+									
+								}
+								
+								& > input:checked + label > .icon{
+									opacity: 1;
+									
+								}
+								
+							}
+							
+						}
+						
+						&.options{
+							padding: 0 20px;
+							height: 40px;
+							background-color: $color-ramka-szara;
+							
+							& > .title{
+								
+							}
+							
+							& > .buttons{
+								
+								& > .icon{
+									font-size: 20px;
+									
+								}
+								
+							}
+							
+						}
+						
+						&:nth-child(even){
+							background-color: $color-szary-jasny;
+							
+						}
+						
+					}
+					
+				}
+				
+				& > .table{
+					
+					& > .thead{
+						padding: 0 20px;
+						height: 44px;
+						color: #fff;
+						background-color: $color-menu-active;
+						font-size: 16px;
+						
+					}
+					
+					& > .tbody{
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

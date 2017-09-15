@@ -76,10 +76,20 @@
 
 		       		
 		       	  
-	       		  <div class="basket">
-		           	 <div class="basket-text">
-		           	 	2 sztuki | <span class="basket-price">125,30 zł</span>
-		           	 </div>
+	       		  <div class="basket pointer">
+		           	 <a class="basket-text" href='<?php echo home_url( 'koszyk' ); ?>'>
+		           	 	<?php
+							if( count( $_SESSION[ 'cart' ] ) > 0 ){
+								$status = cartStatus();
+								printf( "%s szt | %.2f zł", $status[ 'num' ], $status[ 'price' ] );
+							}
+							else{
+								echo "Pusty";
+								
+							}
+							
+						?>
+		           	 </a>
 
 		            	<i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
 		            </div>

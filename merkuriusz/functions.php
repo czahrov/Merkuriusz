@@ -335,19 +335,23 @@ function markPrice( $type, $num, $repeat = 1 ){
 	
 	$ret = array(
 		'prepare' => array(
+			'title' => 'Przygotowanie do znakowania',
 			'formula' => sprintf( "%s x %.2f", 1, $item[ 'przygotowanie' ] ),
 			'total' => sprintf( "%.2f", 1 * $item[ 'przygotowanie' ] ),
 		),
 		'repeat' => array(
-			'formula' => sprintf( "%s x %.2f", $num, $item[ 'powtórzenie' ] ),
-			'total' => sprintf( "%.2f", $num * $item[ 'powtórzenie' ] ),
+			'title' => 'Powtórzenie',
+			'formula' => sprintf( "%s x %.2f", ( $repeat - 1 ), $item[ 'powtórzenie' ] ),
+			'total' => sprintf( "%.2f", ( $repeat - 1 ) * $item[ 'powtórzenie' ] ),
 		),
 		'packing' => array(
+			'title' => 'Pakowanie',
 			'formula' => sprintf( "%s x %.2f", $num, $item[ 'pakowanie' ] ),
 			'total' => sprintf( "%.2f", $num * $item[ 'pakowanie' ] ),
 		),
 		
 	);
+	
 	
 	$cena = $item[ 'przygotowanie' ] + $item[ 'powtórzenie' ] * ( $repeat - 1 ) + $item[ 'pakowanie' ] * $num;
 	
@@ -360,9 +364,11 @@ function markPrice( $type, $num, $repeat = 1 ){
 	$cena += (float)$found;
 	
 	$ret[ 'added' ] = array(
+		'title' => 'Ryczałt',
 		'formula' => sprintf( "%s x %.2f", 1, $found ),
 		'total' => sprintf( "%.2f", $found ),
 	);
+	
 	
 	reset( $item[ 'price' ] );
 	$found = null;
@@ -373,13 +379,42 @@ function markPrice( $type, $num, $repeat = 1 ){
 	$cena += (float)$found * $num;
 	
 	$ret[ 'marking' ] = array(
+		'title' => 'Znakowanie',
 		'formula' => sprintf( "%s x %.2f", $num, $found ),
 		'total' => sprintf( "%.2f", $num * $found ),
 	);
 	
+	
 	$ret[ 'total' ] = sprintf( "%.2f", $cena );
 	
 	return $ret;
+}
+
+function cartStatus(){
+	// zwracanie stanu koszyka
+	$total = 0;
+	
+	if( count( $_SESSION[ 'cart' ] ) > 0 ) foreach( $_SESSION[ 'cart' ] as $set ){
+		// print_r( $set );
+		$marking = markPrice( $set[ 'mark' ][ 'type' ], $set[ 'num' ] );
+		if( $marking === false ){
+			$marking = 0;
+			
+		}
+		else{
+			$marking = $marking[ 'total' ];
+			
+		}
+		$total += (float)$set[ 'price' ] * (float)$set[ 'num' ] + (float)$marking;
+		
+	}
+	
+	return array(
+		'num' => count( $_SESSION[ 'cart' ] ),
+		'price' => sprintf( "%.2f", $total ),
+		
+	);
+	
 }
 
 // action hook
