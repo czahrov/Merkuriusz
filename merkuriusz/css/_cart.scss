@@ -90,6 +90,7 @@
 				}
 				
 				& > .table{
+					margin-top: 50px;
 					
 					& > .thead{
 						padding: 0 20px;
@@ -101,6 +102,139 @@
 					}
 					
 					& > .tbody{
+						
+						& > .field{
+							
+							& > .input{
+								min-height: 44px;
+								padding: 0 20px;
+								border: solid 1px $color-ramka-szara;
+								resize: none;
+								font-size: 14px;
+								transition: border .3s linear;
+								
+								.title{
+									font: inherit;
+									
+								}
+								
+								&::placholder{
+									font: inherit;
+									
+								}
+								
+								&.err{
+									border-color: red;
+									
+								}
+								
+							}
+							
+							& > textarea.input{
+								padding: 10px 20px;
+								height: 200px;
+								line-height: 30px;
+								
+							}
+							
+						}
+						
+					}
+					
+					& > .tbottom{
+						padding: 20px 0;
+						
+						& > .status{
+							border: none;
+							
+							& > .icon{
+								
+								& > div{
+									margin: 0 10px;
+									font-size: 30px;
+									border: none;
+									
+									&.ok{
+										color: green;
+										
+									}
+									
+									&.fail{
+										color: red;
+										
+									}
+									
+									&.info{
+										color: blue;
+										
+									}
+									
+								}
+								
+							}
+							
+							& > .text{
+								padding: 0 10px;
+								font-size: 16px;
+								
+							}
+							
+							& > .load{
+								padding: 0 20px;
+								height: 40px;
+								
+								& > .progres{
+									min-width: 50px;
+									
+									&::after{
+										content: ' %';
+										
+									}
+									
+								}
+								
+								& > .bar{
+									margin: 0 10px;
+									height: 4px;
+									background-color: #000;
+									transform-origin: left;
+									transform: scaleX(0);
+									
+								}
+								
+							}
+							
+							&:not(.ok) > .icon > .ok{
+								display: none;
+								
+							}
+							
+							&:not(.fail) > .icon > .fail{
+								display: none;
+								
+							}
+							
+							&:not(.info) > .icon > .info{
+								display: none;
+								
+							}
+							
+							&:not(.wait) > .icon > .wait{
+								display: none;
+								
+							}
+							
+						}
+						
+						& > .button{
+							height: 40px;
+							padding: 0 20px;
+							background-color: $color-menu-active;
+							color: #fff;
+							font-size: 16px;
+							border: solid 1px $color-ramka-szara;
+							
+						}
 						
 					}
 					

@@ -349,6 +349,10 @@ ul.menu {
       font-size: 22px;
       line-height: 40px;
       color: #2a96f8; }
+    #single #grid > .mid > .head > .info > .instock {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 22px; }
     #single #grid > .mid > .head > .info > .code {
       margin-bottom: 10px;
       font-size: 14px;
@@ -509,9 +513,76 @@ ul.menu {
     font-size: 20px; }
 #cart #grid > .mid > .table > .tbody > .line:nth-child(even) {
   background-color: #f7f7f7; }
-#cart #grid > .mid > .table > .table > .thead {
-  padding: 0 20px;
-  height: 44px;
-  color: #fff;
-  background-color: #0af;
-  font-size: 16px; }
+#cart #grid > .mid > .table > .table {
+  margin-top: 50px; }
+  #cart #grid > .mid > .table > .table > .thead {
+    padding: 0 20px;
+    height: 44px;
+    color: #fff;
+    background-color: #0af;
+    font-size: 16px; }
+  #cart #grid > .mid > .table > .table > .tbody > .field > .input {
+    min-height: 44px;
+    padding: 0 20px;
+    border: solid 1px #e7e7e7;
+    resize: none;
+    font-size: 14px;
+    -webkit-transition: border .3s linear;
+    transition: border .3s linear; }
+    #cart #grid > .mid > .table > .table > .tbody > .field > .input .title {
+      font: inherit; }
+    #cart #grid > .mid > .table > .table > .tbody > .field > .input::placholder {
+      font: inherit; }
+    #cart #grid > .mid > .table > .table > .tbody > .field > .input.err {
+      border-color: red; }
+  #cart #grid > .mid > .table > .table > .tbody > .field > textarea.input {
+    padding: 10px 20px;
+    height: 200px;
+    line-height: 30px; }
+  #cart #grid > .mid > .table > .table > .tbottom {
+    padding: 20px 0; }
+    #cart #grid > .mid > .table > .table > .tbottom > .status {
+      border: none; }
+      #cart #grid > .mid > .table > .table > .tbottom > .status > .icon > div {
+        margin: 0 10px;
+        font-size: 30px;
+        border: none; }
+        #cart #grid > .mid > .table > .table > .tbottom > .status > .icon > div.ok {
+          color: green; }
+        #cart #grid > .mid > .table > .table > .tbottom > .status > .icon > div.fail {
+          color: red; }
+        #cart #grid > .mid > .table > .table > .tbottom > .status > .icon > div.info {
+          color: blue; }
+      #cart #grid > .mid > .table > .table > .tbottom > .status > .text {
+        padding: 0 10px;
+        font-size: 16px; }
+      #cart #grid > .mid > .table > .table > .tbottom > .status > .load {
+        padding: 0 20px;
+        height: 40px; }
+        #cart #grid > .mid > .table > .table > .tbottom > .status > .load > .progres {
+          min-width: 50px; }
+          #cart #grid > .mid > .table > .table > .tbottom > .status > .load > .progres::after {
+            content: ' %'; }
+        #cart #grid > .mid > .table > .table > .tbottom > .status > .load > .bar {
+          margin: 0 10px;
+          height: 4px;
+          background-color: #000;
+          -webkit-transform-origin: left;
+                  transform-origin: left;
+          -webkit-transform: scaleX(0);
+                  transform: scaleX(0); }
+      #cart #grid > .mid > .table > .table > .tbottom > .status:not(.ok) > .icon > .ok {
+        display: none; }
+      #cart #grid > .mid > .table > .table > .tbottom > .status:not(.fail) > .icon > .fail {
+        display: none; }
+      #cart #grid > .mid > .table > .table > .tbottom > .status:not(.info) > .icon > .info {
+        display: none; }
+      #cart #grid > .mid > .table > .table > .tbottom > .status:not(.wait) > .icon > .wait {
+        display: none; }
+    #cart #grid > .mid > .table > .table > .tbottom > .button {
+      height: 40px;
+      padding: 0 20px;
+      background-color: #0af;
+      color: #fff;
+      font-size: 16px;
+      border: solid 1px #e7e7e7; }

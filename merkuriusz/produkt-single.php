@@ -116,6 +116,9 @@
 					<div class='title'>
 						<?php echo $item[ 'NAME' ]; ?>
 					</div>
+					<div class='instock'>
+						<?php printf( "Stan magazynowy: <span class='bold'>%s sztuk</span>", $item[ 'INSTOCK' ] ); ?>
+					</div>
 					<div class='code'>
 						<?php printf( "<span class='bold'>Kod produktu:</span> %s", $item[ 'ID' ] ); ?>
 					</div>
@@ -211,7 +214,7 @@
 							<div class='line base1 total flex'>
 								<div class='field fake base2'></div>
 								<div class='field sum bold base2 flex flex-items-center flex-justify-center'>
-									SUMA: <span></span> + VAT
+									SUMA: <span></span>
 									
 								</div>
 								

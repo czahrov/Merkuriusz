@@ -1133,9 +1133,6 @@
 							'title' => 'Akcesoria',
 						),
 						array(
-							'title' => 'Wskaźniki laserowe',
-						),
-						array(
 							'title' => "Pendrive",
 							'sub' => array(
 								array(

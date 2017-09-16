@@ -755,6 +755,27 @@
 			
 			if(logger) console.log('page.produkt()');
 			
+			/* breadcrumb */
+			(function( breadcrumb ){
+				try{
+					var parts = [];
+					$( 'ul.menu .active' ).each(function(){
+						parts.push( $(this).find( '.head:first > .title' ).text() );
+						
+					});
+					parts.push( produkt_data.NAME );
+					
+					breadcrumb.text( parts.join( " > " ) );
+					
+				}
+				catch( err ){
+					console.error( err );
+					
+				}
+				
+			})
+			( $( '#grid > .top > .breadc' ) );
+			
 			/* obsługa miniaturek produktu */
 			(function( slider, view, img, large, nav ){
 				var current = 0;
@@ -1182,9 +1203,304 @@
 			
 			if(logger) console.log('page.koszyk()');
 			
+			/* formularz zarządzania zestawami */
+			(function( form, inputs, labels, delBtn, buyBtn, form2 ){
+				/* czy tryb kupowania jest aktywny */
+				buyMode = false;
+				
+				form.on({
+					remove: function( e ){
+						$.post(
+							window.location.origin + window.location.pathname + '?del',
+							form.serializeArray(),
+							function( data ){
+								try{
+									var resp = JSON.parse( data );
+									console.log( resp );
+									if( resp.status === 'ok' ){
+										window.alert( 'za chwile nastąpi przekierowanie' );
+										window.location.reload();
+										
+									}
+									
+								}
+								catch( err ){
+									console.error( err );
+									console.log( data );
+									
+								}
+								
+							}
+						);
+						
+					},
+					
+				});
+				
+				inputs.change( function(){
+					if( form.find( 'input:checkbox:checked' ).length < 1 ){
+						form2.triggerHandler( 'hide' );
+						buyMode = false;
+						
+					}
+					
+				} );
+				
+				delBtn.click( function( e ){
+					form.triggerHandler( 'remove' );
+					
+				} );
+				
+				buyBtn.click( function( e ){
+					if( buyMode){
+						form2.triggerHandler( 'hide' );
+						
+					}
+					else if( !buyMode && form.find( 'input:checkbox:checked' ).length > 0  ){
+						form2.triggerHandler( 'show' );
+						
+					}
+					
+				} );
+				
+			})
+			( $( 'form.opcje' ), 
+			$( 'form.opcje input:checkbox' ), 
+			$( 'form.opcje input:checkbox + label' ), 
+			$( 'form.opcje .buttons > .del' ), 
+			$( 'form.opcje .buttons > .buy' ), 
+			$( 'form.form' ) );
+			
+			/* formularz składania zamówienia */
+			(function( form, imie, tel, mail, file, msg, sendBtn, statusBar, loadBar, formOpcje ){
+				var lock = false;
+				var attachment = false;
+				form.add( loadBar ).hide();
+				
+				form.on({
+					show: function( e ){
+						form.slideDown();
+						
+					},
+					hide: function( e ){
+						form.slideUp();
+						form.trigger( 'reset' );
+						
+					},
+					send: function( e ){
+						if( lock ) return false;
+						lock = true;
+						/*
+							imie: /^[a-zA-Z \-żźćńółąśęŻŹĆŃÓŁĄŚĘ]+$/,
+							nazwa: /^[\w \-żźćńółąśęŻŹĆŃÓŁĄŚĘ]+$/,
+							adres: /^[\w \-żźćńółąśęŻŹĆŃÓŁĄŚĘ\.,\d]+$/,
+							telefon: /^[\d\+ \(\)]+$/,
+							mail: /^[^\d_\.\-][\w\d \.\-!#\$%&'\*\+/=\?^`\{\|\}~]{1,64}@\w+(?:\.\w+)+$/,
+							tekst: /^[\w\s \-żźćńółąśęŻŹĆŃÓŁĄŚĘ\[\]\{\}\|\+\?\.,\:;\$\^\*\(\)!#%~/\\]*$/,
+							tekst_req: /^[\w\s \-żźćńółąśęŻŹĆŃÓŁĄŚĘ\[\]\{\}\|\+\?\.,\:;\$\^\*\(\)!#%~/\\]+$/,
+						*/
+						var checkForm = [
+							{
+								name: 'imie',
+								item: imie,
+								filterName: 'imie',
+								
+							},
+							{
+								name: 'tel',
+								item: tel,
+								filterName: 'telefon',
+								
+							},
+							{
+								name: 'mail',
+								item: mail,
+								filterName: 'mail',
+								
+							},
+							{
+								name: 'msg',
+								item: msg,
+								filterName: 'tekst',
+								
+							},
+							
+						];
+						
+						/* test walidacji */
+						test = addon.form.verify( checkForm );
+						if( test === true ){
+							/* tworzenie obiektu formularza z danymi i dodawania wartości z pól */
+							var myData = new FormData();
+							
+							$.each( form.serializeArray(), function( index, item ){
+								myData.append( item.name, item.value );
+								
+							} );
+							
+							$.each( formOpcje.serializeArray(), function( index, item ){
+								myData.append( item.name, item.value );
+								
+							} );
+							
+							
+							if( file.prop( 'files' ).length > 0 ){
+								$.each( file.prop( 'files' ), function( index, item ){
+									myData.append( 'file', item );
+									
+								} );
+								// myData.append( 'file', file.prop( 'files' )[0] );
+								
+							}
+							
+							$.ajax({
+								type: 'POST',
+								url: window.location.origin + window.location.pathname + '?buy',
+								data: myData,
+								contentType: false,
+								processData: false,
+								xhr: function(){
+									jqxhr = new XMLHttpRequest;
+									
+									jqxhr.upload.addEventListener( 'loadstart', function( e ){
+										loadBar.fadeIn( 'fast' );
+										
+									} );
+									
+									jqxhr.upload.addEventListener( 'progress', function( e ){
+										form.triggerHandler( 'upload', [ e.loaded / e.total ] );
+										
+									} );
+									jqxhr.upload.addEventListener( 'loadend', function( e ){
+										loadBar.fadeOut( 'slow', function(){
+											form.triggerHandler( 'upload', [ 0 ] );
+											
+										} );
+										
+									} );
+									
+									return jqxhr;
+								},
+								beforeSend: function(){
+									form.triggerHandler( 'notify', [ 'wait', 'Wysyłam mail...' ] );
+									
+								},
+								success: function( data ){
+									form.triggerHandler( 'notify', [ 'ok', 'Mail wysłany pomyślnie!' ] );
+									console.log( data );
+									try{
+										var resp = JSON.parse( data );
+										console.log( resp );
+										form.triggerHandler( 'notify', [ resp.status, resp.msg ] );
+										
+										if( resp.status === 'ok' ){
+											window.setTimeout(function(){
+												window.location.reload();
+												
+											}, 3000);
+											
+										}
+										
+									}
+									catch( err ){
+										console.error( err );
+										console.warn( data );
+										
+									}
+									
+								},
+								error: function(){
+									
+								},
+								complete: function(){
+									lock = false;
+									
+								},
+								
+							});
+							
+						}
+						else{
+							// console.log( test );
+							$.each( test, function( index, item ){
+								item.addClass( 'err' );
+								
+							} );
+							
+						}
+						
+					},
+					notify: function( e, status, msg ){
+						
+						statusBar
+						.removeClass( 'ok fail info wait' )
+						.addClass( status )
+						.children( '.text' )
+						.html( msg );
+						
+					},
+					upload: function( e, progress ){
+						var str = Math.round( Math.pow( 10, 4 ) * progress ) / 100;
+						
+						loadBar.children( '.progres' ).text( str );
+						TweenLite.to(
+							loadBar.children( '.bar' ),
+							.3,
+							{
+								scaleX: progress,
+							}
+						);
+						
+					},
+					
+				});
+				
+				file
+				.change( function( e ){
+					var files = $(this).prop( 'files' );
+					var title = $(this).next( '.input' ).children( '.title' );
+					
+					if( files.length > 0 ){
+						attachment = true;
+						title.text( files[0].name );
+						
+					}
+					else{
+						attachment = false;
+						title.text( 'Dodaj załącznik' );
+						
+					}
+					
+				} )
+				.next( '.input' )
+				.click( function( e ){
+					file.click();
+					
+				} );
+				
+				sendBtn.click( function(){
+					form.triggerHandler( 'send' );
+					
+				} );
+				
+				imie.add( tel ).add( mail ).focus( function(){
+					$(this).removeClass( 'err' );
+					
+				} );
+				
+			})
+			( $( 'form.form' ), 
+			$( 'form.form .field.imie > input' ), 
+			$( 'form.form .field.tel > input' ), 
+			$( 'form.form .field.mail > input' ), 
+			$( 'form.form .field.file > input' ), 
+			$( 'form.form .field.msg > textarea' ), 
+			$( 'form.form > .tbottom > .button' ), 
+			$( 'form.form > .tbottom > .status' ), 
+			$( 'form.form > .tbottom > .status > .load' ), 
+			$( 'form.opcje' ) );
 			
 		},
-		
 		
 	}
 	
