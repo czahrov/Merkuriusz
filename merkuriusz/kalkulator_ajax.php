@@ -12,7 +12,7 @@ if( !isAjax() ){
 
 /* wycena ze znakowaniem */
 if( !empty( $_POST[ 'mark' ] ) && $_POST[ 'mark' ] !== 'brak' ){
-	$markPrice = markPrice( $_POST[ 'mark' ], $_POST[ 'num' ] );
+	$markPrice = markPrice( $_POST[ 'mark' ], $_POST[ 'num' ], $_POST[ 'colors' ] );
 
 	if( $markPrice === false ){
 		echo 'fail';
@@ -44,7 +44,8 @@ if( !empty( $_POST[ 'mark' ] ) && $_POST[ 'mark' ] !== 'brak' ){
 				),
 				$markPrice[ 'prepare' ],
 				$markPrice[ 'marking' ],
-				$markPrice[ 'repeat' ],
+				$markPrice[ 'colors' ],
+				// $markPrice[ 'repeat' ],
 				$markPrice[ 'packing' ],
 				$markPrice[ 'added' ]
 				

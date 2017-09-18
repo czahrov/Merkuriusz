@@ -6,6 +6,9 @@ a {
     color: inherit;
     outline: none; }
 
+.regular {
+  font-family: 'Montserrat-Regular'; }
+
 .semibold {
   font-family: 'Montserrat-SemiBold'; }
 
@@ -365,6 +368,8 @@ ul.menu {
       padding-left: 17px;
       border-left: solid 5px #2a96f8;
       font-size: 22px; }
+      #single #grid > .mid > .head > .info > .price > .netto {
+        font-size: 18px; }
 #single #grid > .mid > .body > .table {
   margin-top: 50px; }
   #single #grid > .mid > .body > .table > .thead {
@@ -461,11 +466,16 @@ ul.menu {
           min-height: 42px;
           font-size: 20px; }
           #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total > .field.sum {
+            padding: 10px 0;
             border: solid 1px #e7e7e7; }
             #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total > .field.sum > span {
               padding: 0 10px; }
               #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total > .field.sum > span::after {
-                content: ' zł'; }
+                content: ' zł*'; }
+            #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total > .field.sum > .info {
+              margin-top: 10px;
+              padding-left: 20px;
+              font-size: 12px; }
       #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .cart > div {
         margin-top: 13px;
         height: 44px;

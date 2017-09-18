@@ -12,7 +12,7 @@
 	$XMLData = $XM->getData();
 	
 	echo "<!--";
-	print_r( $XMLData['items'][0] );
+	// print_r( $XMLData['items'][0] );
 	// print_r( $_SESSION );
 	echo "-->";
 	
@@ -125,8 +125,13 @@
 					<div class='content'>
 						<?php echo $item[ 'DSCR' ]; ?>
 					</div>
-					<div class='price bold flex flex-items-center'>
-						<?php printf( "%s zł/szt", $item[ 'PRICE' ] ); ?>
+					<div class='price bold flex flex-wrap flex-items-center'>
+						<?php
+							printf( "%.2f zł/szt brutto%s", 
+								$item[ 'PRICE' ][ 'BRUTTO' ],
+								$item[ 'PRICE' ][ 'NETTO' ] !== null?( sprintf( "<span class='netto base1 regulat'>(%.2f zł netto)</span>", $item[ 'PRICE' ][ 'NETTO' ] ) ):( "" )
+							);
+						?>
 					</div>
 					
 				</div>
@@ -161,13 +166,20 @@
 									<option selected disabled value=''>Wybierz metodę znakowania</option>
 									<option value='brak'>Bez znakowania</option>
 									<?php
-										foreach( $item[ 'MARK' ] as $size => $types ):
-											foreach( $types as $type ):
-									?>
-										<option value='<?php echo $type; ?>' size='<?php echo $size; ?>'><?php printf( "%s, %s", $type, $size ); ?></option>
-									<?php
-											endforeach;
-										endforeach;
+										foreach( $item[ 'MARK' ] as $size => $types ){
+											foreach( $types as $type ){
+											$mark_data = markTypes( $type );
+												printf( "<option value='%s' size='%s' cmin='%s' cmax='%s'>%s, %s</option>",
+													$type,
+													$size,
+													$mark_data[ 'colors' ][ 'min' ],
+													$mark_data[ 'colors' ][ 'max' ],
+													$type,
+													$size
+												);
+												
+											}
+										}
 									?>
 									
 								</select>
@@ -179,9 +191,7 @@
 								</div>
 								<select class='value grow'>
 									<option selected disabled value=''>Podaj ilość kolorów nadruku</option>
-									<?php for( $i=1; $i<= (int)$item[ 'MARKCOLORS' ]; $i++ ): ?>
-									<option><?php echo $i; ?></option>
-									<?php endfor; ?>
+									
 								</select>
 								
 							</div>
@@ -213,8 +223,9 @@
 							</div>
 							<div class='line base1 total flex'>
 								<div class='field fake base2'></div>
-								<div class='field sum bold base2 flex flex-items-center flex-justify-center'>
+								<div class='field sum bold base2 flex flex-wrap flex-items-center flex-justify-center'>
 									SUMA: <span></span>
+									<div class='info regular base1'>* Podana cena jest ceną orientacyjną</div>
 									
 								</div>
 								
@@ -246,8 +257,8 @@
 								'Kraj pochodzenia' => $item[ 'COUNTRY' ],
 								'Rozmiar' => $item[ 'DIM' ],
 								'Kolor' => $item[ 'COLOR' ],
-								'Znakowanie' => $item[ 'MARKTYPE' ],
-								'Wielkość znakowania' => $item[ 'MARKSIZE' ],
+								'Znakowanie' => implode( "<br>", $item[ 'MARKTYPE' ] ),
+								'Wielkość znakowania' => implode( "<br>", $item[ 'MARKSIZE' ] ),
 								'Materiał' => $item[ 'MATTER' ],
 								'Waga' => $item[ 'WEIGHT' ],
 								
@@ -271,6 +282,7 @@
 		</div>
 		
 	</div>
+	
 </div>
 
 <?php get_template_part( "template/slider", "katalog" ); ?>

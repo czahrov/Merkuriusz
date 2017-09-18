@@ -1970,7 +1970,7 @@ transition: .3s linear;
 h2.kal{
  	background-color: #fff; 
  	padding: 35px 20px 35px 20px;
- 	color: #1d1d1d;
+ 	color: #2997F9;
  	font-size: 21px;
  	font-family: 'metropolis-semibold'
 
@@ -1984,6 +1984,66 @@ h2.kal{
 	line-height:30px;
 
 }
+
+
+
+
+
+.portfolio-kalendarz{
+margin-top: 20px;
+padding: 47px 0;
+ border: 1px solid #cecece;
+ cursor: pointer;
+ background-color: #fff;
+width: 255px;
+ height: 260px;
+
+}
+
+.portfolio-kalendarz:hover{
+background-color: #2997F9;
+color: #fff;
+	transition: background .2s linear;
+
+
+}
+
+
+
+
+
+.portfolio-kalendarz img{
+cursor: pointer;
+display:block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.portfolio-kalendarz h5{
+	padding:20px;
+
+cursor: pointer;
+text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .ad_btn {
@@ -2180,10 +2240,24 @@ h2.kal{
 
 
 .promo-kal{
-	border-bottom: 1px solid #E7E7E7;
+	cursor: pointer;
 	background-color: #fff;
-	padding: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
+		-webkit-box-shadow: -1px -1px 40px -10px rgba(158,158,158,1);
+-moz-box-shadow: -1px -1px 40px -10px rgba(158,158,158,1);
+box-shadow: -1px -1px 40px -10px rgba(158,158,158,1);
+}
+.promo-kal:hover{
+	background-color: #fff;
+	margin-bottom: 40px;
+	-webkit-box-shadow: -1px -1px 40px -10px rgba(3,93,153,1);
+-moz-box-shadow: -1px -1px 40px -10px rgba(3,93,153,1);
+box-shadow: -1px -1px 40px -10px rgba(3,93,153,1);
+}
+
+
+.promo-kal img{
+	cursor: pointer;
 }
 
 .apla{
@@ -2205,10 +2279,28 @@ h2.kal{
 
 dl.gallery-item img{
 	cursor: pointer;
+	-webkit-box-shadow: -1px -1px 40px -10px rgba(158,158,158,1);
+-moz-box-shadow: -1px -1px 40px -10px rgba(158,158,158,1);
+box-shadow: -1px -1px 40px -10px rgba(158,158,158,1);
+border: none !important
+
+}
+dl.gallery-item img:hover{
+	cursor: pointer;
+	-webkit-box-shadow: -1px -1px 40px -10px rgba(3,93,153,1);
+-moz-box-shadow: -1px -1px 40px -10px rgba(3,93,153,1);
+box-shadow: -1px -1px 40px -10px rgba(3,93,153,1);
+border: none !important
+
 }
 
+
+
+
 dd.gallery-caption {
- color:  #2A96F8 !important
+ color:  #2A96F8 !important;
+ font-size:21px !important;
+ margin-top: 15px; 
 }
 
 .apla a.przycisk{
@@ -2224,3 +2316,23 @@ dd.gallery-caption {
     padding-left: 17px;
     font-family: 'Montserrat-SemiBold';
 }
+
+a.makieta{
+	margin-top:25px;
+	background-color: #2997F9;
+	color: #fff;
+	padding: 15px 30px 15px 30px;
+	border: 3px solid #2997F9;
+	
+}
+
+a.makieta:hover{
+
+	color: #000;
+	background-color: #fff;
+	transition: background .3s linear;
+	transition: border .3s linear;
+	border:3px solid #3d3d3d;
+
+}
+

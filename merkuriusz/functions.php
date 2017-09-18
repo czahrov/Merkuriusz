@@ -83,242 +83,132 @@ function isAjax(){
 	return $_SERVER["HTTP_X_REQUESTED_WITH"] === "XMLHttpRequest";
 }
 
-function markTypes( $type ){
+function markTypes( $type, $get = false ){
 	/*
-		AXPOL
-			+T1, +T2, +T3, +T4
-			-TF1, -TF2, -TF3, -TF4
-			+TC, -TC1, -TC2
-			-L0, +L1, +L2, +L3, -L4
-			+S1, +S2, -S3, -S4
-			-SL
-			-FC1, -FC2
-			-D
-			-H
+		Znakowania są:
+		C1, C2
+		C1A, C1A+A1, C1A1, C1A+B, C1B, C1B+B1, C1B1, C1A1+B1, C1C, C1D, C1E, C1E1, C1F1, C1I, C1J, C1K+K1, C1K2
+		DC0, DC1, DC2
+		DC1USB, DC2USB
+		DO
+		DO1USB, DO2USB
+		ET, ET(N1), ET(N2), ET(N3), ETPlakietka
+		HF
+		HS
+		L1, L2, L3
+		L1V1
+		L1USB, L2USB
+		S1, S2
+		ST
+		SU
+		T1, T2, T3, T4
+		T1+V, T2+V, T3+V, T4+V
+		T1USB, T1USB2, T2USB, T2USB2
+		TC
+		TT1, TT2, TT3
+		Znakowanie SETy
+		
+		
+		Znakowań brak:
 		
 	*/
-	$data = array(
-		'T1' => array(
-			'przygotowanie' => 35.00,
-			'powtórzenie' => 15.00,
-			'pakowanie' => 0.00,
-			'ryczałt' => array(
-				0		=> 65.00,
-			),
-			'price' => array(
-				250		=> 0.21,
-				500		=> 0.18,
-				1000		=> 0.15,
-				2000		=> 0.13,
-				5000		=> 0.10,
-				10000	=> 0.08,
-				20000	=> 0.07,
-				50000	=> 0.06,
-				
-			),
-			
-		),
-		'T2' => array(
-			'przygotowanie' => 35.00,
-			'powtórzenie' => 15.00,
-			'pakowanie' => 0.05,
-			'ryczałt' => array(
-				0		=> 70.00,
-			),
-			'price' => array(
-				100		=> 0.34,
-				250		=> 0.30,
-				500		=> 0.24,
-				1000		=> 0.18,
-				2000		=> 0.16,
-				5000		=> 0.15,
-				10000	=> 0.13,
-				20000	=> 0.12,
-				50000	=> 0.09,
-				
-			),
-			
-		),
-		'T3' => array(
-			'przygotowanie' => 35.00,
-			'powtórzenie' => 15.00,
-			'pakowanie' => 0.08,
-			'ryczałt' => array(
-				0		=> 80.00,
-			),
-			'price' => array(
-				50		=> 0.55,
-				100		=> 0.50,
-				250		=> 0.45,
-				500		=> 0.40,
-				1000		=> 0.35,
-				2000		=> 0.32,
-				5000		=> 0.30,
-				10000	=> 0.28,
-				20000	=> 0.26,
-				50000	=> 0.23,
-				
-			),
-			
-		),
-		'T4' => array(
-			'przygotowanie' => 35.00,
-			'powtórzenie' => 15.00,
-			'pakowanie' => 0.10,
-			'ryczałt' => array(
-				0		=> 90.00,
-			),
-			'price' => array(
-				50		=> 0.90,
-				100		=> 0.80,
-				250		=> 0.75,
-				500		=> 0.70,
-				1000		=> 0.65,
-				2000		=> 0.60,
-				5000		=> 0.55,
-				10000	=> 0.53,
-				20000	=> 0.50,
-				50000	=> 0.45,
-				
-			),
-			
-		),
-		'L1' => array(
-			'przygotowanie' => 15.00,
-			'powtórzenie' => 15.00,
-			'pakowanie' => 0.00,
-			'ryczałt' => array(
-				0		=> 45.00,
-				20	=> 0.00,
-			),
-			'price' => array(
-				20		=> 0.99,
-				50		=> 0.89,
-				100		=> 0.79,
-				250		=> 0.65,
-				500		=> 0.49,
-				1000		=> 0.35,
-				2000		=> 0.29,
-				5000		=> 0.24,
-				10000	=> 0.19,
-				
-			),
-			
-		),
-		'L2' => array(
-			'przygotowanie' => 15.00,
-			'powtórzenie' => 15.00,
-			'pakowanie' => 0.08,
-			'ryczałt' => array(
-				0		=> 55.00,
-				20	=> 0.00,
-			),
-			'price' => array(
-				20		=> 1.45,
-				50		=> 1.29,
-				100		=> 1.19,
-				250		=> 0.99,
-				500		=> 0.79,
-				1000		=> 0.65,
-				2000		=> 0.59,
-				5000		=> 0.45,
-				
-			),
-			
-		),
-		'L3' => array(
-			'przygotowanie' => 15.00,
-			'powtórzenie' => 15.00,
-			'pakowanie' => 0.10,
-			'ryczałt' => array(
-				0		=> 60.00,
-				20	=> 0.00,
-			),
-			'price' => array(
-				20		=> 1.69,
-				50		=> 1.49,
-				100		=> 1.39,
-				250		=> 1.19,
-				500		=> 0.99,
-				1000		=> 0.79,
-				2000		=> 0.69,
-				5000		=> 0.55,
-				
-			),
-			
-		),
-		'S1' => array(
-			'przygotowanie' => 48.00,
-			'powtórzenie' => 28.00,
-			'pakowanie' => 0.10,
-			'ryczałt' => array(
-				0		=> 70.00,
-				50	=> 60.00,
-			),
-			'price' => array(
-				50		=> 1.20,
-				100		=> 1.00,
-				250		=> 0.90,
-				500		=> 0.80,
-				1000		=> 0.70,
-				2000		=> 0.65,
-				5000		=> 0.60,
-				10000	=> 0.55,
-				20000	=> 0.53,
-				50000	=> 0.50,
-				
-			),
-			
-		),
-		'S2' => array(
-			'przygotowanie' => 48.00,
-			'powtórzenie' => 28.00,
-			'pakowanie' => 0.15,
-			'ryczałt' => array(
-				0		=> 80.00,
-				50	=> 70.00,
-			),
-			'price' => array(
-				50		=> 1.55,
-				100		=> 1.40,
-				250		=> 1.20,
-				500		=> 1.15,
-				1000		=> 1.00,
-				2000		=> 0.90,
-				5000		=> 0.75,
-				10000	=> 0.65,
-				20000	=> 0.55,
-				50000	=> 0.53,
-				
-			),
-			
-		),
-		'TC' => array(
-			'przygotowanie' => 48.00,
-			'powtórzenie' => 30.00,
-			'pakowanie' => 0.15,
-			'ryczałt' => array(
-				0		=> 80.00,
-				20	=> 0.00,
-			),
-			'price' => array(
-				20		=> 3.15,
-				50		=> 2.95,
-				100		=> 2.75,
-				250		=> 2.65,
-				500		=> 2.45,
-				1000		=> 2.25,
-				2000		=> 2.15,
-				5000		=> 1.99,
-				
-			),
-			
-		),
-		
-	);
+	static $data = array();
 	
+	if( empty( $data ) ){
+		$file_url = get_template_directory(). "/markgroups.xml";
+		if( file_exists( $file_url ) ){
+			
+			/* ładowanie pliku xml do pamięci */
+			$marking = simplexml_load_file( $file_url );
+			
+			/* generowanie tablicy z danymi */
+			foreach( $marking->markgroup as $mark ){
+				/* wyciąganie nazwy */
+				$t = array(
+					'info' => '',
+					'przygotowanie' => '',
+					'powtórzenie' => '',
+					'pakowanie' => '',
+					'colors' => array(
+						'min' => 1,
+						'max' => 1,
+					),
+					'ryczałt' => array(),
+					'price' => array(),
+					
+				);
+				
+				/* rozkładanie nazwy głównej */
+				$mark_name = (string)$mark->baseinfo->name;
+				$mark_subname = (string)$mark->baseinfo->subgroup;
+				$name = $mark_name;
+				$pattern = "/(\w[^\(\)]*)/";
+				preg_match_all( $pattern, $name, $match );
+				switch( count( $match[1] ) ){
+					case 1:
+						$name = trim( $match[1][0] );
+						
+					break;
+					case 2:
+						$name = trim( $match[1][0] );
+						$t[ 'info' ] = trim( $match[1][1] );
+					
+					break;
+					case 3:
+						$name = trim( $match[1][0] ) . trim( $match[1][1] );
+						$t[ 'info' ] = trim( $match[1][2] );
+					
+					break;
+					case 4:
+						$name = trim( $match[1][0] ) . trim( $match[1][2] );
+						$t[ 'info' ] = trim( $match[1][1] ) . ' + ' . trim( $match[1][3] );
+					
+					break;
+					
+				}
+				
+				if( strlen( $mark_subname ) > 0 ) $name .= $mark_subname;
+				
+				/* wyciąganie prosty danych */
+				$t[ 'przygotowanie' ] = (float)$mark->prices->przygotowanie;
+				$t[ 'powtórzenie' ] = (float)$mark->prices->powtorzenie;
+				$t[ 'pakowanie' ] = (float)$mark->prices->pakowanie;
+				$t[ 'colors' ][ 'min' ] = (int)$mark->baseinfo->colors_min;
+				$t[ 'colors' ][ 'max' ] = (int)$mark->baseinfo->colors_max;
+				$t[ 'ryczałt' ] = array(
+					0 => (float)$mark->prices->ryczalt_price,
+					(int)$mark->prices->ryczalt_quantity + 1 => 0,
+					
+				);
+				
+				/* wyciąganie cen */
+				$t[ 'price' ][0] = 0;
+				foreach( $mark->prices->children() as $price ){
+					if( stripos( $price->getName(), 'price_from' ) !== false ){
+						preg_match( "/price_from(\d+)/", $price->getName(), $match );
+						$t[ 'price' ][ (int)$match[1] ] = (float)str_replace( ",", ".", $price );
+						
+					}
+					
+				}
+				ksort( $t[ 'price' ] );
+				
+				$data[ $name ] = $t;
+				
+			}	
+			
+		}
+
+		ksort( $data );
+		
+		
+	}
 	if( !empty( $data[ $type ] ) ){
 		return $data[ $type ];
+		
+	}
+	elseif( $get === true ){
+		return $data;
 		
 	}
 	else{
@@ -328,12 +218,29 @@ function markTypes( $type ){
 	
 }
 
-function markPrice( $type, $num, $repeat = 1 ){
+function markPrice( $type, $num, $colors = 1, $repeat = 1 ){
 	$item = markTypes( $type );
 	
 	if( $item === false ) return false;
 	
+	$kolory_cennik = array(
+		1 => 0,
+		2 => 5,
+		3 => 10,
+		4 => 15,
+		5 => 20,
+		
+	);
+	
+	$found = array_key_exists( $colors, $kolory_cennik )?( $kolory_cennik[ $colors ] ):( end( $kolory_cennik ) );
+	$cena = (float)$found;
+	
 	$ret = array(
+		'colors' => array(
+			'title' => sprintf( "Użyte kolory znakowania: %s", $colors ),
+			'formula' => sprintf( "%s x %.2f", 1, $found ),
+			'total' => sprintf( "%.2f", $found ),
+		),
 		'prepare' => array(
 			'title' => 'Przygotowanie do znakowania',
 			'formula' => sprintf( "%s x %.2f", 1, $item[ 'przygotowanie' ] ),
@@ -353,7 +260,7 @@ function markPrice( $type, $num, $repeat = 1 ){
 	);
 	
 	
-	$cena = $item[ 'przygotowanie' ] + $item[ 'powtórzenie' ] * ( $repeat - 1 ) + $item[ 'pakowanie' ] * $num;
+	$cena += $item[ 'przygotowanie' ] + $item[ 'powtórzenie' ] * ( $repeat - 1 ) + $item[ 'pakowanie' ] * $num;
 	
 	reset( $item[ 'ryczałt' ] );
 	$found = null;
@@ -379,7 +286,7 @@ function markPrice( $type, $num, $repeat = 1 ){
 	$cena += (float)$found * $num;
 	
 	$ret[ 'marking' ] = array(
-		'title' => 'Znakowanie',
+		'title' => sprintf( "Znakowanie %s", $type ),
 		'formula' => sprintf( "%s x %.2f", $num, $found ),
 		'total' => sprintf( "%.2f", $num * $found ),
 	);

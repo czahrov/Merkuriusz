@@ -221,6 +221,11 @@
 						border-left: solid 5px $color-single-title;
 						font-size: 22px;
 						
+						& > .netto{
+							font-size: 18px;
+							
+						}
+						
 					}
 					
 				}
@@ -433,15 +438,23 @@
 											font-size: 20px;
 											
 											&.sum{
+												padding: 10px 0;
 												border: solid 1px $color-ramka-szara;
 												
 												& > span{
 													padding: 0 10px;
 													
 													&::after{
-														content: ' zł';
+														content: ' zł*';
 														
 													}
+													
+												}
+												
+												& > .info{
+													margin-top: 10px;
+													padding-left: 20px;
+													font-size: 12px;
 													
 												}
 												

@@ -8,7 +8,7 @@
 
 <body>
 	
-	<?php get_template_part( "template/page", "top" ); ?>
+	<?php get_template_part( "template/without", "theme" ); ?>
 	<!-- BANER O NAS-->
 
 	<div class="container-fluid about_us_cover" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( get_post()->ID ), 'full' );?>');">
@@ -21,12 +21,8 @@
 		</div>
 	</div>
 
-<!-- Single US MAIN CONTENT -->
-	
-		<div class="informacje">
-			<div class="container">
-				<div class="col-md-12 text-center">
-					<div class="kal_menu">
+<!-- kod wywołania menu
+
 			<?php  
 wp_nav_menu(array(  
   'menu' => 'Main Navigation', 
@@ -34,22 +30,26 @@ wp_nav_menu(array(
   'walker' => new CSS_Menu_Maker_Walker()
 )); 
 ?>	
+ -->
+	
+	<div class="informacje">
+		<div class="container">
+				<div class="col-md-12 text-center">
+					<div class="kal_menu">
 
 
-</div>
+
+					<?php echo do_shortcode(get_post_field('post_content', $postid)); ?>
+
+					
+
+
+
+					</div>
 				</div>
-				<div class="col-md-7">
-
-
-
-
-
-
-
-
-
-			</div>	<!-- col-md-8 -->
+			
 		</div>
+	</div>
 
  <!-- FOOTER -->
 

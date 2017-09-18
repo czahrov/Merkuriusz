@@ -1010,7 +1010,7 @@
 									num: parseInt( ilosc.val() ),
 									mark: typ.val(),
 									colors: parseInt( kolory.val() ),
-									price: produkt_data.PRICE,
+									price: produkt_data.PRICE.BRUTTO,
 									
 								},
 								success: function( data, status ){
@@ -1101,7 +1101,7 @@
 							},
 							colors: parseInt( kolory.val() ),
 							colorname: produkt_data.COLOR,
-							price: produkt_data.PRICE,
+							price: produkt_data.PRICE.BRUTTO,
 							
 						}
 						
@@ -1153,8 +1153,7 @@
 				
 				kalkulator.triggerHandler( 'init' );
 				
-				/* sprawdzanie poprawności danych przy każdej zmianie;
-				zmiana danych po wykaniu kalkulacji zamyka widok podglądu, by użytkownik musiał zrobić kalkulację dla aktualnie ustawionych danych*/
+				/* sprawdzanie poprawności danych przy każdej zmianie; zmiana danych po wykaniu kalkulacji zamyka widok podglądu, by użytkownik musiał zrobić kalkulację dla aktualnie ustawionych danych*/
 				ilosc.add( typ ).add( kolory ).change( function( e ){
 					kalkulator.triggerHandler( 'wynik', [ 'close' ] );
 					kalkulator.triggerHandler( 'notify' );
@@ -1166,11 +1165,27 @@
 				typ.change( function( e ){
 					if( $(this).val() === 'brak' ){
 						kolory.parent().fadeOut();
-						
 					}
 					else{
-						kolory.parent().fadeIn();
+						/* zmiana ilości kolorów w zależności od wybranego typu znakowania */
+						kolory
+						.children( 'option:not(:disabled)' )
+						.remove();
+						var selected = typ.children( 'option:selected' );
+						var min = parseInt( selected.attr( 'cmin' ) ) || 1;
+						var max = parseInt( selected.attr( 'cmax' ) ) || 1;
 						
+						for( i = min; i <= max; i++ ){
+							$(
+								$( '<option></option>' )
+								.attr( 'value', i )
+								.text( i )
+							)
+							.appendTo( kolory );
+							
+						}
+						
+						kolory.parent().fadeIn();
 					}
 					
 				} );
