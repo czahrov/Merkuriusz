@@ -93,8 +93,9 @@
 			</div>
 			
 		</div>
-		<div class='img base0 grow shrink flex flex-items-center flex-justify-center'>
+		<div class='img flex flex-items-center'>
 			<img/>
+			
 		</div>
 		
 	</div>
