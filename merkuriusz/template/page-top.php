@@ -6,36 +6,22 @@
 	</div>
 </div>
 
-<div class="container">
-
-	<div class="col-md-5">
-		<div class="logo">
-			<a href="<?php echo home_url(); ?>">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/logo_merkuriusz.png" class="logo-src pointer" alt="merkuriusz logo">
-			</a>
-		</div>
+<div id='top' class='grid flex flex-items-center flex-justify-between'>
+	<div class='logo'>
+		<a class='pointer' href='<?php echo home_url(); ?>'>
+			<img src='<?php echo get_template_directory_uri(); ?>/img/logo_merkuriusz.png' />
+		</a>
+		
 	</div>
-	<div class="col-md-7">
-		<form class="input-group" id="searchform" method="get" action="<?php echo home_url(); ?>">
-			<input type="text" name="s" id="s" size="15" placeholder="Wpisz nazwę lub kod produktu" class="form-control search_input">
-
-			<?php wp_dropdown_categories( 'show_option_none=Wybierz kategorię' ); ?>
-
-			<!--
-<select class="form-control depart_input">
-<option>Wszystkie działy</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>5</option>
-</select>  -->
-			<span class="input-group-btn">
-				<button class="btn btn-default" type="submit" value="Search">
-					<i class="fa fa-search"></i>
-					</button>
-			</span>
-		</form>
-	</div>
+	<form class='searchbar flex' method='get' action='<?php echo home_url( 'produkt' ); ?>'>
+		<input class='input' type='text' name='nazwa' placeholder='Wpisz nazwę lub kod produktu'/>
+		<button class='button pointer flex flex-items-center flex-justify-center' type='submit'>
+			<div class='icon fa fa-search'></div>
+			
+		</button>
+		
+	</form>
+	
 </div>
 
 <!-- NAVIGATION -->

@@ -36,9 +36,9 @@ class XMLMan{
 				if( !empty( $item ) ) $this->_data['items'] = array_merge( $this->_data['items'], $item );
 				
 			}
-			elseif( !empty( $_GET['name'] ) ){
-				$item = $handler->search( $_GET['name'], true );
-				if( !empty( $item ) ) $this->_data['items'] = array_merge( $this->_data['items'], $item );
+			elseif( !empty( $_GET[ 'nazwa' ] ) ){
+				$item = $handler->search( $_GET[ 'nazwa' ], true );
+				if( !empty( $item ) ) $this->_data[ 'items' ] = array_merge( $this->_data[ 'items' ], $item );
 				
 			}
 			else{

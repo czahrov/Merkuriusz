@@ -1,38 +1,14 @@
-<?php
-/*
-	Template Name: Produkt - kategoria
-*/
-	get_header();
-	
-	parse_str( $_SERVER[ 'QUERY_STRING' ], $params );
-	$_SESSION = array_merge( $_SESSION, $params );
-	
-	if( !array_key_exists( 'strona', $params ) ){
-		config( 'strona', 1 );
-		
-	}
-	else{
-		config( 'strona', (int)$params['strona'] );
-		
-	}
-	
-	require_once "XML.php";
-	
-	$XMLData = $XM->getData();
-	/* 
-	echo "<!--";
-	print_r( $XMLData );
-	echo "-->";
-	*/
-?>
-<body id='kategoria'>
+<body id='kategoria' test>
 <?php get_template_part( "template/page", "top" ); ?>
 <div class='container'>
 	<?php get_template_part( "template/menu", "side" ); ?>
 	<div id='grid' class='col-md-8'>
 		<div class='top flex flex-wrap flex-items-center flex-justify-between'>
 			<div class='breadc uppercase grow base1 base0-mm flex flex-items-center flex-justify-center flex-justify-start-mm'>
-				<?php //do_action( 'breadcrumb' ); ?>
+				<?php
+					printf( "Szukana fraza: %s", $_GET[ 'nazwa' ] );
+					
+				?>
 			</div>
 			<div class='switcher grow base1 base0-mm flex flex-items-center flex-justify-center flex-justify-end-mm'>
 				<?php do_action( 'num_switcher' ); ?>

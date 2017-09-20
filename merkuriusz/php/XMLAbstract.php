@@ -557,7 +557,8 @@ class XMLAbstract{
 			
 			// szukanie po nazwie
 			if( $isName ){
-				$key = $this->stdNameCache( $arg );
+				// $key = $this->stdNameCache( $arg );
+				$key = apply_filters( 'stdName', $this->stdNameCache( $arg ) );
 				if( array_key_exists( $key, $arr ) ){
 					$item = $arr[ $key ];
 					$file = $item['file'];

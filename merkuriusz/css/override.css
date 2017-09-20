@@ -8,7 +8,7 @@ a, a:hover, a:focus {
   outline: none;
 }
 
-.regular {
+.regular, #top > .searchbar {
   font-family: 'Montserrat-Regular';
 }
 
@@ -146,6 +146,11 @@ ul.menu * {
 
 .pointer, .pointer * {
   cursor: pointer;
+}
+
+.grid {
+  max-width: 1220px;
+  padding: 0 20px;
 }
 
 #grid {
@@ -800,4 +805,41 @@ ul.menu * {
   color: #fff;
   font-size: 16px;
   border: solid 1px #e7e7e7;
+}
+
+#top {
+  height: 90px;
+}
+#top > .logo {
+  margin: 0 15px;
+}
+#top > .searchbar {
+  margin: 0 15px;
+  height: 45px;
+  font-size: 14px;
+}
+#top > .searchbar > .input {
+  width: 250px;
+  padding: 0 20px;
+  border: solid 1px #e7e7e7;
+}
+#top > .searchbar > .input::-webkit-input-placeholder {
+  color: inherit;
+}
+#top > .searchbar > .input:-ms-input-placeholder {
+  color: inherit;
+}
+#top > .searchbar > .input::placeholder {
+  color: inherit;
+}
+#top > .searchbar > .button {
+  width: 45px;
+  border: solid 1px #e7e7e7;
+  background-color: #fff;
+  -webkit-transition-property: background, font;
+  transition-property: background, font;
+}
+#top > .searchbar > .button:hover {
+  background-color: #0af;
+  color: #fff;
 }

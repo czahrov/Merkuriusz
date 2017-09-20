@@ -474,17 +474,27 @@ class AXPOL extends XMLAbstract{
 				preg_match( "/^\d+$/", (string)$item->Page, $match );
 				$page_test = empty($match)?( (string)$item->Page ):( "strona {$item->Page}" );
 				
+				$mark_array = $this->_getMark( (string)$item->CodeERP );
 				$mark_size = array();
 				$mark_types = array();
-				foreach( $this->_getMark( (string)$item->CodeERP ) as $size => $types ){
-					if( !in_array( $size, $mark_size ) ) $mark_size[] = $size;
-					
-					foreach( $types as $type ){
-						if( !in_array( $type, $mark_types ) ) $mark_types[] = $type;
+				if( !empty( $mark_array ) ){
+					foreach( $mark_array as $size => $types ){
+						if( !in_array( $size, $mark_size ) ) $mark_size[] = $size;
+						
+						foreach( $types as $type ){
+							if( !in_array( $type, $mark_types ) ) $mark_types[] = $type;
+							
+						}
 						
 					}
 					
 				}
+				else{
+					$mark_types[] = "Brak znakowania";
+					$mark_size[] = "Brak rozmiaru";
+					
+				}
+				
 				
 				/* 
 				-Model, 
@@ -530,7 +540,7 @@ class AXPOL extends XMLAbstract{
 						'IMG' => $img,
 						'CAT' => $cat,
 						'DIM' => (string)$item->Dimensions,
-						'MARK' => $this->_getMark( (string)$item->CodeERP ),
+						'MARK' => empty( $mark_array )?( array() ):( $mark_array ),
 						'INSTOCK' => $this->_getStock( (string)$item->CodeERP ),
 						'MATTER' => (string)$item->MaterialPL,
 						'COLOR' => (string)$item->ColorPL,
@@ -595,9 +605,9 @@ class AXPOL extends XMLAbstract{
 				
 			}
 			
-			echo "<!--MARK";
+			// echo "<!--MARK";
 			//print_r( $mark );
-			echo "-->";
+			// echo "-->";
 			
 		}
 		

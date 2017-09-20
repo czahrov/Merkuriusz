@@ -1,0 +1,55 @@
+#top{
+	height: 90px;
+	
+	& > .logo{
+		margin: 0 15px;
+		
+		& > a{
+			
+			& > img{
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .searchbar{
+		margin: 0 15px;
+		height: 45px;
+		@extend .regular;
+		font-size: 14px;
+		
+		& > .input{
+			width: 250px;
+			padding: 0 20px;
+			border: solid 1px $color-ramka-szara;
+			
+			&::placeholder{
+				color: inherit;
+				
+			}
+			
+		}
+		
+		& > .button{
+			width: 45px;
+			border: solid 1px $color-ramka-szara;
+			background-color: #fff;
+			transition-property: background, font;
+			
+			& > .icon{
+				
+			}
+			
+			&:hover{
+				background-color: $color-menu-active;
+				color: #fff;
+				
+			}
+			
+		}
+		
+	}
+	
+}
