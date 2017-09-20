@@ -511,8 +511,8 @@ class AXPOL extends XMLAbstract{
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'MARKSIZE' => 'brak danych',
-						'MARKTYPE' => 'brak danych',
+						'MARKSIZE' => array(),
+						'MARKTYPE' => array(),
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'BRUTTO' => 0,
@@ -541,7 +541,7 @@ class AXPOL extends XMLAbstract{
 							'NETTO' => (float)$item->NetPricePLN,
 							'BRUTTO' => (float)$item->CatalogPricePLN,
 						),
-						'WEIGHT' => (float)sprintf( "%s g", (string)$item->ItemWeightG ),
+						'WEIGHT' => sprintf( "%s g", (float)$item->ItemWeightG ),
 						
 					)
 				);

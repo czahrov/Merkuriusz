@@ -200,6 +200,40 @@
 						font-size: 14px;
 						line-height: 22px;
 						
+						& > span{
+							border: none;
+							
+							&.uknown{
+								color: gray;
+							}
+							
+							&.empty{
+								color: black;
+								
+							}
+							
+							&.bad{
+								color: red;
+								
+							}
+							
+							&.poor{
+								color: orange;
+								
+							}
+							
+							&.medium{
+								color: yellowgreen;
+								
+							}
+							
+							&.ok{
+								color: green;
+								
+							}
+							
+						}
+						
 					}
 					
 					& > .code{
@@ -261,9 +295,10 @@
 							}
 							
 							& > .value{
-								padding-left: 20px;
-								font-size: 14px;
+								padding: 5px 5px 5px 20px;
 								border: solid 1px $color-ramka-szara;
+								font-size: 14px;
+								line-height: 24px;
 								
 							}
 							

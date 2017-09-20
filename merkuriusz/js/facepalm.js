@@ -1031,7 +1031,7 @@
 										
 									}
 									else{
-										kalkulator.triggerHandler( 'notify', [ 'fail', 'Nie można obliczyć ceny. Brak cennika dla wybranego typu znakowania' ] );
+										kalkulator.triggerHandler( 'notify', [ 'info', 'Dla tego typu znakowania prowadzimy wycenę indywidualną.<br>Zadzwoń: <span class="bold">000-000-000</span>,<br>skorzystaj z naszego <span class="bold">formularzu kontakowego</span>,<br>albo napisz: <span class="bold">biuro@merkuriusz.pl</span>' ] );
 										
 									}
 									

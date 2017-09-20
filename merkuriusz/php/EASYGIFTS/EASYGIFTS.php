@@ -417,11 +417,53 @@ class EASYGIFTS extends XMLAbstract {
 				
 				$mark = array();
 				$mark_size = (string)$item->marking_size;
-				if( empty( $mark_size ) ) $mark_size = '???';
+				$mark_types = array();
+				if( empty( $mark_size ) ) $mark_size = 'brak rozmiaru';
 				foreach( $item->markgroups->markgroup as $group ){
 					$mark_type = (string)$group->name;
-					if( empty( $mark_type ) ) $mark_type = '???';
-					$mark[ $mark_size ][] = $mark_type;
+					if( empty( $mark_type ) ) $mark_type = 'brak znakowania';
+					// $mark[ $mark_size ][] = $mark_type;
+					// $mark_types[] = $mark_type;
+					
+					$pattern = "/(\w[\w\s,ł]*\w)/";
+					preg_match_all( $pattern, $mark_type, $match );
+					switch( count( $match[1] ) ){
+						case 1:
+							
+						case 2:
+							$mark_types[] = $match[1][0];
+							$mark[ $mark_size ][] = $match[1][0];
+							
+						break;
+						case 3:
+							if( $match[1][0] === "ET" ){
+								$mark_types[] = $match[1][0] . $match[1][1];
+								$mark[ $mark_size ][] = $match[1][0] . $match[1][1];
+								
+							}
+							else{
+								$mark_types[] = $match[1][0];
+								$mark[ $mark_size ][] = $match[1][0];
+								
+							}
+							
+						break;
+						case 4:
+							if( $match[1][0] === "ET" ){
+								$mark_types[] = $match[1][0] . $match[1][1];
+								$mark[ $mark_size ][] = $match[1][0] . $match[1][1];
+								
+							}
+							else{
+								$mark_types[] = $match[1][0] . $match[1][2];
+								$mark[ $mark_size ][] = $match[1][0] . $match[1][2];
+								
+							}
+							
+						break;
+						
+					}
+					
 					
 				}
 				
@@ -430,6 +472,15 @@ class EASYGIFTS extends XMLAbstract {
 				
 				$name = (string)$item->baseinfo->name;
 				if( empty( $name ) ) $name = '- brak danych -';
+				
+				$materials = array();
+				if( @$item->materials->children()->count() > 0 ){
+					foreach( $item->materials->material as $matter ){
+						$materials[] = (string)$matter->name;
+						
+					}
+					
+				}
 				
 				$ret[] = array_merge(
 					array(
@@ -444,25 +495,39 @@ class EASYGIFTS extends XMLAbstract {
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'CATALOG' => 'brak danych',
-						'PACKAGE' => array(
-							'SINGLE' => 'brak danych',
-							'TOTAL' => 'brak danych',
-							'DIM' => 'brak danych',
-							'WEIGHT' => 'brak danych',
-							'INSIDE' => 'brak danych',
-							
+						'MARKSIZE' => array(),
+						'MARKTYPE' => array(),
+						'MARKCOLORS' => 1,
+						'PRICE' => array(
+							'BRUTTO' => 0,
+							'NETTO' => null,
 						),
+						'MODEL' => 'brak danych',
+						'WEIGHT' => 'brak danych',
+						'BRAND' => 'brak danych',
+						
 					),
 					array(
 						'ID' => $id,
 						'NAME' => $name,
-						'DSCR' => (string)$item->baseinfo->intro,
+						'DSCR' => trim( strip_tags( (string)$item->baseinfo->intro ) ),
 						'IMG' => $img,
 						'CAT' => $cat,
 						'DIM' => (string)$item->attributes->size,
 						'MARK' => $mark,
 						'INSTOCK' => $this->getStock( (int)$item->baseinfo->id ),
+						'MATTER' => !empty( $materials )?( implode( ", ", $materials ) ):( "brak danych" ),
+						'COLOR' => (string)$item->color->name,
+						'COUNTRY' => (string)$item->origincountry->name,
+						'MARKSIZE' => array( $mark_size ),
+						'MARKTYPE' => $mark_types,
+						'MARKCOLORS' => 1,
+						'PRICE' => array(
+							'BRUTTO' => (float)$item->baseinfo->price,
+							'NETTO' => null,
+						),
+						'WEIGHT' => sprintf( "%.4f kg", (float)str_replace( ",", ".", $item->attributes->weight ) ),
+						'BRAND' => (string)$item->brand->name,
 						
 					)
 				);

@@ -200,9 +200,8 @@ function markTypes( $type, $get = false ){
 		}
 
 		ksort( $data );
-		
-		
 	}
+	
 	if( !empty( $data[ $type ] ) ){
 		return $data[ $type ];
 		
@@ -286,7 +285,7 @@ function markPrice( $type, $num, $colors = 1, $repeat = 1 ){
 	$cena += (float)$found * $num;
 	
 	$ret[ 'marking' ] = array(
-		'title' => sprintf( "Znakowanie %s", $type ),
+		'title' => sprintf( "Znakowanie: %s", $type ),
 		'formula' => sprintf( "%s x %.2f", $num, $found ),
 		'total' => sprintf( "%.2f", $num * $found ),
 	);

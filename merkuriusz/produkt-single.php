@@ -12,7 +12,7 @@
 	$XMLData = $XM->getData();
 	
 	echo "<!--";
-	// print_r( $XMLData['items'][0] );
+	var_dump( $XMLData['items'][0] );
 	// print_r( $_SESSION );
 	echo "-->";
 	
@@ -74,7 +74,7 @@
 ?>
 <body id='single'>
 <script>
-	var produkt_data = JSON.parse( '<?php echo json_encode( $item ); ?>' );
+	var produkt_data = JSON.parse( '<?php echo json_encode( $XMLData[ 'items' ][0] ); ?>' );
 </script>
 <div class='popup pointer flex flex-items-center flex-justify-center'>
 	<div class='box flex flex-column'>
@@ -117,7 +117,35 @@
 						<?php echo $item[ 'NAME' ]; ?>
 					</div>
 					<div class='instock'>
-						<?php printf( "Stan magazynowy: <span class='bold'>%s sztuk</span>", $item[ 'INSTOCK' ] ); ?>
+						<?php
+							$val = $item[ 'INSTOCK' ];
+							if( $val !== false ){
+								$level = array(
+									0 => 'empty',
+									50 => 'bad',
+									100 => 'poor',
+									200 => 'medium',
+									500 => 'ok',
+									
+								);
+								do{
+									$class = current( $level );
+								}
+								while( key( $level ) < $val and next( $level ) !== false );
+								
+							}
+							else{
+								$val = 'brak danych';
+								$class = 'uknown';
+								
+							}
+							
+							printf( "Stan magazynowy (szt): <span class='bold %s'>%s</span>", 
+								$class,
+								$val
+							);
+							
+						?>
 					</div>
 					<div class='code'>
 						<?php printf( "<span class='bold'>Kod produktu:</span> %s", $item[ 'ID' ] ); ?>
@@ -250,14 +278,25 @@
 					</div>
 					<div class='tbody flex flex-wrap'>
 						<?php
+							$znakowanie = array();
+							foreach( $item[ 'MARKTYPE' ] as $mark ){
+								$t = markTypes( $mark )[ 'info' ];
+								$znakowanie[] = sprintf( "%s (%s)", 
+									$mark, 
+									!empty( $t )?( $t ):( '---' )
+									
+								);
+								
+							}
+							
 							$specyfikacja = array(
 								'Model' => $item[ 'MODEL' ],
-								'Dostępność (szt)' => $item[ 'INSTOCK' ],
+								'Dostępność (szt)' => $item[ 'INSTOCK' ] === false?( 'brak danych' ):( $item[ 'INSTOCK' ] ),
 								'Marka' => $item[ 'BRAND' ],
 								'Kraj pochodzenia' => $item[ 'COUNTRY' ],
 								'Rozmiar' => $item[ 'DIM' ],
 								'Kolor' => $item[ 'COLOR' ],
-								'Znakowanie' => implode( "<br>", $item[ 'MARKTYPE' ] ),
+								'Znakowanie' => implode( "<br>", $znakowanie ),
 								'Wielkość znakowania' => implode( "<br>", $item[ 'MARKSIZE' ] ),
 								'Materiał' => $item[ 'MATTER' ],
 								'Waga' => $item[ 'WEIGHT' ],
@@ -275,7 +314,6 @@
 					</div>
 					
 				</div>
-				
 				
 			</div>
 			
