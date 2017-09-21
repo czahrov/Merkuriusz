@@ -490,8 +490,8 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				else{
-					$mark_types[] = "Brak znakowania";
-					$mark_size[] = "Brak rozmiaru";
+					$mark_types[] = "Brak";
+					$mark_size[] = "Brak";
 					
 				}
 				

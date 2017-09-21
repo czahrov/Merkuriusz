@@ -1,7 +1,7 @@
 <?php
 
 $AXPOL = new AXPOL();
-$EASYGIFTS = new EASYGIFTS();
+// $EASYGIFTS = new EASYGIFTS();
 
 // $MACMA = new MACMA();
 // $ANDA = new ANDA();

@@ -1,4 +1,10 @@
-<body id='kategoria' test>
+<?php
+echo "<!--";
+echo count( $XMLData[ 'items' ] );
+// print_r( $XMLData[ 'items' ] );
+echo "-->";
+?>
+<body id='kategoria'>
 <?php get_template_part( "template/page", "top" ); ?>
 <div class='container'>
 	<?php get_template_part( "template/menu", "side" ); ?>
@@ -19,7 +25,7 @@
 			<?php do_action( 'kategoria_pagin_prev', count( $XMLData['items'] ) ); ?>
 			<?php do_action( 'kategoria_pagin_next', count( $XMLData['items'] ) ); ?>
 		</div>
-		<div class='kafelki flex flex-wrap flex-items-start'>
+		<div class='kafelki flex flex-wrap'>
 			<?php do_action( 'kafelki_kategoria', $XMLData['items'] ); ?>
 		</div>
 		<div class='pagin flex flex-items-center'>

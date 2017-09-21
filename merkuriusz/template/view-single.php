@@ -82,9 +82,8 @@
 */
 
 echo "<!--";
+echo count( $XMLData[ 'items' ] );
 var_dump( $XMLData['items'][0] );
-// print_r( $_SESSION );
-// echo count( $XMLData[ 'items' ] );
 echo "-->";
 
 ?>
@@ -110,7 +109,7 @@ echo "-->";
 			</div>
 			
 		</div>
-		<div class='img flex flex-items-center'>
+		<div class='img flex flex-items-center flex-justify-center'>
 			<img/>
 			
 		</div>
@@ -184,10 +183,6 @@ echo "-->";
 				
 			</div>
 			<div class='body'>
-				<?php //do_action( 'single-dane-specyfikacja', $item ); ?>
-				<?php //do_action( 'single-dane-znakowanie', $item ); ?>
-				<?php //do_action( 'single-dane-multi', $item ); ?>
-				
 				<div class='table kalkulator flex flex-column'>
 					<div class='thead bold flex flex-items-center'>
 						Kalkulator zamówienia
@@ -215,7 +210,8 @@ echo "-->";
 										foreach( $item[ 'MARK' ] as $size => $types ){
 											foreach( $types as $type ){
 											$mark_data = markTypes( $type );
-												printf( "<option value='%s' size='%s' cmin='%s' cmax='%s'>%s, %s</option>",
+												printf( "<option class='%s' value='%s' size='%s' cmin='%s' cmax='%s'>%s, %s</option>",
+													$mark_data === false?( 'hide' ):( '' ),
 													$type,
 													$size,
 													$mark_data[ 'colors' ][ 'min' ],
@@ -289,7 +285,6 @@ echo "-->";
 					</div>
 					
 				</div>
-				
 				<div class='table specyfikacja flex flex-column'>
 					<div class='thead bold flex flex-items-center'>
 						Specyfikacja techniczna produktu

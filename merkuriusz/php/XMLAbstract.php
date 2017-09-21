@@ -349,7 +349,7 @@ class XMLAbstract{
 		$find = explode( "|", " |/|,|&|?|-|#|Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
 		$replace = explode( "|", "_|||||||a|e|z|z|o|l|c|n|s|a|e|z|z|o|l|c|n|s" );
 		
-		return str_replace( $find, $replace, strtolower( strip_tags( (string)$name ) ) );
+		return str_replace( $find, $replace, strtolower( strip_tags( trim( (string)$name ) ) ) );
 	}
 	
 	/*
@@ -511,7 +511,8 @@ class XMLAbstract{
 		*/
 		
 		if( $item !== null && $cat !== null && $num !== null ){
-			$arr[ $item['ID'] ] = $arr[ $this->stdNameCache( trim( $item['NAME'] ) ) ] = array(
+			// $arr[ $item['ID'] ] = $arr[ $this->stdNameCache( $item['NAME'] ) . "#" . $item['ID'] ] = array(
+			$arr[ $this->stdNameCache( $item['ID'] ) ] = $arr[ $this->stdNameCache( $item['NAME'] ) . "#" . $this->stdNameCache( $item['ID'] ) ] = array(
 				'file' => $cat,
 				'num' => $num,
 				

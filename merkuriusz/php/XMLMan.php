@@ -32,7 +32,7 @@ class XMLMan{
 			$this->_data['menu'] = array_merge( $this->_data['menu'], $data['menu'] );
 			
 			if( !empty( $_GET['code'] ) ){
-				$item = $handler->search( $_GET['code'] );
+				$item = $handler->search( $this->stdNameCache( $_GET['code'] ) );
 				if( !empty( $item ) ) $this->_data['items'] = array_merge( $this->_data['items'], $item );
 				
 			}
@@ -153,10 +153,10 @@ class XMLMan{
 	
 	// funkcja standaryzująca zapis nazw, dla CACHE
 	protected function stdNameCache( $name ){
-		$find = explode( ",", " ,Ą,Ę,Ż,Ź,Ó,Ł,Ć,Ń,Ś,ą,ę,ż,ź,ó,ł,ć,ń,ś" );
-		$replace = explode( ",", "_,a,e,z,z,o,l,c,n,s,a,e,z,z,o,l,c,n,s" );
+		$find = explode( "|", " |/|,|&|?|-|#|Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
+		$replace = explode( "|", "_|||||||a|e|z|z|o|l|c|n|s|a|e|z|z|o|l|c|n|s" );
 		
-		return str_replace( $find, $replace, strtolower( strip_tags( (string)$name ) ) );
+		return str_replace( $find, $replace, strtolower( strip_tags( trim( (string)$name ) ) ) );
 		
 	}
 	

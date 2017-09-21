@@ -43,7 +43,7 @@
 			<?php do_action( 'kategoria_pagin_prev', count( $XMLData['items'] ) ); ?>
 			<?php do_action( 'kategoria_pagin_next', count( $XMLData['items'] ) ); ?>
 		</div>
-		<div class='kafelki flex flex-wrap flex-items-start'>
+		<div class='kafelki flex flex-wrap'>
 			<?php do_action( 'kafelki_kategoria', $XMLData['items'] ); ?>
 		</div>
 		<div class='pagin flex flex-items-center'>

@@ -420,6 +420,7 @@ add_action( 'kafelki_kategoria', function( $arg ){
 	*/
 	$num = config( 'num' );
 	$page = config( 'strona' );
+	if( $page === false ) $page = 1;
 	$pagin = array_chunk( $arg, $num );
 	if( !empty( $pagin[ $page - 1 ] ) ){
 		foreach( $pagin[ $page - 1 ] as $item ){
@@ -436,11 +437,12 @@ add_action( 'kafelki_kategoria', function( $arg ){
 								<div class='code'>Kod produktu: <span class='bold'>%s</span></div>
 							</div>
 						</div>",
-				$item['IMG'][0], 
-				home_url( "produkt?cat={$_GET['cat']}&code={$item['ID']}" ), 
-				home_url( "produkt?cat={$_GET['cat']}&code={$item['ID']}" ), 
-				$item['NAME'], 
-				$item['ID'] );
+					$item['IMG'][0], 
+					home_url( "produkt?cat={$_GET['cat']}&code={$item['ID']}" ), 
+					home_url( "produkt?cat={$_GET['cat']}&code={$item['ID']}" ), 
+					$item['NAME'], 
+					$item['ID'] 
+				);
 			
 		}
 		
@@ -458,10 +460,16 @@ add_action( 'kafelki_kategoria', function( $arg ){
 add_action( 'number', function( $arg ){
 	if( $arg > 0 ){
 		$total = $arg;
-		//$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $_GET['num'] )?( (int)$_GET['num'] ):( 20 ) );
 		$perpage = config( 'num' );
-		//$strona = !empty( $_GET['strona'] )?( (int)$_GET['strona'] ):( 1 );
+		if( $perpage === false ){
+			$perpage = 12;
+			config( 'perpage', $perpage );
+		}
 		$strona = config( 'strona' );
+		if( $strona === false ){
+			$strona = 1;
+			config( 'strona', $strona );
+		}
 		
 		printf( "Produktów %u-%u / %u",
 			1 + ( $strona - 1) * $perpage,
@@ -482,17 +490,24 @@ add_action( 'kategoria_pagin_next', function( $arg ){
 	parse_str( $query, $args );
 	
 	$total = $arg;
-	//$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $args['num'] )?( (int)$args['num'] ):( 20 ) );
-	$perpage = (int)config( 'num' );
-	//$strona = !empty( $args['strona'] )?( (int)$args['strona'] ):( 1 );
-	$strona = (int)config( 'strona' );
+	$perpage = config( 'num' );
+	if( $perpage === false ){
+		$perpage = 12;
+		config( 'perpage', $perpage );
+	}
+	$strona = config( 'strona' );
+	if( $strona === false ){
+		$strona = 1;
+		config( 'strona', $strona );
+	}
 	
-	if( $strona * $perpage <= $total ){
+	if( $strona * $perpage < $total ){
 		$args['strona'] = ++$strona;
 		printf( "<div class='next base2 grow flex flex-items-center flex-justify-center'>
 					<a class='base1 flex flex-items-center flex-justify-center' href='?%s'>Następna strona >></a>
 					</div>", 
-					http_build_query( $args ) );
+			http_build_query( $args )
+		);
 		
 	}
 	
@@ -503,10 +518,16 @@ add_action( 'kategoria_pagin_prev', function( $arg ){
 	parse_str( $query, $args );
 	
 	$total = $arg;
-	//$perpage = !empty( $_SESSION['num'] )?( (int)$_SESSION['num'] ):( !empty( $args['num'] )?( (int)$args['num'] ):( 20 ) );
-	$perpage = (int)config( 'num' );
-	//$strona = !empty( $args['strona'] )?( (int)$args['strona'] ):( 1 );
-	$strona = (int)config( 'strona' );
+	$perpage = config( 'num' );
+	if( $perpage === false ){
+		$perpage = 12;
+		config( 'perpage', $perpage );
+	}
+	$strona = config( 'strona' );
+	if( $strona === false ){
+		$strona = 1;
+		config( 'strona', $strona );
+	}
 	
 	if( $strona > 1 ){
 		$args['strona'] = --$strona;
@@ -1086,10 +1107,10 @@ add_action( 'single-dane-multi', function( $arg ){
 // filter hook
 
 add_filter( 'stdName', function( $arg ){
-	$find = explode( "|", " |,|&|?|-|#|Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
-	$replace = explode( "|", "_||||||a|e|z|z|o|l|c|n|s|a|e|z|z|o|l|c|n|s" );
+	$find = explode( "|", " |/|,|&|?|-|#|Ą|Ę|Ż|Ź|Ó|Ł|Ć|Ń|Ś|ą|ę|ż|ź|ó|ł|ć|ń|ś" );
+	$replace = explode( "|", "_|||||||a|e|z|z|o|l|c|n|s|a|e|z|z|o|l|c|n|s" );
 	
-	return str_replace( $find, $replace, strtolower( strip_tags( (string)$arg ) ) );
+	return str_replace( $find, $replace, strtolower( strip_tags( trim( (string)$arg ) ) ) );
 	
 } );
 
