@@ -429,7 +429,7 @@ add_action( 'kafelki_kategoria', function( $arg ){
 								<div class='img bgimg contain' style='background-image:url(%s);'>
 									<a href='%s'></a>
 								</div>
-								<div class='title bold'>
+								<div class='title bold grow'>
 									<a href='%s'>
 										%s
 									</a>
@@ -579,7 +579,7 @@ add_action( 'gen_menu', function( $arg ){
 		
 		// PIERWSZY STOPIEŃ
 		printf( "<li class='item flex flex-column %s %s' item-slug='%s' item-title='%s'>
-				<div class='head flex flex-items-center'>
+				<div class='head flex flex-items-center %s' %s>
 					<div class='title uppercase bold'>
 						%s
 					</div>
@@ -590,6 +590,8 @@ add_action( 'gen_menu', function( $arg ){
 		$cat_active,
 		$cat_slug,
 		$cat_name,
+		!empty( $cat_data[ 'texture' ] )?( 'bgimg bg-repeat bg-top animate' ):( '' ),
+		!empty( $cat_data[ 'texture' ] )?( "style='background-image:url({$cat_data[ 'texture' ]});'" ):( '' ),
 		$cat_name,
 		!empty( $cat_data[ 'items' ] )?( $icon_arrow ):( '' )
 		);

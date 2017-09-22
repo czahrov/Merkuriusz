@@ -12,7 +12,7 @@ echo "-->";
 		<div class='top flex flex-wrap flex-items-center flex-justify-between'>
 			<div class='breadc uppercase grow base1 base0-mm flex flex-items-center flex-justify-center flex-justify-start-mm'>
 				<?php
-					printf( "Szukana fraza: %s", $_GET[ 'nazwa' ] );
+					printf( "Szukana fraza: <span class='bold'>%s</span>", $_GET[ 'nazwa' ] );
 					
 				?>
 			</div>

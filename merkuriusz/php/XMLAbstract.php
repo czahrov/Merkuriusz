@@ -532,6 +532,7 @@ class XMLAbstract{
 	public function search( $arg = null, $isName = false ){
 		static $arr = array();
 		
+		/* wczytanie indexera ( drogowskazu ) */
 		if( empty( $arr ) ){
 			$index_url = "{$this->_config['cache']}/indexer.php";
 			//if( !file_exists( $index_url ) ) return false;
@@ -550,7 +551,6 @@ class XMLAbstract{
 			
 		}
 		
-		
 		// czy argument jest stringiem
 		if( is_string( $arg ) ){
 			// tablica znalezionych produktów
@@ -559,30 +559,18 @@ class XMLAbstract{
 			// szukanie po nazwie
 			if( $isName ){
 				// $key = $this->stdNameCache( $arg );
-				$key = apply_filters( 'stdName', $this->stdNameCache( $arg ) );
-				if( array_key_exists( $key, $arr ) ){
-					$item = $arr[ $key ];
-					$file = $item['file'];
-					$num = $item['num'];
-					
-					$content = file_get_contents( "{$this->_config['cache']}/cat_{$file}.php" );
-					$data = json_decode( $content, true );
-					
-					$found[] =  $data[ $num ];
-					
-				}
-				else{
-					foreach( $arr as $name => $item ){
-						if( stripos( $name, $key ) !== false ){
-							$file = $item['file'];
-							$num = $item['num'];
-							
-							$content = file_get_contents( "{$this->_config['cache']}/cat_{$file}.php" );
-							$data = json_decode( $content, true );
-							
-							$found[] = $data[ $num ];
-							
-						}
+				// $key = apply_filters( 'stdName', $this->stdNameCache( $arg ) );
+				$key = $this->stdNameCache( $arg );
+				foreach( $arr as $name => $item ){
+					/* eliminowanie duplikatów w przypadku wczytania tego samego produku po nazwe i po ID */
+					if( stripos( $name, $key ) > 0 ){
+						$file = $item['file'];
+						$num = $item['num'];
+						
+						$content = file_get_contents( "{$this->_config['cache']}/cat_{$file}.php" );
+						$data = json_decode( $content, true );
+						
+						$found[] = $data[ $num ];
 						
 					}
 					

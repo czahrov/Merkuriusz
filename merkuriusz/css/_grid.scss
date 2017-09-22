@@ -36,52 +36,7 @@
 	}
 	
 	& > .kafelki{
-		margin: 0 -10px 30px;
-		
-		& > .noitems{
-			padding: 0 20px;
-			
-		}
-		
-		& > .item{
-			
-			& > .wrapper{
-				margin: 10px;
-				border: solid 1px $color-ramka-szara;
-				
-				& > .img{
-					position: relative;
-					padding: 10px;
-					height: 150px;
-					background-clip: content-box;
-					background-origin: content-box;
-					border-bottom: solid 1px $color-ramka-szara;
-					
-					& > a{
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-						
-					}
-					
-				}
-				
-				& > .title{
-					padding: 10px;
-					border-bottom: solid 1px $color-ramka-szara;
-					
-				}
-				
-				& > .code{
-					padding: 10px;
-					
-				}					
-				
-			}
-			
-		}
+		@include produktKafelki;
 		
 	}
 	

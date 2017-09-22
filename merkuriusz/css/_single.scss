@@ -533,6 +533,30 @@
 			
 		}
 		
+		& > .bot{
+			padding: 0;
+			
+			& > .podobne{
+				
+				& > .title{
+					height: 44px;
+					padding: 0 20px;
+					background-color: $color-menu-hover;
+					color: #fff;
+					font-size: 16px;
+					
+				}
+				
+				& > .kafelki{
+					padding: 0 10px;
+					@include produktKafelki;
+					
+				}
+				
+			}
+			
+		}
+		
 	}
 	
 }

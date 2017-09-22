@@ -495,19 +495,8 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				
+				$tempID = (string)$item->CodeERP;
 				
-				/* 
-				-Model, 
-				-Marka (producent), 
-				+Rozmiar (wymiary produktu), 
-				+Rodzaj znakowania, 
-				+Wielkość znakowania, 
-				+Materiał, 
-				+Dostępność, 
-				+Kraj pochodzenia, 
-				+Kolor, 
-				+Waga 
-				*/
 				$ret[] = array_merge(
 					array(
 						'ID' => 'brak danych',

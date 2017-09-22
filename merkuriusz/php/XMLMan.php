@@ -6,6 +6,8 @@ class XMLMan{
 	private $_data = array(
 		'menu' => array(),
 		'items' => array(),
+		'similar' => array(),
+		'find' => array(),
 		
 	);
 	
@@ -43,6 +45,34 @@ class XMLMan{
 			}
 			else{
 				$this->_data['items'] = array_merge( $this->_data['items'], $data['items'] );
+				
+			}
+			
+			/* szukanie produktów podobnych dla pojedynczego znalezionego produktu */
+			if( count( $this->_data [ 'items' ] ) === 1 ){
+				$pattern = "~([\. \-_/]?\w+)~";
+				preg_match_all( $pattern, $this->_data[ 'items' ][0][ 'ID' ], $match );
+				if( count( $match[1] ) > 2 ){
+					$find = implode( "", array_slice( $match[1], 0, -1 ) );
+					
+				}
+				else{
+					$find = $match[1][0];
+					
+				}
+				
+				/* fragment ID dla którego wykonywane jest szukanie */
+				$this->_data[ 'find' ] = $find;
+				/* tablica znalezionych produktów podobnych */
+				$this->_data[ 'similar' ] = $handler->search( $find, true );
+				/* usuwanie z wyniku produktu o ID takim samym jak bazowy */
+				foreach( $this->_data[ 'similar' ] as $index => $check ){
+					if( $check[ 'ID' ] == $this->_data[ 'items' ][0][ 'ID' ] ){
+						unset( $this->_data[ 'similar' ][ $index ] );
+						
+					}
+					
+				}
 				
 			}
 			

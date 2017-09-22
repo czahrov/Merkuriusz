@@ -135,10 +135,13 @@ ul.menu{
 			
 			& > .item{
 				border-top: solid 1px $color-ramka-szara;
+				background-color: hsl(60,100%,90%);
 				background-clip: content-box;
+				transition: background .3s linear;
 				
 				&:hover{
 					padding-left: 10px;
+					background-color: hsl(60,100%,70%);
 					
 					& > .head{
 						padding-left: 10px;
@@ -238,4 +241,45 @@ ul.menu{
 	
 }
 
+@each $name, $property, $value in ( cover, size, cover ), 
+													( contain, size, contain ), 
+													( center, position, center ), 
+													( top, position-y, top ), 
+													( bottom, position-y, bottom ), 
+													( left, position-x, left ), 
+													( right, position-x, right ), 
+													( no-repeat, repeat, none ),
+													( repeat-x, repeat, repeat-x ), 
+													( repeat-y, repeat, repeat-y ), 
+													( repeat, repeat, repeat )
+{
+	
+	.bg-#{$name}{
+		background-#{$property}: $value;
+		
+	}
+	
+}
 
+@keyframes menu{
+	from{
+		background-position-y: 0%;
+		
+	}
+	to{
+		background-position-y: 200%;
+		
+	}
+	
+}
+
+ul.menu .head.animate{
+	background-size: auto 200%;
+	animation: menu 2s infinite linear paused;
+	
+	&:hover{
+		animation-play-state: running;
+		
+	}
+	
+}

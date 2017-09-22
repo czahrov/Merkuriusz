@@ -82,8 +82,10 @@
 */
 
 echo "<!--";
-echo count( $XMLData[ 'items' ] );
-var_dump( $XMLData['items'][0] );
+// echo count( $XMLData[ 'items' ] );
+// var_dump( $XMLData['items'][0] );
+// var_dump( $XMLData[ 'find' ] );
+// print_r( $XMLData[ 'similar' ] );
 echo "-->";
 
 ?>
@@ -303,16 +305,16 @@ echo "-->";
 							}
 							
 							$specyfikacja = array(
-								'Model' => $item[ 'MODEL' ],
+								'Model' => empty( $item[ 'MODEL' ] )?( 'brak danych' ):( $item[ 'MODEL' ] ),
 								'Dostępność (szt)' => $item[ 'INSTOCK' ] === false?( 'brak danych' ):( $item[ 'INSTOCK' ] ),
-								'Marka' => $item[ 'BRAND' ],
-								'Kraj pochodzenia' => $item[ 'COUNTRY' ],
-								'Rozmiar' => $item[ 'DIM' ],
-								'Kolor' => $item[ 'COLOR' ],
+								'Marka' => empty( $item[ 'BRAND' ] )?( 'brak danych' ):( $item[ 'BRAND' ] ),
+								'Kraj pochodzenia' => empty( $item[ 'COUNTRY' ] )?( 'brak danych' ):( $item[ 'COUNTRY' ] ),
+								'Rozmiar' => empty( $item[ 'DIM' ] )?( 'brak danych' ):( $item[ 'DIM' ] ),
+								'Kolor' => empty( $item[ 'COLOR' ] )?( 'brak danych' ):( $item[ 'COLOR' ] ),
 								'Znakowanie' => implode( "<br>", $znakowanie ),
 								'Wielkość znakowania' => implode( "<br>", $item[ 'MARKSIZE' ] ),
-								'Materiał' => $item[ 'MATTER' ],
-								'Waga' => $item[ 'WEIGHT' ],
+								'Materiał' => empty( $item[ 'MATTER' ] )?( 'brak danych' ):( $item[ 'MATTER' ] ),
+								'Waga' => empty( $item[ 'WEIGHT' ] )?( 'brak danych' ):( $item[ 'WEIGHT' ] ),
 								
 							);
 							
@@ -329,6 +331,11 @@ echo "-->";
 				</div>
 				
 			</div>
+			
+		</div>
+		<div class='bot'>
+			<?php include get_template_directory() . "/template/produkt-warianty.php"; ?>
+			<?php include get_template_directory() . "/template/produkt-podobne.php"; ?>
 			
 		</div>
 		

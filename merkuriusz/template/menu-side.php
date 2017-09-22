@@ -5,6 +5,7 @@
 			do_action( 'gen_menu', array(
 				'gadżety reklamowe' => array(
 					'class' => 'reklamowe',
+					'texture' => 'http://www.quotationof.com/images250_/dots-quotes-5.jpg',
 					'items' => array(
 						array(
 							'title' => 'Materiały piśmiennicze',
