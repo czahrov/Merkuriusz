@@ -86,7 +86,14 @@ echo "<!--";
 // var_dump( $XMLData['items'][0] );
 // var_dump( $XMLData[ 'find' ] );
 // print_r( $XMLData[ 'similar' ] );
-echo "-->";
+// print_r( $XMLData[ 'find2' ] );
+// printf( "find2:%s", $XMLData[ 'find2' ] );
+echo "\r\n find_similar: {$XMLData[ 'find' ]}";
+echo "\r\n podobne: " . count( $XMLData[ 'similar' ] );
+echo "\r\n find_colors: {$XMLData[ 'find2' ]}";
+echo "\r\n kolory: " . count( $XMLData[ 'colors' ] );
+// print_r( $XMLData[ 'colors' ] );
+echo "\r\n-->";
 
 ?>
 
@@ -296,11 +303,14 @@ echo "-->";
 							$znakowanie = array();
 							foreach( $item[ 'MARKTYPE' ] as $mark ){
 								$t = markTypes( $mark )[ 'info' ];
-								$znakowanie[] = sprintf( "%s (%s)", 
-									$mark, 
-									!empty( $t )?( $t ):( '---' )
+								if( !empty( $t ) ){
+									$znakowanie[] = sprintf( "%s (%s)", 
+										$mark, 
+										$t
+										
+									);
 									
-								);
+								}
 								
 							}
 							

@@ -135,13 +135,11 @@ ul.menu{
 			
 			& > .item{
 				border-top: solid 1px $color-ramka-szara;
-				background-color: hsl(60,100%,90%);
 				background-clip: content-box;
 				transition: background .3s linear;
 				
 				&:hover{
 					padding-left: 10px;
-					background-color: hsl(60,100%,70%);
 					
 					& > .head{
 						padding-left: 10px;
@@ -178,6 +176,7 @@ ul.menu{
 			}
 			
 		}
+		
 		&.elektronika{
 			color: #fff;
 			background-color: $color-elektronika;

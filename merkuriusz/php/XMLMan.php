@@ -7,7 +7,7 @@ class XMLMan{
 		'menu' => array(),
 		'items' => array(),
 		'similar' => array(),
-		'find' => array(),
+		'colors' => array(),
 		
 	);
 	
@@ -50,8 +50,10 @@ class XMLMan{
 			
 			/* szukanie produktów podobnych dla pojedynczego znalezionego produktu */
 			if( count( $this->_data [ 'items' ] ) === 1 ){
+				$item = $this->_data [ 'items' ][0];
+				/* wyciąganie fragmentu ID dla którego wykonywane będzie szukanie */
 				$pattern = "~([\. \-_/]?\w+)~";
-				preg_match_all( $pattern, $this->_data[ 'items' ][0][ 'ID' ], $match );
+				preg_match_all( $pattern, $item[ 'ID' ], $match );
 				if( count( $match[1] ) > 2 ){
 					$find = implode( "", array_slice( $match[1], 0, -1 ) );
 					
@@ -60,15 +62,42 @@ class XMLMan{
 					$find = $match[1][0];
 					
 				}
-				
-				/* fragment ID dla którego wykonywane jest szukanie */
 				$this->_data[ 'find' ] = $find;
+				
 				/* tablica znalezionych produktów podobnych */
 				$this->_data[ 'similar' ] = $handler->search( $find, true );
+				
 				/* usuwanie z wyniku produktu o ID takim samym jak bazowy */
 				foreach( $this->_data[ 'similar' ] as $index => $check ){
-					if( $check[ 'ID' ] == $this->_data[ 'items' ][0][ 'ID' ] ){
+					if( $check[ 'ID' ] == $item[ 'ID' ] ){
 						unset( $this->_data[ 'similar' ][ $index ] );
+						
+					}
+					
+				}
+				
+				/* tablica znalezionych produktów w innych wariantach kolorystycznych */
+				$find2 = $this->_data[ 'find2' ] = $this->stdNameCache( $item[ 'NAME' ] ) . "#" . $this->stdNameCache( $find );
+				$this->_data[ 'colors' ] = $handler->search( $find2, true, false );
+				
+				/* usuwanie z wyniku produktu o ID takim samym jak bazowy */
+				foreach( $this->_data[ 'colors' ] as $index => $check ){
+					if( $check[ 'ID' ] == $item[ 'ID' ] ){
+						unset( $this->_data[ 'colors' ][ $index ] );
+						
+					}
+					
+				}
+				
+				/* usuwanie z tablicy podobnych produktów warianty kolorystyczne danego produktu */
+				// $this->_data[ 'similar' ] = array_diff( $this->_data[ 'similar' ], $this->_data[ 'colors' ] );
+				foreach( $this->_data[ 'colors' ] as $kb => $base ){
+					foreach( $this->_data[ 'similar' ] as $kc => $check ){
+						if( $base[ 'ID' ] === $check[ 'ID' ] ){
+							unset( $this->_data[ 'similar' ][ $kc ] );
+							continue;
+							
+						}
 						
 					}
 					
@@ -78,13 +107,15 @@ class XMLMan{
 			
 		}
 		
-		// echo "<!--DATA\r\n";
-		//print_r( $data );
-		//print_r( $this->_data );
-		//print_r( array_slice( $data['items'], 0, 10 ) );
-		// echo "-->";
-		//$this->printCat( $this->_data['menu'] );
-		//$this->printProducts( $this->_data['items'] );
+		/*
+		echo "<!--DATA\r\n";
+		print_r( $data );
+		print_r( $this->_data );
+		print_r( array_slice( $data['items'], 0, 10 ) );
+		echo "-->";
+		$this->printCat( $this->_data['menu'] );
+		$this->printProducts( $this->_data['items'] ); 
+		*/
 		
 	}
 	

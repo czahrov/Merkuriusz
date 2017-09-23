@@ -1,6 +1,6 @@
 <?php
 	$podobne = $XMLData[ 'similar' ];
-	if( count( $podobne > 1 ) ):
+	if( count( $podobne ) > 0 ):
 ?>
 <div class='podobne flex flex-column'>
 	<div class='title bold flex flex-items-center'>

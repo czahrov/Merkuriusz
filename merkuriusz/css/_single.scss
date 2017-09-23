@@ -536,7 +536,8 @@
 		& > .bot{
 			padding: 0;
 			
-			& > .podobne{
+			& > .podobne,
+			& > .warianty{
 				
 				& > .title{
 					height: 44px;
@@ -548,6 +549,7 @@
 				}
 				
 				& > .kafelki{
+					margin-bottom: 50px;
 					padding: 0 10px;
 					@include produktKafelki;
 					

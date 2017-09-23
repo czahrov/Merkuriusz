@@ -495,8 +495,6 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				
-				$tempID = (string)$item->CodeERP;
-				
 				$ret[] = array_merge(
 					array(
 						'ID' => 'brak danych',

@@ -529,7 +529,7 @@ class XMLAbstract{
 	/*
 		Funkcja wyszukująca produkt po ID
 	*/
-	public function search( $arg = null, $isName = false ){
+	public function search( $arg = null, $isName = false, $filter = true ){
 		static $arr = array();
 		
 		/* wczytanie indexera ( drogowskazu ) */
@@ -551,19 +551,35 @@ class XMLAbstract{
 			
 		}
 		
+		/* INDEXER
+			"v575232": {
+				"file": "narzedzialatarki",
+				"num": 7
+			},
+			"latarka_kieszonkowa_17_led_pasek_na_reke#v501232": {
+				"file": "narzedzialatarki",
+				"num": 8
+			},
+		*/
+		
 		// czy argument jest stringiem
 		if( is_string( $arg ) ){
 			// tablica znalezionych produktów
 			$found = array();
 			
 			// szukanie po nazwie
-			if( $isName ){
-				// $key = $this->stdNameCache( $arg );
-				// $key = apply_filters( 'stdName', $this->stdNameCache( $arg ) );
-				$key = $this->stdNameCache( $arg );
-				foreach( $arr as $name => $item ){
+			if( $isName === true ){
+				if( $filter === true ){
+					$name = $this->stdNameCache( $arg );
+				}
+				else{
+					$name = $arg;
+					
+				}
+				
+				foreach( $arr as $key => $item ){
 					/* eliminowanie duplikatów w przypadku wczytania tego samego produku po nazwe i po ID */
-					if( stripos( $name, $key ) > 0 ){
+					if( stripos( $key, $name ) !== false && stripos( $key, "#" ) !== false ){
 						$file = $item['file'];
 						$num = $item['num'];
 						
