@@ -535,9 +535,12 @@
 		
 		& > .bot{
 			padding: 0;
+			border: none;
 			
 			& > .podobne,
 			& > .warianty{
+				margin-bottom: 20px;
+				border: solid 1px $color-ramka-szara;
 				
 				& > .title{
 					height: 44px;

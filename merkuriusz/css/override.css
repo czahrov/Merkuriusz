@@ -736,6 +736,11 @@ ul.menu .head.animate:hover {
 }
 #single #grid > .bot {
   padding: 0;
+  border: none;
+}
+#single #grid > .bot > .podobne, #single #grid > .bot > .warianty {
+  margin-bottom: 20px;
+  border: solid 1px #e7e7e7;
 }
 #single #grid > .bot > .podobne > .title, #single #grid > .bot > .warianty > .title {
   height: 44px;

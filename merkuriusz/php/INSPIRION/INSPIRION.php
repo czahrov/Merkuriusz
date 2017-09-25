@@ -1,5 +1,6 @@
 <?php
 class INSPIRION extends XMLAbstract {
+	public $_shop = 'INSPIRION';
 	//protected $_debug = false;
 	//protected $_cache_write = false;
 	//protected $_cache_read = false;
@@ -92,6 +93,7 @@ class INSPIRION extends XMLAbstract {
 				}
 				
 				$ret[] = array(
+					'SHOP' => $this->_shop,
 					'ID' => (string)$item->sku,
 					'NAME' => (string)$item->product_name,
 					'DSCR' => (string)$item->body,

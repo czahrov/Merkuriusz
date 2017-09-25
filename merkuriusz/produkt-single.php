@@ -12,7 +12,7 @@
 	
 	$XMLData = $XM->getData();
 	echo "<!--";
-	echo count( $XMLData[ 'items' ] );
+	// echo count( $XMLData[ 'items' ] );
 	echo "-->";
 	
 	if( count( $XMLData[ 'items' ] ) === 0 ){

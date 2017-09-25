@@ -39,7 +39,7 @@ class XMLMan{
 				
 			}
 			elseif( !empty( $_GET[ 'nazwa' ] ) ){
-				$item = $handler->search( $_GET[ 'nazwa' ], true );
+				$item = $handler->search( $this->stdNameCache( $_GET[ 'nazwa' ] ), true );
 				if( !empty( $item ) ) $this->_data[ 'items' ] = array_merge( $this->_data[ 'items' ], $item );
 				
 			}
@@ -48,9 +48,10 @@ class XMLMan{
 				
 			}
 			
-			/* szukanie produktów podobnych dla pojedynczego znalezionego produktu */
+			/* szukanie produktów podobnych i wariantów kolorystycznych dla pojedynczego znalezionego produktu */
 			if( count( $this->_data [ 'items' ] ) === 1 ){
 				$item = $this->_data [ 'items' ][0];
+				
 				/* wyciąganie fragmentu ID dla którego wykonywane będzie szukanie */
 				$pattern = "~([\. \-_/]?\w+)~";
 				preg_match_all( $pattern, $item[ 'ID' ], $match );
@@ -62,39 +63,48 @@ class XMLMan{
 					$find = $match[1][0];
 					
 				}
-				$this->_data[ 'find' ] = $find;
+				
+				switch( $handler->_shop ){
+					case 'EASYGIFTS':
+						$find = substr( $find, 0, -2 );
+						
+					break;
+					default:
+					
+				}
+				
+				$this->_data[ 'find_similar' ] = $find;
 				
 				/* tablica znalezionych produktów podobnych */
-				$this->_data[ 'similar' ] = $handler->search( $find, true );
+				$similar = $handler->search( $find, true );
 				
 				/* usuwanie z wyniku produktu o ID takim samym jak bazowy */
-				foreach( $this->_data[ 'similar' ] as $index => $check ){
+				foreach( $similar as $index => $check ){
 					if( $check[ 'ID' ] == $item[ 'ID' ] ){
-						unset( $this->_data[ 'similar' ][ $index ] );
+						unset( $similar[ $index ] );
 						
 					}
 					
 				}
 				
 				/* tablica znalezionych produktów w innych wariantach kolorystycznych */
-				$find2 = $this->_data[ 'find2' ] = $this->stdNameCache( $item[ 'NAME' ] ) . "#" . $this->stdNameCache( $find );
-				$this->_data[ 'colors' ] = $handler->search( $find2, true, false );
+				$find2 = $this->_data[ 'find_colors' ] = $this->stdNameCache( $item[ 'NAME' ] ) . "#" . $this->stdNameCache( $find );
+				$colors = $handler->search( $find2, true, false );
 				
 				/* usuwanie z wyniku produktu o ID takim samym jak bazowy */
-				foreach( $this->_data[ 'colors' ] as $index => $check ){
+				foreach( $colors as $index => $check ){
 					if( $check[ 'ID' ] == $item[ 'ID' ] ){
-						unset( $this->_data[ 'colors' ][ $index ] );
+						unset( $colors[ $index ] );
 						
 					}
 					
 				}
 				
 				/* usuwanie z tablicy podobnych produktów warianty kolorystyczne danego produktu */
-				// $this->_data[ 'similar' ] = array_diff( $this->_data[ 'similar' ], $this->_data[ 'colors' ] );
-				foreach( $this->_data[ 'colors' ] as $kb => $base ){
-					foreach( $this->_data[ 'similar' ] as $kc => $check ){
+				foreach( $colors as $kb => $base ){
+					foreach( $similar as $kc => $check ){
 						if( $base[ 'ID' ] === $check[ 'ID' ] ){
-							unset( $this->_data[ 'similar' ][ $kc ] );
+							unset( $similar[ $kc ] );
 							continue;
 							
 						}
@@ -102,6 +112,9 @@ class XMLMan{
 					}
 					
 				}
+				
+				$this->_data[ 'similar' ] = array_merge( $this->_data[ 'similar' ], $similar );
+				$this->_data[ 'colors' ] = array_merge( $this->_data[ 'colors' ], $colors );
 				
 			}
 			

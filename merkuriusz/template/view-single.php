@@ -84,13 +84,10 @@
 echo "<!--";
 // echo count( $XMLData[ 'items' ] );
 // var_dump( $XMLData['items'][0] );
-// var_dump( $XMLData[ 'find' ] );
-// print_r( $XMLData[ 'similar' ] );
-// print_r( $XMLData[ 'find2' ] );
-// printf( "find2:%s", $XMLData[ 'find2' ] );
-echo "\r\n find_similar: {$XMLData[ 'find' ]}";
+echo "\r\n find_similar: {$XMLData[ 'find_similar' ]}";
 echo "\r\n podobne: " . count( $XMLData[ 'similar' ] );
-echo "\r\n find_colors: {$XMLData[ 'find2' ]}";
+// print_r( $XMLData[ 'similar' ] );
+echo "\r\n find_colors: {$XMLData[ 'find_colors' ]}";
 echo "\r\n kolory: " . count( $XMLData[ 'colors' ] );
 // print_r( $XMLData[ 'colors' ] );
 echo "\r\n-->";
@@ -99,7 +96,7 @@ echo "\r\n-->";
 
 <body id='single'>
 <script>
-	var produkt_data = JSON.parse( '<?php echo json_encode( $XMLData[ 'items' ][0], JSON_HEX_APOS ); ?>' );
+	var produkt_data = JSON.parse( '<?php echo addslashes( json_encode( $XMLData[ 'items' ][0] ) ); ?>' );
 </script>
 <div class='popup pointer flex flex-items-center flex-justify-center'>
 	<div class='box flex flex-column'>

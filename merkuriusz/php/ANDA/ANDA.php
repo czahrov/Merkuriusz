@@ -1,5 +1,6 @@
 <?php
 class ANDA extends XMLAbstract{
+	public $_shop = 'ANDA';
 	//protected $_debug = false;
 	//protected $_cache_write = false;
 	//protected $_cache_read = false;
@@ -2052,6 +2053,7 @@ class ANDA extends XMLAbstract{
 				
 				$ret[] = array_merge(
 					array(
+						'SHOP' => $this->_shop,
 						'ID' => 'brak danych',
 						'NAME' => 'brak danych',
 						'DSCR' => 'brak danych',

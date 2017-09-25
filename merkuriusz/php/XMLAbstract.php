@@ -16,8 +16,9 @@ class XMLAbstract{
 		'dnd' => '',
 		// ścieżka do folderu z cache
 		'cache' => '',
-		
 	);
+	// nazwa sklepu
+	public $_shop = null;
 	// czy wyświetalać komunikaty ze skryptów
 	protected $_debug = false;
 	// czy dane wyjściowe należy zapisywać w cache
@@ -54,15 +55,17 @@ class XMLAbstract{
 		// nazwa pliku z produktami danej kategorii, przekazywany przez GET
 		//$item_param = empty( $_GET['cat'] )?( 'root' ):( $this->stdNameCache( $_GET['cat'] ) );
 		$t = end( explode( ",", $_GET['cat'] ) );
-		//$t = $_GET['cat'];
-		// $t = explode( "-", $_GET[ 'cat' ] );
-		// if( count( $t ) <= 2 ){
-			// $t = end( $t );
-		// }
-		// else{
-			// $t = implode( "-", array_slice( $t, -2 ) );
+		/*
+		$t = $_GET['cat'];
+		$t = explode( "-", $_GET[ 'cat' ] );
+		if( count( $t ) <= 2 ){
+			$t = end( $t );
+		}
+		else{
+			$t = implode( "-", array_slice( $t, -2 ) );
 			
-		// }
+		}
+		*/
 		$item_param = empty( $t )?( 'root' ):( $this->stdNameCache( $t ) );
 		$item_url = "{$this->_config['cache']}/cat_{$item_param}.php";
 		$cat_url = "{$this->_config['cache']}/cat.php";
@@ -529,7 +532,7 @@ class XMLAbstract{
 	/*
 		Funkcja wyszukująca produkt po ID
 	*/
-	public function search( $arg = null, $isName = false, $filter = true ){
+	public function search( $arg = null, $isName = false ){
 		static $arr = array();
 		
 		/* wczytanie indexera ( drogowskazu ) */
@@ -569,13 +572,7 @@ class XMLAbstract{
 			
 			// szukanie po nazwie
 			if( $isName === true ){
-				if( $filter === true ){
-					$name = $this->stdNameCache( $arg );
-				}
-				else{
-					$name = $arg;
-					
-				}
+				$name = $arg;
 				
 				foreach( $arr as $key => $item ){
 					/* eliminowanie duplikatów w przypadku wczytania tego samego produku po nazwe i po ID */

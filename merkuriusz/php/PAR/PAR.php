@@ -1,5 +1,6 @@
 <?php
 class PAR extends XMLAbstract {
+	public $_shop = 'PAR';
 	//protected $_debug = false;
 	//protected $_cache_write = false;
 	//protected $_cache_read = false;
@@ -86,6 +87,7 @@ class PAR extends XMLAbstract {
 				}
 				
 				$ret[] = array(
+					'SHOP' => $this->_shop,
 					'ID' => (string)$item->kod,
 					'NAME' => (string)$item->nazwa,
 					'DSCR' => (string)$item->opis,
