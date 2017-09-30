@@ -1,50 +1,64 @@
-<div class="container">
-	<h2 class="section-title">Reklama 360 stopni</h2>
-	<div class="col-md-3 col-sm-6 advert_element">
-		<div class="advert_content">
-			<div class="advert_icon_holder">
-				<div class="advert_icon_rollup"></div>
-			</div>
-			<div class="advert_title">Identyfikacja Wizualna Firm</div>
-			<div class="advert_text"><!--Projektujemy, drukujemy oraz składamy roll-upy, ścianki wystawiennicze--> Systemy wystawiennicze, roll-upy, ścianki, trybunki, flagi, maszty, banery, szyldy i szafki</div>
-			<div class="text-center">
-			<a class="btn advert_btn pop-up-clothes wystawnicze">czytaj więcej <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+<div class="reklama360 grid flex flex-wrap">
+	<div class='header bold alt uppercase base1 flex flex-items-center flex-justify-center'>
+		<div class=''>
+			<span class='font-blue'>Reklama</span> 360 stopni
 		</div>
 	</div>
-
-	<div class="col-md-3 col-sm-6 advert_element">
-		<div class="advert_content">
-			<div class="advert_icon_holder">
-				<div class="advert_icon_adv"></div>
+	<div class='body base1 flex flex-wrap'>
+		<?php
+			$data = array(
+				array(
+					'title' => 'identyfikacja wizualna firm',
+					'content' => 'Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy',
+					'img' => 'https://placeimg.com/500/200/tech',
+					'url' => home_url(),
+					
+				),
+				array(
+					'title' => 'reklama wizualna',
+					'content' => 'Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy',
+					'img' => 'https://placeimg.com/500/200/tech',
+					'url' => home_url(),
+					
+				),
+				array(
+					'title' => 'techniki nadruków',
+					'content' => 'Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy',
+					'img' => 'https://placeimg.com/500/200/tech',
+					'url' => home_url(),
+					
+				),
+				array(
+					'title' => 'gadżety reklamowe',
+					'content' => 'Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy',
+					'img' => 'https://placeimg.com/500/200/tech',
+					'url' => home_url(),
+					
+				),
+				
+			);
+			
+			foreach( $data as $item ):
+		?>
+		<div class='item base1 base2-mm flex'>
+			<div class='box bgimg full base1' style='background-image:url(<?php echo $item[ 'img' ]; ?>);'>
+				<div class='over flex'>
+					<div class='content flex flex-items-center'>
+						<?php echo $item[ 'content' ]; ?>
+					</div>
+					
+				</div>
+				<div class='hint bold alt uppercase bg-blue'>
+					<?php echo $item[ 'title' ] ?>
+				</div>
+				<a class='hitbox pointer' href='<?php echo $item[ 'url' ]; ?>'></a>
+				
 			</div>
-			<div class="advert_title">Reklama Wizualna</div>
-			<div class="advert_text">Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy</div>
-			<div class="text-center">
-			<a class="btn advert_btn">czytaj więcej <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+			
 		</div>
+		<?php
+			endforeach;
+		?>
 	</div>
-
-	<div class="col-md-3 col-sm-6 advert_element">
-		<div class="advert_content">
-			<div class="advert_icon_holder">
-				<div class="advert_icon_print"></div>
-			</div>
-			<div class="advert_title">Techniki nadruków</div>
-			<div class="advert_text">oferujemy druk wielkoformatowy, offsetowy, cyfrowy, UV</div>
-			<div class="text-center">
-			<a class="btn advert_btn">czytaj więcej <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
-		</div>
-	</div>
-
-	<div class="col-md-3 col-sm-6 advert_element">
-		<div class="advert_content">
-			<div class="advert_icon_holder">
-				<div class="advert_icon_gad"></div>
-			</div>
-			<div class="advert_title">Gadżety Reklamowe</div>
-			<div class="advert_text">Na zamówienie produkujemy gadżety reklamowe oraz eventowe</div>
-			<div class="text-center">
-			<a class="btn advert_btn">czytaj więcej <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
-		</div>
-	</div>
+	
 </div>

@@ -1,0 +1,93 @@
+footer{
+	
+	& > .infobar{
+		margin:{
+			top: 50px;
+			bottom: 50px;
+		};
+		height: 110px;
+		border: solid 1px $color-ramka-szara;
+		
+		& > .item{
+			
+			& > .icon{
+				width: 44px;
+				height: 44px;
+				background-color: $color-ramka-szara;
+				border-radius: 50%;
+				font-size: 20px;
+				
+			}
+			
+			& > .text{
+				margin-left: 17px;
+				font-size: 14px;
+				
+				& > .bold{
+					@extend .font-gray5;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .mid{
+		padding-top: 45px;
+		padding-bottom: 45px;
+		
+		& > .box{
+			
+			& > .info{
+				max-width: 450px;
+				
+				& > img{
+					margin-bottom: 46px;
+					
+				}
+				
+				& > .text{
+					font-size: 13px;
+					line-height: 22px;
+					
+				}
+				
+			}
+			
+			& > .linki{
+				padding-left: 50px;
+				
+				& > .title{
+					margin-bottom: 30px;
+				}
+				
+				& > ul{
+					list-style: inside url(../img/square.png);
+					
+					& > li{
+						line-height: 24px;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .bot{
+		height: 62px;
+		font-size: 16px;
+		
+		.bold{
+			@extend .font-gray5;
+			
+		}
+		
+	}
+	
+}

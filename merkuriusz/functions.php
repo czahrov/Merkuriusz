@@ -543,13 +543,8 @@ add_action( 'kategoria_pagin_prev', function( $arg ){
 add_action( 'gen_menu', function( $arg ){
 	if( !is_array( $arg ) ) return false;
 	
-	// echo "<!--";
-	// print_r( $arg );
-	// echo "-->";
-	
 	if( !empty( $_GET['cat'] ) ){
 		$query = explode( ",", $_GET['cat'] );
-		// $query = explode( "-", $_GET['cat'] );
 	}
 	else{
 		$query = array( "", "" );
@@ -575,7 +570,6 @@ add_action( 'gen_menu', function( $arg ){
 			$cat_active = '';
 			
 		}
-		//$cat_active = $query[0] === $cat_slug?( 'active' ):( '' );
 		
 		// PIERWSZY STOPIEŃ
 		printf( "<li class='item flex flex-column %s %s' item-slug='%s' item-title='%s'>
@@ -598,8 +592,6 @@ add_action( 'gen_menu', function( $arg ){
 		
 		foreach( $cat_data['items'] as $item ){
 			$item_slug = apply_filters( 'stdName', $item['title'] );
-			//$item_slug = empty( $item[ 'slug' ] )?( apply_filters( 'stdName', $item['title'] ) ):( $item[ 'slug' ] );
-			//$item_active = $query[1] === $item_slug?( 'active' ):( '' );
 			if( $query[1] === $item_slug ){
 				$item_active = 'active';
 				if( count( $_SESSION[ 'breadc' ] ) == 1 ) $_SESSION[ 'breadc' ] = array( $cat_name, $item[ 'title' ] );
@@ -614,8 +606,6 @@ add_action( 'gen_menu', function( $arg ){
 				printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
 				$item['class'],
 				$item_active,
-				// home_url( sprintf( "kategoria?cat=%s-%s", $cat_slug, $item_slug ) ),
-				// home_url( sprintf( "kategoria?cat=%s,%s,%s-%s", $cat_slug, $item_slug, $cat_slug, $item_slug ) ),
 				$cat_slug === 'gadzety_reklamowe'?(
 					home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) )
 				):(

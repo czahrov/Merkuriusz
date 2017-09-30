@@ -27,9 +27,10 @@
 ?>
 <body id='kategoria'>
 <?php get_template_part( "template/page", "top" ); ?>
-<div class='container'>
+<div class='grid flex flex-items-start'>
 	<?php get_template_part( "template/menu", "side" ); ?>
-	<div id='grid' class='col-md-8'>
+	<div id='grid' class='base1'>
+		<?php get_template_part( "template/menu", 'top'); ?>
 		<div class='top flex flex-wrap flex-items-center flex-justify-between'>
 			<div class='breadc uppercase grow base1 base0-mm flex flex-items-center flex-justify-center flex-justify-start-mm'>
 				<?php //do_action( 'breadcrumb' ); ?>

@@ -1,8 +1,9 @@
 <?php get_template_part( "template/page", "top" ); ?>
 <body id='cart'>
-	<div class='container'>
+	<div class='container grid flex'>
 		<?php get_template_part( "template/menu", "side" ); ?>
-		<div id='grid' class='col-md-8'>
+		<div id='grid' class='base1'>
+			<?php get_template_part( "template/menu", 'top'); ?>
 			<div class='top flex flex-wrap flex-items-center flex-justify-between'>
 				<div class='breadc uppercase base1 base0-mm flex flex-items-center flex-justify-center'></div>
 				
@@ -161,8 +162,6 @@
 <?php get_template_part( "template/slider", "katalog" ); ?>
 
 <?php get_template_part( "template/reklama360" ); ?>
-
-<?php get_template_part( "template/slider", "partnerzy" ); ?>
 
 <?php get_template_part( "template/newsletter" ); ?>
 

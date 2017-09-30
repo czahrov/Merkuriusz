@@ -1,0 +1,29 @@
+#topbar{
+	border-bottom: solid 1px $color-ramka-szara;
+	
+	& > .box{
+		height: 50px;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		font-size: 14px;
+		
+		& > .cell{
+			padding: 0 30px;
+			border-left: solid 1px $color-ramka-szara;
+			
+			.gray{
+				padding-right: 10px;
+				color: $color-szary-ciemny;
+				
+			}
+			
+			&:last-child{
+				border-right: solid 1px $color-ramka-szara;
+				
+			}
+			
+		}
+		
+	}
+	
+}

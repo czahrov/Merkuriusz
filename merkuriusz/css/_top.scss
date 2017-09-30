@@ -1,14 +1,15 @@
 #top{
 	height: 90px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 30px;
 	
 	& > .logo{
 		margin: 0 15px;
 		
 		& > a{
-			
-			& > img{
-				
-			}
+			width: 250px;
+			background-image: url(../img/logo_merkuriusz.png);
 			
 		}
 		
@@ -16,14 +17,15 @@
 	
 	& > .searchbar{
 		margin: 0 15px;
-		height: 45px;
+		max-width: 630px;
 		@extend .regular;
 		font-size: 14px;
 		
 		& > .input{
-			width: 250px;
 			padding: 0 20px;
 			border: solid 1px $color-ramka-szara;
+			background-color: $color-szary-jasny;
+			color: $color-szary2;
 			
 			&::placeholder{
 				color: inherit;
@@ -33,20 +35,28 @@
 		}
 		
 		& > .button{
-			width: 45px;
-			border: solid 1px $color-ramka-szara;
-			background-color: #fff;
-			transition-property: background, font;
+			padding: 0 30px;
+			border: none;
+			background-color: $color-menu-active;
+			color: #fff;
 			
-			& > .icon{
-				
-			}
+		}
+		
+	}
+	
+	#basket{
+		padding: 0 16px;
+		background-color: $color-menu-active;
+		color: #fff;
+		
+		& > .basket-text{
+			padding: 0;
+			font-size: 12px;
 			
-			&:hover{
-				background-color: $color-menu-active;
-				color: #fff;
-				
-			}
+		}
+		
+		& > .icon{
+			margin-left: 26px;
 			
 		}
 		

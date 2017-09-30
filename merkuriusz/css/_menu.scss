@@ -1,0 +1,23 @@
+#menu{
+	margin-bottom: 30px;
+	
+	& > .box{
+		height: 50px;
+		border: 4px $color-ramka-szara;
+		border-style: double none;
+		
+		& > .item{
+			padding: 0 10px;
+			font-size: 14px;
+			transition: color .3s linear;
+			
+			&:hover{
+				color: $color-menu-active;
+				
+			}
+			
+		}
+		
+	}
+	
+}

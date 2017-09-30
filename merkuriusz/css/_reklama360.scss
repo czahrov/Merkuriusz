@@ -1,0 +1,93 @@
+.reklama360{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	
+	& > .header{
+		height: 50px;
+		border: double $color-ramka-szara;
+		border-width: 6px 0;
+		font-size: 14px;
+		
+	}
+	
+	& > .body{
+		
+		& > .item{
+			margin-top: 30px;
+			min-height: 200px;
+			
+			& > .box{
+				position: relative;
+				padding: 20px 30px;
+				background-color: silver;
+				background-image: url('https://placeimg.com/400/200');
+				
+				& > .over{
+					position: absolute;
+					padding: 20px 30px;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color:rgba(0,0,0,0.5);
+					color: #fff;
+					
+					& > .content{
+						margin-top: 50px;
+						padding: 10px 20px;
+						border: dashed 3px $color-ramka-szara;
+						line-height: 20px;
+						font-size: 16px;
+						
+					}
+					
+				}
+				
+				& > .hint{
+					position: absolute;
+					top: 0;
+					left: 0;
+					color: #fff;
+					transform: translate(30px,20px);
+					
+				}
+				
+				& > .hitbox{
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					
+				}
+				
+			}
+			
+			&:not(:hover){
+				
+				& > .box > .over{
+					display: none;
+					
+				}
+				
+			}
+			
+			@media(min-width: map-get( $bpw, tablet )){
+				
+				&:nth-child(odd){
+					padding-right: 17px;
+					
+				}
+				
+				&:nth-child(even){
+					padding-left: 17px;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

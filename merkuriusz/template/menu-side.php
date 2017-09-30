@@ -1,11 +1,10 @@
-<div class="col-md-4" id='sidebar'>
+<div id='sidebar' class='base2'>
 	<!-- SIDEBAR NAVIGATION -->
 	<div class="sidebar-navigation background-white">
 		<?php
-			do_action( 'gen_menu', array(
+			$input = array(
 				'gadżety reklamowe' => array(
 					'class' => 'reklamowe',
-					'texture' => 'http://www.quotationof.com/images250_/dots-quotes-5.jpg',
 					'items' => array(
 						array(
 							'title' => 'Materiały piśmiennicze',
@@ -923,7 +922,7 @@
 					),
 				),
 				'pluszaki i maskotki' => array(
-					'class' => 'fofcio',
+					'class' => 'pluszaki',
 					'items' => array(
 						array(
 							'title' => 'Misie',
@@ -1908,7 +1907,214 @@
 						),
 					),
 				),
-			) );
+			);
+			
+/*
+<ul class='menu'>
+	<li class='item flex flex-column reklamowe' item-slug='gadzety_reklamowe' item-title='gadżety reklamowe'>
+		<div class='head flex flex-items-center '>
+			<div class='title uppercase bold'>gadżety reklamowe</div>
+			<span class='icon fa fa-angle-right'></span>
+			
+		</div>
+		<ul class='sub flex flex-column'>
+			<a class='item flex flex-column' href='http://poligon.scepter.pl/PiotrM/wp_merkuriusz/kategoria?cat=vip_pismiennicze,mark_twain,vip_pismiennicze-mark_twain' item-slug='mark_twain' item-title='mark twain'>
+				<div class='head grow flex flex-items-center'>
+					<img class='pikto' src='http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/themes/merkuriusz/img/piktogramy/pen1.png'>
+					<div class='logotyp flex grow bgimg contain flex-self-stretch' style='background-image: url(http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/themes/merkuriusz/img/logotypy/marktwain.svg);'></div>
+					<span class='icon fa fa-angle-double-right'></span>
+					
+				</div>
+			</a>
+			<div class='item flex flex-column' item-slug='przeciwdeszczowe' item-title='Przeciwdeszczowe'>
+				<div class='head grow flex flex-items-center'>
+					<img class='pikto' src='http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/themes/merkuriusz/img/piktogramy/parasole.png'>
+					<div class='title'>Przeciwdeszczowe</div>
+					<span class='icon'>+</span>
+					
+				</div>
+				<div class='sub flex flex-column'>
+					<a class='item flex flex-column' href='http://poligon.scepter.pl/PiotrM/wp_merkuriusz/kategoria?cat=gadzety_reklamowe,przeciwdeszczowe,przeciwdeszczowe-parasole' item-slug='parasole' item-title='Przeciwdeszczowe'>
+						<div class='head grow flex flex-items-center'>
+							<div class='title'>Parasole</div>
+							<span class='icon fa fa-angle-double-right'></span>
+							
+						</div>
+						
+					</a>
+					
+				</div>
+				
+			</div>
+			
+		</ul>
+		
+	</li>
+	
+</ul>
+*/
+			
+			if( !empty( $_GET['cat'] ) ){
+				$query = explode( ",", $_GET['cat'] );
+			}
+			else{
+				$query = array( "", "" );
+				
+			}
+			
+			$icon_arrow = "<span class='icon fa fa-angle-right'></span>";
+			$icon_double_arrow = "<span class='icon fa fa-angle-double-right'></span>";
+			$icon_plus = "<span class='icon'>+</span>";
+			
+			// LISTA GŁÓWNA
+			echo "<ul class='menu'>";
+			echo "<div class='title bold uppercase flex flex-items-center'>Nasz sklep</div>";
+			foreach( $input as $cat_name => $cat_data ){
+				$cat_slug = apply_filters( 'stdName', $cat_name );
+				if( $query[0] === $cat_slug ){
+					$cat_active = 'active';
+					
+				}
+				else{
+					$cat_active = '';
+					
+				}
+				
+				// PIERWSZY STOPIEŃ
+				printf( "<li class='item flex flex-column %s %s' item-slug='%s' item-title='%s'>
+						<div class='head flex flex-items-center %s' %s>
+							<div class='title uppercase'>
+								%s
+							</div>
+							%s
+						</div>
+						<ul class='sub flex flex-column'>",
+					$cat_data['class'],
+					$cat_active,
+					$cat_slug,
+					$cat_name,
+					!empty( $cat_data[ 'texture' ] )?( 'bgimg bg-repeat bg-top animate' ):( '' ),
+					!empty( $cat_data[ 'texture' ] )?( "style='background-image:url({$cat_data[ 'texture' ]});'" ):( '' ),
+					$cat_name,
+					!empty( $cat_data[ 'items' ] )?( $icon_arrow ):( '' )
+				);
+				
+				foreach( $cat_data['items'] as $item ){
+					$item_slug = apply_filters( 'stdName', $item['title'] );
+					if( $query[1] === $item_slug ){
+						$item_active = 'active';
+						
+					}
+					else{
+						$item_active = '';
+						
+					}
+					
+					if( empty( $item['sub'] ) ){
+						printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
+							$item['class'],
+							$item_active,
+							$cat_slug === 'gadzety_reklamowe'?(
+								home_url( sprintf( "kategoria?cat=%s,%s", $cat_slug, $item_slug ) )
+							):(
+								home_url( sprintf( "kategoria?cat=%s,%s,%s-%s", $cat_slug, $item_slug, $cat_slug, $item_slug ) )
+							),
+							$item_slug,
+							$item['title']
+						);
+						
+					}
+					else{
+						printf( "<div class='item flex flex-column %s %s' item-slug='%s' item-title='%s'>",
+							$item['class'],
+							$item_active,
+							$item_slug,
+							$item['title']
+						);
+						
+					}
+					
+						echo "<div class='head grow flex flex-items-center'>";
+							if( !empty( $item['pikto'] ) ){
+								printf( "<img class='pikto' src='%s/img/piktogramy/%s'>", get_template_directory_uri(), $item['pikto'] );
+							}
+							if( !empty( $item['title'] ) && empty( $item['logo'] ) ){
+								printf( "<div class='title'>%s</div>", $item['title'] );
+							}
+							if( !empty( $item['logo'] ) ){
+								printf( "<div class='logotyp flex grow bgimg contain flex-self-stretch' style='background-image: url(%s/img/logotypy/%s);'></div>", get_template_directory_uri(), $item['logo'] );
+							}
+							
+							if( !empty( $item[ 'sub' ] ) ){
+								echo $icon_plus;
+								
+							}
+							else{
+								echo $icon_double_arrow;
+								
+							}
+							
+						echo "</div>";	
+						
+					// DRUGI STOPIEŃ
+					if( !empty( $item['sub'] ) ){
+						echo "<div class='sub flex flex-column'>";
+							
+							foreach( $item['sub'] as $subitem ){
+								$subitem_slug = apply_filters( 'stdName', $subitem[ 'title' ] );
+								if( explode( "-", end( $query ) )[1] === $subitem_slug ){
+									$subitem_active = 'active';
+								}
+								else{
+									$subitem_active = '';
+									
+								}
+								
+								printf( "<a class='item flex flex-column %s %s' href='%s' item-slug='%s' item-title='%s'>",
+									$item['class'],
+									$subitem_active,
+									home_url( sprintf( "kategoria?cat=%s,%s,%s-%s", $cat_slug, $item_slug, $item_slug, $subitem_slug ) ),
+									$subitem_slug,
+									$item['title']
+								);
+							
+									echo "<div class='head grow flex flex-items-center'>";
+										if( !empty( $subitem['pikto'] ) ){
+											printf( "<img class='pikto' src='%s/img/piktogramy/%s'>", get_template_directory_uri(), $subitem['pikto'] );
+										}
+										if( !empty( $subitem['title'] ) && empty( $subitem['logo'] ) ){
+											printf( "<div class='title'>%s</div>", $subitem['title'] );
+										}
+										if( !empty( $subitem['logo'] ) ){
+											printf( "<div class='logotyp flex grow bgimg contain flex-self-stretch' style='background-image: url(%s/img/logotypy/%s);'></div>", get_template_directory_uri(), $subitem['logo'] );
+										}
+										
+										echo $icon_double_arrow;
+										
+									echo "</div>";
+								
+								echo "</a>";
+								
+							}
+						
+						echo "</div>";
+						
+						echo "</div>";
+					}
+					else{
+						echo "</a>";
+						
+					}
+						
+				}
+					
+				echo "</ul>";
+				
+			}
+			echo "</ul>";
+			
+			
 		?>
 	</div>
+	
 </div>

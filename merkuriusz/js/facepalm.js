@@ -194,13 +194,13 @@
 			
 			/* domyślne rozwijanie kategorii VIP */
 			(function(){
-				if( !/cat=/.test( window.location.search ) ){
+				/* if( !/cat=/.test( window.location.search ) ){
 					$( 'ul.menu > .item.vip' )
 					.addClass( 'open' )
 					.siblings( '.item' )
 					.removeClass( 'open' );
 					
-				}
+				} */
 				
 			})();
 			
@@ -545,7 +545,7 @@
 				});
 				
 			})
-			( $( '.navbar .basket' ) );
+			( $( '#basket' ) );
 			
 		},
 		alternate: function(){
@@ -1125,7 +1125,7 @@
 											kalkulator.find( '.tcell.dane' ).trigger( 'reset' );
 											kalkulator.triggerHandler( 'wynik', [ 'close' ] );
 											kalkulator.triggerHandler( 'wynik', [ 'clear' ] );
-											$( '.navbar .basket' ).triggerHandler( 'update' );
+											$( '#basket' ).triggerHandler( 'update' );
 											
 										}
 										

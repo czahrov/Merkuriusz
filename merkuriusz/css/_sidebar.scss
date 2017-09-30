@@ -1,0 +1,324 @@
+#sidebar{
+	margin-right: 20px;
+	
+	& > .sidebar-navigation{
+		margin: 0;
+		
+	}
+	
+	ul.menu{
+		border: solid 5px $color-ramka-szara;
+		
+		& > .title{
+			margin: 0 30px;
+			height: 50px;
+			border-bottom: double 6px $color-ramka-szara;
+			font-size: 12px;
+			
+		}
+		
+		.item{
+			position: relative;
+			background-color: #fff;
+			
+			& > .pikto{
+				margin-right: 10px;
+				
+			}
+			
+			& > .head{
+				padding-left: 30px;
+				padding-right: 30px;
+				min-height: 60px;
+				
+				& > .pikto{
+					margin-right: 10px;
+					
+				}
+				
+				& > .title{
+					margin-right: auto;
+					padding-right: 10px;
+					
+				}
+				
+				& > .logotyp{
+					margin: 5px 10px 5px 0;
+					background-position: left;
+					
+				}
+				
+			}
+			
+			.sub{
+				padding-left: 10px;
+				color: #000;
+				background-color: silver;
+				
+				& > .item{
+					border-top: solid 1px $color-ramka-szara;
+					background-clip: content-box;
+					transition: background .3s linear;
+					
+					&:hover{
+						padding-left: 10px;
+						
+						& > .head{
+							padding-left: 20px;
+							
+						}
+						
+					}
+					
+					& > .head{
+						min-height: 40px;
+						
+					}
+					
+				}
+				
+			}
+			
+			& > .icon{
+				transition: transform .3s linear;
+				
+			}
+			
+			&.open > .head > .icon{
+				transform: rotate(90deg);
+				
+			}
+			
+			
+		}
+		
+		& > .item{
+			position: relative;
+			
+			& > .sub{
+				padding-left: 0;
+				
+				.item{
+					
+					& > .sub{
+						white-space: nowrap;
+						
+					}
+						
+					@media(min-width: 992px){
+						& > .sub{
+							position: absolute;
+							top: 0;
+							left: 100%;
+							z-index: 20;
+							
+						}
+						
+					}
+					
+					&:not(:hover) > .sub{
+						display: none;
+						
+					}
+					
+				}
+				
+			}
+			
+			&.reklamowe{
+				
+				.sub{
+					background-color: $color-reklamowe;
+				}
+				
+				&:hover, &.open{
+					
+					&::before,
+					&::after{
+						background-color: $color-reklamowe;
+						
+					}
+					
+				}
+				
+			}
+			
+			&.pluszaki{
+				
+				.sub{
+					background-color: $color-pluszaki;
+				}
+				
+				&:hover, &.open{
+					
+					&::before,
+					&::after{
+						background-color: $color-pluszaki;
+						
+					}
+					
+				}
+				
+			}
+			
+			&.elektronika{
+				
+				.sub{
+					background-color: $color-elektronika;
+				}
+				
+				&:hover, &.open{
+					
+					&::before,
+					&::after{
+						background-color: $color-elektronika;
+						
+					}
+					
+				}
+				
+			}
+			
+			&.vip{
+				
+				.sub{
+					background-color: $color-vip;
+				}
+				
+				&:hover, &.open{
+					
+					&::before,
+					&::after{
+						background-color: $color-vip;
+						
+					}
+					
+				}
+				
+			}
+			
+			&.vip_elektronika{
+				
+				.sub{
+					background-color: $color-vip-elektronika;
+				}
+				
+				&:hover, &.open{
+					
+					&::before,
+					&::after{
+						background-color: $color-vip-elektronika;
+						
+					}
+					
+				}
+				
+			}
+			
+			&.vip_pismiennicze{
+				
+				.sub{
+					background-color: $color-vip-pismiennicze;
+				}
+				
+				&:hover, &.open{
+					
+					&::before,
+					&::after{
+						background-color: $color-vip-pismiennicze;
+						
+					}
+					
+				}
+				
+			}
+			
+			&.vip_victorinox{
+				
+				.sub{
+					background-color: $color-vip-victorinox;
+				}
+				
+				&:hover, &.open{
+					
+					&::before,
+					&::after{
+						background-color: $color-vip-victorinox;
+						
+					}
+					
+				}
+				
+			}
+			
+			&.active{
+				
+				& > .sub{
+					
+					.item.active > .head > .title{
+						color: $color-menu-active;
+						
+					}
+					
+				}
+				
+			}
+			
+			&:not(:last-child){
+				
+				& > .head{
+					position: relative;
+					
+					&::after{
+						content: '';
+						position: absolute;
+						padding: 0 30px;
+						height: 1px;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						background-color: $color-ramka-szara;
+						background-clip: content-box;
+						
+					}
+					
+				}
+				
+			}
+			
+			&::before,
+			&::after{
+				content: '';
+				position: absolute;
+				padding: 10px 0;
+				width: 5px;
+				top: 0;
+				bottom: 0;
+				background-clip: content-box;
+				
+			}
+			
+			&::before{
+				right: 100%;
+				
+			}
+			
+			&::after{
+				left: 100%;
+				
+			}
+			
+		}
+		
+		& > .item:not(.open) > .sub{
+			display: none;
+		}
+		
+		& *{
+			cursor: pointer;
+			
+		}
+		
+	}
+	
+}

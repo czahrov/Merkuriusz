@@ -1,200 +1,229 @@
 @charset "UTF-8";
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000336}}
+.font-light {
+  color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000341}}
+.bg-light {
+  background-color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000336}}
+.font-dark, .catalog-slider > .catalog-slider-wrapper > .catalog-container > .catalog-element > .catalog_signature {
+  color: #212121;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000341}}
+.bg-dark {
+  background-color: #212121;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000336}}
+.font-blue {
+  color: #2b97fa;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000341}}
+.bg-blue {
+  background-color: #2b97fa;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000336}}
+.font-gray {
+  color: #2a96f8;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000341}}
+.bg-gray {
+  background-color: #2a96f8;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000336}}
+.font-gray2 {
+  color: #ebebeb;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000341}}
+.bg-gray2 {
+  background-color: #ebebeb;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000336}}
+.font-gray3 {
+  color: #f8f8f8;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000341}}
+.bg-gray3 {
+  background-color: #f8f8f8;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000336}}
+.font-gray4 {
+  color: #c6c6c6;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000341}}
+.bg-gray4 {
+  background-color: #c6c6c6;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000336}}
+.font-gray5, footer > .infobar > .item > .text > .bold, footer.catalog-slider > .catalog-slider-wrapper.infobar > .catalog-container.item > .catalog-element.text > .catalog_signature, footer > .bot .bold, footer > .bot .catalog-slider > .catalog-slider-wrapper > .catalog-container > .catalog-element > .catalog_signature {
+  color: #666666;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000341}}
+.bg-gray5 {
+  background-color: #666666;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000336}}
+.font-pink {
+  color: #fb2c4a;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_paleta\.scss}line{font-family:\0000341}}
+.bg-pink, .kalendarze > .box > .hint {
+  background-color: #fb2c4a;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\000039}}
 a {
   display: inline-block;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000312}}
 a, a:hover, a:focus {
   text-decoration: none;
   color: inherit;
   outline: none;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000321}}
 .regular, #top > .searchbar {
   font-family: 'Montserrat-Regular';
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000324}}
+.regular.alt, #top > .alt.searchbar {
+  font-family: 'metropolis-regular';
+}
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000331}}
+.medium {
+  font-family: 'Montserrat-Medium';
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000334}}
+.medium.alt {
+  font-family: 'metropolis-medium';
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000341}}
 .semibold {
   font-family: 'Montserrat-SemiBold';
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000344}}
+.semibold.alt {
+  font-family: 'metropolis-semibold';
+}
 
-.bold {
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000351}}
+.bold, .catalog-slider > .catalog-slider-wrapper > .catalog-container > .catalog-element > .catalog_signature {
   font-family: 'Montserrat-Bold';
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000354}}
+.bold.alt, .catalog-slider > .catalog-slider-wrapper > .catalog-container > .catalog-element > .alt.catalog_signature {
+  font-family: 'metropolis-bold';
+}
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000361}}
 .title {
-  font-size: 14px;
+  font-size: 12px;
 }
 
-ul.menu {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #e7e7e7;
-}
-ul.menu > .item > .sub .item > .sub {
-  white-space: nowrap;
-}
-@media (min-width: 992px) {
-  ul.menu > .item > .sub .item > .sub {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    z-index: 20;
-  }
-}
-ul.menu > .item > .sub .item:not(:hover) > .sub {
-  display: none;
-}
-ul.menu > .item.active.reklamowe > .head {
-  -webkit-box-shadow: 0 0 0 2px #0af inset;
-          box-shadow: 0 0 0 2px #0af inset;
-}
-ul.menu > .item.active > .sub .item.active > .head > .title {
-  color: #0af;
-}
-ul.menu > .item:not(.open) > .sub {
-  display: none;
-}
-ul.menu .item {
-  position: relative;
-  background-color: #fff;
-}
-ul.menu .item > .pikto {
-  margin-right: 10px;
-}
-ul.menu .item > .head {
-  padding-left: 20px;
-  padding-right: 20px;
-  min-height: 60px;
-}
-ul.menu .item > .head > .pikto {
-  margin-right: 10px;
-}
-ul.menu .item > .head > .title {
-  margin-right: auto;
-  padding-right: 10px;
-}
-ul.menu .item > .head > .logotyp {
-  margin: 5px 10px 5px 0;
-  min-width: 180px;
-  background-position: left;
-}
-ul.menu .item .sub {
-  padding-left: 10px;
-  color: #000;
-  background-color: silver;
-}
-ul.menu .item .sub > .item {
-  border-top: solid 1px #e7e7e7;
-  background-clip: content-box;
-  -webkit-transition: background .3s linear;
-  transition: background .3s linear;
-}
-ul.menu .item .sub > .item:hover {
-  padding-left: 10px;
-}
-ul.menu .item .sub > .item:hover > .head {
-  padding-left: 10px;
-}
-ul.menu .item .sub > .item > .head {
-  min-height: 40px;
-}
-ul.menu .item > .icon {
-  -webkit-transition: -webkit-transform .3s linear;
-  transition: -webkit-transform .3s linear;
-  transition: transform .3s linear;
-  transition: transform .3s linear, -webkit-transform .3s linear;
-}
-ul.menu .item.open > .head > .icon {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-ul.menu .item.fofcio {
-  color: #fff;
-  background-color: #D10990;
-}
-ul.menu .item.fofcio .sub {
-  background-color: #D10990;
-}
-ul.menu .item.elektronika {
-  color: #fff;
-  background-color: #1f9DF1;
-}
-ul.menu .item.elektronika .sub {
-  background-color: #1f9DF1;
-}
-ul.menu .item.vip {
-  color: #fff;
-  background-color: #1d1d1d;
-}
-ul.menu .item.vip .sub {
-  background-color: #1d1d1d;
-}
-ul.menu .item.vip_elektronika {
-  color: #fff;
-  background-color: #c2850a;
-}
-ul.menu .item.vip_elektronika .sub {
-  background-color: #c2850a;
-}
-ul.menu .item.vip_victorinox {
-  color: #fff;
-  background-color: #e40b0e;
-}
-ul.menu .item.vip_victorinox .sub {
-  background-color: #e40b0e;
-}
-ul.menu * {
-  cursor: pointer;
-}
-
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000367}}
 .pointer, .pointer * {
   cursor: pointer;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000374}}
 .grid {
   max-width: 1220px;
   padding: 0 20px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000380}}
+.hint {
+  padding: 13px;
+  margin-left: 8px;
+  height: 26px;
+  border-radius: 6px;
+  line-height: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\0000387}}
+.hint::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: translate(-5px, -50%) rotate(45deg);
+          transform: translate(-5px, -50%) rotate(45deg);
+  background-color: inherit;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-cover {
   background-size: cover;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-contain {
   background-size: contain;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-center {
   background-position: center;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-top {
   background-position-y: top;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-bottom {
   background-position-y: bottom;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-left {
   background-position-x: left;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-right {
   background-position-x: right;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-no-repeat {
   background-repeat: none;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-repeat-x {
   background-repeat: repeat-x;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-repeat-y {
   background-repeat: repeat-y;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003114}}
 .bg-repeat {
   background-repeat: repeat;
 }
@@ -216,22 +245,288 @@ ul.menu * {
     background-position-y: 200%;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003133}}
 ul.menu .head.animate {
   background-size: auto 200%;
   -webkit-animation: menu 2s infinite linear paused;
           animation: menu 2s infinite linear paused;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_setup\.scss}line{font-family:\00003137}}
 ul.menu .head.animate:hover {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_topbar\.scss}line{font-family:\000031}}
+#topbar {
+  border-bottom: solid 1px #e7e7e7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_topbar\.scss}line{font-family:\000034}}
+#topbar > .box {
+  height: 50px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_topbar\.scss}line{font-family:\0000310}}
+#topbar > .box > .cell {
+  padding: 0 30px;
+  border-left: solid 1px #e7e7e7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_topbar\.scss}line{font-family:\0000314}}
+#topbar > .box > .cell .gray {
+  padding-right: 10px;
+  color: #b0b0b0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_topbar\.scss}line{font-family:\0000320}}
+#topbar > .box > .cell:last-child {
+  border-right: solid 1px #e7e7e7;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_menu\.scss}line{font-family:\000031}}
+#menu {
+  margin-bottom: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_menu\.scss}line{font-family:\000034}}
+#menu > .box {
+  height: 50px;
+  border: 4px #e7e7e7;
+  border-style: double none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_menu\.scss}line{font-family:\000039}}
+#menu > .box > .item {
+  padding: 0 10px;
+  font-size: 14px;
+  -webkit-transition: color .3s linear;
+  transition: color .3s linear;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_menu\.scss}line{font-family:\0000314}}
+#menu > .box > .item:hover {
+  color: #0af;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\000031}}
+#sidebar {
+  margin-right: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\000034}}
+#sidebar > .sidebar-navigation {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\000039}}
+#sidebar ul.menu {
+  border: solid 5px #e7e7e7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000312}}
+#sidebar ul.menu > .title {
+  margin: 0 30px;
+  height: 50px;
+  border-bottom: double 6px #e7e7e7;
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000320}}
+#sidebar ul.menu .item {
+  position: relative;
+  background-color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000324}}
+#sidebar ul.menu .item > .pikto {
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000329}}
+#sidebar ul.menu .item > .head {
+  padding-left: 30px;
+  padding-right: 30px;
+  min-height: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000334}}
+#sidebar ul.menu .item > .head > .pikto {
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000339}}
+#sidebar ul.menu .item > .head > .title {
+  margin-right: auto;
+  padding-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000345}}
+#sidebar ul.menu .item > .head > .logotyp {
+  margin: 5px 10px 5px 0;
+  background-position: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000353}}
+#sidebar ul.menu .item .sub {
+  padding-left: 10px;
+  color: #000;
+  background-color: silver;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000358}}
+#sidebar ul.menu .item .sub > .item {
+  border-top: solid 1px #e7e7e7;
+  background-clip: content-box;
+  -webkit-transition: background .3s linear;
+  transition: background .3s linear;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000363}}
+#sidebar ul.menu .item .sub > .item:hover {
+  padding-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000366}}
+#sidebar ul.menu .item .sub > .item:hover > .head {
+  padding-left: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000373}}
+#sidebar ul.menu .item .sub > .item > .head {
+  min-height: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000382}}
+#sidebar ul.menu .item > .icon {
+  -webkit-transition: -webkit-transform .3s linear;
+  transition: -webkit-transform .3s linear;
+  transition: transform .3s linear;
+  transition: transform .3s linear, -webkit-transform .3s linear;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000387}}
+#sidebar ul.menu .item.open > .head > .icon {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000395}}
+#sidebar ul.menu > .item {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\0000398}}
+#sidebar ul.menu > .item > .sub {
+  padding-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003103}}
+#sidebar ul.menu > .item > .sub .item > .sub {
+  white-space: nowrap;
+}
+@media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003109}}
+  #sidebar ul.menu > .item > .sub .item > .sub {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 20;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003119}}
+#sidebar ul.menu > .item > .sub .item:not(:hover) > .sub {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003130}}
+#sidebar ul.menu > .item.reklamowe .sub {
+  background-color: #2a96f8;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003136}}
+#sidebar ul.menu > .item.reklamowe:hover::before, #sidebar ul.menu > .item.reklamowe:hover::after, #sidebar ul.menu > .item.reklamowe.open::before, #sidebar ul.menu > .item.reklamowe.open::after {
+  background-color: #2a96f8;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003148}}
+#sidebar ul.menu > .item.pluszaki .sub {
+  background-color: #af0c83;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003154}}
+#sidebar ul.menu > .item.pluszaki:hover::before, #sidebar ul.menu > .item.pluszaki:hover::after, #sidebar ul.menu > .item.pluszaki.open::before, #sidebar ul.menu > .item.pluszaki.open::after {
+  background-color: #af0c83;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003166}}
+#sidebar ul.menu > .item.elektronika .sub {
+  background-color: #0b33af;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003172}}
+#sidebar ul.menu > .item.elektronika:hover::before, #sidebar ul.menu > .item.elektronika:hover::after, #sidebar ul.menu > .item.elektronika.open::before, #sidebar ul.menu > .item.elektronika.open::after {
+  background-color: #0b33af;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003184}}
+#sidebar ul.menu > .item.vip .sub {
+  background-color: #2b2b2b;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003190}}
+#sidebar ul.menu > .item.vip:hover::before, #sidebar ul.menu > .item.vip:hover::after, #sidebar ul.menu > .item.vip.open::before, #sidebar ul.menu > .item.vip.open::after {
+  background-color: #2b2b2b;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003202}}
+#sidebar ul.menu > .item.vip_elektronika .sub {
+  background-color: #0baf96;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003208}}
+#sidebar ul.menu > .item.vip_elektronika:hover::before, #sidebar ul.menu > .item.vip_elektronika:hover::after, #sidebar ul.menu > .item.vip_elektronika.open::before, #sidebar ul.menu > .item.vip_elektronika.open::after {
+  background-color: #0baf96;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003220}}
+#sidebar ul.menu > .item.vip_pismiennicze .sub {
+  background-color: #2b2b2b;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003226}}
+#sidebar ul.menu > .item.vip_pismiennicze:hover::before, #sidebar ul.menu > .item.vip_pismiennicze:hover::after, #sidebar ul.menu > .item.vip_pismiennicze.open::before, #sidebar ul.menu > .item.vip_pismiennicze.open::after {
+  background-color: #2b2b2b;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003238}}
+#sidebar ul.menu > .item.vip_victorinox .sub {
+  background-color: #b00b1b;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003244}}
+#sidebar ul.menu > .item.vip_victorinox:hover::before, #sidebar ul.menu > .item.vip_victorinox:hover::after, #sidebar ul.menu > .item.vip_victorinox.open::before, #sidebar ul.menu > .item.vip_victorinox.open::after {
+  background-color: #b00b1b;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003258}}
+#sidebar ul.menu > .item.active > .sub .item.active > .head > .title {
+  color: #0af;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003269}}
+#sidebar ul.menu > .item:not(:last-child) > .head {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003272}}
+#sidebar ul.menu > .item:not(:last-child) > .head::after {
+  content: '';
+  position: absolute;
+  padding: 0 30px;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #e7e7e7;
+  background-clip: content-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003289}}
+#sidebar ul.menu > .item::before, #sidebar ul.menu > .item::after {
+  content: '';
+  position: absolute;
+  padding: 10px 0;
+  width: 5px;
+  top: 0;
+  bottom: 0;
+  background-clip: content-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003301}}
+#sidebar ul.menu > .item::before {
+  right: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003306}}
+#sidebar ul.menu > .item::after {
+  left: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003313}}
+#sidebar ul.menu > .item:not(.open) > .sub {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_sidebar\.scss}line{font-family:\00003317}}
+#sidebar ul.menu * {
+  cursor: pointer;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\000031}}
 #grid {
   background-color: #fff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\000034}}
 #grid .switcher {
   min-height: 60px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\000037}}
 #grid .switcher > a {
   margin-left: 10px;
   width: 34px;
@@ -243,28 +538,35 @@ ul.menu .head.animate:hover {
   -webkit-transition: .3s linear;
   transition: .3s linear;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\0000316}}
 #grid .switcher > a.active, #grid .switcher > a:hover {
   color: #fff;
   background-color: #269bff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\0000326}}
 #grid > .top {
   margin-bottom: 30px;
   padding: 0 20px;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\0000331}}
 #grid > .top > .breadc {
   min-height: 60px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\0000338}}
 #grid > .kafelki {
   margin: 0 -10px 30px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\000034}}
 #grid > .kafelki > .noitems {
   padding: 0 20px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\0000311}}
 #grid > .kafelki > .item > .wrapper {
   margin: 10px;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\0000315}}
 #grid > .kafelki > .item > .wrapper > .img {
   position: relative;
   padding: 10px;
@@ -273,6 +575,7 @@ ul.menu .head.animate:hover {
   background-origin: content-box;
   border-bottom: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\0000323}}
 #grid > .kafelki > .item > .wrapper > .img > a {
   position: absolute;
   top: 0;
@@ -280,73 +583,85 @@ ul.menu .head.animate:hover {
   right: 0;
   bottom: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\0000334}}
 #grid > .kafelki > .item > .wrapper > .title {
   padding: 10px;
   border-bottom: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\0000340}}
 #grid > .kafelki > .item > .wrapper > .code {
   padding: 10px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\0000343}}
 #grid > .pagin {
   margin-bottom: 30px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\0000346}}
 #grid > .pagin > .next, #grid > .pagin > .prev {
   height: 60px;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\0000350}}
 #grid > .pagin > .next > a, #grid > .pagin > .prev > a {
   height: 100%;
   background-color: #fff;
   -webkit-transition: background .3s linear;
   transition: background .3s linear;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\0000355}}
 #grid > .pagin > .next > a:hover, #grid > .pagin > .prev > a:hover {
   background-color: #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\0000366}}
 #grid > .bot {
   margin-bottom: 30px;
   padding: 0 20px;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_grid\.scss}line{font-family:\0000371}}
 #grid > .bot > .num {
   min-height: 60px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\000033}}
 #home .home-top-right {
   height: 400px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\000037}}
 #home .home-top-right > .slider {
   height: 100%;
 }
-#home .top-slider {
-  margin-bottom: 30px;
-  padding: 0 15px;
-  min-height: 430px;
-}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000313}}
 #home .top-slider > .text {
   background-color: #fff;
   border: solid 1px #e7e7e7;
   overflow: hidden;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000318}}
 #home .top-slider > .text a {
   text-decoration: none;
   color: initial;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000326}}
 #home .top-slider > .text > .view > .item {
   padding: 30px 40px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000329}}
 #home .top-slider > .text > .view > .item:not(.active) {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000334}}
 #home .top-slider > .text > .view > .item > .title {
   margin-bottom: 24px;
   font-size: 18px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000340}}
 #home .top-slider > .text > .view > .item > .content {
   margin-bottom: 24px;
   line-height: 1.5em;
   font-size: 14px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000347}}
 #home .top-slider > .text > .view > .item > .button {
   margin-top: auto;
   min-width: 130px;
@@ -356,9 +671,11 @@ ul.menu .head.animate:hover {
   font-size: 12px;
   text-align: center;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000363}}
 #home .top-slider > .text > .pagin {
   padding: 0 0 30px 40px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000366}}
 #home .top-slider > .text > .pagin > .item {
   margin-right: 4px;
   width: 18px;
@@ -373,25 +690,56 @@ ul.menu .head.animate:hover {
   -webkit-transition: .3s linear;
   transition: .3s linear;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000378}}
 #home .top-slider > .text > .pagin > .item.active {
   border-color: #269bff;
   background-color: #fff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000389}}
 #home .top-slider > .imgs {
   margin-left: 30px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000392}}
 #home .top-slider > .imgs > .view {
   background-color: #fff;
   border: solid 1px #e7e7e7;
   overflow: hidden;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\0000399}}
 #home .top-slider > .imgs > .view > .item:not(.active) {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\00003108}}
+#home .top-slider > .imgs > .pagin {
+  padding: 0;
+  top: initial;
+  left: 50%;
+  bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\00003114}}
+#home .top-slider > .imgs > .pagin > .item {
+  padding: 1px;
+  width: 16px;
+  height: 16px;
+  border: solid 2px rgba(0, 170, 255, 0.7);
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-transition-property: border, padding;
+  transition-property: border, padding;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\00003124}}
+#home .top-slider > .imgs > .pagin > .item.active {
+  padding: 0;
+  border: solid 3px #0af;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\00003138}}
 #home .main-picture-powerbank,
 #home .main-picture-odziezreklamowa {
   position: relative;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\00003142}}
 #home .main-picture-powerbank > .over,
 #home .main-picture-odziezreklamowa > .over {
   position: absolute;
@@ -401,7 +749,28 @@ ul.menu .head.animate:hover {
   bottom: 0;
   z-index: 10;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\00003156}}
+#home .kafelki > .big, #home .kafelki > .small {
+  height: 400px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\00003162}}
+#home .kafelki > .big {
+  margin-right: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\00003172}}
+#home .kafelki > .small > .item:first-child {
+  margin-bottom: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\00003181}}
+#home .kafelki .item {
+  background-color: silver;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_home\.scss}line{font-family:\00003188}}
+#home .kafelki #menu .item {
+  background-color: transparent;
+}
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\000033}}
 #single > .popup {
   position: fixed;
   padding: 0;
@@ -419,67 +788,84 @@ ul.menu .head.animate:hover {
   border: none;
   z-index: 110;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000319}}
 #single > .popup:not(.open) {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000324}}
 #single > .popup > .box {
   max-height: 90%;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000327}}
 #single > .popup > .box > .header {
   margin-bottom: 10px;
   height: 60px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000331}}
 #single > .popup > .box > .header > .title {
   padding: 0 20px;
   margin-right: 10px;
   font-size: 20px;
   color: #fff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000339}}
 #single > .popup > .box > .header > .close {
   width: 60px;
   background-color: #2a96f8;
   opacity: 1;
   color: #fff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000345}}
 #single > .popup > .box > .header > .close > .icon {
   cursor: inherit;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000354}}
 #single > .popup > .box > .loader {
   margin: 50px 0;
   height: 60px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000358}}
 #single > .popup > .box > .loader > .box {
   width: 60px;
   background-color: #fff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000362}}
 #single > .popup > .box > .loader > .box > .icon {
   font-size: 40px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000371}}
 #single > .popup > .box > .img {
   padding: 10px;
   background-color: #fff;
   overflow: hidden;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000376}}
 #single > .popup > .box > .img > img {
   max-width: 250px;
 }
 @media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000376}}
   #single > .popup > .box > .img > img {
     max-width: 600px;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\0000392}}
 #single > .popup.ready > .box > .loader {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003101}}
 #single > .popup:not(.ready) > .box > .img {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003114}}
 #single #grid > .mid > .head {
   margin: 0 -6px 30px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003117}}
 #single #grid > .mid > .head > .pic {
   padding: 0 6px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003120}}
 #single #grid > .mid > .head > .pic > .large {
   position: relative;
   padding: 5px;
@@ -488,6 +874,7 @@ ul.menu .head.animate:hover {
   background-origin: content-box;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003128}}
 #single #grid > .mid > .head > .pic > .large > .icon {
   position: absolute;
   right: 20px;
@@ -496,96 +883,120 @@ ul.menu .head.animate:hover {
   text-shadow: 0 0 3px #fff;
   cursor: inherit;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003140}}
 #single #grid > .mid > .head > .pic > .mini {
   position: relative;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003144}}
 #single #grid > .mid > .head > .pic > .mini > .nav {
   width: 20px;
   font-size: 30px;
   color: #fff;
   background-color: #269bff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003150}}
 #single #grid > .mid > .head > .pic > .mini > .nav .icon {
   cursor: inherit;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003157}}
 #single #grid > .mid > .head > .pic > .mini > .view {
   overflow: hidden;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003160}}
 #single #grid > .mid > .head > .pic > .mini > .view > .item {
   padding: 5px;
   height: 100px;
   background-clip: content-box;
   background-origin: content-box;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003172}}
 #single #grid > .mid > .head > .pic > .download {
   margin-top: 12px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003175}}
 #single #grid > .mid > .head > .pic > .download > a {
   padding: 0 30px;
   height: 40px;
   border: solid 1px #e7e7e7;
 }
-#single #grid > .mid > .head > .pic > .download > a > .bold {
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003180}}
+#single #grid > .mid > .head > .pic > .download > a > .bold, #single #grid > .mid > .catalog-slider.head > .catalog-slider-wrapper.pic > .catalog-container.download > a.catalog-element > .catalog_signature {
   margin-left: 10px;
   cursor: inherit;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003192}}
 #single #grid > .mid > .head > .info {
   padding: 0 10px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003195}}
 #single #grid > .mid > .head > .info > .title {
   font-size: 22px;
   line-height: 40px;
   color: #2a96f8;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003202}}
 #single #grid > .mid > .head > .info > .instock {
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 22px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003207}}
 #single #grid > .mid > .head > .info > .instock > span {
   border: none;
   font-size: 20px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003211}}
 #single #grid > .mid > .head > .info > .instock > span.uknown {
   color: gray;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003215}}
 #single #grid > .mid > .head > .info > .instock > span.empty {
   color: black;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003220}}
 #single #grid > .mid > .head > .info > .instock > span.bad {
   color: red;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003225}}
 #single #grid > .mid > .head > .info > .instock > span.poor {
   color: orange;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003230}}
 #single #grid > .mid > .head > .info > .instock > span.medium {
   color: yellowgreen;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003235}}
 #single #grid > .mid > .head > .info > .instock > span.ok {
   color: green;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003244}}
 #single #grid > .mid > .head > .info > .code {
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 22px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003251}}
 #single #grid > .mid > .head > .info > .content {
   margin-bottom: 20px;
   font-size: 16px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003257}}
 #single #grid > .mid > .head > .info > .price {
   height: 67px;
   padding-left: 17px;
   border-left: solid 5px #2a96f8;
   font-size: 22px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003263}}
 #single #grid > .mid > .head > .info > .price > .netto {
   font-size: 18px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003276}}
 #single #grid > .mid > .body > .table {
   margin-top: 50px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003279}}
 #single #grid > .mid > .body > .table > .thead {
   height: 44px;
   padding: 0 20px;
@@ -595,76 +1006,96 @@ ul.menu .head.animate:hover {
   font-size: 16px;
   color: #fff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003292}}
 #single #grid > .mid > .body > .table > .tbody > .tcell {
   min-height: 36px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003295}}
 #single #grid > .mid > .body > .table > .tbody > .tcell > .name {
   padding-left: 20px;
   font-size: 14px;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003302}}
 #single #grid > .mid > .body > .table > .tbody > .tcell > .value {
   padding: 5px 5px 5px 20px;
   border: solid 1px #e7e7e7;
   font-size: 14px;
   line-height: 24px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003320}}
 #single #grid > .mid > .body > .table.specyfikacja > .tbody > .tcell:nth-child(4n+3), #single #grid > .mid > .body > .table.specyfikacja > .tbody > .tcell:nth-child(4n+4) {
   background-color: #f7f7f7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003336}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell {
   padding: 0 20px;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003340}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane {
   padding: 10px 20px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003343}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line {
   margin: 3px 0;
   min-height: 36px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003351}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line > .value {
   padding: 0 20px;
   margin-left: 20px;
   border: solid 1px #e7e7e7;
   background-color: #f7f7f7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003359}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button {
   margin-top: 16px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003362}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status {
   padding-left: 20px;
   border: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003366}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status > .text {
   padding: 0 10px 0 20px;
   font-size: 16px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003372}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status > .icon {
   border: none;
   font-size: 40px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003376}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status > .icon.ok {
   color: green;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003381}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status > .icon.fail {
   color: red;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003386}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status > .icon.info {
   color: darkblue;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003393}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status:not(.ok) > .icon.ok {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003398}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status:not(.fail) > .icon.fail {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003403}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status:not(.info) > .icon.info {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003408}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .status:not(.wait) > .icon.wait {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003415}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .calc {
   height: 44px;
   padding: 0 15px;
@@ -675,13 +1106,16 @@ ul.menu .head.animate:hover {
   -webkit-transition: background;
   transition: background;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003424}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.dane > .line.button > .calc.active {
   background-color: #0af;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003437}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik {
   padding: 0;
   border: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003441}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .title {
   padding: 0 20px;
   min-height: 32px;
@@ -689,42 +1123,53 @@ ul.menu .head.animate:hover {
   font-size: 16px;
   color: #fff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003450}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .partial {
   min-height: 42px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003453}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .partial > .field {
   padding: 0 20px;
   font-size: 14px;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003458}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .partial > .field.name {
   background-color: #f7f7f7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003463}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .partial > .field.formula::after, #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .partial > .field.sum::after {
   content: ' zł';
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003473}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total {
   border: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003476}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total > .field {
   min-height: 42px;
   font-size: 20px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003480}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total > .field.sum {
   padding: 10px 0;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003484}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total > .field.sum > span {
   padding: 0 10px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003487}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total > .field.sum > span::after {
   content: ' zł*';
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003494}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .total > .field.sum > .info {
   margin-top: 10px;
   padding-left: 20px;
   font-size: 12px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003509}}
 #single #grid > .mid > .body > .table.kalkulator > .tbody > .tcell.wynik > .cart > div {
   margin-top: 13px;
   height: 44px;
@@ -734,14 +1179,17 @@ ul.menu .head.animate:hover {
   font-size: 14px;
   color: #fff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003536}}
 #single #grid > .bot {
   padding: 0;
   border: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003540}}
 #single #grid > .bot > .podobne, #single #grid > .bot > .warianty {
   margin-bottom: 20px;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003545}}
 #single #grid > .bot > .podobne > .title, #single #grid > .bot > .warianty > .title {
   height: 44px;
   padding: 0 20px;
@@ -749,18 +1197,22 @@ ul.menu .head.animate:hover {
   color: #fff;
   font-size: 16px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_single\.scss}line{font-family:\00003554}}
 #single #grid > .bot > .podobne > .kafelki, #single #grid > .bot > .warianty > .kafelki {
   margin-bottom: 50px;
   padding: 0 10px;
   margin: 0 -10px 30px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\000034}}
 #single #grid > .bot > .podobne > .kafelki > .noitems, #single #grid > .bot > .warianty > .kafelki > .noitems {
   padding: 0 20px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\0000311}}
 #single #grid > .bot > .podobne > .kafelki > .item > .wrapper, #single #grid > .bot > .warianty > .kafelki > .item > .wrapper {
   margin: 10px;
   border: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\0000315}}
 #single #grid > .bot > .podobne > .kafelki > .item > .wrapper > .img, #single #grid > .bot > .warianty > .kafelki > .item > .wrapper > .img {
   position: relative;
   padding: 10px;
@@ -769,6 +1221,7 @@ ul.menu .head.animate:hover {
   background-origin: content-box;
   border-bottom: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\0000323}}
 #single #grid > .bot > .podobne > .kafelki > .item > .wrapper > .img > a, #single #grid > .bot > .warianty > .kafelki > .item > .wrapper > .img > a {
   position: absolute;
   top: 0;
@@ -776,19 +1229,23 @@ ul.menu .head.animate:hover {
   right: 0;
   bottom: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\0000334}}
 #single #grid > .bot > .podobne > .kafelki > .item > .wrapper > .title, #single #grid > .bot > .warianty > .kafelki > .item > .wrapper > .title {
   padding: 10px;
   border-bottom: solid 1px #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mixins\.scss}line{font-family:\0000340}}
 #single #grid > .bot > .podobne > .kafelki > .item > .wrapper > .code, #single #grid > .bot > .warianty > .kafelki > .item > .wrapper > .code {
   padding: 10px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_navbar\.scss}line{font-family:\000034}}
 .navbar .basket, .navbar .basket:focus, .navbar .basket:hover {
   color: #fff;
   outline: none;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\000039}}
 #cart #grid > .mid > .table > .title {
   padding: 0 20px;
   height: 44px;
@@ -796,46 +1253,57 @@ ul.menu .head.animate:hover {
   font-size: 16px;
   color: #fff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000318}}
 #cart #grid > .mid > .table > .thead {
   background-color: #e7e7e7;
   font-size: 16px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000322}}
 #cart #grid > .mid > .table > .thead > div {
   padding: 0 20px;
   height: 44px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000334}}
 #cart #grid > .mid > .table > .tbody > .line > .field {
   padding: 0 20px;
   min-height: 40px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000340}}
 #cart #grid > .mid > .table > .tbody > .line > .field.options > label {
   width: 20px;
   height: 20px;
   border: solid 2px #0af;
   border-radius: 5px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000346}}
 #cart #grid > .mid > .table > .tbody > .line > .field.options > label > .icon {
   opacity: 0;
   -webkit-transition: opacity .3s linear;
   transition: opacity .3s linear;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000354}}
 #cart #grid > .mid > .table > .tbody > .line > .field.options > input:checked + label > .icon {
   opacity: 1;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000363}}
 #cart #grid > .mid > .table > .tbody > .line.options {
   padding: 0 20px;
   height: 40px;
   background-color: #e7e7e7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000374}}
 #cart #grid > .mid > .table > .tbody > .line.options > .buttons > .icon {
   font-size: 20px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000383}}
 #cart #grid > .mid > .table > .tbody > .line:nth-child(even) {
   background-color: #f7f7f7;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000392}}
 #cart #grid > .mid > .table > .table {
   margin-top: 50px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\0000395}}
 #cart #grid > .mid > .table > .table > .thead {
   padding: 0 20px;
   height: 44px;
@@ -843,6 +1311,7 @@ ul.menu .head.animate:hover {
   background-color: #0af;
   font-size: 16px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003108}}
 #cart #grid > .mid > .table > .table > .tbody > .field > .input {
   min-height: 44px;
   padding: 0 20px;
@@ -852,54 +1321,69 @@ ul.menu .head.animate:hover {
   -webkit-transition: border .3s linear;
   transition: border .3s linear;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003116}}
 #cart #grid > .mid > .table > .table > .tbody > .field > .input .title {
   font: inherit;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003121}}
 #cart #grid > .mid > .table > .table > .tbody > .field > .input::placholder {
   font: inherit;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003126}}
 #cart #grid > .mid > .table > .table > .tbody > .field > .input.err {
   border-color: red;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003133}}
 #cart #grid > .mid > .table > .table > .tbody > .field > textarea.input {
   padding: 10px 20px;
   height: 200px;
   line-height: 30px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003144}}
 #cart #grid > .mid > .table > .table > .tbottom {
   padding: 20px 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003147}}
 #cart #grid > .mid > .table > .table > .tbottom > .status {
   border: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003152}}
 #cart #grid > .mid > .table > .table > .tbottom > .status > .icon > div {
   margin: 0 10px;
   font-size: 30px;
   border: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003157}}
 #cart #grid > .mid > .table > .table > .tbottom > .status > .icon > div.ok {
   color: green;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003162}}
 #cart #grid > .mid > .table > .table > .tbottom > .status > .icon > div.fail {
   color: red;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003167}}
 #cart #grid > .mid > .table > .table > .tbottom > .status > .icon > div.info {
   color: blue;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003176}}
 #cart #grid > .mid > .table > .table > .tbottom > .status > .text {
   padding: 0 10px;
   font-size: 16px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003182}}
 #cart #grid > .mid > .table > .table > .tbottom > .status > .load {
   padding: 0 20px;
   height: 40px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003186}}
 #cart #grid > .mid > .table > .table > .tbottom > .status > .load > .progres {
   min-width: 50px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003189}}
 #cart #grid > .mid > .table > .table > .tbottom > .status > .load > .progres::after {
   content: ' %';
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003196}}
 #cart #grid > .mid > .table > .table > .tbottom > .status > .load > .bar {
   margin: 0 10px;
   height: 4px;
@@ -909,18 +1393,23 @@ ul.menu .head.animate:hover {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003207}}
 #cart #grid > .mid > .table > .table > .tbottom > .status:not(.ok) > .icon > .ok {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003212}}
 #cart #grid > .mid > .table > .table > .tbottom > .status:not(.fail) > .icon > .fail {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003217}}
 #cart #grid > .mid > .table > .table > .tbottom > .status:not(.info) > .icon > .info {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003222}}
 #cart #grid > .mid > .table > .table > .tbottom > .status:not(.wait) > .icon > .wait {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_cart\.scss}line{font-family:\00003229}}
 #cart #grid > .mid > .table > .table > .tbottom > .button {
   height: 40px;
   padding: 0 20px;
@@ -930,22 +1419,36 @@ ul.menu .head.animate:hover {
   border: solid 1px #e7e7e7;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_top\.scss}line{font-family:\000031}}
 #top {
   height: 90px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_top\.scss}line{font-family:\000037}}
 #top > .logo {
   margin: 0 15px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_top\.scss}line{font-family:\0000310}}
+#top > .logo > a {
+  width: 250px;
+  background-image: url(../img/logo_merkuriusz.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_top\.scss}line{font-family:\0000318}}
 #top > .searchbar {
   margin: 0 15px;
-  height: 45px;
+  max-width: 630px;
   font-size: 14px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_top\.scss}line{font-family:\0000324}}
 #top > .searchbar > .input {
-  width: 250px;
   padding: 0 20px;
   border: solid 1px #e7e7e7;
+  background-color: #f7f7f7;
+  color: #919191;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_top\.scss}line{font-family:\0000330}}
 #top > .searchbar > .input::-webkit-input-placeholder {
   color: inherit;
 }
@@ -955,14 +1458,274 @@ ul.menu .head.animate:hover {
 #top > .searchbar > .input::placeholder {
   color: inherit;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_top\.scss}line{font-family:\0000337}}
 #top > .searchbar > .button {
-  width: 45px;
-  border: solid 1px #e7e7e7;
-  background-color: #fff;
-  -webkit-transition-property: background, font;
-  transition-property: background, font;
-}
-#top > .searchbar > .button:hover {
+  padding: 0 30px;
+  border: none;
   background-color: #0af;
   color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_top\.scss}line{font-family:\0000347}}
+#top #basket {
+  padding: 0 16px;
+  background-color: #0af;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_top\.scss}line{font-family:\0000352}}
+#top #basket > .basket-text {
+  padding: 0;
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_top\.scss}line{font-family:\0000358}}
+#top #basket > .icon {
+  margin-left: 26px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_katalog-slider\.scss}line{font-family:\000031}}
+.catalog-slider {
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_katalog-slider\.scss}line{font-family:\000034}}
+.catalog-slider > .section-title {
+  padding: 0;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  height: 50px;
+  font-size: 14px;
+  border: double #e7e7e7;
+  border-width: 6px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_katalog-slider\.scss}line{font-family:\0000313}}
+.catalog-slider > .section-title::before, .catalog-slider > .section-title::after {
+  content: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_katalog-slider\.scss}line{font-family:\0000323}}
+.catalog-slider > .catalog-slider-wrapper > .catalog-arrow-box {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_katalog-slider\.scss}line{font-family:\0000336}}
+.catalog-slider > .catalog-slider-wrapper > .catalog-container {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_katalog-slider\.scss}line{font-family:\0000342}}
+.catalog-slider > .catalog-slider-wrapper > .catalog-container > .catalog-element > .catalog {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_katalog-slider\.scss}line{font-family:\0000345}}
+.catalog-slider > .catalog-slider-wrapper > .catalog-container > .catalog-element > .catalog > .catalog-cover {
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_katalog-slider\.scss}line{font-family:\0000354}}
+.catalog-slider > .catalog-slider-wrapper > .catalog-container > .catalog-element > .catalog > .catalog-cover > .cat-cover-text {
+  border: solid 2px #ebebeb;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_katalog-slider\.scss}line{font-family:\0000363}}
+.catalog-slider > .catalog-slider-wrapper > .catalog-container > .catalog-element > .catalog_signature {
+  margin-top: 27px;
+  background-color: transparent;
+  font-size: 17px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_kalendarze\.scss}line{font-family:\000031}}
+.kalendarze {
+  margin-top: 30px;
+  padding: 18px;
+  height: 170px;
+  background-color: silver;
+  background-image: url("https://placeimg.com/500/200/tech");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_kalendarze\.scss}line{font-family:\000038}}
+.kalendarze > .box {
+  position: relative;
+  border: solid 1px #e7e7e7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_kalendarze\.scss}line{font-family:\0000312}}
+.kalendarze > .box > .hint {
+  position: absolute;
+  top: 8px;
+  left: 14px;
+  color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\000031}}
+.reklama360 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\000035}}
+.reklama360 > .header {
+  height: 50px;
+  border: double #e7e7e7;
+  border-width: 6px 0;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\0000315}}
+.reklama360 > .body > .item {
+  margin-top: 30px;
+  min-height: 200px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\0000319}}
+.reklama360 > .body > .item > .box {
+  position: relative;
+  padding: 20px 30px;
+  background-color: silver;
+  background-image: url("https://placeimg.com/400/200");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\0000325}}
+.reklama360 > .body > .item > .box > .over {
+  position: absolute;
+  padding: 20px 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\0000335}}
+.reklama360 > .body > .item > .box > .over > .content {
+  margin-top: 50px;
+  padding: 10px 20px;
+  border: dashed 3px #e7e7e7;
+  line-height: 20px;
+  font-size: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\0000346}}
+.reklama360 > .body > .item > .box > .hint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  -webkit-transform: translate(30px, 20px);
+          transform: translate(30px, 20px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\0000355}}
+.reklama360 > .body > .item > .box > .hitbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\0000368}}
+.reklama360 > .body > .item:not(:hover) > .box > .over {
+  display: none;
+}
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\0000377}}
+  .reklama360 > .body > .item:nth-child(odd) {
+    padding-right: 17px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_reklama360\.scss}line{font-family:\0000382}}
+  .reklama360 > .body > .item:nth-child(even) {
+    padding-left: 17px;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_newsletter\.scss}line{font-family:\000031}}
+.newsletter {
+  height: 150px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_newsletter\.scss}line{font-family:\000036}}
+.newsletter > .box > .text {
+  max-width: 390px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_newsletter\.scss}line{font-family:\000039}}
+.newsletter > .box > .text > .title {
+  margin-bottom: 10px;
+  font-size: 23px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_newsletter\.scss}line{font-family:\0000315}}
+.newsletter > .box > .text > .subtitle {
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_newsletter\.scss}line{font-family:\0000322}}
+.newsletter > .box > .form {
+  margin-left: 50px;
+  height: 46px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_newsletter\.scss}line{font-family:\0000326}}
+.newsletter > .box > .form > .mail {
+  max-width: 440px;
+  padding: 0 25px;
+  border-radius: 23px;
+  font-size: 13px;
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_newsletter\.scss}line{font-family:\0000335}}
+.newsletter > .box > .form > .send {
+  margin-left: 20px;
+  width: 120px;
+  border: none;
+  border-radius: 23px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\000033}}
+footer > .infobar {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 110px;
+  border: solid 1px #e7e7e7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000313}}
+footer > .infobar > .item > .icon {
+  width: 44px;
+  height: 44px;
+  background-color: #e7e7e7;
+  border-radius: 50%;
+  font-size: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000322}}
+footer > .infobar > .item > .text {
+  margin-left: 17px;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000337}}
+footer > .mid {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000343}}
+footer > .mid > .box > .info {
+  max-width: 450px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000346}}
+footer > .mid > .box > .info > img {
+  margin-bottom: 46px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000351}}
+footer > .mid > .box > .info > .text {
+  font-size: 13px;
+  line-height: 22px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000359}}
+footer > .mid > .box > .linki {
+  padding-left: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000362}}
+footer > .mid > .box > .linki > .title {
+  margin-bottom: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000366}}
+footer > .mid > .box > .linki > ul {
+  list-style: inside url(../img/square.png);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000369}}
+footer > .mid > .box > .linki > ul > li {
+  line-height: 24px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_footer\.scss}line{font-family:\0000382}}
+footer > .bot {
+  height: 62px;
+  font-size: 16px;
 }

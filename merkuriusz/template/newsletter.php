@@ -1,14 +1,20 @@
-<div class="container-fluid newsletter">
-	<h2 class="section-title" id="newsletter-title">Zapisz się do naszego Newslettera</h2>
-	<div class="col-md-8 col-md-offset-2">
-	<form>
-		<div class="form-row">
-			<input class="form-control input-newsletter" type="email" name="e-mail" id="e-mail" placeholder="wpisz swój adres e-mail">
-			<button type="submit" class="btn btn-newsletter">Zapisz się!</button>
+<div class="newsletter bg-blue font-light flex">
+	<div class='box grid flex flex-items-center flex-justify-between'>
+		<div class='text'>
+			<div class='title bold alt'>
+				Zapisz się do naszego newslettera
+			</div>
+			<div class='subtitle'>
+				Będziemy informować Cię o najnowszych promocjach oraz aktualnej ofercie
+			</div>
+			
 		</div>
-	</form>
-
-	<div class="newsletter-text">Zapisując się do naszego newslettera będziesz informowany na bieżąco o najnowszych produktach na naszej stronie. W każdej chwili możesz się z niego wypisać</div>
-	<div class="white-space-50"></div>
+		<form class='form grow flex flex-justify-end'>
+			<input class='mail grow font-dark' type='mail' placeholder='Wpisz swój adres e-mail' />
+			<button class='send bg-dark font-light uppercase'>Wyślij</button>
+			
+		</form>
+		
 	</div>
+	
 </div>

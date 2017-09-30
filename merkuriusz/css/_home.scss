@@ -9,9 +9,6 @@
 	}
 	
 	.top-slider{
-		margin-bottom: 30px;
-		padding: 0 15px;
-		min-height: 430px;
 		
 		& > .text{
 			background-color: #fff;
@@ -108,6 +105,32 @@
 				
 			}
 			
+			& > .pagin{
+				padding: 0;
+				top: initial;
+				left: 50%;
+				bottom: 20px;
+				
+				& > .item{
+					padding: 1px;
+					width: 16px;
+					height: 16px;
+					border: solid 2px transparentize( $color-menu-active, .3 );
+					background-color: #fff;
+					border-radius: 50%;
+					transition-property: border, padding;
+					transition: .3s linear;
+					
+					&.active{
+						padding: 0;
+						border: solid 3px $color-menu-active;
+						
+					}
+					
+				}
+				
+			}
+			
 		}
 		
 	}
@@ -123,6 +146,49 @@
 			right: 0;
 			bottom: 0;
 			z-index: 10;
+			
+		}
+		
+	}
+	
+	.kafelki{
+		
+		& > .big,
+		& > .small{
+			height: 400px;
+			
+		}
+		
+		& > .big{
+			margin-right: 30px;
+			
+		}
+		
+		& > .small{
+			
+			
+			& > .item{
+				
+				&:first-child{
+					margin-bottom: 30px;
+					
+				}
+				
+			}
+			
+		}
+		
+		.item{
+			background-color: silver;
+			
+		}
+		
+		#menu{
+			
+			.item{
+				background-color: transparent;
+				
+			}
 			
 		}
 		

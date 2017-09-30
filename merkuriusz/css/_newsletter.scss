@@ -1,0 +1,47 @@
+.newsletter{
+	height: 150px;
+	
+	& > .box{
+		
+		& > .text{
+			max-width: 390px;
+			
+			& > .title{
+				margin-bottom: 10px;
+				font-size: 23px;
+				
+			}
+			
+			& > .subtitle{
+				font-size: 14px;
+				
+			}
+			
+		}
+		
+		& > .form{
+			margin-left: 50px;
+			height: 46px;
+			
+			& > .mail{
+				max-width: 440px;
+				padding: 0 25px;
+				border-radius: 23px;
+				font-size: 13px;
+				border: none;
+				
+			}
+			
+			& > .send{
+				margin-left: 20px;
+				width: 120px;
+				border: none;
+				border-radius: 23px;
+				
+			}
+			
+		}
+		
+	}
+	
+}

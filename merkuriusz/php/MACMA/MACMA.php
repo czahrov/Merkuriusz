@@ -531,6 +531,33 @@ class MACMA extends XMLAbstract{
 					
 				}
 				
+				$matters  = array();
+				if( count( $item->materials->material ) > 0 ){
+					foreach( $item->materials->material as $matt ){
+						$matters[] = (string)$matt->name;
+						
+					}
+					
+				}
+				else{
+					$matters[] = 'Brak danych';
+				}
+				
+				$mark_types = array();
+				if( count( $item->markgroups->markgroup ) > 0 ){
+					foreach( $item->markgroups->markgroup as $markgrp ){
+						$pattern = "~^(\w+)~";
+						preg_match( $pattern, (string)$markgrp->name, $match );
+						$mark_types[] = $match[1];
+						
+					}
+					
+				}
+				else{
+					$mark_types = 'Brak danych';
+					
+				}
+				
 				$ret[] = array_merge(
 					array(
 						'SHOP' => $this->_shop,
@@ -545,15 +572,17 @@ class MACMA extends XMLAbstract{
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'CATALOG' => 'brak danych',
-						'PACKAGE' => array(
-							'SINGLE' => 'brak danych',
-							'TOTAL' => 'brak danych',
-							'DIM' => 'brak danych',
-							'WEIGHT' => 'brak danych',
-							'INSIDE' => 'brak danych',
-							
+						'MARKSIZE' => array(),
+						'MARKTYPE' => array(),
+						'MARKCOLORS' => 1,
+						'PRICE' => array(
+							'BRUTTO' => 0,
+							'NETTO' => null,
 						),
+						'MODEL' => 'brak danych',
+						'WEIGHT' => 'brak danych',
+						'BRAND' => 'brak danych',
+						
 					),
 					array(
 						'ID' => (string)$item->baseinfo->code_full,
@@ -564,6 +593,16 @@ class MACMA extends XMLAbstract{
 						'DIM' => (string)$item->attributes->size,
 						'MARK' => $mark,
 						'INSTOCK' => $this->_getStock( (string)$item->baseinfo->code_full ),
+						'MATTER' => implode( ", ", $matters ),
+						'COLOR' => (string)$item->color->name,
+						'COUNTRY' => (string)$item->origincountry->name,
+						'MARKSIZE' => 'Brak',
+						'MARKTYPE' => implode( "<br>", $mark_types ),
+						'MARKCOLORS' => 1,
+						'PRICE' => array(
+							'BRUTTO' => (float)str_replace( ",", ".", (string)$item->baseinfo->price ),
+						),
+						'BRAND' => (string)$item->brand,
 						
 					)
 				);
