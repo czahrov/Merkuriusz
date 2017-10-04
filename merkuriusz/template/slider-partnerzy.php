@@ -1,6 +1,11 @@
-<div class="container">
+<div class="container grid partnerzy">
 	<div class="col-md-12">
-		<h2 class="section-title">Partnerzy</h2>
+		<h2 class="title  flex flex-items-center flex-justify-center">
+			<div class='bold uppercase'>
+				<span class='font-blue'>Nasi</span> Partnerzy
+			</div>
+			
+		</h2>
 		<div class="col-md-12 partner-container partner-slider" style="padding: 0;">
 			<div class="partner-arrow-box partner-left">
 			<i class="fa fa-angle-left fa-2x arrow-position" aria-hidden="true"></i>
@@ -74,5 +79,5 @@
 		</div>
 	
 	</div>
+	
 </div>
-<div style="margin-bottom: 55px;"></div>

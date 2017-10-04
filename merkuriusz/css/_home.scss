@@ -1,5 +1,111 @@
 #home{
 	
+	& > .popup{
+		position: fixed;
+		margin: initial;
+		padding: initial;
+		max-width: initial;
+		width: initial;
+		height: initial;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.7);
+		transform: none;
+		border: none;
+		z-index: 20;
+		
+		& > .box{
+			position: relative;
+			padding: 60px;
+			
+			& > .close-fp{
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				top: 0;
+				right: 0;
+				
+			}
+			
+			& > .viewbox{
+				
+				& > .view{
+					
+					& > .top{
+						margin-bottom: 50px;
+						font-size: 18px;
+						
+					}
+					
+					& > .mid{
+						
+						& > .pic{
+							
+							& > .img{
+								padding-right: 40px;
+								
+								& > img{
+									width: 100%;
+								}
+								
+							}
+							
+							& > .text{
+								margin-top: 26px;
+								font-size: 12px;
+								
+							}
+							
+						}
+						
+						& > .items{
+							
+							& > .item{
+								position: relative;
+								padding: 15px 12px;
+								
+								& > .link{
+									height: 50px;
+									border: solid 1px $color-szary3;
+									font-size: 14px;
+									
+									
+								}
+								
+								.hitbox{
+									position: absolute;
+									top: 0;
+									left: 0;
+									right: 0;
+									bottom: 0;
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+					&.odziez{
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		&:not(.open){
+			display: none;
+			
+		}
+		
+	}
+	
 	.home-top-right{
 		height: 400px;
 	}
@@ -10,94 +116,66 @@
 	
 	.top-slider{
 		
-		& > .text{
-			background-color: #fff;
-			border: solid 1px $color-ramka-szara;
-			overflow: hidden;
-			
-			a{
-				text-decoration: none;
-				color: initial;
-				
-			}
-			
-			& > .view{
-				
-				& > .item{
-					padding: 30px 40px;
-					
-					&:not(.active){
-						display:none;
-						
-					}
-					
-					& > .title{
-						margin-bottom: 24px;
-						font-size: 18px;
-						
-					}
-					
-					& > .content{
-						margin-bottom: 24px;
-						line-height: 1.5em;
-						font-size: 14px;
-						
-					}
-					
-					& > .button{
-						margin-top: auto;
-						min-width: 130px;
-						padding: 15px 20px;
-						border: solid 2px #000;
-						line-height: 0;
-						font-size: 12px;
-						text-align: center;
-						
-						
-					}
-					
-				}
-			
-			}
-			
-			& > .pagin{
-				padding: 0 0 30px 40px;
-				
-				& > .item{
-					margin-right: 4px;
-					width: 18px;
-					height: 18px;
-					background-color: $color-pagin-niebieski;
-					border-style: solid;
-					border-width: 3px;
-					border-color: #fff;
-					border-radius: 50%;
-					transition-property: background, border;
-					transition: .3s linear;
-					
-					&.active{
-						border-color: $color-pagin-niebieski;
-						background-color: #fff;
-					}
-					
-				}
-				
-			}
-			
-		}
-		
 		& > .imgs{
 			margin-left: 30px;
 			
 			& > .view{
+				position: relative;
 				background-color: #fff;
 				border: solid 1px $color-ramka-szara;
 				overflow: hidden;
 				
 				& > .item{
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
 					
-					&:not(.active){
-						display: none;
+					& > .box{
+						position: absolute;
+						padding: 0 0 76px 40px;
+						left: 0;
+						bottom: 0;
+						
+						& > .title{
+							margin-bottom: 18px;
+							font-size: 29px;
+							
+						}
+						
+						& > .content{
+							margin-bottom: 36px;
+							font-size: 15px;
+							
+						}
+						
+						& > .link{
+							
+							& > .button{
+								position: relative;
+								height: 40px;
+								padding: 0 24px;
+								border-radius: 20px;
+								box-shadow: 2px 2px 10px -2px #000;
+								
+								& > .text{
+									font-size: 10px;
+									
+								}
+								
+								& > .hitbox{
+									position: absolute;
+									top: 0;
+									left: 0;
+									right: 0;
+									bottom: 0;
+									
+								}
+								
+							}
+							
+						}
 						
 					}
 					
@@ -153,33 +231,80 @@
 	
 	.kafelki{
 		
-		& > .big,
-		& > .small{
-			height: 400px;
-			
-		}
-		
 		& > .big{
-			margin-right: 30px;
-			
-		}
-		
-		& > .small{
-			
+			height: 400px;
+			margin-bottom: 30px;
 			
 			& > .item{
+				background-color: silver;
 				
-				&:first-child{
-					margin-bottom: 30px;
-					
-				}
+			}
+			
+			@media(min-width: map-get( $bpw, desktop )){
+				margin-bottom: 0;
+				margin-right: 30px;
 				
 			}
 			
 		}
 		
-		.item{
-			background-color: silver;
+		& > .small{
+			
+			& > .item{
+				min-height: 200px;
+				background-color: silver;
+				
+				& > .box{
+					padding: 0 20px;
+					
+					& > .title{
+						font-size: 17px;
+						margin-bottom: 36px;
+						
+					}
+					
+					& > .link{
+						padding: 10px 7px;
+						max-width: 200px;
+						border: solid 1px #fff;
+						
+					}
+					
+				}
+				
+				&.odziez{
+					background-image: url(../img/odziez_reklamowa_merkuriusz.jpg);
+					
+				}
+				
+				&.powerbank{
+					background-image: url(../img/power_bank_merkuriusz.jpg);
+					
+				}
+				
+				&:first-child{
+					margin-bottom: 30px;
+					
+					@media(min-width: map-get( $bpw, tablet )){
+						margin-right: 30px;
+						margin-bottom: 0;
+						
+					}
+					
+					@media(min-width: map-get( $bpw, desktop )){
+						margin-right: 0;
+						margin-bottom: 30px;
+						
+					}
+					
+				}
+				
+				@media(min-width:map-get( $bpw, desktop )){
+					min-height: initial;
+					
+				}
+				
+			}
 			
 		}
 		

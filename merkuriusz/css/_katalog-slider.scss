@@ -6,9 +6,9 @@
 		margin-top: 40px;
 		margin-bottom: 30px;
 		height: 50px;
-		font-size: 14px;
-		border: double $color-ramka-szara;
-		border-width: 6px 0;
+		border: double $color-szary3;
+		border-width: 4px 0;
+		font-size: 17px;
 		
 		&::before,
 		&::after{
@@ -38,9 +38,9 @@
 			
 			& > .catalog-element{
 				
-				
 				& > .catalog{
 					position: relative;
+					box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.12);
 					
 					& > .catalog-cover{
 						position: absolute;
@@ -65,7 +65,7 @@
 					background-color: transparent;
 					@extend .bold;
 					@extend .font-dark;
-					font-size: 17px;
+					font-size: 14px;
 					
 				}
 				

@@ -9,7 +9,8 @@
 			
 		}
 		else{		//podstrona
-			var subpage = path.match(/([\w\-]+)\/$/)[1];
+			// var subpage = path.match(/([\w\-]+)\/$/)[1];
+			var subpage = path.match(/([^\/]+)/g).slice( -1 )[0];
 			var t = subpage.replace(/\-/g,'_');
 			if(typeof subpage === 'string' && subpage.length){
 				if(typeof root.page[t] === 'function'){
@@ -156,6 +157,39 @@
 				window.facepalm = root;
 				console.log('page.default()');
 			}
+			
+			/* oznaczanie aktywnych pozycji w menu głównym */
+			(function( items, sklep ){
+				var url = window.location.origin + window.location.pathname.match( /^(.+)\/$/ )[1];
+				
+				if( /kategoria|produkt/.test( location.pathname ) ){
+					sklep
+					.addClass( 'active' );
+					
+				}
+				else{
+					items
+					.filter( '[href="'+ url +'"]' )
+					.addClass( 'active' );
+					
+				}
+				
+			})
+			( $( '#menu > .grid > .box > a' ),
+			$( '#sidebar ul.menu > .title' ) );
+			
+			/* menu toggle */
+			(function( grid, toggle ){
+				toggle.click(function( e ){
+					grid
+					.add( toggle )
+					.toggleClass( 'open' );
+					
+				});
+				
+			})
+			( $( '#menu > .grid' ),
+			$( '#menu > .grid > .toggle' ) );
 			
 			// FACEBOOK SLIDER
 			(function(){
@@ -562,16 +596,27 @@
 			if(logger) console.log('page.index()');
 			
 			// slider główny na home
-			(function( slider, teksty, paginacja, obrazy ){
+			(function( slider, paginacja, obrazy ){
 				var current = 0;
 				var itrv = null;
-				var delay = 2.5;
+				var delay = 3.5;
 				var duration = 1;
-				var num = teksty.length;
+				var num = obrazy.length;
+				var lock = false;
+				var last;
 				
 				slider
 				.on({
-					set: function( e ){
+					set: function( e, direction ){
+						last = current;
+						
+						if( direction === 'next' ){
+							++current;
+						}
+						else if( direction === 'prev' ){
+							--current;
+						}
+						
 						if( current < 0 ) current += num;
 						
 						current %= num;
@@ -582,42 +627,126 @@
 						.siblings()
 						.removeClass( 'active' );
 						
-						teksty
+						
+						/* obrazy
 						.eq( current )
 						.addClass( 'active' )
 						.siblings()
-						.removeClass( 'active' );
+						.removeClass( 'active' ); */
 						
-						
-						obrazy
-						.eq( current )
-						.addClass( 'active' )
-						.siblings()
-						.removeClass( 'active' );
-						
-						TweenLite.fromTo(
-							obrazy.filter( '.active' ),
-							duration,
-							{
-								opacity: 0,
+						var TL = new TimelineLite({
+							onComplete: function(){
+								lock = false;
 								
 							},
-							{
-								opacity: 1,
-								ease: Power2.easeInOut,
-								
-							}
-						);
+							paused: true,
+							
+						})
+						.add( 'start', 0 );
+						
+						if( direction === 'next' || direction === 'prev' ){
+							TweenLite.set(
+								obrazy,
+								{
+									scaleX: 0,
+								}
+							);
+							
+							TL
+							.add(
+								TweenLite.fromTo(
+									obrazy.eq( current ),
+									duration,
+									{
+										transformOrigin: direction === 'next'?( 'right' ):( 'left' ),
+										scaleX: 0,
+										opacity: 1,
+										
+									},
+									{
+										scaleX: 1,
+										ease: Power2.easeInOut,
+										
+									}
+								), 'start'
+							)
+							.add(
+								TweenLite.fromTo(
+									obrazy.eq( last ),
+									duration,
+									{
+										transformOrigin: direction === 'next'?( 'left' ):( 'right' ),
+										scaleX: 1,
+										opacity: 1,
+										
+									},
+									{
+										scaleX: 0,
+										ease: Power2.easeInOut,
+										
+									}
+								), 'start'
+							);
+							
+						}
+						else if( direction === undefined ){
+							TL
+							.add(
+								TweenLite.to(
+									obrazy.not( obrazy.eq( current ) ),
+									duration,
+									{
+										opacity: 0,
+									}
+								), 'start'
+							)
+							.add(
+								TweenLite.fromTo(
+									obrazy.eq( current ),
+									duration,
+									{
+										opacity: 0,
+										scaleX: 1,
+									},
+									{
+										opacity: 1,
+									}
+								), 'start'
+							);
+							
+						}
+						
+						TL.play();
+						
+						/* .add(
+							TweenLite.fromTo(
+								obrazy.filter( '.active' ),
+								duration,
+								{
+									opacity: 0.5,
+									
+								},
+								{
+									opacity: 1,
+									ease: Power2.easeInOut,
+									
+								}
+							), 'start'
+						); */
 						
 					},
 					next: function( e ){
-						current++;
-						slider.triggerHandler( 'set' );
+						if( !lock ){
+							lock = true;
+							slider.triggerHandler( 'set', [ 'next' ] );
+						}
 						
 					},
 					prev: function( e ){
-						current--;
-						slider.triggerHandler( 'set' );
+						if( !lock ){
+							lock = true;
+							slider.triggerHandler( 'set', [ 'prev' ] );
+						}
 						
 					},
 					stop: function( e ){
@@ -664,10 +793,14 @@
 					
 				});
 				
+				
+				slider.triggerHandler( 'set' );
 				slider.triggerHandler( 'start' );
 				
 			})
-			( $( '#home .top-slider' ), $( '#home .top-slider > .text > .view > .item' ), $( '#home .top-slider > .imgs > .pagin > .item' ), $( '#home .top-slider > .imgs > .view > .item' ) );
+			( $( '#home .top-slider' ), 
+			$( '#home .top-slider > .imgs > .pagin > .item' ), 
+			$( '#home .top-slider > .imgs > .view > .item' ) );
 			
 			// POPUPy
 			(function(){
@@ -705,9 +838,9 @@
 					$(".dlugopisymetalowe-pop-up").fadeIn(300);
 				});
 				
-				$(".pop-up-clothes.dlugopisyplastikowe").click(function () {
+				/* $(".pop-up-clothes.dlugopisyplastikowe").click(function () {
 					$(".dlugopisyplastikowe-pop-up").fadeIn(300);
-				});
+				}); */
 				
 				$(".pop-up-clothes.torby").click(function () {
 					$(".torby-pop-up").fadeIn(300);
@@ -728,6 +861,134 @@
 				})
 				
 			})();
+			
+			/* newsletter */
+			(function( newsletter, form, input, button ){
+				form.submit( function( e ){
+					e.preventDefault();
+					
+				} );
+				
+			})
+			( $( '#home > .newsletter' ), 
+			$( '#home > .newsletter form' ), 
+			$( '#home > .newsletter form > .mail' ), 
+			$( '#home > .newsletter form > .send' ) );
+			
+			/* popupy */
+			(function( popup, box, close, viewbox, views, btnDlugPlas ){
+				var lock = false;
+				var duration = 0.5;
+				
+				popup
+				.on({
+					open: function( e, name ){
+						if( lock ) return false;
+						lock = true;
+						
+						views
+						.filter( '[class*="'+ name +'"]' )
+						.show()
+						.siblings()
+						.hide();
+						
+						new TimelineLite({
+							onStart: function(){
+								popup.addClass( 'open' );
+								
+							},
+							onComplete: function(){
+								box.attr( 'style', '' );
+								
+								lock = false;
+								
+							},
+							
+						})
+						.add( 'start', 0 )
+						.add(
+							TweenLite.fromTo(
+								popup,
+								duration,
+								{
+									opacity: 0,
+								},
+								{
+									opacity: 1,
+								}
+							), 'start'
+						)
+						.add(
+							TweenLite.fromTo(
+								box,
+								duration,
+								{
+									y: -200,
+									rotationX: -90,
+								},
+								{
+									y: 0,
+									rotationX: 0,
+								}
+							), 'start+=' + duration
+						);
+						
+					},
+					close: function( e ){
+						if( lock ) return false;
+						lock = true;
+						
+						new TimelineLite({
+							onComplete: function(){
+								popup.removeClass( 'open' );
+								
+								box.attr( 'style', '' );
+								
+								lock = false;
+								
+							},
+							
+						})
+						.add( 'start', 0 )
+						.add(
+							TweenLite.to(
+								box,
+								duration,
+								{
+									y: -200,
+									rotationX: 90,
+								}
+							), 'start'
+						)
+						.add(
+							TweenLite.to(
+								popup,
+								duration,
+								{
+									opacity: 0,
+								}
+							), 'start+=' + duration
+						);
+						
+					},
+					
+				});
+				
+				popup
+				.add( close )
+				.click( function( e ){ popup.triggerHandler( 'close' ); } );
+				
+				box.click( function( e ){ e.stopPropagation() } );
+				
+				btnDlugPlas.click( function( e ){ popup.triggerHandler( 'open', [ 'dlugPlast' ] ) } );
+				
+			})
+			( $( '#home > .popup' ),
+			$( '#home > .popup > .box' ),
+			$( '#home > .popup > .box > .close-fp' ),
+			$( '#home > .popup > .box > .viewbox' ),
+			$( '#home > .popup > .box > .viewbox > .view' ),
+			$( '#home > .catalog-slider .catalog-element > .catalog.dlugPlast' ) );
 			
 		},
 		kategoria: function(){

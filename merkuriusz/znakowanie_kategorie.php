@@ -9,6 +9,7 @@
 <body>
 	
 <?php get_template_part( "template/page", "top" ); ?>
+<?php get_template_part( "template/menu", "top" ); ?>
 	<!-- BANER O NAS-->
 
 	<div class="container-fluid about_us_cover">

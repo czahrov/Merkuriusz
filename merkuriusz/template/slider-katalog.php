@@ -92,13 +92,14 @@
 		</div>
 	</h2>
 	<div class="catalog-slider-wrapper">
-
-			<div class="catalog-arrow-box"><i class="fa fa-angle-left fa-2x arrow-position" aria-hidden="true"></i></div>
-
+		<div class="catalog-arrow-box">
+			<i class="fa fa-angle-left fa-2x arrow-position" aria-hidden="true"></i>
+		</div>
 		<div class="catalog-container">
 			<?php
 				$data = array(
 					array(
+						'class' => 'dlugPlast',
 						'title' => 'Dlugopisy plastikowe',
 						'cover-class' => 'pop-up-clothes dlugopisyplastikowe',
 						'img' => get_template_directory_uri() . '/img/katalogi/dlugopisy_plastikowe.jpg',
@@ -106,6 +107,7 @@
 						
 					),
 					array(
+						'class' => 'dlugMetal',
 						'title' => 'Dlugopisy metalowe',
 						'cover-class' => 'pop-up-clothes dlugopisymetalowe',
 						'img' => get_template_directory_uri() . '/img/katalogi/dlugopisy_metalowe.jpg',
@@ -113,6 +115,7 @@
 						
 					),
 					array(
+						'class' => 'torby',
 						'title' => 'Torby',
 						'cover-class' => 'pop-up-clothes torby',
 						'img' => get_template_directory_uri() . '/img/katalogi/torby_papierowe.jpg',
@@ -120,6 +123,7 @@
 						
 					),
 					array(
+						'class' => 'pompony',
 						'title' => 'Pompony',
 						'cover-class' => '',
 						'img' => get_template_directory_uri() . '/img/katalogi/pomopony.jpg',
@@ -127,6 +131,7 @@
 						
 					),
 					array(
+						'class' => 'kubki',
 						'title' => 'Kubki',
 						'cover-class' => '',
 						'img' => get_template_directory_uri() . '/img/katalogi/kubki.jpg',
@@ -134,6 +139,7 @@
 						
 					),
 					array(
+						'class' => 'smycze',
 						'title' => 'Smycze',
 						'cover-class' => '',
 						'img' => get_template_directory_uri() . '/img/katalogi/smycze.jpg',
@@ -158,7 +164,7 @@
 				foreach( $data as $item ):
 			?>
 			<div class="catalog-element">
-				<div class="catalog" style='background-image: url(<?php echo empty( $item[ 'img' ] )?( 'https://placeimg.com/200/200' ):( $item[ 'img' ] ); ?>);'>
+				<div class="catalog <?php echo $item[ 'class' ]; ?>" style='background-image: url(<?php echo empty( $item[ 'img' ] )?( 'https://placeimg.com/200/200' ):( $item[ 'img' ] ); ?>);'>
 					<div class="catalog-cover pointer <?php echo $item[ 'cover-class' ]; ?> flex">
 						<div class="cat-cover-text uppercase base1 flex-self-stretch flex flex-items-center flex-justify-center">zobacz pdf</div>
 					</div>
@@ -166,13 +172,12 @@
 				<div class="catalog_signature"><?php echo $item[ 'title' ]; ?></div>
 				<?php if( !empty( $item[ 'url' ] ) ) printf( "<a class='hitbox' href='%s' target='_blank'></a>", $item[ 'url' ] ); ?>
 			</div>
-			<?php
-				endforeach;
-			?>
+			<?php endforeach; ?>
 			
 		</div>
-
-		<div class="catalog-arrow-box catalog-right"><i class="fa fa-angle-right fa-2x arrow-position" aria-hidden="true"></i></div>
+		<div class="catalog-arrow-box catalog-right">
+			<i class="fa fa-angle-right fa-2x arrow-position" aria-hidden="true"></i>
+		</div>
 
 	</div>
 	

@@ -1,9 +1,10 @@
 .kalendarze{
+	position: relative;
 	margin-top: 30px;
 	padding: 18px;
 	height: 170px;
 	background-color: silver;
-	background-image: url('https://placeimg.com/500/200/tech');
+	background-image: url(../img/kalendarze.jpg);
 	
 	& > .box{
 		position: relative;
@@ -21,6 +22,15 @@
 			}
 			
 		}
+		
+	}
+	
+	.hitbox{
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
 		
 	}
 	

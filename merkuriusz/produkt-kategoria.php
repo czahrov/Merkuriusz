@@ -67,8 +67,6 @@
 
 <?php get_template_part( "template/reklama360" ); ?>
 
-<?php get_template_part( "template/slider", "partnerzy" ); ?>
-
 <?php get_template_part( "template/newsletter" ); ?>
 
 <?php get_footer(); ?>

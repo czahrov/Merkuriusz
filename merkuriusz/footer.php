@@ -1,51 +1,55 @@
 <!-- FOOTER -->
  <footer>
- 	<div class='infobar grid flex flex-wrap flex-justify-around'>
-		<div class='item flex flex-items-center'>
-			<div class='icon flex flex-items-center flex-justify-center'>
-				<div class='fa fa-map-marker'></div>
+ 	<div class='infobar grid'>
+		<div class='box flex flex-wrap flex-justify-around'>
+			<div class='item base1 base0-mm flex flex-items-center'>
+				<div class='icon no-shrink flex flex-items-center flex-justify-center'>
+					<img src='<?php echo get_template_directory_uri(); ?>/img/poi.png' />
+					
+				</div>
+				<div class='text'>
+					<span class='bold alt'>Adres:</span> Szpitalna 25B, 33-100 Tarnów
+					
+				</div>
 				
 			</div>
-			<div class='text'>
-				<span class='bold alt'>Adres:</span> Szpitalna 25B, 33-100 Tarnów
+			<div class='item base1 base0-mm flex flex-items-center'>
+				<div class='icon flex flex-items-center flex-justify-center'>
+					<img src='<?php echo get_template_directory_uri(); ?>/img/phone.png' />
+					
+				</div>
+				<div class='text'>
+					<span class='bold alt'>Tel / Fax:</span> +48 421 221 22
+					
+				</div>
 				
 			</div>
-			
-		</div>
-		<div class='item flex flex-items-center'>
-			<div class='icon flex flex-items-center flex-justify-center'>
-				<div class='fa fa-phone'></div>
-				
-			</div>
-			<div class='text'>
-				<span class='bold alt'>Tel / Fax:</span> +48 421 221 22
-				
-			</div>
-			
-		</div>
-		<div class='item flex flex-items-center'>
-			<div class='icon flex flex-items-center flex-justify-center'>
-				<div class='fa fa-envelope-o'></div>
-				
-			</div>
-			<div class='text'>
-				<span class='bold alt'>E-mail:</span> biuro@merkuriusz.pl
+			<div class='item base1 base0-mm flex flex-items-center'>
+				<div class='icon flex flex-items-center flex-justify-center'>
+					<img src='<?php echo get_template_directory_uri(); ?>/img/mail.png' />
+					
+				</div>
+				<div class='text'>
+					<span class='bold alt'>E-mail:</span> biuro@merkuriusz.pl
+					
+				</div>
 				
 			</div>
 			
 		</div>
 		
 	</div>
+	<?php get_template_part( 'template/slider-partnerzy' ); ?>
 	<div class='mid bg-gray2'>
 		<div class='box grid flex flex-wrap'>
-			<div class='info grow'>
+			<div class='info grow base1 base0-mm text-center text-left-mm'>
 				<img src='<?php echo get_template_directory_uri(); ?>/img/logo_merkuriusz.png'/>
 				<div class='text'>
 					Jestesmy pasjonatami projektowania unikalnych rozwiązań i mozemy zaoferować specjalistyczną wiedzę i doświadczenie. Jesteśmy pewni, że znejdziesz to, czego szukasz. Praktyczne, eleganckie i trwałe artykuły promocyjne, mogą kreować wizerunek marki oraz przekazywać czytelne komunikaty lud wiadomości do wszystkich Twoich odbiorców.
 				</div>
 				
 			</div>
-			<div class='linki grow'>
+			<div class='linki grow base1 base0-mm text-center text-left-mm'>
 				<div class='title bold uppercase'>
 					Na skróty
 				</div>
@@ -96,7 +100,7 @@
 				</ul>
 				
 			</div>
-			<div class='linki grow'>
+			<div class='linki grow base1 base0-mm text-center text-left-mm'>
 				<div class='title bold uppercase'>
 					Informacje
 				</div>
@@ -141,7 +145,7 @@
 				</ul>
 				
 			</div>
-			<div class='linki grow'>
+			<div class='linki grow base1 base0-mm text-center text-left-mm'>
 				<div class='title bold uppercase'>
 					Dla agencji
 				</div>
@@ -189,13 +193,15 @@
 			
 		</div>
 	</div>
-	<div class='bot grid flex flex-items-center flex-justify-between'>
-		<div class=''>
-			<span class='bold alt'>Copyright 2017</span> Merkuriusz Techniki nadruków
+	<div class='bot grid flex flex-wrap flex-items-center flex-justify-center flex-justify-between-mm'>
+		<div class='cell flex flex-items-center'>
+			<span class='bold alt'>Copyright 2017</span>
+			<span class=''>Merkuriusz Techniki nadruków</span>
 			
 		</div>
-		<div class=''>
-			<span class='bold alt'>Projekt i wykonanie:</span> <a href='http://www.scepter.pl' target='_blank'>Scepter Agencja interaktywna</a>
+		<div class='cell flex flex-items-center'>
+			<span class='bold alt'>Projekt i wykonanie:</span>
+			<a href='http://www.scepter.pl' target='_blank'>Scepter Agencja interaktywna</a>
 			
 		</div>
 		

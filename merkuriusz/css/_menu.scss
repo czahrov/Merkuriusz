@@ -1,18 +1,106 @@
 #menu{
 	margin-bottom: 30px;
 	
-	& > .box{
+	& > .grid{
+		position: relative;
 		height: 50px;
-		border: 4px $color-ramka-szara;
+		border: 4px $color-szary3;
 		border-style: double none;
 		
-		& > .item{
-			padding: 0 10px;
-			font-size: 14px;
-			transition: color .3s linear;
+		& > .toggle{
+			width: 30px;
+			height: 20px;
+			overflow: hidden;
 			
-			&:hover{
-				color: $color-menu-active;
+			& *{
+				transition: transform .3s linear;
+				
+			}
+			
+			& > .box{
+				
+				& > .bar{
+					height: 2px;
+					
+				}
+				
+			}
+			
+			&.open{
+				
+				& > .box{
+					transform: rotateY(180deg);
+					
+					& > .bar{
+						
+						&:nth-child(1){
+							transform: translateY(7px) rotate(45deg);
+							
+						}
+						
+						&:nth-child(2){
+							transform: translateX(-100%);
+							
+						}
+						
+						&:nth-child(3){
+							transform: translateY(-7px) rotate(-45deg);
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		& > .box{
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			z-index: 10;
+			background-color: #fff;
+			
+			& > .item{
+				min-height: 40px;
+				font-size: 12px;
+				transition: color .3s linear;
+				
+				&.active,
+				&:hover{
+					color: $color-menu-active;
+					
+				}
+				
+				&:not(:last-child){
+					
+					@media(min-width: map-get( $bpw, desktop )){
+						padding-right: 30px;
+						
+					}
+					
+				}
+				
+			}
+			
+			@media(min-width: map-get( $bpw, desktop )){
+				position: static;
+				
+			}
+			
+		}
+		
+		@media(max-width: map-get( $bpw, desktop ) - 1){
+			
+			&:not(.open){
+				
+				& > .box{
+					display: none;
+					
+				}
 				
 			}
 			

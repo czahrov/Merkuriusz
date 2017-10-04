@@ -1,14 +1,24 @@
 .newsletter{
-	height: 150px;
+	min-height: 150px;
+	border: none;
 	
 	& > .box{
 		
+		& > *{
+			margin:{
+				top: 20px;
+				bottom: 20px;
+				
+			};
+			
+		}
+		
 		& > .text{
-			max-width: 390px;
+			max-width: 420px;
 			
 			& > .title{
 				margin-bottom: 10px;
-				font-size: 23px;
+				font-size: 21px;
 				
 			}
 			
@@ -20,23 +30,45 @@
 		}
 		
 		& > .form{
-			margin-left: 50px;
-			height: 46px;
+			font-size: 13px;
+			
+			& > *{
+				height: 46px;
+				margin:{
+					top: 10px;
+					bottom: 10px;
+				};
+				
+			}
 			
 			& > .mail{
-				max-width: 440px;
 				padding: 0 25px;
 				border-radius: 23px;
-				font-size: 13px;
 				border: none;
+				@extend .regular;
+				
+				@media(min-width: map-get( $bpw, tablet )){
+					max-width: 440px;
+					
+				}
 				
 			}
 			
 			& > .send{
-				margin-left: 20px;
 				width: 120px;
 				border: none;
 				border-radius: 23px;
+				@extend .bold.alt;
+				
+				@media(min-width: map-get( $bpw, tablet )){
+					margin-left: 20px;
+					
+				}
+				
+			}
+			
+			@media(min-width: map-get( $bpw, tablet )){
+				margin-left: 50px;
 				
 			}
 			

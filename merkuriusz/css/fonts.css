@@ -41,3 +41,42 @@
 	src: url(../fonts/metropolis-bold-webfont.woff);
 }
 
+
+@font-face{
+	font-family: 'poppins-light';
+	src: url(../fonts/Poppins-Light.ttf);
+}
+@font-face{
+	font-family: 'poppins-regular';
+	src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face{
+	font-family: 'poppins-medium';
+	src: url(../fonts/Poppins-Medium.ttf);
+}
+@font-face{
+	font-family: 'poppins-semibold';
+	src: url(../fonts/Poppins-SemiBold.ttf);
+}
+@font-face{
+	font-family: 'poppins-bold';
+	src: url(../fonts/Poppins-Bold.ttf);
+}
+
+
+@font-face{
+	font-family: 'roboto-thin';
+	src: url(../fonts/RobotoSlab-Thin.ttf);
+}
+@font-face{
+	font-family: 'roboto-light';
+	src: url(../fonts/RobotoSlab-Light.ttf);
+}
+@font-face{
+	font-family: 'roboto-regular';
+	src: url(../fonts/RobotoSlab-Regular.ttf);
+}
+@font-face{
+	font-family: 'roboto-bold';
+	src: url(../fonts/RobotoSlab-Bold.ttf);
+}

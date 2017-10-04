@@ -1,5 +1,6 @@
 #sidebar{
 	margin-right: 20px;
+	min-width: 210px;
 	
 	& > .sidebar-navigation{
 		margin: 0;
@@ -7,13 +8,19 @@
 	}
 	
 	ul.menu{
-		border: solid 5px $color-ramka-szara;
+		border: solid 5px $color-szary3;
 		
 		& > .title{
 			margin: 0 30px;
-			height: 50px;
-			border-bottom: double 6px $color-ramka-szara;
-			font-size: 12px;
+			margin-bottom: 4px;
+			height: 46px;
+			border-bottom: double 4px $color-szary3;
+			font-size: 14px;
+			
+			&.active{
+				color: $color-menu-active;
+				
+			}
 			
 		}
 		
@@ -39,6 +46,7 @@
 				& > .title{
 					margin-right: auto;
 					padding-right: 10px;
+					font-size: 12.5px;
 					
 				}
 				
@@ -51,12 +59,14 @@
 			}
 			
 			.sub{
-				padding-left: 10px;
+				padding-left: 5px;
 				color: #000;
 				background-color: silver;
+				border: solid $color-szary3;
+				border-width: 0 1px 1px 1px;
 				
 				& > .item{
-					border-top: solid 1px $color-ramka-szara;
+					border-top: solid 1px $color-szary3;
 					background-clip: content-box;
 					transition: background .3s linear;
 					
@@ -95,8 +105,18 @@
 		& > .item{
 			position: relative;
 			
+			& > .head{
+				
+				& > .title{
+					font-size: 14px;
+					
+				}
+				
+			}
+			
 			& > .sub{
 				padding-left: 0;
+				border-left: none;
 				
 				.item{
 					
@@ -118,6 +138,20 @@
 					
 					&:not(:hover) > .sub{
 						display: none;
+						
+					}
+					
+				}
+				
+				& > .item{
+					
+					&:hover{
+						padding-left: 0;
+						
+						@media(min-width:map-get( $bpw, desktop )){
+							padding-left: 10px;
+							
+						}
 						
 					}
 					
@@ -277,7 +311,7 @@
 						bottom: 0;
 						left: 0;
 						right: 0;
-						background-color: $color-ramka-szara;
+						background-color: $color-szary3;
 						background-clip: content-box;
 						
 					}

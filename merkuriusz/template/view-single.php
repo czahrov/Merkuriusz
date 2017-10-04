@@ -137,7 +137,7 @@ echo "\r\n-->";
 					<?php do_action( 'single-picture', $item ); ?>
 					<?php //do_action( 'single-dane-main', $item ); ?>
 					<div class='info base2'>
-						<div class='title'>
+						<div class='title bold alt'>
 							<?php echo $item[ 'NAME' ]; ?>
 						</div>
 						<div class='instock'>
@@ -177,13 +177,14 @@ echo "\r\n-->";
 						<div class='content'>
 							<?php echo $item[ 'DSCR' ]; ?>
 						</div>
-						<div class='price bold flex flex-wrap flex-items-center'>
+						<div class='price flex flex-wrap flex-items-center'>
 							<?php
 								printf( "%.2f zł/szt brutto%s", 
 									$item[ 'PRICE' ][ 'BRUTTO' ],
 									$item[ 'PRICE' ][ 'NETTO' ] !== null?( sprintf( "<span class='netto base1 regulat'>(%.2f zł netto)</span>", $item[ 'PRICE' ][ 'NETTO' ] ) ):( "" )
 								);
 							?>
+							
 						</div>
 						
 					</div>
@@ -329,7 +330,7 @@ echo "\r\n-->";
 								foreach( $specyfikacja as $name => $value):
 							?>
 							<div class='tcell base2 flex'>
-								<div class='name bold base2 flex flex-items-center'><?php echo $name; ?></div>
+								<div class='name base2 flex flex-items-center'><?php echo $name; ?></div>
 								<div class='value base2 flex flex-items-center'><?php echo $value; ?></div>
 								
 							</div>
@@ -354,8 +355,6 @@ echo "\r\n-->";
 	<?php get_template_part( "template/slider", "katalog" ); ?>
 
 	<?php get_template_part( "template/reklama360" ); ?>
-
-	<?php get_template_part( "template/slider", "partnerzy" ); ?>
 
 	<?php get_template_part( "template/newsletter" ); ?>
 

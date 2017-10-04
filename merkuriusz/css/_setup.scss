@@ -6,6 +6,11 @@ $bpw:(
 	
 );
 
+body{
+	@extend .regular;
+	
+}
+
 a{
 	display: inline-block;
 	
@@ -19,47 +24,27 @@ a{
 }
 
 .regular{
-	font-family: 'Montserrat-Regular';
-	
-	&.alt{
-		font-family: 'metropolis-regular';
-		
-	}
+	font-family: roboto-regular;
 	
 }
 
-.medium{
-	font-family: 'Montserrat-Medium';
+.bold{
+	font-family: poppins-bold;
 	
 	&.alt{
-		font-family: 'metropolis-medium';
+		font-family: roboto-bold;
 		
 	}
 	
 }
 
 .semibold{
-	font-family: 'Montserrat-SemiBold';
+	font-family: poppins-semibold;
 	
 	&.alt{
-		font-family: 'metropolis-semibold';
+		font-family: roboto-semibold;
 		
 	}
-	
-}
-
-.bold{
-	font-family: 'Montserrat-Bold';
-	
-	&.alt{
-		font-family: 'metropolis-bold';
-		
-	}
-	
-}
-
-.title{
-	font-size: 12px;
 	
 }
 
@@ -82,6 +67,7 @@ a{
 	margin-left: 8px;
 	height: 26px;
 	border-radius: 6px;
+	font-size: 13px;
 	line-height: 0;
 	
 	&::before{
@@ -98,44 +84,25 @@ a{
 	
 }
 
-@each $name, $property, $value in ( cover, size, cover ), 
-													( contain, size, contain ), 
-													( center, position, center ), 
-													( top, position-y, top ), 
-													( bottom, position-y, bottom ), 
-													( left, position-x, left ), 
-													( right, position-x, right ), 
-													( no-repeat, repeat, none ),
-													( repeat-x, repeat, repeat-x ), 
-													( repeat-y, repeat, repeat-y ), 
-													( repeat, repeat, repeat )
+$bg:(
+	( cover, size, cover ), 
+	( contain, size, contain ), 
+	( center, position, center ), 
+	( top, position-y, top ), 
+	( bottom, position-y, bottom ), 
+	( left, position-x, left ), 
+	( right, position-x, right ), 
+	( norepeat, repeat, no-repeat ),
+	( repeat-x, repeat, repeat-x ), 
+	( repeat-y, repeat, repeat-y ), 
+	( repeat, repeat, repeat )
+);
+
+@each $name, $property, $value in $bg
 {
 	
 	.bg-#{$name}{
 		background-#{$property}: $value;
-		
-	}
-	
-}
-
-@keyframes menu{
-	from{
-		background-position-y: 0%;
-		
-	}
-	to{
-		background-position-y: 200%;
-		
-	}
-	
-}
-
-ul.menu .head.animate{
-	background-size: auto 200%;
-	animation: menu 2s infinite linear paused;
-	
-	&:hover{
-		animation-play-state: running;
 		
 	}
 	

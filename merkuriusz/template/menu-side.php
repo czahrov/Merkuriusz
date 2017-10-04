@@ -3,7 +3,7 @@
 	<div class="sidebar-navigation background-white">
 		<?php
 			$input = array(
-				'gadżety reklamowe' => array(
+				'Gadżety reklamowe' => array(
 					'class' => 'reklamowe',
 					'items' => array(
 						array(
@@ -921,7 +921,7 @@
 						),
 					),
 				),
-				'pluszaki i maskotki' => array(
+				'Pluszaki i maskotki' => array(
 					'class' => 'pluszaki',
 					'items' => array(
 						array(
@@ -947,7 +947,7 @@
 						),
 					),
 				),
-				'elektronika' => array(
+				'Elektronika' => array(
 					'class' => 'elektronika',
 					'items' => array(
 						array(
@@ -1205,7 +1205,7 @@
 						),
 					),
 				),
-				'kolekcja vip' => array(
+				'Kolekcja vip' => array(
 					'class' => 'vip',
 					'items' => array(
 						array(
@@ -1763,7 +1763,7 @@
 						),
 					),
 				),
-				'vip elektronika' => array(
+				'Vip elektronika' => array(
 					'class' => 'vip_elektronika',
 					'items' => array(
 						array(
@@ -1789,7 +1789,7 @@
 						),
 					),
 				),
-				'vip piśmiennicze' => array(
+				'Vip piśmiennicze' => array(
 					'class' => 'vip_pismiennicze',
 					'items' => array(
 						array(
@@ -1833,7 +1833,7 @@
 						),
 					),
 				),
-				'victorinox collection' => array(
+				'Victorinox collection' => array(
 					'class' => 'vip_victorinox',
 					'items' => array(
 						array(
@@ -1983,7 +1983,7 @@
 				// PIERWSZY STOPIEŃ
 				printf( "<li class='item flex flex-column %s %s' item-slug='%s' item-title='%s'>
 						<div class='head flex flex-items-center %s' %s>
-							<div class='title uppercase'>
+							<div class='title'>
 								%s
 							</div>
 							%s
