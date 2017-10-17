@@ -8,7 +8,10 @@
 			<span class='gray'>Masz pytania?</span> Chętnie odpowiemy!
 		</div>
 		<div class='cell tel flex flex-wrap flex-column flex-row-ms flex-items-center'>
-			<span class='gray'>Infolinia:</span>14 662 33 64
+			<span class='icon bg-gray flex flex-items-center flex-justify-center'>
+				<img src='<?php echo get_template_directory_uri(); ?>/img/mail.png' />
+			</span> biuro@merkuriusz.pl
+			
 		</div>
 		
 	</div>

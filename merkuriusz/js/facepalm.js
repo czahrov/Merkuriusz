@@ -25,7 +25,7 @@
 		
 	},
 	root.bazar = {
-		basePath: '/PiotrM/wp_merkuriusz',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
+		basePath: '',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
 		logger: /logger/i.test(window.location.hash),		// czy wyświetlać komunikaty o wywoływaniu funkcji
 		mobile: /mobile/i.test(window.location.hash) || undefined,		// czy aktualnie używane urządzenie jest urządzeniem mobilnym
 		
@@ -160,7 +160,7 @@
 			
 			/* oznaczanie aktywnych pozycji w menu głównym */
 			(function( items, sklep ){
-				var url = window.location.origin + window.location.pathname.match( /^(.+)\/$/ )[1];
+				var url = window.location.origin + window.location.pathname.match( /^(.*)\/$/ )[1];
 				
 				if( /kategoria|produkt/.test( location.pathname ) ){
 					sklep
@@ -581,6 +581,19 @@
 			})
 			( $( '#basket' ) );
 			
+			/* newsletter */
+			(function( newsletter, form, input, button ){
+				form.submit( function( e ){
+					e.preventDefault();
+					
+				} );
+				
+			})
+			( $( '#home > .newsletter' ), 
+			$( '#home > .newsletter form' ), 
+			$( '#home > .newsletter form > .mail' ), 
+			$( '#home > .newsletter form > .send' ) );
+			
 		},
 		alternate: function(){
 			var addon = root.addon;
@@ -804,87 +817,80 @@
 			
 			// POPUPy
 			(function(){
-				$(".pop-up-clothes.clothes").click(function () {
+				/* $(".pop-up-clothes.clothes").click(function () {
 					$(".catalog-popup").fadeIn(300);
-				});
+				}); */
 				
-				$(".popup > .pop-cross").click(function () {
+				/* $(".popup > .pop-cross").click(function () {
 					$(".cover-popup").fadeOut(300);
-				});
+				}); */
 				
-				$(".pop-up-clothes.movie").click(function () {
+				/* $(".pop-up-clothes.movie").click(function () {
 					$(".movie-cover-popup").fadeIn(300);
 					
-				});
+				}); */
 				
-				$(".movie-cover-popup").click(function () {
+				/* $(".movie-cover-popup").click(function () {
 					$(this).fadeOut(300);
-				});
+				}); */
 				
-				$(".pop-up-clothes.powerbank").click(function () {
+				/* $(".pop-up-clothes.powerbank").click(function () {
 					$(".powerbank-pop-up").fadeIn(300);   
-				});
+				}); */
 				
-				$(".pop-up-clothes.wystawnicze").click(function () {
+				/* $(".pop-up-clothes.wystawnicze").click(function () {
 					$(".wystawnicze-pop-up").fadeIn(300);
-				});
+				}); */
 				
-				$(".pop-up-clothes.odziez-reklamowa").click(function () {
+				/* $(".pop-up-clothes.odziez-reklamowa").click(function () {
 					$(".odziez-reklamowa-pop-up").fadeIn(300);
-				});
+				}); */
 				
-				
-				$(".pop-up-clothes.dlugopisymetalowe").click(function () {
+				/* $(".pop-up-clothes.dlugopisymetalowe").click(function () {
 					$(".dlugopisymetalowe-pop-up").fadeIn(300);
-				});
+				}); */
 				
 				/* $(".pop-up-clothes.dlugopisyplastikowe").click(function () {
 					$(".dlugopisyplastikowe-pop-up").fadeIn(300);
 				}); */
 				
-				$(".pop-up-clothes.torby").click(function () {
+				/* $(".pop-up-clothes.torby").click(function () {
 					$(".torby-pop-up").fadeIn(300);
-				});
-				
-				$(".pop-up-clothes.torby").click(function () {
-					$(".torby-pop-up").fadeIn(300);
-				});
+				}); */
 				
 			})();
-			
-			/* powerbanki */
-			(function(){
-				$( '.main-picture-powerbank > .over' )
-				.attr({
-					href: $( 'ul.menu .item[item-slug="power_banki"]' ).attr( 'href' ),
-					
-				})
-				
-			})();
-			
-			/* newsletter */
-			(function( newsletter, form, input, button ){
-				form.submit( function( e ){
-					e.preventDefault();
-					
-				} );
-				
-			})
-			( $( '#home > .newsletter' ), 
-			$( '#home > .newsletter form' ), 
-			$( '#home > .newsletter form > .mail' ), 
-			$( '#home > .newsletter form > .send' ) );
 			
 			/* popupy */
-			(function( popup, box, close, viewbox, views, btnDlugPlas ){
+			(function( popup, box, close, viewbox, views, katalog_pic, btnOdziez, btnDlugPlas, btnDlugMetal, btnTorby, btnPompony, btnKubki, btnSmycze ){
 				var lock = false;
 				var duration = 0.5;
 				
 				popup
 				.on({
-					open: function( e, name ){
+					open: function( e, name, img ){
+						console.log( img );
 						if( lock ) return false;
 						lock = true;
+						
+						katalog_pic
+						.attr( 'src', function(){
+							try{
+								var url = img.match( /[^"]+/g );
+								if( url.length < 3 ) throw {
+									msg: 'Niewłaściwy adres obrazka',
+									reason: url,
+									
+								};
+								
+								return url[1];
+								
+							}
+							catch( err ){
+								console.error( err );
+								
+							}
+							
+						} );
 						
 						views
 						.filter( '[class*="'+ name +'"]' )
@@ -980,7 +986,40 @@
 				
 				box.click( function( e ){ e.stopPropagation() } );
 				
-				btnDlugPlas.click( function( e ){ popup.triggerHandler( 'open', [ 'dlugPlast' ] ) } );
+				btnOdziez.click( function( e ){
+					popup.triggerHandler( 'open', [ 'odziez', $(this).parents('.item.odziez').css( 'background-image' ) ] );
+					
+				} );
+				
+				btnDlugPlas.click( function( e ){
+					popup.triggerHandler( 'open', [ 'dlugPlast', $(this).css( 'background-image' ) ] );
+					
+				} );
+				
+				btnDlugMetal.click( function( e ){
+					popup.triggerHandler( 'open', [ 'dlugMetal', $(this).css( 'background-image' ) ] );
+					
+				} );
+				
+				btnTorby.click( function( e ){
+					popup.triggerHandler( 'open', [ 'torby', $(this).css( 'background-image' ) ] );
+					
+				} );
+				
+				btnPompony.click( function( e ){
+					popup.triggerHandler( 'open', [ 'pompony', $(this).css( 'background-image' ) ] );
+					
+				} );
+				
+				btnKubki.click( function( e ){
+					popup.triggerHandler( 'open', [ 'kubki', $(this).css( 'background-image' ) ] );
+					
+				} );
+				
+				btnSmycze.click( function( e ){
+					popup.triggerHandler( 'open', [ 'smycze', $(this).css( 'background-image' ) ] );
+					
+				} );
 				
 			})
 			( $( '#home > .popup' ),
@@ -988,7 +1027,14 @@
 			$( '#home > .popup > .box > .close-fp' ),
 			$( '#home > .popup > .box > .viewbox' ),
 			$( '#home > .popup > .box > .viewbox > .view' ),
-			$( '#home > .catalog-slider .catalog-element > .catalog.dlugPlast' ) );
+			$( '#home > .popup > .box > .viewbox > .view .pic img' ),
+			$( '#home .kafelki .item.odziez .link' ),
+			$( '#home > .catalog-slider .catalog-element > .catalog.dlugPlast' ),
+			$( '#home > .catalog-slider .catalog-element > .catalog.dlugMetal' ),
+			$( '#home > .catalog-slider .catalog-element > .catalog.torby' ),
+			$( '#home > .catalog-slider .catalog-element > .catalog.pompony' ),
+			$( '#home > .catalog-slider .catalog-element > .catalog.kubki' ),
+			$( '#home > .catalog-slider .catalog-element > .catalog.smycze' ) );
 			
 		},
 		kategoria: function(){

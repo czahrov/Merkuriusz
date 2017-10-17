@@ -1,4 +1,4 @@
-<div class='grid'>
+<div class='grid fp-hide'>
 	<div class='kalendarze bgimg full flex'>
 		<div class='box flex-self-stretch base1'>
 			<div class='hint bold uppercase'>

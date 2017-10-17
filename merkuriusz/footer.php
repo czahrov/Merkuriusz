@@ -19,7 +19,7 @@
 					
 				</div>
 				<div class='text'>
-					<span class='bold alt'>Tel / Fax:</span> +48 421 221 22
+					<span class='bold alt'>Tel / Fax:</span> +48 14 622 33 64
 					
 				</div>
 				
@@ -138,51 +138,6 @@
 					<li>
 						<a href='<?php echo home_url( 'inne' ); ?>'>
 							Inne
-						</a>
-						
-					</li>
-					
-				</ul>
-				
-			</div>
-			<div class='linki grow base1 base0-mm text-center text-left-mm'>
-				<div class='title bold uppercase'>
-					Dla agencji
-				</div>
-				<ul>
-					<li>
-						<a href='<?php echo home_url( 'wspolpraca' ); ?>'>
-							Współpraca
-						</a>
-						
-					</li>
-					<li>
-						<a href='<?php echo home_url( 'cenniki' ); ?>'>
-							Cenniki
-						</a>
-						
-					</li>
-					<li>
-						<a href='<?php echo home_url( 'do-pobrania' ); ?>'>
-							Do pobrania (FTP)
-						</a>
-						
-					</li>
-					<li>
-						<a href='<?php echo home_url( 'katalogi-on-line' ); ?>'>
-							Katalogi on-line
-						</a>
-						
-					</li>
-					<li>
-						<a href='<?php echo home_url( 'regulamin' ); ?>'>
-							Regulamin
-						</a>
-						
-					</li>
-					<li>
-						<a href='<?php echo home_url( 'zamow-katalog' ); ?>'>
-							Zamów katalog
 						</a>
 						
 					</li>

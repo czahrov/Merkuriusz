@@ -10,13 +10,13 @@
 				array(
 					'class' => 'identyfikacja',
 					'title' => 'identyfikacja wizualna firm',
-					'content' => 'Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy',
+					'content' => 'Projektujemy, drukujemy oraz składamy roll-upy, ścianki wystawiennicze',
 					'img' => 'https://placeimg.com/500/200/tech',
 					'url' => home_url(),
 					
 				),
 				array(
-					'class' => 'reklama',
+					'class' => 'wizualna',
 					'title' => 'reklama wizualna',
 					'content' => 'Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy',
 					'img' => 'https://placeimg.com/500/200/tech',
@@ -26,7 +26,7 @@
 				array(
 					'class' => 'techniki',
 					'title' => 'techniki nadruków',
-					'content' => 'Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy',
+					'content' => 'Oferujemy druk wielkoformatowy, offsetowy, cyfrowy, UV',
 					'img' => 'https://placeimg.com/500/200/tech',
 					'url' => home_url(),
 					
@@ -34,7 +34,7 @@
 				array(
 					'class' => 'gadzety',
 					'title' => 'gadżety reklamowe',
-					'content' => 'Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy',
+					'content' => 'Na zamówienie projektujemy gadżety reklamowe oraz eventowe',
 					'img' => 'https://placeimg.com/500/200/tech',
 					'url' => home_url(),
 					
@@ -47,7 +47,7 @@
 		<div class='item base1 base2-mm flex <?php echo $item[ 'class' ]; ?>'>
 			<div class='box bg-cover bg-center base1'>
 				<div class='over flex'>
-					<div class='content flex flex-items-center'>
+					<div class='content base1 flex flex-items-center'>
 						<?php echo $item[ 'content' ]; ?>
 					</div>
 					

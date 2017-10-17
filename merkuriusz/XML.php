@@ -20,6 +20,16 @@ if( isset( $_GET[ 'recache' ] ) ){
 	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'par' ] ) ) ) && isset( $PAR ) ) $PAR->makeCache();
 	
 }
+elseif( isset( $_GET[ 'update' ] ) ){
+	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'axpol' ] ) ) ) && isset( $AXPOL ) ) $AXPOL->check();
+	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'easy' ] ) ) ) && isset( $EASYGIFTS ) ) $EASYGIFTS->check();
+	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'macma' ] ) ) ) && isset( $MACMA ) ) $MACMA->check();
+	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'anda' ] ) ) ) && isset( $ANDA ) ) $ANDA->check();
+	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'asgard' ] ) ) ) && isset( $ASGARD ) ) $ASGARD->check();
+	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'inspirion' ] ) ) ) && isset( $INSPIRION ) ) $INSPIRION->check();
+	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'par' ] ) ) ) && isset( $PAR ) ) $PAR->check();
+	
+}
 
 $XM = new XMLMan();
 

@@ -41,8 +41,14 @@
 		<h2 class="popup-title">Kolekcja długopisów metalowych</h2>
 		<div class="popup-content">
 			<div class="sliderpop-container row">
-				<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/milenium-katalog-długopisy-metalowe_1-Milenium-2017-1.pdf" target="_blank"><div class="sliderpop-element">Millenium</div></a>
-				<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/katalog-VIVA-prestige.pdf" target="_blank"><div class="sliderpop-element"><img class="sliderpop-image" src="<?php echo get_template_directory_uri(); ?>/img/dlugopisy/viva_pens.jpg"></div></a>
+				<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/milenium-katalog-długopisy-metalowe_1-Milenium-2017-1.pdf" target="_blank">
+					<div class="sliderpop-element">Millenium</div>
+				</a>
+				<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/katalog-VIVA-prestige.pdf" target="_blank">
+					<div class="sliderpop-element">
+						<img class="sliderpop-image" src="<?php echo get_template_directory_uri(); ?>/img/dlugopisy/viva_pens.jpg">
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -56,8 +62,12 @@
 		<h2 class="popup-title">Torby</h2>
 		<div class="popup-content">
 			<div class="sliderpop-container row">
-				<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/06/PDF-torby-foliowe-LPD-biaée-i-kolorowe.pdf" target="_blank"><div class="sliderpop-element">Torby foliowe</div></a>
-				<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/KATALOG-TORBY-strona-internetowa.pdff" target="_blank"><div class="sliderpop-element">Torby papierowe</div></a>
+				<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/06/PDF-torby-foliowe-LPD-biaée-i-kolorowe.pdf" target="_blank">
+					<div class="sliderpop-element">Torby foliowe</div>
+				</a>
+				<a href="http://poligon.scepter.pl/PiotrM/wp_merkuriusz/wp-content/uploads/2017/08/KATALOG-TORBY-strona-internetowa.pdff" target="_blank">
+					<div class="sliderpop-element">Torby papierowe</div>
+				</a>
 			</div>
 		</div>
 	</div>

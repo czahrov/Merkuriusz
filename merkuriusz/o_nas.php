@@ -8,14 +8,15 @@
 <body>
 	
 	<?php get_template_part( "template/page", "top" ); ?>
-
+	<?php get_template_part( "template/menu", "top" ); ?>
 	<!-- BANER O NAS-->
 
-	<div class="container-fluid about_us_cover">
+	<div class="container-fluid about_us_cover" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( get_post()->ID ), 'full' );?>');">
+	<div class="filtr"></div>
 		<div class="container">
 			<div class="col-sm-12 about_us_content">
-				<h1>MERKURIUSZ</h1>
-				<p>Dowiedz się więcej o naszej Agencji Reklamowej</p>
+				<h1><?php echo get_post()->post_title; ?></h1>
+				
 			</div>
 		</div>
 	</div>
@@ -59,85 +60,6 @@
 	</div>
 </div> <!-- END CONTAINER FLUID -->
 
-<!-- PARTNERS --> 
-
-<div class="container">
-		<div class="col-md-12">
-			<div class="col-md-12 partner-container" style="padding: 0;">
-				<div class="partner-arrow-box partner-left">
-				<i class="fa fa-angle-left fa-2x arrow-position" aria-hidden="true"></i>
-				</div>
-
-
-				<div class="partner-wrapper">
-						<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/bc.svg" class="partner-icon">
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/sols.svg" class="partner-icon">
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/sg.svg" class="partner-icon">
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/fruit.png" class="partner-icon"></div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/logo_adler.svg" class="partner-icon">
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/alex_fox.svg" class="partner-icon"></div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/jhk.svg" class="partner-icon" >
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/macma.svg" class="partner-icon" >
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/happy_gifts.png" class="partner-icon">
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/waterman.svg" class="partner-icon" >
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/Parker-logo-new-and-original.png" class="partner-icon">
-					</div>
-
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/nina_rici.svg" class="partner-icon" >
-					</div>
-					
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/diplomat.svg" class="partner-icon" >
-					</div>
-				
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/blue_collection.svg" class="partner-icon" >
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/royal_design.svg" class="partner-icon">
-					</div>
-					
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/cool.svg" class="partner-icon">
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/easy_gifts.svg" class="partner-icon">
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/tops.svg" class="partner-icon">
-					</div>
-					<div class="partner-icon-box">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/partnerzy/voyager-XD.png" class="partner-icon"></div>
-				</div>
-
-
-				<div class="partner-arrow-box partner-right"><i class="fa fa-angle-right fa-2x arrow-position" aria-hidden="true"></i></div>
-
-			</div>
-		
-		</div>
-	</div>
-
 <!--END OF PARTNERS -->
 <div class="container-fluid">
 	<div class="about-section">
@@ -170,20 +92,7 @@
 <div class="white-space-70"></div>
 
 <!-- NEWSLETTER -->
-	<div class="container-fluid newsletter">
-		<h2 class="section-title" id="newsletter-title">Zapisz się do naszego Newslettera</h2>
-		<div class="col-md-8 col-md-offset-2">
-		<form>
-			<div class="form-row">
-				<input class="form-control input-newsletter" type="email" name="e-mail" id="e-mail" placeholder="wpisz swój adres e-mail">
-				<button type="submit" class="btn btn-newsletter">Zapisz się!</button>
-			</div>
-		</form>
-
-		<div class="newsletter-text">Zapisując się do naszego newslettera będziesz informowany na bieżąco o najnowszych produktach na naszej stronie. W każdej chwili możesz się z niego wypisać</div>
-		<div class="white-space-50"></div>
-		</div>
-	</div>
+<?php get_template_part( 'template/newsletter' ); ?>
 
 
  <!-- FOOTER -->

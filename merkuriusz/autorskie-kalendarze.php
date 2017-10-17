@@ -8,7 +8,8 @@
 
 <body>
 	
-	<?php get_template_part( "template/without", "theme" ); ?>
+	<?php get_template_part( "template/page", "top" ); ?>
+	<?php get_template_part( "template/menu", "top" ); ?>
 	<!-- BANER O NAS-->
 
 	<div class="container-fluid about_us_cover" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( get_post()->ID ), 'full' );?>');">

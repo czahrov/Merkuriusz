@@ -9,6 +9,16 @@ $bpw:(
 body{
 	@extend .regular;
 	
+	& > .about_us_cover{
+		margin-top: 50px;
+		
+	}
+	
+	& > #map{
+		margin-top: 50px;
+		
+	}
+	
 }
 
 a{
@@ -107,3 +117,39 @@ $bg:(
 	}
 	
 }
+
+h2{
+	@extend .bold;
+	
+	& > .about-us-one{
+		@extend .regular;
+		font-size: 16px;
+		
+	}
+	
+}
+
+.about-content-box{
+	@extend .regular;
+	
+	& > h2{
+		font-size: 22px;
+		
+	}
+	
+}
+
+.container-fluid.single-page{
+	
+	.promo-kal{
+		
+		& > a{
+			display: block;
+			padding-bottom: 15.3%;
+			
+		}
+		
+	}
+	
+}
+

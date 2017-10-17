@@ -658,7 +658,8 @@ add_action( 'gen_menu', function( $arg ){
 						//$subitem_slug = empty( $subitem[ 'slug' ] )?( apply_filters( 'stdName', $subitem['title'] ) ):( $subitem[ 'slug' ] );
 						//$subitem_active = $query[2] === $subitem_slug;
 						//$subitem_active = explode( "-", end( $query ) )[1] === $subitem_slug;
-						if( explode( "-", end( $query ) )[1] === $subitem_slug ){
+						$t = explode( "-", end( $query ) );
+						if( $t[1] === $subitem_slug ){
 							$subitem_active = 'active';
 							if( count( $_SESSION[ 'breadc' ] ) == 2 ) $_SESSION[ 'breadc' ] = array( $cat_name, $item[ 'title' ], $subitem[ 'title' ] );
 						}

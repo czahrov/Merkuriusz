@@ -6,7 +6,7 @@
 ?>
 
 <body>
-	   <script src="//maps.google.com/maps/api/js?language=pl&key=AIzaSyBxVNTb4QJSrSuBpEe_3NpRgl_bwlt8kdk"></script>
+	   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArrRNhUZZaxx6Qvd_ESnz9OEQ_5g_sLfE"></script>
         
 <?php get_template_part( "template/page", "top" ); ?>
 <?php get_template_part( "template/menu", "top" ); ?>
@@ -25,13 +25,50 @@
 				<p>za pośrednictwem poczty elektronicznej</p>
 				<p>bądź o kontakt telefoniczny</p>
 				<ul class="phone-mail">
-					<li>tel.14 622 33 64</li>
-					<li>tel. kom. 607 297 778, 607 297 787</li>
-					<li>e-mail: biuro@merkuriusz.pl</li>
+					<li>
+						Merkuriusz s.c.,ul. Szpitalna 25 B, 33-100 Tarnów
+					</li>
+					<li>
+						tel./fax +48 14 622 33 64, 
+					</li>
+					<li></li>
+					<li></li>
+					<li>	
+						dział obsługi klienta;
+					</li>
+					<li>	
+						zamówienia; +48 14 628 44 11
+					</li>
+					<li>	
+						e-mail;biuro@merkuriusz.pl
+					</li>
+					<li></li>
+					<li></li>
+					<li>	
+						marketing; 607 297 778, 607 297 787
+					</li>
+					<li>	
+						marketing@merkuriusz.pl
+					</li>
+					<li></li>
+					<li></li>
+					<li>	
+						renata@merkuriusz.pl
+					</li>
+					<li>	
+						stanislaw@merkuriusz.pl
+					</li>
+					<li>	
+						grafika; +48 14 628 44 11 
+					</li>
+					<li>	
+						grafika@merkuriusz.pl
+					</li>
+					
 				</ul>
 			</div>
 	
-			<form class="contact-form">
+			<form class="contact-form hide">
 					<div class='form_row form-row1'>
 						<label for="subject">Temat <span class="red">*</span></label>
 						<input type="text" name="subject" id="subject" class="input-normal">

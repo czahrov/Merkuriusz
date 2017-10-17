@@ -2062,7 +2062,8 @@
 							
 							foreach( $item['sub'] as $subitem ){
 								$subitem_slug = apply_filters( 'stdName', $subitem[ 'title' ] );
-								if( explode( "-", end( $query ) )[1] === $subitem_slug ){
+								$t = explode( "-", end( $query ) );
+								if( $t[1] === $subitem_slug ){
 									$subitem_active = 'active';
 								}
 								else{

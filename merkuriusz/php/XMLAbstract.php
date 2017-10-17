@@ -225,7 +225,7 @@ class XMLAbstract{
 			
 		}
 		elseif( is_string( $fpath ) ){
-			$fname = pathinfo( $fpath )['filename'] . ".xml";
+			$fname = pathinfo( $fpath, PATHINFO_FILENAME ) . ".xml";
 			$this->logger( "pobieram plik $fname do folderu {$this->_config['dnd']}", __FUNCTION__ );
 			
 			if( $this->_debug === true ) $this->checkpoint( __CLASS__ . ">" . __FUNCTION__ . ">$fname>start" );

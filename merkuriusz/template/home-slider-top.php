@@ -45,10 +45,10 @@
 			<div class='item base1 no-shrink bg-cover bg-top<?php if( $num === 0 ) echo " active "; ?>' style='background-image: url(<?php echo empty( $item[ 'img' ] )?( $item[ 'img_alt' ] ):( $item[ 'img' ] ); ?>);'>
 				<div class='box flex flex-column flex-items-start'>
 					<div class='title bold font-blue uppercase'>
-						<?php echo $item[ 'title' ]; ?>
+						<?php //echo $item[ 'title' ]; ?>
 					</div>
 					<div class='content bold alt'>
-						<?php echo empty( $item[ 'content' ] )?( $item[ 'content_alt' ] ):( $item[ 'content' ] ); ?>
+						<?php //echo empty( $item[ 'content' ] )?( $item[ 'content_alt' ] ):( $item[ 'content' ] ); ?>
 					</div>
 					<div class='link'>
 						<div class='button bg-blue font-light text-center uppercase flex flex-items-center'>
