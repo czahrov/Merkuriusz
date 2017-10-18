@@ -267,7 +267,7 @@ function markPrice( $type, $num, $colors = 1, $repeat = 1 ){
 	do{
 		$found = current( $item[ 'ryczałt' ] );
 	}
-	while( next( $item[ 'ryczałt' ] ) !== false && $num > key( $item[ 'ryczałt' ] ) );
+	while( next( $item[ 'ryczałt' ] ) !== false && $num >= key( $item[ 'ryczałt' ] ) );
 	$cena += (float)$found;
 	
 	$ret[ 'added' ] = array(
@@ -282,7 +282,7 @@ function markPrice( $type, $num, $colors = 1, $repeat = 1 ){
 	do{
 		$found = current( $item[ 'price' ] );
 	}
-	while( next( $item[ 'price' ] ) !== false && $num > key( $item[ 'price' ] ) );
+	while( next( $item[ 'price' ] ) !== false && $num >= key( $item[ 'price' ] ) );
 	$cena += (float)$found * $num;
 	
 	$ret[ 'marking' ] = array(

@@ -47,11 +47,11 @@
 							<div class='field price base4 flex flex-items-center flex-justify-center'>
 								<?php
 									if( $set[ 'mark' ][ 'type' ] !== 'brak' ){
-										printf( "%.2f zł brutto", (float)$set[ 'num' ] * (float)$set[ 'num' ] + markPrice( $set[ 'mark' ][ 'type' ], $set[ 'num' ] )[ 'total' ] );
+										printf( "%.2f zł brutto", (float)$set[ 'num' ] * (float)$set[ 'price' ] + markPrice( $set[ 'mark' ][ 'type' ], $set[ 'num' ] )[ 'total' ] );
 										
 									}
 									else{
-										printf( "%.2f zł brutto", $set[ 'num' ] * $set[ 'num' ] );
+										printf( "%.2f zł brutto", $set[ 'num' ] * $set[ 'price' ] );
 										
 									}
 								?>
