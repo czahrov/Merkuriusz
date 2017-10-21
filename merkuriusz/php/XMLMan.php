@@ -53,23 +53,21 @@ class XMLMan{
 				$item = $this->_data [ 'items' ][0];
 				
 				/* wyciąganie fragmentu ID dla którego wykonywane będzie szukanie */
-				$pattern = "~([\. \-_/]?\w+)~";
-				preg_match_all( $pattern, $item[ 'ID' ], $match );
-				if( count( $match[1] ) > 2 ){
-					$find = implode( "", array_slice( $match[1], 0, -1 ) );
+				if( in_array( $handler->_shop, array( 'EASYGIFTS', 'MACMA' ) ) ){
+					$find = $item[ 'SHORT_ID' ];
 					
 				}
 				else{
-					$find = $match[1][0];
-					
-				}
-				
-				switch( $handler->_shop ){
-					case 'EASYGIFTS':
-						$find = substr( $find, 0, -2 );
+					$pattern = "~([\. \-_/]?\w+)~";
+					preg_match_all( $pattern, $item[ 'ID' ], $match );
+					if( count( $match[1] ) > 2 ){
+						$find = implode( "", array_slice( $match[1], 0, -1 ) );
 						
-					break;
-					default:
+					}
+					else{
+						$find = $match[1][0];
+						
+					}
 					
 				}
 				

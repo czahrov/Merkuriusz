@@ -471,6 +471,9 @@ class EASYGIFTS extends XMLAbstract {
 				$id = (string)$item->baseinfo->code_full;
 				if( empty( $id ) ) $id = (string)$item->baseinfo->id;
 				
+				$short_id = (string)$item->baseinfo->code_short;
+				if( empty( $id ) ) $short_id = (string)$item->baseinfo->id;
+				
 				$name = (string)$item->baseinfo->name;
 				if( empty( $name ) ) $name = '- brak danych -';
 				
@@ -511,6 +514,7 @@ class EASYGIFTS extends XMLAbstract {
 					),
 					array(
 						'ID' => $id,
+						'SHORT_ID' => $short_id,
 						'NAME' => $name,
 						'DSCR' => trim( strip_tags( (string)$item->baseinfo->intro ) ),
 						'IMG' => $img,

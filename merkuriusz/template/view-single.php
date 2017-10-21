@@ -310,6 +310,10 @@ echo "\r\n-->";
 										);
 										
 									}
+									else{
+										$znakowanie[] = '---';
+										
+									}
 									
 								}
 								

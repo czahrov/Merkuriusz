@@ -522,12 +522,8 @@ class MACMA extends XMLAbstract{
 					
 				}
 				
-				$mark = array();
-				$size = (string)$item->marking_size;
-				if( empty( $size ) ) $size = '??';
 				foreach( $item->markgroups->markgroup as $markgrp ){
 					$type = (string)$markgrp->name;
-					$mark[ $size ][] = $type;
 					
 				}
 				
@@ -543,12 +539,26 @@ class MACMA extends XMLAbstract{
 					$matters[] = 'Brak danych';
 				}
 				
+				$mark_array = array();
+				
+				$mark_size = array();
+				$size = (string)$item->marking_size;
+				if( empty( $size ) ){
+					$mark_size[] = '???';
+					
+				}
+				else{
+					$mark_size[] = $size;
+					
+				}
+				
 				$mark_types = array();
 				if( count( $item->markgroups->markgroup ) > 0 ){
 					foreach( $item->markgroups->markgroup as $markgrp ){
-						$pattern = "~^(\w+)~";
+						$pattern = "~^(\w+)\s+\(~";
 						preg_match( $pattern, (string)$markgrp->name, $match );
 						$mark_types[] = $match[1];
+						$mark_array[ $mark_size[0] ][] = $match[1];
 						
 					}
 					
@@ -586,18 +596,19 @@ class MACMA extends XMLAbstract{
 					),
 					array(
 						'ID' => (string)$item->baseinfo->code_full,
+						'SHORT_ID' => (string)$item->baseinfo->code_short,
 						'NAME' => (string)$item->baseinfo->name,
 						'DSCR' => (string)$item->baseinfo->intro[0],
 						'IMG' => $img,
 						'CAT' => $cat,
 						'DIM' => (string)$item->attributes->size,
-						'MARK' => $mark,
 						'INSTOCK' => $this->_getStock( (string)$item->baseinfo->code_full ),
 						'MATTER' => implode( ", ", $matters ),
 						'COLOR' => (string)$item->color->name,
 						'COUNTRY' => (string)$item->origincountry->name,
-						'MARKSIZE' => 'Brak',
-						'MARKTYPE' => implode( "<br>", $mark_types ),
+						'MARK' => $mark_array,
+						'MARKSIZE' => $mark_size,
+						'MARKTYPE' => $mark_types,
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'BRUTTO' => (float)str_replace( ",", ".", (string)$item->baseinfo->price ),
