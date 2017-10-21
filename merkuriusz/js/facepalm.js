@@ -544,7 +544,7 @@
 							lock = true;
 							$.ajax({
 								type: 'GET',
-								url: root.bazar.basePath + '/koszyk?status',
+								url: '../koszyk?status',
 								success: function( data ){
 									try{
 										var resp = JSON.parse( data );
@@ -1312,7 +1312,7 @@
 								kalkulator.triggerHandler( 'notify', [ 'wait', 'Obliczam...' ] );
 								$.ajax({
 									type: 'POST',
-									url: root.bazar.basePath + '/kalkulator',
+									url: '../kalkulator',
 									data: {
 										nazwa: produkt_data.NAME,
 										num: parseInt( ilosc.val() ),
@@ -1419,7 +1419,7 @@
 							
 							$.ajax({
 								type: 'POST',
-								url: root.bazar.basePath + '/koszyk',
+								url: '../koszyk',
 								data: myData,
 								success: function( data ){
 									
