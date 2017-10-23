@@ -788,9 +788,9 @@ class ASGARD extends XMLAbstract{
 				}
 				
 				$img = array();
-				$img[] = sprintf( "http://asgard.pl/png/product/%s" ,(string)$item->{"obraz_1.jpg"} );
+				$img[] = sprintf( "http://asgard.pl/png/product/%s" ,(string)$item->{"obraz_1"} );
 				
-				$mark = array();
+				/* $mark = array();
 				preg_match_all( "~(\w.*?) \((.*?)\)(?: \((.*?)\))?~", (string)$item->znakowanie_produktu, $match );
 				for( $i=0; $i<count( $match[0] ); $i++ ){
 					$type = $match[1][ $i ];
@@ -799,8 +799,19 @@ class ASGARD extends XMLAbstract{
 					if( !empty( $place ) ){
 						$size .= " ($place)";
 					}
-					//$mark[ $type ][] = !empty($place)?( "$size ($place)" ):( "$size" );
 					$mark[ $size ][] = $type;
+					
+				} */
+				
+				$mark_size = array();
+				$mark_type = array();
+				$mark_array = array();
+				$pattern = "~(\w+)\s+\((.+?)\)~";
+				preg_match_all( $pattern, (string)$item->znakowanie_produktu, $match );
+				foreach( $match[0] as $index => $val ){
+					$mark_size[] = $match[2][ $index ];
+					$mark_type[] = $match[1][ $index ];
+					$mark_array[ $match[2][ $index ] ][] = $match[1][ $index ];
 					
 				}
 				
@@ -818,26 +829,39 @@ class ASGARD extends XMLAbstract{
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'CATALOG' => 'brak danych',
-						'PACKAGE' => array(
-							'SINGLE' => 'brak danych',
-							'TOTAL' => 'brak danych',
-							'DIM' => 'brak danych',
-							'WEIGHT' => 'brak danych',
-							'INSIDE' => 'brak danych',
-							
+						'MARKSIZE' => array(),
+						'MARKTYPE' => array(),
+						'MARKCOLORS' => 1,
+						'PRICE' => array(
+							'BRUTTO' => 0,
+							'NETTO' => null,
 						),
+						'MODEL' => 'brak danych',
+						'WEIGHT' => 'brak danych',
+						'BRAND' => 'brak danych',
 					),
 					array(
-						'ID' => (int)$item->indeks,
+						'ID' => (string)$item->indeks,
 						'NAME' => (string)$item->nazwa,
 						'DSCR' => (string)$item->opis_produktu,
 						'IMG' => $img,
 						'CAT' => $cat,
 						'DIM' => (string)$item->wymiary_produktu,
-						'MARK' => $mark,
+						'MARK' => $mark_array,
 						'INSTOCK' => (int)$item->in_stock,
-						
+						'MATTER' => (string)$item->material,
+						'COLOR' => (string)$item->kolor,
+						// 'COUNTRY' => 'brak danych',
+						'MARKSIZE' => $mark_size,
+						'MARKTYPE' => $mark_type,
+						'MARKCOLORS' => 1,
+						'PRICE' => array(
+							'BRUTTO' => (float)str_ireplace( ",", ".", (string)$item->cena_netto_katalogowa ),
+							'NETTO' => (float)str_ireplace( ",", ".", $item->cena_netto_katalogowa ),
+						),
+						'MODEL' => 'brak danych',
+						'WEIGHT' => sprintf( "%.3f kg", (float)str_ireplace( ",", ".", $item->waga_jednostkowa_netto_w_kg ) ),
+						// 'BRAND' => 'brak danych',
 					)
 					
 				);

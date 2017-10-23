@@ -1,11 +1,11 @@
 <?php
 
-$AXPOL = new AXPOL();
-$EASYGIFTS = new EASYGIFTS();
-$MACMA = new MACMA();
-$ANDA = new ANDA();
+// $AXPOL = new AXPOL();
+// $EASYGIFTS = new EASYGIFTS();
+// $MACMA = new MACMA();
+// $ANDA = new ANDA();
 
-// $ASGARD = new ASGARD();
+$ASGARD = new ASGARD();
 
 // $INSPIRION = new INSPIRION();
 // $PAR = new PAR();

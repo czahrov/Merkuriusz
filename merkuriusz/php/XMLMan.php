@@ -77,9 +77,12 @@ class XMLMan{
 				$similar = $handler->search( $find, true );
 				
 				/* usuwanie z wyniku produktu o ID takim samym jak bazowy */
-				foreach( $similar as $index => $check ){
-					if( $check[ 'ID' ] == $item[ 'ID' ] ){
-						unset( $similar[ $index ] );
+				if( $similar !== false ){
+					foreach( $similar as $index => $check ){
+						if( $check[ 'ID' ] == $item[ 'ID' ] ){
+							unset( $similar[ $index ] );
+							
+						}
 						
 					}
 					
@@ -111,7 +114,11 @@ class XMLMan{
 					
 				}
 				
-				$this->_data[ 'similar' ] = array_merge( $this->_data[ 'similar' ], $similar );
+				if( $similar !== false ){
+					$this->_data[ 'similar' ] = array_merge( $this->_data[ 'similar' ], $similar );
+					
+				}
+				
 				$this->_data[ 'colors' ] = array_merge( $this->_data[ 'colors' ], $colors );
 				
 			}

@@ -311,7 +311,8 @@ echo "\r\n-->";
 										
 									}
 									else{
-										$znakowanie[] = '---';
+										// $znakowanie[] = '---';
+										$znakowanie[] = sprintf( "%s (niedostępne)", $mark );
 										
 									}
 									
