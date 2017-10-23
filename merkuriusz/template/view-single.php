@@ -83,13 +83,13 @@
 
 echo "<!--";
 // echo count( $XMLData[ 'items' ] );
-echo "\r\n find_similar: {$XMLData[ 'find_similar' ]}";
-echo "\r\n podobne: " . count( $XMLData[ 'similar' ] );
+// echo "\r\n find_similar: {$XMLData[ 'find_similar' ]}";
+// echo "\r\n podobne: " . count( $XMLData[ 'similar' ] );
 // print_r( $XMLData[ 'similar' ] );
-echo "\r\n find_colors: {$XMLData[ 'find_colors' ]}";
-echo "\r\n kolory: " . count( $XMLData[ 'colors' ] );
+// echo "\r\n find_colors: {$XMLData[ 'find_colors' ]}";
+// echo "\r\n kolory: " . count( $XMLData[ 'colors' ] );
 // print_r( $XMLData[ 'colors' ] );
-print_r( $XMLData['items'][0] );
+// print_r( $XMLData['items'][0] );
 echo "\r\n-->";
 
 ?>
@@ -97,6 +97,9 @@ echo "\r\n-->";
 <body id='single'>
 	<script>
 		var produkt_data = JSON.parse( '<?php echo addslashes( json_encode( $XMLData[ 'items' ][0] ) ); ?>' );
+		var produkt_similar = JSON.parse( '<?php echo addslashes( json_encode( $XMLData[ 'similar' ] ) ); ?>' );
+		var produkt_colors = JSON.parse( '<?php echo addslashes( json_encode( $XMLData[ 'colors' ] ) ); ?>' );
+		
 	</script>
 	<div class='popup pointer flex flex-items-center flex-justify-center'>
 		<div class='box flex flex-column'>

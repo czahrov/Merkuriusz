@@ -12,7 +12,7 @@
 					'title' => 'identyfikacja wizualna firm',
 					'content' => 'Projektujemy, drukujemy oraz składamy roll-upy, ścianki wystawiennicze',
 					'img' => 'https://placeimg.com/500/200/tech',
-					'url' => home_url(),
+					'url' => home_url( 'oferta' ),
 					
 				),
 				array(
@@ -20,7 +20,7 @@
 					'title' => 'reklama wizualna',
 					'content' => 'Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy',
 					'img' => 'https://placeimg.com/500/200/tech',
-					'url' => home_url(),
+					'url' => home_url( 'oferta' ),
 					
 				),
 				array(
@@ -28,7 +28,7 @@
 					'title' => 'techniki nadruków',
 					'content' => 'Oferujemy druk wielkoformatowy, offsetowy, cyfrowy, UV',
 					'img' => 'https://placeimg.com/500/200/tech',
-					'url' => home_url(),
+					'url' => home_url( 'oferta' ),
 					
 				),
 				array(
@@ -36,7 +36,7 @@
 					'title' => 'gadżety reklamowe',
 					'content' => 'Na zamówienie projektujemy gadżety reklamowe oraz eventowe',
 					'img' => 'https://placeimg.com/500/200/tech',
-					'url' => home_url(),
+					'url' => home_url( 'oferta' ),
 					
 				),
 				

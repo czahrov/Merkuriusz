@@ -12,10 +12,13 @@ echo "-->";
 			<?php get_template_part( "template/menu", 'top'); ?>
 			<div class='top flex flex-wrap flex-items-center flex-justify-between'>
 				<div class='breadc uppercase grow base1 base0-mm flex flex-items-center flex-justify-center flex-justify-start-mm'>
+					<div class=''>
 					<?php
 						printf( "Szukana fraza: <span class='bold'>%s</span>", $_GET[ 'nazwa' ] );
 						
 					?>
+					</div>
+					
 				</div>
 				<div class='switcher grow base1 base0-mm flex flex-items-center flex-justify-center flex-justify-end-mm'>
 					<?php do_action( 'num_switcher' ); ?>

@@ -25,7 +25,8 @@
 		
 	},
 	root.bazar = {
-		basePath: '',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
+		basePath: '/PiotrM/wp_merkuriusz',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
+		// basePath: '',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
 		logger: /logger/i.test(window.location.hash),		// czy wyświetlać komunikaty o wywoływaniu funkcji
 		mobile: /mobile/i.test(window.location.hash) || undefined,		// czy aktualnie używane urządzenie jest urządzeniem mobilnym
 		
@@ -621,6 +622,7 @@
 				slider
 				.on({
 					set: function( e, direction ){
+						console.log( 'set' );
 						last = current;
 						
 						if( direction === 'next' ){
@@ -648,6 +650,11 @@
 						.removeClass( 'active' ); */
 						
 						var TL = new TimelineLite({
+							onStart: function(){
+								obrazy.eq( current ).css( 'z-index', 2 );
+								obrazy.eq( current ).siblings().css( 'z-index', 1 );
+								
+							},
 							onComplete: function(){
 								lock = false;
 								
@@ -768,6 +775,7 @@
 						
 					},
 					start: function( e ){
+						console.log( 'start' );
 						if( itrv === null ){
 							itrv = window.setInterval(function(){
 								slider.triggerHandler( 'next' );
@@ -800,9 +808,14 @@
 				});
 				
 				paginacja.click(function( e ){
-					slider.triggerHandler( 'stop' );
-					current = $(this).index();
-					slider.triggerHandler( 'set' );
+					var index = $(this).index();
+					console.log( [ index, current ] );
+					if( index !== current ){
+						slider.triggerHandler( 'stop' );
+						current = index;
+						slider.triggerHandler( 'set' );
+						
+					}
 					
 				});
 				
@@ -1043,17 +1056,27 @@
 			
 			if(logger) console.log('page.index()');
 			
-			/*
-			// breadcrumb
-			(function( bread, cat, subcat ){
-				if( cat.length !== '' && subcat.length !== '' ){
+			/* breadcrumb */
+			(function( breadcrumb ){
+				try{
+					var parts = [];
+					$( 'ul.menu > .item.active, ul.menu > .item.active .item.active' ).each(function(){
+						parts.push( $(this).find( '.head:first > .title' ).text().trim() );
+						
+					});
+					// console.log( parts );
+					// parts.push( produkt_data.NAME );
+					
+					breadcrumb.text( parts.join( " | " ) );
 					
 				}
-				bread.text( [cat, subcat].join( ' > ' ) );
+				catch( err ){
+					console.error( err );
+					
+				}
 				
 			})
-			( $( '#grid .breadc' ), $( 'ul.menu > .item.active' ).attr( 'item-title' ), $( 'ul.menu > .item.active > .sub .item.active' ).attr( 'item-title' ) );
-			*/
+			( $( '#grid > .top > .breadc' ) );
 			
 		},
 		produkt: function(){
@@ -1063,17 +1086,19 @@
 			if(logger) console.log('page.produkt()');
 			
 			if( $( 'body#single' ).length > 0 ){
+				
 				/* breadcrumb */
 				(function( breadcrumb ){
 					try{
 						var parts = [];
-						$( 'ul.menu .active' ).each(function(){
-							parts.push( $(this).find( '.head:first > .title' ).text() );
+						$( 'ul.menu > .item.active, ul.menu > .item.active .item.active' ).each(function(){
+							parts.push( $(this).find( '.head:first > .title' ).text().trim() );
 							
 						});
+						// console.log( parts );
 						parts.push( produkt_data.NAME );
 						
-						breadcrumb.text( parts.join( " > " ) );
+						breadcrumb.text( parts.join( " | " ) );
 						
 					}
 					catch( err ){

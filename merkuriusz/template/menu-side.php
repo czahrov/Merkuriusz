@@ -2001,7 +2001,7 @@
 				
 				foreach( $cat_data['items'] as $item ){
 					$item_slug = apply_filters( 'stdName', $item['title'] );
-					if( $query[1] === $item_slug ){
+					if( $query[0] === $cat_slug && $query[1] === $item_slug ){
 						$item_active = 'active';
 						
 					}
@@ -2063,7 +2063,7 @@
 							foreach( $item['sub'] as $subitem ){
 								$subitem_slug = apply_filters( 'stdName', $subitem[ 'title' ] );
 								$t = explode( "-", end( $query ) );
-								if( $t[1] === $subitem_slug ){
+								if( $query[0] === $cat_slug && $query[1] === $item_slug && $t[1] === $subitem_slug ){
 									$subitem_active = 'active';
 								}
 								else{
