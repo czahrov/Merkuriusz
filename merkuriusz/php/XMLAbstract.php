@@ -538,7 +538,7 @@ class XMLAbstract{
 		/* wczytanie indexera ( drogowskazu ) */
 		if( empty( $arr ) ){
 			$index_url = "{$this->_config['cache']}/indexer.php";
-			//if( !file_exists( $index_url ) ) return false;
+			if( !file_exists( $index_url ) ) return false;
 			
 			$content = file_get_contents( $index_url );
 			//if( $content === false ) return false;

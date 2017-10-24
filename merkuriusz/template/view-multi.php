@@ -20,8 +20,14 @@ echo "-->";
 					</div>
 					
 				</div>
-				<div class='switcher grow base1 base0-mm flex flex-items-center flex-justify-center flex-justify-end-mm'>
-					<?php do_action( 'num_switcher' ); ?>
+				<div class='switcher grow base1 base0-mm flex flex-items-center flex-justify-between'>
+					<div class='page'>
+						<?php do_action( 'page_switcher', count( $XMLData['items'] ) ); ?>
+						
+					</div>
+					<div class='num flex flex-items-center flex-justify-center flex-justify-end-mm'>
+						<?php do_action( 'num_switcher' ); ?>
+					</div>
 				</div>
 				
 			</div>

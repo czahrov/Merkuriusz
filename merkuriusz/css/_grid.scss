@@ -4,9 +4,55 @@
 	.switcher{
 		min-height: 60px;
 		
-		& > a{
+		& > .page{
+			
+			& > .current{
+				position: relative;
+				
+				& > .item{
+					
+					& > .num{
+						
+					}
+					
+					& > .icon{
+						padding-left: 4px;
+						font-size: 16px;
+						
+					}
+					
+				}
+				
+				& > .items{
+					position: absolute;
+					width: 220px;
+					top: 100%;
+					left: 0;
+					z-index: 10;
+					
+				}
+				
+				&:not(:hover){
+					
+					& > .items{
+						display: none;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		& > .num{
+			
+		}
+		
+		a{
 			margin-left: 10px;
-			width: 34px;
+			margin-bottom: 10px;
+			min-width: 34px;
 			height: 34px;
 			color: #000;
 			background-color: $color-pagin-szary;

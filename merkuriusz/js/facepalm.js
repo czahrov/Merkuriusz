@@ -622,7 +622,6 @@
 				slider
 				.on({
 					set: function( e, direction ){
-						console.log( 'set' );
 						last = current;
 						
 						if( direction === 'next' ){
@@ -775,7 +774,6 @@
 						
 					},
 					start: function( e ){
-						console.log( 'start' );
 						if( itrv === null ){
 							itrv = window.setInterval(function(){
 								slider.triggerHandler( 'next' );
@@ -809,7 +807,7 @@
 				
 				paginacja.click(function( e ){
 					var index = $(this).index();
-					console.log( [ index, current ] );
+					
 					if( index !== current ){
 						slider.triggerHandler( 'stop' );
 						current = index;

@@ -380,6 +380,46 @@ add_action( 'num_switcher', function( $arg ){
 	
 } );
 
+add_action( 'page_switcher', function( $arg ){
+	
+	$ret = "";
+	$num = !empty( $_GET[ 'num' ] )?( (int)$_GET[ 'num' ] ):( config( 'num' ) !== false?( config( 'num' ) ):( 12 ) );	
+	$strona = empty( $_GET[ 'strona' ] )?( 1 ):( (int)$_GET[ 'strona' ] );
+	
+	if( $arg < $num ) return false;
+	
+	$ret .= "<div class='current pointer flex flex-wrap'>";
+		$ret .= "<a class='item flex flex-items-center flex-justify-center'>
+			<div class='num'>$strona</div>
+			<div class='icon fa fa-angle-double-down'></div>
+		</a>";
+		
+		$ret .= "<div class='items bg-light flex flex-wrap'>";
+		for( $i=1; $i<=ceil( $arg / $num ); $i++ ){
+			$active = $strona == $i?( 'active' ):( '' );
+			$ret .= "<div class='item'>";
+			$ret .= sprintf( "<a class='flex flex-items-center flex-justify-center $active' href='%s'>%s</a>", 
+				home_url(
+					sprintf( "kategoria/?%s=%s&num={$num}&strona={$i}",
+						!empty( $_GET[ 'nazwa' ] )?( 'nazwa' ):( 'cat' ),
+						!empty( $_GET[ 'nazwa' ] )?( $_GET[ 'nazwa' ] ):( $_GET[ 'cat' ] )
+						
+					)
+				),
+				
+				$i
+			);
+			$ret .= "</div>";
+		}
+		$ret .= "</div>";
+		
+	$ret .= "</div>";
+	
+	
+	echo $ret;
+	
+} );
+
 add_action( 'kafelki_kategoria', function( $arg ){
 	/*
 	Array(
@@ -922,6 +962,22 @@ add_action( 'single-dane-multi', function( $arg ){
 	echo		"</div>
 					
 				</div>";
+	
+} );
+
+add_action( 'print_title', function( $arg ){
+	$site_name = get_bloginfo( 'name' );
+	
+	if( is_home() ){
+		$page_name = "Strona główna";
+		
+	}
+	else{
+		$page_name = get_post()->post_title;
+		
+	}
+	
+	printf( "%s | %s", $page_name, $site_name );
 	
 } );
 
