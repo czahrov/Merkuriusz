@@ -159,6 +159,157 @@
 				console.log('page.default()');
 			}
 			
+			/* popup hint */
+			(function( popup, box, close, button ){
+				var delay = 20 * 1000;
+				var btn_duration = 1;
+				var popup_duration = .5;
+				var anim;
+				
+				/* animacja */
+				(function(){
+					anim = new TimelineLite({
+						paused: true,
+						onStart: function(){
+							if( !this.reversed() ){
+								$(popup).addClass( 'open' );
+								
+							}
+							
+						},
+						onReverseComplete: function(){
+							$(popup).removeClass( 'open' );
+							
+						},
+						
+					})
+					.add( 'start', 0 )
+					.add(
+						TweenLite.fromTo(
+							popup,
+							popup_duration,
+							{
+								opacity: 0,
+							},
+							{
+								opacity: 1,
+							}
+						), 'start'
+					)
+					.add(
+						TweenLite.fromTo(
+							box,
+							popup_duration,
+							{
+								opacity: 0,
+								yPercent: -50,
+							},
+							{
+								opacity: 1,
+								yPercent: 0,
+							}
+						), 'start+=' + popup_duration
+					);
+					
+				})();
+				
+				button
+				.on({
+					init: function( e ){
+						button.triggerHandler( 'hide', true );
+						window.setTimeout(function(){
+							button.triggerHandler( 'show' );
+							
+						}, delay);
+						
+					},
+					show: function( e ){
+						TweenLite.to(
+							$(this),
+							btn_duration,
+							{
+								xPercent: 0,
+								x: 0,
+								ease: Power2.easeOut,
+								onStart: function(){
+									$(button).addClass( 'open' );
+									
+								},
+							}
+						);
+						
+					},
+					hide: function( e, fast ){
+						if( fast === true ){
+							TweenLite.set(
+								$(this),
+								{
+									xPercent: 100,
+									x: 50,
+								}
+							);
+							
+						}
+						else{
+							TweenLite.to(
+								$(this),
+								btn_duration,
+								{
+									xPercent: 100,
+									x: 50,
+									ease: Power2.easeIn,
+								}
+							);
+							
+						}
+						
+					},
+					click: function( e ){
+						popup.triggerHandler( 'open' );
+						
+					},
+					
+				});
+				
+				popup
+				.on({
+					init: function( e ){
+						button.triggerHandler( 'init' );
+						
+					},
+					open: function( e ){
+						anim.play();
+						
+					},
+					close: function( e ){
+						anim.reverse();
+						
+					},
+					click: function( e ){
+						popup.triggerHandler( 'close' );
+						
+					},
+					
+				});
+				
+				box.click( function( e ){
+					e.stopPropagation();
+					
+				} );
+				
+				close.click( function( e ){
+					popup.triggerHandler( 'close' );
+					
+				} );
+				
+				popup.triggerHandler( 'init' );
+				
+			})
+			( $( '.popup-hint' ), 
+			$( '.popup-hint > .box' ), 
+			$( '.popup-hint > .box > .btn-close' ), 
+			$( '.popup-hint-button' ) );
+			
 			/* oznaczanie aktywnych pozycji w menu głównym */
 			(function( items, sklep ){
 				var url = window.location.origin + window.location.pathname.match( /^(.*)\/$/ )[1];

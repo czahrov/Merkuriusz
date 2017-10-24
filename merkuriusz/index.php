@@ -212,6 +212,7 @@
 			
 		</div>
 		
+	
 	<?php get_template_part( "template/page", "top" ); ?>
 	<!-- SIDEBAR -->
 	<div class="grid flex flex-column flex-row-mm flex-items-start-mm">
