@@ -1,0 +1,113 @@
+#oferta{
+	
+	& > .box{
+		
+		& > .head{
+			margin-top: 74px;
+			height: 40px;
+			
+			& > .title{
+				margin-right: 70px;
+				font-size: 38px;
+				
+			}
+			
+			& > .filters{
+				
+				& > .item{
+					padding: 10px 0;
+					margin: 0 18px;
+					font-size: 14px;
+					border-bottom: solid 4px transparent;
+					transition: border .3 linear;
+					
+					&.active,
+					&:hover{
+						border-bottom-color: $color-szary3;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		& > .kafelki{
+			margin: 100px -10px 0;
+			
+			& > .item{
+				margin-bottom: 36px;
+				
+				& > .box{
+					padding: 10px;
+					
+					& > .img{
+						height: 180px;
+						background-color: silver;
+						background-image: url( "https://placeimg.com/100/100/tech" );
+						
+					}
+					
+					& > .title{
+						height: 80px;
+						font-size: 34px;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	& > .popup_oferta{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(255,255,255,0.7);
+		z-index: 60;
+		
+		& > .box{
+			position: relative;
+			height: 854px;
+			max-height: 90%;
+			background-color: silver;
+			/* background-image: url( "https://placeimg.com/500/500/tech" ); */
+			
+			& > .top{
+				position: absolute;
+				height: 90px;
+				top: 0;
+				right: 0;
+				
+				& > .title{
+					padding: 0 40px;
+					font-size: 18px;
+					background-color: transparentize( map-get( $generator, blue2 ), 0.2 );
+					
+				}
+				
+				& > .btn-close{
+					width: 90px;
+					font-size: 40px;
+					
+				}
+				
+			}
+			
+		}
+		
+		&:not(.open){
+			display: none;
+			
+		}
+		
+	}
+	
+}
+
