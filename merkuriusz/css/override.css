@@ -31,6 +31,14 @@
   background-color: #0af;
 }
 
+.font-blue3 {
+  color: #2997F9;
+}
+
+.bg-blue3 {
+  background-color: #2997F9;
+}
+
 .font-gray {
   color: #e7e7e7;
 }
@@ -69,6 +77,14 @@
 
 .bg-gray5 {
   background-color: #666666;
+}
+
+.font-gray6 {
+  color: #cecece;
+}
+
+.bg-gray6 {
+  background-color: #cecece;
 }
 
 .font-pink {
@@ -1495,6 +1511,36 @@ h2 > .about-us-one {
   right: 0;
   left: 0;
   bottom: 0;
+}
+
+#kalendarze > .tarnow.kafelki {
+  max-width: 1170px;
+}
+#kalendarze > .tarnow.kafelki > .item {
+  margin-top: 20px;
+}
+#kalendarze > .tarnow.kafelki > .item > .box {
+  margin: 15px;
+  padding: 47px 0;
+  border: solid 1px #cecece;
+  -webkit-transition-property: background, font;
+  transition-property: background, font;
+}
+#kalendarze > .tarnow.kafelki > .item > .box > img {
+  display: block;
+  margin: auto;
+  padding: 0 10px;
+  max-width: 100%;
+}
+#kalendarze > .tarnow.kafelki > .item > .box > .title {
+  margin: 10px 0;
+  padding: 20px;
+  font-size: 14px;
+  font-family: 'Montserrat-SemiBold';
+}
+#kalendarze > .tarnow.kafelki > .item > .box:hover {
+  background-color: #2997F9;
+  color: #fff;
 }
 
 .reklama360 {

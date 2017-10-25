@@ -35,3 +35,47 @@
 	}
 	
 }
+
+#kalendarze{
+	
+	& > .tarnow.kafelki{
+		max-width: 1170px;
+		
+		& > .item{
+			margin-top: 20px;
+			
+			& > .box{
+				margin: 15px;
+				padding: 47px 0;
+				border: solid 1px map-get( $generator, gray6 );
+				transition-property: background, font;
+				
+				& > img{
+					display: block;
+					margin: auto;
+					padding: 0 10px;
+					max-width: 100%;
+					
+				}
+				
+				& > .title{
+					margin: 10px 0;
+					padding: 20px;
+					font-size: 14px;
+					font-family: 'Montserrat-SemiBold';
+					
+				}
+				
+				&:hover{
+					background-color: map-get( $generator, blue3 );
+					color: #fff;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

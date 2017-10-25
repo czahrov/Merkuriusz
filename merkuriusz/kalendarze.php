@@ -6,7 +6,7 @@
 
 ?>
 
-<body>
+<body id='kalendarze'>
 	
 	<?php get_template_part( "template/page", "top" ); ?>
 	<?php get_template_part( "template/menu", "top" ); ?>
@@ -43,16 +43,27 @@
 	
 </div>
 
-<div class="container-fluid single-page">
+<div class="tarnow kafelki grid flex flex-wrap">
+	<?php
+		$pages = get_pages( array(
+			'parent' => get_page_by_title( 'Kolekcja "Tarnów"' )->ID,
+			
+		) );
 		
-		<div class="col-md-12"><!-- col-md-12 -->
-
-			<div class="promo-kal">
-				<a class='bg-center bg-cover' href="<?php echo home_url( 'kalendarze/kolekcja-tarnow' ); ?>" style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/kalendarze/kalendarze_tarnow.jpg);'>
-			</a>
+		foreach( $pages as $page ):
+	?>
+	<div class='item base4'>
+		<a class='box pointer' href='<?php echo get_permalink( $page->ID ); ?>'>
+			<img src='<?php echo get_the_post_thumbnail_url( $page->ID ); ?>'>
+			<div class='title text-center'>
+				<?php echo $page->post_title; ?>
 			</div>
+			
+		</a>
 		
-		</div><!-- /col-md-12 -->
+	</div>
+	<?php endforeach; ?>
+	
 </div>
 
 <div class="container-fluid single-page">
