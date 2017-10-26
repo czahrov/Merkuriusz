@@ -25,8 +25,8 @@
 		
 	},
 	root.bazar = {
-		// basePath: '/PiotrM/wp_merkuriusz',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
-		basePath: '',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
+		basePath: '/PiotrM/wp_merkuriusz',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
+		// basePath: '',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
 		logger: /logger/i.test(window.location.hash),		// czy wyświetlać komunikaty o wywoływaniu funkcji
 		mobile: /mobile/i.test(window.location.hash) || undefined,		// czy aktualnie używane urządzenie jest urządzeniem mobilnym
 		
@@ -1022,7 +1022,7 @@
 				
 			})();
 			
-			/* popupy */
+			/* popupy katalogów pdf */
 			(function( popup, box, close, viewbox, views, katalog_pic, btnOdziez, btnDlugPlas, btnDlugMetal, btnTorby, btnPompony, btnKubki, btnSmycze ){
 				var lock = false;
 				var duration = 0.5;
@@ -1030,7 +1030,7 @@
 				popup
 				.on({
 					open: function( e, name, img ){
-						console.log( img );
+						console.log( [ name, img ] );
 						if( lock ) return false;
 						lock = true;
 						
@@ -1184,12 +1184,12 @@
 				} );
 				
 			})
-			( $( '#home > .popup' ),
-			$( '#home > .popup > .box' ),
-			$( '#home > .popup > .box > .close-fp' ),
-			$( '#home > .popup > .box > .viewbox' ),
-			$( '#home > .popup > .box > .viewbox > .view' ),
-			$( '#home > .popup > .box > .viewbox > .view .pic img' ),
+			( $( '#home > .popup.katalog' ),
+			$( '#home > .popup.katalog > .box' ),
+			$( '#home > .popup.katalog > .box > .close-fp' ),
+			$( '#home > .popup.katalog > .box > .viewbox' ),
+			$( '#home > .popup.katalog > .box > .viewbox > .view' ),
+			$( '#home > .popup.katalog > .box > .viewbox > .view .pic img' ),
 			$( '#home .kafelki .item.odziez .link' ),
 			$( '#home > .catalog-slider .catalog-element > .catalog.dlugPlast' ),
 			$( '#home > .catalog-slider .catalog-element > .catalog.dlugMetal' ),

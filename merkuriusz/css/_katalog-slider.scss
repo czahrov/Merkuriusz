@@ -1,3 +1,109 @@
+.popup.katalog{
+	position: fixed;
+	margin: initial;
+	padding: initial;
+	max-width: initial;
+	width: initial;
+	height: initial;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.7);
+	transform: none;
+	border: none;
+	z-index: 20;
+	
+	& > .box{
+		position: relative;
+		padding: 60px;
+		
+		& > .close-fp{
+			position: absolute;
+			width: 40px;
+			height: 40px;
+			top: 0;
+			right: 0;
+			
+		}
+		
+		& > .viewbox{
+			
+			& > .view{
+				
+				& > .top{
+					margin-bottom: 50px;
+					font-size: 18px;
+					
+				}
+				
+				& > .mid{
+					
+					& > .pic{
+						
+						& > .img{
+							padding-right: 40px;
+							
+							& > img{
+								width: 100%;
+							}
+							
+						}
+						
+						& > .text{
+							margin-top: 26px;
+							font-size: 12px;
+							
+						}
+						
+					}
+					
+					& > .items{
+						
+						& > .item{
+							position: relative;
+							padding: 15px 12px;
+							
+							& > .link{
+								height: 50px;
+								border: solid 1px $color-szary3;
+								font-size: 14px;
+								
+								
+							}
+							
+							.hitbox{
+								position: absolute;
+								top: 0;
+								left: 0;
+								right: 0;
+								bottom: 0;
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+				&.odziez{
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	&:not(.open){
+		display: none;
+		
+	}
+	
+}
+
 .catalog-slider{
 	border: none;
 	

@@ -637,67 +637,6 @@ h2 > .about-us-one {
   min-height: 60px;
 }
 
-#home > .popup {
-  position: fixed;
-  margin: initial;
-  padding: initial;
-  max-width: initial;
-  width: initial;
-  height: initial;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  -webkit-transform: none;
-          transform: none;
-  border: none;
-  z-index: 20;
-}
-#home > .popup > .box {
-  position: relative;
-  padding: 60px;
-}
-#home > .popup > .box > .close-fp {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 0;
-  right: 0;
-}
-#home > .popup > .box > .viewbox > .view > .top {
-  margin-bottom: 50px;
-  font-size: 18px;
-}
-#home > .popup > .box > .viewbox > .view > .mid > .pic > .img {
-  padding-right: 40px;
-}
-#home > .popup > .box > .viewbox > .view > .mid > .pic > .img > img {
-  width: 100%;
-}
-#home > .popup > .box > .viewbox > .view > .mid > .pic > .text {
-  margin-top: 26px;
-  font-size: 12px;
-}
-#home > .popup > .box > .viewbox > .view > .mid > .items > .item {
-  position: relative;
-  padding: 15px 12px;
-}
-#home > .popup > .box > .viewbox > .view > .mid > .items > .item > .link {
-  height: 50px;
-  border: solid 1px #ebebeb;
-  font-size: 14px;
-}
-#home > .popup > .box > .viewbox > .view > .mid > .items > .item .hitbox {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-#home > .popup:not(.open) {
-  display: none;
-}
 #home .home-top-right {
   height: 400px;
 }
@@ -1437,6 +1376,68 @@ h2 > .about-us-one {
 }
 #top #basket > .icon {
   margin-left: 26px;
+}
+
+.popup.katalog {
+  position: fixed;
+  margin: initial;
+  padding: initial;
+  max-width: initial;
+  width: initial;
+  height: initial;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-transform: none;
+          transform: none;
+  border: none;
+  z-index: 20;
+}
+.popup.katalog > .box {
+  position: relative;
+  padding: 60px;
+}
+.popup.katalog > .box > .close-fp {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 0;
+}
+.popup.katalog > .box > .viewbox > .view > .top {
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+.popup.katalog > .box > .viewbox > .view > .mid > .pic > .img {
+  padding-right: 40px;
+}
+.popup.katalog > .box > .viewbox > .view > .mid > .pic > .img > img {
+  width: 100%;
+}
+.popup.katalog > .box > .viewbox > .view > .mid > .pic > .text {
+  margin-top: 26px;
+  font-size: 12px;
+}
+.popup.katalog > .box > .viewbox > .view > .mid > .items > .item {
+  position: relative;
+  padding: 15px 12px;
+}
+.popup.katalog > .box > .viewbox > .view > .mid > .items > .item > .link {
+  height: 50px;
+  border: solid 1px #ebebeb;
+  font-size: 14px;
+}
+.popup.katalog > .box > .viewbox > .view > .mid > .items > .item .hitbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.popup.katalog:not(.open) {
+  display: none;
 }
 
 .catalog-slider {

@@ -85,7 +85,7 @@ if( isAjax() ){
 				$mailer->CharSet = 'utf-8';
 				$mailer->Encoding = 'base64';
 				$mailer->setLanguage( 'pl' );
-				$mailer->setFrom( 'noreply@poligon.scepter.pl', 'Zamówienie online - Merkuriusz' );
+				$mailer->setFrom( "noreply@{$_SERVER[ 'HTTP_HOST' ]}", 'Zamówienie online - Merkuriusz' );
 				$mailer->addAddress( $safe[ 'mail' ] );
 				$mailer->addAttachment( $_FILES[ 'file' ][ 'tmp_name' ], $_FILES[ 'file' ][ 'name' ] );
 				$mailer->Subject = sprintf( "%s składa zamówienie", $safe[ 'imie' ] );
@@ -181,7 +181,9 @@ else{
 	
 	}
 	
+	get_header();
 	get_template_part( 'template/koszyk' );
+	get_footer();
 	
 }
 
