@@ -1675,6 +1675,26 @@ h2 > .about-us-one {
     margin-left: 50px;
   }
 }
+.newsletter > .box > .status > .icons {
+  margin-right: 20px;
+}
+.newsletter > .box > .status > .icons > .icon {
+  display: none;
+  font-size: 40px;
+}
+.newsletter > .box > .status > .msg {
+  font-size: 16px;
+  line-height: 30px;
+}
+.newsletter > .box > .status.pass > .icons > .icon.pass {
+  display: block;
+}
+.newsletter > .box > .status.info > .icons > .icon.info {
+  display: block;
+}
+.newsletter > .box > .status.fail > .icons > .icon.fail {
+  display: block;
+}
 
 footer > .infobar > .box {
   margin-top: 50px;

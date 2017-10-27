@@ -1198,6 +1198,90 @@
 			$( '#home > .catalog-slider .catalog-element > .catalog.kubki' ),
 			$( '#home > .catalog-slider .catalog-element > .catalog.smycze' ) );
 			
+			/* newsletter */
+			(function( panel, form, input, button, status ){
+				var unreg = false;
+				
+				panel
+				.on({
+					init: function( e ){
+						status.hide();
+						
+					},
+					msg: function( e, stat, msg ){
+						status
+						.removeClass( 'pass info fail' )
+						.addClass( stat )
+						.children( '.msg' )
+						.html( msg );
+						
+						status.slideDown();
+						
+					},
+					send: function( e ){
+						var url = "newsletter?@mode@=@data@";
+						
+						$.ajax({
+							type: 'GET',
+							url: url.replace( /@mode@/, unreg===false?( 'add' ):( 'unreglink' ) ).replace( /@data@/, input.val().trim() ),
+							success: function( data ){
+								try{
+									var resp = JSON.parse( data );
+									panel.triggerHandler( 'msg', [ resp.status, resp.msg ] );
+									
+									if( resp.status === 'info' ){
+										unreg = true;
+										
+									}
+									else{
+										unreg = false;
+										
+									}
+									
+								}
+								catch( err ){
+									console.error( err );
+									console.info( data );
+									panel.triggerHandler( 'msg', [ 'fail', 'Błąd odpowiedzi serwera.<br>Proszę spróbować ponownie za chwilę.' ] );
+									
+								}
+								
+							},
+							error: function(){
+								panel.triggerHandler( 'msg', [ 'fail', 'Nie udało się nawiązać połączenia z serwerem.<br>Spróbuj ponownie za chwilę.' ] );
+								
+							},
+							
+						});
+						
+					},
+					
+				});
+				
+				panel.triggerHandler( 'init' );
+				
+				button.click( function( e ){
+					panel.triggerHandler( 'send' );
+					
+				} );
+				
+				status.click( function( e ){
+					$(this).slideUp();
+					
+				} );
+				
+				input.change( function( e ){
+					unreg = false;
+					
+				} );
+				
+			})
+			( $( '#home > .newsletter' ), 
+			$( '#home > .newsletter .form' ), 
+			$( '#home > .newsletter .form > .mail' ), 
+			$( '#home > .newsletter .form > .send' ), 
+			$( '#home > .newsletter .status' ) );
+			
 		},
 		kategoria: function(){
 			var addon = root.addon;

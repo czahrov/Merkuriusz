@@ -74,6 +74,42 @@
 			
 		}
 		
+		& > .status{
+			
+			& > .icons{
+				margin-right: 20px;
+				
+				& > .icon{
+					display: none;
+					font-size: 40px;
+					
+				}
+				
+			}
+			
+			& > .msg{
+				font-size: 16px;
+				line-height: 30px;
+				
+			}
+			
+			&.pass > .icons > .icon.pass{
+				display: block;
+				
+			}
+			
+			&.info > .icons > .icon.info{
+				display: block;
+				
+			}
+			
+			&.fail > .icons > .icon.fail{
+				display: block;
+				
+			}
+			
+		}
+		
 	}
 	
 }
