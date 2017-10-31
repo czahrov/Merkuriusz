@@ -209,6 +209,12 @@
 						'subtitle' => 'Kolekcja 2016',
 						'items' => array(
 							array(
+								'class' => 'hide',
+								'url' => '',
+								'img' => '',
+								'title' => '',
+							),
+							/* array(
 								'title' => 'Plecaki',
 								'url' => home_url( 'kategoria?cat=gadzety_reklamowe,torby_i_plecaki,torby_i_plecaki-plecaki' ),
 							),
@@ -219,7 +225,7 @@
 							array(
 								'title' => 'Czapki z daszkiem',
 								'url' => home_url( 'kategoria?cat=gadzety_reklamowe,tekstylia,tekstylia-czapki_z_daszkiem' ),
-							),
+							), */
 							
 						),
 						
@@ -370,7 +376,7 @@
 					<?php echo $katalog[ 'title' ]; ?>
 				</div>
 				<div class='mid flex flex-items-start'>
-					<div class='pic base4 flex flex-column'>
+					<div class='pic base4 no-shrink flex flex-column'>
 						<div class='img'>
 							<img/>
 						</div>

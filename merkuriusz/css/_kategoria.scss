@@ -1,3 +1,39 @@
 #kategoria{
 	
+	.odziez_reklamowa{
+		margin: 0 -10px;
+		
+		& > .item{
+			display: inline-block;
+			margin: 10px;
+			transition-property: background, font, border;
+			transition: .3s linear;
+			
+			& > a{
+				display: block;
+				padding: 30px 20px;
+				/* min-width: 240px; */
+				height: 60px;
+				border:{
+					style: solid;
+					width: 1px;
+					color: map-get( $generator, gray2 );
+				};
+				line-height: 0;
+				font-size: 16px;
+				
+			}
+			
+			&:hover,
+			&.active{
+				background-color: map-get( $generator, blue4 );
+				border-color: map-get( $generator, blue4 );
+				color: #fff;
+				
+			}
+			
+		}
+		
+	}
+	
 }

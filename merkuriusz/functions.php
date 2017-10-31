@@ -1,4 +1,53 @@
 <?php
+/* obsługa błędów */
+set_error_handler( function( $e_level, $e_msg, $e_file, $e_line, $e_info ){
+	$dst = "";
+	$type = "";
+	if( in_array( $e_level , array( E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR, E_RECOVERABLE_ERROR ) ) ){
+		$dst = ".error";
+		$type = "ERROR";
+		
+	}
+	elseif( in_array( $e_level, array( E_WARNING, E_CORE_WARNING, E_COMPILE_WARNING, E_USER_WARNING ) ) ){
+		$dst = ".warning";
+		$type = "WARNING";
+		
+	}
+	else{
+		$dst = ".info";
+		$type = "INFO";
+		
+	}
+	
+	if( in_array( $type, array( 'ERROR', 'WARNING' ) ) ){
+		
+		printf( "\r\n<!--\r\n%s [%s]: %s\r\n%s[%s]\r\n-->", 
+			$type,
+			$e_level,
+			$e_msg,
+			$e_file,
+			$e_line
+			
+		);
+		
+		$msg = sprintf( "%s\r\n%s [%s]: %s\r\n%s[line: %s]\r\n-----\r\n",
+			date( "d/m/Y H:i:s" ),
+			$type,
+			$e_level,
+			$e_msg,
+			$e_file,
+			$e_line
+			
+		);
+		
+		error_log( $msg, 3, __DIR__ . "/" . $dst );
+		
+		if( $type === 'ERROR' ) die();
+		
+	}
+	
+} );
+
 add_theme_support('post-thumbnails');
 
 if( !is_admin() ){
@@ -1032,6 +1081,18 @@ add_action( 'print_title', function( $arg ){
 	}
 	
 	printf( "%s | %s", $page_name, $site_name );
+	
+} );
+
+add_action( 'odziez_reklamowa', function( $arg ){
+	if( stripos( $_GET[ 'cat' ], 'odziez_reklamowa' ) !== false ){
+		echo "<div class='odziez_reklamowa'>
+			<div class='item hide'>
+				<a class=''></a>
+			</div>
+		</div>";
+		
+	}
 	
 } );
 

@@ -89,7 +89,7 @@ echo "<!--";
 // echo "\r\n find_colors: {$XMLData[ 'find_colors' ]}";
 // echo "\r\n kolory: " . count( $XMLData[ 'colors' ] );
 // print_r( $XMLData[ 'colors' ] );
-// print_r( $XMLData['items'][0] );
+print_r( $XMLData['items'][0] );
 echo "\r\n-->";
 
 ?>
@@ -101,7 +101,7 @@ echo "\r\n-->";
 		var produkt_colors = JSON.parse( '<?php echo addslashes( json_encode( $XMLData[ 'colors' ] ) ); ?>' );
 		
 	</script>
-	<div class='popup pointer flex flex-items-center flex-justify-center'>
+	<div class='popup produkt pointer flex flex-items-center flex-justify-center'>
 		<div class='box flex flex-column'>
 			<div class='header flex no-shrink flex-self-stretch'>
 				<div class='title base0 grow flex flex-items-center'>

@@ -39,6 +39,14 @@
   background-color: #2997F9;
 }
 
+.font-blue4 {
+  color: #00abfd;
+}
+
+.bg-blue4 {
+  background-color: #00abfd;
+}
+
 .font-gray {
   color: #e7e7e7;
 }
@@ -1167,6 +1175,34 @@ h2 > .about-us-one {
   padding: 10px;
 }
 
+#kategoria .odziez_reklamowa {
+  margin: 0 -10px;
+}
+#kategoria .odziez_reklamowa > .item {
+  display: inline-block;
+  margin: 10px;
+  -webkit-transition-property: background, font, border;
+  transition-property: background, font, border;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+#kategoria .odziez_reklamowa > .item > a {
+  display: block;
+  padding: 30px 20px;
+  /* min-width: 240px; */
+  height: 60px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ebebeb;
+  line-height: 0;
+  font-size: 16px;
+}
+#kategoria .odziez_reklamowa > .item:hover, #kategoria .odziez_reklamowa > .item.active {
+  background-color: #00abfd;
+  border-color: #00abfd;
+  color: #fff;
+}
+
 .navbar .basket, .navbar .basket:focus, .navbar .basket:hover {
   color: #fff;
   outline: none;
@@ -1393,7 +1429,7 @@ h2 > .about-us-one {
   -webkit-transform: none;
           transform: none;
   border: none;
-  z-index: 20;
+  z-index: 110;
 }
 .popup.katalog > .box {
   position: relative;

@@ -1907,6 +1907,87 @@
 						),
 					),
 				),
+				'Odzież reklamowa' => array(
+					'class' => 'hide',
+					'items' => array(
+						array(
+							'title' => 'Bawełna organiczna',
+						),
+						array(
+							'title' => 'Bielizna',
+						),
+						array(
+							'title' => 'Bistro',
+						),
+						array(
+							'title' => 'Bluzy',
+						),
+						array(
+							'title' => 'Czapki i akcesoria',
+						),
+						array(
+							'title' => 'Dom i wnętrze',
+						),
+						array(
+							'title' => 'Kurtki',
+						),
+						array(
+							'title' => 'Materiały eksploatacyjne',
+						),
+						array(
+							'title' => 'New',
+						),
+						array(
+							'title' => 'Odzież biznesowa',
+						),
+						array(
+							'title' => 'Odzież dziecięca',
+						),
+						array(
+							'title' => 'Odzież robocza',
+						),
+						array(
+							'title' => 'Odzież sportowa',
+						),
+						array(
+							'title' => 'Outlet',
+						),
+						array(
+							'title' => 'Polary',
+						),
+						array(
+							'title' => 'Polo',
+						),
+						array(
+							'title' => 'Promocje',
+						),
+						array(
+							'title' => 'Ręczniki i szlafroki',
+						),
+						array(
+							'title' => 'Softshelle',
+						),
+						array(
+							'title' => 'Spodnie',
+						),
+						array(
+							'title' => 'Sublimation',
+						),
+						array(
+							'title' => 'Torby',
+						),
+						array(
+							'title' => 'Tshirty',
+						),
+						array(
+							'title' => 'Web exclusive',
+						),
+						array(
+							'title' => 'Zdrowie i uroda',
+						),
+						
+					),
+				),
 			);
 			
 /*

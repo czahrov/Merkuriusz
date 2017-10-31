@@ -1282,6 +1282,30 @@
 			$( '#home > .newsletter .form > .send' ), 
 			$( '#home > .newsletter .status' ) );
 			
+			/* menu odzieży reklamowej w popupie */
+			(function( panel, proto, items ){
+				
+				items.each(function(){
+					var href = $(this).attr( 'href' );
+					var title = $(this).attr( 'item-title' );
+					
+					proto
+					.clone()
+					.removeClass( 'hide' )
+					.appendTo( panel )
+					.children( 'a' )
+					.attr( 'href', href )
+					.siblings( '.link' )
+					.text( title );
+					
+				});
+				
+			})
+			( $( '.popup.katalog .view.odziez .items' ), 
+			$( '.popup.katalog .view.odziez .items > .item.hide' ),
+			$( 'ul.menu > .item[item-title="Odzież reklamowa"] > .sub > .item' ) );
+			
+			
 		},
 		kategoria: function(){
 			var addon = root.addon;
@@ -1310,6 +1334,42 @@
 				
 			})
 			( $( '#grid > .top > .breadc' ) );
+			
+			/* menu odzieży reklamowej */
+			(function( panel, proto, items ){
+				var slug_page;
+				
+				try{
+					slug_page = window.location.search.match( /cat=.+\-(\w+)/ )[1];
+					
+				}
+				catch( err ){
+					window.error( err );
+					slug_page = '';
+					
+				}
+				
+				items.each(function(){
+					var href = $(this).attr( 'href' );
+					var title = $(this).attr( 'item-title' );
+					var slug = $(this).attr( 'item-slug' );
+					
+					proto
+					.clone()
+					.removeClass( 'hide' )
+					.addClass( slug_page === slug?( 'active' ):( '' ) )
+					.attr( 'item-slug', slug  )
+					.appendTo( panel )
+					.children( 'a' )
+					.attr( 'href', href )
+					.text( title );
+					
+				});
+				
+			})
+			( $( '#grid > .odziez_reklamowa' ), 
+			$( '#grid > .odziez_reklamowa > .item.hide' ), 
+			$( 'ul.menu > .item[item-title="Odzież reklamowa"] > .sub > .item' ) );
 			
 		},
 		produkt: function(){
@@ -1492,10 +1552,10 @@
 					});
 					
 				})
-				( $( '#single > .popup' ), 
-				$( '#single > .popup > .box' ), 
-				$( '#single > .popup > .box > .header > .close' ), 
-				$( '#single > .popup > .box > .img > img' ), 
+				( $( '#single > .popup.produkt' ), 
+				$( '#single > .popup.produkt > .box' ), 
+				$( '#single > .popup.produkt > .box > .header > .close' ), 
+				$( '#single > .popup.produkt > .box > .img > img' ), 
 				$( '#grid .pic > .large' ) );
 				
 				/* kalkulator online */
