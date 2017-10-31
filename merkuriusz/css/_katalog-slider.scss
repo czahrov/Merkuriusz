@@ -65,10 +65,12 @@
 							padding: 15px 12px;
 							
 							& > .link{
-								height: 50px;
+								padding: 0 10px;
+								height: 40px;
+								min-width: 100px;
 								border: solid 1px $color-szary3;
 								font-size: 14px;
-								
+								background-origin: content-box;
 								
 							}
 							
@@ -161,6 +163,16 @@
 							border: solid 2px #ebebeb;
 							
 						}
+						
+						& > .hitbox{
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							
+						}
+						
 						
 					}
 					

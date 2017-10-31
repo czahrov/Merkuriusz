@@ -159,6 +159,241 @@
 				console.log('page.default()');
 			}
 			
+			/* popupy katalogów pdf */
+			(function( popup, box, close, viewbox, views, katalog_pic, btnOdziez, items ){
+				var lock = false;
+				var duration = 0.5;
+				
+				popup
+				.on({
+					open: function( e, name, img ){
+						console.log( [ name, img ] );
+						if( lock ) return false;
+						lock = true;
+						
+						katalog_pic
+						.attr( 'src', function(){
+							try{
+								var url = img.match( /[^"]+/g );
+								if( url.length < 3 ) throw {
+									msg: 'Niewłaściwy adres obrazka',
+									reason: url,
+									
+								};
+								
+								return url[1];
+								
+							}
+							catch( err ){
+								console.error( err );
+								
+							}
+							
+						} );
+						
+						views
+						.filter( '[class*="'+ name +'"]' )
+						.show()
+						.siblings()
+						.hide();
+						
+						new TimelineLite({
+							onStart: function(){
+								popup.addClass( 'open' );
+								
+							},
+							onComplete: function(){
+								box.attr( 'style', '' );
+								
+								lock = false;
+								
+							},
+							
+						})
+						.add( 'start', 0 )
+						.add(
+							TweenLite.fromTo(
+								popup,
+								duration,
+								{
+									opacity: 0,
+								},
+								{
+									opacity: 1,
+								}
+							), 'start'
+						)
+						.add(
+							TweenLite.fromTo(
+								box,
+								duration,
+								{
+									y: -200,
+									rotationX: -90,
+								},
+								{
+									y: 0,
+									rotationX: 0,
+								}
+							), 'start+=' + duration
+						);
+						
+					},
+					close: function( e ){
+						if( lock ) return false;
+						lock = true;
+						
+						new TimelineLite({
+							onComplete: function(){
+								popup.removeClass( 'open' );
+								
+								box.attr( 'style', '' );
+								
+								lock = false;
+								
+							},
+							
+						})
+						.add( 'start', 0 )
+						.add(
+							TweenLite.to(
+								box,
+								duration,
+								{
+									y: -200,
+									rotationX: 90,
+								}
+							), 'start'
+						)
+						.add(
+							TweenLite.to(
+								popup,
+								duration,
+								{
+									opacity: 0,
+								}
+							), 'start+=' + duration
+						);
+						
+					},
+					
+				});
+				
+				popup
+				.add( close )
+				.click( function( e ){ popup.triggerHandler( 'close' ); } );
+				
+				box.click( function( e ){ e.stopPropagation() } );
+				
+				btnOdziez.click( function( e ){
+					popup.triggerHandler( 'open', [ 'reklamowa', $(this).parents( '.item:first' ).css( 'background-image' ) ] );
+					
+				} );
+				
+				items.click( function( e ){
+					popup.triggerHandler( 'open', [ $(this).attr( 'item' ), $(this).css( 'background-image' ) ] );
+					
+				} );
+				
+				items.find( '.hitbox' ).click( function( e ){
+					e.stopPropagation();
+					
+				} );
+				
+			})
+			( $( '.popup.katalog' ),
+			$( '.popup.katalog > .box' ),
+			$( '.popup.katalog > .box > .close-fp' ),
+			$( '.popup.katalog > .box > .viewbox' ),
+			$( '.popup.katalog > .box > .viewbox > .view' ),
+			$( '.popup.katalog > .box > .viewbox > .view .pic img' ),
+			$( '#home .kafelki .item.odziez .link' ),
+			$( '.catalog-slider .catalog-element > .catalog' ) );
+			
+			/* newsletter */
+			(function( panel, form, input, button, status ){
+				var unreg = false;
+				
+				panel
+				.on({
+					init: function( e ){
+						status.hide();
+						
+					},
+					msg: function( e, stat, msg ){
+						status
+						.removeClass( 'pass info fail' )
+						.addClass( stat )
+						.children( '.msg' )
+						.html( msg );
+						
+						status.slideDown();
+						
+					},
+					send: function( e ){
+						var url = "newsletter?@mode@=@data@";
+						
+						$.ajax({
+							type: 'GET',
+							url: url.replace( /@mode@/, unreg===false?( 'add' ):( 'unreglink' ) ).replace( /@data@/, input.val().trim() ),
+							success: function( data ){
+								try{
+									var resp = JSON.parse( data );
+									panel.triggerHandler( 'msg', [ resp.status, resp.msg ] );
+									
+									if( resp.status === 'info' ){
+										unreg = true;
+										
+									}
+									else{
+										unreg = false;
+										
+									}
+									
+								}
+								catch( err ){
+									console.error( err );
+									console.info( data );
+									panel.triggerHandler( 'msg', [ 'fail', 'Błąd odpowiedzi serwera.<br>Proszę spróbować ponownie za chwilę.' ] );
+									
+								}
+								
+							},
+							error: function(){
+								panel.triggerHandler( 'msg', [ 'fail', 'Nie udało się nawiązać połączenia z serwerem.<br>Spróbuj ponownie za chwilę.' ] );
+								
+							},
+							
+						});
+						
+					},
+					
+				});
+				
+				panel.triggerHandler( 'init' );
+				
+				button.click( function( e ){
+					panel.triggerHandler( 'send' );
+					
+				} );
+				
+				status.click( function( e ){
+					$(this).slideUp();
+					
+				} );
+				
+				input.change( function( e ){
+					unreg = false;
+					
+				} );
+				
+			})
+			( $( '#home > .newsletter' ), 
+			$( '#home > .newsletter .form' ), 
+			$( '#home > .newsletter .form > .mail' ), 
+			$( '#home > .newsletter .form > .send' ), 
+			$( '#home > .newsletter .status' ) );
+			
 			/* popup hint */
 			(function( popup, box, close, button ){
 				var delay = 20 * 1000;
@@ -1022,266 +1257,6 @@
 				
 			})();
 			
-			/* popupy katalogów pdf */
-			(function( popup, box, close, viewbox, views, katalog_pic, btnOdziez, btnDlugPlas, btnDlugMetal, btnTorby, btnPompony, btnKubki, btnSmycze ){
-				var lock = false;
-				var duration = 0.5;
-				
-				popup
-				.on({
-					open: function( e, name, img ){
-						console.log( [ name, img ] );
-						if( lock ) return false;
-						lock = true;
-						
-						katalog_pic
-						.attr( 'src', function(){
-							try{
-								var url = img.match( /[^"]+/g );
-								if( url.length < 3 ) throw {
-									msg: 'Niewłaściwy adres obrazka',
-									reason: url,
-									
-								};
-								
-								return url[1];
-								
-							}
-							catch( err ){
-								console.error( err );
-								
-							}
-							
-						} );
-						
-						views
-						.filter( '[class*="'+ name +'"]' )
-						.show()
-						.siblings()
-						.hide();
-						
-						new TimelineLite({
-							onStart: function(){
-								popup.addClass( 'open' );
-								
-							},
-							onComplete: function(){
-								box.attr( 'style', '' );
-								
-								lock = false;
-								
-							},
-							
-						})
-						.add( 'start', 0 )
-						.add(
-							TweenLite.fromTo(
-								popup,
-								duration,
-								{
-									opacity: 0,
-								},
-								{
-									opacity: 1,
-								}
-							), 'start'
-						)
-						.add(
-							TweenLite.fromTo(
-								box,
-								duration,
-								{
-									y: -200,
-									rotationX: -90,
-								},
-								{
-									y: 0,
-									rotationX: 0,
-								}
-							), 'start+=' + duration
-						);
-						
-					},
-					close: function( e ){
-						if( lock ) return false;
-						lock = true;
-						
-						new TimelineLite({
-							onComplete: function(){
-								popup.removeClass( 'open' );
-								
-								box.attr( 'style', '' );
-								
-								lock = false;
-								
-							},
-							
-						})
-						.add( 'start', 0 )
-						.add(
-							TweenLite.to(
-								box,
-								duration,
-								{
-									y: -200,
-									rotationX: 90,
-								}
-							), 'start'
-						)
-						.add(
-							TweenLite.to(
-								popup,
-								duration,
-								{
-									opacity: 0,
-								}
-							), 'start+=' + duration
-						);
-						
-					},
-					
-				});
-				
-				popup
-				.add( close )
-				.click( function( e ){ popup.triggerHandler( 'close' ); } );
-				
-				box.click( function( e ){ e.stopPropagation() } );
-				
-				btnOdziez.click( function( e ){
-					popup.triggerHandler( 'open', [ 'odziez', $(this).parents('.item.odziez').css( 'background-image' ) ] );
-					
-				} );
-				
-				btnDlugPlas.click( function( e ){
-					popup.triggerHandler( 'open', [ 'dlugPlast', $(this).css( 'background-image' ) ] );
-					
-				} );
-				
-				btnDlugMetal.click( function( e ){
-					popup.triggerHandler( 'open', [ 'dlugMetal', $(this).css( 'background-image' ) ] );
-					
-				} );
-				
-				btnTorby.click( function( e ){
-					popup.triggerHandler( 'open', [ 'torby', $(this).css( 'background-image' ) ] );
-					
-				} );
-				
-				btnPompony.click( function( e ){
-					popup.triggerHandler( 'open', [ 'pompony', $(this).css( 'background-image' ) ] );
-					
-				} );
-				
-				btnKubki.click( function( e ){
-					popup.triggerHandler( 'open', [ 'kubki', $(this).css( 'background-image' ) ] );
-					
-				} );
-				
-				btnSmycze.click( function( e ){
-					popup.triggerHandler( 'open', [ 'smycze', $(this).css( 'background-image' ) ] );
-					
-				} );
-				
-			})
-			( $( '#home > .popup.katalog' ),
-			$( '#home > .popup.katalog > .box' ),
-			$( '#home > .popup.katalog > .box > .close-fp' ),
-			$( '#home > .popup.katalog > .box > .viewbox' ),
-			$( '#home > .popup.katalog > .box > .viewbox > .view' ),
-			$( '#home > .popup.katalog > .box > .viewbox > .view .pic img' ),
-			$( '#home .kafelki .item.odziez .link' ),
-			$( '#home > .catalog-slider .catalog-element > .catalog.dlugPlast' ),
-			$( '#home > .catalog-slider .catalog-element > .catalog.dlugMetal' ),
-			$( '#home > .catalog-slider .catalog-element > .catalog.torby' ),
-			$( '#home > .catalog-slider .catalog-element > .catalog.pompony' ),
-			$( '#home > .catalog-slider .catalog-element > .catalog.kubki' ),
-			$( '#home > .catalog-slider .catalog-element > .catalog.smycze' ) );
-			
-			/* newsletter */
-			(function( panel, form, input, button, status ){
-				var unreg = false;
-				
-				panel
-				.on({
-					init: function( e ){
-						status.hide();
-						
-					},
-					msg: function( e, stat, msg ){
-						status
-						.removeClass( 'pass info fail' )
-						.addClass( stat )
-						.children( '.msg' )
-						.html( msg );
-						
-						status.slideDown();
-						
-					},
-					send: function( e ){
-						var url = "newsletter?@mode@=@data@";
-						
-						$.ajax({
-							type: 'GET',
-							url: url.replace( /@mode@/, unreg===false?( 'add' ):( 'unreglink' ) ).replace( /@data@/, input.val().trim() ),
-							success: function( data ){
-								try{
-									var resp = JSON.parse( data );
-									panel.triggerHandler( 'msg', [ resp.status, resp.msg ] );
-									
-									if( resp.status === 'info' ){
-										unreg = true;
-										
-									}
-									else{
-										unreg = false;
-										
-									}
-									
-								}
-								catch( err ){
-									console.error( err );
-									console.info( data );
-									panel.triggerHandler( 'msg', [ 'fail', 'Błąd odpowiedzi serwera.<br>Proszę spróbować ponownie za chwilę.' ] );
-									
-								}
-								
-							},
-							error: function(){
-								panel.triggerHandler( 'msg', [ 'fail', 'Nie udało się nawiązać połączenia z serwerem.<br>Spróbuj ponownie za chwilę.' ] );
-								
-							},
-							
-						});
-						
-					},
-					
-				});
-				
-				panel.triggerHandler( 'init' );
-				
-				button.click( function( e ){
-					panel.triggerHandler( 'send' );
-					
-				} );
-				
-				status.click( function( e ){
-					$(this).slideUp();
-					
-				} );
-				
-				input.change( function( e ){
-					unreg = false;
-					
-				} );
-				
-			})
-			( $( '#home > .newsletter' ), 
-			$( '#home > .newsletter .form' ), 
-			$( '#home > .newsletter .form > .mail' ), 
-			$( '#home > .newsletter .form > .send' ), 
-			$( '#home > .newsletter .status' ) );
-			
 			/* menu odzieży reklamowej w popupie */
 			(function( panel, proto, items ){
 				
@@ -1301,8 +1276,8 @@
 				});
 				
 			})
-			( $( '.popup.katalog .view.odziez .items' ), 
-			$( '.popup.katalog .view.odziez .items > .item.hide' ),
+			( $( '.popup.katalog .view.reklamowa .items' ), 
+			$( '.popup.katalog .view.reklamowa .items > .item.hide' ),
 			$( 'ul.menu > .item[item-title="Odzież reklamowa"] > .sub > .item' ) );
 			
 			

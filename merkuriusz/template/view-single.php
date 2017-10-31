@@ -182,10 +182,26 @@ echo "\r\n-->";
 						</div>
 						<div class='price flex flex-wrap flex-items-center'>
 							<?php
-								printf( "%.2f zł/szt brutto%s", 
-									$item[ 'PRICE' ][ 'BRUTTO' ],
-									$item[ 'PRICE' ][ 'NETTO' ] !== null?( sprintf( "<span class='netto base1 regulat'>(%.2f zł netto)</span>", $item[ 'PRICE' ][ 'NETTO' ] ) ):( "" )
-								);
+								if( $item[ 'PRICE' ][ 'BRUTTO' ] > 0 ){
+									printf( "%.2f %s/szt brutto%s", 
+										$item[ 'PRICE' ][ 'BRUTTO' ],
+										$item[ 'PRICE' ][ 'CURRENCY' ],
+										$item[ 'PRICE' ][ 'NETTO' ] !== null?( sprintf( "<span class='netto base1 regulat'>(%.2f %s netto)</span>", 
+												$item[ 'PRICE' ][ 'NETTO' ],
+												$item[ 'PRICE' ][ 'CURRENCY' ]
+											) ):( "" )
+									);
+									
+								}
+								else{
+									printf( "%s<div class='netto base1'><a href='%s'>Zobacz techniki znakowania</a></div>", 
+										$item[ 'PRICE_ALT' ],
+										home_url( 'znakowanie' )
+										
+									);
+									
+								}
+								
 							?>
 							
 						</div>
@@ -194,6 +210,7 @@ echo "\r\n-->";
 					
 				</div>
 				<div class='body'>
+					<?php if( $item[ 'PRICE' ][ 'BRUTTO' ] > 0 ): ?>
 					<div class='table kalkulator flex flex-column'>
 						<div class='thead bold flex flex-items-center'>
 							Kalkulator zamówienia
@@ -296,6 +313,7 @@ echo "\r\n-->";
 						</div>
 						
 					</div>
+					<?php endif; ?>
 					<div class='table specyfikacja flex flex-column'>
 						<div class='thead bold flex flex-items-center'>
 							Specyfikacja techniczna produktu

@@ -78,9 +78,6 @@ class FALKROSS extends XMLAbstract{
 					$weights[] = (string)$weight;
 				}
 				
-				$dim = array();
-				$dim[] = (string)$item->style_filter_list->style_details_group_list[0];
-				
 				$cats = array();
 				foreach( $item->style_category_list->style_category_main->style_category_sub as $cat ){
 					$cat_name = sprintf( "%s-%s", 
@@ -112,7 +109,9 @@ class FALKROSS extends XMLAbstract{
 						'PRICE' => array(
 							'BRUTTO' => 0,
 							'NETTO' => null,
+							'CURRENCY' => 'PLN',
 						),
+						'PRICE_ALT' => 'Wycena indywidualna<br>( telefon/mail )',
 						'MODEL' => 'brak danych',
 						'WEIGHT' => 'brak danych',
 						'BRAND' => 'brak danych',
@@ -124,14 +123,14 @@ class FALKROSS extends XMLAbstract{
 						'DSCR' => nl2br( (string)$item->style_description->language->pl ),
 						'IMG' => $img,
 						'CAT' => $cats,
-						'DIM' => $dim,
-						// 'MARK' => array(),
+						// 'DIM' => 'brak danych',
+						'MARK' => array( 'brak danych' ),
 						// 'INSTOCK' => 'brak danych',
 						// 'MATTER' => 'brak danych',
 						'COLOR' => implode( ", ", $colors ),
 						// 'COUNTRY' => 'brak danych',
-						// 'MARKSIZE' => array(),
-						// 'MARKTYPE' => array(),
+						'MARKSIZE' => array( 'brak danych' ),
+						'MARKTYPE' => array( 'brak danych' ),
 						// 'MARKCOLORS' => 1,
 						// 'PRICE' => array(
 							// 'BRUTTO' => 0,

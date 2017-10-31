@@ -516,7 +516,9 @@ class AXPOL extends XMLAbstract{
 						'PRICE' => array(
 							'BRUTTO' => 0,
 							'NETTO' => null,
+							'CURRENCY' => 'PLN',
 						),
+						'PRICE_ALT' => 'Wycena indywidualna<br>( telefon/mail )',
 						'MODEL' => 'brak danych',
 						'WEIGHT' => 'brak danych',
 						'BRAND' => 'brak danych',

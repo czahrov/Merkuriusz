@@ -250,17 +250,19 @@
 					
 					& > .content{
 						margin-bottom: 20px;
-						font-size: 16px;
+						font-size: 14px;
+						line-height: initial;
 						
 					}
 					
 					& > .price{
-						height: 67px;
+						min-height: 67px;
 						padding-left: 17px;
 						border-left: solid 5px $color-single-title;
 						font-size: 22px;
 						
 						& > .netto{
+							padding-top: 10px;
 							font-size: 18px;
 							
 						}

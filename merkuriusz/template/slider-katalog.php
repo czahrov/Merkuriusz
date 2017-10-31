@@ -95,6 +95,260 @@
 	</div>
 </div>
 
+<?php
+	$katalogi = array(
+		'dlugPlast' => array(
+			'slider' => array(
+				'title' => 'Dlugopisy plastikowe',
+				'cover-class' => 'pop-up-clothes dlugopisyplastikowe',
+				'img' => get_template_directory_uri() . '/img/katalogi/dlugopisy_plastikowe.jpg',
+				'url' => '',
+			),
+			'popup' => array(
+				'title' => 'Kolekcja długopisów plastikowych',
+					'subtitle' => '',
+					'items' => array(
+						array(
+							'class' => 'dream-pen',
+							'url' => 'wp-content/uploads/2017/08/dream-pen.pdf',
+							'img' => '',
+							'title' => 'Dream Pen',
+						),
+						array(
+							'class' => 'viva-pens',
+							'url' => 'wp-content/uploads/2017/08/katalog-VIVA-classic.pdf',
+							'img' => get_template_directory_uri() . '/img/dlugopisy/viva_pens.jpg',
+							'title' => '',
+						),
+						array(
+							'class' => 'lecce-pen',
+							'url' => 'wp-content/uploads/2017/08/lecce-pen-katalog-z-cenami.pdf',
+							'img' => get_template_directory_uri() . '/img/dlugopisy/logo-lecce-pen.png',
+							'title' => '',
+						),
+						array(
+							'class' => 'ritter-pen',
+							'url' => 'wp-content/uploads/2017/06/Ritter-Katalog-2017_EXPORT_100dpi.pdf',
+							'img' => get_template_directory_uri() . '/img/dlugopisy/ritter_pen.png',
+							'title' => '',
+						),
+						array(
+							'class' => 'bic',
+							'url' => 'wp-content/uploads/2017/10/BIC-2-Pricelist.pdf',
+							'img' => get_template_directory_uri() . '/img/dlugopisy/bic_logo.png',
+							'title' => '',
+						),
+					),
+			),
+			
+		),
+		'dlugMetal' => array(
+			'slider' => array(
+				'title' => 'Dlugopisy metalowe',
+				'cover-class' => 'pop-up-clothes dlugopisymetalowe',
+				'img' => get_template_directory_uri() . '/img/katalogi/dlugopisy_metalowe.jpg',
+				'url' => '',
+				
+			),
+			'popup' => array(
+				'title' => 'Kolekcja długopisów metalowych',
+				'subtitle' => '',
+				'items' => array(
+					array(
+						'class' => 'viva-pens',
+						// 'url' => 'wp-content/uploads/2017/08/katalog-VIVA-classic.pdf',
+						'url' => 'wp-content/uploads/2017/08/katalog-VIVA-prestige.pdf',
+						'img' => get_template_directory_uri() . '/img/dlugopisy/viva_pens.jpg',
+						'title' => '',
+					),
+					array(
+						'class' => 'milenium',
+						'url' => 'wp-content/uploads/2017/08/milenium-katalog-długopisy-metalowe_1-Milenium-2017-1.pdf',
+						'img' => '',
+						'title' => 'Milenium',
+					),
+				),
+			),
+			
+		),
+		'odziez' => array(
+			'slider' => array(
+				'title' => 'Odzież reklamowa',
+				'cover-class' => '',
+				'img' => get_template_directory_uri() . '/img/katalogi/odziez_reklamowa.jpg',
+				'url' => '',
+				
+			),
+			'popup' => array(
+				'title' => 'Odzież reklamowa - nadruki na ubraniach',
+				'subtitle' => '',
+				'items' => array(
+					array(
+						'class' => 'adler',
+						'url' => 'wp-content/uploads/2017/08/adler-katalog-2017-PL.pdf',
+						'img' => '',
+						'title' => 'Adler',
+					),
+					array(
+						'class' => 'malfini',
+						'url' => 'wp-content/uploads/2017/08/katalog-malfini-pl.pdf',
+						'img' => '',
+						'title' => 'Malfini',
+					),
+					array(
+						'class' => 'promostars',
+						'url' => 'wp-content/uploads/2017/08/promostars_2017.pdf',
+						'img' => '',
+						'title' => 'Promostars 2017',
+					),
+					array(
+						'class' => 'roly',
+						'url' => 'wp-content/uploads/2017/10/roly_es-katalog.pdf',
+						'img' => '',
+						'title' => 'Roly',
+					),
+					array(
+						'class' => 'jhk',
+						'url' => 'wp-content/uploads/2017/10/jhktshirt2017_en.pdf',
+						'img' => '',
+						'title' => 'JHK',
+					),
+				),
+			),
+			
+		),
+		'torby' => array(
+			'slider' => array(
+				'title' => 'Torby',
+				'cover-class' => 'pop-up-clothes torby',
+				'img' => get_template_directory_uri() . '/img/katalogi/torby_papierowe.jpg',
+				'url' => '',
+				
+			),
+			'popup' => array(
+				'title' => 'Torby',
+				'subtitle' => '',
+				'items' => array(
+					array(
+						'class' => 'papierowe',
+						'url' => 'wp-content/uploads/2017/08/KATALOG-TORBY-strona-internetowa.pdf',
+						'img' => '',
+						'title' => 'Torby papierowe',
+					),
+					array(
+						'class' => 'plastikowe',
+						'url' => 'wp-content/uploads/2017/06/PDF-torby-foliowe-LPD-biaée-i-kolorowe.pdf',
+						'img' => '',
+						'title' => 'Torby plastikowe',
+					),
+					
+				),
+				
+			),
+			
+		),
+		'pompony' => array(
+			'slider' => array(
+				'title' => 'Pompony i gadżety nietypowe',
+				'cover-class' => '',
+				'img' => get_template_directory_uri() . '/img/katalogi/pomopony.jpg',
+				// 'url' => '',
+				'url' => 'wp-content/uploads/2017/08/katalog_pompony.pdf',
+				
+			),
+			'popup' => array(
+				'title' => 'Pompony',
+				'subtitle' => '',
+				'items' => array(
+					array(
+						'class' => 'pompony',
+						// 'url' => 'wp-content/uploads/2017/08/katalog_pompony.pdf',
+						'img' => '',
+						'title' => 'Pompony',
+					),
+					
+				),
+			),
+			
+		),
+		'kubki' => array(
+			'slider' => array(
+				'title' => 'Kubki',
+				'cover-class' => '',
+				'img' => get_template_directory_uri() . '/img/katalogi/kubki.jpg',
+				// 'url' => '',
+				'url' => 'wp-content/uploads/2017/06/katalog-naszych-kubk-w-czerwiec-2017-strona-internetowa.pdf',
+				
+			),
+			'popup' => array(
+				'title' => 'Kubki',
+				'subtitle' => '',
+				'items' => array(
+					array(
+						'class' => 'kubki',
+						// 'url' => 'wp-content/uploads/2017/06/katalog-naszych-kubk-w-czerwiec-2017-strona-internetowa.pdf',
+						'img' => '',
+						'title' => 'Kubki',
+					),
+					
+				),
+			),
+			
+		),
+		'smycze' => array(
+			'slider' => array(
+				'title' => 'Smycze',
+				'cover-class' => '',
+				'img' => get_template_directory_uri() . '/img/katalogi/smycze.jpg',
+				// 'url' => '',
+				'url' => 'wp-content/uploads/2017/10/SMYCZE-do-strony-i-druku.pdf',
+				
+			),
+			'popup' => array(
+				'title' => 'Smycze',
+				'subtitle' => '',
+				'items' => array(
+					array(
+						'class' => 'smycze',
+						// 'url' => 'wp-content/uploads/2017/10/SMYCZE-do-strony-i-druku.pdf',
+						'img' => '',
+						'title' => 'Smycze',
+					),
+					
+				),
+			),
+			
+		),
+		'skora_vip' => array(
+			'slider' => array(
+				// 'title' => 'Skóra VIP',
+				'title' => 'Skóra prestige',
+				'cover-class' => '',
+				'img' => get_template_directory_uri() . '/img/katalogi/skora.jpg',
+				// 'url' => '',
+				'url' => 'wp-content/uploads/2017/06/katalog-wyroby-sk-rzane-prestige-sk-ra.pdf',
+				
+			),
+			'popup' => array(
+				'title' => 'Skóra VIP',
+				'subtitle' => '',
+				'items' => array(
+					array(
+						'class' => 'prestige',
+						// 'url' => 'wp-content/uploads/2017/06/katalog-wyroby-sk-rzane-prestige-sk-ra.pdf',
+						'img' => '',
+						'title' => 'Skóra prestige',
+					),
+					
+				),
+						
+			),
+			
+		),
+		
+	);
+?>
+
 <!-- CATALOG SLIDER -->
 <div class="catalog-slider grid">
 	<h2 class="section-title uppercase bold flex flex-items-center flex-justify-center">
@@ -108,58 +362,6 @@
 		</div>
 		<div class="catalog-container">
 			<?php
-				$data = array(
-					array(
-						'class' => 'dlugPlast',
-						'title' => 'Dlugopisy plastikowe',
-						'cover-class' => 'pop-up-clothes dlugopisyplastikowe',
-						'img' => get_template_directory_uri() . '/img/katalogi/dlugopisy_plastikowe.jpg',
-						'url' => '',
-						
-					),
-					array(
-						'class' => 'dlugMetal',
-						'title' => 'Dlugopisy metalowe',
-						'cover-class' => 'pop-up-clothes dlugopisymetalowe',
-						'img' => get_template_directory_uri() . '/img/katalogi/dlugopisy_metalowe.jpg',
-						'url' => '',
-						
-					),
-					array(
-						'class' => 'torby',
-						'title' => 'Torby',
-						'cover-class' => 'pop-up-clothes torby',
-						'img' => get_template_directory_uri() . '/img/katalogi/torby_papierowe.jpg',
-						'url' => '',
-						
-					),
-					array(
-						'class' => 'pompony',
-						'title' => 'Pompony',
-						'cover-class' => '',
-						'img' => get_template_directory_uri() . '/img/katalogi/pomopony.jpg',
-						'url' => '',
-						
-					),
-					array(
-						'class' => 'kubki',
-						'title' => 'Kubki',
-						'cover-class' => '',
-						'img' => get_template_directory_uri() . '/img/katalogi/kubki.jpg',
-						'url' => home_url() . '/wp_merkuriusz/wp-content/uploads/2017/08/katalog-naszych-kubk-w-czerwiec-2017-strona-internetowa.pdf',
-						
-					),
-					array(
-						'class' => 'smycze',
-						'title' => 'Smycze',
-						'cover-class' => '',
-						'img' => get_template_directory_uri() . '/img/katalogi/smycze.jpg',
-						'url' => home_url() . '/wp_merkuriusz/wp-content/uploads/2017/08/SMYCZE-do-strony.pdf',
-						
-					),
-					
-				);
-				
 				/*
 				<div class="catalog-element">
 					<div class="catalog">
@@ -172,16 +374,17 @@
 				</div>
 				*/
 				
-				foreach( $data as $item ):
+				foreach( $katalogi as $name => $item ):
+				$slider = $item[ 'slider' ];
 			?>
 			<div class="catalog-element">
-				<div class="catalog <?php echo $item[ 'class' ]; ?>" style='background-image: url(<?php echo empty( $item[ 'img' ] )?( 'https://placeimg.com/200/200' ):( $item[ 'img' ] ); ?>);'>
-					<div class="catalog-cover pointer <?php echo $item[ 'cover-class' ]; ?> flex">
+				<div class="catalog" item='<?php echo $name; ?>' style='background-image: url(<?php echo empty( $slider[ 'img' ] )?( 'https://placeimg.com/200/200' ):( $slider[ 'img' ] ); ?>);'>
+					<div class="catalog-cover pointer <?php echo $slider[ 'cover-class' ]; ?> flex">
 						<div class="cat-cover-text uppercase base1 flex-self-stretch flex flex-items-center flex-justify-center">zobacz pdf</div>
+					<?php if( !empty( $slider[ 'url' ] ) ) printf( "<a class='hitbox' href='%s' target='_blank'></a>", $slider[ 'url' ] ); ?>
 					</div>
 				</div>
-				<div class="catalog_signature"><?php echo $item[ 'title' ]; ?></div>
-				<?php if( !empty( $item[ 'url' ] ) ) printf( "<a class='hitbox' href='%s' target='_blank'></a>", $item[ 'url' ] ); ?>
+				<div class="catalog_signature"><?php echo $slider[ 'title' ]; ?></div>
 			</div>
 			<?php endforeach; ?>
 			
@@ -203,177 +406,13 @@
 		</div>
 		<div class='viewbox'>
 			<?php
-				$katalogi = array(
-					'odziez' => array(
-						'title' => 'Odzież reklamowa - nadruki na ubraniach',
-						'subtitle' => 'Kolekcja 2016',
-						'items' => array(
-							array(
-								'class' => 'hide',
-								'url' => '',
-								'img' => '',
-								'title' => '',
-							),
-							/* array(
-								'title' => 'Plecaki',
-								'url' => home_url( 'kategoria?cat=gadzety_reklamowe,torby_i_plecaki,torby_i_plecaki-plecaki' ),
-							),
-							array(
-								'title' => 'Sportowe',
-								'url' => home_url( 'kategoria?cat=gadzety_reklamowe,torby_i_plecaki,torby_i_plecaki-sportowe' ),
-							),
-							array(
-								'title' => 'Czapki z daszkiem',
-								'url' => home_url( 'kategoria?cat=gadzety_reklamowe,tekstylia,tekstylia-czapki_z_daszkiem' ),
-							), */
-							
-						),
-						
-					),
-					'dlugPlast' => array(
-						'title' => 'Kolekcja długopisów plastikowych',
-						'subtitle' => '',
-						'items' => array(
-							array(
-								'class' => 'lecce-pen',
-								'url' => 'wp-content/uploads/2017/08/lecce-pen-katalog-z-cenami.pdf',
-								'img' => get_template_directory_uri() . '/img/dlugopisy/logo-lecce-pen.png',
-								'title' => '',
-							),
-							array(
-								'class' => 'viva-pens',
-								'url' => 'wp-content/uploads/2017/08/katalog-VIVA-classic.pdf',
-								'img' => get_template_directory_uri() . '/img/dlugopisy/viva_pens.jpg',
-								'title' => '',
-							),
-							array(
-								'class' => 'dream-pen',
-								'url' => 'wp-content/uploads/2017/08/dream-pen.pdf',
-								'img' => '',
-								'title' => 'Dream Pen',
-							),
-							array(
-								'class' => 'ritter-pen',
-								'url' => 'wp-content/uploads/2017/06/Ritter-Katalog-2017_EXPORT_100dpi.pdf',
-								'img' => get_template_directory_uri() . '/img/dlugopisy/ritter_pen.png',
-								'title' => '',
-							),
-							array(
-								'class' => 'bic',
-								'url' => '',
-								'img' => get_template_directory_uri() . '/img/dlugopisy/bic_logo.png',
-								'title' => '',
-							),
-						),
-						
-					),
-					'dlugMetal' => array(
-						'title' => 'Kolekcja długopisów metalowych',
-						'subtitle' => '',
-						'items' => array(
-							array(
-								'class' => 'lecce-pen',
-								'url' => 'wp-content/uploads/2017/08/lecce-pen-katalog-z-cenami.pdf',
-								'img' => get_template_directory_uri() . '/img/dlugopisy/logo-lecce-pen.png',
-								'title' => '',
-							),
-							array(
-								'class' => 'viva-pens',
-								'url' => 'wp-content/uploads/2017/08/katalog-VIVA-classic.pdf',
-								'img' => get_template_directory_uri() . '/img/dlugopisy/viva_pens.jpg',
-								'title' => '',
-							),
-							array(
-								'class' => 'dream-pen',
-								'url' => 'wp-content/uploads/2017/08/dream-pen.pdf',
-								'img' => '',
-								'title' => 'Dream Pen',
-							),
-							array(
-								'class' => 'ritter-pen',
-								'url' => 'wp-content/uploads/2017/06/Ritter-Katalog-2017_EXPORT_100dpi.pdf',
-								'img' => get_template_directory_uri() . '/img/dlugopisy/ritter_pen.png',
-								'title' => '',
-							),
-							array(
-								'class' => 'bic',
-								'url' => '',
-								'img' => get_template_directory_uri() . '/img/dlugopisy/bic_logo.png',
-								'title' => '',
-							),
-						),
-						
-					),
-					'torby' => array(
-						'title' => 'Torby',
-						'subtitle' => '',
-						'items' => array(
-							array(
-								'class' => 'foliowe',
-								'url' => 'wp-content/uploads/2017/06/PDF-torby-foliowe-LPD-biaée-i-kolorowe.pdf',
-								'img' => '',
-								'title' => 'Torby foliowe',
-							),
-							array(
-								'class' => 'papierowe',
-								'url' => 'wp-content/uploads/2017/08/KATALOG-TORBY-strona-internetowa.pdf',
-								'img' => '',
-								'title' => 'Torby papierowe',
-							),
-							
-						),
-						
-					),
-					'pompony' => array(
-						'title' => 'Pompony',
-						'subtitle' => '',
-						'items' => array(
-							array(
-								'class' => 'pompony',
-								'url' => 'wp-content/uploads/2017/08/katalog_pompony.pdf',
-								'img' => '',
-								'title' => 'Pompony',
-							),
-							
-						),
-						
-					),
-					'kubki' => array(
-						'title' => 'Kubki',
-						'subtitle' => '',
-						'items' => array(
-							array(
-								'class' => 'kubki',
-								'url' => 'wp-content/uploads/2017/06/katalog-naszych-kubk-w-czerwiec-2017-strona-internetowa.pdf',
-								'img' => '',
-								'title' => 'Kubki',
-							),
-							
-						),
-						
-					),
-					'smycze' => array(
-						'title' => 'Smycze',
-						'subtitle' => '',
-						'items' => array(
-							array(
-								'class' => 'smycze',
-								'url' => 'wp-content/uploads/2017/08/SMYCZE-do-strony.pdf',
-								'img' => '',
-								'title' => 'Smycze',
-							),
-							
-						),
-						
-					),
-					
-				);
 				
-				foreach( $katalogi as $kat_name => $katalog ):
+				foreach( $katalogi as $name => $item ):
+				$popup = $item[ 'popup' ];
 			?>
-			<div class='view <?php echo $kat_name; ?> hide-fp flex flex-column'>
+			<div class='view <?php echo $name; ?> hide-fp flex flex-column'>
 				<div class='top bold uppercase'>
-					<?php echo $katalog[ 'title' ]; ?>
+					<?php echo $popup[ 'title' ]; ?>
 				</div>
 				<div class='mid flex flex-items-start'>
 					<div class='pic base4 no-shrink flex flex-column'>
@@ -381,21 +420,22 @@
 							<img/>
 						</div>
 						<div class='text uppercase bold font-blue text-center'>
-							<?php echo $katalog [ 'subtitle' ]; ?>
+							<?php echo $popup [ 'subtitle' ]; ?>
 						</div>
 						
 					</div>
 					<div class='items grow flex flex-wrap'>
 						<?php
-							foreach( $katalog[ 'items' ] as $item ):
+							foreach( $popup[ 'items' ] as $item ):
 						?>
-						<div class='item base3 bold <?php echo $item[ 'class' ]; ?>'>
+						<div class='item bold' item='<?php echo $name; ?>'>
 							<div class='link uppercase bg-center bg-contain bg-norepeat flex flex-items-center flex-justify-center' style='background-image:url( <?php echo $item[ 'img' ] ?> );'>
 								<?php echo $item[ 'title' ]; ?>
 							</div>
 							<?php
 								printf( "<a class='hitbox'%s></a>",
-									!empty( $item[ 'url' ] )?( " href='{$item[ 'url' ]}' target='_blank'" ):( "" )
+									// !empty( $item[ 'url' ] )?( " href='{$item[ 'url' ]}' target='_blank'" ):( "" )
+									!empty( $item[ 'url' ] )?( sprintf( " href='%s/%s' target='_blank'", home_url(), $item[ 'url' ] ) ):( "" )
 								);
 							?>
 						</div>
@@ -407,6 +447,30 @@
 				
 			</div>
 			<?php endforeach; ?>
+			<div class='view reklamowa hide-fp flex flex-column'>
+				<div class='top bold uppercase'>
+					Odzież reklamowa - nadruki na ubraniach
+				</div>
+				<div class='mid flex flex-items-start'>
+					<div class='pic base4 no-shrink flex flex-column'>
+						<div class='img'>
+							<img/>
+						</div>
+						<div class='text uppercase bold font-blue text-center'></div>
+						
+					</div>
+					<div class='items grow flex flex-wrap'>
+						<div class='item bold hide'>
+							<div class='link uppercase bg-center bg-contain bg-norepeat flex flex-items-center flex-justify-center' style='background-image:url(  );'></div>
+							<a class='hitbox'></a>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
 			
 		</div>
 		
