@@ -16,22 +16,22 @@
 			<div class='subheader bold'>
 				Zadzwoń lub napisz
 			</div>
-			<div class='line tel flex flex-items-center'>
-				<div class='icon bg-center bg-norepeat'></div>
+			<div class='line tel flex flex-wrap flex-items-center'>
+				<div class='icon fp-hide block-mm bg-center bg-norepeat'></div>
 				<div class='type bold'>
 					Tel/Fax:
 				</div>
-				<div class='text'>
+				<div class='text base1 base0-mm'>
 					+48 14 622 33 64
 				</div>
 				
 			</div>
-			<div class='line mail flex flex-items-center'>
-				<div class='icon bg-center bg-norepeat'></div>
+			<div class='line mail flex flex-wrap flex-items-center'>
+				<div class='icon fp-hide block-mm bg-center bg-norepeat'></div>
 				<div class='type bold'>
 					e-mail:
 				</div>
-				<div class='text'>
+				<div class='text base1 base0-mm'>
 					biuro@merkuriusz.pl
 				</div>
 				

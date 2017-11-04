@@ -27,14 +27,14 @@
 ?>
 <body id='kategoria'>
 <?php get_template_part( "template/page", "top" ); ?>
-<div class='grid flex flex-items-start'>
+<div class='grid flex flex-items-start flex-wrap flex-nowrap-mm'>
 	<?php get_template_part( "template/menu", "side" ); ?>
 	<div id='grid' class='base1'>
 		<?php get_template_part( "template/menu", 'top'); ?>
 		<?php do_action( 'odziez_reklamowa' ); ?>
 		<div class='top flex flex-wrap flex-items-center flex-justify-between'>
 			<div class='breadc uppercase grow base1 base0-mm flex flex-items-center flex-justify-center flex-justify-start-mm'></div>
-			<div class='switcher grow base1 base0-mm flex flex-items-center flex-justify-between'>
+			<div class='switcher grow base1 base0-mm flex flex-wrap flex-items-center flex-justify-between'>
 				<div class='page'>
 					<?php do_action( 'page_switcher', count( $XMLData['items'] ) ); ?>
 					

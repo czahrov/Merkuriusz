@@ -61,6 +61,7 @@
 	}
 	
 	#basket{
+		position: relative;
 		padding: 0 16px;
 		background-color: $color-menu-active;
 		color: #fff;
@@ -72,6 +73,15 @@
 		
 		& > .icon{
 			margin-left: 26px;
+			
+		}
+		
+		& > .hitbox{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			
 		}
 		

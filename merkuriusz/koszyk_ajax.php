@@ -129,6 +129,12 @@ if( isAjax() ){
 					echo json_encode( array(
 						'status' => 'fail',
 						'msg' => 'Wysyłka maila nie powiodła się.<br>Powód: ' . $mailer->ErrorInfo,
+						'info' => array(
+							'get' => $_GET,
+							'post' => $_POST,
+							'safe' => $safe,
+							
+						),
 						
 					) );
 					

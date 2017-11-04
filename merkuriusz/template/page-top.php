@@ -14,7 +14,7 @@
 		
 	</form>
 	<div id='basket' class="pointer base1 base0-mm flex flex-items-center flex-justify-center">
-		<a class="basket-text bold alt" href='<?php echo home_url( 'koszyk' ); ?>'>
+		<div class="basket-text bold alt">
 		<?php
 			if( count( $_SESSION[ 'cart' ] ) > 0 ){
 				$status = cartStatus();
@@ -26,8 +26,9 @@
 			}
 
 		?>
-		</a>
+		</div>
 		<i class="icon fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
+		<a class='hitbox' href='<?php echo home_url( 'koszyk' ); ?>'></a>
 
 	</div>
 	

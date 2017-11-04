@@ -1,4 +1,4 @@
-<div id='sidebar' class='base2'>
+<div id='sidebar' class='base2 grow'>
 	<!-- SIDEBAR NAVIGATION -->
 	<div class="sidebar-navigation background-white">
 		<?php

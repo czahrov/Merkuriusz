@@ -1353,6 +1353,7 @@
 			
 			if(logger) console.log('page.produkt()');
 			
+			/* pojedynczy produkt */
 			if( $( 'body#single' ).length > 0 ){
 				
 				/* breadcrumb */
@@ -1501,6 +1502,10 @@
 					.on({
 						load: function( e ){
 							popup.triggerHandler( 'ready' );
+							
+						},
+						click: function( e ){
+							window.open( $(this).attr( 'src' ), '_blank' );
 							
 						},
 						
@@ -1953,11 +1958,13 @@
 							var myData = new FormData();
 							
 							$.each( form.serializeArray(), function( index, item ){
+								console.log( item );
 								myData.append( item.name, item.value );
 								
 							} );
 							
 							$.each( formOpcje.serializeArray(), function( index, item ){
+								console.log( item );
 								myData.append( item.name, item.value );
 								
 							} );
@@ -2108,16 +2115,16 @@
 				} );
 				
 			})
-			( $( 'form.form' ), 
-			$( 'form.form .field.imie > input' ), 
-			$( 'form.form .field.tel > input' ), 
-			$( 'form.form .field.mail > input' ), 
-			$( 'form.form .field.file > input' ), 
-			$( 'form.form .field.msg > textarea' ), 
-			$( 'form.form > .tbottom > .button' ), 
-			$( 'form.form > .tbottom > .status' ), 
-			$( 'form.form > .tbottom > .status > .load' ), 
-			$( 'form.opcje' ) );
+			( $( '#grid form.form' ), 
+			$( '#grid form.form .field.imie > input' ), 
+			$( '#grid form.form .field.tel > input' ), 
+			$( '#grid form.form .field.mail > input' ), 
+			$( '#grid form.form .field.file > input' ), 
+			$( '#grid form.form .field.msg > textarea' ), 
+			$( '#grid form.form > .tbottom > .button' ), 
+			$( '#grid form.form > .tbottom > .status' ), 
+			$( '#grid form.form > .tbottom > .status > .load' ), 
+			$( '#grid form.opcje' ) );
 			
 		},
 		oferta: function(){

@@ -101,13 +101,13 @@ echo "\r\n-->";
 		var produkt_colors = JSON.parse( '<?php echo addslashes( json_encode( $XMLData[ 'colors' ] ) ); ?>' );
 		
 	</script>
-	<div class='popup produkt pointer flex flex-items-center flex-justify-center'>
+	<div class='popup produkt flex flex-items-center flex-justify-center'>
 		<div class='box flex flex-column'>
 			<div class='header flex no-shrink flex-self-stretch'>
 				<div class='title base0 grow flex flex-items-center'>
 					<?php echo $item['NAME']; ?>
 				</div>
-				<div class='close flex flex-items-center flex-justify-center'>
+				<div class='close pointer flex flex-items-center flex-justify-center'>
 					<span class='icon fa fa-times'></span>
 				</div>
 				
@@ -118,7 +118,7 @@ echo "\r\n-->";
 				</div>
 				
 			</div>
-			<div class='img flex flex-items-center flex-justify-center'>
+			<div class='img pointer flex flex-items-center flex-justify-center'>
 				<img/>
 				
 			</div>
@@ -127,7 +127,7 @@ echo "\r\n-->";
 		
 	</div>
 	<?php get_template_part( "template/page", "top" ); ?>
-	<div class='grid flex flex-items-start'>
+	<div class='grid flex flex-items-start flex-wrap flex-nowrap-mm'>
 		<?php get_template_part( "template/menu", "side" ); ?>
 		<div id='grid' class='base1'>
 			<?php get_template_part( "template/menu", 'top'); ?>
