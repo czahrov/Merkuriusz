@@ -15,6 +15,16 @@ class EASYGIFTS extends XMLAbstract {
 			"http://www.easygifts.com.pl/data/webapi/pl/xml/offer.xml",
 			"http://www.easygifts.com.pl/data/webapi/pl/xml/stocks.xml"
 		);
+		$this->_config[ 'img' ] = array(
+			"http://www.easygifts.com.pl/data/catalogs2017/easygifts-2017-photos.zip",
+			"http://www.easygifts.com.pl/data/files/195/zdjecia-victorinox-zdj-.zip?v=716",
+			"http://www.easygifts.com.pl/data/files/58/pendrive-y-flashpod-specjalne-pen-.rar?v=694",
+			"http://www.easygifts.com.pl/data/files/73/pendrive-y-pqi-seria-inteligent-drive-pqi-.rar?v=131",
+			"http://www.easygifts.com.pl/data/files/74/pendrive-y-pqi-seria-cool-drive-pqi-.rar?v=75",
+			"http://www.easygifts.com.pl/data/files/75/pendrive-y-pqi-seria-travelling-disc-pqi-.rar?v=1198",
+			"http://www.easygifts.com.pl/data/files/76/pendrive-y-pqi-dyski-przenosne-2-5-pqi-.rar?v=1310",
+			
+		);
 		
 	}
 	
@@ -478,13 +488,16 @@ class EASYGIFTS extends XMLAbstract {
 				if( empty( $name ) ) $name = '- brak danych -';
 				
 				$materials = array();
-				if( @$item->materials->children()->count() > 0 ){
+				if( count( $item->materials ) > 0 ){
 					foreach( $item->materials->material as $matter ){
 						$materials[] = (string)$matter->name;
 						
 					}
 					
 				}
+				
+				$price_netto = (float)$item->baseinfo->price;
+				$price_brutto = $this->price2brutto( $price_netto );
 				
 				$ret[] = array_merge(
 					array(
@@ -506,7 +519,7 @@ class EASYGIFTS extends XMLAbstract {
 						'PRICE' => array(
 							'BRUTTO' => 0,
 							'NETTO' => null,
-							'CURRENCY' => 'PLN',
+							'CURRENCY' => '',
 						),
 						'PRICE_ALT' => 'Wycena indywidualna<br>( telefon/mail )',
 						'MODEL' => 'brak danych',
@@ -531,8 +544,9 @@ class EASYGIFTS extends XMLAbstract {
 						'MARKTYPE' => $mark_types,
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
-							'BRUTTO' => (float)$item->baseinfo->price,
-							'NETTO' => null,
+							'NETTO' => $price_netto,
+							'BRUTTO' => $price_brutto,
+							'CURRENCY' => 'PLN',
 						),
 						'WEIGHT' => sprintf( "%.4f kg", (float)str_replace( ",", ".", $item->attributes->weight ) ),
 						'BRAND' => (string)$item->brand->name,

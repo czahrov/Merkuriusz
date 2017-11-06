@@ -2061,6 +2061,8 @@ class ANDA extends XMLAbstract{
 					
 				}
 				
+				$price_netto = (float)$item->attributes()->price;
+				
 				$ret[] = array_merge(
 					array(
 						'SHOP' => $this->_shop,
@@ -2081,7 +2083,7 @@ class ANDA extends XMLAbstract{
 						'PRICE' => array(
 							'BRUTTO' => 0,
 							'NETTO' => null,
-							'CURRENCY' => 'PLN',
+							'CURRENCY' => '',
 						),
 						'PRICE_ALT' => 'Wycena indywidualna<br>( telefon/mail )',
 						'MODEL' => 'brak danych',
@@ -2104,8 +2106,8 @@ class ANDA extends XMLAbstract{
 						'MARKTYPE' => $mark_type,
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
-							'BRUTTO' => (float)$item->attributes()->price,
-							'NETTO' => null,
+							'NETTO' => $price_netto,
+							'BRUTTO' => $this->price2brutto( $price_netto ),
 							'CURRENCY' => (string)$item->attributes()->currency,
 						),
 						'MODEL' => 'brak danych',

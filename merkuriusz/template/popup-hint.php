@@ -1,5 +1,5 @@
 <div class='popup-hint-button pointer bg-green-light flex flex-items-center flex-justify-center'>
-	<div class='icon bg-green font-light flex flex-items-center flex-justify-center fa fa-question'></div>
+	<div class='icon bg-green font-light bg-center bg-contain bg-norepeat'></div>
 	<div class='pulse'></div>
 	
 </div>

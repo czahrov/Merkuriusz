@@ -516,7 +516,7 @@ class AXPOL extends XMLAbstract{
 						'PRICE' => array(
 							'BRUTTO' => 0,
 							'NETTO' => null,
-							'CURRENCY' => 'PLN',
+							'CURRENCY' => '',
 						),
 						'PRICE_ALT' => 'Wycena indywidualna<br>( telefon/mail )',
 						'MODEL' => 'brak danych',
@@ -539,8 +539,9 @@ class AXPOL extends XMLAbstract{
 						'MARKSIZE' => $mark_size,
 						'MARKTYPE' => $mark_types,
 						'PRICE' => array(
-							'NETTO' => (float)$item->NetPricePLN,
-							'BRUTTO' => (float)$item->CatalogPricePLN,
+							'NETTO' => (float)$item->CatalogPricePLN,
+							'BRUTTO' => $this->price2brutto( (float)$item->CatalogPricePLN ),
+							'CURRENCY' => 'PLN',
 						),
 						'WEIGHT' => sprintf( "%s g", (float)$item->ItemWeightG ),
 						

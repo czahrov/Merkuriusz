@@ -815,6 +815,8 @@ class ASGARD extends XMLAbstract{
 					
 				}
 				
+				$price_netto = (float)str_ireplace( ",", ".", $item->cena_netto_katalogowa );
+				
 				$ret[] = array_merge(
 					array(
 						'SHOP' => $this->_shop,
@@ -835,7 +837,7 @@ class ASGARD extends XMLAbstract{
 						'PRICE' => array(
 							'BRUTTO' => 0,
 							'NETTO' => null,
-							'CURRENCY' => 'PLN',
+							'CURRENCY' => '',
 						),
 						'PRICE_ALT' => 'Wycena indywidualna<br>( telefon/mail )',
 						'MODEL' => 'brak danych',
@@ -858,8 +860,9 @@ class ASGARD extends XMLAbstract{
 						'MARKTYPE' => $mark_type,
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
-							'BRUTTO' => (float)str_ireplace( ",", ".", (string)$item->cena_netto_katalogowa ),
-							'NETTO' => (float)str_ireplace( ",", ".", $item->cena_netto_katalogowa ),
+							'NETTO' => $price_netto,
+							'BRUTTO' => $this->price2brutto( $price_netto ),
+							'CURRENCY' => 'PLN',
 						),
 						'MODEL' => 'brak danych',
 						'WEIGHT' => sprintf( "%.3f kg", (float)str_ireplace( ",", ".", $item->waga_jednostkowa_netto_w_kg ) ),

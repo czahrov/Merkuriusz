@@ -27,6 +27,8 @@ class XMLAbstract{
 	protected $_cache_read = true;
 	// wymuszanie powtórnego cacheowania
 	protected $_recache_force = false;
+	// przyjmowana stawka VAT
+	protected $_VAT = 0.23;
 	
 	// konstruktor
 	public function __construct(){
@@ -620,6 +622,18 @@ class XMLAbstract{
 			return false;
 			
 		}
+		
+	}
+	
+	/* Oblicza cenę netto z ceny brutto */
+	protected function price2netto( $price ){
+		return (float)( $price / ( 1 + $this->_VAT ) );
+		
+	}
+	
+	/* Oblicza cenę brutto z ceny netto */
+	protected function price2brutto( $price ){
+		return (float)( $price * ( 1 + $this->_VAT ) );
 		
 	}
 	

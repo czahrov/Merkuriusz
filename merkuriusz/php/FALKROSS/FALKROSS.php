@@ -109,7 +109,7 @@ class FALKROSS extends XMLAbstract{
 						'PRICE' => array(
 							'BRUTTO' => 0,
 							'NETTO' => null,
-							'CURRENCY' => 'PLN',
+							'CURRENCY' => '',
 						),
 						'PRICE_ALT' => 'Wycena indywidualna<br>( telefon/mail )',
 						'MODEL' => 'brak danych',

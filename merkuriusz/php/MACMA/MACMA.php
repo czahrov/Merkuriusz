@@ -17,6 +17,10 @@ class MACMA extends XMLAbstract{
 			"http://www.macma.pl/data/webapi/pl/xml/stocks.xml",
 			
 		);
+		$this->_config[ 'img' ] = array(
+			"http://www.macma.pl/data/webapi/photos/all.zip",
+			
+		);
 		
 	}
 	
@@ -568,6 +572,8 @@ class MACMA extends XMLAbstract{
 					
 				}
 				
+				$price_netto = (float)str_replace( ",", ".", (string)$item->baseinfo->price );
+				
 				$ret[] = array_merge(
 					array(
 						'SHOP' => $this->_shop,
@@ -588,7 +594,7 @@ class MACMA extends XMLAbstract{
 						'PRICE' => array(
 							'BRUTTO' => 0,
 							'NETTO' => null,
-							'CURRENCY' => 'PLN',
+							'CURRENCY' => '',
 						),
 						'PRICE_ALT' => 'Wycena indywidualna<br>( telefon/mail )',
 						'MODEL' => 'brak danych',
@@ -613,7 +619,9 @@ class MACMA extends XMLAbstract{
 						'MARKTYPE' => $mark_types,
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
-							'BRUTTO' => (float)str_replace( ",", ".", (string)$item->baseinfo->price ),
+							'NETTO' => $price_netto,
+							'BRUTTO' => $this->price2brutto( $price_netto ),
+							'CURRENCY' => 'PLN',
 						),
 						'BRAND' => (string)$item->brand,
 						
