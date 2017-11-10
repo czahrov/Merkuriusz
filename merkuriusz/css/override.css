@@ -2496,3 +2496,18 @@ footer > .bot > .cell > * {
 #oferta > .popup_oferta:not(.open) {
   display: none;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mailing\.scss}line{font-family:\000033}}
+#mailing .title {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mailing\.scss}line{font-family:\000039}}
+#mailing ul {
+  list-style-position: inside;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_mailing\.scss}line{font-family:\0000312}}
+#mailing ul > li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}

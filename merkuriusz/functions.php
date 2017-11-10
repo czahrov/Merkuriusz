@@ -1170,8 +1170,15 @@ class NewsLetter{
 	}
 	
 	/* zwraca tablicę z mailami */
-	public function getData(){
-		return $this->_data;
+	public function getData( $verified = false ){
+		if( $verified === false ){
+			return $this->_data;
+			
+		}
+		else{
+			return $this->_data[ 'verified' ];
+			
+		}
 		
 	}
 	

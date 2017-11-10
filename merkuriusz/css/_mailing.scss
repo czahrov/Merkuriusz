@@ -1,0 +1,20 @@
+#mailing{
+	
+	.title{
+		margin-bottom: 20px;
+		font-size: 26px;
+		
+	}
+	
+	ul{
+		list-style-position: inside;
+		
+		& > li{
+			margin-bottom: 10px;
+			font-size: 18px;
+			
+		}
+		
+	}
+	
+}
