@@ -30,19 +30,22 @@ set_error_handler( function( $e_level, $e_msg, $e_file, $e_line, $e_info ){
 			
 		);
 		
-		$msg = sprintf( "%s\r\n%s [%s]: %s\r\n%s[line: %s]\r\n-----\r\n",
-			date( "d/m/Y H:i:s" ),
-			$type,
-			$e_level,
-			$e_msg,
-			$e_file,
-			$e_line
+		if( $type === 'ERROR' ){
+			$msg = sprintf( "%s\r\n%s [%s]: %s\r\n%s[line: %s]\r\n-----\r\n",
+				date( "d/m/Y H:i:s" ),
+				$type,
+				$e_level,
+				$e_msg,
+				$e_file,
+				$e_line
+				
+			);
 			
-		);
-		
-		error_log( $msg, 3, __DIR__ . "/" . $dst );
-		
-		if( $type === 'ERROR' ) die();
+			error_log( $msg, 3, __DIR__ . "/" . $dst );
+			
+			die();
+			
+		}
 		
 	}
 	

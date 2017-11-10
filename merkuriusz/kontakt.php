@@ -68,7 +68,7 @@
 				</ul>
 			</div>
 	
-			<form class="contact-form hide">
+			<form class="contact-form">
 					<div class='form_row form-row1'>
 						<label for="subject">Temat <span class="red">*</span></label>
 						<input type="text" name="subject" id="subject" class="input-normal">
@@ -86,19 +86,20 @@
 					<div class="personal-data">
 						<div class='form_row form-row4'>
 							<label for="e-mail">Adres e-mail <span class="red">*</span></label>
-							<input type="email" name="e-mail" id="e-mail" class="input-normal error">
+							<input type="email" name="e-mail" id="e-mail" class="input-normal">
 						</div>
 						<div class='form_row form-row5'>
 							<label for="phonenumber">Numer telefonu <span class="red">*</span></label>
-							<input type="tel" name="phonenumber" id="phonenumber" class="input-normal ok">
+							<input type="tel" name="phonenumber" id="phonenumber" class="input-normal">
 						</div>
 					</div>
 	
 						<div class='form_row'>
 							<label for="message">Treść wiadomości <span class="red">*</span></label>
-							<textarea id="message" class="input-normal"></textarea>
+							<textarea id="message" class="input-normal" name='message'></textarea>
 						</div>
 						<div class='form_row form-row-button'>
+							<div class='info pointer'></div>
 							<button type="button" class="cotact-form-btn">wyślij wiadomość</button>
 						</div>
 					</form>

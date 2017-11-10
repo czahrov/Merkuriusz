@@ -2271,6 +2271,155 @@
 			$( '#oferta > .box  .kafelki > .item' ) );
 			
 		},
+		kontakt: function(){
+			var addon = root.addon;
+			var logger = addon.isLogger();
+			
+			if(logger) console.log('page.kontakt()');
+			
+			/* formularz kontaktowy */
+			(function( form, fields, send, info ){
+				var test = [
+					{
+						name: 'subject',
+						item: fields.filter( '#subject' ),
+						filterName: 'tekst_req'
+					},
+					{
+						name: 'firstname',
+						item: fields.filter( '#firstname' ),
+						filterName: 'imie'
+					},
+					{
+						name: 'lastname',
+						item: fields.filter( '#lastname' ),
+						filterName: 'imie'
+					},
+					{
+						name: 'e-mail',
+						item: fields.filter( '#e-mail' ),
+						filterName: 'mail'
+					},
+					{
+						name: 'phonenumber',
+						item: fields.filter( '#phonenumber' ),
+						filterName: 'telefon'
+					},
+					{
+						name: 'message',
+						item: fields.filter( '#message' ),
+						filterName: 'tekst_req'
+					},
+					
+				];
+				
+				form
+				.on({
+					info: function( e, status, msg ){
+						info
+						.slideDown()
+						.html( msg );
+						
+					},
+					test: function( e ){
+						var verify = addon.form.verify( test );
+						
+						fields
+						.removeClass( 'ok error' );
+						
+						if( verify.length > 0 ){
+							
+							$.each( verify, function( index, item ){
+								item.addClass( 'error' );
+								
+							} );
+							
+							fields.not( '.error' ).addClass( 'ok' );
+							
+						}
+						else if( verify === true ){
+							fields
+							.addClass( 'ok' );
+							
+							
+						}
+						
+						return verify;
+						
+					},
+					send: function( e ){
+						if( form.triggerHandler( 'test' ) === true ){
+							var data = form.serializeArray();
+							$.ajax({
+								type: 'post',
+								url: '../contact-form',
+								data: data,
+								success: function( data, status, xhr ){
+									try{
+										var resp = JSON.parse( data );
+										console.log( resp );
+										
+										form.triggerHandler( 'info', [ resp.status, resp.msg ] );
+										
+										if( resp.status === 'ok' ){
+											form.trigger( 'reset' );
+											fields.removeClass( 'ok error' );
+											
+										}
+										
+									}
+									catch( err ){
+										console.error( err );
+										console.info( data );
+										form.triggerHandler( 'info', [ 'fail', 'Błąd komunikacji z serwerem.<br>Spróbuj ponownie za klika minut.' ] );
+										
+									}
+									
+								},
+								error: function( xhr, status, error ){
+									console.error( error );
+									form.triggerHandler( 'info', [ 'fail', 'Błąd połączenia z serwerem.<br>Spróbuj ponownie za kilka minut.' ] );
+									
+								},
+								
+							});
+							
+						}
+						
+					},
+					
+				});
+				
+				info.click( function( e ){
+					$(this).slideUp();
+					
+				} );
+				
+				fields
+				.on({
+					blur: function( e ){
+						form.triggerHandler( 'test' )
+						
+					},
+					click: function( e ){
+						$(this).removeClass( 'error' );
+						
+					},
+					
+				});
+				
+				send.click( function(){
+					form.triggerHandler( 'send' );
+					
+				} );
+				
+			})
+			( $( '#contact form.contact-form' ), 
+			$( '#contact form.contact-form' ).find( 'input, textarea' ), 
+			$( '#contact form.contact-form button.cotact-form-btn' ), 
+			$( '#contact form.contact-form .info' ) );
+			
+		},
 		
 	}
 	

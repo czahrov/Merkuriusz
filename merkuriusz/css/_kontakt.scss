@@ -1,0 +1,28 @@
+#contact{
+	
+	form{
+		
+		input, textarea{
+			
+			&.ok{
+				border: 1px solid #00e600;
+				
+			}
+			
+			&.error{
+				border: 1px solid #CE2230;
+				
+			}
+			
+		}
+		
+		.info{
+			margin: 20px 0;
+			font-size: 16px;
+			display: none;
+			
+		}
+		
+	}
+	
+}

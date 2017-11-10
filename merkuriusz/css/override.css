@@ -2511,3 +2511,18 @@ footer > .bot > .cell > * {
   margin-bottom: 10px;
   font-size: 18px;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_kontakt\.scss}line{font-family:\000037}}
+#contact form input.ok, #contact form textarea.ok {
+  border: 1px solid #00e600;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_kontakt\.scss}line{font-family:\0000312}}
+#contact form input.error, #contact form textarea.error {
+  border: 1px solid #CE2230;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/Praca\/Poligon\/Merkuriusz_wp\/themes\/merkuriusz\/css\/_kontakt\.scss}line{font-family:\0000319}}
+#contact form .info {
+  margin: 20px 0;
+  font-size: 16px;
+  display: none;
+}
