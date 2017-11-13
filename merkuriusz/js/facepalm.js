@@ -1319,7 +1319,7 @@
 					
 				}
 				catch( err ){
-					window.error( err );
+					console.error( err );
 					slug_page = '';
 					
 				}

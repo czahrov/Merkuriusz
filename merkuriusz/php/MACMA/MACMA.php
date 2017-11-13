@@ -17,10 +17,10 @@ class MACMA extends XMLAbstract{
 			"http://www.macma.pl/data/webapi/pl/xml/stocks.xml",
 			
 		);
-		$this->_config[ 'img' ] = array(
+		/* $this->_config[ 'img' ] = array(
 			"http://www.macma.pl/data/webapi/photos/all.zip",
 			
-		);
+		); */
 		
 	}
 	
@@ -522,7 +522,10 @@ class MACMA extends XMLAbstract{
 				// generowanie tablicy z obrazkami
 				$img = array();
 				foreach( $item->images->children() as $image ){
-					$img[] = (string)$image;
+					$pattern = "~[^/]+$~";
+					preg_match( $pattern, (string)$image, $match );
+					$fname = $match[0];
+					$img[] = "../wp-content/themes/merkuriusz/img/macma/{$fname}";
 					
 				}
 				

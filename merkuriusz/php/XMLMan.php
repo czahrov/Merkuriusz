@@ -53,7 +53,8 @@ class XMLMan{
 				$item = $this->_data [ 'items' ][0];
 				
 				/* wyciąganie fragmentu ID dla którego wykonywane będzie szukanie */
-				if( in_array( $handler->_shop, array( 'EASYGIFTS', 'MACMA' ) ) ){
+				// if( in_array( $handler->_shop, array( 'EASYGIFTS', 'MACMA', 'FALKROSS' ) ) ){
+				if( !empty( $item[ 'SHORT_ID' ] ) ){
 					$find = $item[ 'SHORT_ID' ];
 					
 				}

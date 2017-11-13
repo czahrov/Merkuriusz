@@ -89,59 +89,102 @@ class FALKROSS extends XMLAbstract{
 					
 				}
 				
-				$ret[] = array_merge(
-					array(
-						'SHOP' => $this->_shop,
-						'ID' => 'brak danych',
-						'NAME' => 'brak danych',
-						'DSCR' => 'brak danych',
-						'IMG' => array(),
-						'CAT' => array(),
-						'DIM' => 'brak danych',
-						'MARK' => array(),
-						'INSTOCK' => 'brak danych',
-						'MATTER' => 'brak danych',
-						'COLOR' => 'brak danych',
-						'COUNTRY' => 'brak danych',
-						'MARKSIZE' => array(),
-						'MARKTYPE' => array(),
-						'MARKCOLORS' => 1,
-						'PRICE' => array(
-							'BRUTTO' => 0,
-							'NETTO' => null,
-							'CURRENCY' => '',
-						),
-						'PRICE_ALT' => 'Wycena indywidualna<br>( telefon/mail )',
-						'MODEL' => 'brak danych',
-						'WEIGHT' => 'brak danych',
-						'BRAND' => 'brak danych',
-						
+				$base = array(
+					'SHOP' => $this->_shop,
+					'ID' => 'brak danych',
+					'NAME' => 'brak danych',
+					'DSCR' => 'brak danych',
+					'IMG' => array(),
+					'CAT' => array(),
+					'DIM' => 'brak danych',
+					'MARK' => array(),
+					'INSTOCK' => 'brak danych',
+					'MATTER' => 'brak danych',
+					'COLOR' => 'brak danych',
+					'COUNTRY' => 'brak danych',
+					'MARKSIZE' => array(),
+					'MARKTYPE' => array(),
+					'MARKCOLORS' => 1,
+					'PRICE' => array(
+						'BRUTTO' => 0,
+						'NETTO' => null,
+						'CURRENCY' => '',
 					),
-					array(
-						'ID' => (string)$item->style_nr,
-						'NAME' => (string)$item->style_name->language->pl,
-						'DSCR' => nl2br( (string)$item->style_description->language->pl ),
-						'IMG' => $img,
-						'CAT' => $cats,
-						// 'DIM' => 'brak danych',
-						'MARK' => array( 'brak danych' ),
-						// 'INSTOCK' => 'brak danych',
-						// 'MATTER' => 'brak danych',
-						'COLOR' => implode( ", ", $colors ),
-						// 'COUNTRY' => 'brak danych',
-						'MARKSIZE' => array( 'brak danych' ),
-						'MARKTYPE' => array( 'brak danych' ),
-						// 'MARKCOLORS' => 1,
-						// 'PRICE' => array(
-							// 'BRUTTO' => 0,
-							// 'NETTO' => null,
-						// ),
-						// 'MODEL' => 'brak danych',
-						'WEIGHT' => implode( ", ", $weights ),
-						'BRAND' => (string)$item->brand_name,
-						
-					)
+					'PRICE_ALT' => 'Wycena indywidualna<br>( telefon/mail )',
+					'MODEL' => 'brak danych',
+					'WEIGHT' => 'brak danych',
+					'BRAND' => 'brak danych',
+					
 				);
+				
+				$product = array(
+					'ID' => (string)$item->style_nr,
+					'NAME' => (string)$item->style_name->language->pl,
+					'DSCR' => nl2br( (string)$item->style_description->language->pl ),
+					'IMG' => $img,
+					'CAT' => $cats,
+					// 'DIM' => 'brak danych',
+					'MARK' => array( 'brak danych' ),
+					// 'INSTOCK' => 'brak danych',
+					// 'MATTER' => 'brak danych',
+					'COLOR' => implode( ", ", $colors ),
+					// 'COUNTRY' => 'brak danych',
+					'MARKSIZE' => array( 'brak danych' ),
+					'MARKTYPE' => array( 'brak danych' ),
+					// 'MARKCOLORS' => 1,
+					// 'PRICE' => array(
+						// 'BRUTTO' => 0,
+						// 'NETTO' => null,
+					// ),
+					// 'MODEL' => 'brak danych',
+					'WEIGHT' => implode( ", ", $weights ),
+					'BRAND' => (string)$item->brand_name,
+					'MARKCOLORS' => $out[ 'MARKCOLORS' ],
+					'PRICE' => $out[ 'PRICE' ],
+					'PRICE_ALT' => $out[ 'PRICE_ALT' ],
+					
+				);
+				
+				$out = array_merge(
+					$base,
+					$product
+				);
+				
+				$ret[] = $out;
+				
+				/* Dodatkowe produkty z SKU */
+				if( count( $item->sku_list->sku ) > 0 ){
+					foreach( $item->sku_list->sku as $sku ){
+						$temp = array(
+							'SHOP' => $out[ 'SHOP' ],
+							'ID' => (string)$sku->sku_artnum,
+							'NAME' => sprintf( "%s<br>%s<br>%s", 
+								$out[ 'NAME' ], 
+								$sku->sku_color_name,
+								$sku->sku_size_name
+							),
+							'DSCR' => $out[ 'DSCR' ],
+							'IMG' => array( (string)$sku->sku_color_picture_url ),
+							'CAT' => $out[ 'CAT' ],
+							'DIM' => (string)$sku->sku_size_name,
+							'COUNTRY' => (string)$sku->sku_coo,
+							'WEIGHT' => sprintf( '%.3f kg', 
+								$sku->sku_weight
+								
+							),
+							'MARK' => $out[ 'MARK' ],
+							'MARKSIZE' => $out[ 'MARKSIZE' ],
+							'MARKTYPE' => $out[ 'MARKTYPE' ],
+							'INSTOCK' => $out[ 'INSTOCK' ],
+							'SHORT_ID' => $out[ 'ID' ],
+							
+						);
+						
+						$ret[] = $temp;
+						
+					}
+					
+				}
 				
 			}
 			

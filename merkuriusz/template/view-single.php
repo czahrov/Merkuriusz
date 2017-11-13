@@ -84,10 +84,10 @@
 echo "<!--";
 // echo count( $XMLData[ 'items' ] );
 // echo "\r\n find_similar: {$XMLData[ 'find_similar' ]}";
-// echo "\r\n podobne: " . count( $XMLData[ 'similar' ] );
+echo "\r\n podobne: " . count( $XMLData[ 'similar' ] );
 // print_r( $XMLData[ 'similar' ] );
 // echo "\r\n find_colors: {$XMLData[ 'find_colors' ]}";
-// echo "\r\n kolory: " . count( $XMLData[ 'colors' ] );
+echo "\r\n kolory: " . count( $XMLData[ 'colors' ] );
 // print_r( $XMLData[ 'colors' ] );
 print_r( $XMLData['items'][0] );
 echo "\r\n-->";

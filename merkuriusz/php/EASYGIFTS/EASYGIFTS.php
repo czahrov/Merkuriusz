@@ -15,7 +15,7 @@ class EASYGIFTS extends XMLAbstract {
 			"http://www.easygifts.com.pl/data/webapi/pl/xml/offer.xml",
 			"http://www.easygifts.com.pl/data/webapi/pl/xml/stocks.xml"
 		);
-		$this->_config[ 'img' ] = array(
+		/* $this->_config[ 'img' ] = array(
 			"http://www.easygifts.com.pl/data/catalogs2017/easygifts-2017-photos.zip",
 			"http://www.easygifts.com.pl/data/files/195/zdjecia-victorinox-zdj-.zip?v=716",
 			"http://www.easygifts.com.pl/data/files/58/pendrive-y-flashpod-specjalne-pen-.rar?v=694",
@@ -24,7 +24,7 @@ class EASYGIFTS extends XMLAbstract {
 			"http://www.easygifts.com.pl/data/files/75/pendrive-y-pqi-seria-travelling-disc-pqi-.rar?v=1198",
 			"http://www.easygifts.com.pl/data/files/76/pendrive-y-pqi-dyski-przenosne-2-5-pqi-.rar?v=1310",
 			
-		);
+		); */
 		
 	}
 	
@@ -417,7 +417,10 @@ class EASYGIFTS extends XMLAbstract {
 				
 				$img = array();
 				if( $item->images->count() > 0 ) foreach( $item->images->children() as $image ){
-					$img[] = (string)$image;
+					$pattern = "~[^/]+$~";
+					preg_match( $pattern, (string)$image, $match );
+					$fname = $match[0];
+					$img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$fname}";
 				}
 				
 				$cat = array();
