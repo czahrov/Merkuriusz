@@ -80,9 +80,56 @@ class FALKROSS extends XMLAbstract{
 				
 				$cats = array();
 				foreach( $item->style_category_list->style_category_main->style_category_sub as $cat ){
+					$name = (string)$item->style_name->language->pl;
+					$cat_slug = $this->stdNameCache( 'odzież reklamowa' );
+					$subcat_name = (string)$cat->language->pl;
+					
+					if( $subcat_name === 'Bluzy' && (
+							stripos( $name, 'spodnie') !== false 
+							or stripos( $name, 'spodenki') !== false 
+							or stripos( $name, 'legginsy') !== false 
+							or stripos( $name, 'szorty') !== false 
+						) ){
+						continue;
+						
+					}
+					elseif( $subcat_name === 'Kurtki' && (
+							stripos( $name, 'spodnie') !== false 
+							or stripos( $name, 'softshell') !== false 
+							or stripos( $name, 'polar') !== false 
+						) ){
+						continue;
+						
+					}
+					elseif( $subcat_name === 'Polary' && (
+							stripos( $name, 'polar') === false
+						) ){
+						continue;
+						
+					}
+					elseif( $subcat_name === 'Ręczniki i szlafroki' && (
+							stripos( $name, 'ręcznik') === false
+							and stripos( $name, 'szlafrok') === false
+						) ){
+						continue;
+						
+					}
+					elseif( $subcat_name === 'Softshelle' && (
+							stripos( $name, 'softshell') === false
+						) ){
+						continue;
+						
+					}
+					elseif( $subcat_name === 'T-shirty' && (
+							stripos( $name, 't-shirt') === false
+						) ){
+						continue;
+						
+					}
+					
 					$cat_name = sprintf( "%s-%s", 
-						$this->stdNameCache( 'odzież reklamowa' ),
-						(string)$cat->language->pl
+						$cat_slug,
+						$this->stdNameCache( $subcat_name )
 						
 					);
 					$cats[ $cat_name ] = array();
