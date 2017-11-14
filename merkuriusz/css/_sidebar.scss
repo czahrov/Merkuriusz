@@ -67,11 +67,12 @@
 				
 				& > .item{
 					border-top: solid 1px $color-szary3;
-					background-clip: content-box;
+					/* background-clip: content-box; */
 					transition: background .3s linear;
 					
 					&:hover{
-						padding-left: 10px;
+						/* padding-left: 10px; */
+						margin-left: 10px;
 						
 						& > .head{
 							padding-left: 20px;
@@ -146,10 +147,12 @@
 				& > .item{
 					
 					&:hover{
-						padding-left: 0;
+						/* padding-left: 0; */
+						margin-left: 0;
 						
 						@media(min-width:map-get( $bpw, desktop )){
-							padding-left: 10px;
+							/* padding-left: 10px; */
+							margin-left: 10px;
 							
 						}
 						
