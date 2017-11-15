@@ -25,8 +25,8 @@
 		
 	},
 	root.bazar = {
-		basePath: '/PiotrM/wp_merkuriusz',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
-		// basePath: '',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
+		// basePath: '/PiotrM/wp_merkuriusz',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
+		basePath: '',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
 		logger: /logger/i.test(window.location.hash),		// czy wyświetlać komunikaty o wywoływaniu funkcji
 		mobile: /mobile/i.test(window.location.hash) || undefined,		// czy aktualnie używane urządzenie jest urządzeniem mobilnym
 		
@@ -1842,7 +1842,7 @@
 									var resp = JSON.parse( data );
 									console.log( resp );
 									if( resp.status === 'ok' ){
-										window.alert( 'za chwile nastąpi przekierowanie' );
+										// window.alert( 'za chwile nastąpi przekierowanie' );
 										window.location.reload();
 										
 									}

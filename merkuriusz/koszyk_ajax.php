@@ -86,7 +86,8 @@ if( isAjax() ){
 				$mailer->Encoding = 'base64';
 				$mailer->setLanguage( 'pl' );
 				$mailer->setFrom( "noreply@{$_SERVER[ 'HTTP_HOST' ]}", 'Zamówienie online - Merkuriusz' );
-				$mailer->addAddress( $safe[ 'mail' ] );
+				// $mailer->addAddress( $safe[ 'mail' ] );
+				$mailer->addAddress( 'biuro@merkuriusz.pl' );
 				$mailer->addAttachment( $_FILES[ 'file' ][ 'tmp_name' ], $_FILES[ 'file' ][ 'name' ] );
 				$mailer->Subject = sprintf( "%s składa zamówienie", $safe[ 'imie' ] );
 				

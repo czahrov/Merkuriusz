@@ -51,8 +51,8 @@ else{
 	$mailer->setLanguage( 'pl' );
 	$mailer->setFrom( "noreply@{$_SERVER[ 'HTTP_HOST' ]}", "Formularz kontaktowy - Merkuriusz" );
 	
-	// $mailer->AddAddress( 'biuro@merkuriusz.pl' );
-	$mailer->AddAddress( $mail );
+	// $mailer->AddAddress( $mail );
+	$mailer->AddAddress( 'biuro@merkuriusz.pl' );
 	$mailer->Subject = $subject;
 	$mailer->Body = sprintf( "%s %s, <%s> ( tel: %s )\r\nPrzesyła wiadomość:\r\n%s\r\n\r\n---\r\nWiadomość wygnerowana automatycznie na %s", 
 	$name,
