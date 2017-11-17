@@ -94,20 +94,26 @@ class XMLMan{
 				$colors = $handler->search( $find2, true, false );
 				
 				/* usuwanie z wyniku produktu o ID takim samym jak bazowy */
-				foreach( $colors as $index => $check ){
-					if( $check[ 'ID' ] == $item[ 'ID' ] ){
-						unset( $colors[ $index ] );
+				if( $colors !== false ){
+					foreach( $colors as $index => $check ){
+						if( $check[ 'ID' ] == $item[ 'ID' ] ){
+							unset( $colors[ $index ] );
+							
+						}
 						
 					}
 					
 				}
 				
 				/* usuwanie z tablicy podobnych produktów warianty kolorystyczne danego produktu */
-				foreach( $colors as $kb => $base ){
-					foreach( $similar as $kc => $check ){
-						if( $base[ 'ID' ] === $check[ 'ID' ] ){
-							unset( $similar[ $kc ] );
-							continue;
+				if( $colors !== false ){
+					foreach( $colors as $kb => $base ){
+						foreach( $similar as $kc => $check ){
+							if( $base[ 'ID' ] === $check[ 'ID' ] ){
+								unset( $similar[ $kc ] );
+								continue;
+								
+							}
 							
 						}
 						
@@ -120,6 +126,7 @@ class XMLMan{
 					
 				}
 				
+				if( $colors === false ) $colors = array();
 				$this->_data[ 'colors' ] = array_merge( $this->_data[ 'colors' ], $colors );
 				
 			}

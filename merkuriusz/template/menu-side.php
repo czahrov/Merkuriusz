@@ -1213,10 +1213,6 @@
 							'class' => 'bold uppercase',
 						),
 						array(
-							'title' => 'vip skóra',
-							'class' => 'bold uppercase',
-						),
-						array(
 							'title' => 'Cool Brands',
 							'class' => 'bold uppercase',
 							'sub' => array(
@@ -1984,6 +1980,142 @@
 						),
 						array(
 							'title' => 'Zdrowie i uroda',
+						),
+						
+					),
+				),
+				'VIP skóra' => array(
+					'class' => 'vip_skora',
+					'items' => array(
+						array(
+							'title' => 'Nowości',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Made in Europe',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Etui na wizytówki',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Etui',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Hotele i Restauracje',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'RFID',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Kosmetyczki',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Portfele',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Opakowania',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Piersiówki',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Teczki',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Kalendarze',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Zestawy',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Torby',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Breloki',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Organizery',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Plecaki',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Travel',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Paski',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Inne',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Produkty z filcu',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Notesy',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Zestawy piór',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Power Bags',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Materiały promocyjne',
+							'pikto' => '',
+							'logo' => '',
+						),
+						array(
+							'title' => 'Gifts of the year',
+							'pikto' => '',
+							'logo' => '',
 						),
 						
 					),

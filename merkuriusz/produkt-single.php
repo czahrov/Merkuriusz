@@ -25,6 +25,14 @@
 		
 	}
 	elseif( count( $XMLData[ 'items' ] ) > 1 ){
-		require get_template_directory() . "/template/view-multi.php";
+		if( !empty( $_GET[ 'code' ] ) ){
+			$item = $XMLData[ 'items' ][0];
+			require get_template_directory() . "/template/view-single.php";
+			
+		}
+		else if( !empty( $_GET[ 'nazwa' ] ) ){
+			require get_template_directory() . "/template/view-multi.php";
+			
+		}
 		
 	}

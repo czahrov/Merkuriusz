@@ -288,6 +288,24 @@
 				
 			}
 			
+			&.vip_skora{
+				
+				.sub{
+					background-color: $color-vip-skora;
+				}
+				
+				&:hover, &.open{
+					
+					&::before,
+					&::after{
+						background-color: $color-vip-skora;
+						
+					}
+					
+				}
+				
+			}
+			
 			&.active{
 				
 				& > .sub{

@@ -29,6 +29,8 @@ class XMLAbstract{
 	protected $_recache_force = false;
 	// przyjmowana stawka VAT
 	protected $_VAT = 0.23;
+	/* dodatkowe dane autoryzacyjne - dla stream_context_create */
+	protected $_context = array();
 	
 	// konstruktor
 	public function __construct(){
@@ -233,13 +235,22 @@ class XMLAbstract{
 			if( $this->_debug === true ) $this->checkpoint( __CLASS__ . ">" . __FUNCTION__ . ">$fname>start" );
 			
 			// [#2]
-			$context = stream_context_create( array(
-				'http' => array(
-					'timeout' => 180.0,
+			$opts = array_merge_recursive(
+				array(
+					'http' => array(
+						'timeout' => 180.0,
+						
+					),
 					
 				),
+				$this->_context
 				
-			) );
+			);
+			echo "<!--OPTS-{$this->_shop}\r\n";
+			print_r( $opts );
+			print_r( $this->_context );
+			echo "-->";
+			$context = stream_context_create( $opts );
 			$content = file_get_contents( $fpath, false, $context );
 			
 			// [#3]

@@ -1,16 +1,26 @@
 <?php
 
-$AXPOL = new AXPOL();
-$EASYGIFTS = new EASYGIFTS();
-$MACMA = new MACMA();
-$ANDA = new ANDA();
+$jaguar_auth = array(
+	'http' => array(
+		'method' => "GET",
+		'header' => implode( "\r\n", array(
+			'Accept-language: pl',
+			'Authorization: Token b877f60a12c850f74a169fa036265f852b38be79'
+		) ),
+	)
+);
+
+// $AXPOL = new AXPOL();
+// $EASYGIFTS = new EASYGIFTS();
+// $MACMA = new MACMA();
+// $ANDA = new ANDA();
+// $FALKROSS = new FALKROSS();
+// $JAGUARGIFT = new JAGUARGIFT( $jaguar_auth );
 
 $ASGARD = new ASGARD();
-$FALKROSS = new FALKROSS();
 
 // $INSPIRION = new INSPIRION();
 // $PAR = new PAR();
-// $JAGUARGIFT = new JAGUARGIFT();
 
 if( isset( $_GET[ 'recache' ] ) ){
 	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'axpol' ] ) ) ) && isset( $AXPOL ) ) $AXPOL->makeCache();

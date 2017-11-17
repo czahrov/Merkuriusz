@@ -415,14 +415,6 @@ class EASYGIFTS extends XMLAbstract {
 			$this->logger( "odczyt XML z pliku $file", __FUNCTION__, __CLASS__ );
 			foreach( $this->_XML[ $file ]->product as $item ){
 				
-				$img = array();
-				if( $item->images->count() > 0 ) foreach( $item->images->children() as $image ){
-					$pattern = "~[^/]+$~";
-					preg_match( $pattern, (string)$image, $match );
-					$fname = $match[0];
-					$img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$fname}";
-				}
-				
 				$cat = array();
 				if( $item->categories->count() > 0 ) foreach( $item->categories->category as $category ){
 					$cat = array_merge_recursive( $cat, $this->genMenuTree( $category, $item ) );
@@ -501,6 +493,26 @@ class EASYGIFTS extends XMLAbstract {
 				
 				$price_netto = (float)$item->baseinfo->price;
 				$price_brutto = $this->price2brutto( $price_netto );
+				
+				$img = array();
+				if( $item->images->count() > 0 ) foreach( $item->images->children() as $image ){
+					$pattern = "~[^/]+$~";
+					preg_match( $pattern, (string)$image, $match );
+					$fname = $match[0];
+					if( file_exists( __DIR . "/img/easygifts/{$fname}" ) ){
+						$img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$fname}";
+						
+					}
+					elseif( file_exists( __DIR . "/img/easygifts/{$id}.jpg" ) ){
+						$img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$id}.jpg";
+						
+					}
+					else{
+						$img[] = "../wp-content/themes/merkuriusz/img/noimage.png";
+						
+					}
+					
+				}
 				
 				$ret[] = array_merge(
 					array(
