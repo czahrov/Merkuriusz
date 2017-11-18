@@ -65,6 +65,8 @@ class ASGARD extends XMLAbstract{
 				
 				$cat_name = strtolower( (string)$item->kategoria );
 				$subcat_name = strtolower( (string)$item->podkategoria );
+				$item_dscr = (string)$item->opis_produktu;
+				$item_title = (string)$item->nazwa;
 				
 				/* =============== KATEGORIA =============== */
 				
@@ -700,7 +702,7 @@ class ASGARD extends XMLAbstract{
 					}
 					
 				}
-				elseif( $cat_name === 'jedzenie i picie' ){
+				elseif( $cat_name === 'jedzenie i picie' or $cat_name === 'jedzienie i picie' ){
 					
 					if( in_array( $subcat_name, array( 'piersiówki', 'kubki termiczne', 'kubki metalowe', 'kubki plastikowe', 'termosy' ) ) ){
 						$cat_name = 'do picia';
@@ -761,6 +763,136 @@ class ASGARD extends XMLAbstract{
 							$subcat_name = 'inne';
 							
 						}
+						
+					}
+					
+				}
+				elseif( $cat_name === 'breloki i smycze' ){
+					
+					if( $subcat_name === 'breloki' ){
+						$cat_name = 'breloki';
+						
+						if( stripos( $item_dscr, 'metal' ) !== false ){
+							$subcat_name = 'metalowe';
+							
+						}
+						elseif( stripos( $item_dscr, 'alumin' ) !== false ){
+							$subcat_name = 'aluminiowe';
+							
+						}
+						else{
+							$subcat_name = 'wielofunkcyjne';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'akcesoria' ){
+						$cat_name = 'breloki';
+						$subcat_name = 'wielofunkcyjne';
+						
+					}
+					elseif( $subcat_name === 'smycze' ){
+						$cat_name = 'podróż';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'narzędzia i odblaski' ){
+					
+					if( $subcat_name === 'breloki' ){
+						$cat_name = 'breloki';
+						$subcat_name = 'wielofunkcyjne';
+						
+					}
+					elseif( $subcat_name === 'latarki' ){
+						$cat_name = 'narzędzia';
+						
+					}
+					elseif( $subcat_name === 'akcesoria' ){
+						
+						if( stripos( $item_title, 'uchwyt' ) !== false ){
+							$cat_name = 'akcesoria do telefonów i tabletów';
+							$subcat_name = 'akcesoria do telefonów';
+							
+						}
+						elseif( stripos( $item_title, 'rower' ) !== false or stripos( $item_dscr, 'rower' ) !== false ){
+							$cat_name = 'wypoczynek';
+							$subcat_name = 'akcesoria rowerowe i odblaski';
+							
+						}
+						elseif( stripos( $item_title, 'długopis' ) !== false ){
+							$cat_name = 'materiały piśmiennicze';
+							$subcat_name = 'długopisy wielofunkcyjne';
+							
+						}
+						else{
+							$cat_name = 'narzędzia';
+							$subcat_name = 'inne';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'odblaskowe' ){
+						$cat_name = 'odblaski';
+						
+						if( stripos( $item_title, 'kamizelka' ) !== false or stripos( $item_title, 'szelki' ) !== false ){
+							$subcat_name = 'kamizelki';
+							
+						}
+						elseif( stripos( $item_title, 'opaska' ) !== false ){
+							$subcat_name = 'opaski';
+							
+						}
+						elseif( stripos( $item_title, 'zawieszka' ) !== false ){
+							$subcat_name = 'breloki';
+							
+						}
+						else $subcat_name = 'inne';
+						
+					}
+					// elseif( $subcat_name === 'zestawy narzędzi' ){
+					elseif( $subcat_name === 'zestawy narzędzi' or stripos( $item_title, 'narzędzi' ) !== false ){
+						$cat_name = 'narzędzia';
+						$subcat_name = 'zestawy';
+						
+					}
+					elseif( $subcat_name === 'miary' ){
+						$cat_name = 'narzędzia';
+						$subcat_name = 'miary i miarki';
+						
+					}
+					elseif( $subcat_name === 'skrobaczki' ){
+						$cat_name = 'narzędzia';
+						$subcat_name = 'samochód';
+						
+					}
+					else{
+						$cat_name = 'narzędzia';
+						$subcat_name = 'inne';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'oferta świąteczna' ){
+					
+					$cat_name = 'świąteczne';
+					$subcat_name = '';
+					
+				}
+				elseif( stripos( $cat_name, 'do pisania' ) !== false ){
+					
+					// $cat_name = 'xxx';
+					$cat_name = 'materiały piśmiennicze';
+					
+					if( in_array( $subcat_name, array( 'długopisy metalowe', 'długopisy plastikowe' ) ) ){
+						
+					}
+					elseif( $subcat_name === 'etui piśmiennicze' ){
+						$subcat_name = 'etui';
+						
+					}
+					else{
+						$subcat_name = 'inne';
 						
 					}
 					
