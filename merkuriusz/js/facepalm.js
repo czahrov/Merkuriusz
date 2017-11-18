@@ -25,8 +25,8 @@
 		
 	},
 	root.bazar = {
-		basePath: '/PiotrM/wp_merkuriusz',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
-		// basePath: '',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
+		// basePath: '/PiotrM/wp_merkuriusz',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
+		basePath: '',		// ścieżka do podfolderu ze stroną (np: /adres/do/podfolderu, albo wartość pusta )
 		logger: /logger/i.test(window.location.hash),		// czy wyświetlać komunikaty o wywoływaniu funkcji
 		mobile: /mobile/i.test(window.location.hash) || undefined,		// czy aktualnie używane urządzenie jest urządzeniem mobilnym
 		
@@ -1008,18 +1008,32 @@
 				slider
 				.on({
 					set: function( e, direction ){
-						last = current;
 						
 						if( direction === 'next' ){
 							++current;
+							last = current - 1;
+							
 						}
 						else if( direction === 'prev' ){
 							--current;
+							last = current + 1;
+							
 						}
+						else{
+							last = current;
+							
+						}
+						
+						if( last < 0 ) last += num;
+						
+						last %= num;
+						
 						
 						if( current < 0 ) current += num;
 						
 						current %= num;
+						
+						// console.log( [ last, current ] );
 						
 						paginacja
 						.eq( current )
@@ -1192,12 +1206,16 @@
 				});
 				
 				paginacja.click(function( e ){
-					var index = $(this).index();
-					
-					if( index !== current ){
-						slider.triggerHandler( 'stop' );
-						current = index;
-						slider.triggerHandler( 'set' );
+					if( !lock ){
+						lock = true;
+						var index = $(this).index();
+						
+						if( index !== current ){
+							slider.triggerHandler( 'stop' );
+							current = index;
+							slider.triggerHandler( 'set' );
+							
+						}
 						
 					}
 					
