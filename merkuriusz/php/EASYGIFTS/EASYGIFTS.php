@@ -499,11 +499,11 @@ class EASYGIFTS extends XMLAbstract {
 					$pattern = "~[^/]+$~";
 					preg_match( $pattern, (string)$image, $match );
 					$fname = $match[0];
-					if( file_exists( __DIR . "/img/easygifts/{$fname}" ) ){
+					if( file_exists( __DIR__ . "/../../img/easygifts/{$fname}" ) ){
 						$img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$fname}";
 						
 					}
-					elseif( file_exists( __DIR . "/img/easygifts/{$id}.jpg" ) ){
+					elseif( file_exists( __DIR__ . "/../..//img/easygifts/{$id}.jpg" ) ){
 						$img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$id}.jpg";
 						
 					}
