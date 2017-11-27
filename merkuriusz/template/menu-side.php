@@ -1267,9 +1267,6 @@
 									'title' => 'Akcesoria',
 								),
 								array(
-									'title' => 'Alkohol',
-								),
-								array(
 									'title' => 'Czekolada',
 								),
 								array(
@@ -1753,6 +1750,45 @@
 								),
 								array(
 									'title' => 'smart cube',
+								),
+							),
+						),
+						array(
+							'title' => 'PICO',
+							'class' => 'bold uppercase',
+							'sub' => array(
+								array(
+									'title' => 'Active',
+								),
+								array(
+									'title' => 'Office',
+								),
+								array(
+									'title' => 'Home',
+								),
+								array(
+									'title' => 'Style',
+								),
+								array(
+									'title' => 'Time',
+								),
+								array(
+									'title' => 'Sound',
+								),
+								array(
+									'title' => 'Flam',
+								),
+								array(
+									'title' => 'Travel',
+								),
+								array(
+									'title' => 'Game',
+								),
+								array(
+									'title' => 'Lux',
+								),
+								array(
+									'title' => 'Pen',
 								),
 							),
 						),
