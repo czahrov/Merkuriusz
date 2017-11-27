@@ -10,16 +10,16 @@ $jaguar_auth = array(
 	)
 );
 
-$AXPOL = new AXPOL();
-$EASYGIFTS = new EASYGIFTS();
-$MACMA = new MACMA();
-$ANDA = new ANDA();
-$FALKROSS = new FALKROSS();
-$JAGUARGIFT = new JAGUARGIFT( $jaguar_auth );
+// $AXPOL = new AXPOL();
+// $EASYGIFTS = new EASYGIFTS();
+// $MACMA = new MACMA();
+// $ANDA = new ANDA();
+// $FALKROSS = new FALKROSS();
+// $JAGUARGIFT = new JAGUARGIFT( $jaguar_auth );
+// $ASGARD = new ASGARD();
 
-$ASGARD = new ASGARD();
+$INSPIRION = new INSPIRION();
 
-// $INSPIRION = new INSPIRION();
 // $PAR = new PAR();
 
 if( isset( $_GET[ 'recache' ] ) ){

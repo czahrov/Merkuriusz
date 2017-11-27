@@ -146,7 +146,7 @@
 									'title' => 'Na laptopa',	
 								),
 								array(
-									'title' => 'Na dokumenty',	
+									'title' => 'Na dokumenty',
 								),
 								array(
 									'title' => 'Na zakupy',
@@ -202,7 +202,6 @@
 							),
 						),
 						array(
-							//'title' => 'Parasole, peleryny i płaszcze',
 							'title' => 'Przeciwdeszczowe',
 							'pikto' => 'parasole.png',
 							'sub' => array(
