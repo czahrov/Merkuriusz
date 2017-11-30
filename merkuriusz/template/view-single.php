@@ -227,15 +227,15 @@ echo "\r\n-->";
 									<input class='value grow' type='text' placeholder='Wpisz ilość, którą chcesz wycenić'/>
 									
 								</div>
-								<div class='line typ base1 flex'>
+								<div class='line typ base1 flex hide'>
 									<div class='name bold base4 flex flex-items-center'>
 										Typ znakowania
 									</div>
 									<select class='value grow'>
-										<option selected disabled value=''>Wybierz metodę znakowania</option>
-										<option value='brak'>Bez znakowania</option>
+										<option disabled value=''>Wybierz metodę znakowania</option>
+										<option selected value='brak'>Bez znakowania</option>
 										<?php
-											foreach( $item[ 'MARK' ] as $size => $types ){
+											/* foreach( $item[ 'MARK' ] as $size => $types ){
 												foreach( $types as $type ){
 												$mark_data = markTypes( $type );
 													printf( "<option class='%s' value='%s' size='%s' cmin='%s' cmax='%s'>%s, %s</option>",
@@ -249,7 +249,8 @@ echo "\r\n-->";
 													);
 													
 												}
-											}
+											} */
+											
 										?>
 										
 									</select>
@@ -320,8 +321,8 @@ echo "\r\n-->";
 						</div>
 						<div class='tbody flex flex-wrap'>
 							<?php
-								$znakowanie = array();
-								foreach( $item[ 'MARKTYPE' ] as $mark ){
+								// $znakowanie = array();
+								/* foreach( $item[ 'MARKTYPE' ] as $mark ){
 									$t = markTypes( $mark )[ 'info' ];
 									if( !empty( $t ) ){
 										$znakowanie[] = sprintf( "%s (%s)", 
@@ -337,7 +338,7 @@ echo "\r\n-->";
 										
 									}
 									
-								}
+								} */
 								
 								$specyfikacja = array(
 									'Model' => empty( $item[ 'MODEL' ] )?( 'brak danych' ):( $item[ 'MODEL' ] ),
@@ -346,8 +347,8 @@ echo "\r\n-->";
 									'Kraj pochodzenia' => empty( $item[ 'COUNTRY' ] )?( 'brak danych' ):( $item[ 'COUNTRY' ] ),
 									'Rozmiar' => empty( $item[ 'DIM' ] )?( 'brak danych' ):( $item[ 'DIM' ] ),
 									'Kolor' => empty( $item[ 'COLOR' ] )?( 'brak danych' ):( $item[ 'COLOR' ] ),
-									'Znakowanie' => implode( "<br>", $znakowanie ),
-									'Wielkość znakowania' => implode( "<br>", $item[ 'MARKSIZE' ] ),
+									// 'Znakowanie' => implode( "<br>", $znakowanie ),
+									// 'Wielkość znakowania' => implode( "<br>", $item[ 'MARKSIZE' ] ),
 									'Materiał' => empty( $item[ 'MATTER' ] )?( 'brak danych' ):( $item[ 'MATTER' ] ),
 									'Waga' => empty( $item[ 'WEIGHT' ] )?( 'brak danych' ):( $item[ 'WEIGHT' ] ),
 									

@@ -1823,7 +1823,7 @@
 				'Vip piśmiennicze' => array(
 					'class' => 'vip_pismiennicze',
 					'items' => array(
-						array(
+						/* array(
 							'title' => 'parker',
 							'pikto' => 'feather.png',
 							'logo' => 'Parker_logo.png',
@@ -1832,7 +1832,7 @@
 							'title' => 'waterman',
 							'pikto' => 'pen3.png',
 							'logo' => 'waterman_logo.png',
-						),
+						), */
 						array(
 							'title' => 'mark twain',
 							'pikto' => 'pen1.png',
@@ -1857,11 +1857,11 @@
 								),
 							),
 						),
-						array(
+						/* array(
 							'title' => 'diplomat',
 							'pikto' => 'pen2.png',
 							'logo' => 'diplomat.svg',
-						),
+						), */
 					),
 				),
 				'Victorinox collection' => array(

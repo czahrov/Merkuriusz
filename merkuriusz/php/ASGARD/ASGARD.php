@@ -997,7 +997,7 @@ class ASGARD extends XMLAbstract{
 							'CURRENCY' => 'PLN',
 						),
 						'MODEL' => 'brak danych',
-						'WEIGHT' => sprintf( "%.3f kg", (float)str_ireplace( ",", ".", $item->waga_jednostkowa_netto_w_kg ) ),
+						'WEIGHT' => sprintf( "%.4f kg", (float)str_ireplace( ",", ".", $item->waga_jednostkowa_netto_w_kg ) ),
 						// 'BRAND' => 'brak danych',
 					)
 					

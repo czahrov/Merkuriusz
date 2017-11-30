@@ -80,6 +80,10 @@ class AXPOL extends XMLAbstract{
 			$this->logger( "odczyt XML z pliku $file", __FUNCTION__, __CLASS__ );
 			
 			foreach( $this->_XML[ $file ]->children() as $item ){
+				
+				$item_title = (string)$item->TitlePL;
+				$item_dscr = (string)$item->DescriptionPL;
+				
 				// generowanie tablicy z obrazami
 				$img = array();
 				for( $i=1; $i<=20; $i++ ){
@@ -194,15 +198,15 @@ class AXPOL extends XMLAbstract{
 					//$subcat_name = "akcesoria komputerowe";
 					$cat_name = 'akcesoria komputerowe';
 					
-					if( stripos( (string)$item->TitlePL, ' usb' ) !== false ){
+					if( stripos( $item_title, ' usb' ) !== false ){
 						$subcat_name = 'Akcesoria USB';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, ' klawiatura' ) !== false ){
+					elseif( stripos( $item_title, ' klawiatura' ) !== false ){
 						$subcat_name = 'Klawiatura';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, ' mysz' ) !== false ){
+					elseif( stripos( $item_title, ' mysz' ) !== false ){
 						$subcat_name = 'Mysz';
 						
 					}
@@ -232,15 +236,15 @@ class AXPOL extends XMLAbstract{
 				elseif( $subcat_name === 'zegary i zegarki' ){
 					$cat_name = 'Zegary i zegarki';
 					
-					if( strpos( (string)$item->TitlePL, 'ścianę' ) !== false ){
+					if( strpos( $item_title, 'ścianę' ) !== false ){
 						$subcat_name = 'zegary ścienne';
 						
 					}
-					elseif( strpos( (string)$item->TitlePL, 'biurko' ) !== false ){
+					elseif( strpos( $item_title, 'biurko' ) !== false ){
 						$subcat_name = 'zegary biurkowe';
 						
 					}
-					elseif( strpos( (string)$item->TitlePL, 'rękę' ) !== false ){
+					elseif( strpos( $item_title, 'rękę' ) !== false ){
 						$subcat_name = 'zegarki na rekę';
 						
 					}
@@ -251,11 +255,11 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				elseif( $subcat_name === 'grill i piknik' ){
-					if( stripos( (string)$item->TitlePL, 'grill' ) !== false ){
+					if( stripos( $item_title, 'grill' ) !== false ){
 						$subcat_name = 'grill';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'plecak' ) !== false or stripos( (string)$item->TitlePL, 'kosz' ) !== false ){
+					elseif( stripos( $item_title, 'plecak' ) !== false or stripos( $item_title, 'kosz' ) !== false ){
 						$subcat_name = 'Plecaki i kosze piknikowe';
 						
 					}
@@ -269,31 +273,31 @@ class AXPOL extends XMLAbstract{
 					if( $subcat_name === 'pamięci usb' ){
 						$cat_name = 'pamięci usb';
 					
-						if( stripos( (string)$item->DescriptionPL, ' 1GB' ) !== false ){
+						if( stripos( $item_dscr, ' 1GB' ) !== false ){
 							$subcat_name = '1GB';
 							
 						}
-						elseif( stripos( (string)$item->DescriptionPL, ' 2GB' ) !== false ){
+						elseif( stripos( $item_dscr, ' 2GB' ) !== false ){
 							$subcat_name = '2GB';
 							
 						}
-						elseif( stripos( (string)$item->DescriptionPL, ' 4GB' ) !== false ){
+						elseif( stripos( $item_dscr, ' 4GB' ) !== false ){
 							$subcat_name = '4GB';
 							
 						}
-						elseif( stripos( (string)$item->DescriptionPL, ' 8GB' ) !== false ){
+						elseif( stripos( $item_dscr, ' 8GB' ) !== false ){
 							$subcat_name = '8GB';
 							
 						}
-						elseif( stripos( (string)$item->DescriptionPL, ' 16GB' ) !== false ){
+						elseif( stripos( $item_dscr, ' 16GB' ) !== false ){
 							$subcat_name = '16GB';
 							
 						}
-						elseif( stripos( (string)$item->DescriptionPL, ' 32GB' ) !== false ){
+						elseif( stripos( $item_dscr, ' 32GB' ) !== false ){
 							$subcat_name = '32GB';
 							
 						}
-						elseif( stripos( (string)$item->DescriptionPL, ' 64GB' ) !== false ){
+						elseif( stripos( $item_dscr, ' 64GB' ) !== false ){
 							$subcat_name = '64GB';
 							
 						}
@@ -305,18 +309,18 @@ class AXPOL extends XMLAbstract{
 					}
 					elseif( $subcat_name === 'power banki' ){
 						$cat_name = 'power banki';
-						// (string)$item->TitlePL
-						// (string)$item->DescriptionPL
+						// $item_title
+						// $item_dscr
 						
 						$val = null;
 						
-						if( stripos( (string)$item->TitlePL, ' mAh' ) !== false ){
-							preg_match( "@ (\d+) mAh@i", (string)$item->TitlePL, $match );
+						if( stripos( $item_title, ' mAh' ) !== false ){
+							preg_match( "@ (\d+) mAh@i", $item_title, $match );
 							$val = (int)$match[1];
 							
 						}
-						elseif( stripos( (string)$item->DescriptionPL, ' mAh' ) !== false ){
-							preg_match( "@ (\d+) mAh@i", (string)$item->DescriptionPL, $match );
+						elseif( stripos( $item_dscr, ' mAh' ) !== false ){
+							preg_match( "@ (\d+) mAh@i", $item_dscr, $match );
 							$val = (int)$match[1];
 							
 						}
@@ -352,7 +356,7 @@ class AXPOL extends XMLAbstract{
 						
 					}
 					elseif( $subcat_name === 'adaptery i huby usb' ){
-						if( stripos( (string)$item->TitlePL, 'hub' ) !== false ){
+						if( stripos( $item_title, 'hub' ) !== false ){
 							$subcat_name = 'huby usb';
 							
 						}
@@ -374,67 +378,67 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				elseif( $cat_name === 'torby i plecaki' ){
-					if( stripos( (string)$item->TitlePL, 'laptop' ) !== false ){
+					if( stripos( $item_title, 'laptop' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'na laptopa';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'dokument' ) !== false ){
+					elseif( stripos( $item_title, 'dokument' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'na dokumenty';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'sport' ) !== false ){
+					elseif( stripos( $item_title, 'sport' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'sportowe';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'kółk' ) !== false ){
+					elseif( stripos( $item_title, 'kółk' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'podróżne';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'plecak' ) !== false ){
+					elseif( stripos( $item_title, 'plecak' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'plecaki';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'sznurk' ) !== false or stripos( (string)$item->TitlePL, 'żeglar' ) !== false ){
+					elseif( stripos( $item_title, 'sznurk' ) !== false or stripos( $item_title, 'żeglar' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'worki ze sznurkiem';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'ramię' ) !== false ){
+					elseif( stripos( $item_title, 'ramię' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'na ramię';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'term' ) !== false ){
+					elseif( stripos( $item_title, 'term' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'termoizolacyjne';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'plaż' ) !== false ){
+					elseif( stripos( $item_title, 'plaż' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'torby plażowe';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'zakup' ) !== false ){
+					elseif( stripos( $item_title, 'zakup' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'na zakupy';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'tablet' ) !== false ){
+					elseif( stripos( $item_title, 'tablet' ) !== false ){
 						$cat_name = 'akcesoria do telefonów i tabletów';
 						$subcat_name = 'akcesoria do tabletów';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'podróż' ) !== false ){
+					elseif( stripos( $item_title, 'podróż' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'podróżne';
 						
 					}
-					elseif( stripos( (string)$item->TitlePL, 'wodoodporn' ) !== false ){
+					elseif( stripos( $item_title, 'wodoodporn' ) !== false ){
 						$cat_name = 'torby i plecaki';
 						$subcat_name = 'wodoodporne';
 						
@@ -448,8 +452,8 @@ class AXPOL extends XMLAbstract{
 				}
 				
 				/* 
-				(string)$item->TitlePL
-				(string)$item->DescriptionPL
+				$item_title = (string)$item->TitlePL
+				$item_dscr = (string)$item->DescriptionPL
 				 */
 				 
 				/* ========== PODKATEGORIE ========== */
