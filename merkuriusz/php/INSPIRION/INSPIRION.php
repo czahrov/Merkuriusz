@@ -1699,7 +1699,7 @@ class INSPIRION extends XMLAbstract {
 						'MODEL' => 'brak danych',
 						'WEIGHT' => 'brak danych',
 						'BRAND' => 'brak danych',
-						),
+					),
 					array(
 						'ID' => $id,
 						'SHORT_ID' => substr( str_replace( '-', '', $id ), 0 ),
