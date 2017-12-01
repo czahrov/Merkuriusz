@@ -341,7 +341,7 @@ echo "\r\n-->";
 								} */
 								
 								$specyfikacja = array(
-									'Model' => empty( $item[ 'MODEL' ] )?( 'brak danych' ):( $item[ 'MODEL' ] ),
+									// 'Model' => empty( $item[ 'MODEL' ] )?( 'brak danych' ):( $item[ 'MODEL' ] ),
 									'Dostępność (szt)' => $item[ 'INSTOCK' ] === false?( 'brak danych' ):( $item[ 'INSTOCK' ] ),
 									'Marka' => empty( $item[ 'BRAND' ] )?( 'brak danych' ):( $item[ 'BRAND' ] ),
 									'Kraj pochodzenia' => empty( $item[ 'COUNTRY' ] )?( 'brak danych' ):( $item[ 'COUNTRY' ] ),
@@ -350,6 +350,7 @@ echo "\r\n-->";
 									// 'Znakowanie' => implode( "<br>", $znakowanie ),
 									// 'Wielkość znakowania' => implode( "<br>", $item[ 'MARKSIZE' ] ),
 									'Materiał' => empty( $item[ 'MATTER' ] )?( 'brak danych' ):( $item[ 'MATTER' ] ),
+									'Dostępne znakowania' => empty( $item[ 'MARK_TEXT' ] )?( 'brak danych' ):( $item[ 'MARK_TEXT' ] ),
 									'Waga' => empty( $item[ 'WEIGHT' ] )?( 'brak danych' ):( $item[ 'WEIGHT' ] ),
 									
 								);

@@ -479,7 +479,7 @@ class AXPOL extends XMLAbstract{
 				preg_match( "/^\d+$/", (string)$item->Page, $match );
 				$page_test = empty($match)?( (string)$item->Page ):( "strona {$item->Page}" );
 				
-				$mark_array = $this->_getMark( (string)$item->CodeERP );
+				/* $mark_array = $this->_getMark( (string)$item->CodeERP );
 				$mark_size = array();
 				$mark_types = array();
 				if( !empty( $mark_array ) ){
@@ -498,6 +498,15 @@ class AXPOL extends XMLAbstract{
 					$mark_types[] = "Brak";
 					$mark_size[] = "Brak";
 					
+				} */
+				
+				$marks_text = array();
+				foreach( $this->_getMark( (string)$item->CodeERP ) as $t_place => $t_types ){
+					$marks_text[] = sprintf( "%s: %s", 
+						$t_place,
+						implode( ", ", $t_types )
+					);
+					
 				}
 				
 				$ret[] = array_merge(
@@ -509,13 +518,14 @@ class AXPOL extends XMLAbstract{
 						'IMG' => array(),
 						'CAT' => array(),
 						'DIM' => 'brak danych',
-						'MARK' => array(),
+						// 'MARK' => array(),
+						// 'MARKSIZE' => array(),
+						// 'MARKTYPE' => array(),
+						'MARK_TEXT' => '',
 						'INSTOCK' => 'brak danych',
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'MARKSIZE' => array(),
-						'MARKTYPE' => array(),
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'BRUTTO' => 0,
@@ -535,13 +545,14 @@ class AXPOL extends XMLAbstract{
 						'IMG' => $img,
 						'CAT' => $cat,
 						'DIM' => (string)$item->Dimensions,
-						'MARK' => empty( $mark_array )?( array() ):( $mark_array ),
+						// 'MARK' => empty( $mark_array )?( array() ):( $mark_array ),
+						// 'MARKSIZE' => $mark_size,
+						// 'MARKTYPE' => $mark_types,
+						'MARK_TEXT' => implode( "<br>", $marks_text ),
 						'INSTOCK' => $this->_getStock( (string)$item->CodeERP ),
 						'MATTER' => (string)$item->MaterialPL,
 						'COLOR' => (string)$item->ColorPL,
 						'COUNTRY' => (string)$item->CountryOfOrigin,
-						'MARKSIZE' => $mark_size,
-						'MARKTYPE' => $mark_types,
 						'PRICE' => array(
 							'NETTO' => (float)$item->CatalogPricePLN,
 							'BRUTTO' => $this->price2brutto( (float)$item->CatalogPricePLN ),

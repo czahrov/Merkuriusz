@@ -933,7 +933,7 @@ class ASGARD extends XMLAbstract{
 					}
 					$mark[ $size ][] = $type;
 					
-				} */
+				}
 				
 				$mark_size = array();
 				$mark_type = array();
@@ -945,7 +945,7 @@ class ASGARD extends XMLAbstract{
 					$mark_type[] = $match[1][ $index ];
 					$mark_array[ $match[2][ $index ] ][] = $match[1][ $index ];
 					
-				}
+				} */
 				
 				$price_netto = (float)str_ireplace( ",", ".", $item->cena_netto_katalogowa );
 				
@@ -958,13 +958,14 @@ class ASGARD extends XMLAbstract{
 						'IMG' => array(),
 						'CAT' => array(),
 						'DIM' => 'brak danych',
-						'MARK' => array(),
+						// 'MARK' => array(),
+						// 'MARKSIZE' => array(),
+						// 'MARKTYPE' => array(),
+						'MARK_TEXT' => '',
 						'INSTOCK' => 'brak danych',
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'MARKSIZE' => array(),
-						'MARKTYPE' => array(),
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'BRUTTO' => 0,
@@ -983,13 +984,14 @@ class ASGARD extends XMLAbstract{
 						'IMG' => $img,
 						'CAT' => $cat,
 						'DIM' => (string)$item->wymiary_produktu,
-						'MARK' => $mark_array,
+						// 'MARK' => $mark_array,
+						// 'MARKSIZE' => $mark_size,
+						// 'MARKTYPE' => $mark_type,
+						'MARK_TEXT' => preg_replace( "~, ~", "<br>", (string)$item->znakowanie_produktu ),
 						'INSTOCK' => (int)$item->in_stock,
 						'MATTER' => (string)$item->material,
 						'COLOR' => (string)$item->kolor,
 						// 'COUNTRY' => 'brak danych',
-						'MARKSIZE' => $mark_size,
-						'MARKTYPE' => $mark_type,
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'NETTO' => $price_netto,

@@ -2031,14 +2031,16 @@ class ANDA extends XMLAbstract{
 				}
 				
 				// znakowanie i waga
-				$mark_array = array();
-				$mark_size = array();
-				$mark_type = array();
-				$weight = null;
+				// $mark_array = array();
+				// $mark_size = array();
+				// $mark_type = array();
+				// $weight = null;
+				$mark_text = '';
 				foreach( $item->properties->children() as $property ){
 					if( strpos( (string)$property->attributes()->name, 'METODA' ) === 0 ){
+						$mark_text = (string)$property->attributes()->value;
 						// $pattern = "~([\w\d]+) \((?:.*?, )?(.*?MM)\)~";
-						$pattern = "~([\w\-]+)\s+\((?:.*?([\w×ø]+ MM)?)?\)~";
+						/* $pattern = "~([\w\-]+)\s+\((?:.*?([\w×ø]+ MM)?)?\)~";
 						preg_match_all( $pattern, (string)$property->attributes()->value, $match );
 						for( $i=0; $i<count( $match[0] ); $i++ ){
 							$type = $match[1][ $i ];
@@ -2051,7 +2053,7 @@ class ANDA extends XMLAbstract{
 								
 							}
 							
-						}
+						} */
 						
 					}
 					if( strpos( (string)$property->attributes()->name, 'WAGA' ) === 0 ){
@@ -2072,13 +2074,14 @@ class ANDA extends XMLAbstract{
 						'IMG' => array(),
 						'CAT' => array(),
 						'DIM' => 'brak danych',
-						'MARK' => array(),
+						// 'MARK' => array(),
+						// 'MARKSIZE' => array(),
+						// 'MARKTYPE' => array(),
+						'MARK_TEXT' => '',
 						'INSTOCK' => 'brak danych',
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'MARKSIZE' => array(),
-						'MARKTYPE' => array(),
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'BRUTTO' => 0,
@@ -2097,13 +2100,14 @@ class ANDA extends XMLAbstract{
 						'IMG' => $img,
 						'CAT' => $cat,
 						'DIM' => implode( " x ", $dim ),
-						'MARK' => $mark_array,
+						// 'MARK' => $mark_array,
+						// 'MARKSIZE' => $mark_size,
+						// 'MARKTYPE' => $mark_type,
+						'MARK_TEXT' => $mark_text,
 						'INSTOCK' => (int)$item->stocks[0]->attributes()->value,
 						// 'MATTER' => 'brak danych',
 						// 'COLOR' => 'brak danych',
 						// 'COUNTRY' => 'brak danych',
-						'MARKSIZE' => $mark_size,
-						'MARKTYPE' => $mark_type,
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'NETTO' => $price_netto,

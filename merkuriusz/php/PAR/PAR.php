@@ -94,7 +94,8 @@ class PAR extends XMLAbstract {
 					$img[] = "http://www.par.com.pl" . (string)$image;
 					
 				}
-				$mark = array();
+				
+				/* $mark = array();
 				$mark_size = array();
 				$mark_type = array();
 				foreach( $item->techniki_zdobienia->technika as $technika ){
@@ -104,6 +105,17 @@ class PAR extends XMLAbstract {
 					
 					$mark_size[] = $size;
 					$mark_type[] = $type;
+					
+				} */
+				
+				$marks_text = array();
+				foreach( $item->techniki_zdobienia->technika as $t ){
+					$marks_text[] = sprintf( "%s %s %s",
+						$t->technika_zdobienia,
+						$t->miejsce_zdobienia,
+						$t->maksymalny_rozmiar_logo
+						
+					);
 					
 				}
 				
@@ -1120,13 +1132,14 @@ class PAR extends XMLAbstract {
 						'IMG' => array(),
 						'CAT' => array(),
 						'DIM' => 'brak danych',
-						'MARK' => array(),
+						// 'MARK' => array(),
+						// 'MARKSIZE' => array(),
+						// 'MARKTYPE' => array(),
+						'MARK_TEXT' => '',
 						'INSTOCK' => 'brak danych',
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'MARKSIZE' => array(),
-						'MARKTYPE' => array(),
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'NETTO' => null,
@@ -1146,14 +1159,15 @@ class PAR extends XMLAbstract {
 						'IMG' => $img,
 						'CAT' => $cat,
 						'DIM' => $dim,
-						'MARK' => $mark,
+						// 'MARK' => $mark,
+						// 'MARKSIZE' => $mark_size,
+						// 'MARKTYPE' => $mark_type,
+						'MARK_TEXT' => implode( "<br>", $marks_text ),
 						'INSTOCK' => $instock,
 						'MATTER' => $matter,
 						'MATTER' => $matter,
 						'COLOR' => $color,
 						// 'COUNTRY' => 'brak danych',
-						'MARKSIZE' => $mark_size,
-						'MARKTYPE' => $mark_type,
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'NETTO' => $price_netto,

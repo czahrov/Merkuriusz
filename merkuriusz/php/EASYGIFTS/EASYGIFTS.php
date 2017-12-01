@@ -421,7 +421,7 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				
-				$mark = array();
+				/* $mark = array();
 				$mark_size = (string)$item->marking_size;
 				$mark_types = array();
 				if( empty( $mark_size ) ) $mark_size = 'brak rozmiaru';
@@ -471,7 +471,7 @@ class EASYGIFTS extends XMLAbstract {
 					}
 					
 					
-				}
+				} */
 				
 				$id = (string)$item->baseinfo->code_full;
 				if( empty( $id ) ) $id = (string)$item->baseinfo->id;
@@ -514,6 +514,12 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				
+				$marks_text = array();
+				foreach( $item->markgroups->markgroup as $t ){
+					$marks_text[] = (string)$t->name;
+					
+				}
+				
 				$ret[] = array_merge(
 					array(
 						'SHOP' => $this->_shop,
@@ -524,6 +530,7 @@ class EASYGIFTS extends XMLAbstract {
 						'CAT' => array(),
 						'DIM' => 'brak danych',
 						'MARK' => array(),
+						'MARK_TEXT' => '',
 						'INSTOCK' => 'brak danych',
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
@@ -550,7 +557,8 @@ class EASYGIFTS extends XMLAbstract {
 						'IMG' => $img,
 						'CAT' => $cat,
 						'DIM' => (string)$item->attributes->size,
-						'MARK' => $mark,
+						// 'MARK' => $mark,
+						'MARK_TEXT' => implode( "<br>", $marks_text ),
 						'INSTOCK' => $this->getStock( (int)$item->baseinfo->id ),
 						'MATTER' => !empty( $materials )?( implode( ", ", $materials ) ):( "brak danych" ),
 						'COLOR' => (string)$item->color->name,

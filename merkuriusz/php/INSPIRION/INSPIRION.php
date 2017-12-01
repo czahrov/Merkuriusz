@@ -1636,7 +1636,7 @@ class INSPIRION extends XMLAbstract {
 				if( !empty( $cat_name ) ) $cat[ $cat_name_slug ][ $subcat_name_slug ] = array();
 				// if( !empty( $cat2_name ) ) $cat[ $cat2_name ] = array();
 				
-				$mark = array();
+				/* $mark = array();
 				$mark_size = array();
 				$mark_type = array();
 				$t = (string)$item->{'Imprint-size'};
@@ -1662,7 +1662,7 @@ class INSPIRION extends XMLAbstract {
 					$mark_size[] = 'brak danych';
 					$mark_type[] = 'brak danych';
 					
-				}
+				} */
 				
 				sscanf( (string)$item->catalog_price, "%u,%u zł", $zl, $gr );
 				$price_netto = (float)"{$zl}.{$gr}";
@@ -1682,13 +1682,14 @@ class INSPIRION extends XMLAbstract {
 						'IMG' => array(),
 						'CAT' => array(),
 						'DIM' => 'brak danych',
-						'MARK' => array(),
+						// 'MARK' => array(),
+						// 'MARKSIZE' => array(),
+						// 'MARKTYPE' => array(),
+						'MARK_TEXT' => '',
 						'INSTOCK' => 'brak danych',
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'MARKSIZE' => array(),
-						'MARKTYPE' => array(),
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'NETTO' => null,
@@ -1708,13 +1709,14 @@ class INSPIRION extends XMLAbstract {
 						'IMG' => $img,
 						'CAT' => $cat,
 						'DIM' => (string)$item->wymiary,
-						'MARK' => $mark,
+						// 'MARK' => $mark,
+						// 'MARKSIZE' => $mark_size,
+						// 'MARKTYPE' => $mark_type,
+						'MARK_TEXT' => preg_replace( "~, ~", "<br>", (string)$item->{'Imprint-size'} ),
 						// 'INSTOCK' => 'brak danych',
 						'MATTER' => (string)$item->material,
 						'COLOR' => implode( ", ", $colors[1] ),
 						// 'COUNTRY' => 'brak danych',
-						'MARKSIZE' => $mark_size,
-						'MARKTYPE' => $mark_type,
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'NETTO' => $price_netto,

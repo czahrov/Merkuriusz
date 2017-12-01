@@ -546,7 +546,7 @@ class MACMA extends XMLAbstract{
 					$matters[] = 'Brak danych';
 				}
 				
-				$mark_array = array();
+				/*$mark_array = array();
 				
 				$mark_size = array();
 				$size = (string)$item->marking_size;
@@ -573,9 +573,15 @@ class MACMA extends XMLAbstract{
 				else{
 					$mark_types = 'Brak danych';
 					
-				}
+				} */
 				
 				$price_netto = (float)str_replace( ",", ".", (string)$item->baseinfo->price );
+				
+				$marks_text = array();
+				foreach( $item->markgroups->markgroup as $t ){
+					$marks_text[] = (string)$t->name;
+					
+				}
 				
 				$ret[] = array_merge(
 					array(
@@ -586,13 +592,14 @@ class MACMA extends XMLAbstract{
 						'IMG' => array(),
 						'CAT' => array(),
 						'DIM' => 'brak danych',
-						'MARK' => array(),
+						// 'MARK' => array(),
+						// 'MARKSIZE' => array(),
+						// 'MARKTYPE' => array(),
+						'MARK_TEXT' => '',
 						'INSTOCK' => 'brak danych',
 						'MATTER' => 'brak danych',
 						'COLOR' => 'brak danych',
 						'COUNTRY' => 'brak danych',
-						'MARKSIZE' => array(),
-						'MARKTYPE' => array(),
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'BRUTTO' => 0,
@@ -617,9 +624,10 @@ class MACMA extends XMLAbstract{
 						'MATTER' => implode( ", ", $matters ),
 						'COLOR' => (string)$item->color->name,
 						'COUNTRY' => (string)$item->origincountry->name,
-						'MARK' => $mark_array,
-						'MARKSIZE' => $mark_size,
-						'MARKTYPE' => $mark_types,
+						// 'MARK' => $mark_array,
+						// 'MARKSIZE' => $mark_size,
+						// 'MARKTYPE' => $mark_types,
+						'MARK_TEXT' => implode( "<br>", $marks_text ),
 						'MARKCOLORS' => 1,
 						'PRICE' => array(
 							'NETTO' => $price_netto,

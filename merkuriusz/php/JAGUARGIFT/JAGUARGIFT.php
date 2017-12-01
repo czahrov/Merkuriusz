@@ -167,22 +167,30 @@ class JAGUARGIFT extends XMLAbstract{
 					
 					$instock = (int)$subitem->availability_count;
 					
+					$marks_text = array();
+					foreach( $item->marking->{'list-item'} as $t ){
+						$marks_text[] = (string)$t->name;
+						
+					}
+					
 					$ret[] = array_merge(
 						array(
 							'SHOP' => $this->_shop,
 							'ID' => 'brak danych',
+							/* 'SHORT_ID' => '', */
 							'NAME' => 'brak danych',
 							'DSCR' => 'brak danych',
 							'IMG' => array(),
 							'CAT' => array(),
 							'DIM' => 'brak danych',
-							'MARK' => array(),
+							// 'MARK' => array(),
+							// 'MARKSIZE' => array(),
+							// 'MARKTYPE' => array(),
+							'MARK_TEXT' => '',
 							'INSTOCK' => 'brak danych',
 							'MATTER' => 'brak danych',
 							'COLOR' => 'brak danych',
 							'COUNTRY' => 'brak danych',
-							'MARKSIZE' => array(),
-							'MARKTYPE' => array(),
 							'MARKCOLORS' => 1,
 							'PRICE' => array(
 								'BRUTTO' => 0,
@@ -193,23 +201,24 @@ class JAGUARGIFT extends XMLAbstract{
 							'MODEL' => 'brak danych',
 							'WEIGHT' => 'brak danych',
 							'BRAND' => 'brak danych',
-							/* 'SHORT_ID' => '', */
 							
 						),
 						array(
 							'ID' => $id,
+							'SHORT_ID' => substr( $id, 0, -2 ),
 							'NAME' => $name,
 							'DSCR' => $dscr,
 							'IMG' => $img,
 							'CAT' => $categories,
 							'DIM' => $dim,
-							'MARK' => $mark,
+							// 'MARK' => $mark,
+							// 'MARKSIZE' => array( 'brak danych' ),
+							// 'MARKTYPE' => array( 'brak danych' ),
+							'MARK_TEXT' => implode( "<br>", $marks_text ),
 							'INSTOCK' => $instock,
 							'MATTER' => $matter,
 							'COLOR' => $color,
 							'COUNTRY' => 'brak danych',
-							'MARKSIZE' => array( 'brak danych' ),
-							'MARKTYPE' => array( 'brak danych' ),
 							'MARKCOLORS' => 1,
 							'PRICE' => array(
 								'NETTO' => $price_netto,
@@ -220,7 +229,6 @@ class JAGUARGIFT extends XMLAbstract{
 							'MODEL' => 'brak danych',
 							'WEIGHT' => $weight,
 							'BRAND' => 'brak danych',
-							'SHORT_ID' => substr( $id, 0, -2 ),
 						)
 					);
 					
