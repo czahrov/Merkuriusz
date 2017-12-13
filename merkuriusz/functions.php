@@ -430,6 +430,20 @@ function genOfertyData(){
 	return $ret;
 }
 
+function logger( $arg = null ){
+	static $data = array();
+	
+	if( $arg === null ){
+		return $data;
+		
+	}
+	else{
+		$data[] = $arg;
+		
+	}
+	
+}
+
 // action hook
 
 add_action( 'pre_get_posts', 'search_by_cat' );

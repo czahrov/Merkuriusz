@@ -19,11 +19,15 @@
 	require_once "XML.php";
 	
 	$XMLData = $XM->getData();
-	/* 
-	echo "<!--";
-	print_r( $XMLData );
+	
+	echo "<!--KATEGORIA\r\n";
+	// print_r( $XMLData );
+	// print_r( logger() );
+	// print_r( $_SESSION['config'] );
+	// echo config( 'strona' );
+	// echo config( 'num' );
 	echo "-->";
-	*/
+	
 ?>
 <body id='kategoria'>
 <?php get_template_part( "template/page", "top" ); ?>

@@ -28,6 +28,7 @@ class XMLMan{
 	public function init(){
 		
 		$found = array();
+		
 		foreach( $this->_proxy as $handler ){
 			//$handler->check();
 			$data = $handler->init();
@@ -39,7 +40,7 @@ class XMLMan{
 				
 			}
 			elseif( !empty( $_GET[ 'nazwa' ] ) ){
-				$item = $handler->search( $this->stdNameCache( $_GET[ 'nazwa' ] ), true );
+				$item = $handler->search( $this->stdNameCache( $_GET[ 'nazwa' ] ), true, count( $this->_data[ 'items' ] ) );
 				if( !empty( $item ) ) $this->_data[ 'items' ] = array_merge( $this->_data[ 'items' ], $item );
 				
 			}

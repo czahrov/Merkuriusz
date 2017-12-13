@@ -545,7 +545,7 @@ class XMLAbstract{
 	/*
 		Funkcja wyszukująca produkt po ID
 	*/
-	public function search( $arg = null, $isName = false ){
+	public function search( $arg = null, $isName = false, $counter = 0 ){
 		static $arr = array();
 		
 		/* wczytanie indexera ( drogowskazu ) */
@@ -582,19 +582,23 @@ class XMLAbstract{
 		if( is_string( $arg ) ){
 			// tablica znalezionych produktów
 			$found = array();
-			$page = (int)config( 'strona' );
-			$perpage = (int)config( 'num' );
-			$from = ( $page - 1 ) * $perpage;
-			$to = $page * $perpage;
 			
 			// szukanie po nazwie
 			if( $isName === true ){
 				$name = $arg;
+				// $page = (int)config( 'strona' );
+				$page = empty( $_GET['strona'] )?( (int)config('strona') ):( (int)$_GET['strona'] );
+				// $perpage = (int)config( 'num' );
+				$perpage = empty( $_GET['num'] )?( (int)config('num') ):( (int)$_GET['num'] );
+				$from = ( $page - 1 ) * $perpage;
+				$to = $page * $perpage;
 				
 				foreach( $arr as $key => $item ){
 					/* eliminowanie duplikatów w przypadku wczytania tego samego produku po nazwe i po ID */
 					if( stripos( $key, $name ) !== false && stripos( $key, "#" ) !== false ){
-						if( count( $found ) >= $from && count( $found ) <= $to ){
+						
+						$current = $counter + count( $found );
+						if( $current >= $from && $current <= $to ){
 							$file = $item['file'];
 							$num = $item['num'];
 							
@@ -603,11 +607,14 @@ class XMLAbstract{
 							
 							$found[] = $data[ $num ];
 							
+							// logger( sprintf( "%u-%u-%u %s", $from, $current, $to, 'yes' ) );
 						}
 						else{
 							$found[] = array();
 							
+							// logger( sprintf( "%u-%u-%u %s", $from, $current, $to, 'no' ) );
 						}
+						
 						
 					}
 					

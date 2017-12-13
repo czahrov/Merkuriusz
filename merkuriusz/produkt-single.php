@@ -11,7 +11,7 @@
 	require_once "XML.php";
 	
 	$XMLData = $XM->getData();
-	echo "<!--";
+	echo "<!--SINGLE\r\n";
 	// echo count( $XMLData[ 'items' ] );
 	echo "-->";
 	

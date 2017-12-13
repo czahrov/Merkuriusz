@@ -1,7 +1,8 @@
 <?php
-echo "<!--";
+echo "<!--MULTI\r\n";
 // echo "items " . count( $XMLData[ 'items' ] );
 // print_r( $XMLData[ 'items' ] );
+
 echo "-->";
 ?>
 <body id='kategoria'>
