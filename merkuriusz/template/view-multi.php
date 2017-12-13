@@ -1,6 +1,6 @@
 <?php
 echo "<!--";
-echo "items " . count( $XMLData[ 'items' ] );
+// echo "items " . count( $XMLData[ 'items' ] );
 // print_r( $XMLData[ 'items' ] );
 echo "-->";
 ?>

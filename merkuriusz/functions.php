@@ -4,17 +4,17 @@ set_error_handler( function( $e_level, $e_msg, $e_file, $e_line, $e_info ){
 	$dst = "";
 	$type = "";
 	if( in_array( $e_level , array( E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR, E_RECOVERABLE_ERROR ) ) ){
-		$dst = ".error";
+		$dst = "error";
 		$type = "ERROR";
 		
 	}
 	elseif( in_array( $e_level, array( E_WARNING, E_CORE_WARNING, E_COMPILE_WARNING, E_USER_WARNING ) ) ){
-		$dst = ".warning";
+		$dst = "warning";
 		$type = "WARNING";
 		
 	}
 	else{
-		$dst = ".info";
+		$dst = "info";
 		$type = "INFO";
 		
 	}
@@ -41,7 +41,7 @@ set_error_handler( function( $e_level, $e_msg, $e_file, $e_line, $e_info ){
 				
 			);
 			
-			error_log( $msg, 3, __DIR__ . "/" . $dst );
+			error_log( $msg, 3, __DIR__ . "/{$dst}.log" );
 			
 			die();
 			

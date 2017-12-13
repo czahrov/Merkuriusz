@@ -582,6 +582,10 @@ class XMLAbstract{
 		if( is_string( $arg ) ){
 			// tablica znalezionych produktów
 			$found = array();
+			$page = (int)config( 'strona' );
+			$perpage = (int)config( 'num' );
+			$from = ( $page - 1 ) * $perpage;
+			$to = $page * $perpage;
 			
 			// szukanie po nazwie
 			if( $isName === true ){
@@ -590,13 +594,20 @@ class XMLAbstract{
 				foreach( $arr as $key => $item ){
 					/* eliminowanie duplikatów w przypadku wczytania tego samego produku po nazwe i po ID */
 					if( stripos( $key, $name ) !== false && stripos( $key, "#" ) !== false ){
-						$file = $item['file'];
-						$num = $item['num'];
-						
-						$content = file_get_contents( "{$this->_config['cache']}/cat_{$file}.php" );
-						$data = json_decode( $content, true );
-						
-						$found[] = $data[ $num ];
+						if( count( $found ) >= $from && count( $found ) <= $to ){
+							$file = $item['file'];
+							$num = $item['num'];
+							
+							$content = file_get_contents( "{$this->_config['cache']}/cat_{$file}.php" );
+							$data = json_decode( $content, true );
+							
+							$found[] = $data[ $num ];
+							
+						}
+						else{
+							$found[] = array();
+							
+						}
 						
 					}
 					

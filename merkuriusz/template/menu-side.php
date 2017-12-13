@@ -1208,10 +1208,6 @@
 					'class' => 'vip',
 					'items' => array(
 						array(
-							'title' => 'vip collection',
-							'class' => 'bold uppercase',
-						),
-						array(
 							'title' => 'Cool Brands',
 							'class' => 'bold uppercase',
 							'sub' => array(

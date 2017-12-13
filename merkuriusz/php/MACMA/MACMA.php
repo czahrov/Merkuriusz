@@ -525,7 +525,16 @@ class MACMA extends XMLAbstract{
 					$pattern = "~[^/]+$~";
 					preg_match( $pattern, (string)$image, $match );
 					$fname = $match[0];
-					$img[] = "../wp-content/themes/merkuriusz/img/macma/{$fname}";
+					$fpath = __DIR__ . "/../../img/macma/{$fname}";
+					if( file_exists( $fpath ) ){
+						$img[] = $fpath;
+						
+					}
+					else{
+						$img[] = __DIR__ . "/../../img/noimage.png";
+						
+					}
+					// $img[] = "../wp-content/themes/merkuriusz/img/macma/{$fname}";
 					
 				}
 				
