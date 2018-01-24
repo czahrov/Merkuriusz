@@ -112,7 +112,6 @@ class ANDA extends XMLAbstract{
 					$subcat_name = strtolower( (string)$folder->attributes()->subcategory );
 					
 					/* ========== KATEGORIE ==========  */
-					
 					if( $cat_name === 'textile & fashion' ){
 						$cat_name = 'tekstylia';
 						
@@ -461,7 +460,8 @@ class ANDA extends XMLAbstract{
 					elseif( $cat_name === 'materiały piśmiennicze' ){
 						if( $subcat_name === 'długopisy metal-alu i drewniane' ){
 							if( stripos( (string)$item->description, 'ekolog' ) !== false or stripos( (string)$item->description, 'bambus' ) !== false ){
-								$subcat_name = 'długopisy ekologiczne';
+								$cat_name = 'gadżety reklamowe';
+								$subcat_name = 'eco gadżet';
 								
 							}
 							elseif( stripos( (string)$item->attributes()->name, 'zestaw' ) !== false ){
@@ -476,12 +476,8 @@ class ANDA extends XMLAbstract{
 								$subcat_name = 'długopisy aluminiowe';
 								
 							}
-							elseif( stripos( (string)$item->description, 'plastik' ) !== false ){
-								$subcat_name = 'długopisy plastikowe';
-								
-							}
 							else{
-								$subcat_name = 'długopisy';
+								$subcat_name = 'długopisy plastikowe';
 								
 							}
 							
@@ -519,30 +515,6 @@ class ANDA extends XMLAbstract{
 								$subcat_name = 'szklanki';
 								
 							}
-							elseif( stripos( (string)$item->attributes()->name, 'metal' ) !== false or stripos( (string)$item->description, 'alumin' ) !== false ){
-								$subcat_name = 'kubki';
-								
-							}
-							elseif( stripos( (string)$item->description, 'ceram' ) !== false ){
-								$subcat_name = 'kubki ceramiczne';
-								
-							}
-							elseif( stripos( (string)$item->description, 'plastik' ) !== false ){
-								$subcat_name = 'kubki plastikowe';
-								
-							}
-							elseif( stripos( (string)$item->description, 'porcelan' ) !== false ){
-								$subcat_name = 'kubki porcelanowe';
-								
-							}
-							elseif( stripos( (string)$item->description, 'szklan' ) !== false or stripos( (string)$item->description, 'szron' ) !== false ){
-								$subcat_name = 'kubki szklane';
-								
-							}
-							elseif( stripos( (string)$item->attributes()->name, 'pudeł' ) !== false or stripos( (string)$item->attributes()->name, 'opakow' ) !== false ){
-								$subcat_name = 'opakowania do kubków';
-								
-							}
 							elseif( stripos( (string)$item->attributes()->name, 'taca' ) !== false ){
 								$cat_name = 'dom';
 								$subcat_name = 'kuchnia';
@@ -560,7 +532,7 @@ class ANDA extends XMLAbstract{
 								
 							}
 							elseif( stripos( (string)$item->attributes()->name, ' win' ) !== false ){
-								$cat_name = 'wino';
+								$cat_name = 'vine club';
 								
 								if( stripos( (string)$item->attributes()->name, 'torba' ) !== false ){
 									$subcat_name = 'opakowania';
@@ -577,7 +549,7 @@ class ANDA extends XMLAbstract{
 								
 							}
 							else{
-								$cat_name = 'wino';
+								$cat_name = 'vine club';
 								$subcat_name = 'akcesoria';
 								
 							}
@@ -876,7 +848,7 @@ class ANDA extends XMLAbstract{
 								
 							}
 							elseif( stripos( (string)$item->attributes()->name, 'wina' ) !== false ){
-								$cat_name = 'wino';
+								$cat_name = 'vine club';
 								$subcat_name = 'opakowania';
 								
 							}
@@ -1121,16 +1093,12 @@ class ANDA extends XMLAbstract{
 							elseif( stripos( (string)$item->attributes()->name, 'długopis' ) !== false ){
 								$cat_name = 'materiały piśmiennicze';
 								
-								if( stripos(  (string)$item->description, 'plastik' ) !== false ){
-									$subcat_name = 'długopisy plastikowe';
-									
-								}
-								elseif( stripos(  (string)$item->description, 'stojak' ) !== false ){
+								if( stripos(  (string)$item->description, 'stojak' ) !== false ){
 									$subcat_name = 'inne';
 									
 								}
 								else{
-									$subcat_name = 'długopisy';
+									$subcat_name = 'długopisy plastikowe';
 									
 								}
 								
@@ -1383,7 +1351,7 @@ class ANDA extends XMLAbstract{
 							}
 							elseif( stripos( (string)$item->description, 'długopis' ) !== false ){
 								$cat_name = 'materiały piśmiennicze';
-								$subcat_name = 'długopisy';
+								$subcat_name = 'długopisy plastikowe';
 								
 							}
 							else{
@@ -2012,6 +1980,30 @@ class ANDA extends XMLAbstract{
 					// (string)$item->description
 					
 					/* ========== //PODKATEGORIE ==========  */
+					/* ========== FILTROWANIE ==========  */
+					if( stripos( (string)$item->description, 'Antonio Miro' ) !== false ){
+						$cat_name = 'Cool Brands';
+						$subcat_name = 'Antonio miro';
+						
+					}
+					elseif( stripos( (string)$item->description, 'André Philippe' ) !== false ){
+						$cat_name = 'Cool Brands';
+						$subcat_name = 'André Philippe';
+						
+					}
+					elseif( stripos( (string)$item->description, 'Alexluca' ) !== false ){
+						$cat_name = 'Cool Brands';
+						$subcat_name = 'Alexluca';
+						
+					}
+					elseif( stripos( (string)$item->attributes()->name, 'kielisz' ) !== false ){
+						$cat_name = 'do picia';
+						$subcat_name = 'kieliszki';
+						
+					}
+					
+					
+					/* ========== /FILTROWANIE ==========  */
 					
 					$cat_name_slug = $this->stdNameCache( $cat_name );
 					$subcat_name_slug = $cat_name_slug . "-" . $this->stdNameCache( $subcat_name );

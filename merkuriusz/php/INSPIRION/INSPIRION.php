@@ -240,7 +240,7 @@ class INSPIRION extends XMLAbstract {
 					}
 					elseif( stripos( $item_title, 'długopis' ) !== false ){
 						$cat_name = 'materiały piśmiennicze';
-						$subcat_name = 'długopisy';
+						$subcat_name = 'długopisy plastikowe';
 						
 					}
 					elseif( stripos( $item_title, 'słuchawki' ) !== false ){
@@ -444,15 +444,7 @@ class INSPIRION extends XMLAbstract {
 					elseif( stripos( $item_title, 'długopis' ) !== false ){
 						
 						$cat_name = 'materiały piśmiennicze';
-						
-						if( stripos( $item_dscr, 'sztucznego' ) !== false ){
-							$subcat_name = 'długopisy plastikowe';
-							
-						}
-						else{
-							$subcat_name = 'długopisy';
-							
-						}
+						$subcat_name = 'długopisy plastikowe';
 						
 					}
 					elseif( stripos( $item_title, 'odblask' ) !== false or 
@@ -496,7 +488,7 @@ class INSPIRION extends XMLAbstract {
 					elseif( stripos( $item_title, 'kubek' ) !== false && 
 							stripos( $item_title, 'termiczn' ) !== false ){
 						$cat_name = 'do picia';
-						$subcat_name = 'kubki termiczne';
+						$subcat_name = 'kubk';
 						
 					}
 					elseif( stripos( $item_title, 'opaska' ) !== false && 
@@ -511,7 +503,7 @@ class INSPIRION extends XMLAbstract {
 						
 					}
 					elseif( stripos( $item_title, 'stojak na wino' ) !== false ){
-						$cat_name = 'wino';
+						$cat_name = 'vine club';
 						$subcat_name = 'akcesoria';
 						
 					}
@@ -537,7 +529,7 @@ class INSPIRION extends XMLAbstract {
 				elseif( $cat_name === 'do domu i kuchni' ){
 					
 					if( stripos( $item_title, ' win' ) !== false ){
-						$cat_name = 'wino';
+						$cat_name = 'vine club';
 						
 						if( stripos( $item_title, 'zestaw' ) !== false ){
 							$subcat_name = 'zestawy';
@@ -558,20 +550,7 @@ class INSPIRION extends XMLAbstract {
 					elseif( stripos( $item_title, 'kubek' ) !== false or 
 							stripos( $item_title, 'kubk' ) !== false ){
 						$cat_name = 'do picia';
-						
-						if( stripos( $item_title, 'termiczny' ) !== false or 
-								stripos( $item_title, 'termoizolacyjn' ) !== false ){
-							$subcat_name = 'kubki termiczne';
-							
-						}
-						elseif( stripos( $item_title, 'cerami' ) !== false  ){
-							$subcat_name = 'kubki ceramiczne';
-							
-						}
-						else{
-							$subcat_name = 'kubki';
-							
-						}
+						$subcat_name = 'kubki';
 						
 					}
 					elseif( stripos( $item_title, 'termos' ) !== false or 
@@ -1116,7 +1095,7 @@ class INSPIRION extends XMLAbstract {
 					}
 					elseif( stripos( $item_title, 'długopis' ) !== false ){
 						$cat_name = 'materiały piśmiennicze';
-						$subcat_name = 'długopisy';
+						$subcat_name = 'długopisy plastikowe';
 						
 					}
 					else{
@@ -1292,7 +1271,8 @@ class INSPIRION extends XMLAbstract {
 						$cat_name = 'materiały piśmiennicze';
 						
 						if( stripos( $item_dscr, 'ekolog' ) !== false ){
-							$subcat_name = 'długopisy ekologiczne';
+							$cat_name = 'gadżety reklamowe';
+							$subcat_name = 'eco gadżet';
 							
 						}
 						elseif( stripos( $item_dscr, 'metal' ) !== false ){
@@ -1303,17 +1283,13 @@ class INSPIRION extends XMLAbstract {
 							$subcat_name = 'długopisy aluminiowe';
 							
 						}
-						elseif( stripos( $item_dscr, 'plastik' ) !== false ){
-							$subcat_name = 'długopisy plastikowe';
-							
-						}
 						elseif( stripos( $item_dscr, 'dotyk' ) !== false or 
 								stripos( $item_dscr, 'touch' ) !== false ){
 							$subcat_name = 'długopisy z touch penem';
 							
 						}
 						else{
-							$subcat_name = 'długopisy';
+							$subcat_name = 'długopisy plastikowe';
 							
 						}
 						

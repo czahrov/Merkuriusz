@@ -246,8 +246,8 @@ class ASGARD extends XMLAbstract{
 						
 					}
 					elseif( $subcat_name === 'długopisy ekologiczne' ){
-						$cat_name = 'materiały piśmiennicze';
-						$subcat_name = 'długopisy ekologiczne';
+						$cat_name = 'eco gadżet';
+						$subcat_name = '';
 						
 					}
 					elseif( $subcat_name === 'ołówki' ){
@@ -619,7 +619,7 @@ class ASGARD extends XMLAbstract{
 							
 						}
 						elseif( stripos( (string)$item->nazwa, 'wino' ) !== false ){
-							$cat_name = 'wino';
+							$cat_name = 'vine club';
 							$subcat_name = 'opakowania';
 							
 						}
@@ -704,8 +704,9 @@ class ASGARD extends XMLAbstract{
 				}
 				elseif( $cat_name === 'jedzenie i picie' or $cat_name === 'jedzienie i picie' ){
 					
-					if( in_array( $subcat_name, array( 'piersiówki', 'kubki termiczne', 'kubki metalowe', 'kubki plastikowe', 'termosy' ) ) ){
+					if( in_array( $subcat_name, array( 'piersiówki', 'kubki termiczne', 'kubki metalowe', 'kubki plastikowe' ) ) ){
 						$cat_name = 'do picia';
+						$subcat_name = 'kubki';
 						
 					}
 					elseif( in_array( $subcat_name, array( 'bidony', 'termosy' ) ) ){
@@ -716,7 +717,7 @@ class ASGARD extends XMLAbstract{
 					elseif( $subcat_name === 'akcesoria do alkoholi' ){
 						
 						if( stripos( (string)$item->nazwa, ' win' ) !== false ){
-							$cat_name = 'wino';
+							$cat_name = 'vine club';
 							
 							if( stripos( (string)$item->nazwa, 'zestaw' ) !== false ){
 								$subcat_name = 'zestawy';

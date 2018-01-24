@@ -307,8 +307,8 @@ class PAR extends XMLAbstract {
 				}
 				elseif( $cat_name === 'długopisy eco' ){
 					
-					$cat_name = 'materiały piśmiennicze';
-					$subcat_name = 'długopisy ekologiczne';
+					$cat_name = 'eco gadżet';
+					$subcat_name = '';
 					
 				}
 				elseif( $cat_name === 'długopisy metalowe' ){
@@ -352,7 +352,7 @@ class PAR extends XMLAbstract {
 				elseif( $cat_name === 'izotermiczne' ){
 					
 					$cat_name = 'do picia';
-					$subcat_name = 'kubki termiczne';
+					$subcat_name = 'kubk';
 					
 				}
 				elseif( $cat_name === 'kosze' ){
@@ -362,16 +362,8 @@ class PAR extends XMLAbstract {
 					
 				}
 				elseif( $cat_name === 'kubki' ){
-					
 					$cat_name = 'do picia';
-					if( stripos( $item_dscr, 'plastik' ) !== false ){
-						$subcat_name = 'kubki plastikowe';
-						
-					}
-					else{
-						$subcat_name = 'kubki';
-						
-					}
+					$subcat_name = 'kubki';
 					
 				}
 				elseif( $cat_name === 'latarki' ){
@@ -397,7 +389,7 @@ class PAR extends XMLAbstract {
 				elseif( $cat_name === 'leak proof' ){
 					
 					$cat_name = 'do picia';
-					$subcat_name = 'kubki termiczne';
+					$subcat_name = 'kubk';
 					
 				}
 				elseif( $cat_name === 'metalowe, aluminiowe' ){
@@ -613,7 +605,7 @@ class PAR extends XMLAbstract {
 				}
 				elseif( $cat_name === 'ołówki' ){
 					
-					$cat_name = 'nateriały piśmiennicze';
+					$cat_name = 'materiały piśmiennicze';
 					$subcat_name = 'ołówki';
 					
 				}
@@ -827,15 +819,7 @@ class PAR extends XMLAbstract {
 					}
 					elseif( stripos( $item_title, 'kubek' ) !== false ){
 						$cat_name = 'do picia';
-						
-						if( stripos( $item_title, 'term' ) !== false ){
-							$subcat_name = 'kubki termiczne';
-							
-						}
-						else{
-							$subcat_name = 'kubki';
-							
-						}
+						$subcat_name = 'kubki';
 						
 					}
 					else{
@@ -866,7 +850,7 @@ class PAR extends XMLAbstract {
 				}
 				elseif( $cat_name === 'torby na wino' ){
 					
-					$cat_name = 'wino';
+					$cat_name = 'vine club';
 					$subcat_name = 'opakowania';
 					
 				}
@@ -1008,7 +992,7 @@ class PAR extends XMLAbstract {
 				}
 				elseif( $cat_name === 'zestawy do wina' ){
 					
-					$cat_name = 'wino';
+					$cat_name = 'vine club';
 					if( stripos( $item_title, 'zestaw' ) !== false ){
 						$cat_name = 'zestawy';
 						

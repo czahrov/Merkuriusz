@@ -107,12 +107,46 @@ class EASYGIFTS extends XMLAbstract {
 			
 		}
 		
-		
 		//$cat_name = $this->stdNameCache( $cat_name );
 		
 		/* ==================== */
 		
-		if( $category->subcategories->count() > 0 ){
+		/* ==================== FILTRY ==================== */
+		if( stripos( (string)$node->baseinfo->name, 'xlyne' ) !== false ){
+			$cat_name = 'vip elektronika';
+			$subcat_name = 'XLYNE';
+			
+		}
+		elseif( stripos( (string)$node->baseinfo->name, 'blaupunkt' ) !== false ){
+			$cat_name = 'vip elektronika';
+			$subcat_name = 'Blaupunkt';
+			
+		}
+		elseif( $cat_name === 'victorinox lifestyle - akcesoria podróżne' ){
+			$cat_name = 'victorinox';
+			$subcat_name = 'akcesoria podróżne';
+			
+		}
+		elseif( $cat_name === 'wenger - bagaże biznesowe i akcesoria podróżne' ){
+			$cat_name = 'wenger';
+			$subcat_name = 'bagaże biznesowe i akcesoria podróżne';
+			
+		}
+		elseif( $cat_name === 'wenger - bestsellery' ){
+			$cat_name = 'wenger';
+			$subcat_name = 'bestsellery';
+			
+		}
+		elseif( stripos( (string)$node->baseinfo->name, 'kielisz' ) ){
+			$cat_name = 'do picia';
+			$subcat_name = 'kieliszki';
+			
+		}
+		
+		/* ==================== */
+		
+		
+		if( $category->subcategories->count() > 0 && empty( $subcat_name ) ){
 			foreach( $category->subcategories->subcategory as $subcategory ){
 				//$subcat_name = $this->stdNameCache( (string)$subcategory->name );
 				//$subcat_name = apply_filters( 'stdName', (string)$subcategory->name );
@@ -255,7 +289,7 @@ class EASYGIFTS extends XMLAbstract {
 					}
 					elseif( $subcat_name === 'kubki termiczne i termosy' ){
 						$cat_name = 'do picia';
-						$subcat_name = 'kubki podróżne';
+						$subcat_name = 'kubki';
 						
 					}
 					elseif( $subcat_name === 'akcesoria do grillowania' ){
@@ -314,7 +348,7 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				elseif( $subcat_name === 'akcesoria do wina' ){
-					$cat_name = 'wino';
+					$cat_name = 'vine club';
 					$subcat_name = 'akcesoria';
 					
 				}
@@ -357,12 +391,133 @@ class EASYGIFTS extends XMLAbstract {
 					}
 					
 				}
+				elseif( $cat_name === 'easy siesta' ){
+					
+					if( $subcat_name === 'artykuły barmańskie' ){
+						$cat_name = 'vine club';
+						$subcat_name = 'akcesoria';
+						
+					}
+					elseif( $subcat_name === 'breloki' ){
+						$cat_name = 'breloki';
+						
+						if( stripos( (string)$node->baseinfo->intro, 'drewn' ) !== false ){
+							$subcat_name = 'drewniane';
+							
+						}
+						elseif( stripos( (string)$node->baseinfo->intro, 'led' ) !== false ){
+							$subcat_name = 'latarki';
+							
+						}
+						elseif( stripos( (string)$node->baseinfo->intro, 'metal' ) !== false ){
+							$subcat_name = 'metalowe';
+							
+						}
+						elseif( stripos( (string)$node->baseinfo->intro, 'ładowar' ) !== false ){
+							$subcat_name = 'wielofunkcyjne';
+							
+						}
+						elseif( stripos( (string)$node->baseinfo->intro, 'odblask' ) !== false ){
+							$cat_name = 'odblaski';
+							$subcat_name = 'breloki';
+							
+						}
+						else{
+							$subcat_name = 'inne';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'czapki i kapelusze' ){
+						$cat_name = 'tekstylia';
+						
+						if( stripos( (string)$node->baseinfo->name, 'kapelusz' ) !== false ){
+							$subcat_name =  'kapelusze';
+							
+						}
+						else{
+							$subcat_name =  'daszki';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'dom' ){
+						$subcat_name = 'inne';
+						
+					}
+					elseif( $subcat_name === 'inne' ){
+						$cat_name = 'gadżety reklamowe';
+						$subcat_name = 'inne';
+						
+					}
+					elseif( $subcat_name === 'materiały piśmiennicze' ){
+						$cat_name = 'materiały piśmiennicze';
+						
+						if( stripos( (string)$node->baseinfo->name, 'długopis' ) !== false ){
+							
+							if( stripos( (string)$node->baseinfo->name, 'alumin' ) !== false or 
+								stripos( (string)$node->baseinfo->intro, 'alumin' ) !== false ){
+								$subcat_name = 'długopisy aluminiowe';
+								
+							}
+							elseif( stripos( (string)$node->baseinfo->name, 'metal' ) !== false or 
+								stripos( (string)$node->baseinfo->intro, 'metal' ) !== false ){
+								$subcat_name = 'długopisy metalowe';
+								
+							}
+							elseif( stripos( (string)$node->baseinfo->name, 'touch' ) !== false or 
+								stripos( (string)$node->baseinfo->intro, 'touch' ) !== false ){
+								$subcat_name = 'długopisy z touch penem';
+								
+							}
+							elseif( stripos( (string)$node->baseinfo->name, 'ekskluz' ) !== false or 
+								stripos( (string)$node->baseinfo->intro, 'ekskluz' ) !== false ){
+								$subcat_name = 'długopisy eksluzywne';
+								
+							}
+							else{
+								$subcat_name = 'długopisy plastikowe';
+								
+							}
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'notesy' ){
+						$cat_name = 'biuro';
+						$subcat_name = 'notatniki i notesy';
+						
+					}
+					elseif( $subcat_name === 'smycze' ){
+						$cat_name = 'podróż';
+						$subcat_name = 'smycze';
+						
+					}
+					elseif( $subcat_name === 'torby i plecaki' ){
+						$cat_name = 'torby i plecaki';
+						
+						if( stripos( (string)$node->baseinfo->name, 'plecak' ) !== false ){
+							$subcat_name = 'plecaki';
+							
+						}
+						else{
+							$subcat_name = 'torby';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'odpoczynek' ){
+						$cat_name = 'wypoczynek';
+						$subcat_name = 'inne';
+						
+					}
+					
+				}
 				
 				/* 
 				(string)$node->baseinfo->name
 				(string)$node->baseinfo->intro
 				 */
-				/* ==================== */
 				
 				if( !empty( $subcat_name ) ){
 					$cat_name_slug = $this->stdNameCache( $cat_name );
@@ -387,6 +542,13 @@ class EASYGIFTS extends XMLAbstract {
 			}
 			
 		}
+		elseif( !empty( $subcat_name ) ){
+			$cat_name_slug = $this->stdNameCache( $cat_name );
+			$subcat_name_slug = $this->stdNameCache( $subcat_name );
+			$subcat_name_slug = $cat_name_slug . "-" . $subcat_name_slug;
+			$ret[ $cat_name_slug ][ $subcat_name_slug ] = array();
+			
+		}
 		else{
 			$cat_name_slug = $this->stdNameCache( $cat_name );
 			$ret[ $cat_name_slug ] = array();
@@ -394,9 +556,8 @@ class EASYGIFTS extends XMLAbstract {
 		}
 		
 		/*
-		echo "<!--";
-		print_r( $ret );
-		echo "-->";
+		(string)$node->baseinfo->name
+		(string)$node->baseinfo->intro
 		*/
 		
 		return $ret;
@@ -500,22 +661,25 @@ class EASYGIFTS extends XMLAbstract {
 					preg_match( $pattern, (string)$image, $match );
 					$fname = $match[0];
 					if( file_exists( __DIR__ . "/../../img/easygifts/{$fname}" ) ){
-						$img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$fname}";
+						// $img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$fname}";
+						$img[] = "/wp-content/themes/merkuriusz/img/easygifts/{$fname}";
 						
 					}
-					elseif( file_exists( __DIR__ . "/../..//img/easygifts/{$id}.jpg" ) ){
-						$img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$id}.jpg";
+					elseif( file_exists( __DIR__ . "/../../img/easygifts/{$id}.jpg" ) ){
+						// $img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$id}.jpg";
+						$img[] = "/wp-content/themes/merkuriusz/img/easygifts/{$id}.jpg";
 						
 					}
 					else{
-						$img[] = "../wp-content/themes/merkuriusz/img/noimage.png";
+						// $img[] = "../wp-content/themes/merkuriusz/img/noimage.png";
+						$img[] = "/wp-content/themes/merkuriusz/img/noimage.png";
 						
 					}
 					
 				}
 				
 				$marks_text = array();
-				foreach( $item->markgroups->markgroup as $t ){
+				if( count( $item->markgroups->markgroup ) > 0 ) foreach( $item->markgroups->markgroup as $t ){
 					$marks_text[] = (string)$t->name;
 					
 				}

@@ -125,6 +125,7 @@ class MACMA extends XMLAbstract{
 						}
 						elseif( $cat_name === 'kubki reklamowe' ){
 							$cat_name = 'do picia';
+							$subcat_name = 'kubki';
 							
 						}
 						elseif( $cat_name === 'diplomat' ){
@@ -320,7 +321,7 @@ class MACMA extends XMLAbstract{
 								}
 								elseif( $cat_name === 'skrzynki i akcesoria barowe' ){
 									if( $subcat_name === 'otwieracze i noże kelnerskie' ){
-										$cat_name = 'wino';
+										$cat_name = 'vine club';
 										$subcat_name = 'akcesoria';
 										
 									}
@@ -329,7 +330,7 @@ class MACMA extends XMLAbstract{
 										
 									}
 									elseif( $subcat_name === 'skrzynki i zestawy do wina' ){
-										$cat_name = 'wino';
+										$cat_name = 'vine club';
 										
 										if( stripos( (string)$item->baseinfo->name, 'zestaw' ) !== false ){
 											$subcat_name = 'zestawy';
@@ -498,6 +499,17 @@ class MACMA extends XMLAbstract{
 							
 						}
 						
+						/* ============== FILTRY ==============  */
+						if( stripos( (string)$item->baseinfo->name, 'kielisz' ) ){
+							$cat_name = 'do picia';
+							$subcat_name = 'kieliszki';
+							
+						}
+						elseif( $cat_name === 'smile hand' ){
+							$cat_name = 'uśmiechnięty gadżet';
+							
+						}
+						
 						//$cat_name_slug = apply_filters( 'stdName', $cat_name );
 						$cat_name_slug = $this->stdNameCache( $cat_name );
 						
@@ -527,11 +539,13 @@ class MACMA extends XMLAbstract{
 					$fname = $match[0];
 					$fpath = __DIR__ . "/../../img/macma/{$fname}";
 					if( file_exists( $fpath ) ){
-						$img[] = $fpath;
+						// $img[] = $fpath;
+						$img[] = "/wp-content/themes/merkuriusz/img/macma/{$fname}";
 						
 					}
 					else{
-						$img[] = __DIR__ . "/../../img/noimage.png";
+						// $img[] = __DIR__ . "/../../img/noimage.png";
+						$img[] = "/wp-content/themes/merkuriusz/img/noimage.png";
 						
 					}
 					// $img[] = "../wp-content/themes/merkuriusz/img/macma/{$fname}";

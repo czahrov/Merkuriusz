@@ -220,11 +220,12 @@ class AXPOL extends XMLAbstract{
 					
 				}
 				elseif( $subcat_name === 'kubki podróżne' ){
+					$cat_name = 'do picia';
 					$subcat_name = 'kubki';
 					
 				}
 				elseif( stripos( $subcat_name, "wino: " ) !== false ){
-					$cat_name = "Wino";
+					$cat_name = "vine club";
 					$subcat_name = str_replace( "wino: ", "", $subcat_name );
 					
 				}
@@ -461,6 +462,23 @@ class AXPOL extends XMLAbstract{
 				if( strpos( (string)$item->TitlePL, 'Mauro Conti' ) !== false ){
 					$cat_name = 'vip skóra';
 					$subcat_name = '';
+					
+				}
+				
+				/* ================== FILTRY ================== */
+				if( stripos( (string)$item->TitlePL, 'waterman' ) ){
+					$cat_name = 'vip piśmiennicze';
+					$subcat_name = 'waterman';
+					
+				}
+				elseif( stripos( (string)$item->TitlePL, 'parker' ) ){
+					$cat_name = 'vip piśmiennicze';
+					$subcat_name = 'parker';
+					
+				}
+				elseif( stripos( (string)$item->TitlePL, 'kielisz' ) ){
+					$cat_name = 'do picia';
+					$subcat_name = 'kieliszki';
 					
 				}
 				

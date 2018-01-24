@@ -11,12 +11,6 @@
 							'pikto' => 'pisemnicze.png',
 							'sub' => array(
 								array(
-									'title' => 'Długopisy',
-								),
-								array(
-									'title' => 'Długopisy ekologiczne',
-								),
-								array(
 									'title' => 'Długopisy metalowe',
 								),
 								array(
@@ -194,6 +188,9 @@
 									'title' => 'Torby plażowe',
 								),
 								array(
+									'title' => 'Torby',
+								),
+								array(
 									'title' => 'Papierowe',
 								),
 								array(
@@ -237,21 +234,6 @@
 								),
 								array(
 									'title' => 'Kubki',
-								),
-								array(
-									'title' => 'Kubki ceramiczne',
-								),
-								array(
-									'title' => 'Kubki porcelanowe',
-								),
-								array(
-									'title' => 'Kubki plastikowe',
-								),
-								array(
-									'title' => 'Kubki termiczne',
-								),
-								array(
-									'title' => 'Kubki szklane',
 								),
 								array(
 									'title' => 'Szklanki',
@@ -399,20 +381,6 @@
 								),
 								array(
 									'title' => 'Inne',
-								),
-							),
-						),
-						array(
-							'title' => 'Wino',
-							'sub' => array(
-								array(
-									'title' => 'Akcesoria',
-								),
-								array(
-									'title' => 'Opakowania',
-								),
-								array(
-									'title' => 'Zestawy',
 								),
 							),
 						),
@@ -595,6 +563,9 @@
 							'title' => 'Tekstylia',
 							'pikto' => 'tekstylia.png',
 							'sub' => array(
+								array(
+									'title' => 'Czapki',
+								),
 								array(
 									'title' => 'Czapki z daszkiem',
 								),
@@ -859,53 +830,7 @@
 							),
 						),
 						array(
-							'title' => 'Aladdin, Migo & Stanley',
-							'sub' => array(
-								array(
-									'title' => 'Aladdin',
-								),
-								array(
-									'title' => 'Migo',
-								),
-								array(
-									'title' => 'Stanley',
-								),
-							),
-						),
-						array(
-							'title' => 'Easy siesta',
-							'sub' => array(
-								array(
-									'title' => 'Odpoczynek',
-								),
-								array(
-									'title' => 'Dom',
-								),
-								array(
-									'title' => 'Torby i plecaki',
-								),
-								array(
-									'title' => 'Smycze',
-								),
-								array(
-									'title' => 'Materiały piśmiennicze',
-								),
-								array(
-									'title' => 'Breloki',
-								),
-								array(
-									'title' => 'Notesy',
-								),
-								array(
-									'title' => 'Artykuły barmańskie',
-								),
-								array(
-									'title' => 'Czapki i kapelusze',
-								),
-							),
-						),
-						array(
-							'title' => 'Smile Hand',
+							'title' => 'Uśmiechnięty gadżet',
 						),
 						array(
 							'title' => 'Biżuteria i akcesoria',
@@ -917,6 +842,10 @@
 						array(
 							'title' => 'Opakowania upominkowe',
 							'pikto' => 'upominkowe.png',
+						),
+						array(
+							'title' => 'Inne',
+							'pikto' => '',
 						),
 					),
 				),
@@ -1220,6 +1149,7 @@
 								array(
 									'title' => 'Antonio miro',
 								),
+								
 							),
 						),
 						array(
@@ -1266,9 +1196,6 @@
 									'title' => 'Czekolada',
 								),
 								array(
-									'title' => 'Oliwa z oliwek',
-								),
-								array(
 									'title' => 'Opakowania',
 								),
 								array(
@@ -1277,7 +1204,9 @@
 								array(
 									'title' => 'Zestawy',
 								),
+								
 							),
+							
 						),
 						array(
 							'title' => 'ferraghini',
@@ -1382,11 +1311,9 @@
 									'title' => 'Breloki',
 								),
 								array(
-									'title' => 'Zegarki męskie',
+									'title' => 'Zegarki',
 								),
-								array(
-									'title' => 'Zegarki damskie',
-								),
+								
 							),
 						),
 						array(
@@ -1417,10 +1344,6 @@
 									'title' => 'czapki zimowe',
 								),
 							),
-						),
-						array(
-							'title' => 'Power of Brands',
-							'class' => 'uppercase bold',
 						),
 						array(
 							'title' => 'Cerruti 1881',
@@ -1505,12 +1428,6 @@
 									'title' => 'Notesy i notatniki',
 								),
 								array(
-									'title' => 'Parasole',
-								),
-								array(
-									'title' => 'Pendrivy',
-								),
-								array(
 									'title' => 'Podróż',
 								),
 								array(
@@ -1518,9 +1435,6 @@
 								),
 								array(
 									'title' => 'Przybory do pisania',
-								),
-								array(
-									'title' => 'Teczki',
 								),
 								array(
 									'title' => 'Torby i torebki',
@@ -1595,25 +1509,13 @@
 									'title' => 'Akcesoria',
 								),
 								array(
-									'title' => 'Etui',
-								),
-								array(
 									'title' => 'Portfele',
-								),
-								array(
-									'title' => 'Torby i torebki',
 								),
 								array(
 									'title' => 'Apaszki i szale',
 								),
 								array(
-									'title' => 'Etui na wizytówki',
-								),
-								array(
 									'title' => 'Zegarki',
-								),
-								array(
-									'title' => 'Notesy i notatniki',
 								),
 								array(
 									'title' => 'Zestawy upominkowe',
@@ -1623,9 +1525,6 @@
 								),
 								array(
 									'title' => 'Pióra',
-								),
-								array(
-									'title' => 'Ołówki',
 								),
 								array(
 									'title' => 'Teczki',
@@ -1673,9 +1572,6 @@
 									'title' => 'Pióra',
 								),
 								array(
-									'title' => 'Etui',
-								),
-								array(
 									'title' => 'Torby i torebki',
 								),
 								array(
@@ -1694,47 +1590,9 @@
 									'title' => 'Przybory do pisania',
 								),
 								array(
-									'title' => 'Elektronika',
-								),
-								array(
 									'title' => 'Futerały',
 								),
-								array(
-									'title' => 'Podróż',
-								),
-							),
-						),
-						array(
-							'title' => 'Sigg',
-							'class' => 'bold uppercase',
-							'sub' => array(
-								array(
-									'title' => 'The original classic',
-								),
-								array(
-									'title' => 'The original swiss edition',
-								),
-								array(
-									'title' => 'Active wmb',
-								),
-								array(
-									'title' => 'The original colour your day',
-								),
-								array(
-									'title' => 'The original fabulous',
-								),
-								array(
-									'title' => 'Hot&Cold classic',
-								),
-								array(
-									'title' => 'Hot&Cold one',
-								),
-								array(
-									'title' => 'Hot&Cold glass',
-								),
-								array(
-									'title' => 'Active viva',
-								),
+								
 							),
 						),
 						array(
@@ -1797,6 +1655,21 @@
 							'title' => 'XLYNE',
 						),
 						array(
+							'title' => 'Blaupunkt',
+						),
+						array(
+							'title' => 'JBL',
+						),
+						array(
+							'title' => 'Samsung',
+						),
+						array(
+							'title' => 'Skross',
+						),
+						array(
+							'title' => 'Xiaomi',
+						),
+						array(
 							'title' => 'Creative',
 						),
 						array(
@@ -1819,7 +1692,7 @@
 				'Vip piśmiennicze' => array(
 					'class' => 'vip_pismiennicze',
 					'items' => array(
-						/* array(
+						array(
 							'title' => 'parker',
 							'pikto' => 'feather.png',
 							'logo' => 'Parker_logo.png',
@@ -1828,7 +1701,12 @@
 							'title' => 'waterman',
 							'pikto' => 'pen3.png',
 							'logo' => 'waterman_logo.png',
-						), */
+						),
+						array(
+							'title' => 'waterman pdf',
+							'pikto' => '',
+							'logo' => '',
+						),
 						array(
 							'title' => 'mark twain',
 							'pikto' => 'pen1.png',
@@ -1848,9 +1726,7 @@
 								array(
 									'title' => 'Pióra kulkowe i wieczne',
 								),
-								array(
-									'title' => 'Atramenty',
-								),
+								
 							),
 						),
 						/* array(
@@ -1894,8 +1770,12 @@
 									'title' => 'Etui',
 								),
 								array(
+									'title' => 'Akcesoria podróżne',
+								),
+								array(
 									'title' => 'Inne',
 								),
+								
 							),
 						),
 						array(
@@ -1931,6 +1811,19 @@
 									'title' => 'Torby',
 								),
 							),
+						),
+						array(
+							'title' => 'WENGER',
+							'sub' => array(
+								array(
+									'title' => 'bestsellery',
+								),
+								array(
+									'title' => 'bagaże biznesowe i akcesoria podróżne',
+								),
+								
+							),
+							
 						),
 					),
 				),
