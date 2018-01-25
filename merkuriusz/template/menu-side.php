@@ -404,7 +404,7 @@
 									'title' => 'Kosmetyki dla kobiet',
 								),
 								array(
-									'title' => 'kosmetyki dla mężczyzn',
+									'title' => 'Kosmetyki dla mężczyzn',
 								),
 								array(
 									'title' => 'Kosmetyczki',
@@ -1618,45 +1618,6 @@
 								),
 							),
 						),
-						array(
-							'title' => 'PICO',
-							'class' => 'bold uppercase',
-							'sub' => array(
-								array(
-									'title' => 'Active',
-								),
-								array(
-									'title' => 'Office',
-								),
-								array(
-									'title' => 'Home',
-								),
-								array(
-									'title' => 'Style',
-								),
-								array(
-									'title' => 'Time',
-								),
-								array(
-									'title' => 'Sound',
-								),
-								array(
-									'title' => 'Flam',
-								),
-								array(
-									'title' => 'Travel',
-								),
-								array(
-									'title' => 'Game',
-								),
-								array(
-									'title' => 'Lux',
-								),
-								array(
-									'title' => 'Pen',
-								),
-							),
-						),
 					),
 				),
 				'Vip elektronika' => array(
@@ -2013,22 +1974,37 @@
 				
 			}
 			
-			/* foreach( $input as $kategoria ){
-				if( !empty( $kategoria[ 'items' ] ) ){
-					// usort( $kategoria[ 'items' ], "custom_sort" );
-					
-					foreach( $kategoria[ 'items' ] as $pozycja ){
-						if( !empty( $pozycja[ 'sub' ] ) ){
-							usort( $pozycja[ 'sub' ], "custom_sort" );
-							
-						}
-						
-					}
-					
-				}
-				
-			} */
-			
+/*
+Array
+(
+	[Gadżety reklamowe] => Array
+		(
+			[class] => reklamowe
+			[items] => Array
+				(
+					[0] => Array
+						(
+							[title] => Materiały piśmiennicze
+							[pikto] => pisemnicze.png
+							[sub] => Array
+								(
+									[0] => Array
+										(
+											[title] => Długopisy metalowe
+										)
+*/
+	
+	// usort( $input[ 'Gadżety reklamowe' ][ 'items' ], "custom_sort" );
+	foreach( $input as $key_kat => $kategoria ){
+		usort( $input[ $key_kat ][ 'items' ], "custom_sort" );
+		
+		foreach( $kategoria[ 'items' ] as $key_subkat => $subkat ){
+			usort( $input[ $key_kat ][ 'items' ][ $key_subkat ][ 'sub' ], "custom_sort" );
+		
+		}
+		
+	}
+	
 /*
 <ul class='menu'>
 	<li class='item flex flex-column reklamowe' item-slug='gadzety_reklamowe' item-title='gadżety reklamowe'>
