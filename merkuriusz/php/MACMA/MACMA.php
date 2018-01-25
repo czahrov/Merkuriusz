@@ -538,7 +538,7 @@ class MACMA extends XMLAbstract{
 					preg_match( $pattern, (string)$image, $match );
 					$fname = $match[0];
 					$fpath = __DIR__ . "/../../img/macma/{$fname}";
-					if( file_exists( $fpath ) ){
+					/* if( file_exists( $fpath ) ){
 						// $img[] = $fpath;
 						$img[] = "/wp-content/themes/merkuriusz/img/macma/{$fname}";
 						
@@ -547,8 +547,8 @@ class MACMA extends XMLAbstract{
 						// $img[] = __DIR__ . "/../../img/noimage.png";
 						$img[] = "/wp-content/themes/merkuriusz/img/noimage.png";
 						
-					}
-					// $img[] = "../wp-content/themes/merkuriusz/img/macma/{$fname}";
+					} */
+					$img[] = "/wp-content/themes/merkuriusz/img/macma/{$fname}";
 					
 				}
 				

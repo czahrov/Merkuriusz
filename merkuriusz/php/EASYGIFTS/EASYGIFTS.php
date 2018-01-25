@@ -660,7 +660,7 @@ class EASYGIFTS extends XMLAbstract {
 					$pattern = "~[^/]+$~";
 					preg_match( $pattern, (string)$image, $match );
 					$fname = $match[0];
-					if( file_exists( __DIR__ . "/../../img/easygifts/{$fname}" ) ){
+					/* if( file_exists( __DIR__ . "/../../img/easygifts/{$fname}" ) ){
 						// $img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$fname}";
 						$img[] = "/wp-content/themes/merkuriusz/img/easygifts/{$fname}";
 						
@@ -674,7 +674,8 @@ class EASYGIFTS extends XMLAbstract {
 						// $img[] = "../wp-content/themes/merkuriusz/img/noimage.png";
 						$img[] = "/wp-content/themes/merkuriusz/img/noimage.png";
 						
-					}
+					} */
+					$img[] = "/wp-content/themes/merkuriusz/img/easygifts/{$fname}";
 					
 				}
 				
