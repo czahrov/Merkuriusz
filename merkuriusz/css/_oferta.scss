@@ -1,10 +1,10 @@
-#oferta{
+#oferta
+{
 	
 	& > .box{
 		
 		& > .head{
 			margin-top: 74px;
-			height: 40px;
 			
 			& > .title{
 				margin-right: 70px;
@@ -13,13 +13,14 @@
 			}
 			
 			& > .filters{
+				margin: 50px 0;
 				
 				& > .item{
 					padding: 10px 0;
-					margin: 0 18px;
+					margin: 0 18px 0 0;
 					font-size: 14px;
 					border-bottom: solid 4px transparent;
-					transition: border .3 linear;
+					transition: border .3s linear;
 					
 					&.active,
 					&:hover{
@@ -34,7 +35,7 @@
 		}
 		
 		& > .kafelki{
-			margin: 100px -10px 0;
+			margin: 0 -10px 0;
 			
 			& > .item{
 				margin-bottom: 36px;
@@ -51,7 +52,7 @@
 					
 					& > .title{
 						height: 80px;
-						font-size: 34px;
+						font-size: 16px;
 						
 					}
 					
@@ -76,7 +77,7 @@
 			position: relative;
 			height: 854px;
 			max-height: 90%;
-			background-color: silver;
+			background-color: transparent;
 			/* background-image: url( "https://placeimg.com/500/500/tech" ); */
 			
 			& > .top{

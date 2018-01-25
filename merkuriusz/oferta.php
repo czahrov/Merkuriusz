@@ -22,11 +22,11 @@
 		</div>
 	</div>
 	<div class='box grid'>
-		<div class='head flex'>
-			<div class='title uppercase bold'>
+		<div class='head flex flex-wrap'>
+			<div class='title uppercase bold base1'>
 				Realizujemy
 			</div>
-			<div class='filters flex flex-items-center'>
+			<div class='filters flex flex-items-center flex-wrap'>
 				<?php
 					/* Wypisywanie filtrów ( podkategorii ) */
 					foreach( $oferty as $name => $oferta ):
@@ -61,7 +61,7 @@
 		
 	</div>
 	<div class='popup_oferta flex flex-items-center flex-justify-center'>
-		<div class='box grid bg-cover bg-center'>
+		<div class='box grid bg-contain bg-norepeat bg-center bg-top'>
 			<div class='top flex flex-justify-end'>
 				<div class='title font-light flex flex-items-center'>
 					Temporary title
