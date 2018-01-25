@@ -1596,12 +1596,175 @@ class INSPIRION extends XMLAbstract {
 					}
 					
 				}
-				elseif( stripos( $cat_name, 'pico' ) === 0 ){
+				elseif( stripos( $cat_name, 'pico' ) !== false ){
+					$cat_name = 'xxx';
 					
-					$pattern = "~^pico(.+)$~";
-					preg_match( $pattern, $cat_name, $match );
-					$cat_name = 'Pico';
-					$subcat_name = $match[1];
+					if( stripos( $item_title, 'torba' ) !== false ){
+						$cat_name = 'wypoczynek';
+						$subcat_name = 'torby termoizolacyjne';
+						
+					}
+					elseif( stripos( $item_title, 'brelok' ) !== false ){
+						$cat_name = 'breloki';
+						$subcat_name = 'breloki';
+						
+					}
+					elseif( stripos( $item_title, 'pendrive' ) !== false ){
+						$cat_name = 'pendrive';
+						$subcat_name = 'pozostałe';
+						
+					}
+					elseif( stripos( $item_title, 'długopis' ) !== false ){
+						
+						if( stripos( $item_title, 'stojak' ) !== false ){
+							$cat_name = 'biuro';
+							$subcat_name = 'akcesoria biurowe';
+							
+						}
+						elseif( stripos( $item_title, 'stojak' ) !== false ){
+							$cat_name = 'biuro';
+							$subcat_name = 'akcesoria biurowe';
+							
+						}
+						elseif( stripos( $item_dscr, 'metal' ) !== false ){
+							$cat_name = 'Materiały piśmiennicze';
+							$subcat_name = 'Długopisy metalowe';
+							
+						}
+						elseif( stripos( $item_dscr, 'drewn' ) !== false ){
+							$cat_name = 'eco gadżet';
+							
+						}
+						elseif( stripos( $item_dscr, 'sztucz' ) !== false ){
+							$cat_name = 'Materiały piśmiennicze';
+							$subcat_name = 'Długopisy plastikowe';
+							
+						}
+						
+					}
+					elseif( stripos( $item_title, 'kubek' ) !== false ){
+						$cat_name = 'do picia';
+						$subcat_name = 'kubki';
+						
+					}
+					elseif( stripos( $item_title, 'bidon' ) !== false ){
+						$cat_name = 'Podróż';
+						$subcat_name = 'Termosy i bidony';
+						
+					}
+					elseif( stripos( $item_title, 'pieprz' ) !== false or
+					stripos( $item_title, 'minutnik' ) !== false or
+					stripos( $item_title, 'śniada' ) !== false ){
+						$cat_name = 'dom';
+						$subcat_name = 'akcesoria kuchenne';
+						
+					}
+					elseif( stripos( $item_title, 'wizytow' ) !== false ){
+						$cat_name = 'biuro';
+						$subcat_name = 'Wizytowniki';
+						
+					}
+					elseif( stripos( $item_title, 'organ' ) !== false or 
+						stripos( $item_title, 'memo' ) !== false ){
+						$cat_name = 'biuro';
+						$subcat_name = 'Akcesoria biurowe';
+						
+					}
+					elseif( stripos( $item_title, 'mysz' ) !== false ){
+						$cat_name = 'Akcesoria komputerowe';
+						$subcat_name = 'Mysz';
+						
+					}
+					elseif( stripos( $item_title, 'słuch' ) !== false ){
+						
+						$cat_name = 'Akcesoria komputerowe';
+						$subcat_name = 'słuchawki';
+						
+					}
+					elseif( stripos( $item_title, 'zegar' ) !== false ){
+						$cat_name = 'Zegary i zegarki';
+						
+						if( stripos( $item_title, 'biurk' ) !== false ){
+							$subcat_name = 'Zegary biurkowe';
+							
+						}
+						else{
+							$subcat_name = 'Pozostałe';
+							
+						}
+						
+					}
+					elseif( stripos( $item_title, 'pogod' ) !== false ){
+						$cat_name = 'Elektronika';
+						$subcat_name = 'Stacje pogodowe';
+						
+					}
+					elseif( stripos( $item_title, 'grill' ) !== false ){
+						$cat_name = 'wypoczynek';
+						$subcat_name = 'grill';
+						
+					}
+					elseif( stripos( $item_title, 'manicure' ) !== false ){
+						$cat_name = 'uroda';
+						$subcat_name = 'Pielęgnacja dłoni';
+						
+					}
+					elseif( stripos( $item_title, 'luster' ) !== false ){
+						$cat_name = 'uroda';
+						$subcat_name = 'Lusterka';
+						
+					}
+					elseif( stripos( $item_title, 'kemping' ) !== false or
+						stripos( $item_title, 'latarka' ) !== false ){
+						$cat_name = 'Wypoczynek';
+						$subcat_name = 'Outdoor';
+						
+					}
+					elseif( stripos( $item_title, 'krokomierz' ) !== false ){
+						$cat_name = 'Wypoczynek';
+						$subcat_name = 'Sport';
+						
+					}
+					elseif( stripos( $item_title, 'miar' ) !== false ){
+						$cat_name = 'narzędzia';
+						$subcat_name = 'miarki';
+						
+					}
+					elseif( stripos( $item_title, 'radio' ) !== false ){
+						$cat_name = 'elektronika';
+						$subcat_name = 'akcesoria';
+						
+					}
+					elseif( stripos( $item_title, 'stojak' ) !== false ){
+						$cat_name = 'Akcesoria do telefonów i tabletów';
+						$subcat_name = 'Akcesoria do telefonów';
+						
+					}
+					elseif( stripos( $item_title, 'gra' ) !== false ){
+						$cat_name = 'dom';
+						$subcat_name = 'gry';
+						
+					}
+					elseif( stripos( $item_title, 'kalku' ) !== false ){
+						$cat_name = 'elektronika';
+						$subcat_name = 'kalkulatory';
+						
+					}
+					elseif( stripos( $item_title, 'zawiesz' ) !== false ){
+						$cat_name = 'podróż';
+						$subcat_name = 'akcesoria podróżne';
+						
+					}
+					elseif( stripos( $item_title, 'laser' ) !== false ){
+						$cat_name = 'elektronika';
+						$subcat_name = 'Wskaźniki laserowe';
+						
+					}
+					elseif( stripos( $item_title, 'zapal' ) !== false ){
+						$cat_name = 'dodatki';
+						$subcat_name = 'zapalniczki';
+						
+					}
 					
 				}
 				

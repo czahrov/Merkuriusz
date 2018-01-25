@@ -8,7 +8,7 @@
 					'items' => array(
 						array(
 							'title' => 'Materiały piśmiennicze',
-							'pikto' => 'pisemnicze.png',
+							'pikto' => 'pismiennicze.png',
 							'sub' => array(
 								array(
 									'title' => 'Długopisy metalowe',
@@ -435,7 +435,7 @@
 						),
 						array(
 							'title' => 'Rozrywka i szkoła',
-							'pikto' => 'szkola.png',
+							'pikto' => 'rozrywka.png',
 							'sub' => array(
 								array(
 									'title' => 'Gry',
@@ -457,6 +457,7 @@
 						),
 						array(
 							'title' => 'Breloki',
+							'pikto' => 'breloki.png',
 							'sub' => array(
 								array(
 									'title' => 'Breloki',
@@ -498,7 +499,7 @@
 						),
 						array(
 							'title' => 'Podróż',
-							'pikto' => 'transport.png',
+							'pikto' => 'podroz.png',
 							'sub' => array(
 								array(
 									'title' => 'Akcesoria do elektroniki',
@@ -651,6 +652,7 @@
 						),
 						array(
 							'title' => 'Wypoczynek',
+							'pikto' => 'wypoczynek.png',
 							'sub' => array(
 								array(
 									'title' => 'Grill',
@@ -729,6 +731,7 @@
 						),
 						array(
 							'title' => 'Sport i rekreacja',
+							'pikto' => 'sport.png',
 							'sub' => array(
 								array(
 									'title' => 'Przyrządy do ćwiczeń',
@@ -743,6 +746,7 @@
 						),
 						array(
 							'title' => 'Zdrowie i bezpieczeństwo',
+							'pikto' => 'zdrowie.png',
 							'sub' => array(
 								array(
 									'title' => 'Bezpieczeństwo',
@@ -760,9 +764,11 @@
 						),
 						array(
 							'title' => 'Medyczne',
+							'pikto' => 'medyczne.png',
 						),
 						array(
 							'title' => 'Odblaski',
+							'pikto' => 'odblaski.png',
 							'sub' => array(
 								array(
 									'title' => 'Odblaski',
@@ -786,6 +792,7 @@
 						),
 						array(
 							'title' => 'Pinsy',
+							'pikto' => 'pinsy.png',
 							'sub' => array(
 								array(
 									'title' => 'Metalowe',
@@ -797,6 +804,7 @@
 						),
 						array(
 							'title' => 'Import',
+							'pikto' => 'import.png',
 							'sub' => array(
 								array(
 									'title' => 'Nowości importowe',
@@ -808,6 +816,7 @@
 						),
 						array(
 							'title' => 'Dodatki',
+							'pikto' => 'dodatki.png',
 							'sub' => array(
 								array(
 									'title' => 'Zapalniczki',
@@ -831,9 +840,11 @@
 						),
 						array(
 							'title' => 'Uśmiechnięty gadżet',
+							'pikto' => 'smile.png',
 						),
 						array(
 							'title' => 'Biżuteria i akcesoria',
+							'pikto' => 'bizuteria.png',
 						),
 						array(
 							'title' => 'Świąteczne',
@@ -1913,138 +1924,110 @@
 					'items' => array(
 						array(
 							'title' => 'Nowości',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Made in Europe',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Etui na wizytówki',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Etui',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Hotele i Restauracje',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'RFID',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Kosmetyczki',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Portfele',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Opakowania',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Piersiówki',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Teczki',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Kalendarze',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Zestawy',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Torby',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Breloki',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Organizery',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Plecaki',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Travel',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Paski',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Inne',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Produkty z filcu',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Notesy',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Zestawy piór',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Power Bags',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Materiały promocyjne',
-							'pikto' => '',
-							'logo' => '',
 						),
 						array(
 							'title' => 'Gifts of the year',
-							'pikto' => '',
-							'logo' => '',
 						),
 						
 					),
 				),
 			);
+			
+			function custom_sort( $a, $b ){
+				$val_a = $a[ 'title' ];
+				$val_b = $b[ 'title' ];
+				
+				return $val_a == $val_b?( 0 ):( $val_a < $val_b?( -1 ):( 1 ) );
+				
+			}
+			
+			/* foreach( $input as $kategoria ){
+				if( !empty( $kategoria[ 'items' ] ) ){
+					// usort( $kategoria[ 'items' ], "custom_sort" );
+					
+					foreach( $kategoria[ 'items' ] as $pozycja ){
+						if( !empty( $pozycja[ 'sub' ] ) ){
+							usort( $pozycja[ 'sub' ], "custom_sort" );
+							
+						}
+						
+					}
+					
+				}
+				
+			} */
 			
 /*
 <ul class='menu'>
