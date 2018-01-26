@@ -112,8 +112,21 @@ class AXPOL extends XMLAbstract{
 				// }
 				
 				/* ========== KATEGORIE ========== */
-				if( in_array( $cat_name, array( 'do pisania', 'przybory piśmienne' ) ) ){
+				if( in_array( $cat_name, array( 'do pisania', 'przybory piśmienne', 'przybory piŚmienne' ) ) ){
 					$cat_name = 'materiały piśmiennicze';
+					
+					if( $subcat_name === 'biurowe' ){
+						$subcat_name = 'inne';
+						
+					}
+					elseif( $subcat_name === 'zestawy' ){
+						$subcat_name = 'zestawy piśmienne';
+						
+					}
+					elseif( $subcat_name === 'długopisy' ){
+						$subcat_name = 'długopisy plastikowe';
+						
+					}
 					
 				}
 				elseif( in_array( $cat_name, array( 'narzędzia i latarki' ) ) ){
@@ -128,13 +141,9 @@ class AXPOL extends XMLAbstract{
 					$cat_name = 'biuro';
 					
 					if( $subcat_name === 'notatniki' ){
-						$subcat_name = 'Notatniki i notesy';
+						$subcat_name = 'notatniki i notesy';
 						
 					}
-					
-				}
-				elseif( $cat_name === 'przybory piśmienne' ){
-					$cat_name = 'materiały piśmiennicze';
 					
 				}
 				elseif( $cat_name === 'torby i podróż' ){
@@ -246,7 +255,7 @@ class AXPOL extends XMLAbstract{
 						
 					}
 					elseif( strpos( $item_title, 'rękę' ) !== false ){
-						$subcat_name = 'zegarki na rekę';
+						$subcat_name = 'zegarki na rękę';
 						
 					}
 					else{
@@ -362,8 +371,7 @@ class AXPOL extends XMLAbstract{
 							
 						}
 						else{
-							$cat_name = 'xxx';
-							$subcat_name = 'usb';
+							$cat_name = 'inne';
 							
 						}
 						
@@ -455,7 +463,7 @@ class AXPOL extends XMLAbstract{
 				/* 
 				$item_title = (string)$item->TitlePL
 				$item_dscr = (string)$item->DescriptionPL
-				 */
+				*/
 				 
 				/* ========== PODKATEGORIE ========== */
 				
@@ -466,26 +474,145 @@ class AXPOL extends XMLAbstract{
 				}
 				
 				/* ================== FILTRY ================== */
-				if( stripos( (string)$item->TitlePL, 'waterman' ) ){
+				if( stripos( $item_title, 'waterman' ) !== false ){
 					$cat_name = 'vip piśmiennicze';
 					$subcat_name = 'waterman';
 					
 				}
-				elseif( stripos( (string)$item->TitlePL, 'parker' ) ){
+				elseif( stripos( $item_title, 'parker' ) !== false ){
 					$cat_name = 'vip piśmiennicze';
 					$subcat_name = 'parker';
 					
 				}
-				elseif( stripos( (string)$item->TitlePL, 'kielisz' ) ){
+				elseif( stripos( $item_title, 'kielisz' ) !== false ){
 					$cat_name = 'do picia';
 					$subcat_name = 'kieliszki';
 					
 				}
+				elseif( $subcat_name === 'długopisy ekologiczne' ){
+					$cat_name = 'eco gadżet';
+					$subcat_name = '';
+					
+				}
+				elseif( $cat_name === 'akcesoria do telefonÓw i tabletÓw' &&  $subcat_name === 'power banki' ){
+					$cat_name = 'power banki';
+					$subcat_name = 'pozostałe';
+					
+				}
+				elseif( $cat_name === 'dom i wnĘtrze'){
+					$cat_name = 'dom';
+					
+					if( $subcat_name === 'eco' ){
+						$cat_name = 'eco gadżet';
+						$subcat_name = '';
+						
+					}
+					elseif( $subcat_name === 'akcesoria do wina	' ){
+						$cat_name = 'vine club';
+						$subcat_name = 'akcesoria';
+						
+					}
+					else{
+						$subcat_name = 'inne';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'narzĘdzia i latarki' ){
+					$cat_name = 'narzędzia';
+					
+				}
+				elseif( $cat_name === 'wypoczynek' ){
+					
+					if( $subcat_name === 'poduszki i koce' ){
+						
+						if( stripos( (string)$item->TitlePL, 'koc' ) ){
+							$subcat_name = 'koce';
+							
+						}
+						else{
+							$subcat_name = 'poduszki';
+							
+						}
+						
+					}
+					
+				}
+				elseif( $cat_name === 'torby i plecaki' ){
+					
+					if( $subcat_name === 'na ramię' ){
+						$subcat_name = 'torby na ramię';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'akcesoria' ){
+					$cat_name = 'vine club';
+					$subcat_name = 'akcesoria';
+					
+				}
+				elseif( $cat_name === 'wyprzedaż voyager wine club' ){
+					$cat_name = 'vine club';
+					
+					if( stripos( $item_title, 'lindt' ) !== false ){
+						$subcat_name = 'czekolada';
+						
+					}
+					elseif( stripos( (string)$item->TitlePL, 'zestaw' ) !== false ){
+						$subcat_name = 'zestawy';
+						
+					}
+					else{
+						$subcat_name = 'wino';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'medyczne' ){
+					
+					if( $subcat_name === 'apteczki' ){
+						$cat_name = 'dom';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'pozostałe' ){
+					$cat_name = 'do picia';
+					$subcat_name = 'inne';
+					
+				}
+				elseif( $cat_name === 'air gifts' ){
+					$cat_name = 'do picia';
+					$subcat_name = 'kubki';
+					
+				}
+				elseif( $cat_name === 'lato' ){
+					$cat_name = 'wypoczynek';
+					$subcat_name = 'lato';
+					
+				}
+				elseif( $cat_name === 'wino' ){
+					$cat_name = 'vine club';
+					$subcat_name = 'wino';
+					
+				}
+				elseif( $cat_name === 'vip skóra' ){
+					$cat_name = 'kolekcja vip';
+					$subcat_name = 'mauro conti';
+					
+				}
+				elseif( in_array( $cat_name, array( 'wyprzedaż voyager', 'wyprzedaŻ voyager xd' ) ) ){
+					$cat_name = 'inne';
+					
+				}
+				
 				
 				/* ================== */
 				
 				//$cat[ $catalog ] = array();
 				$cat[ $cat_name ] = array();
+				
+				// $this->debugger( $cat_name, $subcat_name );
 				
 				if( !empty( $subcat_name ) ){
 					$subcat_name = $cat_name . "-" . $subcat_name;
@@ -582,6 +709,8 @@ class AXPOL extends XMLAbstract{
 				);
 				
 			}
+			
+			// $this->debugger();
 			
 		}
 		

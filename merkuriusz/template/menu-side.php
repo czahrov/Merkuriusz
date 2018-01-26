@@ -1148,6 +1148,10 @@
 					'class' => 'vip',
 					'items' => array(
 						array(
+							'title' => 'Mauro Conti',
+							'class' => 'bold uppercase',
+						),
+						array(
 							'title' => 'Cool Brands',
 							'class' => 'bold uppercase',
 							'sub' => array(

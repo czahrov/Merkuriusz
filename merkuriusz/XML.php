@@ -10,15 +10,15 @@ $jaguar_auth = array(
 	)
 );
 
-// $AXPOL = new AXPOL();
-// $EASYGIFTS = new EASYGIFTS();
-// $MACMA = new MACMA();
-// $ANDA = new ANDA();
-// $FALKROSS = new FALKROSS();
-// $JAGUARGIFT = new JAGUARGIFT( $jaguar_auth );
-// $ASGARD = new ASGARD();
+$AXPOL = new AXPOL();
+$EASYGIFTS = new EASYGIFTS();
+$MACMA = new MACMA();
+$ANDA = new ANDA();
+$FALKROSS = new FALKROSS();
+$JAGUARGIFT = new JAGUARGIFT( $jaguar_auth );
+$ASGARD = new ASGARD();
 $INSPIRION = new INSPIRION();
-// $PAR = new PAR();
+$PAR = new PAR();
 
 if( isset( $_GET[ 'recache' ] ) ){
 	if( ( isset( $_GET[ 'all' ] ) or ( isset( $_GET[ 'axpol' ] ) ) ) && isset( $AXPOL ) ) $AXPOL->makeCache();

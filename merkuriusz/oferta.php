@@ -24,7 +24,10 @@
 	<div class='box grid'>
 		<div class='head flex flex-wrap'>
 			<div class='title uppercase bold base1'>
-				Realizujemy
+				Realizacje - 
+				<span class='small'>
+					Druk, Znakowanie, Kalkomania, Haft, Promocja marki
+				</span>
 			</div>
 			<div class='filters flex flex-items-center flex-wrap'>
 				<?php
