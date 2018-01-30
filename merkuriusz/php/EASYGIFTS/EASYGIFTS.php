@@ -67,6 +67,8 @@ class EASYGIFTS extends XMLAbstract {
 		//$cat_name = apply_filters( 'stdName', (string)$category->name );
 		$cat_name = strtolower( (string)$category->name );
 		//$ret[ $cat_name ] = array();
+		$item_title = (string)$node->baseinfo->name;
+		$item_dscr = (string)$node->baseinfo->intro;
 		
 		/* ========== KATEGORIA ========== */
 			
@@ -111,7 +113,7 @@ class EASYGIFTS extends XMLAbstract {
 		
 		/* ==================== */
 		
-		/* ==================== FILTRY ==================== */
+		/* ==================== FILTRY KATEGORII ==================== */
 		if( stripos( (string)$node->baseinfo->name, 'xlyne' ) !== false ){
 			$cat_name = 'vip elektronika';
 			$subcat_name = 'XLYNE';
@@ -142,6 +144,391 @@ class EASYGIFTS extends XMLAbstract {
 			$subcat_name = 'kieliszki';
 			
 		}
+		elseif( $cat_name === 'gadżety piłkarskie' ){
+			$cat_name = 'Sport i rekreacja';
+			$subcat_name = 'Akcesoria sportowe';
+			
+		}
+		elseif( $cat_name === 'wyprzedaŻ' ){
+			$cat_name = 'gadżety reklamowe';
+			$subcat_name = 'inne';
+			
+		}
+		elseif( $cat_name === 'długopisy z grawerem za 10 groszy!' ){
+			$cat_name = 'materiały piśmiennicze';
+			$subcat_name = 'inne';
+			
+		}
+		elseif( $cat_name === 'różne' ){
+			$cat_name = 'gadżety reklamowe';
+			$subcat_name = 'inne';
+			
+		}
+		elseif( $cat_name === 'opakowania' ){
+			$cat_name = 'gadżety reklamowe';
+			$subcat_name = 'opakowania upominkowe';
+			
+		}
+		elseif( $cat_name === 'elektronika' ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$subcat_name = 'akcesoria';
+				
+			}
+			
+		}
+		elseif( $cat_name === 'breloki akrylowe' ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'breloki';
+				$subcat_name = 'akrylowe';
+				
+			}
+			
+		}
+		elseif( $cat_name === 'mobile' ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'elektronika';
+				$subcat_name = 'akcesoria';
+				
+			}
+			
+		}
+		elseif( $cat_name === 'pinsy' ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'pinsy';
+				$subcat_name = 'metalowe';
+				
+			}
+			
+		}
+		elseif( $cat_name === 'etui' ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'elektronika';
+				$subcat_name = 'akcesoria';
+				
+			}
+			
+		}
+		elseif( $cat_name === "opakowania dla pendrive'ów" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'elektronika';
+				$subcat_name = 'akcesoria';
+				
+			}
+			
+		}
+		elseif( $cat_name === "cerruti 1881" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'cerruti 1881';
+				
+				if( stripos( $item_title, 'pióro' ) !== false or 
+					stripos( $item_title, 'pen' ) !== false ){
+					$subcat_name = 'pióra';
+					
+				}
+				elseif( stripos( $item_title, 'długopis' ) !== false ){
+					$subcat_name = 'długopisy';
+					
+				}
+				elseif( stripos( $item_title, 'zestaw' ) !== false ){
+					$subcat_name = 'zestawy upominkowe';
+					
+				}
+				elseif( stripos( $item_title, 'portfel' ) !== false or 
+					stripos( $item_title, 'wallet' ) !== false ){
+					$subcat_name = 'portfele';
+					
+				}
+				elseif( stripos( $item_title, 'teczka' ) !== false ){
+					$subcat_name = 'teczki';
+					
+				}
+				elseif( stripos( $item_title, 'torb' ) !== false or 
+					stripos( $item_title, 'toreb' ) !== false or 
+					stripos( $item_title, 'bag' ) !== false ){
+					$subcat_name = 'Torby i torebki';
+					
+				}
+				elseif( stripos( $item_title, 'parasol' ) !== false ){
+					$subcat_name = 'parasole';
+					
+				}
+				elseif( stripos( $item_title, 'brelok' ) !== false or 
+					stripos( $item_title, 'key ring' ) !== false or 
+					stripos( $item_title, 'walizka' ) !== false or 
+					stripos( $item_title, 'saszetka' ) !== false or 
+					stripos( $item_title, 'case' ) !== false ){
+					$subcat_name = 'podróż';
+					
+				}
+				elseif( stripos( $item_title, 'note' ) !== false or 
+					stripos( $item_title, 'wizyt' ) !== false or 
+					stripos( $item_title, 'card holder' ) !== false or 
+					stripos( $item_title, 'folder' ) !== false ){
+					$subcat_name = 'notesy i notatniki';
+					
+				}
+				else{
+					$subcat_name = 'akcesoria';
+					
+				}
+				
+			}
+			
+		}
+		elseif( $cat_name === "power of brands – oferta specjalna 24h" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'power of brands';
+				$subcat_name = 'oferta specjalna';
+				
+			}
+			
+		}
+		elseif( $cat_name === "ungaro" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'ungaro';
+				
+				if( stripos( $item_title, 'zegarek' ) !== false or 
+					stripos( $item_title, 'chronograph' ) !== false or 
+					stripos( $item_title, 'watch' ) !== false ){
+					$subcat_name = 'zegarki';
+					
+				}
+				elseif( stripos( $item_title, 'opakowan' ) !== false ){
+					$subcat_name = 'opakowania';
+					
+				}
+				elseif( stripos( $item_title, 'zestaw' ) !== false ){
+					$subcat_name = 'zestawy upominkowe';
+					
+				}
+				elseif( stripos( $item_title, 'piór' ) !== false or 
+					stripos( $item_title, 'pen' ) !== false ){
+					$subcat_name = 'pióra';
+					
+				}
+				elseif( stripos( $item_title, 'długopis' ) !== false ){
+					$subcat_name = 'długopisy';
+					
+				}
+				elseif( stripos( $item_title, 'brelok' ) !== false ){
+					$subcat_name = 'breloki';
+					
+				}
+				elseif( stripos( $item_title, 'teczka' ) !== false ){
+					$subcat_name = 'teczki';
+					
+				}
+				elseif( stripos( $item_title, 'note' ) !== false or 
+					stripos( $item_title, 'wizyt' ) !== false ){
+					$subcat_name = 'Notesy i notatniki';
+					
+				}
+				elseif( stripos( $item_title, 'portfel' ) !== false or 
+					stripos( $item_title, 'wallet' ) !== false ){
+					$subcat_name = 'portfele';
+					
+				}
+				elseif( stripos( $item_title, 'etui' ) !== false ){
+					$subcat_name = 'etui';
+					
+				}
+				elseif( stripos( $item_title, 'torb' ) !== false or 
+					stripos( $item_title, 'bag' ) !== false ){
+					$subcat_name = 'Torby i torebki';
+					
+				}
+				elseif( stripos( $item_title, 'portmon' ) !== false ){
+					$subcat_name = 'Portmonetki';
+					
+				}
+				elseif( stripos( $item_title, 'szal' ) !== false or 
+					stripos( $item_title, 'apasz' ) !== false or 
+					stripos( $item_title, 'scarf' ) !== false ){
+					$subcat_name = 'Apaszki i szale';
+					
+				}
+				else{
+					$subcat_name = 'akcesoria';
+					
+				}
+				
+			}
+			
+		}
+		elseif( $cat_name === "selfie sticki" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'Akcesoria do telefonów i tabletów';
+				$subcat_name = 'Akcesoria';
+				
+			}
+			
+		}
+		elseif( $cat_name === "inne" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'gadżety reklamowe';
+				$subcat_name = 'inne';
+				
+			}
+			
+		}
+		elseif( $cat_name === "torby by jassz" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'Tekstylia';
+				$subcat_name = 'Torby jassz';
+				
+			}
+			
+		}
+		elseif( $cat_name === "nowości 2018" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'gadżety reklamowe';
+				$subcat_name = 'inne';
+				
+			}
+			
+		}
+		elseif( $cat_name === "nina ricci" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'nina ricci';
+				
+				if( stripos( $item_title, 'pióro' ) !== false or 
+					stripos( $item_title, 'pen' ) !== false ){
+					$subcat_name = 'pióra';
+					
+				}
+				elseif( stripos( $item_title, 'dług' ) !== false ){
+					$subcat_name = 'długopisy';
+					
+				}
+				elseif( stripos( $item_title, 'zestaw' ) !== false ){
+					$subcat_name = 'zestawy upominkowe';
+					
+				}
+				elseif( stripos( $item_title, 'note' ) !== false or 
+					stripos( $item_title, 'wizyt' ) !== false ){
+					$subcat_name = 'notesy i notatniki';
+					
+				}
+				elseif( stripos( $item_title, 'tecz' ) !== false or 
+					stripos( $item_title, 'folder' ) !== false ){
+					$subcat_name = 'teczki';
+					
+				}
+				elseif( stripos( $item_title, 'portmon' ) !== false or 
+					stripos( $item_title, 'portfel' ) !== false ){
+					$subcat_name = 'portfele';
+					
+				}
+				elseif( stripos( $item_title, 'torb' ) !== false ){
+					$subcat_name = 'Torby i torebki';
+					
+				}
+				elseif( stripos( $item_title, 'etui' ) !== false or 
+					stripos( $item_title, 'pouch' ) !== false ){
+					$subcat_name = 'etui';
+					
+				}
+				else{
+					$subcat_name = 'akcesoria';
+					
+				}
+				
+			}
+			
+		}
+		elseif( $cat_name === "jean-louis scherrer" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'Jean-Louis Scherrer';
+				
+				if( stripos( $item_title, 'zestaw' ) !== false ){
+					$subcat_name = 'Zestawy upominkowe';
+					
+				}
+				elseif( stripos( $item_title, 'szal' ) !== false ){
+					$subcat_name = 'Apaszki i szale';
+					
+				}
+				elseif( stripos( $item_title, 'bransolet' ) !== false or 
+					stripos( $item_title, 'Łańcu' ) !== false or 
+					stripos( $item_title, 'necklace' ) !== false ){
+					$subcat_name = 'biżuteria';
+					
+				}
+				else{
+					$subcat_name = 'Akcesoria';
+					
+				}
+				
+			}
+			
+		}
+		elseif( $cat_name === "christian lacroix" ){
+			
+			if( $category->subcategories->count() === 0 ){
+				$cat_name = 'christian lacroix';
+				
+				if( stripos( $item_title, 'zestaw' ) !== false ){
+					$subcat_name = 'zestawy upominkowe';
+					
+				}
+				elseif( stripos( $item_title, 'zegarek' ) !== false or 
+					stripos( $item_title, 'chronograph' ) !== false or 
+					stripos( $item_title, 'watch' ) !== false ){
+					$subcat_name = 'zegarki';
+					
+				}
+				elseif( stripos( $item_title, 'długopis' ) !== false ){
+					$subcat_name = 'długopisy';
+					
+				}
+				elseif( stripos( $item_title, 'pióro' ) !== false or 
+					stripos( $item_title, 'pen' ) !== false ){
+					$subcat_name = 'pióra';
+					
+				}
+				elseif( stripos( $item_title, 'note' ) !== false or 
+					stripos( $item_title, 'wizytow' ) !== false ){
+					$subcat_name = 'Notesy i notatniki';
+					
+				}
+				elseif( stripos( $item_title, 'torb' ) !== false ){
+					$subcat_name = 'Torby i torebki';
+					
+				}
+				elseif( stripos( $item_title, 'portfel' ) !== false or 
+					stripos( $item_title, 'portmon' ) !== false or 
+					stripos( $item_title, 'wallet' ) !== false ){
+					$subcat_name = 'Portfele';
+					
+				}
+				elseif( stripos( $item_title, 'teczka' ) !== false ){
+					$subcat_name = 'teczki';
+					
+				}
+				else{
+					$subcat_name = 'akcesoria';
+					
+				}
+				
+			}
+			
+		}
+		
 		
 		/* ==================== */
 		
@@ -219,8 +606,8 @@ class EASYGIFTS extends XMLAbstract {
 						$subcat_name = 'sportowe';
 					}
 					else{
-						$cat_name = 'xxx';
-						$subcat_name = '';
+						$cat_name = 'inne';
+						// $subcat_name = '';
 						
 					}
 					
@@ -519,6 +906,190 @@ class EASYGIFTS extends XMLAbstract {
 				(string)$node->baseinfo->intro
 				 */
 				
+				/* ================= FILTRY PODKATEGORII =================  */
+				if( $cat_name === 'torby i plecaki' ){
+					
+					if( $subcat_name === 'kosze na zakupy' ){
+						$subcat_name = 'na zakupy';
+						
+					}
+					elseif( $subcat_name === 'torby papierowe' ){
+						$subcat_name = 'papierowe';
+						
+					}
+					elseif( $subcat_name === 'dom' ){
+						$cat_name = 'dom';
+						$subcat_name = 'inne';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'inne' ){
+					
+					if( $subcat_name === 'torby i worki sportowe' ){
+						$cat_name = 'sport i rekreacja';
+						$subcat_name = 'akcesoria sportowe';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'narzędzia' ){
+					
+					if( $subcat_name === 'narzędzia wielofunkcyjne' ){
+						$subcat_name = 'wielofunkcyjne';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'materiały piśmiennicze' ){
+					
+					if( in_array( $subcat_name, array( 'nowości świąteczne 2017', 'materiały piśmiennicze' ) ) ){
+						$subcat_name = 'inne';
+						
+					}
+					elseif( $subcat_name === 'zestawy do malowania' ){
+						$cat_name = 'rozrywka i szkoła';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'wypoczynek' ){
+					
+					if( $subcat_name === 'dom' ){
+						$cat_name = 'dom';
+						$subcat_name = 'inne';
+						
+					}
+					elseif( $subcat_name === 'Grill i piknik' ){
+						
+						if( stripos( $item_dscr, 'krzesło' ) !== false or 
+							stripos( $item_dscr, 'kemping' ) !== false ){
+							$subcat_name = 'piknik';
+							
+						}
+						else{
+							$subcat_name = 'grill';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'torby termiczne' ){
+						$subcat_name = 'Torby termoizolacyjne';
+						
+					}
+					elseif( $subcat_name === 'czapki i kapelusze' ){
+						$cat_name = 'tekstylia';
+						
+						if( stripos( $item_title, 'daszk' ) !== false ){
+							$subcat_name = 'Czapki z daszkiem';
+							
+						}
+						elseif( stripos( $item_title, 'czapk' ) !== false ){
+							$subcat_name = 'Czapki';
+							
+						}
+						elseif( stripos( $item_title, 'kapelusz' ) !== false ){
+							$subcat_name = 'kapelusze';
+							
+						}
+						
+					}
+					elseif( $subcat_name === 'nowości świąteczne 2017' ){
+						$subcat_name = 'inne';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'power banki' ){
+					
+					if( $subcat_name === 'power banki' ){
+						$subcat_name = 'pozostałe';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'akcesoria_do_telefonow_i_tabletow' ){
+					
+					if( $subcat_name === 'power banki' ){
+						$cat_name = 'power banki';
+						$subcat_name = 'pozostałe';
+						
+					}
+					elseif( in_array( $subcat_name, array( 'Okulary wirtualnej rzeczywistości', 'różne' ) ) ){
+						$cat_name = 'Akcesoria do telefonów i tabletów';
+						$subcat_name = 'Akcesoria';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'Podróż' ){
+					
+					if( $subcat_name === 'etui' ){
+						$cat_name = 'materiały piśmiennicze';
+						
+					}
+					elseif( $subcat_name === 'breloki metalowe' ){
+						$cat_name = 'breloki';
+						$subcat_name = 'metalowe';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'breloki' ){
+					
+					if( $subcat_name === 'breloki wielofunkcyjne' ){
+						$subcat_name = 'wielofunkcyjne';
+						
+					}
+					elseif( $subcat_name === 'breloki metalowe' ){
+						$subcat_name = 'metalowe';
+						
+					}
+					
+				}
+				elseif( $cat_name === 'vine club' ){
+					
+					if( $subcat_name === 'dom' ){
+						$cat_name = 'dom';
+						$subcat_name = 'kuchnia';
+						
+					}
+					elseif( $subcat_name === 'nowości świąteczne 2017' ){
+						$cat_name = 'dom';
+						$subcat_name = 'akcesoria';
+						
+					}
+					
+					
+				}
+				elseif( $cat_name === 'odblaski' ){
+					
+					if( $subcat_name === 'breloki wielofunkcyjne' ){
+						$subcat_name = 'breloki';
+						
+					}
+					
+					
+				}
+				elseif( $cat_name === "tekstylia" ){
+			
+					if( $subcat_name === 'odpoczynek' ){
+						$cat_name = 'wypoczynek';
+						$subcat_name = 'outdoor';
+						
+					}
+					
+				}
+				elseif( $cat_name === "gadżety reklamowe" ){
+			
+					if( $subcat_name === 'nowości świąteczne 2017' ){
+						$subcat_name = 'inne';
+						
+					}
+					
+				}
+				
+				
 				if( !empty( $subcat_name ) ){
 					$cat_name_slug = $this->stdNameCache( $cat_name );
 					$subcat_name_slug = $this->stdNameCache( $subcat_name );
@@ -554,6 +1125,8 @@ class EASYGIFTS extends XMLAbstract {
 			$ret[ $cat_name_slug ] = array();
 			
 		}
+		
+		$this->debugger( $cat_name, $subcat_name );
 		
 		/*
 		(string)$node->baseinfo->name
@@ -657,9 +1230,9 @@ class EASYGIFTS extends XMLAbstract {
 				
 				$img = array();
 				if( $item->images->count() > 0 ) foreach( $item->images->children() as $image ){
-					$pattern = "~[^/]+$~";
-					preg_match( $pattern, (string)$image, $match );
-					$fname = $match[0];
+					// $pattern = "~[^/]+$~";
+					// preg_match( $pattern, (string)$image, $match );
+					// $fname = $match[0];
 					/* if( file_exists( __DIR__ . "/../../img/easygifts/{$fname}" ) ){
 						// $img[] = "../wp-content/themes/merkuriusz/img/easygifts/{$fname}";
 						$img[] = "/wp-content/themes/merkuriusz/img/easygifts/{$fname}";
@@ -675,7 +1248,12 @@ class EASYGIFTS extends XMLAbstract {
 						$img[] = "/wp-content/themes/merkuriusz/img/noimage.png";
 						
 					} */
-					$img[] = "/wp-content/themes/merkuriusz/img/easygifts/{$fname}";
+					/* if( !file_exists( __DIR__ . "/../../img/easygifts/{$fname}" ) ){
+						copy( $image, __DIR__ . "/../../img/easygifts/{$fname}" );
+						
+					} */
+					// $img[] = "/wp-content/themes/merkuriusz/img/easygifts/{$fname}";
+					$img[] = (string)$image;
 					
 				}
 				
@@ -743,6 +1321,8 @@ class EASYGIFTS extends XMLAbstract {
 				);
 				
 			}
+			
+			$this->debugger();
 			
 		}
 		
