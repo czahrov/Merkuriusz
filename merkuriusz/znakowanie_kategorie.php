@@ -12,7 +12,7 @@
 <?php get_template_part( "template/menu", "top" ); ?>
 	<!-- BANER O NAS-->
 
-	<div class="container-fluid about_us_cover">
+	<div class="container-fluid about_us_cover" style='background-image:url(<?php echo get_the_post_thumbnail_url( get_page_by_title( 'Znakowanie' )->ID ) ?>)'>
 		<div class="container">
 			<div class="col-sm-12 about_us_content">
 				<h1>Znakowanie</h1>
