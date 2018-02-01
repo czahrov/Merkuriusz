@@ -118,12 +118,6 @@
 						
 					</li>
 					<li>
-						<a href='<?php echo home_url( 'mapa-strony' ); ?>'>
-							Mapa strony
-						</a>
-						
-					</li>
-					<li>
 						<a href='<?php echo home_url( 'projekty-ue' ); ?>'>
 							Projekty ue
 						</a>
