@@ -6,56 +6,29 @@
 	</div>
 	<div class='body base1 flex flex-wrap'>
 		<?php
-			$data = array(
-				array(
-					'class' => 'identyfikacja',
-					'title' => 'identyfikacja wizualna firm',
-					'content' => 'Projektujemy, drukujemy oraz składamy roll-upy, ścianki wystawiennicze',
-					'img' => 'https://placeimg.com/500/200/tech',
-					'url' => home_url( 'oferta' ),
-					
-				),
-				array(
-					'class' => 'wizualna',
-					'title' => 'reklama wizualna',
-					'content' => 'Projektujemy banery, szyldy, naklejki samoprzylepne, papierowe, folie wypukłe, magnesy',
-					'img' => 'https://placeimg.com/500/200/tech',
-					'url' => home_url( 'oferta' ),
-					
-				),
-				array(
-					'class' => 'techniki',
-					'title' => 'techniki nadruków',
-					'content' => 'Oferujemy druk wielkoformatowy, offsetowy, cyfrowy, UV',
-					'img' => 'https://placeimg.com/500/200/tech',
-					'url' => home_url( 'oferta' ),
-					
-				),
-				array(
-					'class' => 'gadzety',
-					'title' => 'gadżety reklamowe',
-					'content' => 'Na zamówienie projektujemy gadżety reklamowe oraz eventowe',
-					'img' => 'https://placeimg.com/500/200/tech',
-					'url' => home_url( 'oferta' ),
-					
-				),
+			$posts = get_posts( array(
+				'numberposts' => -1,
+				'category_name' => 'Reklama 360 stopni',
+				'order' => 'ASC',
+				'orderby' => 'meta_value',
+				'meta_key' => 'order',
 				
-			);
+			) );
 			
-			foreach( $data as $item ):
+			foreach( $posts as $item ):
 		?>
-		<div class='item base1 base2-mm flex <?php echo $item[ 'class' ]; ?>'>
-			<div class='box bg-cover bg-center base1'>
+		<div class='item base1 base2-mm flex'>
+			<div class='box bg-cover bg-center base1' style='background-image: url(<?php echo get_the_post_thumbnail_url( $item->ID, 'large' ); ?>)'>
 				<div class='over flex'>
 					<div class='content base1 flex flex-items-center'>
-						<?php echo $item[ 'content' ]; ?>
+						<?php echo $item->post_content; ?>
 					</div>
 					
 				</div>
 				<div class='hint bold uppercase bg-blue'>
-					<?php echo $item[ 'title' ] ?>
+					<?php echo $item->post_title; ?>
 				</div>
-				<a class='hitbox pointer' href='<?php echo $item[ 'url' ]; ?>'></a>
+				<a class='hitbox pointer' href='<?php echo get_post_meta( $item->ID, 'link', true ); ?>'></a>
 				
 			</div>
 			
