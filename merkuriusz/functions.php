@@ -51,7 +51,15 @@ set_error_handler( function( $e_level, $e_msg, $e_file, $e_line, $e_info ){
 	
 } );
 
-add_theme_support('post-thumbnails');
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'widgets' );
+
+/* dodawanie SVG do listy dozwolonych rozszerzeń */
+function my_myme_types($mime_types){
+    $mime_types['svg'] = 'image/svg+xml';
+    return $mime_types;
+}
+add_filter('upload_mimes', 'my_myme_types', 1, 1);
 
 if( !is_admin() ){
 	$debug = isset( $_COOKIE[ 'sprytne' ] )?( true ):( false );
