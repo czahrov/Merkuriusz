@@ -36,9 +36,10 @@
 	
 }
 
-#kalendarze{
+#kalendarze
+{
 	
-	& > .tarnow.kafelki{
+	& > .kafelki{
 		max-width: 1170px;
 		
 		& > .item{
@@ -71,6 +72,28 @@
 					color: #fff;
 					
 				}
+				
+			}
+			
+		}
+		
+	}
+	
+	.content{
+		
+		a{
+			display: inline-block;
+			margin: 0 15px  30px;
+			height: 250px;
+			
+			&, & *{
+				cursor: pointer;
+				
+			}
+			
+			& > img{
+				height: 100%;
+				width: auto;
 				
 			}
 			

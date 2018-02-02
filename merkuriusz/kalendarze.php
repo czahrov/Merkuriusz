@@ -24,190 +24,66 @@
 
 <!-- Single US MAIN CONTENT -->
 
-<div class="container-fluid single-page">
-	
-	<div class="container">
-
+<?php
+	$children = get_pages( array(
+		'parent' => get_post()->ID,
 		
-		<div class="col-sm-12">
+	) );
+	
+	foreach( $children as $child ):
+?>
 
-			<div class="kal_mer">
+	<div class="container-fluid single-page">
+		
+		<div class="container">
+		
+			<div class="col-sm-12">
 
-				<h2 class="kal">Kolekcja kalendarzy o Tarnowie</h2>
+				<div class="kal_mer">
+
+					<h2 class="kal"><?php echo $child->post_title; ?></h2>
+				
+				</div>
 			
 			</div>
-		
+			
 		</div>
 		
 	</div>
-	
+
+	<div class="kafelki grid flex flex-wrap">
+		<?php
+			$pages = get_pages( array(
+				'parent' => $child->ID,
+				'exclude' => array( get_page_by_title( "Kalendarze Kolekcja Tarnów" )->ID ),
+				
+			) );
+			
+			foreach( $pages as $page ):
+			$img = wp_get_attachment_image_url( get_post_meta( $page->ID, 'img', true ), 'full' );
+			if( empty( $img ) ) $img = get_the_post_thumbnail_url( $page->ID );
+			
+		?>
+		<div class='item base1 base2-mm base3-ml base4-ds flex'>
+			<a class='box pointer grow' href='<?php echo get_permalink( $page->ID ); ?>'>
+				<img src='<?php echo $img; ?>'>
+				<div class='title text-center'>
+					<?php echo $page->post_title; ?>
+				</div>
+				
+			</a>
+			
+		</div>
+		<?php endforeach; ?>
+		
+	</div>
+
+<?php endforeach; ?>
+
+<div class="container content">
+	<?php echo apply_filters( 'the_content', get_post()->post_content ); ?>
 </div>
 
-<div class="tarnow kafelki grid flex flex-wrap">
-	<?php
-		$pages = get_pages( array(
-			'parent' => get_page_by_title( 'Kolekcja "Tarnów"' )->ID,
-			
-		) );
-		
-		foreach( $pages as $page ):
-	?>
-	<div class='item base4'>
-		<a class='box pointer' href='<?php echo get_permalink( $page->ID ); ?>'>
-			<img src='<?php echo get_the_post_thumbnail_url( $page->ID ); ?>'>
-			<div class='title text-center'>
-				<?php echo $page->post_title; ?>
-			</div>
-			
-		</a>
-		
-	</div>
-	<?php endforeach; ?>
-	
-</div>
 
-<div class="container-fluid single-page">
-	
-	<div class="container">
-
-		<h2 class="kal"> Merkuriusz - produkcja kalendarzy autorskich</h2>
-
-
-
-		<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( 'kalendarze-biurkowe' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/biurkowy.png">
-						<h5>Kalendarze biurkowe</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-		<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( 'kalendarze-biuwary' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/biurwary.png">
-						<h5>Kalendarze biuwary</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-		<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( '?page_id=415&preview=true' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/czterodzielne.png">
-						<h5>Kalendarze czterodzielne</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-		<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( 'kalendarze-jednodzielne' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/jednodzielne.png">
-						<h5>Kalendarze jednodzielne</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-		<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( 'kalendarze-ksiazkowe' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/ksiazkowe.png">
-						<h5>Kalendarze książkowe</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-		<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( 'kalendarze-listkowe' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/listkowe.png">
-						<h5>Kalendarze listkowe</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-		<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( 'kalendarze-plakatowe' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/plakatowe.png">
-						<h5>Kalendarze plakatowe</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-		<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( 'kalendarze-trojdzielne' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/trojdzielne.png">
-						<h5>Kalendarze trójdzielne</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-
-		<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( 'kalendarze-wieloplanszowe' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/wieloplanszowe.png">
-						<h5>Kalendarze wieloplanszowe</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-		<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( 'kalendarze-z-zegarem' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/zegarowe.png">
-						<h5>Kalendarze z zegarem</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-			<div class="col-md-3"><!-- col-md-3 -->
-			<a href="<?php echo home_url( 'galeria-glowek' ); ?>" class="linkto">
-				<div class="portfolio-kalendarz">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/kalendarze/motyw.png">
-						<h5>Galeria główek</h5>
-				</div>
-			</a>
-		</div><!-- /col-md-3 -->
-
-			
-
-
-
-
-		<!-- /kalendarze wszystkie -->
-
-
-
-
-
-		<div class="col-sm-12">
-
-		<div class="kal_mer">
-
-		<h3 class="kal">Kalendarze 2018 r. - zapraszamy do zapoznania się z katalogami</h3>
-
-		</div>
-
-		</div>
-
-
-			<div class="col-sm-12 single_content">
-
-			
-				<div class="calendar-wrapper">
-					<a href="http://www.merkuriusz.ekalendarze.eu/" target="_blank" title="katalogC" class="calendar-img no-shrink" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/kalendarze/C.jpg);"></a>
-					<a href="http://www.pieknekalendarze.pl/" target="_blank" title="katalogJ" class="calendar-img no-shrink" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/kalendarze/J.jpg);"></a>
-					<a href="http://www.kalendarz.com.pl/" target="_blank" title="katalogA" class="calendar-img no-shrink" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/kalendarze/A.jpg);"></a>
-					<a href="http://www.kalendarze.wizja.net/oferta_MERKURIUSZ_index" target="_blank" title="katalogL" class="calendar-img no-shrink" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/kalendarze/L.jpg);"></a>
-				</div>
-			</div>
-		</div>
-	</div>
-
- <!-- FOOTER -->
+<!-- FOOTER -->
 <?php get_footer(); ?>
