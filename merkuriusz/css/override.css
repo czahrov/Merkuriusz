@@ -676,6 +676,7 @@ h2 > .about-us-one {
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: #fff;
 }
 #home .top-slider > .imgs > .view > .item > .box {
   position: absolute;

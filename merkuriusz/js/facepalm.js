@@ -167,7 +167,7 @@
 				popup
 				.on({
 					open: function( e, name, img ){
-						console.log( [ name, img ] );
+						// console.log( [ name, img ] );
 						if( lock ) return false;
 						lock = true;
 						
@@ -191,8 +191,10 @@
 							
 						} );
 						
+						// console.log( views.filter( '[class~="'+ name +'"]' ) );
+						
 						views
-						.filter( '[class*="'+ name +'"]' )
+						.filter( '[class~="'+ name +'"]' )
 						.show()
 						.siblings()
 						.hide();
@@ -722,7 +724,10 @@
 				slider.triggerHandler( 'start' );
 				
 			})
-			( $( '.catalog-slider-wrapper' ), $( '.catalog-slider-wrapper > .catalog-arrow-box' ), $( '.catalog-slider-wrapper > .catalog-container' ), $( '.catalog-slider-wrapper > .catalog-container > .catalog-element' ) );
+			( $( '.catalog-slider-wrapper' ), 
+			$( '.catalog-slider-wrapper > .catalog-arrow-box' ), 
+			$( '.catalog-slider-wrapper > .catalog-container' ), 
+			$( '.catalog-slider-wrapper > .catalog-container > .catalog-element' ) );
 			
 			/* slider wystawiennicze */
 			(function( slider, arrows, viewbox, items ){
@@ -1221,7 +1226,6 @@
 					
 				});
 				
-				
 				slider.triggerHandler( 'set' );
 				slider.triggerHandler( 'start' );
 				
@@ -1275,9 +1279,8 @@
 				
 			})();
 			
-			/* menu odzieży reklamowej w popupie */
+			/* generowanie menu odzieży reklamowej w popupie */
 			(function( panel, proto, items ){
-				
 				items.each(function(){
 					var href = $(this).attr( 'href' );
 					var title = $(this).attr( 'item-title' );

@@ -32,7 +32,7 @@
 	}
 	
 	echo "<!--";
-	print_r( $data_slider );
+	// print_r( $data_slider );
 	echo "-->";
 	
 ?>
