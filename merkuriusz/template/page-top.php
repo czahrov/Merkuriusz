@@ -5,7 +5,7 @@
 		<a class='pointer bgimg contain' href='<?php echo home_url(); ?>'></a>
 		
 	</div>
-	<form class='searchbar grow base1 base0-ml flex flex-wrap' method='get' action='<?php echo home_url( 'produkt' ); ?>'>
+	<form class='searchbar grow base1 base0-ml flex flex-wrap' method='get' action='<?php echo home_url( 'kategoria' ); ?>'>
 		<input class='input grow' type='text' name='nazwa' placeholder='Wpisz nazwę lub kod produktu'/>
 		<button class='button pointer bold alt grow no-grow-ms flex flex-items-center flex-justify-center' type='submit'>
 			Szukaj

@@ -1,85 +1,32 @@
 <?php
 	
 /*
-	<!--array(18) {
-		["ID"]=>
-			string(8) "V1298-03"
-		["NAME"]=>
-			string(9) "Długopis"
-		["DSCR"]=>
-			string(39) "Długopis z czarnym gumowym przyciskiem"
-		["IMG"]=>
-			array(5) {
-				[0]=>
-					string(46) "http://axpol.com.pl/files/fotob/V1298_03_A.jpg"
-				[1]=>
-					string(53) "http://axpol.com.pl/files/foto_add_big/V1298_03_Z.jpg"
-				[2]=>
-					string(50) "http://axpol.com.pl/files/foto_add_big/V1298_1.jpg"
-				[3]=>
-					string(50) "http://axpol.com.pl/files/foto_add_big/V1298_A.jpg"
-				[4]=>
-					string(50) "http://axpol.com.pl/files/foto_add_big/V1298_B.jpg"
-			}
-		["CAT"]=>
-			array(2) {
-				["materiały piśmiennicze"]=>
-					array(0) {
-					}
-				["materiały piśmiennicze-długopisy metalowe"]=>
-					array(0) {
-					}
-			}
-		["DIM"]=>
-			string(19) "&#216;1,2 x 14,2 cm"
-		["MARK"]=>
-			array(1) {
-				["6x55 (item barrel)"]=>
-					array(2) {
-						[0]=>
-							string(2) "T3"
-						[1]=>
-							string(2) "L0"
-					}
-			}
-		["INSTOCK"]=>
-			int(0)
-		["MATTER"]=>
-			string(10) "metal, EVA"
-		["COLOR"]=>
-			string(6) "czarny"
-		["COUNTRY"]=>
-			string(2) "CN"
-		["MARKSIZE"]=>
-			array(1) {
-				[0]=>
-					string(18) "6x55 (item barrel)"
-			}
-		["MARKTYPE"]=>
-			array(2) {
-				[0]=>
-					string(2) "T3"
-				[1]=>
-					string(2) "L0"
-			}
-		["MARKCOLORS"]=>
-			int(1)
-		["PRICE"]=>
-			array(2) {
-			["NETTO"]=>
-				float(2.45)
-			["BRUTTO"]=>
-				float(3.19)
-			}
-		["MODEL"]=>
-			string(11) "brak danych"
-		["WEIGHT"]=>
-			string(4) "11 g"
-		["BRAND"]=>
-			string(11) "brak danych"
-		}
-	-->
+	Array
+        (
+            [code] => V1798-03
+            [short] => V1798
+            [shop] => AXPOL
+            [title] => Długopis
+            [description] => Długopis ze srebrnymi elementami
+            [catalog] => VOYAGER 2018
+            [brand] => 
+            [marking] => {"item barrel":{"40x6":"T2"},"item clip":{"20x5":"FC1"}}
+            [materials] => ABS
+            [dimension] => &#216;1,1 x 14,5 cm
+            [colors] => czarny
+            [weight] => 0
+            [country] => CN
+            [photos] => ["https://axpol.com.pl/files/fotob/V1798_03_A.jpg"]
+            [netto] => 0.95
+            [brutto] => 1.17
+            [instock] => 39989
+            [new] => 1
+            [promotion] => 0
+            [sale] => 0
+        )
 */
+
+$item = $XMLData['items'][0];
 
 echo "<!--";
 // echo count( $XMLData[ 'items' ] );
@@ -89,7 +36,7 @@ echo "<!--";
 // echo "\r\n find_colors: {$XMLData[ 'find_colors' ]}";
 // echo "\r\n kolory: " . count( $XMLData[ 'colors' ] );
 // print_r( $XMLData[ 'colors' ] );
-print_r( $XMLData['items'][0] );
+print_r( $item );
 echo "\r\n-->";
 
 ?>
@@ -105,7 +52,7 @@ echo "\r\n-->";
 		<div class='box flex flex-column'>
 			<div class='header flex no-shrink flex-self-stretch'>
 				<div class='title base0 grow flex flex-items-center'>
-					<?php echo $item['NAME']; ?>
+					<?php echo $item['title']; ?>
 				</div>
 				<div class='close pointer flex flex-items-center flex-justify-center'>
 					<span class='icon fa fa-times'></span>
@@ -141,11 +88,11 @@ echo "\r\n-->";
 					<?php //do_action( 'single-dane-main', $item ); ?>
 					<div class='info base2'>
 						<div class='title bold alt'>
-							<?php echo $item[ 'NAME' ]; ?>
+							<?php echo $item[ 'title' ]; ?>
 						</div>
 						<div class='instock'>
 							<?php
-								$val = $item[ 'INSTOCK' ];
+								$val = $item[ 'instock' ];
 								if( $val !== false ){
 									$level = array(
 										0 => 'empty',
@@ -175,27 +122,27 @@ echo "\r\n-->";
 							?>
 						</div>
 						<div class='code'>
-							<?php printf( "<span class='bold'>Kod produktu:</span> %s", $item[ 'ID' ] ); ?>
+							<?php printf( "<span class='bold'>Kod produktu:</span> %s", $item[ 'code' ] ); ?>
 						</div>
 						<div class='content'>
-							<?php echo $item[ 'DSCR' ]; ?>
+							<?php echo $item[ 'description' ]; ?>
 						</div>
 						<div class='price flex flex-wrap flex-items-center'>
 							<?php
-								if( $item[ 'PRICE' ][ 'BRUTTO' ] > 0 ){
+								if( $item[ 'brutto' ] > 0 ){
 									printf( "%.2f %s/szt brutto%s", 
-										$item[ 'PRICE' ][ 'BRUTTO' ],
-										$item[ 'PRICE' ][ 'CURRENCY' ],
-										$item[ 'PRICE' ][ 'NETTO' ] !== null?( sprintf( "<span class='netto base1 regulat'>(%.2f %s netto)</span>", 
-												$item[ 'PRICE' ][ 'NETTO' ],
-												$item[ 'PRICE' ][ 'CURRENCY' ]
+										$item[ 'brutto' ],
+										$item[ 'currency' ],
+										$item[ 'netto' ] !== null?( sprintf( "<span class='netto base1 regulat'>(%.2f %s netto)</span>", 
+												$item[ 'netto' ],
+												$item[ 'currency' ]
 											) ):( "" )
 									);
 									
 								}
 								else{
 									printf( "%s<div class='netto base1'><a href='%s'>Zobacz techniki znakowania</a></div>", 
-										$item[ 'PRICE_ALT' ],
+										$item[ 'price_alt' ],
 										home_url( 'znakowanie' )
 										
 									);
@@ -210,7 +157,7 @@ echo "\r\n-->";
 					
 				</div>
 				<div class='body'>
-					<?php if( $item[ 'PRICE' ][ 'BRUTTO' ] > 0 ): ?>
+					<?php if( $item[ 'brutto' ] > 0 ): ?>
 					<div class='table kalkulator flex flex-column'>
 						<div class='thead bold flex flex-items-center'>
 							Kalkulator zamówienia
@@ -342,16 +289,16 @@ echo "\r\n-->";
 								
 								$specyfikacja = array(
 									// 'Model' => empty( $item[ 'MODEL' ] )?( 'brak danych' ):( $item[ 'MODEL' ] ),
-									'Dostępność (szt)' => $item[ 'INSTOCK' ] === false?( 'brak danych' ):( $item[ 'INSTOCK' ] ),
-									'Marka' => empty( $item[ 'BRAND' ] )?( 'brak danych' ):( $item[ 'BRAND' ] ),
-									'Kraj pochodzenia' => empty( $item[ 'COUNTRY' ] )?( 'brak danych' ):( $item[ 'COUNTRY' ] ),
-									'Rozmiar' => empty( $item[ 'DIM' ] )?( 'brak danych' ):( $item[ 'DIM' ] ),
-									'Kolor' => empty( $item[ 'COLOR' ] )?( 'brak danych' ):( $item[ 'COLOR' ] ),
+									'Dostępność (szt)' => $item[ 'instock' ] === false?( 'brak danych' ):( $item[ 'instock' ] ),
+									'Marka' => empty( $item[ 'brand' ] )?( 'brak danych' ):( $item[ 'brand' ] ),
+									'Kraj pochodzenia' => empty( $item[ 'country' ] )?( 'brak danych' ):( $item[ 'country' ] ),
+									'Rozmiar' => empty( $item[ 'dimension' ] )?( 'brak danych' ):( $item[ 'dimension' ] ),
+									'Kolor' => empty( $item[ 'colors' ] )?( 'brak danych' ):( $item[ 'colors' ] ),
 									// 'Znakowanie' => implode( "<br>", $znakowanie ),
 									// 'Wielkość znakowania' => implode( "<br>", $item[ 'MARKSIZE' ] ),
-									'Materiał' => empty( $item[ 'MATTER' ] )?( 'brak danych' ):( $item[ 'MATTER' ] ),
-									'Dostępne znakowania' => empty( $item[ 'MARK_TEXT' ] )?( 'brak danych' ):( $item[ 'MARK_TEXT' ] ),
-									'Waga' => empty( $item[ 'WEIGHT' ] )?( 'brak danych' ):( $item[ 'WEIGHT' ] ),
+									'Materiał' => empty( $item[ 'materials' ] )?( 'brak danych' ):( $item[ 'materials' ] ),
+									'Dostępne znakowania' => empty( $item[ 'marking' ] )?( 'brak danych' ):( $item[ 'marking' ] ),
+									'Waga [g]' => $item[ 'weight' ] == 0?( 'brak danych' ):( $item[ 'weight' ] ),
 									
 								);
 								

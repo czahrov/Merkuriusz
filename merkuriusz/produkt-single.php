@@ -10,7 +10,24 @@
 	
 	require_once "XML.php";
 	
-	$XMLData = $XM->getData();
+	$XMLData = array(
+		'items' => array(),
+		
+	);
+	
+	if( !empty( $_GET[ 'code' ] ) ){
+		$XMLData[ 'items' ] = $XM->getProducts( 'single', $_GET[ 'code' ] );
+		
+	}
+	elseif( !empty( $_GET[ 'cat' ] ) ){
+		header( sprintf( "Location:%s", home_url( "kategoria?cat={$_GET[ 'cat' ]}" ) ) );
+		
+	}
+	/* elseif( !empty( $_GET[ 'nazwa' ] ) ){
+		$XMLData[ 'items' ] = $XM->getProducts( 'custom', "WHERE `title` LIKE '%{$_GET[ 'nazwa' ]}%' OR `description` LIKE '%{$_GET[ 'nazwa' ]}%' OR `code` LIKE '%{$_GET[ 'nazwa' ]}%'" );
+		
+	} */
+	
 	echo "<!--SINGLE\r\n";
 	// echo count( $XMLData[ 'items' ] );
 	echo "-->";
@@ -20,19 +37,10 @@
 		
 	}
 	elseif( count( $XMLData[ 'items' ] ) === 1 ){
-		$item = $XMLData[ 'items' ][0];
 		require get_template_directory() . "/template/view-single.php";
 		
 	}
 	elseif( count( $XMLData[ 'items' ] ) > 1 ){
-		if( !empty( $_GET[ 'code' ] ) ){
-			$item = $XMLData[ 'items' ][0];
-			require get_template_directory() . "/template/view-single.php";
-			
-		}
-		else if( !empty( $_GET[ 'nazwa' ] ) ){
-			require get_template_directory() . "/template/view-multi.php";
-			
-		}
+		require get_template_directory() . "/template/view-multi.php";
 		
 	}

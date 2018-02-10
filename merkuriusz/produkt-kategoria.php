@@ -18,7 +18,16 @@
 	
 	require_once "XML.php";
 	
-	$XMLData = $XM->getData();
+	$XMLData = array();
+	
+	if( !empty( $_GET[ 'cat' ] ) ){
+		$XMLData[ 'items' ] = $XM->getProducts( 'url', $_GET[ 'cat' ] );
+		
+	}
+	elseif( !empty( $_GET[ 'nazwa' ] ) ){
+		$XMLData[ 'items' ] = $XM->getProducts( 'custom', "WHERE `title` LIKE '%{$_GET[ 'nazwa' ]}%' OR `description` LIKE '%{$_GET[ 'nazwa' ]}%' OR `code` LIKE '%{$_GET[ 'nazwa' ]}%'" );
+		
+	}
 	
 	echo "<!--KATEGORIA\r\n";
 	// print_r( $XMLData );

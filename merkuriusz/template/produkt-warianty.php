@@ -1,16 +1,18 @@
 <?php
-	$warianty = $XMLData[ 'colors' ];
+	// $warianty = $XM->getProducts( 'short', $item[ 'short' ] );
+	$warianty = $XM->getProducts( 'custom', "WHERE `short` = '{$item[ 'short' ]}' AND `code` != '{$item[ 'code' ]}'" );
+	
 	if( count( $warianty ) > 0 ):
 ?>
 <div class='warianty flex flex-column'>
 	<div class='title bold flex flex-items-center'>
-		Produkt w innych wariantach kolorystycznych
+		Inne warianty tego produktu
 	</div>
 	<div class='kafelki flex flex-wrap'>
 		<?php
 			// shuffle( $warianty );
 			// if( count( $warianty ) > 6 ) $warianty = array_slice( $warianty, 0, 6 );
-			foreach( $warianty as $item ){
+			foreach( $warianty as $wariant ){
 				printf( "<div class='item base1 base2-ms base3-mm base4-ds flex'>
 								<div class='wrapper grow flex flex-column'>
 									<div class='img bgimg contain' style='background-image:url(%s);'>
@@ -24,11 +26,11 @@
 									<div class='code'>Kod produktu: <span class='bold'>%s</span></div>
 								</div>
 							</div>",
-					$item['IMG'][0], 
-					home_url( "produkt?cat={$_GET['cat']}&code={$item['ID']}" ), 
-					home_url( "produkt?cat={$_GET['cat']}&code={$item['ID']}" ), 
-					$item['NAME'], 
-					$item['ID'] 
+					json_decode( $wariant[ 'photos' ] )[0],
+					home_url( "produkt?cat={$_GET['cat']}&code={$wariant['code']}" ), 
+					home_url( "produkt?cat={$_GET['cat']}&code={$wariant['code']}" ), 
+					$wariant[ 'title' ], 
+					$wariant[ 'code' ] 
 				);
 				
 			}

@@ -555,42 +555,30 @@ add_action( 'page_switcher', function( $arg ){
 
 add_action( 'kafelki_kategoria', function( $arg ){
 	/*
-	Array(
-		[ID] => V2560-03
-		[NAME] => Wizytownik
-		[DSCR] => Wizytownik, etui na karty kredytowe, 7 przegródek
-		[IMG] => Array(
-			[0] => http://axpol.com.pl/files/fotob/V2560_03_A.jpg
-			[1] => http://axpol.com.pl/files/foto_add_big/V2560_03_B.jpg
-			[2] => http://axpol.com.pl/files/foto_add_big/V2560_A.jpg
-		)
-
-		[CAT] => Array(
-			[VOYAGER 2017] => Array(
-					[BIURO] => Array(
-							[wizytowniki] => Array(
-							)
-
-					)
-
-			)
-
-			[BIURO] => Array(
-			)
-
-		)
-
-		[DIM] => 11 x 7,5 x 2,1 cm
-		[MARK] => Array(
-				[60x40 (item underside)] => Array(
-						[0] => T2
-						[1] => L2
-					)
-
-			)
-
-		[INSTOCK] => 0
-	)
+	Array
+        (
+            [code] => V1197-02
+            [short] => V1197
+            [shop] => AXPOL
+            [title] => Długopis
+            [description] => Długopis z kolorowym korpusem i kulką, przezroczysty klip i końcówka
+            [catalog] => VOYAGER 2018
+            [brand] => 
+            [marking] => {"item barrel":{"6x25":"T1"}}
+            [materials] => ABS
+            [dimension] => &#216;1,5 x 14 cm
+            [colors] => biały
+            [weight] => 12
+            [country] => CN
+            [photos] => ["https://axpol.com.pl/files/fotob/V1197_02_A.jpg","https://axpol.com.pl/files/fotob/V1197_02_B.jpg","https://axpol.com.pl/files/fotob/V1197_02_C.jpg","https://axpol.com.pl/files/fotob/V1197_A.jpg"]
+            [netto] => 0.85
+            [brutto] => 1.05
+            [instock] => 366
+            [cat_ID] => 2
+            [cat_name] => długopisy plastikowe
+            [cat_slug] => dlugopisy_plastikowe
+            [cat_parent] => 1
+        )
 	*/
 	$num = config( 'num' );
 	$page = config( 'strona' );
@@ -611,11 +599,12 @@ add_action( 'kafelki_kategoria', function( $arg ){
 								<div class='code'>Kod produktu: <span class='bold'>%s</span></div>
 							</div>
 						</div>",
-					$item['IMG'][0], 
-					home_url( "produkt?cat={$_GET['cat']}&code={$item['ID']}" ), 
-					home_url( "produkt?cat={$_GET['cat']}&code={$item['ID']}" ), 
-					$item['NAME'], 
-					$item['ID'] 
+					// $item['IMG'][0], 
+					json_decode( $item[ 'photos' ] )[0], 
+					home_url( "produkt?cat={$_GET['cat']}&code={$item['code']}" ), 
+					home_url( "produkt?cat={$_GET['cat']}&code={$item['code']}" ), 
+					$item[ 'title' ], 
+					$item[ 'code' ] 
 				);
 			
 		}
@@ -715,6 +704,7 @@ add_action( 'kategoria_pagin_prev', function( $arg ){
 } );
 
 add_action( 'single-picture', function( $arg ){
+	$imgs = json_decode( $arg[ 'photos' ] );
 	echo "<div class='pic base2 flex flex-column'>";
 		printf( "<div class='large bgimg contain pointer' style='background-image: url( %s );'>
 					<div class='icon'>
@@ -722,29 +712,29 @@ add_action( 'single-picture', function( $arg ){
 					</div>
 					
 				</div>",
-		$arg[ 'IMG' ][0]
+		$imgs[0]
 	);
 	
-	if( count( $arg['IMG'] ) > 1 ){
+	if( count( $imgs ) > 1 ){
 		echo "<div class='mini flex'>";
 		
-			if( count( $arg['IMG'] ) > 3 )
+			if( count( $imgs ) > 3 )
 			{
 				echo "<div class='nav prev pointer flex flex-items-center flex-justify-center'><span class='icon fa fa-angle-left'></span></div>";
 				
 			}
 			echo "<div class='view grow flex'>";
 				
-				for( $i=0; $i<count( $arg['IMG'] ); $i++ ){
+				for( $i=0; $i<count( $imgs ); $i++ ){
 					printf( "<div class='item bgimg contain base3 no-shrink pointer' style='background-image: url( %s );'></div>", 
-						$arg[ 'IMG' ][ $i ]
+						$imgs[ $i ]
 					);
 					
 				}
 			
 			echo "</div>";
 			
-			if( count( $arg['IMG'] ) > 3 )
+			if( count( $imgs ) > 3 )
 			{
 				echo "<div class='nav next pointer flex flex-items-center flex-justify-center'><span class='icon fa fa-angle-right'></span></div>";
 				
