@@ -1225,7 +1225,7 @@ class EASYGIFTS extends XMLAbstract {
 					
 				}
 				
-				$price_netto = (float)$item->baseinfo->price;
+				$price_netto = (float)str_replace( ",", ".", $item->baseinfo->price );
 				$price_brutto = $this->price2brutto( $price_netto );
 				
 				$img = array();

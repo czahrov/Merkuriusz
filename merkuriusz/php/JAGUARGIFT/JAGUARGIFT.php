@@ -64,7 +64,7 @@ class JAGUARGIFT extends XMLAbstract{
 			
 			foreach( $this->_XML[ $file ]->children() as $item ){
 				
-				$price_netto = (float)$item->price;
+				$price_netto = (float)str_replace( ",", ".", $item->price );
 				$weight = sprintf( "%.3f kg", $item->weight );
 				$dim = (string)$item->size;
 				

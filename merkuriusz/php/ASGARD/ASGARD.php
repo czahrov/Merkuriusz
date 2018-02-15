@@ -948,7 +948,7 @@ class ASGARD extends XMLAbstract{
 					
 				} */
 				
-				$price_netto = (float)str_ireplace( ",", ".", $item->cena_netto_katalogowa );
+				$price_netto = (float)str_replace( ",", ".", $item->cena_netto_katalogowa );
 				
 				$ret[] = array_merge(
 					array(

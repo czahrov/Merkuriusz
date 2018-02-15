@@ -87,7 +87,7 @@ class PAR extends XMLAbstract {
 				if( strlen( (string)$item->kolor_dodatkowy ) > 0 ) $colors[] = (string)$item->kolor_dodatkowy;
 				$color = implode( " / ", $colors );
 				
-				$price_netto = (float)$item->cena_pln;
+				$price_netto = (float)str_replace( ",", ".'", $item->cena_pln );
 				$price_brutto = $this->price2brutto( $price_netto );
 				$img = array();
 				foreach( $item->zdjecia->children() as $image ){

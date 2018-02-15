@@ -2055,7 +2055,7 @@ class ANDA extends XMLAbstract{
 					
 				}
 				
-				$price_netto = (float)$item->attributes()->price;
+				$price_netto = (float)str_replace( ",", ".", $item->attributes()->price );
 				
 				$ret[] = array_merge(
 					array(

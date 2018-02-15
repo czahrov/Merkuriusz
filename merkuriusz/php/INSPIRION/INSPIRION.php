@@ -1803,7 +1803,7 @@ class INSPIRION extends XMLAbstract {
 					
 				} */
 				
-				sscanf( (string)$item->catalog_price, "%u,%u zł", $zl, $gr );
+				sscanf( str_replace( ",", ".", $item->catalog_price ), "%u.%u zł", $zl, $gr );
 				$price_netto = (float)"{$zl}.{$gr}";
 				
 				$id = (string)$item->sku;
